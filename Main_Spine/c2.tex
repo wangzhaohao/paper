@@ -1,0 +1,2719 @@
+% !TeX root = ../main.tex
+
+
+\xchapter{快堆燃料元件材料基础物性模型}{MOX Fuel Model}
+\xsection{引言}{MOX Nuclear }
+MOX燃料的物性，主要来源是FRAPCON、MATPRO、Bison的报告，包含根据最小二乘法拟合的最小的多项式和具有物理理论表达式。
+\xsection{MOX燃料基础热力学性质}
+\xsubsection{热物性}{Thermal Properties}
+
+\subsubsection{熔点}
+熔点是根据燃料和钚含量变化的，根据Brassfield的实验结果确定$UO_2$的熔点是3113.15K，（U，Pu）$O_2$燃料的熔点根据实验结果，同时采用最小二乘法获得，如下：
+
+对于钚成份$>0$：
+\[ T_{sol} = 3113.15 - 5.41395C + 7.468390 \times 10^{-3}C^2 - 3.2 \times 10^{-3}FBu \]
+\[ T_{liq} = 3113.15 - 3.21660C - 1.448518 \times 10^{-2}C^2 - 3.2 \times 10^{-3}FBu \]
+
+对于钚成份$=0$：
+\[ T_{sol} = 3113.15 - 3.2 \times 10^{-3}FBu \]
+\[ T_{liq} = T_{sol} \]
+
+其中$T_{sol}(K)$固态温度，$T_{liq}(K)$液态温度，$C$是$PuO_2$(wt\%)百分比质量，FBu（MWd/tU）燃料。
+
+熔化热，指的是一种物质从固态转变为液态时所需要的热量，这个过程通常在物质的熔点温度下进行。未辐照的$UO_2$熔化热在实验上可以测得。Hein和Flagella实验表明熔化热是$76.1 \pm 2$kg/mol，Leibowitz实验值是74kg/mol。同时在MOX燃料的实验中，Leibowitz测得熔化热为67kJ/mol，考虑到两者近似的组成10\%的误差是合理的。因此，除非有矛盾数据，$UO_2$的熔化热被用在MOX燃料上。
+
+\subsubsection{热导率}
+
+在未发生裂解的$UO_2$或者$(U, Pu)O_2$燃料中，热导率能够影响稳态条件和非正常瞬态下的温度分布。热导率是温度、密度、氧金属比（O/M）以及高温下钚含量。液态下的热导率从物理角度考虑，因为没有找到实验数据。
+
+
+为了消除1364到2300K处热导率不连续性，对公式进行了微小的修改。表达式如下：
+
+\[ k = \frac{D}{1 + (6.5 - 0.004697T)(1 - D)} \left[ \frac{C_V}{(A + BT')^3 (1 + 3e_h)} \right] + 5.2997 \times 10^{-3} T e^{\left[ -\frac{13358}{T} \right]} \left\{ 1 + 0.169 \left( \frac{13358}{T} + 2 \right)^2 \right\} \]
+
+其中$k$（W/m·K）是热导率，$D$（无单位）理论密度分数，$C_v$（J/kg·K）声子对比热容贡献，具体表示形式见比热容部分，$e_h$（无单位）当温度大于300K由于热膨胀导致的线性应变，$T$（K）燃料温度，$T'$（K）孔隙率对温度的矫正，当温度$<1364K$，$T' = 6.50 - T \times 4.69 \times 10^{-3}$；当温度$>1877K$，$T' = -1$；中间的温度（1364-1834）之间采用插值计算结果，$T''$（K）在燃料温度$<1800K$时，取值燃料温度；温度$>2300K$，$T'' = 2050K$；中间温度（1800K-2300K）采用线性插值，$A$（m·s/kg·K）是点缺陷对声子平均自由路径影响的因子，$0.339 + 12.6x$其中$x$是$2.0 - O/M$，$B$（m·s/kg·K）是声子与声子散射平均自由程的贡献正比的因子，$0.06867 \times (1 + 0.6238x)$其中$x$是燃料中Pu的含量。
+
+等式第一项表示声子对比热容的影响，第二项表示电子（电子空穴）的影响，适用范围是90\%-100\%理论密度，如果发生熔化，第一项将被忽略。
+
+表达式的误差是根据实验结果进行评估的，对于$UO_2$来说，标准差是0.2W/m·K，对于含量2\%的$(U, Pu)O_2$，标准差是0.3W/m·K。基于此，其他的情况下的固体热导率误差如下：
+
+\[ UK = [0.2(1 - COMP) + 0.7COMP] \times (1.0 + |2 - OTM| 10) \]
+
+其中$UK$（W/m·K）固体热导率的标准差，$COMP$是$PuO_2$的含量（$PuO_2$和整个质量的比值），$OTM$（无单位）燃料的O/M比。
+
+
+BISON中有三个热物性的模型，所有的模型首先都定义了未辐照燃料。之后对其进行修正，这些修正主要是考虑辐照、燃烧、MOX含量和孔隙度。对于大部分的模型，都是由晶格震动（声子）和电子的影响。
+
+\[ k_{95} = k_{phonon} + k_{electronic} \]
+
+第一项通常变量通常是温度和燃烧，第二项是和温度或者温度平方成反比的指数项。
+
+\[ k_{phonon} = 1.0/(A + B * T + f(Bu) + g(Bu) * h(T)) \]
+\[ k_{electronic} = i(T) * exp(-F/T) \]
+
+\paragraph{Duriez-Ronchi}
+
+由两部分组成，第一部分是Duriez第二部分是Ronchi模型，第一个模型给出未辐照的MOX。
+
+\[ \lambda_0(T,x) = 1.158 \cdot \left( \frac{1}{A + CT_n} + \frac{6400}{T_n^{5/2}} exp\left( -\frac{16.35}{T_n} \right) \right) \]
+
+其中$\lambda_0$是热导率$W \cdot m^{-1} \cdot K^{-1}$；$T_n$是$T(K)/1000$之后的温度；$x$是偏移的化学计量；$A(x) = 2.85x + 0.035$；$C(x) = -0.715x + 0.286$。
+
+$C_w$是温度$T$和质量分数$COMP$的函数：
+
+\[ C_v = \frac{296.7(535.285)^2}{T^2 \left( e^{\left[ -\frac{535.285}{T} \right]} - 1 \right)} \left[ e^{\left[ -\frac{535.285}{T} \right]} \left( 1 - COMP \right) + \frac{COMP \cdot (347.4)(571)^2}{T^2 \left( e^{\left[ -\frac{537}{T} \right]} - 1 \right)} e^{\left[ -\frac{537}{T} \right]} \right] \]
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{mox_thermal_cond_duriez_ronchi.png}
+\end{figure}
+\paragraph{Amaya}
+
+不像之前的模型，Amaya提供了钚含量的影响。根据$UO_2$热导率同时考虑到Pu的影响。
+
+\[ \lambda_{MOX,0} = \sqrt{\frac{\lambda_0}{D_{0,Pu}exp(D_{1,Pu}\cdot T)y}} \cdot arctan(\sqrt{D_{0,Pu}exp(D_{1,Pu}\cdot T)}y\cdot \lambda_0) \]
+
+其中$\lambda_{MOX,0}$是MOX未辐照的热导率$(W \cdot m^{-1} \cdot K^{-1})$；$\lambda_0$是$UO_2$未辐照的热导率$(W \cdot m^{-1} \cdot K^{-1})$；$T$是温度（K）；$y$是钚含量（wt.\%）；$D_{0,Pu}=0.209W \cdot m^{-1} \cdot K^{-1}$；$D_{1,Pu}=1.09 \cdot 10^{-3}K^{-1}$。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{mox_thermal_cond_amaya.png}
+\end{figure}
+BISON中使用Fink模型计算未辐照的$UO_2$热导率。Amaya模型的适合400-1500K，钚含量最高是30wt.\%。
+
+\paragraph{Fink}
+
+\[ k_{95} = \left( \frac{100}{7.5408 + 17.692 \cdot T_n + 3.6142 \cdot T_n^2} + \frac{6400}{T_n^{5/2}} exp\left( -\frac{16.35}{T_n} \right) \right) \]
+
+其中$T_n$是温度$T$（K）除以1000。如果要获得100\%TD热导率：
+
+\[ k = k_{95} \cdot \left( \frac{1}{1-(2.6 - 0.5 \cdot T_n) \cdot 0.05} \right) \]
+
+\paragraph{Halden}
+
+修改自$UO_2$燃料，需要在模型中考虑到新加的氧化物影响，添加一个修正因子$k_{phonon}$前面是0.92。$k_{electronic}$不变。
+
+\[ k_{95} = 1/(term0 + term1 + term2 + term3 + term4 \cdot term5) + term6 \]
+
+其中：
+
+\begin{align*}
+	term0 & = 0.1148                                                                                     \\
+	term1 & = 1.1599 \cdot Gdeon                                                                         \\
+	term2 & = 1.1599 \cdot f_x                                                                           \\
+	term3 & = 4 \times 10^{-3} \cdot Bu_{VO_2}                                                           \\
+	term4 & = 2.475 \times 10^{-4} \cdot (1 - 3.33 \times 10^{-3} \cdot Bu_{VO_2}) \cdot \min(1650, T_c) \\
+	term5 & = 1                                                                                          \\
+	term6 & = 1.32 \times 10^{-2} \cdot exp(0.00188 \cdot T_c)
+\end{align*}
+
+其中$Gdeon$是钇含量（wt.\%）。$f_x$是化学计量偏移量（2-O/M），$Bu_{VO_2}$是燃耗（MWd/KgUO2）。$T_c$是温度（degC）。
+
+\[ k = k_{95} \cdot 1.0789 \cdot \frac{D}{1+0.5 \cdot (1-D)} \]
+
+其中$D$是理论密度百分数。
+
+使用范围：
+
+\begin{itemize}
+	\item $300 \leq T(K) \leq 3000$
+	\item $0 \leq BU \leq MWd/KgU$
+	\item $0.92 \leq D \leq 0.97$
+	\item $0 \leq \text{plutonia content} \leq 7wt.\%$
+	\item $\text{plutonia particle size} < 20 \times 10^{-6}$
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{mox_thermal_cond_halden.png}
+\end{figure}
+\paragraph{快堆MOX燃料\cite{inoue2004}}
+
+快堆的MOX燃料比压水堆的MOX燃料含有更高的钚的氧化物。模型是未辐照的热导率乘以溶解的固体产物修正（$F_1$）、沉淀的固体产物（$F_2$）、辐照影响（$F_3$）、孔隙度（$F_4$）：
+
+\[ k = F_1 F_2 F_3 F_4K_0 \]
+
+其中$k_0$是全密度的热导率（$W \cdot m^{-1} \cdot K^{-1}$）；
+
+\begin{align*}
+	F_1 & = \left( \frac{1.09}{Bu^{3.265}} + 0.0643 \cdot \sqrt{\frac{T}{Bu}} \right) \cdot arctan \left( \frac{1.0}{\frac{1.09}{Bu^{3.265}} + 0.0643 \cdot \sqrt{\frac{T}{Bu}}} \right) \\
+	F_2 & = 1.0 + \left( \frac{0.019 \cdot Bu}{3.0 - 0.019 \cdot Bu} \right) \cdot \left( \frac{1.0}{1.0 + exp \left( -\frac{T-1200}{100} \right)} \right)                               \\
+	F_3 & = 1.0 - \frac{0.2}{1.0 + exp \left( \frac{T-900}{80} \right)}                                                                                                                  \\
+	F_4 & = 1 - \alpha P
+\end{align*}
+
+其中，$T$是温度K；$bu$是百分比燃烧at.\%；$P$是孔隙度的体积分数；$\alpha$是系数（保守估计2.5）。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{mox_thermal_conductivity_all_models.png}
+\end{figure}
+\paragraph{铜系快堆MOX燃料}
+
+模型是根据JOYO实验结果。
+
+\[ k = \left( \frac{(1-p)}{1+0.5p} \right) [(2.713x + 3.583E - 1Am + 6.317E - 2Np + 1.595 \times 10^{-2}) + (-2.625 + 2.493) \times 10^{-4} T]^{-1} + \left( \frac{1.541 \times 10^{11}}{T^2.5} \right) e^{\left( \frac{-1.523 \times 10^4}{T} \right)} \]
+
+其中$Am$是铜系含量；$Np$是镍系元素。
+
+\xsubsection{热容}{Heat Capacity}
+
+\subsubsection{MATPRO}{MATPRO}
+
+比热容用于计算温度随时间变化，主要是和燃料存储能量或者焓升相关。比热容的模型是温度、成份、熔点和金属氧化值的函数。温度适用范围是300K到多余4000K。
+
+等式适用于$UO_2$和$PuO_2$：
+
+\begin{align*}
+	FCP    & = \frac{K_1 \theta^2 e^{\frac{\theta}{T}}}{T^2 [e^{\frac{\theta}{T}} - 1]} + K_2 T + \frac{YK_3 E_D}{2RT^2} e^{\left( -\frac{E_D}{RT} \right)} \\
+	FENTHL & = \frac{K_1 \theta}{e^{\frac{\theta}{T}} - 1} + \frac{K_2 T^2}{2} + \frac{YK_3 e^{-\frac{E_D}{RT}}}{2}
+\end{align*}
+
+其中，$FCP$ (J/kg·K) 是比热容，$FENTHL$ (J/kg) 燃料的焓，$T$ (K) 温度，$Y$是氧金属比O/M，$R=8.3143$ (J/mol·K) 气体常数，$\theta$ (K) 受周期温度。
+
+下表展示了$UO_2$和$PuO_2$的参数：
+
+\begin{table}[h]
+	\centering
+	\caption{比热容中计算需要的系数}
+	\begin{tabular}{ccccc}
+		\toprule
+		常数       & $UO_2$                & $PuO_2$               & 单位         \\
+		\midrule
+		$K_1$    & 296.7                 & 347.4                 & J/kg·K     \\
+		$K_2$    & $2.43 \times 10^{-2}$ & $3.95 \times 10^{-4}$ & J/kg·$K^2$ \\
+		$K_3$    & $8.745 \times 10^7$   & $3.860 \times 10^7$   & J/kg       \\
+		$\theta$ & 535.285               & 571.00                & K          \\
+		$E_D$    & $1.577 \times 10^5$   & $1.967 \times 10^5$   & J/mol      \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+$UO_2$和$PuO_2$在液态的比热容$FCP = 503J/kg \cdot K$。
+
+对于混合的$UO_2$和$PuO_2$燃料，采用每种成份的质量分数乘以相对应的物性。$UO_2$的标准误差是$\pm 3J/kg \cdot K$，对于MOX标准差是限$PuO_2$的分数相关，从6到10J/kg·K。对于低于熔点2K到熔点的比热容用液态的比热容和固态比热容进行线性插值。
+
+\xsubsection{发射率}{Emissivity}
+
+反射率和辐射换热相关，具体取决于间隙大小、间隙温度梯度和气腔压力。MATPRO中使用的发射率是$e = 0.7856 + 1.5263 \times 10^{-5}T$。发射率在实验数据上的标准误差是$\pm 6.8\%$，温度使用范围限制是2400K之下，之后的温度因为没有数据支持，考虑也采用表达式的外推值。同时$PuO_2$因为没有数据，表达式也用于$UO_2$的发射率。
+
+\xsubsection{热膨胀}{Thermal Expansion}
+
+在MATPRO中，燃料热膨胀是温度，$PuO_2$含量、熔化占比的函数，与O/M比值没有关系。根据实验数据发现当$|O/M - 2.0| > 0.2$会对热膨胀产生影响，但是传统的反应堆中偏离化学计量大约为0.1左右。
+
+固态的热膨胀系数如下：
+
+\[ \frac{\delta L}{L_0} = K_1 T - K_2 + K_3 e^{-\frac{E_D}{kT}} \]
+
+其中$\frac{\delta L}{L_0}$是热膨胀到线应变（300K的时候为0），$T$ (K) 温度，$E_D$ (J) 缺陷形成的能量，$k$ ($1.38 \times 10^{-23}J/K$) 是玻尔兹曼常数。$K_1, K_2, K_3, E_D$是常数，见下表：
+
+\begin{table}[h]
+	\centering
+	\caption{热膨胀应变计算需要的系数}
+	\begin{tabular}{ccccc}
+		\toprule
+		常数    & $UO_2$                & $PuO_2$               & 单位       \\
+		\midrule
+		$K_1$ & $1.0 \times 10^{-5}$  & $9.0 \times 10^{-6}$  & $K^{-1}$ \\
+		$K_2$ & $3.0 \times 10^{-3}$  & $2.7 \times 10^{-3}$  & 无单位      \\
+		$K_3$ & $4.0 \times 10^{-2}$  & $7.0 \times 10^{-2}$  & 无单位      \\
+		$E_D$ & $6.9 \times 10^{-20}$ & $7.0 \times 10^{-20}$ & J        \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+对于MOX燃料，同样是使用各自的质量分数乘以对应的热膨胀应变。
+
+在熔化之后，热膨胀应变被认为是0.043。如果存在部分应变，热膨胀应变通过下式计算：
+
+\[ \frac{\delta L}{L_0} = \frac{\delta L}{L_0}(T_m) + 0.043 * FACMOT \]
+
+其中，$\frac{\delta L}{L_0}(T_m)$固体下的热膨胀应变($T = T_m$)，$T_m$是燃料的熔点，$FACMOT$是燃料中熔化分数。
+
+如果全熔融的燃料热膨胀应变为：
+
+\[ \frac{\delta L}{L_0} = \frac{\delta L}{L_0}(T_m) + 0.043 + 3.6 \times 10^{-5}[T - (T_m + \Delta T_m)] \]
+
+固体到液体的相转变对于纯$UO_2$和$PuO_2$，对于MOX燃料，转变要跨越一个温度范围，也就是上式中的$\Delta T_m$、$\Delta T_m$是液态温度减去固态的MOX温度。
+
+模型的不确定性跟温度相关，随着温度增加而增加，所以给出误差大概在$\pm 10\%$。
+
+\xsubsection{密度}{Density}
+
+在MATPRO中密度的计算公式使用的是根据膨胀应变相关的计算表达式。如下：
+
+\[ \rho = \rho_0 (1 - 3\epsilon_{UO_2}) \]
+
+其中$\rho$ ($kg/m^3$) 是$UO_2$的密度，$\rho_0 = 10980$ ($kg/m^3$) 是室温下的$UO_2$的密度，$\epsilon_{UO_2}$是$UO_2$的热膨胀应变。
+
+\xsection{力学物性}{Mechanical Properties}
+
+\xsubsection{杨氏模量}{Young's Modulus}
+
+陶瓷燃料的杨氏模量和温度、密度、微观结构、氧金属比（O/M）和燃烧。实验数据表明$PuO_2$的掺杂会导致杨氏模量增加，这些会导致模型的误差增大。
+
+\[ ES = 2.334 \times 10^{11} [1 - 2.752(1 - D)][1 - 1.0915 \times 10^{-4}T] \]
+
+其中，$ES$（Pa）是$UO_2$的杨氏模量，$D$是燃料密度（理论密度分数），$T$（K）是温度。
+
+对于含有$PuO_2$的燃料来说，低于熔点下的杨氏模量采用下式的计算：
+
+\[ E = ES e^{-Bx} [1 + 0.15f] \]
+
+其中，$E$（Pa）是杨氏模量，$ES$（Pa）是$UO_2$的杨氏模量，$B$在超化学计量比是1.34，低化学计量比是1.75，$x$是指的偏移化学计量比的程度$MO_{2\pm x}$，$f$是$PuO_2$的质量分数。
+
+对于纯$UO_2$燃料，标准差是：
+
+\[ S_{ES} =
+	\begin{cases}
+		0.06 \times 10^{11},                      & 450 < T < 1600K  \\
+		0.06 \times 10^{11} + ES(T_1 600)/6052.6, & 1600 < T < 3113K
+	\end{cases} \]
+
+对于偏移化学计量比的燃料（MOX燃料）或者包含$PuO_2$的燃料，标准差是：
+
+\[ S_E = [(S_{ES}^2 + (E - ES)^2]^{1/2} \]
+
+其中$S_{ES}$和$S_E$（Pa）分别是$UO_2$和偏移化学计量比燃料的标准误差。
+
+\xsubsection{泊松比}{Poisson's Ratio}
+
+在MATPRO中$UO_2$和$PuO_2$燃料的泊松比是燃料温度和成份的函数。泊松比通过杨氏模量剪切模量计算得到。
+
+\[ \mu = \frac{E}{2G} - 1 \]
+
+其中，$\mu$是泊松比，$E$（Pa）是杨氏模量，$G$（Pa）是剪切模量。
+
+Wachtman等人文章中，杨氏模量和剪切模量分别计算式是$E = 2.30 \times 10^{11} Pa$和$G = 0.874 \times 10^{11} Pa$，因此，泊松比是0.316，需要注意的是Wachtman的实验仅仅考虑单晶的$UO_2$在25℃下的情况。Padel和de Novion测得多晶下的$UO_2$的泊松比是0.314和0.306，这和Wachtman的0.316符合的很好。
+
+Nutt等人测得$U_{0.8} P_{uO_2} O_{2-x}$室温下的泊松比是$0.276 \pm 0.094$，并且是和密度不相关的。所以，MOX燃料使用此值。
+
+\xsubsection{蠕变}{Creep}
+
+MATPRO中的$UO_2$和$(U, Pu)O_2$的蠕变数据来源有堆内和堆外数据，样品都是高密度（95\%的理论密度）同时燃烧非常低，蠕变是主要的影响因素。
+
+模型适合$UO_2$和MOX燃料，模型包含$UO_2$时间相关的蠕变率，即适合稳态也适合瞬态分析。燃料的蠕变模型是时间、温度、晶粒尺寸、密度、裂变率、氧金属比（O/M）和外部压力的函数。
+
+蠕变率从相应力线性相关转变为指数$n$相关的是和转变应力相关的。转变应力的定义如下：
+
+\[ \sigma_t = \frac{1.6547 \times 10^7}{G^{0.5714}} \]
+
+其中，$\sigma_t$（Pa）是转变应力，$G$ ($\mu m$) 是燃料晶粒尺寸。
+
+蠕变函数依赖于Arrheius模型的活化能，活化能发现是氧金属比O/M的函数。增加氧金属比，蠕变率会增加。$UO_2$的活化能具体形式：
+
+\[ Q_1 = 17884.8 \left\{ e^{\left( \frac{-20}{ln(x-2)} - 8 \right)} + 1 \right\}^{-1} + 72124.23 \]
+
+其中，$Q_1$（cal/mol）是在转变应力之下活化能，$x$是氧金属比O/M。
+
+转变应力之后的活化能计算：
+
+\[ Q_2 = 19872 \left\{ e^{\left( \frac{-20}{ln(x-2)} - 8 \right)} + 1 \right\}^{-1} + 111543.5 \]
+
+其中$Q_2$（cal/mol）是转变应力之后的活化能。
+
+稳态下的$UO_2$的蠕变率使用：
+
+\[ \dot{\epsilon} = \frac{(A_1 + A_2 \dot{F}) \sigma e^{\left( -\frac{Q_1}{RT} \right)}}{(A_3 + D)G^2} + \frac{(A_4 + A_8 \dot{F}) \sigma^{4.5} e^{\left( -\frac{Q_2}{RT} \right)}}{A_6 + D} + A_7 \sigma \dot{F} e^{\left( -\frac{Q_3}{RT} \right)}  \footnote{考虑高温下辐照蠕变更大，因此认为参考文献错误，此处$Q_3$前面应该有负号。}\]
+
+其中，$\dot{\epsilon}(s^{-1})$是稳态的蠕变率，$A_{1\sim4}A_{6\sim8}$是常数，分别是0.3919，$1.3100 \times 10^{-19}$，-87.7，$2.0391 \times 10^{-25}$，-90.5，$3.72264 \times 10^{-35}$，0，$\dot{F}$（fission/m²·s）是裂变率，$\sigma$（Pa）是应力，$R$(J/mol·K)气体常数，$T$（K）温度，$D$理论密度百分比，$G$（$\mu m$）是晶粒大小，$Q_3$（J/mol）$2.6267 \times 10^3$。
+
+BISON中采用MATPRO的模型和Halden蠕变模型，主要处理蠕变率中第三项（低温蠕变），原始的MATPRO公式中此项包含温度。仔细查看MATPRO中的参考文献，可以清楚看到，这种低温依赖性仅涉及一项非常有限的实验数据\cite{brucklacher_et_al_1973}。此外，根据早期的研究仅适用相对较窄（523K<T<773K)。其他的研究，包括早期\parencite{brucklacher_et_al_1972, perrin_1972,solomon_1973,dienst_1977}和近期\parencite{hwr-1006,hwr-1039,hwr-1092}的研究，均未观察到低温辐照蠕变的温度依赖，但是报告了蠕变速率仅与应力裂变率有关。因此在BISON中的$UO_2$稳态蠕变替换第三项为广泛使用的Halden\cite{hwr-1039}辐照蠕变模型，具体的形式是：
+
+\[\dot{\epsilon}_{irr}=A_7\dot{F}\sigma\]
+
+其中$A_7=7.78\times10^{-37}$。
+
+稳态下的MOX燃料蠕变率使用：
+
+\[ \dot{\epsilon_s} = \frac{B_1 + B_2 \dot{F}}{G^2} \sigma exp \left( -\frac{Q_3}{RT} + B_3 (1-D) + B_4 C \right) + (B_5 + B_6 \dot{F}) \sigma^{4.5} exp \left( -\frac{Q_4}{RT} + B_7 (1-D) + B_4 C \right) \]
+
+其中，$B_1 \sim B_7$是常数，分别是0.1007，$7.57 \times 10^{-20}$，33.3，3.56，$6.469 \times 10^{-25}$，0，10.3，$Q_3=55354.0$，$Q_4=70451.0$，$C$是$PuO_2$的质量分数，除去D变为质量分数（$D<1$）其他值和之前提到的一样。
+
+特别注意，上面模型存在笔误，根据Bison报告\cite{HalesBISONTheoryManual2016}和网站上对该模型的描述，通过比较，最终MOX的蠕变模型采用如下形式：
+\[ \dot{\epsilon_s} = \frac{B_1 + B_2 \dot{F}}{G^2} \sigma exp \left( -\frac{Q_3}{T} + B_3 (1-D) + B_4 C \right) + (B_5 + B_6 \dot{F}) \sigma^{4.5} exp \left( -\frac{Q_4}{T} + B_7 (1-D) + B_4 C \right) \]
+其中的系数也有细微差别。$B_1\sim B_5\,B_7$分别是0.1007，$7.57 \times 10^{-20}$，33.3，0.014，$6.469 \times 10^{-25}$，0，10.3，$Q_3=50327.1$，$Q_4=70458.0$。
+
+对于上述的$UO_2$和MOX燃料，MATPRO模型规定，当施加应力小于过度应力的时候，施加应力（这里认为是von Mises）代入方程的第一项$\sigma$，第二项幂律贡献为0;如果大于转变应力，则方程第一项采用转变应力（$\sigma_t$），第二项幂律关系用施加应力（这里认为是von Mises）。但是Mai等人的研究了MATPRO的过渡方法并与实际实验数据进行了比较，得出的结论：忽略过渡应力，并在所有的情况下同时使用低应力项和高应力项，可以更好的拟合数据。
+
+对于MOX燃料，当第一次经历应力，或者是施加的最高应力高于其他时间步长，应变率是时间相关的\cite{MiletJNM1983}，具体公式如下：
+
+\[ \epsilon_T = \epsilon_S [2.5e^{\left( -1.4 \times 10^{-6}t \right)} + 1] \]
+
+其中，$\epsilon_T$（$S^{-1}$）是总应变速率，$\epsilon_S(s^{-1})$是稳态下求解出来的应变率，$t$（s）是施加最大应力以来的时间。
+
+Bison中给出的MOX蠕变的公式如下：
+
+\[ \dot{\epsilon}_{cr} = (1 + aexp(-b \cdot t)) \cdot \dot{\epsilon}_s \]
+
+其中
+
+\[ \dot{\epsilon}_s = \frac{B_1 + B_2 \dot{F}}{G^2} \sigma exp(-\frac{Q_3}{T} + B_3(1 - D) + B_4C) + B_5 \sigma^{4.5} exp(-\frac{Q_4}{T} + B_7(1 - D) + B_4C) + A \sigma \dot{F} \]
+
+其中$T$（K）温度，$D$（理论密度分数）燃料密度分数，$\sigma$（Pa）有效应力，$\dot{F}$（$m^{-3} \cdot s^{-1}$）裂变率，$G$（$\mu m$）晶粒尺寸，$C$（wt.\%）是$PuO_2$质量分数。
+
+在国际单位制下：
+
+\begin{align*}
+	a   & = 2.5                    \\
+	b   & = 1.40 \times 10^{-6}    \\
+	A   & = 4.78 \times 10^{-36}   \\
+	B_1 & = 0.1007                 \\
+	B_2 & = 7.57 \times 10^{-20}   \\
+	B_3 & = 33.3                   \\
+	B_4 & = 0.014                  \\
+	B_5 & = 6.4691 \times 10^{-25} \\
+	B_7 & = 10.3                   \\
+	Q_3 & = 55354.0                \\
+	Q_4 & = 70451.0
+\end{align*}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{UO2_MOX_creep.png}
+\end{figure}
+\xsubsection{密实化}{Densification}
+
+$UO_2$和$(U, Pu)O_2$在压水堆开始的几个小时之后发生的由于辐照导致的密实化。密实化是燃料、温度和初始密度的函数。模型是基于少量的压水堆静水压数据。密实化可能是由于芯包接触导致的静水压发生变化，在之后也会提到。两个模型描述了相同的物理过程，计算结果更大的密实化用于程序计算。
+
+如果在辐照的最初的1000小时内，燃料密实化远大于膨胀，那么，对于第一近似，在此期间膨胀可以忽略。建议在这种给出的密实化模型和膨胀模型结合。
+
+最大变化密度可以来自两个方法，一种是直接在实验中进行再烧结实验（超过24小时的1973K）观察密度的变化，另一种是通过初始未辐照的燃料密度和燃料制造烧结的温度进行计算。
+
+如果输入最大密度变化值（非零）：
+
+当$FTEEMP < 1000K$,
+
+\[ \left( \frac{\Delta L}{L} \right)_m = -(0.0015)RSNTR \]
+
+当$FTEEMP > 1000K$,
+
+\[ \left( \frac{\Delta L}{L} \right)_m = -(0.00285)RSNTR \]
+
+如果没有给最大密度变化值：
+
+当$FTEEMP < 1000K$,
+
+\[ \left( \frac{\Delta L}{L} \right)_m = -\frac{22.2(100 - DENS)}{(TSINT - 1453)} \]
+
+当$FTEEMP > 1000K$,
+
+\[ \left( \frac{\Delta L}{L} \right)_m = -\frac{66.6(100 - DENS)}{(TSINT - 1453)} \]
+
+其中：$\left( \frac{\Delta L}{L} \right)_m$（百分比）由于辐照导致的燃料最大的尺寸变化，$RSNTR$（kg/m³）是重烧燃料密度变化，$FTEMP$（K）是燃料温度，$DENS$（百分比）理论密度，$TSINT$（K）烧结温度。
+
+燃料导致的密实化计算公式：
+
+\[ \frac{\Delta L}{L} = \left( \frac{\Delta L}{L} \right)_{m} + e^{1-3\left( FBU+B \right)} + 2.0e^{1-35\left( FBU+B \right)} \]
+
+其中：$\frac{\Delta L}{L}$（百分比）尺度变化，$FBU$（MWd/kgU）燃耗，$B$是满足当$FBU=0$，$\frac{\Delta L}{L}$接近$\frac{\Delta L}{L}$的常数，可以考虑一个比较大的数字。
+
+BISON中使用的密实化模型书是ESCORE的经验关系式：
+
+\[ \epsilon_D = \Delta \rho_0 \left( e^{\frac{Bu_{b}(0,01)}{C_D B_u}} - 1 \right) \]
+
+其中$\epsilon_D$是密实化导致的应变，$\Delta \rho_0$是整个密实化的密度变化（理论密度的百分数）；$Bu$是燃耗，$B u_D$是完成密实化的燃耗。低于温度750℃$C_D$的表达式是$7.2 - 0.0086(T - 25)$，高于750℃，是1；为了消除不连续性，BISON中使用在低于750℃时侯$7.2 - 0.0086(T - 25)$。
+
+\xsubsection{肿胀}{Swelling}
+
+肿胀是因为燃烧过程中固体裂变产物和气体裂变产物。
+
+固体裂变产物导致的肿胀使用：
+
+\[ S_s = 2.5 \times 10^{-29} B_s \]
+
+其中：$S_s$ ($m^3/m^3$) 是由于固体裂变产物导致的肿胀，$B_s$ (fission/m³) 是一个时间步的燃耗。
+
+在温度低于2800K时，气体裂变产物导致的肿胀是：
+
+\[ S_g = 8.8 \times 10^{-56} (2800 - T)^{11.73} e^{1-0.0162(2800-T)} e^{1-8.0 \times 10^{-27} B|B_s} \]
+
+其中：$S_g$ ($m^3/m^3$) 是由于气体裂变产物导致的肿胀，$T$（K）温度，$B$ (fission/m³) 是整个燃耗。
+
+当温度大于2800K，气体导致的肿胀是0，因为假设2800K之后裂变气体全部释放。
+
+BISON中说也采用了MATPRO中的模型，但是给出的形式不完全相同，具体形式是：
+
+\[ \Delta \epsilon_{sw-s} = 5.577 \times 10^{-5} \rho \Delta Bu \]
+
+其中$\Delta \epsilon_{sw-s}$是由于固体产物导致的体积的肿胀，$\Delta Bu$（裂变率每原子U）是燃耗的增量，$\rho$ ($kg/m^3$) 是密度。
+
+气体导致的肿胀：
+
+\[ \Delta \epsilon_{sw-g} = 1.96 \times 10^{-31} \rho \Delta Bu (2800 - T)^{11.73} e^{-0.0162(2800-T)} e^{-0.0178 \rho Bu} \]
+
+其中的$\Delta \epsilon_{sw-g}$表示气体产物导致的增量，$Bu$和$\Delta Bu$（裂变率/原子U）是燃耗和燃耗增量，$\rho$ ($kg/m^3$) 表示密度，$T$（K）是温度。
+
+\xsubsection{压力烧结}{Pressure Sintering}
+
+氧化物燃料在高静水压（压力烧结）、高温度（热烧结）和辐照条件下会密实化。MATPR中模型的根据推外的压力烧结实验数据。压力烧结模型补充了之前辐照密实化模型。
+
+燃料在堆内的密实化过程是温度、应力和辐照的函数。热烧结和压力烧结机理是压力驱动的，具体形式是：
+
+\[ P = P_e - P_i + 2\gamma / a \]
+
+其中：$P_e$（Pa）是外部静水压，$P_i$（Pa）是内部空隙压力，$\gamma$ ($J/m^2$) 是单位面积的表面能，$a$（m）晶粒尺寸。
+
+压力烧结是主要的密实化过程，因为在反应堆中$P_e$相比另外几项更大。只有在$P_e$等于0的时候，其他两项才有影响，但是都非常小，所以MATPRO中不考虑后面两项。
+
+上面没有包含辐照导数的应力变化。假设辐照密实化是可以直接想加到等式的右边。因为辐照密实化对应力的影响是线性的，所以独立对待。
+
+根据Solomon的$UO_2$实验数据拟合的晶格扩散蠕变方程如下：
+
+\[ \frac{1}{\rho} \frac{dp}{dt} = 48939 \left( \frac{1 - \rho}{\rho} \right)^{2.7} \frac{P}{TG^2} e^{-\frac{Q_p}{RT}} \]
+
+其中：$\rho$理论密度分数，$t$（s）时间，$P$（Pa）静水压，$T$（K）温度，$G$（$\mu m$）晶粒尺寸，$Q_u$（J/mol）活化能，$R = 8.314$(J/mol·K)。$UO_2$的活化能跟氧金属比（O/M）相关：
+
+\[ Q_u = R \left( \frac{9000}{e^{\left( \frac{20 - 81log(x-1.999)}{log(x-1.999)} \right) + 1.0}} + 36294.4 \right) \]
+
+其中$x$是氧金属比。
+
+根据Roubort的MOX实验结果拟合的晶格扩散变方程如下：
+
+\[ \frac{1}{\rho} \frac{dp}{dt} = 1.8 \times 10^7 \left( \frac{1 - p}{\rho} \right)^{2.25} \frac{P}{TG^2} e^{-\frac{48000}{RT}} \]
+
+每种的标准差均是$\pm 0.5\%$。
+
+模型的使用范围是1600-1700K，静水压2-6MPa。超过范围，使用的时候需要格外小心。
+
+\xsubsection{重构}{Restructuring}
+
+随着反应堆运行，燃料的形态和结构也会发生变化。这些变化是时间、温度、燃料和能量密度。结构的改变影响燃料热导率、燃料膨胀、裂变气体释放和燃料蠕变。辐照燃料的结构可以分为四类：制造中未重构的燃料，等轴晶粒（有较大的边长大或相同的放大的燃料晶粒），长轴平行于径向功率温度梯度的柱状晶粒，以及由于燃料晶粒组成的破碎或者烧结的晶粒（这些晶粒在高功率瞬变期间断裂而没有与其他晶粒结合）。
+
+MATPRO中的模型主要计算等轴晶粒尺寸、柱状晶粒尺寸以及正常或者瞬态反应堆运行期间燃料的破碎区域。
+
+晶粒生长是晶界的曲率或者温度梯度，晶粒生长速度受到晶界处的杂质移动的影响。由于杂质和迁移的机理可能相同，所以模型适用于$UO_2$和$(U, Pu)O_2$。
+
+等轴晶粒生长模型：
+
+\[ g = \left( \frac{1.0269 \times 10^{-13}te^{-\frac{35873.2}{T}}}{(1.0 + 5.746 \times 10^{-6}B)^2 T} + g_0 \right)^{1/4} \]
+
+其中：$g$（m）时间步结束之后的晶粒尺寸，$g_0$（m）开始时间步的晶粒尺寸，$t$（s）迭代时间，$T$（k）温度，$B$（MW/kg）燃烧。
+
+根据实验数据的标准差是$\pm 8.4 \times 10^{-6}$（m）。
+
+柱状晶粒是在透镜状（大透镜状）孔之后形成的，随着温度梯度在燃料中移动，表达式是：
+
+\[ V = \frac{49.22 \nabla Te^{-\frac{4800}{T}}}{T^2} \]
+
+其中：$V$（m/s）是气泡的移动速度，$\nabla T$（k/m）温度梯度，$T$（K）是温度。
+
+柱状晶粒的形成是阈值温度和温度梯度。阈值温度和时间、温度和温度梯度组合定义的，这些条件在一个时间步之内使得晶界或者气泡移动到颗粒直径的十分之一（大约是0.0005m）。柱状晶粒长轴是时间步长内孔隙迁移的长度或者到颗粒中心距离中较小的。如果一个时间步内迁移距离小于0.0005m，则不会产生柱状晶。如果在这一步之前产生了柱状晶，这一步没有产生，柱状晶仍然保持之前的状态；如果这一时间步产生柱状晶，则柱状晶的长度应该是这一步迁移距离和计算点到燃料中心距离两者中的比例的小的那个值。
+
+破碎燃料的形成是通过一个整数$NSHATR$表示，如果破碎，则表示为1，如果没有破碎，则表示为1。
+
+如果$E > E_D$和$T < T_m$同时柱状晶粒没有生成。
+
+$NSHATR=1$。
+
+如果$E < E_D$或者$T > T_m$或者柱状晶粒已经生成。
+
+$NSHATR=0$。
+
+其中：$E$（J/m³）是瞬态周期沉积的能量，$E_0$（J/m³）是在晶界处断裂所需要的能量，$T_m$（K）燃料的熔化温度，$T$（K）燃料的温度。
+
+晶界上断裂所需要的能量通过下式计算：
+
+\[ E_0 = \frac{8.64 \times 10^{-14}}{g} (T - 1673) \]
+
+\xsubsection{断裂强度}{Fracture Strength}
+
+MATPRO中计算$UO_2$的断裂强度模型是燃料温度和百分比密度的函数。模型的温度最高是1000K，是根据堆内的实验数据，对于高于1000K的温度，断裂强度认为是常数。
+
+\[ \sigma_F = \left\{
+	\begin{array}{l}
+		1.7 \times 10^8 [1 - 2.62(1 - D)]^{1/2} e^{- \frac{1800}{RT}}, \\
+		273 < T \leq 1000K
+	\end{array}
+	\right. \]
+
+其中，$\sigma_F$（Pa）断裂强度，$D$是理论密度分数，$T$（K）温度。
+
+\xsubsection{粘性}{Viscosity}
+
+粘性是模拟地壳损坏期间固有所需的重要参数之一。MATPRO中不考虑偏离化学计量和$UO_2$固体液体共存温度，同时也不考虑熔融$UO_2$的污染。
+
+粘性的计算方程根据温度不同分为三个部分，第一部分低于$UO_2$的熔点，$UO_2$的固液混合状态，完全的液态。完全的液态时侯的的粘性：
+
+\[ \eta_e = 1.23 \times 10^{-2} - 2.09 \times 10^{-6} T \]
+
+其中，$\eta_e$（Pa·s）液体动态粘度，$T$（K）温度，固态下的$UO_2$，粘度表达式是：
+
+\[ \eta_s = 1.38e^{(4.942 \times 10^4 / T)} \]
+
+其中，$\eta_s$（Pa·s）低于熔点的动态粘度。如果温度处于固液混合区间，粘性的计算方式：
+
+\[ \eta = \eta_s (1 - f) + \eta_e f \]
+
+其中，$\eta$（Pa·s）是固液混合的动力粘度，$f$（无单位）是燃料中液态占比。模型的不确定性是：
+
+\[ U = \eta A (1 + |\gamma - 2|) \]
+
+其中，$U$（Pa·s）是预估的不准确性，$A$是常数，低于熔点是0.67；高于熔点是0.33，$Y$是燃料的氧金属比。
+
+\xsubsection{蒸气压}{Vapor Pressure}
+
+在非常高的温度下，反应堆燃料中会产生蒸汽等于或者超过气腔气体或者裂变气体的压力。这些压力会影响导致包壳失效，由于蒸发的不一致（气体组成与燃料的成份不同）可能导致燃料的体积显著发生变化。燃料蒸汽包含的成分非常多。MATPRO的模型确定轴、环和混合氧化物的铜系元素蒸汽和氧蒸汽压，是燃料中氧金属比和温度的函数。
+
+对于轴：
+
+\[ log_{10}^P = -11191/T + 9.9932ln(T) - 0.00132T - 69.174 \]
+
+误差是：$SEOE(log_{10}) = \pm 0.206$
+
+对于环：
+
+\[ log_{10}(P) = (-5404.1 + 6854.6x)/T + 18.166ln(T) - 0.003389T - 130.65 \]
+
+误差是：$SEOE(log_{10}) = \pm 0.559$
+
+其中：$P$（Pa）是蒸气压，$X$是偏移化学计量（$O/M - 2$），$T$（K）温度。轴的蒸气压在所有的氧金属比条件下都是可用的。环的蒸气压在低化学计量的时候采用后者，因为在环或者混合氧化物燃料中不太可能是超化学计量比的。混合氧化物蒸气压使用各自成份的质量分数，乘以对应的蒸气压。
+
+对于氧$[Pu(O_2), Pu(0)]$或者$U_1$的蒸气压采用类似的方法：
+
+\[ log_{10}(P(O_2)) =
+	\begin{cases}
+		-14638.2/T + 21.775x + 6.2062,                   & O/M > 2.004         \\
+		-(49535 + 1418.11nx)/T + 15.181,                 & O/M < 1.99          \\
+		-\frac{14638}{T} + 1.8036ln(x + 0.004) + 6.2933, & 1.999 < O/M < 2.004
+	\end{cases} \]
+
+其中：$P(O_2)$是动态氧分压。随着接近化学剂量，氧分压迅速减少，使用下式计算：
+如果$-52708/T + 23.32 \leq log_{10}P(O_2)$,
+
+\[ log_{10}(P(O_2)) = -52708/T + 23.32 \]
+
+如果$-52708/T + 23.32 < log_{10}P(O_2)$, 仍然采用1.999-2.004范围内的结果。
+
+\xsubsection{燃料氧化}{Fuel Oxidation}
+
+MATPRO中的燃料氧化模型是计算在高于1150K$UO_2$的吸氧量，使用抛物线动力学建模，$UO_2$的氧化影响了化学成份，进而影响燃料的其他的材料属性。
+
+模型方程如下：
+
+\[ W^2 = 24.4e^{-\frac{26234}{T}} \Delta t + W_0^2 \]
+
+其中：$W$ ($kg/m^2$) 当前时间步结束之后的氧化重量的增加，$T$ (K) $UO_2$表面的温度，$\Delta t$ (s) 氧化的时间，$W_0$ ($kg/m^2$) 初始氧化重量的增加。模型的标准差在0.027 ($kg/m^2$)。
+
+氧化产生的功率如下：
+
+\[ P = \frac{(W - W_0)(1.84 \times 10^5)}{\Delta t} \]
+
+其中$P$ ($W/m^2$) 是热功率。
+
+\xsection{间隙换热}{Gap Heat Transfer}
+在核燃料棒的热工水力分析中，间隙换热是一个至关重要的物理过程。燃料芯块与包壳之间存在微小间隙，其传热特性直接影响燃料温度分布和核安全。本报告\footnote{虽然本报告是关于快堆，但是此部分采用的压水堆的研究结果}基于BISON燃料性能分析程序和MATPRO材料属性库，详细阐述间隙换热的物理模型、数学描述和数值实现方法。\\
+间隙换热采用多机制耦合的建模方法，总传热系数由三个主要部分组成：
+\[
+	h_{\text{gap}} = h_g + h_s + h_r
+\]
+其中： \( h_{\text{gap}} \)：间隙总传热系数（W/m\(^2\cdot\)K；\( h_g \)：气体传导系数，描述气体分子传热；\( h_s \)：固-固接触传导系数，考虑表面粗糙度导致的直接接触传热；\( h_r \)：辐射传热系数，考虑热辐射效应。
+
+这种多机制耦合的方法能够全面描述从接触压力变化到温度变化的复杂物理过程。
+\xsubsection{气体传导系数 $h_g$ 的详细模型}{Detailed Model of Gas Conductance $ h_g $}
+
+气体传导系数采用 Ross 和 Stoute 提出的经典模型：
+\[
+	h_g = \frac{k_g}{d_g + C_r(r_1 + r_2) + g_1 + g_2}
+\]
+该模型将气体传热视为串联热阻网络：其中,\( k_g \)：气体混合物的温度相关热导率（W/m·K）；\( d_g \)：几何间隙尺寸，由力学求解器计算得到；\( C_r \)：表面粗糙度系数，无量纲；\( r_1, r_2 \)：两个接触表面的粗糙度（m）；\( g_1, g_2 \)：温度跳跃距离（m），考虑稀薄气体效应。
+
+
+\subsubsection{$d_g$}{$d_g$}
+间隙尺寸 \( d_g \) 根据几何构型采用不同的计算方法：
+
+\begin{align*}
+	\text{平板几何：} & \quad d_g = \text{间隙宽度}                                            \\
+	\text{圆柱几何：} & \quad d_g = r \cdot \ln \left( \frac{r_2}{r_1} \right)             \\
+	\text{球体几何：} & \quad d_g = r^2 \cdot \left( \frac{1}{r_1} - \frac{1}{r_2} \right)
+\end{align*}
+
+其中 \( r_1 \) 和 \( r_2 \) 分别为内外半径，\( r \) 为平均半径。
+
+\subsubsection{温度跳跃距离模型（$g_1+g_2$}{Temperature Jump Distance Model ($g_1+g_2$)}
+
+温度跳跃距离（$g_1 + g_2$）表征壁面处气体温度与壁面温度之间的不连续性差异。目前提供两种基于Kennard理论的建模方法：
+
+\paragraph{LANDING模型}
+基于Laming和Hann的综述，温度跳跃距离计算如下：
+\begin{equation}
+	g_1 + g_2 = 5376 \left( \frac{2 - \alpha_{\text{mix}}}{\alpha_{\text{mix}}} \right)
+	\left( \frac{k_g\sqrt{T_g}}{P} \right)
+	\left( \sum_{i=1}^{10} \frac{f_i}{M_i} \right)^{-1/2}
+\end{equation}
+其中：$g_1 + g_2$ 单位为cm，$k_g$ 为气体热导率单位$\frac{cal}{cm-K-s}$，$P$ 为压力单位是$\frac{dynes}{cm^2}$，$f_i$ 为第$i$种气体的摩尔分数，$M_i$ 为第$i$种气体的分子量，$\alpha_{\text{mix}}$ 为气体混合物的热适应系数，$T_g$ 取两表面温度的平均值。
+
+\paragraph{TORTEX模型}
+基于Toptan等人的改进，针对平板、圆柱和球体几何形状：
+\begin{equation}
+	g = \frac{\sqrt{8\pi}}{(1+\gamma) \nu }\frac{k_g}{P\Lambda _{12}} \sqrt{\frac{T}{R_g M}}
+\end{equation}
+几何修正因子$\Lambda_{12}$的计算方法为：
+\begin{align}
+	\Lambda_{12} & = \frac{\alpha_1\alpha_2}{\alpha_1 + \alpha_2 - \alpha_1\alpha_2} \quad \text{(平板)}                             \\
+	\Lambda_{12} & = \frac{\alpha_1 \alpha_2}{\alpha_2+\alpha_1 (1-\alpha_2)\left( \frac{r_1}{r_2}\right)} \quad \text{(圆柱)}       \\
+	\Lambda_{12} & = \frac{\alpha_1 \alpha_2}{\alpha_2 + \alpha_1 (1-\alpha_2){\left( \frac{r_1}{r_2}\right)}^2} \quad \text{(球体)}
+\end{align}
+对于相似的平面，（$\alpha_1 = \alpha_2$），此时，几何修正因子$\Lambda_{12}$：
+
+\begin{align*}
+	\Lambda_{12} & = \frac{1}{2/\alpha - 1} \quad \text{(平板)}                                               \\
+	\Lambda_{12} & = \frac{1}{1/\alpha + (1/\alpha - 1) \left( \frac{r_1}{r_2} \right)} \quad \text{(圆柱)}   \\
+	\Lambda_{12} & = \frac{1}{1/\alpha + (1/\alpha - 1) \left( \frac{r_1}{r_2} \right)^2} \quad \text{(球体)}
+\end{align*}
+Kernnard的系数是：
+\begin{align*}
+	\frac{\sqrt{8\pi / R_g}}{(1 + \gamma)\nu} & \approx 0.2173 \quad \text{单原子气体（如He、Ar等）}       \\
+	                                          & \approx 0.1149 \quad \text{双原子气体（如N$_2$、O$_2$等）} \\
+	                                          & \approx 0.1242 \quad \text{多原子气体（如H$_2$O等）}
+\end{align*}
+
+热适应系数用于表征气固界面处的相互作用强度，反映气体分子与固体表面达到热平衡的程度。Knudsen最早提出热适应系数的概念，并将其定义为：
+
+\begin{equation}
+	T_i - T_r = \alpha(T_i - T_w)
+\end{equation}
+
+其中，$\alpha$ 为热适应系数，$T_r$ 为反射分子温度，$T_i$ 为入射分子温度，$T_w$ 为壁面温度。
+
+提供两种热适应系数计算模型：
+
+基于MATPRO数据库Allison等和Lanning与Hann的研究，氦气和氙气的热适应系数计算公式为：
+
+\begin{align}
+	\alpha_{\text{He}} & = 0.425 - 2.3 \times 10^{-4} T \\
+	\alpha_{\text{Xe}} & = 0.749 - 2.5 \times 10^{-4} T
+\end{align}
+
+对于混合气体，采用线性插值方法：
+
+\begin{equation}
+	\alpha_{\text{mix}} = \alpha_{\text{He}} + \frac{(\alpha_{\text{Xe}} - \alpha_{\text{He}})(M_{\text{mix}} - M_{\text{He}})}{(M_{\text{Xe}} - M_{\text{He}})}
+\end{equation}
+
+其中，$M_{\text{Xe}}$、$M_{\text{He}}$ 和 $M_{\text{mix}}$ 分别为氙气、氦气和混合气体的分子量。
+
+另一个是，基于Baule的硬球碰撞理论，并采用Goodman和Wachman公式的改进形式，Toptan等提出以下经验公式：
+
+\begin{equation}
+	\alpha(T) = 1 - \left(1 - \alpha_{\infty} \tanh \left[ \frac{\sqrt{M_g T}}{\alpha_{\infty}} \theta_1 \right] \right) \exp \left( -\frac{\theta_2}{T} \right)
+\end{equation}
+
+其中，$M_g$ 为入射气体分子量，$M_s$ 为固体分子量（标定时取 $M_s = 1 \times 10^5 \, \text{g/mol}$），$\Theta = \{ \theta_1, \theta_2 \}$ 为系数矩阵（见表3），$\alpha_{\infty} = 2.4\mu/(1+\mu)^2$，$\mu = M_g/M_s$ 为分子量比。
+
+\begin{table}[h]
+	\centering
+	\caption{惰性气体热适应系数计算参数 (Toptan等, 2019)}
+	\begin{tabular}{lccccc}
+		\hline
+		参数         & 氦      & 氖      & 氩     & 氪     & 氙     \\
+		\hline
+		$\theta_1$ & -1.055 & -0.611 & 0.032 & 0.344 & 0.784 \\
+		$\theta_2$ & 146.7  & 360.6  & 591.3 & 724.7 & 916.7 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+对于混合气体，Mikami等 (1966) 基于能量平衡提出：
+
+\begin{equation}
+	\alpha_m = \frac{\sum_{i=1}^n \frac{z_{ci}}{V_{M,i}}}{\sum_{i=1}^n \frac{z_{ci}}{V_{M,i}}}
+\end{equation}
+
+其中，求和遍历混合物的各个组分。
+
+\subsubsection{$k_g$}{$k_g$}
+$k_g$采用MATPRO模型中的混合气体热导率，总共考虑10中气体（氦气、氩气、氪气、氙气、氢气、氮气、氧气、一氧化碳、二氧化碳、水蒸气）。气体的温度是两个表面的平均温度。
+
+针对混合气体的热导率，采用MATPRO中的混合模型，具体公式如下所示：
+
+\[k_{mix} = \sum_{i}^{n} \frac{k_i x_i}{x_i + \sum_{j=1}^{n} (1 - \delta_{ij}) \Psi_{ij} x_j}\]
+其中的权重系数\(\Psi_{ij}\)
+\begin{equation*}
+	\Psi _{ij} = \phi_{ij} \left[ 1 + 2.41 \frac{(M_i - M_j)(M_i - 0.142M_j)}{(M_i + M_j)^2} \right]
+\end{equation*}
+其中二元交互系数\(\phi_{ij}\)
+\[\phi_{ij} = \frac{\left[ 1 + \left( \frac{k_i}{k_j} \right)^{1/2} \left( \frac{M_i}{M_j} \right)^{1/4} \right]^2}{2^{3/2} \left( 1 + \frac{M_i}{M_j} \right)^{1/2}}\]
+在气体混合物热导率的计算模型中，各参数的物理意义如下：\( k_i \) 表示纯组分~\(i\) 的热导率，
+\( x_i \) 为组分的摩尔分数，\( \delta_{ij} \) 为 Kronecker Delta 函数（当 \(i = j\) 时取值为~1，否则为~0），
+且分母中的求和项排除了 \(i = j\) 的情况（因为 \( \delta_{ii} = 1 \)，故 \( 1 - \delta_{ii} = 0 \)）。\\
+对于纯惰性气体和双原子气体，热导率采用幂函数形式计算：
+\[
+	k = AT^B
+\]
+其中 $A$ 和 $B$ 为经验系数，$T$ 为气体温度（K）。各气体的经验系数详见表\ref{tab:gas_thermal_conductivity}。
+
+\begin{table}[H]
+	\centering
+	\caption{气体热导率关联式经验系数}
+	\label{tab:gas_thermal_conductivity}
+	\begin{tabular}{cccc}
+		\toprule
+		\textbf{气体}         & \textbf{系数 A}            & \textbf{系数 B} & \textbf{适用温度范围 (K)} \\
+		\midrule
+		He                  & \(2.639 \times 10^{-3}\) & 0.7085        & 73--793             \\
+		Ne                  & \(9.000 \times 10^{-4}\) & 0.691         & 73--793             \\
+		Ne                  & \(9.683 \times 10^{-4}\) & 0.685         & 1000--1500          \\
+		Ar                  & \(2.986 \times 10^{-4}\) & 0.7224        & 73--793             \\
+		Ar                  & \(4.905 \times 10^{-4}\) & 0.651         & 1000--2500          \\
+		Kr                  & \(8.247 \times 10^{-5}\) & 0.8363        & 173--793            \\
+		Xe                  & \(4.351 \times 10^{-5}\) & 0.8616        & 173--793            \\
+		Xe                  & \(1.140 \times 10^{-4}\) & 0.710         & 1000--1500          \\
+		H\textsubscript{2}  & \(1.097 \times 10^{-3}\) & 0.8785        & ---                 \\
+		N\textsubscript{2}  & \(5.314 \times 10^{-4}\) & 0.6898        & ---                 \\
+		O\textsubscript{2}  & \(1.853 \times 10^{-4}\) & 0.8729        & ---                 \\
+		CO                  & \(1.403 \times 10^{-4}\) & 0.9090        & ---                 \\
+		CO\textsubscript{2} & \(9.460 \times 10^{-6}\) & 1.3120        & ---                 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+对于水蒸气的热导率，采用更复杂的关联式，具体如下所示：
+\begin{equation*}
+	k_g = 17.6\times10^{-3} + T_C[5.87\times10^{-5} + T_C(1.04\times10^{-7} - 4.51\times10^{-11}T_C)]
+\end{equation*}
+其中$T_C = T - 273.15$，单位为摄氏度（°C）。\\
+MATPRO中对于水蒸气热导率的计算公式更为复杂，具体如下所示：
+当 \(T \leq 973.15\) K时：
+\begin{multline*}
+	k_{\text{steam}} = \left(-2.8516 \times 10^{-8} + 9.424 \times 10^{-10} T - 6.005 \times 10^{-14} T^2\right)\frac{P}{T} \\
+	+ \left[17.6 + 5.87 \times 10^{-5} (T - 273) + 1.08 \times 10^{-7} (T - 273)^2 \right. \\
+		\left. - 4.51 \times 10^{-11} (T - 273)^3\right] \times \frac{1.009 P^2}{T^2 (T - 273)^{4.2}}
+\end{multline*}
+当 \(T > 973.15\) K时：
+\begin{equation*}
+	k_{\text{steam}} = 4.44 \times 10^{-6} T^{1.45} + 9.5 \times 10^{-5} \left( \dfrac{2.1668 \times 10^{-9}}{T} P \right)^{1.3}
+\end{equation*}
+
+其中： \(T\) 为气体温度（K），\(P\) 为气体压力（N/m\(^2\)），热导率 \(k\) 的单位为 W/(m·K)。
+
+上述的关联式中，热导率和温度相关，校准数据也是压力小于0.1MPa的实验数据。但是实际上气体的热导率与压力相关，且根据压力的不同可以分为三个区域：低压区、中压区和高压区。
+\begin{itemize}
+	\item 极低压区：\(P < 0.1\) kPa，即Kundsen区域，该区域内热导率和压力几乎线性相关。
+	\item 低压区：\(P < 1\)MPa，压力对热导率的影响微乎其微。
+	\item 高压区：\(P > 1\)MPa，压力增加会导致热导率增加
+\end{itemize}
+考虑到这种特性，Tournieer和EI-Genk将热导率表示为：
+\begin{equation}
+	k_g(T,P) = k_g^0(T) + k_{g,c}^* \Psi_k \left( \frac{\rho}{\rho_{cr}} \right),
+\end{equation}
+
+其中各参数定义如下：
+
+\begin{align}
+	k_g^0     & = \left( \frac{15R_g}{4M} \right) \mu^0(T),                                          \\
+	\mu^0     & = A_\mu (T - T_\mu)^n,                                                               \\
+	k_{g,c}^* & = \frac{0.201 \times 10^{-4} T_{cr}^{0.277} M^{-0.465}}{(0.291 \times V^*)^{0.415}}, \\
+	V^*       & = \left( \frac{R_g T_{cr}}{P_{cr}} \right),                                          \\
+	\Psi_k    & = 0.645\rho_r + 0.331\rho_r^2 + 0.0368\rho_r^3 - 0.0128\rho_r^4,                     \\
+	\rho_r    & = \frac{\rho}{\rho_{cr}}.
+\end{align}
+各参数的物理意义如下：$k_g^0$ 为基于动力学理论的纯稀薄气体热导率，$\mu^0$ 为纯稀薄气体的动态粘度，$k_{g,c}^*$ 为拟临界热导率，$V^*$ 为特征摩尔体积，$\Psi_k$ 为超额热导率，$M$ 为分子量，$\rho_r$ 为约化密度。$R_g$为气体常数。\\
+表\ref{tab:critical_properties} 列出了 Tournier 和 El-Genk (2008) 提供的临界气体物性参数。
+
+\begin{table}[htbp]
+	\centering
+	\caption{临界气体物性参数}
+	\label{tab:critical_properties}
+	\begin{tabular}{cccccc}
+		\toprule
+		参数                     & 氦(helium) & 氖(neon) & 氩(argon) & 氪(krypton) & 氙(xenon) \\
+		\midrule
+		$M$ (g/mol)            & 4.003     & 20.180  & 39.948   & 83.798     & 131.293  \\
+		$P_{cr}$ (MPa)         & 0.2275    & 2.678   & 4.863    & 5.51       & 5.84     \\
+		$T_{cr}$ (K)           & 5.2       & 44.5    & 150.69   & 209.4      & 289.7    \\
+		$\rho_{cr}$ (kg/m$^3$) & 69.64     & 481.9   & 535.6    & 908.4      & 110.0    \\
+		$A_\mu \times 10^7$    & 3.063     & 8.4528  & 6.989    & 6.963      & 7.568    \\
+		$T_\mu$ (K)            & -21.33    & 16.47   & 65.70    & 71.07      & 112.31   \\
+		$n$                    & 0.724     & 0.643   & 0.640    & 0.667      & 0.655    \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+随着流体密度的增加，其行为会偏离理想气体。文献中引入了多种修正方法，从而基于宏观热力学性质和粒子相互作用得到了理想气体定律的维里展开形式。维里状态方程由下公式表示。若已知气体的温度和压力，则可通过求解公式（5）中的三次方程来计算气体密度，并采用求根算法获得密度值。由于这是一个三次方程，可能存在三个解，其中最高的实数解被指定为气体的摩尔密度。请注意，仅当为填充气体热导率选择了“高级”选项时，才会计算气体密度。
+
+\[
+	\frac{P}{R_g T} = \hat{\rho} + B_2(T) \hat{\rho}^2 + B_3(T) \hat{\rho}^3,
+\]
+
+其中，\( P \) 为压力（Pa），\( T \) 为温度（K），\( R_g \) 为理想气体常数（8.314 J/mol·K），\( Z  = \frac{P}{\hat{\rho} R_g T}  \) 为压缩因子，\( \hat{\rho} = 1/V \) 为摩尔密度，\( B_i(T) \) 为第 \( i \) 维里系数，且仅为温度的函数。
+
+对于氙(Xe)、氪(Kr)、氩(Ar)、氖(Ne)等气体，其约化维里系数可通过以下经验公式计算：
+\[
+	B_{2,r} = -102.6 + \left( 102.732 - 0.001\theta - 0.44\theta^{-1.22} \right) \tanh(4.5\sqrt{\theta})
+\]
+
+\[
+	B_{3,r} = 0.0757 + \left( -0.0862 - 3.6 \times 10^{-5}\theta + 0.0237\theta^{-0.089} \right) \tanh(0.84\theta)
+\]
+
+其中：\( B_{2,r} = B_2/V^* \)，\( B_{3,r} = B_3/V^{*2} \)（约化系数）；\( \theta = T/T_{cr} \)（约化温度，\( T_{cr} \) 为临界温度）
+
+考虑到氦气在常规条件下的稀薄气体特性，采用简化处理方案：
+\[
+	B_2^{He}(T) = 8.4 - 0.0018T + \frac{115}{T} - \frac{858}{T}
+\]
+由于氦气的稀薄气体行为，其第三维里系数对状态方程的影响可忽略不计
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{plot1_full_gases_comparison.png}
+\end{figure}
+
+\xsubsection{固-固接触传导系数 \( h_s \) 的详细模型}{solid-solid contact}
+
+当两个固体表面发生部分或完全接触时，需引入附加项以描述界面处的热量传递。该界面热阻被称为收缩电阻（或接触电阻）$ R_c $，其定义为：
+
+\begin{equation}
+	R_c = \frac{\Delta T_c}{(q/A)} = \frac{1}{h_c A}
+\end{equation}
+
+其中，$ q $ 为热流率，$ \Delta T_c $ 为克服接触热阻所需的温降，$ A $ 为表观接触面积。
+
+该问题的理论研究始于Kottler (1927) 对电导体的类比分析。Maxwell (1954) 指出温度差在热流中的角色类似于电势在电流理论中的角色。Holm (1958) 在此基础上，求解了半无限大物体平面上半径为 $ r_a $ 的等温圆形接触区的热收缩电阻，结果为 $ R_c = 1/(4r_a k) $；对于两个相同的半无限物体，总收缩电阻为 $ R_c = 1/(2r_a k) $。Clark与Powell (1962) 推导了两个不同材质的半无限物体通过圆形接触区域的总收缩电阻：
+
+\begin{equation}
+	R_c = \left( \frac{1}{4r_a k_1} + \frac{1}{4r_a k_2} \right) = \frac{1}{2r_a k_m}
+\end{equation}
+
+若假设理想的接触几何形态，特定区域内 $ n_a $ 个固体接触点的总并联电阻可近似为 $ R_c = 1/(2r_a k_m n_a) $ (Clausing and Chao, 1965)。一旦表观面积已知，即可通过近似收缩电阻估算接触导热系数。
+
+接触面积的分析至关重要。Archard指出，当变形为纯弹性时，接触面积 $ A_a \propto K W^{2/3} $，其中 $ K $ 为取决于局部曲率半径和材料弹性常数的常数。而当微凸体发生塑性变形时，接触面积与 $ A_a \propto W/p_m $ 相关，$ p_m $ 为较软材料的流动压力或硬度 (Archard, 1953; 1957)。表观面积与真实接触面积之间的关系可概括为：
+
+\begin{equation}
+	\frac{A_a}{A} \propto \left( \frac{W}{H} \right)^n
+	\label{eq:contact_area}
+\end{equation}
+
+其中，$ W $ 为接触界面载荷（即接触压力），$ H $ 为较软材料的迈耶硬度，$ n $ 为偏离弹性变形的指数（例如，$ n = 0 $ 为弹性，$ n = 1 $ 为塑性）。
+
+由于实际接触面积几乎与载荷成正比 (Bowden and Tabor, 1950)，早期的热接触模型普遍采用塑性变形机制。将总接触面积 $ A_a = \pi r_a^2 n_a $ 代入式(\ref{eq:contact_area})可得接触导热系数：
+
+\begin{equation}
+	h_c = \frac{2 r_a k_m n_a}{A_a} = C \frac{k_m}{r_a} \left( \frac{W}{H} \right)
+\end{equation}
+
+由于接触形状、表面微凸体变形及接触点数量难以精确测定，在核燃料性能建模中常使用近似的间隙闭合关系。Ross-Stoute模型 (Ross and Stoute, 1962) 是一个常用的固体接触模型，其中 $ r_a $ 作为表面粗糙度 $ \epsilon $ 的函数被引入关联式。BISON中的默认模型是该关联式的修改版本：
+
+\begin{equation}
+	h_c = C \frac{k_m}{\delta} \left( \frac{P_c}{H} \right)
+\end{equation}
+
+其中，$ C $ 为经验常数，$ k_m $ 为接触固体材料的等效热导率，$ P_c $ 为接触压力，$ \delta $ 为平均气膜厚度（近似为 $ 0.8(\epsilon_1 + \epsilon_2) $），$ H $ 为较软材料（即包壳）的迈耶硬度。根据钢与铝接触的测量结果，Ross与Stoute (1962) 推荐 $ C = 10  \, \text{m}^{-1/2} $，此值为BISON中的默认值。迈耶硬度的默认值为 $ 680 \, \text{MN/m}^2 $。此外，程序中也可选用以下与温度相关的关联式 (Hagermann et al., 1980)：
+
+\begin{equation}
+	H(\text{N/m}^2) = \exp(26.034 - 2.6394 \times 10^{-2}T + 4.3502 \times 10^{-5}T^2 - 2.5621 \times 10^{-9}T^3)
+\end{equation}
+
+作为可选功能，燃料-包壳界面处的化学相互作用层可在接触项中加以考虑。基于实验工作 (Kim, 2010)，在燃料-包壳接触期间考虑 $ \text{U}_Z\text{O}_{2-x} $ 层的生长，并通过抛物线规律描述：
+
+\begin{equation}
+	\frac{dS^2}{dt} = G
+\end{equation}
+
+其中，$ S $ (m) 为层厚度，$ G = 4 \times 10^{-18} \, \text{m}^2/\text{s} $ (Kim, 2010) 为抛物线生长速率。式(18)通过下式数值求解：
+
+\begin{equation}
+	S_i = \sqrt{G \Delta t + S_{i-1}^2}
+\end{equation}
+
+其中，$ S_i $ 为当前时间步的层厚度 (m)，$ S_{i-1} $ 为前一时间步的层厚度 (m)，$ \Delta t $ 为时间增量 (s)。该化学相互作用层假定按其厚度填充燃料和包壳的粗糙度，从而有效减小式(17)中的 $ \epsilon_1 $ 和 $ \epsilon_2 $，改善传热。
+
+\xsubsection{辐射传热系数 \( h_r \) 的详细模型}{Detailed Model of Solid-Solid Contact Conductance $h_s$}
+
+\subsubsection{Stefan-Boltzmann 定律与线性化}{Stefan-Boltzmann Law and Linearization}
+基于 Stefan-Boltzmann 定律：
+\[
+	q_r = \sigma F_e (T_1^4 - T_2^4)
+\]
+为便于数值计算，采用线性化近似：
+\[
+	q_r \approx h_r (T_1 - T_2)
+\]
+推导得到辐射传热系数：
+\[
+	h_r \approx \frac{\sigma F_e (T_1^4 - T_2^4)}{T_1 - T_2} = \sigma F_e (T_1^2 + T_2^2)(T_1 + T_2)
+\]
+
+\subsubsection{发射率函数}{Emissivity Function}
+对于无限大平行平板构型：
+\[
+	F_e = \frac{1}{1/\epsilon_1 + 1/\epsilon_2 - 1}
+\]
+其中 \( \epsilon_1 \) 和 \( \epsilon_2 \) 为两表面的发射率。
+
+
+\xsection{裂变气体}{Fission Gas}
+在核反应堆燃料元件的服役过程中，裂变气体的行为是决定燃料棒热力学性能和安全裕度的关键因素之一。氧化物核燃料（如 UO$_2$ 或 MOX\footnote{本章所述的物理模型及基础参数主要源自二氧化铀（UO$_2$）的实验数据与理论推导。考虑到混合氧化物燃料（MOX）与 UO$_2$ 具有相似的萤石结构及物理化学性质，其裂变气体行为的基本物理机制（如扩散、捕获、晶界演化等）是通用的。在MOX燃料性能分析中，通常采用这套物理框架，并根据需要对特定参数（如扩散系数、氦气生成率）进行修正。本研究采用该通用物理模型作为分析基础。}）在发生核裂变反应时，会产生大量的裂变产物。其中，惰性气体氙（Xe）和氪（Kr）约占总裂变产物的 15\%。由于这些惰性气体原子在燃料晶格中的溶解度极低，它们倾向于从晶格中析出，形成气泡或释放到燃料棒自由体积中。
+
+裂变气体的行为对燃料棒的安全性主要体现在以下两个方面：
+\begin{enumerate}
+	\item \textbf{热学影响}：裂变气体释放（Fission Gas Release, FGR）进入燃料棒的包壳气隙（Gap）和顶部气腔，会显著降低填充气体的导热系数。这会导致燃料芯块表面温度升高，进而通过正反馈机制进一步促进气体的扩散与释放。
+	\item \textbf{力学影响}：滞留在燃料基体内部的气体原子会聚集形成气泡。气泡在高温和低静水压力下会发生显著的体积膨胀，导致燃料发生气态肿胀（Gaseous Swelling）。肿胀会加速芯块与包壳间隙的闭合，并在后期引发芯块-包壳机械相互作用（PCMI），可能导致包壳破损。
+\end{enumerate}
+
+随着核燃料技术向高燃耗和高性能方向发展，深入理解裂变气体在微观尺度的演化机制（如高燃耗结构形成、氦气行为等）变得愈发关键。建立一套基于物理机制（Physics-based）的数学模型，准确描述气体在晶内及晶界的输运过程，是本研究的核心内容。
+
+控制裂变气体肿胀和释放动力学的基本物理过程是一个跨尺度的复杂系统。燃料中的气体演化可概括为以下几个物理阶段：
+
+\begin{enumerate}
+	\item \textbf{生成与晶内扩散}：气体原子在晶粒内部通过裂变产生。在高温驱动下，单原子在晶格中进行热扩散。
+	\item \textbf{晶内捕获与再溶解}：在扩散过程中，气体原子易被晶内缺陷（如空位簇、位错）或纳米级气泡捕获（Trapping）。同时，高能裂变碎片的轰击会将气泡中的原子重新打回晶格中（Re-solution）。这种动态平衡决定了向晶界扩散的有效通量。此外，值得注意的是，晶内纳米气泡对总体积肿胀的贡献通常远小于晶界气泡（在燃耗低于 45 GWd/t 时尤为显著）
+	\item \textbf{晶界积聚与气泡生长}：气体原子扩散至晶粒边界（Grain Boundary）后，虽然少部分会被辐照再次再溶解回晶内，但绝大多数会聚集并形成微米级气泡。由于持续的气体流入，这些气泡通常处于高内压的“非平衡态”。这种气泡过压作为热力学驱动力，促使气泡吸收空位以降低自由能，从而导致气泡体积显著增长并引发晶界肿胀。
+	\item \textbf{连通与释放}：随着晶界气泡的生长和合并，它们最终会在晶面上形成相互连通的“隧道网络”。当网络贯通至自由表面时，气体便从晶界释放到燃料棒外部。
+\end{enumerate}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Basic_mechanisms_of_fission_gas_release.jpg}
+	\caption{裂变气体在核燃料中的行为示意图\cite{cazadoModelNuclearFuel2018}}
+	\label{fig:fission_gas_behavior}
+\end{figure}
+
+\xsubsection{晶内气体行为模型}{Intragranular Gas Behavior Model}
+\subsubsection{单原子扩散与气泡行为模型}{Single Atom Diffusion and Bubble Behavior Model}
+关于空间问题，晶粒内扩散采用经典的 Booth 方法处理，即假设半径为 $a$ 的球形晶粒。根据 Speight 最初提出的近似，我们求解总晶粒内气体浓度，该浓度由单原子气体浓度 $c_{1}$ 和被捕获在晶粒内气泡中的气体浓度 $m$ 之和给出：
+\begin{equation}
+	\frac{\partial}{\partial t}(c_{1}+m)=\frac{b}{b+g}D\frac{1}{r^{2}}\frac{\partial}{\partial r}r^{2}\frac{\partial}{\partial r}(c_{1}+m)+yF
+\end{equation}
+其中 $D$ 是单原子扩散系数（表格\ref{tab:diffusivity}), $g$是气体原子被捕获到气泡中的速率（表格\ref{tab:intra-granular-trapping-rate}），$b$ 是辐照诱导的气体原子从气泡重溶回到晶格中的速率（表格\ref{tab:intra-granular-resolution-rate}），$y$ 是裂变气体的裂变产额，$F$ 是裂变率，$r$ 是球形晶粒内的径向坐标，$t$ 是时间。$\alpha/(\alpha+\beta) D$ 被称为有效扩散系数，解释了单原子可用于向晶界扩散的时间比例（即未被捕获在晶粒内气泡中）
+
+\begin{table}[h!]
+	\centering
+	\caption{晶粒内单原子扩散系数 $D\,(\mathrm{m}^2\mathrm{s}^{-1})$ 的计算模型}
+	\label{tab:diffusivity}
+
+	\begin{tabular}{p{11cm} p{4cm}}
+		\toprule
+		扩散系数模型       & 参考文献                                           \\
+		\midrule
+
+		常数扩散系数（试算模型） & --                                             \\
+
+		\addlinespace[1.5ex]
+
+		\textbf{Turnbull 模型（热扩散 + 辐照增强扩散 + 非热扩散）} \newline
+		$\begin{aligned}
+				 D & = 7.6 \times 10^{-10}
+				 \exp\!\left(-\dfrac{4.86 \times 10^{-19}}{k_B T}\right) \\
+				   & \quad + 5.64 \times 10^{-25}
+				 \sqrt{F}\,
+				 \exp\!\left(-\dfrac{1.91 \times 10^{-19}}{k_B T}\right)
+				 + 8.0 \times 10^{-40} F
+			 \end{aligned}$
+		             & \cite{turnbullDiffusionCoefficientFission1989} \\
+
+		\addlinespace
+
+		\textbf{Matzke 模型（经验 Arrhenius 形式）} \newline
+		$D = 5.0 \times 10^{-8} \exp(-40262/T)$
+		             & \cite{matzkeGasReleaseMechanisms1980a}         \\
+
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\caption{晶粒内气体原子捕获率 $g\,(\mathrm{s}^{-1})$ 的物理模型}
+	\label{tab:intra-granular-trapping-rate}
+
+	\begin{tabular}{p{11cm} p{4cm}}
+		\toprule
+		捕获率模型及参数说明  & 参考文献                                              \\
+		\midrule
+
+		常数捕获率（试算模型） & --                                                \\
+
+		\addlinespace
+
+		\textbf{基于 Ham 理论的扩散控制捕获模型} \newline
+		$\displaystyle
+			g = 4\pi D (R_{ig} + R_{sg}) N_{ig}
+		$ \newline
+		其中：$D$ 为晶粒内扩散系数；$R_{ig}$ 为晶内气泡半径；\newline
+		$R_{sg}$ 为气体原子有效半径；$N_{ig}$ 为晶内气泡数密度
+		            & \cite{hamTheoryDiffusionlimitedPrecipitation1958} \\
+
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\caption{晶粒内气泡再溶解率 $b\,(\mathrm{s}^{-1})$ 的计算模型}
+	\label{tab:intra-granular-resolution-rate}
+
+	\begin{tabular}{p{11cm} p{4cm}}
+		\toprule
+		再溶解率模型及参数说明  & 参考文献                                                                   \\
+		\midrule
+
+		常数再溶解率（试算模型） & --                                                                     \\
+
+		\addlinespace
+
+		\textbf{辐照诱导再溶解模型（Turnbull 型）} \newline
+		$\displaystyle
+			b = 2\pi \mu_{\rm ff} (R_{ig} + R_{ff})^2 F
+		$ \newline
+		其中：$\mu_{\rm ff}=6.0\times10^{-6}\,\mathrm{m}$ 为裂变碎片径迹长度；\newline
+		$R_{ff}=1\,\mathrm{nm}$ 为裂变碎片径迹半径
+		             & \cite{turnbullDiffusionCoefficientFission1989}                         \\
+
+		\addlinespace
+
+		\textbf{经验型辐照再溶解模型} \newline
+		$\displaystyle
+			b = 3.0 \times 10^{-23} F
+		$
+		             & \cite{losonenModellingIntragranularFission2002}                        \\
+
+		\addlinespace
+
+		\textbf{考虑氦气热再溶解的扩展模型} \newline
+		$\displaystyle
+			b = 2\pi \mu_{\rm ff} (R_{ig,\mathrm{He}} + R_{ff})^2 F + \gamma
+		$ \newline
+		其中热再溶解率：
+		$\displaystyle
+			\gamma = \frac{3 D_{\mathrm{He}} k_H k_B T Z}{R_{ig,\mathrm{He}}^2}
+		$ \newline
+		$\displaystyle
+			k_H = 4.1 \times 10^{24} \exp\!\left(-\frac{7543.5}{T}\right)
+		$ \newline
+		适用于 $1073$--$1773~\mathrm{K}$
+		             & \cite{vanbrutzelNewEquationState2019,cogniniHeliumSolubilityOxide2018} \\
+
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+\subsubsection{晶内气泡的演化与肿胀}{Intragranular Gas Behavior Model}
+对于晶粒内气泡浓度 $N_{ig}$ 的演化，当前模型假设气泡以成核率 $\nu$（表格\ref{tab:nucleation-rate}）形成，并因辐照诱导的再溶解而被破坏。因此，$N_{ig}$ 的演化方程为：
+\begin{equation}
+	\frac{dN_{ig}}{dt} = \nu - \alpha N_{ig}
+\end{equation}
+其中$N_{ig}$表示晶粒内的气泡浓度，$\nu$表示气泡成核速率，$b$表示由于辐照导致的晶内气泡分解速率。
+
+\begin{table}[h!]
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\caption{晶粒内气泡形核率 $\nu$ 的物理模型}
+	\label{tab:nucleation-rate}
+
+	\begin{tabular}{p{11cm} p{4cm}}
+		\toprule
+		形核率模型及参数说明  & 参考文献                                                                                           \\
+		\midrule
+
+		常数形核率（试算模型） & --                                                                                             \\
+
+		\addlinespace
+
+		\textbf{与裂变率相关的经验形核模型} \newline
+		$\displaystyle
+			\nu = 2 \eta F \qquad
+			(\text{bub}\,\mathrm{m}^{-3}\mathrm{s}^{-1})
+		$ \newline
+		其中：$\eta = 25$，表示单位裂变碎片产生的气泡数
+		            & \cite{whiteNewFissiongasRelease1983,olanderResolutionFissionGas2006,bakerFissionGasBubble1977} \\
+
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+基于每个气泡包含 $m/N_{ig}$ 个原子的假设，计算晶内气泡半径 $R_{ig}$：
+\begin{equation}
+	R_{ig} = \left( \frac{3\Omega}{4\pi} \frac{m}{N_{ig}} \right)^{1/3}
+\end{equation}
+其中，$\Omega = 4.09 \times 10^{-29}~\mathrm{m}^{3}\cdot\mathrm{at}^{-1}$ 为晶格中的气体原子体积。由此可推导出气体肿胀的晶内分量：
+\begin{equation}
+	\left( \frac{\Delta V}{V} \right)_{ig} = \frac{4}{3}\pi N_{ig}R_{ig}^{3}
+\end{equation}
+
+\xsubsection{晶界裂变气体行为模型}{Intergranular Fission Gas Behavior Model}
+
+当裂变气体原子通过晶粒内扩散到达晶界后，其行为主要表现为晶界气泡的成核、生长、互连以及由此引起的气体释放过程。为描述上述机制，本文采用基于物理过程的晶界裂变气体演化模型，该模型适用于稳态与瞬态等不同堆内工况。
+
+\subsubsection{晶界气体守恒与扩散通量}{Intergranular Gas Conservation and Diffusion Flux}
+晶界气体面密度 $q$（$\text{at m}^{-2}$）的演化由晶粒内部向晶界的扩散通量与晶界释放项共同控制，其控制方程为
+\begin{equation}
+	\frac{\partial q}{\partial t}
+	=
+	-\left[
+		\frac{3}{a}
+		\frac{\alpha}{\alpha+\beta}
+		D
+		\frac{\partial}{\partial r}(c_{1}+m)
+		\right]_{r=a}
+	-
+	R
+\end{equation}
+其中，第一项表示从晶粒内部扩散至晶界的单原子气体通量，$a$ 为晶粒半径，$D$ 为晶粒内气体扩散系数，$\alpha$ 与 $\beta$ 分别表示辐照诱导再溶解与气泡捕获过程的速率常数；$R$ 表示晶界气体释放速率。
+
+模型假设：到达晶界的气体原子被迅速捕获并储存在晶界气泡中，因此晶界上不存在自由单原子气体；同时忽略晶界气泡中气体的再溶解过程，且晶棱气泡未被显式建模。晶界气泡假定为在晶面上瞬时成核\cite{whiteDevelopmentGrainfacePorosity2004}，并呈圆形投影的透镜状几何形态。气泡内部气体压力通过吸收沿晶界扩散而来的空位得到松弛，其生长过程由晶界空位扩散系数 $D_v$ 所控制，并最终达到力学平衡状态 \cite{speightVacancyPotentialVoid1975}。
+
+晶界空位扩散系数 $D_v$ 的可选模型列于表格\ref{tab:Dv}。
+
+\begin{table}[h!]
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\caption{晶界空位扩散系数 $D_v$（$\mathrm{m}^2\mathrm{s}^{-1}$）的计算模型}
+	\label{tab:Dv}
+
+	\begin{tabular}{p{11cm} p{4cm}}
+		\toprule
+		空位扩散系数模型 & 参考文献                                             \\
+		\midrule
+
+		常数扩散系数（低温或数值试算假设） \newline
+		$D_v = 1.0 \times 10^{-30}\ \mathrm{m}^2\mathrm{s}^{-1}$
+		         & --                                               \\
+
+		\addlinespace
+
+		\textbf{Arrhenius 型晶界空位扩散模型} \newline
+		$\displaystyle
+			D_v = 6.9 \times 10^{-4}
+			\exp\!\left(-\frac{3.88 \times 10^{4}}{T}\right)
+		$ \newline
+		其中 $T$ 为绝对温度（K）
+		         & \cite{reynoldsGrainboundaryDiffusionUranium1979} \\
+
+		\addlinespace
+
+		\textbf{修正系数形式的经验模型} \newline
+		$\displaystyle
+			D_v = \frac{3}{5}\,
+			8.86 \times 10^{-6}
+			\exp\!\left(-\frac{4.17 \times 10^{4}}{T}\right)
+		$
+		         & \cite{pastoreUncertaintySensitivityAnalysis2015} \\
+
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+\subsubsection{晶界气泡生长与互连}{Growth and Interconnection of Intergranular Bubbles}
+通常情况下，晶界气泡处于非平衡状态，并通过吸收或发射空位来恢复平衡。假设晶面气泡呈圆形投影的透镜状（Lenticular shape），其气体内压的机械平衡值 $p_{\mathrm{eq}}$ 表示为：
+\begin{equation}
+	p_{\mathrm{eq}} = \frac{2\gamma}{R_{\mathrm{gf}}} - \sigma_{\mathrm{h}}
+\end{equation}
+其中，$\gamma$ 为 $\mathrm{UO}_2$/气体比表面能，$\sigma_{\mathrm{h}}$ 为静水应力（若固体介质处于受压状态，则取负值）。
+
+晶界气泡的生长（或收缩）过程采用 Speight 和 Beere 模型 \cite{speightVacancyPotentialVoid1975} 描述，即由晶界上产生的空位的吸收（或发射）控制。气泡处的空位吸收/发射速率 $\frac{\mathrm{d}n_{\mathrm{v}}}{\mathrm{d}t}$ 给出为：
+\begin{equation}
+	\frac{\mathrm{d}n_{\mathrm{v}}}{\mathrm{d}t} = \frac{2\pi D_{\mathrm{v}} \delta_{\mathrm{g}}}{kTS} (p - p_{\mathrm{eq}})
+\end{equation}
+其中，$n_{\mathrm{v}}$ 为气泡内的空位数量，$D_{\mathrm{v}}$ 为晶界空位扩散系数，$\delta_{\mathrm{g}}$ 为晶界扩散层厚度，$k$ 为玻尔兹曼常数，$T$ 为温度。$S$ 为取决于晶面气泡覆盖率 $F_{\mathrm{gf}}$ 的几何因子：
+\begin{equation}
+	S = \frac{-((3 - F_{\mathrm{gf}}) \cdot (1 - F_{\mathrm{gf}}) + 2 \ln(F_{\mathrm{gf}}))}{4}
+\end{equation}
+气泡体积 $V_{\mathrm{gf}}$ 由包含 $n_{\mathrm{g}}$ 个裂变气体原子和 $n_{\mathrm{v}}$ 个空位共同决定：
+\begin{equation}
+	V_{\mathrm{gf}} = n_{\mathrm{g}}\omega + n_{\mathrm{v}}\Omega_{\mathrm{gf}}
+\end{equation}
+其中，$\omega$ 为裂变气体原子的范德华体积，$\Omega_{\mathrm{gf}}$ 为晶界气泡内的原子（空位）体积。
+
+随着上述机制驱动的晶界气泡生长，气泡之间逐渐发生互连。晶面上的气泡面密度 $N_{\mathrm{gf}}$（$\mathrm{bub}\cdot\mathrm{m}^{-2}$）随其在晶面上的平均投影面积 $A_{\mathrm{gf}}$（$\mathrm{m}^2\cdot\mathrm{bub}^{-1}$）的增加而降低，演化关系遵循 \cite{whiteDevelopmentGrainfacePorosity2004}：
+\begin{equation}
+	\frac{\mathrm{d}N_{\mathrm{gf}}}{\mathrm{d}A_{\mathrm{gf}}} = -2N_{\mathrm{gf}}^{2}
+\end{equation}
+晶界气泡生长与互连的净效应表现为晶面覆盖率
+\begin{equation}
+	F_{\mathrm{gf}} = N_{\mathrm{gf}} A_{\mathrm{gf}}
+\end{equation}
+的持续增加。当覆盖率达到饱和值
+\begin{equation}
+	F_{\mathrm{gf}} = F_{\mathrm{gf,sat}} = 0.5
+\end{equation}
+时，假设沿晶面形成了连续的渗流路径（Percolated path），从而允许裂变气体从晶界释放。
+
+一旦发生晶界渗流，由晶粒内部扩散而来的气体原子将不再完全滞留于晶界气泡中，因此晶界肿胀速率随之降低。
+
+晶界气体引起的体积肿胀采用如下机理模型描述：
+\begin{equation}
+	\left(\frac{\Delta V}{V}\right)_{\mathrm{gf}}
+	=
+	\frac{3}{a} \cdot
+	\frac{4\pi}{3}
+	N_{\mathrm{gf}}
+	R_{\mathrm{gf}}^{3}
+\end{equation}
+其中，$R_{\mathrm{gf}}$ 为晶界气泡半径，$\frac{3}{a}$ 为燃料晶粒的比表面积。
+
+在上述晶界气泡演化模型的基础上，进一步考虑晶界微裂纹对裂变气体释放行为的影响。该机制采用基于文献 \cite{baraniAnalysisTransientFission2017, pastoreModellingTransientFission2014} 的半经验模型描述 \cite{tonksUnitMechanismsFission2018, notleyStepwiseReleaseFission1966,carrollFissionDensityBurnup1969,uneFissionGasRelease1990,ducrosSynthesisVERCORSExperimental2013}。通过引入未发生微裂纹的晶界面积比例 $f_{gf}$，晶界覆盖率及其饱和值的演化可分别表示为
+\begin{equation}
+	\frac{dF_{gf}}{dt}
+	=
+	\frac{\partial F_{gf}}{\partial q}
+	\frac{dq}{dt}
+	+
+	F_{gf}
+	\left(
+	\frac{df_{gf}}{dt}
+	\right)
+\end{equation}
+\begin{equation}
+	\frac{dF_{gf,\mathrm{sat}}}{dt}
+	=
+	F_{gf,\mathrm{sat}}
+	\left(
+	\frac{df_{gf}}{dt}
+	\right)
+\end{equation}
+其中，晶界覆盖率的演化同时受到气体原子流入及随后的晶界气泡演化过程，以及晶界微裂纹生成与愈合行为的共同影响。未开裂晶界比例 $f_{gf}$ 的演化由经验性微裂纹参数控制，该参数为温度与燃耗的函数，能够描述加热与冷却瞬态期间的微裂纹生成 \cite{notleyStepwiseReleaseFission1966,carrollFissionDensityBurnup1969, ,uneFissionGasRelease1990,ducrosSynthesisVERCORSExperimental2013} 以及随燃耗增加导致的微裂纹愈合效应 \cite{heringKwuFissionGas1983}。
+
+\xsubsection{微观结构演化及其与裂变气体行为的耦合}{Microstructure Evolution and Coupling with Fission Gas Behavior}
+
+燃料微观结构的演化直接改变裂变气体的扩散距离、储存容量及释放路径，因此必须在裂变气体行为模型中加以描述 \cite{motta2017light,restFissionGasRelease2019}。微观结构演化主要通过晶粒尺寸的变化体现，其影响主要表现在以下两个方面：
+(1) 晶粒尺寸 $a$ 改变了晶粒内气体向晶界扩散的特征时间尺度 $a^{2}/D$；
+(2) 随着晶界在晶粒生长过程中发生迁移，其以速率 $3a^{2}(da/dt)$ 扫过燃料体积，从而收集晶粒内部的气体原子和气泡 \cite{hargreavesQuantitativeModelFission1976a,notleyMicrostructuredependentModelFission1980,kogaiModellingFissionGas1997}。
+
+\subsubsection{晶粒尺寸变化与裂变气体迁移的耦合关系}{Coupling Between Grain Size Change and Fission Gas Migration}
+
+在中低燃耗和较高温度条件下，燃料晶粒经历正常晶粒生长过程。采用基于 Hillert\cite{hillertTheoryNormalAbnormal1965}理论并考虑Zener钉扎效应的晶粒生长模型 \cite{ainscoughIsothermalGrainGrowth1973}：
+\begin{equation}
+	\frac{da}{dt}
+	=
+	4M
+	\left(
+	\frac{1}{a}
+	-
+	\frac{g(bu)}{a_{m}}
+	\right)
+\end{equation}
+其中，$a$ 为晶粒半径，$M$ 为晶界迁移率：
+\begin{equation}
+	M = 1.46 \times 10^{-10}
+	\exp\left(-\frac{32114.5}{T}\right)
+\end{equation}
+$g(bu)=1+0.002\,bu$ 为燃耗 $bu$ 的经验函数，用以描述随燃耗增加而增强的钉扎效应；$a_{m}$ 为给定温度下的极限晶粒尺寸：
+\begin{equation}
+	a_{m} = 2.23 \times 10^{-3}
+	\exp\left(-\frac{7620}{T}\right)
+\end{equation}
+
+\xsubsection{气体总肿胀模型}{Total Gas Swelling Model}
+
+燃料的总气体肿胀由晶粒内与晶界两部分组成：
+\begin{equation}
+	\left(\frac{\Delta V}{V}\right)_{\mathrm{gas}}
+	=
+	\left(\frac{\Delta V}{V}\right)_{ig}
+	+
+	\left(\frac{\Delta V}{V}\right)_{gb}
+\end{equation}
+
+
+\xsubsection{扩展模型}{Extended Models}
+
+\subsubsection{氦气行为}
+
+氦气主要来源于次锕系核素的$\alpha$衰变，其在燃料中的生成、扩散、俘获与再溶解过程会显著影响气泡形态演化及气体释放行为。因此，有必要在裂变气体行为分析中引入针对氦气的独立物理模型。
+
+本文采用基于速率理论的氦气行为机理模型\cite{cogniniPhysicsbasedDescriptionIntragranular2021,cogniniHeliumSolubilityOxide2018,rufehSolubilityHeliumUranium1965,nakajimaSolubilityDiffusionCoefficient2011}，对晶粒内氦气的溶解、扩散及气泡演化过程进行描述。
+
+为描述氦气在 UO$2$ 燃料中的溶解特性，假定其溶解行为服从亨利定律，即氦气在固体燃料中的平衡溶解度与其分压成正比：
+\begin{equation}
+	c{\mathrm{lim}} = k_H, p
+\end{equation}
+其中，$c_{\mathrm{lim}}$ 为氦气在燃料中的溶解度极限，$p$ 为氦气分压，$k_H$ 为体系的亨利常数。
+
+亨利常数具有显著的温度依赖性，其经验表达式可写为：
+\begin{equation}
+	k_H = 4.1 \times 10^{24}
+	\exp\left(-\frac{7543.5}{T}\right)
+\end{equation}
+该关系在典型反应堆运行温度范围内能够合理描述氦气在晶粒内部的溶解行为。
+
+晶粒内氦气行为采用球形等轴晶粒假设，并假定氦气以单原子形式在晶粒内扩散。扩散过程中，氦原子可被俘获形成晶粒内气泡，同时气泡中的氦原子可在辐照作用下重新溶解回晶格。
+
+在上述假设下，晶粒内氦气浓度 $c_{\mathrm{He}}$ 与气泡中氦气浓度 $m_{\mathrm{He}}$ 的演化由以下耦合方程描述\cite{talipThermalDiffusionHelium2014,speightCalculationMigrationFission1969}：
+\begin{equation}
+	\begin{cases}
+		\dfrac{\partial c_{\mathrm{He}}}{\partial t}
+		=
+		D_{\mathrm{He}}
+		\dfrac{1}{r^{2}}
+		\dfrac{\partial}{\partial r}
+		\left(
+		r^{2}
+		\dfrac{\partial c_{\mathrm{He}}}{\partial r}
+		\right)
+		- g_{\mathrm{He}} c_{\mathrm{He}}
+		+ \gamma m_{\mathrm{He}}
+		+ yF
+		\\[1em]
+		\dfrac{\partial m_{\mathrm{He}}}{\partial t}
+		=
+		g_{\mathrm{He}} c_{\mathrm{He}}
+		-
+		\gamma m_{\mathrm{He}}
+	\end{cases}
+\end{equation}
+其中，$D_{\mathrm{He}}$(表格\ref{tab:D_He}) 为晶粒内氦气扩散系数，$g_{\mathrm{He}}$ 为俘获速率，$\gamma$ 为再溶解速率，$yF$ 表示氦气的体积生成率。
+
+再溶解速率 $\gamma$ 描述了晶粒内气泡中氦原子在热激活作用下重新返回晶格的过程，其表达式采用基于速率理论的形式：
+\begin{equation}
+	\gamma
+	=
+	\frac{3 D_{\mathrm{He}} k_H k_B T Z}
+	{R_{\mathrm{ig,He}}^{2}}
+\end{equation}
+其中 $k_H$ 为氦在氧化物燃料中的亨利常数，
+$k_B$ 为玻尔兹曼常数，
+$T$ 为绝对温度，
+$Z$ 为气泡内气体的可压缩性因子\cite{vanbrutzelNewEquationState2019}，
+$R_{\mathrm{ig,He}}$ 为晶粒内氦气泡半径。
+氦气在晶格中的溶解行为假定满足亨利定律，
+其亨利常数采用单晶二氧化铀实验数据的经验关联式\cite{cogniniHeliumSolubilityOxide2018}：
+\begin{equation}
+	k_H
+	=
+	4.1 \times 10^{24}
+	\exp\!\left(-\frac{7543.5}{T}\right)
+\end{equation}
+该表达式在 $1073$--$1773\ \mathrm{K}$ 温度范围内能够合理描述晶粒内氦气的溶解行为。
+
+\begin{table}[h!]
+	\centering
+	\caption{晶粒内氦气扩散系数 $D_{\mathrm{He}}$ 的经验模型}
+	\label{tab:D_He}
+	\begin{tabular}{p{2cm} p{9cm} p{3cm}}
+		\toprule
+		模型类型                                    & 扩散系数关联式 & 参考文献 \\
+		\midrule
+		低损伤晶格                                   &
+		$D_{\mathrm{He}} = 2.0 \times 10^{-10}
+		\exp\!\left(-\dfrac{24603}{T}\right)$   &
+		\cite{luzziHeliumDiffusivityOxide2018}                   \\
+		\midrule
+		高损伤晶格                                   &
+		$D_{\mathrm{He}} = 3.3 \times 10^{-10}
+		\exp\!\left(-\dfrac{19032.8}{T}\right)$ &
+		\cite{luzziHeliumDiffusivityOxide2018}                   \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{放射性裂变气体的衰变效应}
+在燃料棒包壳失效或事故工况分析中，放射性裂变气体的释放对源项评估具有关键意义。与稳定裂变气体不同，放射性裂变气体在扩散与释放过程中同时受到放射性衰变的影响，因此其行为必须通过独立的物理模型加以描述。
+
+在稳定裂变气体模型的基础上\cite{zulloUseSpectralAlgorithms2022, zulloGrainscaleModellingRelease2022}，引入放射性衰变项，建立晶粒内与晶界放射性裂变气体的统一描述框架。
+
+在晶粒内，放射性裂变气体的演化由扩散、俘获、再溶解、生成以及放射性衰变过程共同控制，其控制方程可表示为：
+\begin{equation}
+	\begin{cases}
+		\dfrac{\partial c}{\partial t}
+		=
+		D
+		\dfrac{1}{r^{2}}
+		\dfrac{\partial}{\partial r}
+		\left(
+		r^{2}
+		\dfrac{\partial c}{\partial r}
+		\right)
+		- b m
+		- g c
+		- \lambda c
+		+ yF
+		\\[1em]
+		\dfrac{\partial m}{\partial t}
+		=
+		- b m
+		+ g c
+		- \lambda m
+	\end{cases}
+\end{equation}
+其中，$c$ 表示晶粒内单原子裂变气体浓度，$m$ 表示晶粒内气泡中气体浓度；$D$ 为扩散系数，$b$ 为辐照诱导再溶解速率，$g$ 为俘获速率，$\lambda$ 为放射性衰变常数。
+
+对于部分放射性裂变气体，其生成过程涉及短寿命前驱核素。前驱体的衰变可能发生在扩散过程中，从而增强有效扩散能力。该效应通过引入前驱体增强因子 $\alpha$ \cite{usdoeBackgroundDerivationANS542010}对扩散系数进行修正：
+\begin{equation}
+	\alpha =
+	\frac{1 - \left(\dfrac{y_0}{x_0}\right)^3}
+	{\left[1 - \left(\dfrac{y_0}{x_0}\right)^2\right]^2}
+\end{equation}
+其中，
+\begin{equation}
+	y_0=\sqrt{\frac{D_p}{\lambda_p}}, \qquad
+	x_0=\sqrt{\frac{D_d}{\lambda_d}}
+\end{equation}
+$D_p$、$D_d$ 分别为前驱体与子体的扩散系数，$\lambda_p$、$\lambda_d$ 为其衰变常数。短寿命裂变气体的值：\( ^{133}\text{Xe} \) 的特征值为 \( \alpha = 1.25 \)，而 \( ^{85\text{m}}\text{Kr} \) 的特征值为 \( \alpha = 1.31 \)。
+
+在晶界处，放射性裂变气体的行为与稳定裂变气体类似，但需额外考虑放射性衰变对晶界气体存量的削减作用。晶界气体面密度 $q$ 的演化方程可写为：
+\begin{equation}
+	\frac{\partial q}{\partial t}
+	=
+	-
+	\left(
+	\frac{3}{a}
+	\frac{b}{a+b}
+	D
+	\frac{\partial (c+m)}{\partial r}
+	\right)_{r=a}
+	-
+	\lambda q
+	-
+	R
+\end{equation}
+其中，$R$ 为气体释放项，其形式与稳定裂变气体模型保持一致。
+
+在模型中假定：短寿命放射性裂变气体在质量与扩散行为上与稳定裂变气体相同，其释放特性主要由扩散时间尺度与放射性衰变时间尺度之间的竞争关系所控制。
+
+\xsection{包壳材料堆内行为模型}{cladding}
+本文档包含程序中所包含的包壳模型，CW316，SS316，D9，HT9。\\
+D9是前国家包壳和管道（NCD）开发的奥氏体不锈钢，相比于SS316提高了铒的含量。具体的含量在表格\ref{tab:chemical_composition}中，在开发过程中，根据合金高温强度、抗再结晶和抗蠕变断裂的需求，微调了钼和硅的含量。D9在ASEM中代号为S38660。\\
+\begin{table}[H]
+	\centering
+	\caption{Chemical Composition of D9-C1 and D9-C1P}
+	\label{tab:chemical_composition}
+	\begin{tabular}{lcc}
+		\toprule
+		\textbf{Element} & \textbf{D9-C1(nom)*} & \textbf{D9-C1P(nom.)**} \\
+		\midrule
+		C                & 0.05                 & 0.05                    \\
+		Mn               & 2.00                 & 2.00                    \\
+		Si               & 1.00                 & 0.90                    \\
+		P                & 0.02 max.            & 0.01 max.               \\
+		S                & 0.01 max.            & 0.007 max.              \\
+		Cr               & 13.5                 & 13.5                    \\
+		Ni               & 15.5                 & 15.5                    \\
+		Mo               & 1.50                 & 1.65                    \\
+		Cu               & 0.04 max.            & 0.02 max.               \\
+		Nb               & 0.05 max.            & 0.01 max.               \\
+		Al               & 0.05 max.            & 0.01 max.               \\
+		Ti               & 0.25                 & 0.25                    \\
+		As               & 0.03 max.            & 0.03 max.               \\
+		Ta               & 0.02 max.            & 0.01 max.               \\
+		V                & 0.02 max.            & 0.02 max.               \\
+		Zr               & --                   & 0.001 max.              \\
+		Co               & 0.050 max.           & 0.031 max.              \\
+		O                & --                   & 0.005 max               \\
+		B                & 0.001 max.           & 0.001 max.              \\
+		N                & 0.01 max.            & 0.005 max.              \\
+		Fe               & Balance              & Balance                 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+HT9是基于Fe-12Cr-1Mo的马氏体不锈钢。HT9在ASME代码中编号为S42100。
+\begin{table}[H]
+	\centering
+	\caption{HT9 Chemical Composition}
+	\begin{tabular}{cc}
+		\toprule
+		\textbf{Element} & \textbf{Weight, \%} \\
+		\midrule
+		Carbon           & 0.17 -- 0.23        \\
+		Manganese        & 0.40 -- 0.70        \\
+		Phosphorus, max. & 0.015*              \\
+		Sulfur, max.     & 0.010               \\
+		Silicon          & 0.20 -- 0.30        \\
+		Nickel           & 0.30 -- 0.80        \\
+		Chromium         & 11.0 -- 12.5        \\
+		Molybdenum       & 0.80 -- 1.20        \\
+		Niobium          & 0.05 -- max.        \\
+		Tungsten         & 0.40 -- 0.60        \\
+		Aluminum, max.   & 0.050               \\
+		Vanadium         & 0.25 -- 0.35        \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+\xsubsection{热导率}{thermal conductivity}
+\subsubsection{SS316}
+SS316的热导率\cite{mills2002}使用下面的公式：
+\begin{equation}
+	k=-7.301\times10^{-6}T^2+2.716\times10^{-2}T+6.308
+\end{equation}
+其中$T$是温度，K。k是热导率，$W/m-K$。\\
+NASA\cite{matolich1965thermal}中关于SS316热导率报告中提到在255.37K到1255.37K，分为两段，分别是：
+\begin{equation}
+	k=3.155A(\frac{T}{1.8})^B \quad 255.37\le T \le 699.816
+\end{equation}
+其中k是热导率，$W/m-K$。T是温度，K。跟原文相比，此处进行了单位转换。
+A是常数，$A=0.52048$；B也是常数，$B=0.43367$。\\
+\begin{equation}
+	k=3.155(C+D\frac{T}{1.8})\quad 699.816\le T \le 1255.37
+\end{equation}
+其中k是热导率，$w/m-K$。T是温度，K。跟原文相比，此处进行了单位转换。C是常数，$C=4.553$，D也是常数，$D=5.507\times10^{-3}$\\
+在T.W Waston的报告\cite{Watson1963ThermalCO}中，SS316的热导率跟温度相关，具体形式如下：
+\begin{equation}
+	k=100(0.1333 + 0.1727 * \frac{T - 273.15}{1000}-0.043334* (\frac{T - 273.15}{1000})^2+0.0332\left( \frac{T - 273.15}{1000}\right) ^3
+\end{equation}
+其中k是热导率，$W/m-K$,T是温度，363.15<T<113.15，K。\\
+齐飞鹏的论文也用到了SS316的热导率，也是温度经验关系式：
+\begin{equation}
+	k = 7.956+1.919\times10^{-2}T-3.029\times10^{-6}T^2
+\end{equation}
+
+316SS的比热容$C_p$\cite{mills2002}使用下面的公式：
+\begin{equation}
+	C_p = 428.46 + 0.1816T
+\end{equation}
+\begin{figure}[H] % H 表示强制当前位置放置
+	\centering
+	\includegraphics[width=0.8\textwidth]{316SSthermalconductivity.png} % 设置图片宽度为页面宽度的50%
+	\caption{SS316不同热导率模型随温度的变化曲线}
+	\label{fig:example} % 标签用于引用
+\end{figure}
+
+\subsubsection{HT9}
+HT9的热导率k,$W/m-K$\cite{mfh1988}计算公式：
+\begin{equation}
+	k=29.65-6.668\times10^{-2}T+2.184\times10^{-4}T^2-2.527\times10^{-7}T^3+9.621\times10^{-11}T^4
+\end{equation}
+\begin{figure}[H] % H 表示强制当前位置放置
+	\centering
+	\includegraphics[width=0.8\textwidth]{HT9_thermal_conductivity.png} % 设置图片宽度为页面宽度的50%
+	\caption{HT9包壳材料热导率}
+	\label{fig:HT9_thermal_conductivity} % 标签用于引用
+\end{figure}
+
+\subsubsection{D9}
+D9的热导率\cite{banerjee2007_d9cp}跟温度T(K)相关，具体形式如下：
+\begin{equation}
+	k = \begin{cases}
+		7.598 + 2.391 \times 10^{-2} T - 8.899 \times 10^{-6} T^2, & \quad \text{for } 500 \leq T \leq 1030 \ \text{K}  \\
+		7.260 + 1.509 \times 10^{-2} T,                            & \quad \text{for } 1030 \leq T \leq 1200 \ \text{K}
+	\end{cases}
+\end{equation}
+报告中提到
+\begin{equation}
+	\lambda = 8.25795 + 1.94121 \times 10^{-2} T - 3.24027 \times 10^{-6} T^2,
+\end{equation}
+其中$\lambda$是热导率，$W/mK$，T是温度，K。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{D9_thermal_conductivity.png}
+	\caption{D9包壳材料热导率}
+	\label{fig:D9_thermal_conductivity}
+\end{figure}
+
+\xsubsection{比热容}{Cavity}
+\subsubsection{HT9}
+比热容$C_p$\cite{Yamanouchi_1992}采用的公式是：
+\begin{equation}
+	C_p=0.257T+380
+\end{equation}
+
+\subsubsection{D9}
+D9的比热容$C_p$\cite{Leibowitz_1988}计算公式如下：
+\begin{equation}
+	c_{P}=431+17.7 \times 10^{-2} T+8.72 \times 10^{-5} T^{-2}
+\end{equation}
+
+
+\xsubsection{密度}{Density}
+\subsubsection{D9}
+未辐照的密度：
+\begin{equation}
+	\rho = 7.98 - 4.3\times 10^{-4} T
+\end{equation}
+其中$\rho$是密度，$g/cm^3$。T是摄氏度，$300<T<800$。
+
+\subsubsection{HT9}
+HT9的密度是温度的函数：
+\begin{equation}
+	\rho=a+bT
+\end{equation}
+其中：
+\begin{align*}
+	\rho & = \text{密度（Density,）} g/cm^3                           \\
+	T    & = \text{温度（Temperature,）} ^\circ C                     \\
+	a    & = 7.778                                                \\
+	b    & = -3.07 \times 10^{-4} \quad 0 \leq T \leq 800^\circ C \\
+\end{align*}
+注意超过800\SI{}{\celsius}，因为存在铁素体到奥氏体的转变。
+
+\xsubsection{热膨胀}{thermal expansion}
+\subsubsection{D9}
+D9的热膨胀模型：
+\begin{align}
+	\frac{\Delta L}{L_0} & = 0.72549 - 0.12875T^\frac{1}{2} + 5.1890 \times 10^{-3} T - 5.0431 \times 10^{-7} T^2,
+	                     & \quad (293 < T < 1200~K)\notag                                                          \\
+	                     & = -1.273 \times 10^{-3} \text{ at } 293K \notag                                         \\
+	                     & = 1.76\% \text{ at } 1200K
+\end{align}
+$\frac{\Delta L}{L_0}$单位是百分比。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{D9_thermal_expansion.png}
+	\caption{D9热膨胀模型}
+\end{figure}
+
+\subsubsection{HT9}
+模型给出了铁素体的HT9的热膨胀模型，ANL-CMT测得马氏体到奥氏体的转变，将温度范围扩展到1200K。目前模型温度范围$293<T<1050$。
+\begin{equation}
+	\frac{\Delta L}{L_0} = -0.16256 + 1.62307 \times 10^{-4} T + 1.42357 \times 10^{-6} T^2 - 5.50344 \times 10^{-10} T^3
+\end{equation}
+其中$\frac{\Delta L}{L_0}$是百分比应变。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{HT9_thermal_expansion.png}
+	\caption{D9包壳材料热膨胀模型}
+	\label{fig:HT9_thermal_expansion}
+\end{figure}
+
+\xsubsection{辐照肿胀}{Irradiation Swelling}
+Bison中整合了HT9、D9和SS316包壳类型的体积膨胀模型。HT9和D9分别采用公式\ref{eq:21} \ref{eq:29}变体，其中$\frac{\Delta V}{V_0}$表示由膨胀和致密化引起的体积变化，$S_0$为空洞导致的负分数密度变化，$D$为固态反应引起的分数密度变化。多年来，随着包壳应变数据的累积，HT9、D9和SS316的经验关系式不断修改正，更新了如R、$\tau$和$\alpha$等参数，这三个参数分别决定了包壳体积音变增长率的曲线，以及快速稳态膨胀起始点。
+\subsubsection{CWSS316}
+20\%CW316SS的辐照肿胀，存在两种肿胀驱动，一种是直径2-3nm的氦气泡驱动，一种是大于4nm的孔洞驱动。在300-340摄氏度，56dpa与以下，表面为氦气泡增加，到达临界直径之后，转变为孔洞。在描述，辐照导致的肿胀采用幂律膨胀模型。\\
+在305到315摄氏度下，肿胀小于0.03\%。
+\begin{equation}
+	\triangle V/V_0 = A(\phi t)^n
+\end{equation}
+其中A和n是材料相关的常数，$\phi t$是剂量。在HFIR中，400到440摄氏度下，n选择1.5。在快中子反应堆EBR-II中E-75，n是1.67,同一个反应堆中的E-88实验结果表明，n选择2.01。\\
+n的变大说明，肿胀的驱动力从氦气泡驱动，逐渐转换为混合驱动，最终转换为孔洞驱动。但是最大的肿胀率在100dpa是小于3\%肿胀。\\
+\subsubsection{SS316}
+SS316快堆包壳会经历辐照诱导膨胀，膨胀过程与辐照通量和温度密切相关。根据EBR-II的实验数据和BISON的文章\cite{satb1995}得到SS316辐照肿胀的应变（包含密实化）：
+\begin{equation}
+	\frac{\triangle V}{V_0} = \frac{S_0}{1-S_0} \label{eq:14}
+\end{equation}
+需要注意的是，快堆中子通量大于$10^{23}\frac{n}{cm^2}$，无应力膨胀的预测值可能过高，因此，模型只能提供保守的估计值。\newline
+其中$S_0$是空隙(void)形成产生的负的密度变化，具体形式是：
+\begin{equation}
+	S_0=0.01R\phi t+\frac{0.01R}{\alpha}\ln\left(\frac{1+e^{a(\tau-\phi t)}}{1+e^{a\tau}}\right)
+\end{equation}
+其中R是稳态溶胀率百分比，单位是$10^{-22}cm^2$。中子注量$\phi t$的单位是$n\cdot cm^{-2}$。SS316的稳态膨胀率是通过使用实验数据拟合出来的。
+\begin{gather}
+	R=e^{0.497+0.795\beta-0.0948\beta^{2}+0.908\beta^{3}-1.49\beta^{4}}+e^{-8(\beta-1.35)^{2}}\\
+	\beta = \frac{T-773}{100}
+\end{gather}
+曲率参数$\alpha$的单位是$10^{-22}cm^2$。参数孵化时间$\tau$的单位是$10^{22}cm^2$，是快速稳态膨胀开始的时间。
+\begin{equation}
+	\alpha = 0.75 \qquad
+	\tau = \begin{cases}
+		6.58 - 0.566\beta,  & \text{for } T < 848 \text{ K}    \\
+		4.3105 + 2.46\beta, & \text{for } T \geq 848 \text{ K}
+	\end{cases}
+\end{equation}
+需要注意的是，Bison代码中通过增量的形式实现，因为公式\ref{eq:14}是根据当前的温度和中子注量给出的。
+\begin{gather}
+	\frac{dA}{dt} = \dot{V} = \frac{\dot{S_0}}{(1 - S_0)^2}\\
+	\frac{dS_0}{dt} = \dot{S_0} = \frac{0.01R\phi t}{1 + e^{\beta(T - \phi t)}}
+\end{gather}
+\begin{figure}[H]
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{316SS_volume_swelling_full.png}
+		\caption{未处理的辐照肿胀模型随中子注量变化曲线}
+		\label{fig:sub1}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{316SS_volume_swelling.png}
+		\caption{处理后的辐照肿胀模型随中子注量变化曲线}
+		\label{fig:sub2}
+	\end{subfigure}
+	\caption{SS316辐照肿胀模型随中子注量变化曲线}
+	\label{fig:total}
+\end{figure}
+
+\subsubsection{HT9}
+HT9的孔洞肿胀（void Swelling)是NSMH提供的，需要注意的是，根据实验数据，HT9基本不会表现出明显的肿胀。虽然在实验中观察到低温下看到一些孔洞出现。HT9辐照肿胀的应变（包含密实化）：
+\begin{equation}
+	\frac{\triangle V}{V_0} = S_0 +D \label{eq:21}
+\end{equation}
+其中$S_0$是空隙形成产生的负的密度变化，D是固态微观结构引起的密度变化，具体形式分别是：
+\begin{gather}
+	S_0=0.01R\phi t+\frac{0.01R}{\alpha}\ln\left(\frac{1+e^{a(\tau-\phi t)}}{1+e^{a\tau}}\right)\\
+	D = 0.0015 \left(1 - e^{-0.1\phi_t}\right)
+\end{gather}
+其中R是稳态溶胀率百分比，单位是$10^{-22}cm^2$。HT9的稳态膨胀率:
+\begin{gather}
+	R = 0.085e^{-1 \times 10^{-4}(T-673)^2}
+\end{gather}
+曲率参数$\alpha$的单位是$10^{-22}cm^2$。参数孵化时间$\tau$的单位是$10^{22}cm^2$，是快速稳态膨胀开始的时间。
+\begin{equation}
+	\alpha = 0.75 \qquad
+	\tau = 14.2
+\end{equation}
+需要注意的是，Bison代码中通过增量的形式实现，因为公式\ref{eq:21}是根据当前的温度和中子注量给出的。
+\begin{gather}
+	\frac{dA}{dt} = \dot{V} = \dot{S_0} + \dot{D}\\
+	\frac{dS_0}{dt} = \dot{S_0} = \frac{0.01R\phi t}{1 + e^{\beta(T - \phi t)}}\\
+	\frac{dD}{dt} = \dot{D} = 1.5 \times 10^{-4} \phi e^{-0.1\phi t}
+\end{gather}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{HT9_volume_swelling.png}
+	\caption{HT9辐照肿胀随中子注量变化曲线}
+	\label{Fig:HT9_volume_swelling}
+\end{figure}
+
+\subsubsection{D9}
+根据EBR-II的实验数据和BISON的文章得到D9\footnote{和METALLIC FUELS HANDBOOK做了改进，此处仅仅使用更新的模型}辐照肿胀的应变（包含密实化）：
+\begin{equation}
+	\frac{\triangle V}{V_0} = S_0-D \label{eq:29}
+\end{equation}
+其中$S_0$是空隙形成产生的负的密度变化，D是固态微观结构引起的密度变化，具体形式分别是：
+\begin{gather}
+	S_0=0.01R\phi t+\frac{0.01R}{\alpha}\ln\left(\frac{1+e^{a(\tau-\phi t)}}{1+e^{a\tau}}\right)\\
+	D = 0.01 \left(1 - e^{-30\phi_t}\right) \left(-1.7 \times 10^{-4}T + 0.241\right)
+\end{gather}
+其中R是稳态溶胀率百分比，单位是$10^{-22}cm^2$。T是温度，K。D9的稳态膨胀率是：
+\begin{equation}
+	R = 2.76e^{-1.4 \times 10^{-4}(T-773)^2}
+\end{equation}
+曲率参数$\alpha$的单位是$10^{-22}cm^2$。参数孵化时间$\tau$的单位是$10^{22}cm^2$，是快速稳态膨胀开始的时间。
+\begin{equation}
+	\alpha = 0.75 \qquad
+	\tau = 11.9
+\end{equation}
+需要注意的是，Bison代码中通过增量的形式实现，因为公式\ref{eq:29}是根据当前的温度和中子注量给出的。
+\begin{gather}
+	\frac{dA}{dt} = \dot{V} = \dot{S_0} - \dot{D}\\
+	\frac{dS_0}{dt} = \dot{S_0} = \frac{0.01R\phi t}{1 + e^{\beta(T - \phi t)}}\\
+	\frac{dD}{dt} = \dot{D} = 0.3\phi e^{-30\phi t} \left(-1.7 \times 10^{-4}T + 0.241\right)
+\end{gather}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{D9_volume_swelling.png}
+	\caption{D9辐照肿胀随中子注量变化曲线}
+	\label{Fig:D9_volume_swelling}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{D9_volume_swelling_vs_temperature.png}
+	\caption{D9辐照肿胀比较，虚线是改进后的模型，实线是METALLIC FUELS HANDBOOK的模型}
+	\label{Fig:D9_volume_swelling_vs_temperature}
+\end{figure}
+
+\xsubsection{塑性}{Plasticity}
+\subsubsection{SS316}
+SS316的蠕变\cite{megahedExperimentalTheoreticalInvestigation1984}测定是在棘轮实验，温度范围是550-600摄氏度条件下。稳态的蠕变速率（二阶蠕变）和温度以及应力相关，采用Norton的形式：
+\begin{equation}
+	\dot{\epsilon_c}=Aexp\left[-\frac{Q_c}{RT}\right]\sigma^{n}
+\end{equation}
+其中$Q$是蠕变活化能，单位为$cal/mol$，$R$是气体常数约2 cal/mol/K，T是测试温度，单位为K，n是应力指数，A是材料常数，$5.37\times 10^{-20}$。应力指数n和蠕变活化能的值分别为5.1875和33087cal/mol。\\
+弹塑性采用Ramborg-Osgood形式：
+\begin{equation}
+	\epsilon = \frac{\sigma}{E}+ B\mathbf{exp}\left[-\frac{Q_h}{RT}\right]\sigma^m
+\end{equation}
+其中E是平均弹性模量，此处取为 $23.95\times10^6\mathbf{psi}(165.2\times10^3MPa)$，$Q_h$是硬化活化能，R 是气体常数，T是以 K 为单位的测试温度，m是应力指数，5.83，B是材料常数，$6.031\times10^{-22}$。实验得到的$Q_h$值为23640 $cal/mol$，大于蠕变活化能$Q_c$。这是因为源于硬化速率对温度变化的敏感性。\\
+在考虑蠕变和塑形的关系时候，有两种方法，一种简化为单独的考虑：
+\begin{equation}
+	\dot{\epsilon}=\dot{\sigma}/E+\dot{\epsilon}_{p}+\dot{\epsilon}_{c}
+\end{equation}
+另一种是Bailey-Orowan模型，考虑为塑形变形由蠕变和塑形共同作用：
+\begin{equation}
+	\dot{\epsilon}^{\prime}=f(\sigma-\tilde{\sigma})
+\end{equation}
+f是阶跃函数，具体形式（屈服准则）\\
+\begin{gather}
+	f(\sigma-\tilde{\sigma})=0 \quad \mathrm{if} \quad \sigma<\bar{\sigma},\\
+	f(\sigma-\tilde{\sigma})>0 \quad \mathrm{if} \quad \sigma=\bar{\sigma}.
+\end{gather}
+其中$\bar{\sigma}$称为瞬时流动应力，其控制方程如下：
+\begin{equation}
+	\frac{d\bar{\sigma}}{dt} = \left[ \frac{\partial \sigma}{\partial \epsilon'} \right]_t \cdot \frac{d\epsilon'}{dt} + \left[ \frac{\partial \bar{\sigma}}{\partial t} \right]_{\epsilon'}
+\end{equation}
+第一项$\left[ \frac{\partial \sigma}{\partial \epsilon'} \right]_t \cdot \frac{d\epsilon'}{dt}$：
+$\left[ \frac{\partial \sigma}{\partial \epsilon'} \right]_t$ 表示在恒定时间$t$下，应力 $\sigma$ 对塑形应变 $\epsilon'$ 的偏导数。
+
+$\frac{d\epsilon'}{dt}$ 表示应变随时间的变化率 ，即应变速率 。这一项描述了由于应变随时间变化而引起的应力变化。
+
+第二项 $\left[ \frac{\partial \bar{\sigma}}{\partial t} \right]_{\epsilon'}$：
+$\left[ \frac{\partial \bar{\sigma}}{\partial t} \right]_{\epsilon'}$ 表示在恒定应变 $\epsilon'$ 下，应力对时间的偏导数。
+
+\begin{equation}
+	\left[ \frac{\partial \bar{\sigma}}{\partial \epsilon_p} \right] = \frac{1}{mb \exp\left( -\frac{Q_h}{R\theta} \right) \bar{\sigma}^{m-1}}
+\end{equation}
+
+\begin{equation}
+	\left[ \frac{\partial \bar{\sigma}}{\partial t} \right]_{\epsilon_c} = - \frac{A}{mB} \exp\left( -\frac{Q_c - Q_h}{R\theta} \right) \bar{\sigma}^{-m + 1}
+\end{equation}
+这里明确一点，塑性包含两部分，一个是硬化，一个是屈服准则，所以此处为硬化方程。硬化方程又可以分为各向同性和各向异性。硬化方程通常是和等效塑性应变$p$相关的。
+下面是通过调研得到SS316的硬化方程。\\
+首先是SS316中线性硬化方程\cite{schappelKeyMaterialProperties2019}：
+\begin{equation}
+	\sigma _ { y } = \sigma _ { y } ^ { 0 } + K \varepsilon _ { p } ^ { n }
+\end{equation}
+其中$\sigma_{y}$是屈服应力，$\sigma_{y}^{0}$(125MPa)是初始屈服应力，$K$(500MPa)是硬化模量，$\varepsilon_{p}$是等效塑性应变，n(0.4)是硬化指数。下图展示了在600摄氏度SS316的屈服应力和应变曲线，屈服应力应该是温度的曲线。此外通过增才制造的SS316的屈服应力可能和其他工艺生产的SS316L有很大不同。\\
+另一个是Chaboche模型\cite{yueImplementationABAQUSUser2023}：
+\begin{equation}
+	\dot{r}(p) = b(Q - r)\dot{p} \quad \text{or} \quad dr(p) = b(Q - r)dp
+\end{equation}
+对上式进行积分，同时初始条件是$r(0) = 0$，得到：
+\begin{equation}
+	r(p) = Q (1 - e^{-bp})
+\end{equation}
+最终的屈服应力是：
+\begin{equation}
+	\sigma = \sigma_{y}^{0} + r(p)
+\end{equation}
+\begin{table}[htbp]
+	\centering
+	\caption{材料参数表}
+	\label{tab:material_params}
+	\begin{tabular}{cccccc}
+		\toprule
+		$T$ (\si{\degreeCelsius}) & $E$ (GPa) & $\nu$ & $\sigma_y$ (MPa) & $b$ & $Q$ (MPa) \\
+		\midrule
+		20                        & 185       & 0.3   & 82               & 8   & 60        \\
+		550                       & 141.26    & 0.3   & 31               & 31  & 27.8      \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+因为只有两个温度点的数据，所以其他温度下的材料参数和温度相关采用线性差值。\\
+第三个是实验获得的SS316的硬化方程\cite{zhangHardeningBehaviorModel2023}:
+\begin{equation}
+	\begin{split}
+		\sigma_{\text{true}} & = (2.6\eta^2 - 16.8\eta + 2.6)(547.75(0.08 + \epsilon_{\text{p1}})^{0.632})               \\
+		                     & \quad + (71.3\eta^2 + 39\eta + 1.1)(653.38(0.074 + \epsilon_{\text{p1}})^{0.664}g^{-1/2})
+	\end{split}
+\end{equation}
+其中无量纲参数 $\eta = g / t$，$g$（单位：\si{\micro\meter}）为晶粒大小，$t$（单位：\si{\micro\meter}）为样品厚度。$\epsilon_{p1}$ 为等效塑性应变，$\sigma_{\text{true}}$（单位：\si{MPa}）表示真实屈服应力。\\
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{316SS_hardening_models.png}
+	\end{center}
+	\caption{SS316硬化模型比较}
+\end{figure}
+
+\subsubsection{HT9}
+HT9的硬化方程采用线性硬化模型\cite{miaoFY22ProgressReport2022}，虽然极限抗拉强度（$\sigma_{uts}$）屈服应力（$\sigma_y$）和最小延伸率（$\epsilon_t$）本身是非线性的，但是模型最终简化为基于$\sigma_{uts}$ $\sigma_y$和$\epsilon_{t}$的线性关系。极限抗拉强度在章节\ref{sec:HT9_UTS}中已经给出，屈服强度在章节\ref{sec:HT9_yield_stress}中给出。最小延伸率在章节\ref{sec:HT9_total_elongation}给出。\par
+\begin{equation}
+	H = \frac{\sigma_{uts}-\sigma_y}{\epsilon_t}
+\end{equation}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{HT9_hardening.png}
+	\end{center}
+\end{figure}
+
+\subsubsection{D9}
+同样，D9的硬化方程采用同样处理线性硬化模型\cite{miaoFY22ProgressReport2022}。极限抗拉强度在章节\ref{sec:D9_UTS}中已经给出。屈服应力在章节\ref{sec:D9_yield_stress}给出。最小延伸率在章节\ref{sec:D9_total_elongation}给出。\par
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{D9_hardening.png}
+	\end{center}
+	\caption{D9硬化模型}
+\end{figure}
+
+\xsubsection{断裂失效}{duanlie}
+包壳失效模型主要是基于累计损伤分数(CDF)的概念，CDF是基于材料的疲劳寿命和断裂寿命模型。CDF模型主要用于稳态模拟。这里面说的稳态是反应堆物理中的术语：稳态主要是指反应堆正常运行时的辐照条件，而瞬态主要是事故场景下的辐照条件。稳态不是字面意思，稳态也可能设计与时间相关的辐照条件。\newline
+CDF模型的基本思想是通过计算材料在给定温度、应力和剂量下的疲劳寿命和断裂寿命，来评估材料的损伤程度。CDF值从0到1变化，0表示没有损伤，1表示完全失效。通常，当CDF达到1时，材料被认为已经失效。\newline
+CDF的计算公式如下：
+\begin{equation}
+	\mathrm{CDF} = \int_0^t \frac{\mathrm{d}t}{t_r(\sigma, T)}
+\end{equation}
+因此CDF预测模型的关键是合适断裂时间关系式，该关系式通常是温度和环向应力的函数。
+\subsubsection{SS316}
+316不锈钢作为快中子增殖反应堆等高温核能系统的关键结构材料，其在长期高温、应力和中子辐照耦合环境下的断裂行为（通常表现为蠕变断裂）是反应堆安全设计与寿命评估的核心问题。针对其断裂时间的预测，已发展出从经验外推到物理机理的多尺度模型体系。\\
+在工程应用层面，广泛采用基于大量实验数据的经验或半经验断裂时间模型。这类模型通常以应力、温度和时间参数为核心，通过回归分析建立关联。例如，在ANL开发的DEFORM-5程序\cite{FanningSAS4ASASSYS1Safety2017}中采用的TDC-2瞬态损伤关联式，即为一个典型的复杂经验模型，它通过引入辐照注量、稳态辐照温度、瞬态温度变化率等参数，描述了冷加工316不锈钢包壳在事故瞬态工况下的断裂时间（详细见后续的D9破裂时间模型）。其一般形式可抽象为：\\
+\begin{equation}
+	t_r = f(\sigma, T,\dot{T}, \phi t, TI)
+\end{equation}
+其原理是Kramer和DiMelfi开创性地提出了一个双机制失效框架\cite{DimelfiModelingEffectsFastneutron1980,KramerModelingDeformationFailure1981}：在低温和高应力区域，断裂由塑性失稳控制，其判据可由基于广义Voce方程的本构模型结合大应变分析推导得出；在高温和低应力区域，断裂则由晶间裂纹的形核与扩展主导。\\
+对于先进改进型材料，如日本DFBR计划开发的316FR不锈钢，在继承传统316不锈钢模型框架的基础上，通过优化化学成分（如控制C、N含量）来提升长期蠕变强度和延性。其蠕变性能的预测模型也相应发展，以更准确地反映其在长期高温服役下的行为。在演变过程中，具有代表性的蠕变断裂时间模型包括：传统316不锈钢的ORNL模型，表达形式为\cite{brinkmanElevatedTemperatureMechanicalProperties2001}：
+\begin{equation}
+	\log_{10} t_R = C_h - 0.01312 \sigma - 2.552 \log_{10} \sigma + \frac{20880}{T}
+\end{equation}
+其中的$t_R$为断裂时间（h），$\sigma$为应力（MPa），T为温度（K），$C_h$为批量常数，反应给定热源的相对强度，-11.870。\\
+316FR不锈钢的早期Japanese-98模型，其形式为\cite{brinkmanElevatedTemperatureMechanicalProperties2001}:
+\begin{equation}
+	\log_{10}(t_R) = -23.962345 + \frac{30708.247}{T + 273.15} + \frac{2914.114}{T + 273.15} \log_{10} \sigma - \frac{2465.8312}{T + 273.15} (\log_{10} \sigma)^2
+\end{equation}
+其中T是温度，摄氏度。$\sigma$是应力，$N/mm^2$。$t_R$是断裂时间，h。\\
+以及考虑长期蠕变机制变化的316FR改进模型，该模型采用区域分割的方法，其通用表现形式是\cite{OnizawaDevelopmentCreepProperty2019}：
+\begin{equation}
+	(T + 273.15)[\log_{10}(t_R) + C + ZS] = A_0 + A_1 \log_{10} \sigma + A_2 (\log_{10} \sigma)^2
+\end{equation}
+该模型的关键在于根据Monkman-Grant关系中最小蠕变速率与断裂时间关系斜率的转变点来划分数据区域，其分界时间随温度升高而显著缩短（例如，在550°C、600°C、650°C和700°C下，分界时间分别为100,000小时、20,000小时、7,000小时和1,000小时）。模型中温度$T$适用范围为425°C至650°C，应力$\sigma > 41MPa$,变量Z根据失效概率取值（平均行为取0，5\%失效概率取1.64，1\%失效概率取2.33)，并具有独立短期（$C = 26.80300$, $A_0 = 22603.32$, $A_1 = 13143.29$, $A_2 = -4886.874$, $S = 0.2359638$）和长期（$C = 18.64241$, $A_0 = 30080.75$, $A_1 = -4416.944$, $A_2 = 12.57805$, $S = 0.1022380$）参数集。此模型可以预测快堆设计寿命60年内的断裂时间。
+Japanes-98还提供了最小蠕变速率和断裂时间，温度的关系。
+\begin{equation}
+	\dot{\varepsilon}_m = 262.24698 \cdot \exp\left[\frac{-5922.1293}{T + 273.15}\right] \cdot t_R - 1.1351216
+\end{equation}
+其中$t_R$和T和上面的相同，$\varepsilon$是最小的蠕变速率，mm/h。
+根据ORNL拟合的断裂时间和应力温度关系：
+\begin{equation}
+	\log_{10} t_R = C_h - 0.01312 \sigma - 2.552 \log_{10} \sigma + 20.880 T
+\end{equation}
+其中$t_R$是断裂时间，h。$\sigma$是应力，Mpa。T是温度，K。$C_h$是给定热源的相对强度，-11.870。对于高强度和低强度可以分别采用-11.065和-12.674。
+Japanes-98连续循环疲劳模型：
+\begin{equation}
+	(\log_{10} N_f)^{-1/2} = A_0 + A_1 \cdot \log_{10} \Delta \epsilon_1 + A_2 (\log_{10} \Delta \epsilon_1)^2 + A_4 \cdot (\log_{10} \Delta \epsilon_1)^4
+\end{equation}
+其中\\
+\begin{flalign*}
+	T                    & = \text{temperature} (^\circ C)                                  \\
+	\Delta \varepsilon_t & = \text{total strain range}                                      \\
+	N_f                  & = \text{cycles to failure}                                       \\
+	A_0                  & = 1.3203567 - 1.3046351 \times 10^{-7} \times T^2 \times R       \\
+	A_1                  & = 8.7650102 \times 10^{-1} - 1.1381593 \times 10^{-2} \times R   \\
+	A_2                  & = 3.1365177 \times 10^{-1} - 5.3062684 \times 10^{-8} \times T^2 \\
+	A_3                  & = -1.6049523 \times 10^{-2}                                      \\
+	R                    & = \log_{10} \dot{\varepsilon}                                    \\
+	\dot{\varepsilon}    & = \text{strain rate} (s^{-1})
+\end{flalign*}
+Brinkman对US SS316也进行循环疲劳的测试，下面分别给出550摄氏度和600摄氏度下的总应变和循环周期的关系：
+\begin{gather}
+	SR(\%) = 102.8261 * (logN)^{-4.174} + 0.3091 \qquad T = 550^\circ\notag \\
+	SR(\%) = 62.0(logN)^{-3.55} + 0.232\qquad T = 600^\circ
+\end{gather}
+文章\cite{lathaThermalCreepProperties2008}，提出另一种断裂寿命和应力关系，形式是$t_r=B\sigma^{-n}$。具体的形式是：
+\begin{equation}
+	t_r = 400\sigma^{-0.16}\quad \sigma=(t_r/303)^{-0.11}
+\end{equation}
+
+\subsubsection{D9}
+
+基于Briggs等人(1995)的研究，D9包壳失效模型包含两种不同时间尺度的预测方法。对于稳态工况及长期瞬态过程（如燃耗分析），采用基于应力断裂的累积损伤分数(CDF)方法，通过高应力和低应力两组系数分别计算断裂时间，并保守地选取较小值进行CDF评估。对于短期瞬态过程，则采用更为复杂的瞬态失效关联式，该模型综合考虑了中子注量、瞬态温度、稳态辐照温度以及温度变化率等多物理场耦合效应，通过引入TRAMP函数和归一化应力参数σ*来准确捕捉材料在快速瞬态条件下的失效行为。两种模型共同构成了D9包壳从稳态运行到极端瞬态工况的全范围失效评估体系。
+\paragraph{稳态计算模型}
+D9的应力断裂模型是没有辐照的堆外条件。需要注意的是，D9-C1P的断裂模型本来是20\% CW316，D9-C1是D9的断裂模型。总的来说，在600摄氏度以上，D9-C1比D9-C1P有更长的疲劳寿命。\\
+D9-C1P的断裂模型：
+\begin{equation}
+	\log_{10} t_{r} = A + \frac{B}{T} + \frac{C (\log_{10} \sigma)}{T}
+\end{equation}
+其中
+
+\begin{table}[h]
+	\centering
+	\begin{threeparttable}
+		\begin{tabular}{ccccc}
+			\toprule
+			\textbf{A} & \textbf{B} & \textbf{C} & \textbf{SEE} & \textbf{Condition} \\
+			\midrule
+			-16.638    & +34054     & -7113      & 0.26         & High Stress        \\
+			-12.637    & +22219     & -3591      & 0.18         & Low Stress         \\
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\item[] {\footnotesize 注：具体使用哪种应力，选择依据是更小的断裂时间。}
+		\end{tablenotes}
+	\end{threeparttable}
+	\caption{D9-C1P的断裂模型}
+	\label{tab:stress_data}
+\end{table}
+其中$t_r$是时间，h。T是温度，K。$\sigma$是环向应力，MPa。SEE是标准差。\\
+使用条件：\begin{itemize}
+	\item $770<T<1100$
+	\item $t_r \ge 2\quad \textbf{hours}$
+\end{itemize}
+环向应力的计算公式是：
+\begin{equation}
+	\sigma = \frac{D_{0}^{2} + D_{i}^{2}}{D_{0}^{2} - D_{i}^{2}} \cdot P
+\end{equation}
+其中，$D_0$是外直径，$D_1$是内直径，P是内部气体压力。\\
+
+\paragraph{瞬态模型}
+瞬态失效模型是文献\cite{satb1995}中附录A.2中给出的。模型具体形式如下：
+\begin{equation}
+	\ln t_{r} = A + B \ln \left( \ln \left( \frac{\sigma^{*}}{\sigma} \right) \right) + \frac{Q}{T} + \text{TRAMP} + C \tanh(\Phi t) + 125 \left[ \tanh \left( \frac{\sigma}{550} \right)^{10} \right] \left[ 1 - \tanh \left( \frac{TI}{583} - F \right)^{25} \right] \left[ \tanh \left( \frac{\Phi t}{2.5} \right) \right]
+\end{equation}
+其中各参数含义如下：
+\begin{equation}
+	\text{TRAMP} = -0.28 + 1.18 \tanh \left[ -0.5 (\ln \dot{T}) - 1 \right]
+\end{equation}
+\begin{equation}
+	\sigma^{*} = 775 - \left[ 387.5 \tanh \left( \frac{D - TI}{E} \right) \right] \tanh \left( \frac{\Phi t}{2.0} \right) + 125 \left[ \tanh \left( \frac{\sigma}{550} \right)^{10} \right] \left[ 1 - \tanh \left( \frac{TI}{583} - F \right)^{25} \right] \left[ \tanh \left( \frac{\Phi t}{2.5} \right) \right]
+\end{equation}
+其中的各种材料参数的变量如下：\\
+\begin{tabular}{ll}
+	$t_r$     & = 失效时间, hours                                    \\
+	$\sigma$  & = 环向应力, MPa                                      \\
+	$\Phi t$  & = 中子注量 n/cm$^2$, E $>$ 0.1 MeV, $\times 10^{22}$ \\
+	$T$       & = 温度 , K                                         \\
+	$TI$      & = 稳态辐照温度, K                                      \\
+	$\dot{T}$ & = 瞬态温度速率, K/sec                                  \\
+	$A$       & = $-43.06$                                       \\
+	$B$       & = $7.312$                                        \\
+	$C$       & = $-1.73$                                        \\
+	$Q$       & = $41339$                                        \\
+	$D$       & = $1000$                                         \\
+	$E$       & = $200$                                          \\
+	$F$       & = $0.438$                                        \\
+\end{tabular}
+
+D9-C1的断裂模型：
+\begin{equation}
+	\log_{10} t_r = A + \frac{B}{T} + \frac{C}{T} \log_{10} \sigma + D \log_{10} \sigma
+\end{equation}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ccccl}
+		\toprule
+		\textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{Condition} \\
+		\midrule
+		-10.727    & 29732      & -7414.8    & 0          & High Stress        \\
+		-53.034    & 61542      & -21246.8   & 18.361     & Medium Stress      \\
+		-17.141    & 32605      & -6803.5    & 0          & Low Stress         \\
+		\bottomrule
+	\end{tabular}
+	\caption{Parameters for Different Stress Conditions}
+	\label{tab:stress_parameters}
+\end{table}
+其中$t_r$是时间，h。T是温度，K。$\sigma$是环向应力，MPa。
+使用条件：\begin{itemize}
+	\item $640<T<1100$
+	\item $t_r \ge 1\quad \textbf{hours}$
+\end{itemize}
+对于温度640-820，使用高应力的系数。对于高于820K之后，采用下面的方式判断选择合适的系数。
+\begin{table}[h]
+	\centering
+	\caption{Valid Stress Range for Each Equation}
+	\label{tab:stress_ranges}
+	\begin{tabular}{@{}lc@{}}
+		\toprule
+		\textbf{Condition} & \textbf{判断依据}                                                                                                \\ \midrule
+		High Stress        & $\frac{42.306T - 31810}{18.361T - 13832.0}\le\log_{10} \sigma_H$                                             \\
+		Medium Stress      & $\frac{35.893T - 28937}{18.361T - 14443.3}\le\log_{10} \sigma_M\le\frac{42.306T - 31810}{18.361T - 13832.0}$ \\
+		Low Stress         & $\log_{10} \sigma_L\frac{35.893T - 28937}{18.361T - 14443.3}$                                                \\ \bottomrule
+	\end{tabular}
+\end{table}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{D9_rupture_time.png}
+	\caption{D9断裂时间和环向应力关系}
+	\label{fig:D9_rupture_vs_stress}
+\end{figure}
+在文章\cite{lathaThermalCreepProperties2008}的973K的实验中也提到了断裂寿命和施加应力之间的幂律定律。$t_r=B\sigma^n$。D9材料具体形式是：
+\begin{equation}
+	t_r = 478\sigma^{-0.14}\quad
+	\sigma= (t_r/394)^{-0.11}
+\end{equation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{D9_rupture_time_973.png}
+	\caption{D9在973K下两种断裂模型}
+\end{figure}
+
+\subsubsection{HT9}
+参考Karaha和Buongiomo\cite{KARAHAN2010283}使用的方法，考虑两种类型的包壳失效模型：一种是之前提到的基于累计损伤分数CDF，另一种是基于约束空腔增长（CCG)并考虑扩散和蠕动以及滑动(DCS)机制。CCG模型主要用于功率瞬态（事故工况）场景。\newline
+对于CDF方法存在多个破裂时间相关性研究。首先是Karaha和Buongiomo\cite{KARAHAN2010283}研究中提到的一对长短时标的模型。其中长短时标均是Dorn参数关联式\cite{NAM19981441}。另一个是来自Metailic Fuels Handbook(MFH)\cite{mfh1988}的模型。由于缺少堆内的实验数据，所以采用堆外的试验结果。但是堆内的实验数据显示，破裂时间略短，尤其是在低应力的条件下，因此使用堆外的应力破裂准则和堆内蠕变模型来计算应变失效，会过高估计低应力下的应变。最后西屋公司的报告提到一个针对瞬态时间的破裂时间模型。\\
+\paragraph{长/短时间尺度模型}
+长短时间尺度的破裂时间模型\cite{NamStatisticalFailureAnalysis1998}。\\
+破裂时间$t_r$的函数（以小时为单位）：
+\begin{equation}
+	C_T\theta =t_re^{-\frac{Q_L}{RT}}
+\end{equation}
+其中$Q_L$对于长时间尺度使用154$kcal/mol$，对于短时间尺度使用70.17$kcal/mol$，R是玻尔兹曼常数，T是温度，K。$C_T$是Dorn参数，长时间尺度取值范围是$3.915\times10^{-24}$，短时间尺度的取值是$2.778\times10^{-4}$(所有的短时间尺度)，Dorn参数的$\theta$来源曲线拟合：
+\begin{align}
+	\log_{10} \theta = 2028.9 - 800.13 \log_{10} \sigma_{\theta} + 105.26 (\log_{10} \sigma_{\theta})^2 - 4.63886 (\log_{10} \sigma_{\theta})^3 \\
+	\log_{10} \theta = -109.212 + 30.801 \log_{10} \sigma_{\theta} - 2.3811 (\log_{10} \sigma_{\theta})^2 + 0.00622 (\log_{10} \sigma_{\theta})^3
+\end{align}
+分别表示长时间和短时间尺度，其中$\sigma_{\theta}$表示环向应力，Pa。\\
+如果同时选择两个时间尺度，采用较长的破裂时间作为实际的破裂时间\cite{dimelfi1993_both_failure_ht9}。同时选择两种相关性时，可能会出现错误值。当模拟值落在长期和短期尺度相关性重叠的范围内时，建议同时使用这两种相关性。\\
+\paragraph{MFH}
+MFH\cite{mfh1988}提供了另一套HT9的蠕变失效的关系式。和上面的类似，MFH模型也采用两阶段方法来解释高应力和低应力的断裂时间。\\
+未辐照的HT9的断裂时间模型：
+\begin{equation}
+	\log_{10} t_r = A + \frac{B}{T} + \frac{C}{T} \log_{10} \sigma
+\end{equation}
+\begin{table}[H]
+	\centering
+	\begin{threeparttable}
+		\begin{tabular}{cccc}
+			\toprule
+			            & A       & B     & C       \\ \midrule
+			High Stress & -32.490 & 57781 & -11800  \\
+			Low Stress  & -35.173 & 45858 & -5563.1 \\ \bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\item {\footnotesize 注：具体使用哪种应力，选择依据是更小的断裂时间。}
+		\end{tablenotes}
+	\end{threeparttable}
+	\caption{Stress Data}
+\end{table}
+其中\\
+\begin{align*}
+	\sigma & = \text{环向应力，MPa}               \\
+	t_r    & = \text{失效时间，hrs}               \\
+	T      & = \text{温度，$700\le T\le1100 K$}
+\end{align*}
+高温下的断裂没有相关表达式，根据相关研究表明，高温下断裂的应变会变大（10-30\%）。\\
+\paragraph{WHC}
+在1994年，西屋汉福德公司\cite{HuangTransientFailureBehavior1994}（WHC）提供了一个HT9的断裂时间模型，主要用于瞬态条件下。在WHC关系式中，断裂时间$t_r$是温度和应力的函数：
+\begin{equation}
+	t_{r} = \theta e^{\frac{Q}{RT}}
+\end{equation}
+其中$\theta$是Dorn参数，$Q$是活化能70.17$kcal/mol$，R是气体常数，T是温度，K。$t_r$是失效时间，s。\\
+Dorn参数$\theta$的是环向应力$\sigma$的函数，计算公式：
+\begin{equation}
+	\log_e \theta = A + B \log_e \left[ \log_e \left( \frac{\sigma^*}{\sigma} \right) \right]
+\end{equation}
+其中$\sigma^*=730MPa$是材料的标称硬度。拟合系数B=12.47，同时假设和温度无关。A是温度的函数，计算公式：
+\begin{equation}
+	A = \begin{cases}
+		24.942 - 0.153 \cdot (T - 273.15) + 9.488 \times 10^{-5} \cdot (T - 273.15)^2 & T < 1144.15              \\
+		-36.1 + 1.5 \tanh\left(\frac{T - 1144.15}{80.0}\right)                        & 1144.15 \leq T < 1393.15 \\
+		-36.1 + 1.5 \tanh\left(\frac{179}{80.0}\right)                                & \text{otherwise}
+	\end{cases}
+\end{equation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{HT9_creep_rupture_comparison_multi_temp.png}
+	\caption{D9断裂时间和环向应力关系}
+	\label{fig:HT9_rupture_vs_stress}
+\end{figure}
+
+\paragraph{受约束空洞聚集模型(CCG)}
+采用D\&CS的约束空洞聚集（CCG）模型\cite{TVERGAARD1985447}可计算沿晶界周期性分布的空洞的裂纹半径$a$。空洞中心以间距$2b$等距分布，当$a=b$时发生失效。该模型对用户提供的b值高度敏感。在多数情况下，b 值可通过实验数据确定，或根据所模拟实验中已知的失效情况进行拟合。若b值未知或存在不确定性，也可采用短时失效模拟中使用的短时CDF模型。\\
+裂纹半径增长率$\dot{a}$与空腔体积增长率$\dot{V}$的关系为：
+\begin{equation}
+	\dot{a} = \frac{\dot{V}}{4\pi a^{2} h(\psi)}
+\end{equation}
+其中$h(\psi)$的定义：
+\begin{equation}
+	h(\psi) = \frac{1}{\sin\psi} \left[ \frac{1}{1 + \cos\psi} - \frac{\cos\psi}{2} \right]
+\end{equation}
+其中$\cos\phi=\gamma_b/2\gamma_s$是晶粒边界自由能与两倍晶粒表面自由能之比。\\
+对于$a/L\le10$的情况，体积增长率$\dot{V}$是刚性晶粒增长率$\dot{V}_1$与幂律蠕变材料增长率$\dot{V}_2$之和。
+\begin{align*}
+	\dot{V}_1 = 4\pi D \frac{\sigma_n - (1 - f) \sigma_s}{\ln(1/f) - (3 - f)(1 - f)/2}
+\end{align*}
+
+\begin{align}
+	\dot{V}_2 =
+	\begin{cases}
+		\pm 2 \pi \dot{\epsilon}_e^C a^3 h(\psi) \left[ \alpha_n \left| \frac{\sigma_m}{\sigma_e} \right| + \beta_n \right]^n, & \text{for } \pm \frac{\sigma_m}{\sigma_e} > 1               \\
+		2\pi \dot{\epsilon}_e^C a^3 h(\psi) \left[ \alpha_n + \beta_n \right]^n \frac{\sigma_m}{\sigma_e},                     & \text{for } \left| \frac{\sigma_m}{\sigma_e} \right| \leq 1
+	\end{cases}
+\end{align}
+其中\( \sigma_n \)是平均法向应力 。烧结应力可通过 \( \sigma_s = 2\gamma_s (\sin \psi)/a \) 计算。晶界扩散参数为 \( D = D_B \delta_B \Omega / RT \)，其中 \( D_B \delta_B \) 为晶界扩散系数，\( \Omega \) 为原子体积，\( R \) 为玻尔兹曼常数，\( T \) 为以开尔文为单位的绝对温度。晶界面积分数 \( f \) 由下式确定：
+\begin{equation}
+	f = \max \left\{ \left( \frac{a}{b} \right)^2, \left( \frac{a}{a + 1.5L} \right)^2 \right\}
+\end{equation}
+
+
+其中 \( L = (D\sigma_e / \dot{\epsilon}_e^C)^{1/3} \)。冯·米塞斯应力为 \( \sigma_e \)，静水压（平均）应力为 \( \sigma_m \)，有效蠕变应变速率为 \( \dot{\epsilon}_e^C \)。假设材料遵循幂律蠕变规律，则 \( n \) 为幂指数，\( \alpha_n = 3/2n \)，\( \beta_n = (n - 1)(n + 0.4319)/n^2 \)。
+
+假定裂纹长度起始于一个最小值，且不允许低于该值。裂纹在扩展后仍可能收缩，但一旦发生失效，便视为永久性裂纹，不再缩短。裂纹长度的计算方法是：将当前时间步长乘以所计算的扩展速率 \( \dot{a} \)。
+\xsubsection{蠕变}{creep}
+蠕变包含热蠕变$\bar{\varepsilon}_T$和辐照蠕变$\bar{\varepsilon}_I$。总蠕变是两者之和$\bar{\varepsilon} = \bar{\varepsilon}_T + \bar{\varepsilon}_I$。
+\subsubsection{SS316}
+在文章\cite{lathaThermalCreepProperties2008}中提到了SS316的蠕变模型，蠕变率模型满足$t_r=B\sigma^{-n}$。\\
+具体的模型是：
+\begin{equation}
+	\dot{\varepsilon}=6\times10^{-28}\sigma^9
+\end{equation}
+其中$\dot\varepsilon$的单位是$1/s$，应力单位是$MPa$。\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{SS316_creep_rate.png}
+	\caption{SS316蠕变速率和应力关系曲线}
+\end{figure}
+此外最小的蠕变速率和失效时间的关系Monkman Grant relationship(MGR) $\dot{\varepsilon_m}^at_r=C$。此外Dobes和Millicka提出了一种蠕变速率和断裂寿命之间的关系，$\left( \dot{\varepsilon}_{m}^{a\prime} t_{r} \right) / \varepsilon_{t} = C'$，称为修正后的蒙克曼关系（MMGR）。\\
+MGR的SS316模型：
+\begin{equation}
+	\varepsilon^{-0.66}t_r=0.839
+\end{equation}
+MMGR的SS316模型：
+\begin{equation}
+	\left( \dot{\varepsilon}_{m}^{-0.97} t_{r} \right) / \varepsilon_{t} = 0.306
+\end{equation}
+在文章\cite{batesDesignEquationsStressfree1979}中提到了FFTF堆芯内的20\%冷加工的SS316辐照蠕变和热蠕变模型。同时该蠕变模型也用在FEAST程序\cite{karahanModelingThermoMechanicalIrradia2007}。模型具体形式如下：
+\begin{multline}
+	\dot{\epsilon} = \Bigg( 3a_1\varphi \exp(-3\varphi t)\sigma + 26.36a_2\left(\frac{\varphi t}{\varphi}\right)^{-0.5} \sigma^{4.5} \\
+	+ 2.78\times10^3 \cdot 3a_3\left(\sinh\left(\frac{\sigma}{\sigma_1 H}\right)\right)^2 \left(\frac{2.78\times10^3\varphi t}{\varphi}\right)^2 \\
+	\times \Bigg[ \sinh\left(\frac{\sigma}{\sigma_1 H}\right) -\frac{\sigma}{\sigma_1}\frac{1}{2H}\left(\frac{\varphi}{\sqrt{\varphi_t} + \varphi t}\right)\cosh\left(\frac{\sigma}{\sigma_1 H}\right) \Bigg] \times 10^{-7} \\
+	+ a_4\varphi\sigma + \frac{a_5}{a_6}2.20\tanh\left(\frac{\varphi t}{\Omega}\right)\sigma \Bigg) \times 10^{-7}
+\end{multline}
+其中
+\begin{align*}
+	\Omega         & : 9                                          \\
+	a_1            & = 134\exp\left(-\frac{188000}{RT}\right)     \\
+	a_2            & = \exp\left(1.41 - \frac{24000}{T}\right)    \\
+	a_3            & = \exp\left(77.84 - \frac{95000}{T}\right)   \\
+	a_4            & = 7.25 \times 10^{-4}                        \\
+	a_5            & = \exp\left(2.91 - \frac{16000}{RT}\right)   \\
+	a_6            & = 1 + \exp\left(45 - \frac{80000}{RT}\right) \\
+	\varphi        & : \text{Neutrons/cm}^2\text{/s/}10^{15}      \\
+	\varphi        & : \text{Neutrons/cm}^2\text{/}10^{22}        \\
+	\sigma         & : \text{Equivalent stress (MPa)}             \\
+	T              & : \text{Temperature (K)}                     \\
+	\dot{\epsilon} & :\text{creep rate(\%/s)}
+\end{align*}
+FEAST程序中省略了第三项，同时如果使用文献\cite{batesDesignEquationsStressfree1979}的积分形式进行推导，修改了部分第三项的组成，包含原文献中$1-\frac{1}{H}$和第三项系数的问题。最终蠕变率随等效应力的关系如下图所示。
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{SS316_creep_comparison.png}
+\end{figure}
+
+\subsubsection{D9}
+D9的堆内辐照蠕变模型\cite{hofmanMetallicFuelsHandbook2019}如下：\\
+积分形式：
+\begin{equation}
+	\bar{\varepsilon} = A_1 \exp\left(-\frac{A_2}{T}\right) \left[1 - \exp\left(-3\Phi\right)\right] \bar{\sigma} + A_3 \Phi\bar{\sigma} + A_6 t \left(\frac{\bar{\sigma}}{Y}\right)^4 \exp\left(-\frac{A_7}{T}\right) + 2.2 R(T) \left(\Omega \right)^2 \bar{\sigma} \log_e\left[\cosh\left(\frac{\Phi}{\Omega}\right)\right] + A_4 t \bar{\sigma} \exp\left(-\frac{A_5}{T}\right)
+\end{equation}
+需要注意，$A_6$和$A_4$开头的代表热蠕变。\\
+蠕变率形式：
+\begin{equation}
+	\dot{\bar{\varepsilon}} = \left[3A_1 \exp\left(-\frac{A_2}{T}\right) \exp\left(-3\Phi\right) \bar{\sigma} + A_3 \bar{\sigma} + 2.2 R(T)\Omega \bar{\sigma} \tanh\left(\frac{\Phi}{\Omega}\right)\right] \phi \times 10^{-7} + A_6 \left(\frac{\bar{\sigma}}{Y}\right)^4 \exp\left(-\frac{A_7}{T}\right) + A_4 \bar{\sigma} \exp\left(-\frac{A_5}{T}\right)
+\end{equation}
+其中
+\begin{flalign*}
+	R(T)                    & = c_0 \exp \left[ -c_1 (T - c_2)^2 \right]                                                  & \\
+	t                       & = \text{time in units of s}                                                                 & \\
+	T                       & = \text{temperature in units of K}                                                          & \\
+	Y                       & = 223000 - 79.29 T = \text{Young's Modulus in units of MPa}                                 & \\
+	\Phi                    & = \text{中子注量fluence in units of } 10^{22} \text{ n/cm}^2 \ [E > 0.1 \text{ MeV}]            & \\
+	\phi                    & = \text{中子注量率flux in units of } 10^{15} \text{ n/cm}^2\cdot\text{s} \ [E > 0.1 \text{ MeV}] & \\
+	\bar{\sigma}            & = \text{有效应力effective stress in units of MPa}                                               & \\
+	\bar{\varepsilon}       & = \text{有效应变effective strain in units of } \%                                               & \\
+	\dot{\bar{\varepsilon}} & = \text{有效应变率effective strain rate in units of } \%/\text{s}                                &
+\end{flalign*}
+其中的常数：
+\begin{flalign*}
+	A_1    & = 67                                                       & \\
+	A_2    & = 9461                                                     & \\
+	A_3    & = 1.0 \times 10^{-4}                                       & \\
+	A_4    & = 3955                                                     & \\
+	A_5    & = 27680                                                    & \\
+	A_6    & = 6.14 \times 10^{13}                                      & \\
+	A_7    & = 17111                                                    & \\
+	\Omega & = 9, \text{ expressed in units of } 10^{22} \text{ n/cm}^2 &
+\end{flalign*}
+\begin{flalign*}
+	c_0 & = 1.9 \times 10^{-4} & \\
+	c_1 & = 3.0 \times 10^{-5} & \\
+	c_2 & = 823                &
+\end{flalign*}
+使用范围：1. 温度范围$350-750^\cdot C$。2. 应变小于$10^{-5}s^{-1}$。3.中子注量率的量级在$2\times10^{15}\text{ n/cm}^2\cdot\text{s}$。\\
+在\cite{lathaThermalCreepProperties2008}中，文章侧重于973K热蠕变对失效的实验，提到了另一个关于D9的蠕变模型。\\
+\begin{equation}
+	\dot{\varepsilon}=6\times10^{-30}\sigma^{9.2}
+\end{equation}
+其中$\dot\varepsilon$的单位是$1/s$，应力单位是$MPa$。\\
+此外最小的蠕变速率和失效时间的关系Monkman Grant relationship(MGR) $\dot{\varepsilon_m}^at_r=C$。此外Dobes和Millicka提出了一种蠕变速率和断裂寿命之间的关系，$\left( \dot{\varepsilon}_{m}^{a\prime} t_{r} \right) / \varepsilon_{t} = C'$，称为修正后的蒙克曼关系（MMGR）。\\
+MGR的D9模型：
+\begin{equation}
+	\varepsilon^{-0.722}t_r=0.276
+\end{equation}
+MMGR的D9模型：
+\begin{equation}
+	\left( \dot{\varepsilon}_{m}^{-0.85} t_{r} \right) / \varepsilon_{t} = 1.77
+\end{equation}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{D9_creep_rate.png}
+\end{figure}
+
+\subsubsection{HT9}
+HT9的蠕变\cite{hofmanMetallicFuelsHandbook2019}比D9要简单一些，主要原因是没有冷加工水平移动位错导致的瞬态项。基于堆外数据开发的热蠕变模型，适用超过600摄氏度。在750摄氏度以上，热蠕变占主导。\\
+辐照导致的蠕变$\overline{\varepsilon}_I$
+\begin{equation}
+	\overline{\varepsilon}_I = \left[ B_0 + A \exp\left(-\frac{Q}{RT}\right) \right] \phi t \overline{\sigma}^{1.3}
+\end{equation}
+其中
+\begin{align*}
+	\overline{\varepsilon}_I & = \text{等效应变 effective strain, \%}                                        \\
+	\overline{\sigma}        & = \text{等效应力 effective stress, MPa}                                       \\
+	B_0                      & = 1.83 \times 10^{-4}                                                     \\
+	\phi t                   & = \text{中子注量 neutron fluence } 10^{22} \text{ n/cm}^2 \text{ (E>0.1 MeV)} \\
+	A                        & = 2.59 \times 10^{14}                                                     \\
+	Q                        & = 73000                                                                   \\
+	T                        & = \text{温度 temperature, K}                                                \\
+	R                        & = 1.987
+\end{align*}
+如果是转化为蠕变率的形式，辐照蠕变的速率是：
+\begin{equation}
+	\dot{\overline{\varepsilon}}_I = \left[ B_0 + A \exp\left(-\frac{Q}{RT}\right) \right] \phi \overline{\sigma}^{1.3}
+\end{equation}
+其中$\dot{\overline{\varepsilon}}_I$是辐照蠕变速率，\%/s。\\
+热蠕变使用下面的表达式
+\begin{equation}
+	\overline{\varepsilon}_T = \overline{\varepsilon}_{TP} \text{(Primary)} + \overline{\varepsilon}_{TS} \text{(Steady-State)} + \overline{\varepsilon}_{TT} \text{(Tertiary)}
+\end{equation}
+其中
+\begin{flalign*}
+	\overline{\varepsilon}_{TP} & = \left[ C_{1} \exp\left(-\frac{Q_{1}}{RT}\right) \overline{\sigma} + C_{2} \exp\left(-\frac{Q_{2}}{RT}\right) \overline{\sigma}^4 + C_{3} \exp\left(-\frac{Q_{3}}{RT}\right) \overline{\sigma}^{0.5} \right] \times (1 - \exp(-C_{4} t)) \\[10pt]
+	\overline{\varepsilon}_{TS} & = \left[ C_{5} \exp\left(-\frac{Q_{4}}{RT}\right) \overline{\sigma}^2 + C_{6} \exp\left(-\frac{Q_{5}}{RT}\right) \overline{\sigma}^5 \right] t                                                                                            \\[10pt]
+	\overline{\varepsilon}_{TT} & = C_{7} \exp\left(-\frac{Q_{6}}{RT}\right) \overline{\sigma}^{10} t^4
+\end{flalign*}
+热蠕变率的形式：
+\begin{equation}
+	\dot{\overline{\varepsilon}}_T = \dot{\overline{\varepsilon}
+	}_{TP} + \dot{\overline{\varepsilon}}_{TS} + \dot{\overline{\varepsilon}}_{TT}
+\end{equation}
+各个部分分别是：
+\begin{flalign*}
+	\dot{\overline{\varepsilon}
+	}_{TP}                            & = \left[ C_1 \exp\left(-\frac{Q_1}{RT}\right) \overline{\sigma}
+		+ C_2 \exp\left(-\frac{Q_2}{RT}\right) \overline{\sigma}^4
+	+ C_3 \exp\left(-\frac{Q_3}{RT}\right) \overline{\sigma}^{0.5} \right] C_4 \exp(-C_4 t),                 \\
+	\dot{\overline{\varepsilon}}_{TS} & = C_5 \exp\left(-\frac{Q_4}{RT}\right) \overline{\sigma}^2
+	+ C_6 \exp\left(-\frac{Q_5}{RT}\right) \overline{\sigma}^5                                               \\
+	\dot{\overline{\varepsilon}}_{TT} & = 4 C_7 \exp\left(-\frac{Q_6}{RT}\right) \overline{\sigma}^{10} t^3.
+\end{flalign*}
+以上公式中使用的常数如下：
+\begin{flalign*}
+	C_1                      & = 13.4                                                    \\
+	C_2                      & = 8.43\times10^{-3}                                       \\
+	C_3                      & = 4.08 \times 10^{18}                                     \\
+	C_4                      & = 1.6 \times 10^{-6}                                      \\
+	C_5                      & = 1.17 \times 10^{9}                                      \\
+	C_6                      & = 8.33 \times 10^{9}                                      \\
+	C_7                      & = 9.53 \times 10^{21}                                     \\
+	Q_1                      & = 15027                                                   \\
+	Q_2                      & = 26451                                                   \\
+	Q_3                      & = 89167                                                   \\
+	Q_4                      & = 83142                                                   \\
+	Q_5                      & = 108276                                                  \\
+	Q_6                      & = 282700                                                  \\
+	\overline{\varepsilon}_T & = \text{有效热蠕变 effective thermal creep strain, \%}         \\
+	R                        & = \text{气体常数 gas constant} = 1.987                        \\
+	t                        & = \text{时间 time，seconds}                                  \\
+	T                        & = \text{温度 temperature, K}                                \\
+	\overline{\sigma}        & = \text{有效应力 effective stress, MPa}                       \\
+	\dot{\varepsilon}_T      & = \text{有效热蠕变率 effective thermal creep strain rate, \%/s}
+\end{flalign*}
+模型的使用范围是：温度350-750$\SI{}{\celsius}$。应力范围0-250MPa。\\
+在Bison\cite{halesBISONTheoryManual2016}中也有HT9的蠕变模型，其参考文献也说明来自\cite{hofmanMetallicFuelsHandbook2019}，但是只有上面蠕变模型的部分。\\
+\begin{equation}
+	\dot{\varepsilon}_{cr} = C_5 \exp\left(-\frac{Q_4}{RT}\right)\bar{\sigma}^2 + C_6 \exp\left(-\frac{Q_5}{RT}\right)\bar{\sigma}^5 + \left[B_o + A \exp\left(-\frac{Q}{RT}\right)\right]\phi \bar{\sigma}^{1.3}
+	\label{eq:HT9_Bison_creep}
+\end{equation}
+其中各参数定义及取值如下：
+\begin{align*}
+	C_5                    & = 1.17 \times 10^9                                             \\
+	C_6                    & = 8.33 \times 10^9                                             \\
+	Q_4                    & = 83142 \text{ cal/g-mol}                                      \\
+	Q_5                    & = 108276 \text{ cal/g-mol}                                     \\
+	B_o                    & = 1.83 \times 10^{-4}                                          \\
+	A                      & = 2.59 \times 10^{14}                                          \\
+	Q                      & = 73000 \text{ cal/g-mol}                                      \\
+	R                      & = 1.987 \text{ cal/(g-mol$\cdot$K)}                            \\
+	T                      & = \text{Temperature (K)}                                       \\
+	\phi                   & = \text{Neutron Flux } (10^{22} \text{ n/(cm}^2\cdot\text{s)}) \\
+	\bar{\sigma}           & = \text{Effective stress (MPa)}                                \\
+	\dot{\varepsilon}_{cr} & = \text{Creep rate (\%/s)}
+\end{align*}
+在参考文献\cite{Ryu:2011cy}中也存在另一种形式的蠕变模型，模型包含一阶蠕变和二阶蠕变。具体的形式是：
+\begin{equation}
+	\dot{\varepsilon}_{xy,rky} = 0.01 \left(10^{0.52 - 2647.31/T}\sigma^{1.09 + 31.48/T}\right) m \exp(-mt)
+\end{equation}
+其中T是温度，单位为K，$\sigma$是冯米塞斯应力，单位为MPa，m是时间，单位为s。$m=-2.11\times10^{-6}\, \text{1/s}$。
+\begin{equation}
+	\dot{\varepsilon}_{xy,rky} = 10^{-5.58 - 5562.28/T}\sigma^{1.5}
+\end{equation}
+其中T是温度，单位为K，$\sigma$是冯米塞斯应力，单位为MPa。
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{HT9_creep_rate.png}
+		\caption{HT9蠕变速率和应力关系曲线}
+		\label{fig:HT9_creep_rate}
+	\end{center}
+\end{figure}
+
+\xsubsection{屈服应力}{Yield stress}
+\subsubsection{SS316}
+V. Karthik做了高剂量下的SS316力学性能测试，根据实验结果总结如下：\\
+\begin{figure}[H] % H 表示强制当前位置放置
+	\centering
+	\includegraphics[width=0.8\textwidth]{SS316_irradiated_stress_strain.png} % 设置图片宽度为页面宽度的50%
+	\caption{SS316辐照下的应力应变曲线}
+	\label{fig:SS316_Irradiation} % 标签用于引用
+\end{figure}
+在对应于低 dpa （10 dpa）的第一阶段，当照射温度约为 723 K 时，机械性能迅速变化至接近饱和。冷加工钢在低于723 K的温度下，这种变化表现为硬化和延展性下降，而在723 K以上则表现为软化。在第二阶段（10 < dpa < 60），拉伸性能随着dpa缓慢变化。当辐照温度和dpa使空洞膨胀显著时，空洞膨胀对力学性能产生最强的影响。已观察到延展性和膨胀之间的直接相关性，这要么是由于空洞促进脆性断裂的直接作用，要么是由于辐照诱导的偏析在空洞存在下产生的间接作用。强度降低可归因于高空洞密度和大量析出物导致的高应力集中，从而引起软化、流动局部化和相应的延展性损失。第三种状态对应于高于 873 K 的照射温度，这会导致在与氦脆相关的高温下延展性降低。\\
+\textcolor{red}{文章没有给出具体的模型，需要后面进行拟合。}
+
+\subsubsection{D9}
+\label{sec:D9_yield_stress}
+D9-C1的屈服应力会根据批次和热处会不同，存在大约10\%的误差。对D9-C1P的屈服应力了解不够充分，和D9-C1相比，高温下的差异会变的明显，但是没有足够的数据。此处使用统一的模型。\\
+对于辐照或者未辐照条件下的D9的屈服强度（0.2\%应变）模型：
+\begin{equation}
+	\ln\left(\frac{F\sigma^*}{\sigma_y}\right) = A \left[\frac{\left(\frac{\sigma^*}{G}\right)^M}{\dot{\varepsilon} \exp\left(\frac{Q}{RT_k}\right)}\right]^\lambda
+\end{equation}
+其中
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+	\begin{align*}
+		\sigma^*          & = 450 - 240 \tanh\left(\frac{T_T - 760}{300}\right) \\
+		G                 & = 78600 - 38.41 T_T                                 \\
+		A                 & = 30000                                             \\
+		M                 & = 5.5                                               \\
+		\lambda           & = 0.22                                              \\
+		Q                 & = 70000                                             \\
+		R                 & = 1.98726                                           \\
+		F\footnotemark[1] & = B - C \tanh\left(\frac{T_i - D}{170}\right) - E   \\
+		B                 & = 1.495 \pm 0.03 \phi t                             \\
+		C                 & = 0.776 + 0.046 \phi t                              \\
+		D                 & = 384 - 4.4 \phi t                                  \\
+	\end{align*}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+	\begin{align*}
+		E                 & = 0.15 + 0.15 \tanh\left(\frac{T_i - 630}{10}\right)                                                                    \\
+		\sigma_y          & = \text{屈服强度} (0.2\% \text{ offset yield strength, MPa})                                                                \\
+		G                 & = \text{剪切模量} (\text{Shear modulus, MPa})                                                                               \\
+		T_T               & = T_k - 273                                                                                                             \\
+		T_k               & = \text{测试温度, K} \quad (273 \text{ K} \leq T_k \leq 1133 \text{ K})                                                     \\
+		T_i               & = T_I-273 \quad (273 \text{ K} \leq T_1 \leq 1023 \text{ K})                                                            \\
+		T_I               & = \text{辐照温度, K} \quad (273 \text{ K} \leq T_1 \leq 1023 \text{ K})                                                     \\
+		\phi t            & = \text{ Fast fluence, } 10^{22} \text{ n/cm}^2 \quad (\phi t \leq 12 \times 10^{22} \text{ n/cm}^2)                    \\
+		\dot{\varepsilon} & = \text{ Strain rate, } \text{s}^{-1} \quad (10^{-5} \text{ s}^{-1} \leq \dot{\varepsilon} \leq 10^{-2} \text{ s}^{-1}) \\
+	\end{align*}
+\end{minipage}
+
+\subsubsection{HT9}
+\label{sec:HT9_yield_stress}
+未辐照和辐照之后的HT9的模型是NSMH提出的。对于辐照影响的使用范围：快中子通量要小于$11\times 10^22 \quad n/cm^2$，辐照温度尽量小于600\SI{}{\celsius}。在600\SI{}{\celsius}之后屈服应力会减弱，可能是因为过度加热。
+\begin{equation}
+	\ln\left(\frac{\sigma^{\star} F}{\sigma_y}\right) = A \left[\frac{\left(\frac{\sigma^{\star}}{G}\right)^M}{\dot{\varepsilon} \exp\left(\frac{Q}{RT_k}\right)}\right]^\lambda
+\end{equation}
+其中
+\begin{minipage}[t]{0.45\textwidth}
+	\begin{align*}
+		F\footnotemark[1] & = B \left[1 - 0.5 \tanh\left(\frac{T_i - D}{90}\right)\right]^{0.5} + C \\
+		A                 & = 20000                                                                 \\
+		M                 & = 5                                                                     \\
+		\lambda           & = 0.172                                                                 \\
+		Q                 & = 82000                                                                 \\
+		R                 & = 1.98726                                                               \\
+		\sigma^*          & = 430 - 190 \tanh\left(\frac{T_t - 640}{225}\right)                     \\
+		G                 & = 89640 - 53.78 T_t                                                     \\
+		B                 & = 1 - 0.02 \phi t                                                       \\
+		C                 & = 0.02 \phi t                                                           \\
+		D                 & = 425 + 10 \phi t
+	\end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+	\begin{align*}
+		\sigma_y          & = 0.2\% \text{ 屈服应力（offset yield strength, MPa）}                                \\
+		G                 & = \text{剪切模量（Shear modulus, MPa）}                                               \\
+		T_t               & = T_k - 273                                                                     \\
+		T_i               & = T_1 - 273                                                                     \\
+		T_1               & = \text{辐照温度（Irradiation temperature, K）} (723 \text{ K} < T_1 < 933 \text{ K)} \\
+		T_k               & = \text{测试温度（Test temperature, K）}                                              \\
+		\phi t            & = 10^{22} \text{ n/cm}^2, \text{ E > 0.1 MeV}                                   \\
+		\dot{\varepsilon} & = \text{应变率（Strain rate, s）}^{-1}
+		                  & 10^{-5} \text{ s}^{-1} < \dot{\varepsilon} < 10^{-2} \text{ s}^{-1}             \\
+		\phi t            & < 11 \times 10^{22} \text{ n/cm}^2
+	\end{align*}
+\end{minipage}
+
+\footnotetext[1]{未辐照条件下$F=1$}
+
+
+\xsubsection{极限拉伸强度}{uts}
+极限拉伸强度（ultimate tensile strength），简称为UTS。
+\subsubsection{D9}
+\label{sec:D9_UTS}
+D9的极限拉伸强度是温度、辐照温度和辐照暴露。此外还需要用到之前提到的屈服应力。
+\begin{equation}
+	\sigma_{\text{UTS}} = \sigma_{\text{YS}} \left[ 0.295 \left( 1 - 0.9 \tanh \frac{\Delta T + 400}{150} \right) + 1.055 \right]
+\end{equation}
+其中：
+\begin{align*}
+	\sigma_{\text{UTS}} & = \text{极限拉伸强度，MPa} \\
+	\sigma_{\text{YS}}  & = \text{屈服强度，MPa}   \\
+	\Delta T            & = T_T - T_i         \\
+	T_T                 & = \text{测试温度，T}     \\
+	T_i                 & = \text{辐照温度，T}     \\
+\end{align*}
+中子通量，温度和应变率通过影响屈服强度进而影响极限拉伸强度。在计算非辐照的极限拉伸强度时，设置$F=1$，同时$\Delta T=0$。\\
+模型的使用条件是辐照温度640-1010K，应变率$\ge 10^{-5}/s$。
+
+\subsubsection{HT9}
+\label{sec:HT9_UTS}
+未辐照的HT9的极限拉伸强度模型，应变率、温度、和中子是通过影响屈服应力进而影响极限拉伸强度。
+\begin{equation}
+	\sigma_{u} = \sigma_{y} \left[1.1 - 0.1 \tanh\left(\frac{\Delta T - 200}{200}\right)\right]
+\end{equation}
+其中
+\begin{align*}
+	\Delta T & = T_t - T_i                                                       \\
+	\sigma_u & = \text{极限拉伸强度（Ultimate tensile strength, MPa）}                   \\
+	\sigma_y & = \text{屈服强度 （Yield strength, MPa）}                               \\
+	T_t      & = \text{测试温度（Test temperature, K）}                                \\
+	T_i      & = \text{辐照温度（Irradiation temperature,）} 723 < T_i < 933 \text{ K}
+\end{align*}
+要计算未辐照的极限拉伸强度，设置$\Delta T= T_t -848$，同时屈服强度$\sigma_y$使用未辐照的。
+
+\xsubsection{总伸长量}{total elongation}
+\subsubsection{D9}
+\label{sec:D9_total_elongation}
+D9-C1在辐照和未辐照，应变率小于$10^{-5}$条件下，总伸长率（total Elongation）的模型：
+\begin{equation}
+	\varepsilon_t = -2.22 + 1.64 \times 10^{-2} T_1 + 2.17 \times 10^{-4} \exp\left(\frac{T_1}{100}\right) - 6.3 \times 10^{-3} T_t
+\end{equation}
+其中：
+\begin{align*}
+	\varepsilon_t & = \text{总伸长量，\%}                    \\
+	T_t           & = \text{测试温度，K}                     \\
+	T_i           & = \text{辐照温度，K} \quad 640<T_i<1010K \\
+\end{align*}
+注意，模型的使用条件是$T_t=T_i$，或者是$T_t=T_i+110\text{K}$。此外，该方程适用于 $T_t = T_i$ 或 $T_1 = T_i + 110K$ 的条件。此外，辐照硬化或软化取决于辐照温度，因此在 $T_i$ 和 $T_t$ 之间存在其他关系的情况下，不应使用该方程进行建模。
+
+\subsubsection{HT9}
+\label{sec:HT9_total_elongation}
+未辐照的辐照之后的HT9的延展性基本类似，所以总伸长量不包含辐照累计项。
+\begin{equation}
+	\varepsilon_{t} = 9.97 + 1.34 \times 10^{-3} \exp\left(\frac{T_{t}}{100}\right)
+\end{equation}
+其中
+\begin{align*}
+	\varepsilon_t & = \text{总伸长量（total elongation, \%）}                         \\
+	T_t           & = \text{测试温度（Test temperature, ）} 273 < T_t < 973 \text{ K}
+\end{align*}
+
+\xsubsection{弹性模量和泊松比}{}
+\subsubsection{D9}
+杨氏模量\cite{hofmanMetallicFuelsHandbook2019}（E），剪切模量\cite{hofmanMetallicFuelsHandbook2019}（G），和泊松比（$\mu$）均是温度的函数：
+\begin{align}
+	E & = 2.01 \times 10^5 - 79.29T \label{eq:E} \\
+	G & = 7.86 \times 10^4 - 38.41T \label{eq:G} \\
+	v & = \frac{E}{2G} - 1 \label{eq:v}
+\end{align}
+其中：
+\begin{align*}
+	E,G & \text{单位是MPa}              \\
+	T   & \text{单位是} \SI{}{\celsius}
+\end{align*}
+使用范围是$0<T\le800^\cdot C$。
+
+\subsubsection{HT9}
+杨氏模量\cite{hofmanMetallicFuelsHandbook2019}（E），剪切模量\cite{hofmanMetallicFuelsHandbook2019}（G），和泊松比（$\mu$）均是温度的函数：
+\begin{align}
+	E & = 2.137 \times 10^5 - 102.74T \\
+	G & = 8.964 \times 10^4 - 53.78T  \\
+	v & = \frac{E}{2G} - 1
+\end{align}
+其中：
+\begin{align*}
+	E,G & \text{单位是MPa}              \\
+	T   & \text{单位是} \SI{}{\celsius}
+\end{align*}
+使用范围是$0<T\le800^\cdot C$。
+
+\subsubsection{SS316}
+两种SS316的杨氏模量和泊松比的模型，一个是来源\cite{Hammond1979ornl5442}(ORNL)，另一个来源根据Bison网站描述已经不可查证(LEGACY\_IFR)。\\
+第一个模型是基于静态条件下的动态测量。将304不锈钢的动态测试杨氏模量与静态值进行比较，发现两者相似。此外，还比较了304和316不锈钢的动态杨氏模量值，发现他们相似。因此该模型使用动态测试数据来近似稳态值。杨氏模量的拟合结果：
+\begin{equation}
+	E=198.0\left(1-3.93625\times 10^{-4}T_{C}-8.37648\times 10^{-8}T_{C}^{2}+9.26214 \times 10^{-11}T_{C}^{3}\right)
+\end{equation}
+其中E单位是GPa，$T_C=T-273.15-24$，$T$是开氏温度，泊松比表达式：\\
+\begin{equation}
+	\nu = 0.29015 \left(1 + 3.55518 \times 10^{-4} T_{C} - 2.20321 \times 10^{-7} T_{C}^{2} + 1.18177 \times 10^{-10} T_{C}^{3}\right)
+\end{equation}
+LEGACY\_IFR的模型是源自整体式快堆手册的旧模型，原始的参考文献已经找不到，模型如下：
+\begin{equation}
+	E = 2.15946 \times 10^{11} - 7.07727 \times 10^{7} T \quad \text{Pa}
+\end{equation}
+\begin{equation}
+	\nu = 0.31
+\end{equation}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{SS316_elasticity_tensor.png}
+	\end{center}
+\end{figure}
+\xsubsection{损伤}
+此处列出常见的五种损伤模型，希望之后在MOOSE中实现。在损伤模型中总是用寿命周期（N）来表示，这是因为N总是通过实验获取，一次循环中带来的损伤因子可以认为是$\frac{1}{N}$，当满足$D=1$的时候，材料破损。
+
+\subsubsection{线性损伤模型}
+线性损伤模型应该是最简单使用最广的预测损伤的模型，通常使用下式：
+\begin{equation}
+	D_f+D_C=1(\text{at failure})
+\end{equation}
+其中$D_f$和$D_c$分别是疲劳和蠕变损伤。在美国机械工程师协会中采用周期和时间的比表示：
+\begin{equation}
+	\sum \frac{n}{N_f} + \sum \frac{t}{t_r} \leq D
+\end{equation}
+其中，D是总蠕变-疲劳损伤，n是特定加载下的循环次数，$N_f$是特定应变范围内的失效的循环次数。t是特定加载下的持续时间，$t_r$
+是给定加载条件下的等温应力断裂曲线得到的断裂时间。\\
+这种简单的相加的方法，在很多情况下是不合适的，原因如下。
+\begin{itemize}
+	\item 在蠕变的损伤中，压缩和拉伸的损伤都是通过拉伸的应力数据数据进行等价的。
+	\item 一些材料比如不锈钢304和合金800H，D远小于1,并且随应力减少而减少和随维持的时间增加而增加，例如在合金800H中，D的值范围0.1～0.5。因此对于低应变长维持时间的情况，给出一个符合要求的D值是非常困难的。
+	\item 环境相互作用能够影响裂纹的形核和扩展，但这种方法并没有直接考虑到这一点。因此，当表明存在明显的真正蠕变-疲劳相互作用时，它实际上可能是由于环境效应造成的，比如在空气中测试2·25Cr-1Mo钢时发生的那种情况。
+	\item 这些材料可能循环硬化或软化，这取决于材料、热处理和应变范围，因此由原始材料确定的持久性能可能不合适。如果有循环蠕变数据，可以利用循环蠕变数据对这一问题进行修正。
+\end{itemize}
+
+\subsubsection{延性耗竭}
+这种方法中，疲劳和蠕变被视为独立的损伤过程，它们相互竞争导致失效。在最少的循环次数内达到其临界延性的机制主导了破坏模式(即沿晶蠕变或穿晶疲劳)。如果是蠕变导致的失效，模型表示为：
+\begin{equation}
+	N_c \Delta \varepsilon_c = \phi_c
+\end{equation}
+其中$N_c$是蠕变损伤占主导地位时的寿命，$\Delta \varepsilon_c$是每一个载荷维持阶段蠕变应变的累积量，$\phi_C$是断裂实验得到的蠕变断裂延性。纯疲劳主导的寿命$N_p$（频率无关）也可以使用类似的方程表示：
+\begin{equation}
+	N_p = \left(\frac{2\Delta\varepsilon_p}{\phi_p}\right)^{-\text{constant}}
+\end{equation}
+其中$\Delta\varepsilon_p$是塑形应变，$\phi_p$是疲劳延性。对于蠕变-疲劳交互作用，两种损伤机制采用线性求和：
+\begin{equation}
+	\frac{1}{N_c} + \frac{1}{N_p} = \frac{1}{N_{\text{predicted}}}
+\end{equation}
+或者是
+\begin{equation}
+	\frac{\Delta \varepsilon_c}{\phi_c} + \frac{\Delta \varepsilon_p}{\phi_p} = \frac{1}{N_{\text{predicted}}}
+\end{equation}
+简化的方法
+\begin{equation}
+	\text{damage} = \int_{\text{histogram}} \frac{\dot{\varepsilon}}{\phi(\dot{\varepsilon})} \, dt
+\end{equation}
+其中的$\phi(\dot{\varepsilon})$是由蠕变试验(低应变速率$\dot{\varepsilon}$)和拉伸试验(高应变速率$\dot{\varepsilon}$)得到的延性。\\
+这个方法也存在一些限制。
+\begin{itemize}
+	\item 蠕变延展性表现出从热到热的高度可变性，在所需的时间或在适当的冶金条件下( (即循环硬化或软化状态,与焊件相关的热影响区和焊缝金属,由于其微观结构可以显示出低于变形材料的延展性) )，材料可能无法使用。
+	\item 由于方程( 7 )在较宽的循环寿命范围内可能是双线性的，因此在低应变范围内的疲劳延性可以表现出高度的分散性。
+	\item 在压缩持时的情况下，拉伸蠕变延性并不明显合适。
+	\item 为了充分验证外推方法，需要从低应变范围的长保持时间试验中获得额外的数据。
+\end{itemize}
+
+\subsubsection{频率修正法}
+这个方法是修改原来的Coffin-Monson和Basquin定律中的塑形（非弹性）应变的范围$\Delta\varepsilon_p$和失效循环次数$N_f$之间的关系，并引入一个频率因子$\nu$，使得总应变$\Delta\varepsilon_t$的塑形$\Delta\varepsilon_p$和弹性$\Delta\varepsilon_e$分量可以表示为如下形式：
+\begin{align*}
+	\Delta \varepsilon_p & = C_2 \left(N_f \nu^{k-1}\right)^{-\beta}, \\
+	\Delta \varepsilon_e & = A' N_f^{-\beta'} \nu^{k_i'},
+\end{align*}
+其中的$C_2\,k,\beta,A',\beta'$和$k_i'$都是材料参数，通常通过实验拟合获取。关于塑形的公式可以转化为
+\begin{equation}
+	N_f = \left(\frac{C_2}{\Delta \varepsilon_p}\right)^{\frac{1}{\beta}} \nu^{1-k}
+\end{equation}
+考虑到波形影响，上式扩展为下面的
+\begin{equation}
+	N_f = \left(\frac{C_2}{\Delta \varepsilon_p}\right)^{\frac{1}{\beta}} \nu^{\frac{1}{k}} \left(\frac{\nu_c}{\nu_t}\right)^c
+\end{equation}
+其中，$N_f$ 表示疲劳寿命，$C_2$ 是一个常数，$\Delta \varepsilon_p$ 表示塑性应变范围，$\beta$ 是与材料疲劳行为相关的指数，$\nu=1/(1/\nu_t + 1/\nu_c)$ 是频率，k 是与材料特性相关的指数，$\nu_c$ 和 $\nu_t$ 分别是压缩和拉伸的频率参数，c 是一个指数，可能与材料的频率响应有关。\\
+这个方法被广泛使用，仍存在下面几个诟病的地方。首先没有包含平均应力的修正项，其次，随着频率的降低或拉伸保载时间的延长，该方法预测的疲劳寿命降低，但并不是所有的都满足，最后，等持续时间的拉伸保持时间被视为是同等损坏的，而不管它们发生在磁滞回线的哪个地方，这并不总是如此。
+
+\subsubsection{应变范围划分法}
+应变范围划分法（Strain Range Partitioning, SRP）是一种用于预测材料在高温下蠕变-疲劳寿命的方法。在这个方法中，将应变范围划分为四个部分，$\Delta\varepsilon_{pp}$拉伸塑性应变、压缩塑性应变、拉伸蠕变和压缩蠕变
+\begin{itemize}
+	\item $\Delta\varepsilon_{pp}$(Plastic-Plastic)：在拉伸和压缩过程中都由塑性变形引起的应变范围。
+	\item $\Delta\varepsilon_{pc}$(Plastic-Creep)：在拉伸过程中由塑性变形引起，在压缩过程中由蠕变引起的应变范围。
+	\item $\Delta\varepsilon_{cp}$(Creep-Plastic)：在拉伸过程中由蠕变引起，在压缩过程中由塑性变形引起的应变范围。
+	\item $\Delta\varepsilon_{cc}$(Creep-Creep)：在拉伸和压缩过程中都由蠕变引起的应变范围。
+\end{itemize}
+这些分量的下标中，第一个字母代表拉伸（Tensile）变形，第二个字母代表压缩（Compressive）变形。通过实验，可以为每个应变范围分量建立寿命关系，通常采用Manson-Coffin方程的形式，该方程是一个经验公式，用于描述应变范围与疲劳寿命之间的关系。
+\begin{equation}
+	N_{jk} = A_{jk} \Delta \varepsilon_{jk}^{\theta_{jk}}
+\end{equation}
+其中jk分别表示p或者c。损伤因子F可以是相互作用损伤求和，
+\begin{equation}
+	\frac{F_{pp}}{N_{pp}} + \frac{F_{pc}}{N_{pc}} + \frac{F_{cp}}{N_{cp}} + \frac{F_{cc}}{N_{cc}} = \frac{1}{N}
+\end{equation}
+其中
+\begin{equation}
+	\frac{\Delta \varepsilon_{pp}}{\Delta \varepsilon_{in}} = F_{pp}, \quad
+	\frac{\Delta \varepsilon_{pc}}{\Delta \varepsilon_{in}} = F_{pc}, \quad
+	\frac{\Delta \varepsilon_{cp}}{\Delta \varepsilon_{in}} = F_{cp}, \quad
+	\frac{\Delta \varepsilon_{cc}}{\Delta \varepsilon_{in}} = F_{cc}
+\end{equation}
+\begin{equation}
+	\frac{\Delta \varepsilon_{pp}}{\Delta \varepsilon_{in}} = F_{pp}, \quad
+	\frac{\Delta \varepsilon_{pc}}{\Delta \varepsilon_{in}} = F_{pc}, \quad
+	\frac{\Delta \varepsilon_{cp}}{\Delta \varepsilon_{in}} = F_{cp}, \quad
+	\frac{\Delta \varepsilon_{cc}}{\Delta \varepsilon_{in}} = F_{cc}
+\end{equation}
+$\Delta\varepsilon_{in}$是非弹性应变范围。
+\begin{equation}
+	\Delta \varepsilon_{\text{in}} = \Delta \varepsilon_{pp} + \Delta \varepsilon_{pc} + \Delta \varepsilon_{cp} + \Delta \varepsilon_{cc}
+\end{equation}
+这个方法在预测长周期的蠕变上也非常成功，非常容易实现。该方法也存在以下问题。
+\begin{itemize}
+	\item 可能很难定义迟滞回线和准确地将非弹性应变范围划分为各个组成部分，特别是在低应变范围。
+	\item 在主要破坏机制是环境而不是变形类型的情况下，该方法可能是不准确的。
+\end{itemize}
+
+\subsubsection{损伤率模型}
+损伤率模型（Damage-rate model）是一种用于预测材料在疲劳和蠕变交互作用下寿命的方法。该模型假设在低周疲劳状态下，疲劳寿命的大部分时间用于空洞的扩展和裂纹的扩展。它基于损伤随时间变化的微分形式，并采用了多个方程来描述不同波形下空穴和裂纹增长的特性。\\
+该方法的开发基于对304型不锈钢行为的观察。这些增长规律通过对试样寿命的积分来计算，临界裂纹和空穴尺寸则由一种交互损伤规则确定。为简洁起见，未详细阐述具体方程。
+

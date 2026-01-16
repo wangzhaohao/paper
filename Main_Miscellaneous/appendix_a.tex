@@ -1,0 +1,135 @@
+% !TeX root = ../main.tex
+\chapter{Sciantix耦合接口说明}
+
+\section{引言}
+在本研究的工作中，为准确模拟核燃料中裂变气体和氦气的行为，我们选择将国际上广泛验证的开源燃料性能模块Sciantix动态链接到自主开发的多物理耦合框架中。Sciantix由欧洲联合研究中心（JRC）开发，基于物理机理描述了裂变气体的产生、扩散、气泡成核、生长与释放全过程，特别适用于高燃耗条件下的燃料性能分析。本章节详细介绍Sciantix接口的设计、调用方法及关键数据结构。
+
+\section{接口框架与调用流程}
+为实现 Sciantix 与 MOOSE 多物理耦合框架的无缝集成，本研究设计并实现了一个专门的封装类 \texttt{SciantixWrapper}。该封装器作为 MOOSE 中的材料属性（\texttt{Material}）对象，在每个有限元积分点上独立管理裂变气体和氦气的行为演化。整体架构体现了数据驱动、线程安全、状态保持的核心设计理念。
+\subsection{设计原则}
+\begin{enumerate}
+	\item \textbf{模块化封装}：将 Sciantix 的 C 语言接口封装为 C++ 类，提供面向对象的使用方式。
+	\item \textbf{线程安全}：通过互斥锁机制处理 Sciantix 内部状态变量的并发访问。
+	\item \textbf{状态保持}：利用 MOOSE 的状态变量特性，在时间步间持久化存储裂变气体状态。
+	\item \textbf{单位转换}：自动完成 MOOSE 物理量（SI 单位）与 Sciantix 内部单位间的转换。
+\end{enumerate}
+\subsubsection{类结构设计}
+
+\texttt{SciantixWrapper} 类继承自 MOOSE 的 \texttt{Material} 基类，其主要成员函数和变量如表 \ref{tab:sciantix-class-members} 所示。
+
+\begin{table}[htbp]
+	\centering
+	\caption{SciantixWrapper 类核心成员}
+	\label{tab:sciantix-class-members}
+	\begin{tabularx}{\textwidth}{lllX} 
+		\toprule
+		成员类别 & 名称 & 类型 & 功能描述 \\
+		\midrule
+		构造函数 & \texttt{SciantixWrapper} & - & 初始化所有模型参数、初始条件和缩放因子 \\
+		初始化函数 & \texttt{initQpStatefulProperties} & \texttt{void} & 初始化状态变量数组，设置初始条件 \\
+		计算函数 & \texttt{computeQpProperties} & \texttt{void} & 执行单个时间步的 Sciantix 计算 \\
+		辅助函数 & \texttt{initializeDiffusionModes} & \texttt{void} & 初始化扩散模式投影系数 \\
+		状态变量 & \texttt{\_sciantix\_data} & \texttt{std::vector<Real>} & 存储所有状态变量和扩散模式 \\
+		输出属性 & \texttt{\_fission\_gas\_release} & \texttt{Real} & 裂变气体释放率 \\
+		& \texttt{\_gaseous\_swelling} & \texttt{Real} & 气体肿胀应变 \\
+		线程安全 & \texttt{sciantix\_library\_mutex} & \texttt{std::mutex} & 全局互斥锁，确保线程安全 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\section{关键参数映射}
+
+\subsection{历史变量映射}
+MOOSE传递给Sciantix的驱动变量存储在 \texttt{Sciantix\_history} 数组中。接口程序在传递前进行了必要的单位转换，具体映射关系如表\ref{tab:history_map}所示。
+
+\begin{table}[htbp]
+	\centering
+	\caption{MOOSE耦合变量至Sciantix历史变量的映射关系}
+	\label{tab:history_map}
+	\begin{tabularx}{\textwidth}{lllX}
+		\toprule
+		Sciantix索引 & 物理含义 & MOOSE变量来源 & 单位转换 \\
+		\midrule
+		0 & 上一时间步温度 & \texttt{\_temperature\_old} & K \\
+		1 & 当前时间步温度 & \texttt{\_temperature} & K \\
+		2 & 上一时间步裂变率 & \texttt{\_fission\_rate\_old} & fiss/m$^3$s \\
+		3 & 当前时间步裂变率 & \texttt{\_fission\_rate} & fiss/m$^3$s \\
+		4 & 上一时间步静水应力 & \texttt{\_hydrostatic\_stress\_old} & Pa $\to$ MPa \\
+		5 & 当前时间步静水应力 & \texttt{\_hydrostatic\_stress} & Pa $\to$ MPa \\
+		6 & 时间步长 & \texttt{\_dt} & s \\
+		7 & 累积辐照时间 & \texttt{\_t} & s $\to$ h \\
+		9 & 上一时间步蒸汽压 & \texttt{\_steampress\_old} & Pa $\to$ atm \\
+		10 & 当前时间步蒸汽压 & \texttt{\_steampress} & Pa $\to$ atm \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection{模型选项配置}
+接口通过输入文件参数（Input Parameters）灵活控制Sciantix内部物理模型的开启与关闭。主要模型选项及其对应的数组索引如表\ref{tab:model_options}所示。
+
+\begin{table}[htbp]
+	\centering
+	\caption{Sciantix物理模型选项完整配置说明}
+	\label{tab:model_options}
+	\begin{tabularx}{\textwidth}{llX}
+		\toprule
+		参数名称 (MOOSE) & 物理模型含义 & Sciantix Options索引 \\
+		\midrule
+		\texttt{sciantix\_iGrainGrowth} & 晶粒生长模型 & 0 \\
+		\texttt{sciantix\_iFissionGasDiffusivity} & 裂变气体扩散系数模型 & 1 \\
+		\texttt{sciantix\_iDiffusionSolver} & 扩散方程求解器 & 2 \\
+		\texttt{sciantix\_iIntraGranularBubbleBehavior} & 晶内气泡演化模型 & 3 \\
+		\texttt{sciantix\_iResolution} & 辐照重溶模型 & 4 \\
+		\texttt{sciantix\_iTrapping} & 晶内气泡捕获模型 & 5 \\
+		\texttt{sciantix\_iNucleation} & 气泡成核模型 & 6 \\
+		\texttt{sciantix\_iOutput} & 输出信息详细程度 & 7 \\
+		\texttt{sciantix\_iGrainBoundaryVacancyDiffusivity} & 晶界空位扩散模型 & 8 \\
+		\texttt{sciantix\_iGrainBoundaryBehaviour} & 晶界气泡行为模型 & 9 \\
+		\texttt{sciantix\_iMicroCracking} & 晶界微裂纹模型 & 10 \\
+		\texttt{sciantix\_iFuelThermochemistry} & 燃料基体/热化学模型 & 11 \\
+		\texttt{sciantix\_iVenting} & 晶界气体排气(Venting)模型 & 12 \\
+		\texttt{sciantix\_iFissionGasRelease} & 放射性气体释放模型 & 13 \\
+		\texttt{sciantix\_iHelium} & 氦气行为模型 & 14 \\
+		\texttt{sciantix\_iHeDiffusivity} & 氦气扩散系数模型 & 15 \\
+		\texttt{sciantix\_iSweeping} & 晶界扫气(Sweeping)模型 & 16 \\
+		\texttt{sciantix\_iHighBurnupStructureFormation} & 高燃耗结构(HBS)形成模型 & 17 \\
+		\texttt{sciantix\_iHighBurnupStructurePorosity} & 高燃耗结构孔隙度演化 & 18 \\
+		\texttt{sciantix\_iHeliumProductionRate} & 氦气产生率模型 & 19 \\
+		\texttt{sciantix\_iStoichiometryDeviation} & 化学计量比偏差模型 & 20 \\
+		\texttt{sciantix\_iBubbleDiffusivity} & 气泡扩散模型 & 21 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection{输出变量计算}
+计算完成后，Wrapper从 \texttt{Sciantix\_variables} 数组中提取宏观感兴趣的量。裂变气体释放份额（FGR）和气态肿胀（Swelling）的计算逻辑如代码清单\ref{lst:sciantix_swelling}所示。
+
+\begin{lstlisting}[language=C++,
+	literate={-}{-}1, 
+	basicstyle=\small\ttfamily,      % 设置字体大小和等宽字体
+	keywordstyle=\color{blue}\bfseries, % 关键字高亮
+	commentstyle=\color{gray},       % 注释颜色
+	numbers=left,                    % 行号显示在左侧
+	numberstyle=\tiny\color{gray},   % 行号样式
+	frame=tb,                        % 上下加边框
+	breaklines=true,                 % 自动换行
+	caption={输出变量的提取与计算},    % 标题 
+	label={lst:sciantix_swelling}
+	]
+// 提取释放量与产生量 (单位: atoms/m3)
+double Xe_released = Sciantix_variables[6];
+double Kr_released = Sciantix_variables[12];
+double Xe_produced = Sciantix_variables[1];
+double Kr_produced = Sciantix_variables[7];
+
+// 计算裂变气体释放份额 (防止分母为0)
+_fission_gas_release[_qp] = (Xe_released + Kr_released) / 
+(Xe_produced + Kr_produced + 1e-30);
+
+// 提取并汇总气态肿胀 (分数形式)
+double intra_swelling = Sciantix_variables[24];         // 晶内气泡肿胀
+double inter_swelling = Sciantix_variables[36];         // 晶界气泡肿胀
+double intra_solution_swelling = Sciantix_variables[68]; // 固溶肿胀
+
+_gaseous_swelling[_qp] = intra_swelling + inter_swelling + intra_solution_swelling;
+\end{lstlisting}
