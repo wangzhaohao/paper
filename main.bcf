@@ -3064,12 +3064,7 @@
     <bcf:citekey order="83" intorder="1">hofmanMetallicFuelsHandbook2019</bcf:citekey>
     <bcf:citekey order="84" intorder="1">hofmanMetallicFuelsHandbook2019</bcf:citekey>
     <bcf:citekey order="85" intorder="1">Hammond1979ornl5442</bcf:citekey>
-    <bcf:citekey order="86" intorder="1">barella_situ_2021</bcf:citekey>
-    <bcf:citekey order="87" intorder="1">atta_enhanced_2021</bcf:citekey>
-    <bcf:citekey order="88" intorder="1">张燕2013电气自动化在电气工程中的应用探讨</bcf:citekey>
-    <bcf:citekey order="89" intorder="1">黄雪芳2012探讨电气工程中自动化技术的应用</bcf:citekey>
-    <bcf:citekey order="90" intorder="1">王磊2011电气自动化控制设备可靠性探究</bcf:citekey>
-    <bcf:citekey order="91" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="86" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

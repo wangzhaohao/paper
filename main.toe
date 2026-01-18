@@ -15,68 +15,81 @@
 \contentsline {section}{\numberline {1.5}Other Environments}{7}{section*.64}%
 \contentsline {subsection}{\numberline {1.5.1}Enumerates}{7}{section*.67}%
 \contentsline {chapter}{\numberline {2}MOX Fuel Model}{8}{section*.70}%
-\contentsline {section}{\numberline {2.1}MOX Nuclear }{8}{section*.73}%
-\contentsline {section}{\numberline {2.2}\par }{8}{section*.76}%
-\contentsline {subsection}{\numberline {2.2.1}Heat Capacity}{14}{section*.91}%
-\contentsline {subsection}{\numberline {2.2.2}Emissivity}{15}{section*.97}%
-\contentsline {subsection}{\numberline {2.2.3}Thermal Expansion}{15}{section*.100}%
-\contentsline {subsection}{\numberline {2.2.4}Density}{16}{section*.105}%
-\contentsline {section}{\numberline {2.3}Mechanical Properties}{16}{section*.108}%
-\contentsline {subsection}{\numberline {2.3.1}Young's Modulus}{16}{section*.111}%
-\contentsline {subsection}{\numberline {2.3.2}Poisson's Ratio}{17}{section*.114}%
-\contentsline {subsection}{\numberline {2.3.3}Creep}{18}{section*.117}%
-\contentsline {subsection}{\numberline {2.3.4}Densification}{21}{section*.121}%
-\contentsline {subsection}{\numberline {2.3.5}Swelling}{22}{section*.124}%
-\contentsline {subsection}{\numberline {2.3.6}Pressure Sintering}{23}{section*.127}%
-\contentsline {subsection}{\numberline {2.3.7}Restructuring}{24}{section*.130}%
-\contentsline {subsection}{\numberline {2.3.8}Fracture Strength}{26}{section*.133}%
-\contentsline {subsection}{\numberline {2.3.9}Viscosity}{26}{section*.136}%
-\contentsline {subsection}{\numberline {2.3.10}Vapor Pressure}{27}{section*.139}%
-\contentsline {subsection}{\numberline {2.3.11}Fuel Oxidation}{28}{section*.142}%
-\contentsline {section}{\numberline {2.4}Gap Heat Transfer}{28}{section*.145}%
-\contentsline {subsection}{\numberline {2.4.1}Detailed Model of Gas Conductance $ h_g $}{28}{section*.148}%
-\contentsline {subsection}{\numberline {2.4.2}solid-solid contact}{35}{section*.163}%
-\contentsline {subsection}{\numberline {2.4.3}Detailed Model of Solid-Solid Contact Conductance $h_s$}{37}{section*.166}%
-\contentsline {section}{\numberline {2.5}Fission Gas}{38}{section*.171}%
-\contentsline {subsection}{\numberline {2.5.1}Intragranular Gas Behavior Model}{39}{section*.176}%
-\contentsline {subsection}{\numberline {2.5.2}Intergranular Fission Gas Behavior Model}{41}{section*.189}%
-\contentsline {subsection}{\numberline {2.5.3}Microstructure Evolution and Coupling with Fission Gas Behavior}{44}{section*.196}%
-\contentsline {subsection}{\numberline {2.5.4}Total Gas Swelling Model}{44}{section*.200}%
-\contentsline {subsection}{\numberline {2.5.5}Extended Models}{45}{section*.203}%
-\contentsline {section}{\numberline {2.6}cladding}{47}{section*.210}%
-\contentsline {subsection}{\numberline {2.6.1}thermal conductivity}{49}{section*.217}%
-\contentsline {subsection}{\numberline {2.6.2}Cavity}{52}{section*.229}%
-\contentsline {subsection}{\numberline {2.6.3}Density}{52}{section*.234}%
-\contentsline {subsection}{\numberline {2.6.4}thermal expansion}{53}{section*.239}%
-\contentsline {subsection}{\numberline {2.6.5}Irradiation Swelling}{55}{section*.248}%
-\contentsline {subsection}{\numberline {2.6.6}Plasticity}{61}{section*.263}%
-\contentsline {subsection}{\numberline {2.6.7}duanlie}{66}{section*.276}%
-\contentsline {subsection}{\numberline {2.6.8}creep}{76}{section*.302}%
-\contentsline {subsection}{\numberline {2.6.9}Yield stress}{84}{section*.314}%
-\contentsline {subsection}{\numberline {2.6.10}uts}{87}{section*.322}%
-\contentsline {subsection}{\numberline {2.6.11}total elongation}{88}{section*.327}%
-\contentsline {subsection}{\numberline {2.6.12}}{89}{section*.332}%
-\contentsline {subsection}{\numberline {2.6.13}此}{90}{section*.339}%
-\contentsline {chapter}{\numberline {3}A Multi-Physics Coupled Evolution Model Considering Microstructural Reconstruction}{95}{section*.347}%
-\contentsline {section}{\numberline {3.1}Introduction}{95}{section*.350}%
-\contentsline {section}{\numberline {3.2}Pore Migration and Fuel Restructuring Kinetics Model}{95}{section*.353}%
-\contentsline {subsection}{\numberline {3.2.1}Evaporation-Condensation Mechanism and Pore Velocity}{95}{section*.356}%
-\contentsline {section}{\numberline {3.3}Component Redistribution Model}{95}{section*.359}%
-\contentsline {section}{\numberline {3.4}Fission Gas Behavior and Porosity Coupling Model}{95}{section*.362}%
-\contentsline {chapter}{\numberline {4}Crossreferences}{96}{section*.365}%
-\contentsline {section}{\numberline {4.1}Ref equations, tables or figures}{96}{section*.368}%
-\contentsline {subsection}{\numberline {4.1.1}Ref equations}{96}{section*.371}%
-\contentsline {subsection}{\numberline {4.1.2}Ref other floatings}{96}{section*.374}%
-\contentsline {section}{\numberline {4.2}References}{96}{section*.377}%
-\contentsline {chapter}{\numberline {5}Requirements of other parts}{98}{section*.380}%
-\contentsline {section}{\numberline {5.1}Abstracts}{98}{section*.383}%
-\contentsline {section}{\numberline {5.2}Glossary}{99}{section*.386}%
-\contentsline {section}{\numberline {5.3}Achievements}{99}{section*.389}%
-\contentsline {section}{\numberline {5.4}Decisions}{100}{section*.392}%
-\contentsline {chapter}{\numberline {6}Loaded Packages}{101}{section*.395}%
-\contentsline {chapter}{Acknowledgements}{102}{section*.398}%
-\contentsline {chapter}{References}{103}{section*.401}%
-\contentsline {chapter}{Appendices}{111}{section*.404}%
-\contentsline {chapter}{Achievements}{115}{section*.429}%
-\contentsline {chapter}{Decision of Defense Committee}{117}{section*.432}%
-\contentsline {chapter}{General Reviewers List}{118}{section*.436}%
+\contentsline {section}{\numberline {2.1}MOX Nuclear}{8}{section*.73}%
+\contentsline {section}{\numberline {2.2}mox fundamental}{8}{section*.76}%
+\contentsline {subsection}{\numberline {2.2.1}Thermal Properties}{8}{section*.79}%
+\contentsline {subsection}{\numberline {2.2.2}Heat Capacity}{14}{section*.94}%
+\contentsline {subsection}{\numberline {2.2.3}Emissivity}{15}{section*.100}%
+\contentsline {subsection}{\numberline {2.2.4}Thermal Expansion}{15}{section*.103}%
+\contentsline {subsection}{\numberline {2.2.5}Density}{16}{section*.108}%
+\contentsline {section}{\numberline {2.3}Mechanical Properties}{16}{section*.111}%
+\contentsline {subsection}{\numberline {2.3.1}Young's Modulus}{16}{section*.114}%
+\contentsline {subsection}{\numberline {2.3.2}Poisson's Ratio}{17}{section*.117}%
+\contentsline {subsection}{\numberline {2.3.3}Creep}{18}{section*.120}%
+\contentsline {subsection}{\numberline {2.3.4}Densification}{21}{section*.124}%
+\contentsline {subsection}{\numberline {2.3.5}Swelling}{22}{section*.127}%
+\contentsline {subsection}{\numberline {2.3.6}Pressure Sintering}{23}{section*.130}%
+\contentsline {subsection}{\numberline {2.3.7}Restructuring}{24}{section*.133}%
+\contentsline {subsection}{\numberline {2.3.8}Fracture Strength}{26}{section*.136}%
+\contentsline {subsection}{\numberline {2.3.9}Viscosity}{26}{section*.139}%
+\contentsline {subsection}{\numberline {2.3.10}Vapor Pressure}{27}{section*.142}%
+\contentsline {subsection}{\numberline {2.3.11}Fuel Oxidation}{28}{section*.145}%
+\contentsline {section}{\numberline {2.4}Gap Heat Transfer}{28}{section*.148}%
+\contentsline {subsection}{\numberline {2.4.1}Detailed Model of Gas Conductance $ h_g $}{28}{section*.151}%
+\contentsline {subsection}{\numberline {2.4.2}solid-solid contact}{35}{section*.166}%
+\contentsline {subsection}{\numberline {2.4.3}Detailed Model of Solid-Solid Contact Conductance $h_s$}{37}{section*.169}%
+\contentsline {section}{\numberline {2.5}Fission Gas}{38}{section*.174}%
+\contentsline {subsection}{\numberline {2.5.1}Intragranular Gas Behavior Model}{39}{section*.179}%
+\contentsline {subsection}{\numberline {2.5.2}Intergranular Fission Gas Behavior Model}{41}{section*.192}%
+\contentsline {subsection}{\numberline {2.5.3}Microstructure Evolution and Coupling with Fission Gas Behavior}{44}{section*.199}%
+\contentsline {subsection}{\numberline {2.5.4}Total Gas Swelling Model}{44}{section*.203}%
+\contentsline {subsection}{\numberline {2.5.5}Extended Models}{45}{section*.206}%
+\contentsline {section}{\numberline {2.6}cladding}{47}{section*.213}%
+\contentsline {subsection}{\numberline {2.6.1}thermal conductivity}{49}{section*.220}%
+\contentsline {subsection}{\numberline {2.6.2}Cavity}{52}{section*.232}%
+\contentsline {subsection}{\numberline {2.6.3}Density}{52}{section*.237}%
+\contentsline {subsection}{\numberline {2.6.4}thermal expansion}{53}{section*.242}%
+\contentsline {subsection}{\numberline {2.6.5}Irradiation Swelling}{55}{section*.251}%
+\contentsline {subsection}{\numberline {2.6.6}Plasticity}{61}{section*.266}%
+\contentsline {subsection}{\numberline {2.6.7}duanlie}{66}{section*.279}%
+\contentsline {subsection}{\numberline {2.6.8}creep}{76}{section*.305}%
+\contentsline {subsection}{\numberline {2.6.9}Yield stress}{84}{section*.317}%
+\contentsline {subsection}{\numberline {2.6.10}uts}{87}{section*.325}%
+\contentsline {subsection}{\numberline {2.6.11}total elongation}{88}{section*.330}%
+\contentsline {subsection}{\numberline {2.6.12}}{89}{section*.335}%
+\contentsline {subsection}{\numberline {2.6.13}此}{90}{section*.342}%
+\contentsline {chapter}{\numberline {3}Strongly Coupled Evolution Model Incorporating Multi-component Migration and Microstructural Reconstruction}{95}{section*.350}%
+\contentsline {section}{\numberline {3.1}Introduction}{95}{section*.353}%
+\contentsline {section}{\numberline {3.2}Pore Migration and Fuel Restructuring Kinetics Model}{95}{section*.356}%
+\contentsline {subsection}{\numberline {3.2.1}Evaporation-Condensation Mechanism and Pore Migration Velocity}{95}{section*.359}%
+\contentsline {section}{\numberline {3.3}Thermal Diffusion and Redistribution Model for Oxygen and Plutonium}{95}{section*.362}%
+\contentsline {section}{\numberline {3.4}Evolution Model for Fission Product Behavior}{95}{section*.365}%
+\contentsline {subsection}{\numberline {3.4.1}Inert Gas Behavior}{95}{section*.368}%
+\contentsline {subsection}{\numberline {3.4.2}Volatile Fission Product Migration}{95}{section*.371}%
+\contentsline {subsection}{\numberline {3.4.3}Solid Fission Product Induced Swelling}{95}{section*.374}%
+\contentsline {chapter}{\numberline {4}Development and Experimental Verification of a Multiphysics Coupling Program Based on Implicit Integration Algorithm}{96}{section*.377}%
+\contentsline {section}{\numberline {4.1}MOOSE-Based Multiphysics Solving Framework}{96}{section*.380}%
+\contentsline {section}{\numberline {4.2}Implicit Mechanical Constitutive Integration Algorithm}{96}{section*.383}%
+\contentsline {subsection}{\numberline {4.2.1}Discretization of Elasto-Plastic-Creep Constitutive Laws}{96}{section*.386}%
+\contentsline {subsection}{\numberline {4.2.2}Derivation and Implementation of the Radial Return Algorithm}{96}{section*.389}%
+\contentsline {section}{\numberline {4.3}Multiphysics Coupling Strategy}{96}{section*.392}%
+\contentsline {subsection}{\numberline {4.3.1}Global Coupling Logic}{96}{section*.395}%
+\contentsline {subsection}{\numberline {4.3.2}Adaptive Time Step Control}{96}{section*.398}%
+\contentsline {section}{\numberline {4.4}Program Verification and Validation}{96}{section*.401}%
+\contentsline {section}{\numberline {4.5}Chapter Summary}{96}{section*.404}%
+\contentsline {chapter}{\numberline {5}Study on the Evolution Mechanism of Fuel Rod In-Service Behavior Considering Microstructural Reconstruction Effects}{97}{section*.407}%
+\contentsline {section}{\numberline {5.1}Impact of Component Redistribution on Thermal Performance}{97}{section*.410}%
+\contentsline {section}{\numberline {5.2}Mutual Feedback Mechanism between Fission Gas Behavior and Gap Heat Transfer}{97}{section*.413}%
+\contentsline {section}{\numberline {5.3}PCMI Behavior under Typical Transient Conditions}{97}{section*.416}%
+\contentsline {section}{\numberline {5.4}Chapter Summary}{97}{section*.419}%
+\contentsline {chapter}{\numberline {6}Physics-Informed Data-Driven Surrogate Model for Fast Prediction}{98}{section*.422}%
+\contentsline {section}{\numberline {6.1}Dataset Construction and Preprocessing}{98}{section*.425}%
+\contentsline {section}{\numberline {6.2}Surrogate Model Architecture Design}{98}{section*.428}%
+\contentsline {section}{\numberline {6.3}Model Training and Accuracy Assessment}{98}{section*.431}%
+\contentsline {section}{\numberline {6.4}Chapter Summary}{98}{section*.434}%
+\contentsline {chapter}{Acknowledgements}{99}{section*.436}%
+\contentsline {chapter}{References}{100}{section*.439}%
+\contentsline {chapter}{Appendices}{108}{section*.442}%
+\contentsline {chapter}{Achievements}{112}{section*.467}%
+\contentsline {chapter}{Decision of Defense Committee}{114}{section*.470}%
+\contentsline {chapter}{General Reviewers List}{115}{section*.474}%

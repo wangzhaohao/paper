@@ -2,9 +2,9 @@
 
 
 \xchapter{快堆燃料元件材料基础物性模型}{MOX Fuel Model}
-\xsection{引言}{MOX Nuclear }
+\xsection{引言}{MOX Nuclear}
 MOX燃料的物性，主要来源是FRAPCON、MATPRO、Bison的报告，包含根据最小二乘法拟合的最小的多项式和具有物理理论表达式。
-\xsection{MOX燃料基础热力学性质}
+\xsection{MOX燃料基础热力学性质}{mox fundamental}
 \xsubsection{热物性}{Thermal Properties}
 
 \subsubsection{熔点}
@@ -154,7 +154,7 @@ BISON中使用Fink模型计算未辐照的$UO_2$热导率。Amaya模型的适合
 
 \xsubsection{热容}{Heat Capacity}
 
-\subsubsection{MATPRO}{MATPRO}
+\subsubsection{MATPRO}
 
 比热容用于计算温度随时间变化，主要是和燃料存储能量或者焓升相关。比热容的模型是温度、成份、熔点和金属氧化值的函数。温度适用范围是300K到多余4000K。
 
@@ -367,6 +367,7 @@ Bison中给出的MOX蠕变的公式如下：
 	\centering
 	\includegraphics[width=0.8\textwidth]{UO2_MOX_creep.png}
 \end{figure}
+
 \xsubsection{密实化}{Densification}
 
 $UO_2$和$(U, Pu)O_2$在压水堆开始的几个小时之后发生的由于辐照导致的密实化。密实化是燃料、温度和初始密度的函数。模型是基于少量的压水堆静水压数据。密实化可能是由于芯包接触导致的静水压发生变化，在之后也会提到。两个模型描述了相同的物理过程，计算结果更大的密实化用于程序计算。
@@ -438,6 +439,7 @@ BISON中说也采用了MATPRO中的模型，但是给出的形式不完全相同
 \[ \Delta \epsilon_{sw-g} = 1.96 \times 10^{-31} \rho \Delta Bu (2800 - T)^{11.73} e^{-0.0162(2800-T)} e^{-0.0178 \rho Bu} \]
 
 其中的$\Delta \epsilon_{sw-g}$表示气体产物导致的增量，$Bu$和$\Delta Bu$（裂变率/原子U）是燃耗和燃耗增量，$\rho$ ($kg/m^3$) 表示密度，$T$（K）是温度。
+
 
 \xsubsection{压力烧结}{Pressure Sintering}
 
@@ -717,7 +719,7 @@ Kernnard的系数是：
 
 其中，求和遍历混合物的各个组分。
 
-\subsubsection{$k_g$}{$k_g$}
+\subsubsection{$k_g$}
 $k_g$采用MATPRO模型中的混合气体热导率，总共考虑10中气体（氦气、氩气、氪气、氙气、氢气、氮气、氧气、一氧化碳、二氧化碳、水蒸气）。气体的温度是两个表面的平均温度。
 
 针对混合气体的热导率，采用MATPRO中的混合模型，具体公式如下所示：

@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1768546828.84682 "main.bcf" "main.bbl" "main" 1768546857.74614 0
+["biber main"] 1768736229.98294 "main.bcf" "main.bbl" "main" 1768736257.61683 0
   "References/reference.bib" 1768532332.7315 59752 bb95385cfabd0d0dbd6a8019c14f0d49 ""
-  "main.bcf" 1768546856.97383 147035 f4eb915004dfc0cd9226ba116f09cdee "pdflatex"
+  "main.bcf" 1768736256.87461 146552 85ca308f07388df9df5e85835f72de2d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["cusdep glo gls main"] 1768546828.45502 "main.glo" "main.gls" "main" 1768546857.74009 0
-  "main.glo" 1768546856.97588 1522 73fa244471b4e413797397848a9e6516 "pdflatex"
+["cusdep glo gls main"] 1768736229.60661 "main.glo" "main.gls" "main" 1768736257.61048 0
+  "main.glo" 1768736256.87675 1522 73fa244471b4e413797397848a9e6516 "pdflatex"
   (generated)
   "main.gls"
   (rewritten before read)
-["pdflatex"] 1768546831.95287 "main.tex" "main.pdf" "main" 1768546857.74025 2
+["pdflatex"] 1768736233.05587 "main.tex" "main.pdf" "main" 1768736257.61063 2
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -387,7 +387,7 @@
   "Figures/SS316_irradiated_stress_strain.png" 1766372646.96823 74151 0c187ecc12971ca17a7d8c1fbf29ca86 ""
   "Figures/UO2_MOX_creep.png" 1766237217.24523 245200 6e0a230ab4e1d1eddd3ca291dfe66e40 ""
   "Figures/mox_thermal_cond_amaya.png" 1766237217.24901 539485 35cc54193e12aec4ab7d7a7619adf931 ""
-  "Figures/mox_thermal_cond_duriez_ronchi.png" 1766237217.25123 411041 1698051b85ff8f05b2e01b01ee85028b ""
+  "Figures/mox_thermal_cond_duriez_ronchi.png" 1768565029.54225 316155 d97a8f0f4e4d53ed3bd95a1a4ab7d3d0 ""
   "Figures/mox_thermal_cond_halden.png" 1766237217.25941 434585 3907e89bcefe1b9f3ae783a45e97d047 ""
   "Figures/mox_thermal_conductivity_all_models.png" 1766237217.26823 453252 8602696fd8cd108016207c72c0b942ab ""
   "Figures/plot1_full_gases_comparison.png" 1766734958.80192 507020 1a0b302900f3235f8b091c21c219f348 ""
@@ -400,24 +400,24 @@
   "Main_Miscellaneous/decision.tex" 1761498972 1677 3ae9ce1a9f70b088b947d97f23693bb7 ""
   "Main_Miscellaneous/glossary.tex" 1761493842 2241 0b8c529ec9137b6a8a4ea50286b96518 ""
   "Main_Spine/c1.tex" 1761495142 10679 1e3c4d6fed0a1b470e11100f244ad9d4 ""
-  "Main_Spine/c2.tex" 1768545252.82302 164042 91d46ba86f34bfa672edf8ed90b3f0f9 ""
-  "Main_Spine/c3.tex" 1768546803.81932 659 23e6c4917c2564a2c121d232a07d0f4b ""
-  "Main_Spine/c4.tex" 1761497496 3407 b085c955a2cd19b89f4a51db6ba280f7 ""
-  "Main_Spine/c5.tex" 1626957142 4947 2573d38bc20cd3849a8a1128d2ee0547 ""
-  "Main_Spine/c6.tex" 1626527566 1212 d4688de626276273600e66c73ee16814 ""
+  "Main_Spine/c2.tex" 1768565744.11081 162433 924f13c183550be735a677fca00b2455 ""
+  "Main_Spine/c3.tex" 1768619895.39414 892 bd07eec44985a2f11838f4cb1bee690f ""
+  "Main_Spine/c4.tex" 1768736205.09397 945 a1e06dd2c75d05f90b97aafe767426af ""
+  "Main_Spine/c5.tex" 1768736119.71484 1214 0720db912601c6e079c98bdbadce1997 ""
+  "Main_Spine/c6.tex" 1768736189.12729 524 abc406605ae171ad142984d623ed76cb ""
   "Materials/Icons/xjtu.pdf" 1623307786 16293 124cffb55513b888e541c20ab46109df ""
   "Materials/Icons/xjtu_blue.pdf" 1761496458 403151 f8151e08455bf6522e43911e45adf98a ""
   "Materials/Icons/xjtu_red.pdf" 1761496272 403151 3ddfb4a49d10dacc38812d96ce31a789 ""
   "References/reference.bib" 1768532332.7315 59752 bb95385cfabd0d0dbd6a8019c14f0d49 ""
-  "XJTU-thesis.cls" 1761498888 53196 3faf99817f5e11a6cd40217a156bde60 ""
-  "main.aux" 1768546856.93883 81772 934eaa8f20df849e170b261308b552f6 "pdflatex"
-  "main.bbl" 1768546831.8899 386324 11fe52ec56738f7dc797c3d5ed1df2d5 "biber main"
-  "main.gls" 1768546828.8389 3841 c5e3c0102668adad5c566cc9156ae4b3 "cusdep glo gls main"
-  "main.listing" 1768546854.57621 307 854e90c4355a65d89c9c39d6a2d86d5c "pdflatex"
-  "main.run.xml" 1768546856.97588 2461 6a4e492fc8f2bf9dbf9d2ab3242c8b7e "pdflatex"
-  "main.tex" 1768398513.76663 10776 3578c987558875733e2058245dc722f1 ""
-  "main.toc" 1768546856.97588 23646 f21c114bfe6eac58ccce74bb6f20d51d "pdflatex"
-  "main.toe" 1768546856.97588 6630 13bacde2f48c4c09c6cdf270b17d8dc4 "pdflatex"
+  "XJTU-thesis.cls" 1768551210.11797 53196 c579298eaa78f556067b2f126c6a3d9e ""
+  "main.aux" 1768736256.83861 88326 b89fe7e8afcb0c949355221b762466a3 "pdflatex"
+  "main.bbl" 1768736232.99701 386424 d196aae4cfb0060760e94749ddaee16c "biber main"
+  "main.gls" 1768736229.97375 3841 c5e3c0102668adad5c566cc9156ae4b3 "cusdep glo gls main"
+  "main.listing" 1768736237.53172 86 940d0be3b8825c2d7d66dcea9e7eb5bd "pdflatex"
+  "main.run.xml" 1768736256.87675 2461 6a4e492fc8f2bf9dbf9d2ab3242c8b7e "pdflatex"
+  "main.tex" 1768619485.77543 10791 09719092cc5cb6860afecb29040a9b6e ""
+  "main.toc" 1768736256.87675 27046 7f15f00547f0a8cf239eb33708e8c43e "pdflatex"
+  "main.toe" 1768736256.87675 8434 ae6ebb6ac13bc2de8c52717096781e2e "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.21)  16 JAN 2026 16:13
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.21)  18 JAN 2026 19:37
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
@@ -1524,7 +1524,7 @@ Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
 )
 (/usr/local/texlive/2025/texmf-dist/tex/generic/catchfile/catchfile.sty
 Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
@@ -1535,9 +1535,10 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
+runsystem(uname -s > "main.w18")...executed.
 
-Package ifplatform Warning: 
-    shell escape is disabled, so I can only detect \ifwindows.
+ (./main.w18)
+runsystem(rm -- "main.w18")...executed.
 
 )
 
@@ -3981,61 +3982,6 @@ rences/reference.bib): Invalid field 'publisher' for entrytype 'online'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'barella_situ_2021':
-(biblatex)                - Datamodel: article entry 'barella_situ_2021' (Refer
-ences/reference.bib): Invalid field 'languageid' for entrytype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'barella_situ_2021':
-(biblatex)                - Datamodel: article entry 'barella_situ_2021' (Refer
-ences/reference.bib): Invalid field 'lansortorder' for entrytype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'atta_enhanced_2021':
-(biblatex)                - Datamodel: article entry 'atta_enhanced_2021' (Refe
-rences/reference.bib): Invalid field 'languageid' for entrytype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'atta_enhanced_2021':
-(biblatex)                - Datamodel: article entry 'atta_enhanced_2021' (Refe
-rences/reference.bib): Invalid field 'lansortorder' for entrytype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with '张燕2013电气自动化在电气工程中的应用探讨':
-(biblatex)                - Datamodel: article entry '张燕2013电气自动化在电气工程中的应用探讨' (
-References/reference.bib): Invalid field 'languageid' for entrytype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with '张燕2013电气自动化在电气工程中的应用探讨':
-(biblatex)                - Datamodel: article entry '张燕2013电气自动化在电气工程中的应用探讨' (
-References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'
-.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with '黄雪芳2012探讨电气工程中自动化技术的应用':
-(biblatex)                - Datamodel: thesis entry '黄雪芳2012探讨电气工程中自动化技术的应用' (R
-eferences/reference.bib): Field 'address' invalid in data model - ignoring.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with '王磊2011电气自动化控制设备可靠性探究':
-(biblatex)                - Datamodel: article entry '王磊2011电气自动化控制设备可靠性探究' (Re
-ferences/reference.bib): Invalid field 'languageid' for entrytype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with '王磊2011电气自动化控制设备可靠性探究':
-(biblatex)                - Datamodel: article entry '王磊2011电气自动化控制设备可靠性探究' (Re
-ferences/reference.bib): Invalid field 'lansortorder' for entrytype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
 (biblatex)                with '王永华2013现代电气控制及':
 (biblatex)                - Datamodel: book entry '王永华2013现代电气控制及' (References/
 reference.bib): Field 'address' invalid in data model - ignoring.
@@ -4079,6 +4025,37 @@ ences/reference.bib): Invalid field 'lansortorder' for entrytype 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
+(biblatex)                with '张燕2013电气自动化在电气工程中的应用探讨':
+(biblatex)                - Datamodel: article entry '张燕2013电气自动化在电气工程中的应用探讨' (
+References/reference.bib): Invalid field 'languageid' for entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with '张燕2013电气自动化在电气工程中的应用探讨':
+(biblatex)                - Datamodel: article entry '张燕2013电气自动化在电气工程中的应用探讨' (
+References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'
+.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with '王磊2011电气自动化控制设备可靠性探究':
+(biblatex)                - Datamodel: article entry '王磊2011电气自动化控制设备可靠性探究' (Re
+ferences/reference.bib): Invalid field 'languageid' for entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with '王磊2011电气自动化控制设备可靠性探究':
+(biblatex)                - Datamodel: article entry '王磊2011电气自动化控制设备可靠性探究' (Re
+ferences/reference.bib): Invalid field 'lansortorder' for entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with '黄雪芳2012探讨电气工程中自动化技术的应用':
+(biblatex)                - Datamodel: thesis entry '黄雪芳2012探讨电气工程中自动化技术的应用' (R
+eferences/reference.bib): Field 'address' invalid in data model - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'sachdeva_effect_2021':
 (biblatex)                - Datamodel: article entry 'sachdeva_effect_2021' (Re
 ferences/reference.bib): Invalid field 'languageid' for entrytype 'article'.
@@ -4088,6 +4065,18 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'sachdeva_effect_2021':
 (biblatex)                - Datamodel: article entry 'sachdeva_effect_2021' (Re
 ferences/reference.bib): Invalid field 'lansortorder' for entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'barella_situ_2021':
+(biblatex)                - Datamodel: article entry 'barella_situ_2021' (Refer
+ences/reference.bib): Invalid field 'languageid' for entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'barella_situ_2021':
+(biblatex)                - Datamodel: article entry 'barella_situ_2021' (Refer
+ences/reference.bib): Invalid field 'lansortorder' for entrytype 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -4153,6 +4142,18 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Datamodel: article entry 'evans_cooperative_2021' (
 References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'
 .
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'atta_enhanced_2021':
+(biblatex)                - Datamodel: article entry 'atta_enhanced_2021' (Refe
+rences/reference.bib): Invalid field 'languageid' for entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'atta_enhanced_2021':
+(biblatex)                - Datamodel: article entry 'atta_enhanced_2021' (Refe
+rences/reference.bib): Invalid field 'lansortorder' for entrytype 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -4255,7 +4256,21 @@ File: Materials/Icons/XJTU.pdf Graphic file (type pdf)
 
 ] [2
 
-] [3] [4
+]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.144 \thesistitles
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[3] [4
 
 ]
 \spaceWidth=\dimen418
@@ -4396,31 +4411,16 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
- [7] (./main.toe
-Runaway argument?
-{\numberline {2.2}
-! Paragraph ended before \contentsline was complete.
-<to be read again> 
-                   \par 
-l.19 \contentsline {section}{\numberline {2.2}\par
-                                                   }{8}{section*.76}%
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Extra }, or forgotten \endgroup.
-l.19 ...entsline {section}{\numberline {2.2}\par }
-                                                  {8}{section*.76}%
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-[8
+ [7] (./main.toe [8
 
 
-] [9])
+]
+Overfull \hbox (6.42062pt too wide) in paragraph at lines 70--70
+ [][] [][]\TU/times.ttf(0)/m/n/12 Development and Experimental Verification of 
+a Multiphysics Coupling Program Based 
+ []
+
+[9])
 \tf@toe=\write10
 \openout10 = `main.toe'.
 
@@ -4547,840 +4547,6 @@ nput line 226.
 
  (./main.listing) (./main.listing)) (./Main_Spine/c2.tex [7]
 Chapter 2.
-! Argument of \xsubsection has an extra }.
-<inserted text> 
-                \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \xsubsection was complete.
-<to be read again> 
-                   \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Use of \\bookmark doesn't match its definition.
-\new@ifnextchar ...served@d = #1\def \reserved@a {
-                                                  #2}\def \reserved@b {#3}\f...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-If you say, e.g., `\def\a1{...}', then you must always
-put `1' after `\a', since control sequence names are
-made up of letters only. The macro here has not been
-followed by the required stuff, so I'm ignoring it.
-
-! Use of \\bookmark doesn't match its definition.
-<argument> \def \reserved@a *
-                             {\let \l@ngrel@x \relax \renew@command }\reserv...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-If you say, e.g., `\def\a1{...}', then you must always
-put `1' after `\a', since control sequence names are
-made up of letters only. The macro here has not been
-followed by the required stuff, so I'm ignoring it.
-
-! Argument of \renew@command has an extra }.
-<inserted text> 
-                \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \renew@command was complete.
-<to be read again> 
-                   \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Use of \\bookmark doesn't match its definition.
-\new@ifnextchar ...ved@d = #1\def \reserved@a {#2}
-                                                  \def \reserved@b {#3}\futu...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-If you say, e.g., `\def\a1{...}', then you must always
-put `1' after `\a', since control sequence names are
-made up of letters only. The macro here has not been
-followed by the required stuff, so I'm ignoring it.
-
-! Argument of \renew@command has an extra }.
-<inserted text> 
-                \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \renew@command was complete.
-<to be read again> 
-                   \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                    #4  \errhelp \@err@     ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \let \@err@               ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \@empty \def \MessageBreak...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                     \endgroup 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Illegal parameter number in definition of \BKM@dest.
-<to be read again> 
-                   1
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                    #4  \errhelp \@err@     ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \let \@err@               ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \@empty \def \MessageBreak...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                     \endgroup 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<inserted text> ...erlistsgap@##1}{\let \float@do 
-                                                  =\relax \edef \@tempa {\no...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<inserted text> ...ts {\the \float@exts \float@do 
-                                                  {\@nameuse {ext@##1}}}}\@t...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                    #4  \errhelp \@err@     ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \let \@err@               ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \@empty \def \MessageBreak...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                     \endgroup 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Illegal parameter number in definition of \BKM@dest.
-<to be read again> 
-                   1
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                    #4  \errhelp \@err@     ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \let \@err@               ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \@empty \def \MessageBreak...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                     \endgroup 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...chapterlistsgap@##1}{\let \float@do 
-                                                  =\relax \edef \@tempa {\no...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...at@exts {\the \float@exts \float@do 
-                                                  {\@nameuse {ext@##1}}}}\@t...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                    #4  \errhelp \@err@     ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \let \@err@               ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \@empty \def \MessageBreak...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                     \endgroup 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Illegal parameter number in definition of \BKM@dest.
-<to be read again> 
-                   1
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                    #4  \errhelp \@err@     ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \let \@err@               ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \@empty \def \MessageBreak...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                     \endgroup 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...chapterlistsgap@##1}{\let \float@do 
-                                                  =\relax \edef \@tempa {\no...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...at@exts {\the \float@exts \float@do 
-                                                  {\@nameuse {ext@##1}}}}\@t...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                    #4  \errhelp \@err@     ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \let \@err@               ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \@empty \def \MessageBreak...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                     \endgroup 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Illegal parameter number in definition of \BKM@dest.
-<to be read again> 
-                   1
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                    #4  \errhelp \@err@     ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \let \@err@               ...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \@empty \def \MessageBreak...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                     \endgroup 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...chapterlistsgap@##1}{\let \float@do 
-                                                  =\relax \edef \@tempa {\no...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...at@exts {\the \float@exts \float@do 
-                                                  {\@nameuse {ext@##1}}}}\@t...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Argument of \KVS@@CommaComma has an extra }.
-<inserted text> 
-                \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-\subcaption@DeclareType {##1}\newfloat@@@IfPackageLoaded {float}{newf\ETC.
-! Paragraph ended before \KVS@@CommaComma was complete.
-<to be read again> 
-                   \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Extra \else.
-\\bookmark ...dest )\BKM@struct@dest >>}\fi \else 
-                                                  \ifx \BKM@dest \@empty \if...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I'm ignoring this; it doesn't match any \if.
-
-! Use of \\bookmark doesn't match its definition.
-\new@ifnextchar ...served@d = #1\def \reserved@a {
-                                                  #2}\def \reserved@b {#3}\f...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-If you say, e.g., `\def\a1{...}', then you must always
-put `1' after `\a', since control sequence names are
-made up of letters only. The macro here has not been
-followed by the required stuff, so I'm ignoring it.
-
-! Use of \\bookmark doesn't match its definition.
-<argument> \def \reserved@a *
-                             {\let \l@ngrel@x \relax \renew@command }\reserv...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-If you say, e.g., `\def\a1{...}', then you must always
-put `1' after `\a', since control sequence names are
-made up of letters only. The macro here has not been
-followed by the required stuff, so I'm ignoring it.
-
-! Argument of \renew@command has an extra }.
-<inserted text> 
-                \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \renew@command was complete.
-<to be read again> 
-                   \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Use of \\bookmark doesn't match its definition.
-\new@ifnextchar ...ved@d = #1\def \reserved@a {#2}
-                                                  \def \reserved@b {#3}\futu...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-If you say, e.g., `\def\a1{...}', then you must always
-put `1' after `\a', since control sequence names are
-made up of letters only. The macro here has not been
-followed by the required stuff, so I'm ignoring it.
-
-! Undefined control sequence.
-\\bookmark ...esw \begingroup \def \bookmark@text 
-                                                  {#2}\BKM@setup {#1}\edef \...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Argument of \renew@command has an extra }.
-<inserted text> 
-                \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \renew@command was complete.
-<to be read again> 
-                   \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Illegal parameter number in definition of \x.
-<to be read again> 
-                   1
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Undefined control sequence.
-<inserted text> ...erlistsgap@##1}{\let \float@do 
-                                                  =\relax \edef \@tempa {\no...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<inserted text> ...ts {\the \float@exts \float@do 
-                                                  {\@nameuse {ext@##1}}}}\@t...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Illegal parameter number in definition of \x.
-<to be read again> 
-                   1
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Undefined control sequence.
-<argument> ...chapterlistsgap@##1}{\let \float@do 
-                                                  =\relax \edef \@tempa {\no...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...at@exts {\the \float@exts \float@do 
-                                                  {\@nameuse {ext@##1}}}}\@t...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Illegal parameter number in definition of \x.
-<to be read again> 
-                   1
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Undefined control sequence.
-<argument> ...chapterlistsgap@##1}{\let \float@do 
-                                                  =\relax \edef \@tempa {\no...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...at@exts {\the \float@exts \float@do 
-                                                  {\@nameuse {ext@##1}}}}\@t...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Illegal parameter number in definition of \x.
-<to be read again> 
-                   1
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Undefined control sequence.
-<argument> ...chapterlistsgap@##1}{\let \float@do 
-                                                  =\relax \edef \@tempa {\no...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...at@exts {\the \float@exts \float@do 
-                                                  {\@nameuse {ext@##1}}}}\@t...
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Argument of \KVS@@CommaComma has an extra }.
-<inserted text> 
-                \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-\subcaption@DeclareType {##1}\newfloat@@@IfPackageLoaded {float}{newf\ETC.
-! Paragraph ended before \KVS@@CommaComma was complete.
-<to be read again> 
-                   \par 
-l.8 ^^I\xsubsection
-                   {热物性}{Thermal Properties}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
 
 Overfull \hbox (7.6691pt too wide) in paragraph at lines 21--22
 []\TU/fzsong.ttf(0)/m/n/12 其 中 $[][]\OT1/lmr/m/n/12 ([])$ \TU/fzsong.ttf(0)/m/n
@@ -5464,37 +4630,37 @@ T:language=dflt;mapping=tex-text;!
 Missing character: There is no ℃ (U+2103) in font [Materials/Fonts/times.ttf]/O
 T:language=dflt;mapping=tex-text;!
 [22] [23] [24] [25] [26] [27]
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 608.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 610.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14> on input line 608.
+(Font)              <14> on input line 610.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9.79996> on input line 608.
+(Font)              <9.79996> on input line 610.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 608.
+(Font)              <7> on input line 610.
 LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <14> not availabl
 e
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
-e 608.
+e 610.
 LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <9.79996> not ava
 ilable
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
-e 608.
+e 610.
 LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <7> not available
 
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
-e 608.
+e 610.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 608.
+(hyperref)                removing `math shift' on input line 610.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 608.
+(hyperref)                removing `subscript' on input line 610.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 608.
+(hyperref)                removing `math shift' on input line 610.
 
 [28] [29] [30] [31] [32] [33] [34]
 File: ./Figures/plot1_full_gases_comparison.png Graphic file (type bmp)
@@ -5502,31 +4668,31 @@ File: ./Figures/plot1_full_gases_comparison.png Graphic file (type bmp)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\(' on input line 856.
+(hyperref)                removing `\(' on input line 858.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 856.
+(hyperref)                removing `subscript' on input line 858.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\)' on input line 856.
+(hyperref)                removing `\)' on input line 858.
 
 [35] [36]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\(' on input line 915.
+(hyperref)                removing `\(' on input line 917.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 915.
+(hyperref)                removing `subscript' on input line 917.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\)' on input line 915.
+(hyperref)                removing `\)' on input line 917.
 
 [37]
-Overfull \hbox (19.87375pt too wide) in paragraph at lines 945--946
+Overfull \hbox (19.87375pt too wide) in paragraph at lines 947--948
 \TU/fzsong.ttf(0)/m/n/12 肿 胀 会 加 速 芯 块 与 包 壳 间 隙 的 闭 合，|  并 在 后 期 引 发 芯 块\TU/ti
 mes.ttf(0)/m/n/12 -\TU/fzsong.ttf(0)/m/n/12 包 壳 机 械 相 互 作 用  |（\TU/times.ttf(0)
 /m/n/12 PCMI\TU/fzsong.ttf(0)/m/n/12 ） ，|
@@ -5547,18 +4713,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [39] [40] [41] [42] [43]
-Overfull \hbox (17.64467pt too wide) in paragraph at lines 1274--1275
+Overfull \hbox (17.64467pt too wide) in paragraph at lines 1276--1277
 []\TU/fzsong.ttf(0)/m/n/12 在 中 低 燃 耗 和 较 高 温 度 条 件 下，|  燃 料 晶 粒 经 历 正 常 晶 粒 生 长
  过 程。|  采 用 基 于 \TU/times.ttf(0)/m/n/12 Hillert$[]$\TU/fzsong.ttf(0)/m/n/12 理
  []
 
 [44] [45] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 1464--1497
+Underfull \hbox (badness 10000) in paragraph at lines 1466--1499
 
  []
 
 [47] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 1534--1537
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1539
 
  []
 
@@ -5571,7 +4737,7 @@ File: ./Figures/HT9_thermal_conductivity.png Graphic file (type bmp)
 File: ./Figures/D9_thermal_conductivity.png Graphic file (type bmp)
 <./Figures/D9_thermal_conductivity.png>
  [51] [52]
-Overfull \hbox (5.64684pt too wide) detected at line 1638
+Overfull \hbox (5.64684pt too wide) detected at line 1640
 []
  []
 
@@ -5581,7 +4747,7 @@ File: ./Figures/D9_thermal_expansion.png Graphic file (type bmp)
 File: ./Figures/HT9_thermal_expansion.png Graphic file (type bmp)
 <./Figures/HT9_thermal_expansion.png>
  [54]
-Underfull \hbox (badness 10000) in paragraph at lines 1666--1669
+Underfull \hbox (badness 10000) in paragraph at lines 1668--1671
 
  []
 
@@ -5599,7 +4765,7 @@ File: ./Figures/D9_volume_swelling.png Graphic file (type bmp)
 File: ./Figures/D9_volume_swelling_vs_temperature.png Graphic file (type bmp)
 <./Figures/D9_volume_swelling_vs_temperature.png>
  [60] [61]
-Underfull \hbox (badness 10000) in paragraph at lines 1803--1805
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1807
 
  []
 
@@ -5607,7 +4773,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1803--1805
 File: ./Figures/316SS_hardening_models.png Graphic file (type bmp)
 <./Figures/316SS_hardening_models.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1867--1874
+Underfull \hbox (badness 10000) in paragraph at lines 1869--1876
 
  []
 
@@ -5615,7 +4781,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1867--1874
 File: ./Figures/HT9_hardening.png Graphic file (type bmp)
 <./Figures/HT9_hardening.png>
  [64]
-Overfull \hbox (3.98746pt too wide) in paragraph at lines 1888--1888
+Overfull \hbox (3.98746pt too wide) in paragraph at lines 1890--1890
 []\TU/fzsong.ttf(0)/m/n/12 同 样，| \TU/times.ttf(0)/m/n/12 D9 \TU/fzsong.ttf(0)/m
 /n/12 的 硬 化 方 程 采 用 同 样 处 理 线 性 硬 化 模 型$[]$。|  极 限 抗 拉 强 度 在 章 节[]\TU/times.ttf
 (0)/m/n/12 2.6.10.1[]\TU/fzsong.ttf(0)/m/n/12 中
@@ -5624,12 +4790,12 @@ Overfull \hbox (3.98746pt too wide) in paragraph at lines 1888--1888
 File: ./Figures/D9_hardening.png Graphic file (type bmp)
 <./Figures/D9_hardening.png>
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 1905--1907
+Underfull \hbox (badness 10000) in paragraph at lines 1907--1909
 
  []
 
 [66] [67]
-Underfull \hbox (badness 10000) in paragraph at lines 1939--1941
+Underfull \hbox (badness 10000) in paragraph at lines 1941--1943
 
  []
 
@@ -5643,8 +4809,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1975 ^^I^^I\begin{threeparttable}
-                                   
+l.1977 ^^I\begin{threeparttable}
+                                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5656,8 +4822,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1984 ^^I^^I^^I\begin{tablenotes}
-                                  
+l.1986 ^^I^^I\begin{tablenotes}
+                               
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5669,55 +4835,55 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1985 ^^I^^I^^I^^I\item[]
-                           {\footnotesize 注：具体使用哪种应力，选择依据是更小的断裂时间。}
+l.1987 ^^I^^I^^I\item[]
+                        {\footnotesize 注：具体使用哪种应力，选择依据是更小的断裂时间。}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1985
+Underfull \hbox (badness 10000) detected at line 1987
 [][]
  []
 
 
-! LaTeX Error: \begin{table} on input line 1973 ended by \end{tablenotes}.
+! LaTeX Error: \begin{table} on input line 1975 ended by \end{tablenotes}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1986 ^^I^^I^^I\end{tablenotes}
-                                
+l.1988 ^^I^^I\end{tablenotes}
+                             
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-! LaTeX Error: \begin{table} on input line 1973 ended by \end{threeparttable}.
+! LaTeX Error: \begin{table} on input line 1975 ended by \end{threeparttable}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1987 ^^I^^I\end{threeparttable}
-                                 
+l.1989 ^^I\end{threeparttable}
+                              
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1999--2001
+Underfull \hbox (badness 10000) in paragraph at lines 2001--2003
 
  []
 
 
-Overfull \hbox (116.01108pt too wide) detected at line 2006
+Overfull \hbox (116.01108pt too wide) detected at line 2008
 [][][][] [][] \OT1/lmr/m/n/12 = [] + [] [] [] + [] + [] + [] [](^^H[]) + [][][]
  [] [] []
  []
 
 
-Overfull \hbox (85.06389pt too wide) detected at line 2013
+Overfull \hbox (85.06389pt too wide) detected at line 2015
 [][][]\OML/lmm/m/it/12 ^^[[] \OT1/lmr/m/n/12 = [][][] \OMS/lmsy/m/n/12 ^^@ [] [
 ] [] \OT1/lmr/m/n/12 + [][][] [] [] []
  []
@@ -5729,12 +4895,12 @@ File: ./Figures/D9_rupture_time.png Graphic file (type bmp)
 File: ./Figures/D9_rupture_time_973.png Graphic file (type bmp)
 <./Figures/D9_rupture_time_973.png>
  [71]
-Underfull \hbox (badness 10000) in paragraph at lines 2086--2088
+Underfull \hbox (badness 10000) in paragraph at lines 2088--2090
 
  []
 
 [72]
-Underfull \hbox (badness 10000) in paragraph at lines 2098--2101
+Underfull \hbox (badness 10000) in paragraph at lines 2100--2103
 
  []
 
@@ -5745,8 +4911,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2109 ^^I^^I\begin{threeparttable}
-                                   
+l.2111 ^^I\begin{threeparttable}
+                                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5758,8 +4924,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2116 ^^I^^I^^I\begin{tablenotes}
-                                  
+l.2118 ^^I^^I\begin{tablenotes}
+                               
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5771,54 +4937,54 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2117 ^^I^^I^^I^^I\item {
-                          \footnotesize 注：具体使用哪种应力，选择依据是更小的断裂时间。}
+l.2119 ^^I^^I^^I\item {
+                       \footnotesize 注：具体使用哪种应力，选择依据是更小的断裂时间。}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 2117
+Underfull \hbox (badness 10000) detected at line 2119
 [][]
  []
 
 
-! LaTeX Error: \begin{table} on input line 2107 ended by \end{tablenotes}.
+! LaTeX Error: \begin{table} on input line 2109 ended by \end{tablenotes}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2118 ^^I^^I^^I\end{tablenotes}
-                                
+l.2120 ^^I^^I\end{tablenotes}
+                             
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-! LaTeX Error: \begin{table} on input line 2107 ended by \end{threeparttable}.
+! LaTeX Error: \begin{table} on input line 2109 ended by \end{threeparttable}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2119 ^^I^^I\end{threeparttable}
-                                 
+l.2121 ^^I\end{threeparttable}
+                              
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2122--2123
+Underfull \hbox (badness 10000) in paragraph at lines 2124--2125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2127--2129
+Underfull \hbox (badness 10000) in paragraph at lines 2129--2131
 
  []
 
 [73]
-Overfull \hbox (16.70518pt too wide) detected at line 2146
+Overfull \hbox (16.70518pt too wide) detected at line 2148
 [][][][] \OT1/lmr/m/n/12 = []
  []
 
@@ -5829,7 +4995,7 @@ bmp)
 File: ./Figures/SS316_creep_rate.png Graphic file (type bmp)
 <./Figures/SS316_creep_rate.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 2193--2199
+Underfull \hbox (badness 10000) in paragraph at lines 2195--2201
 
  []
 
@@ -5837,26 +5003,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 2193--2199
 File: ./Figures/SS316_creep_comparison.png Graphic file (type bmp)
 <./Figures/SS316_creep_comparison.png>
 
-Overfull \hbox (150.47635pt too wide) detected at line 2242
+Overfull \hbox (150.47635pt too wide) detected at line 2244
 [][][][] \OT1/lmr/m/n/12 = [][] [] [] [] [] + [][]^^H[] + [][][] [][] [] [] + [
 ]\OML/lmm/m/it/12 :[][]\OT1/lmr/m/n/12 ([]) [][] [] [][] [] + [][][][] [] []
  []
 
 
-Overfull \hbox (124.02824pt too wide) detected at line 2247
+Overfull \hbox (124.02824pt too wide) detected at line 2249
 [][][][]\OML/lmm/m/it/12 " \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 ^^^ \OMS/lmsy/
 m/n/12 ^^B [][][] \OT1/lmr/m/n/12 + [][] [][] [] [] + [][][] [] []
  []
 
 [78] [79]
-Underfull \hbox (badness 10000) in paragraph at lines 2275--2278
+Underfull \hbox (badness 10000) in paragraph at lines 2277--2280
 
  []
 
 File: ./Figures/D9_creep_rate.png Graphic file (type bmp)
 <./Figures/D9_creep_rate.png>
 [80] [81] [82]
-Underfull \hbox (badness 10000) in paragraph at lines 2364--2367
+Underfull \hbox (badness 10000) in paragraph at lines 2366--2369
 
  []
 
@@ -5866,32 +5032,32 @@ File: ./Figures/HT9_creep_rate.png Graphic file (type bmp)
 File: ./Figures/SS316_irradiated_stress_strain.png Graphic file (type bmp)
 <./Figures/SS316_irradiated_stress_strain.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 2405--2411
+Underfull \hbox (badness 10000) in paragraph at lines 2407--2413
 
  []
 
 [84]
-Overfull \hbox (70.52495pt too wide) detected at line 2451
+Overfull \hbox (70.52495pt too wide) detected at line 2453
 []
  []
 
 
-Overfull \hbox (49.56682pt too wide) in paragraph at lines 2421--2453
+Overfull \hbox (49.56682pt too wide) in paragraph at lines 2423--2455
 \TU/fzsong.ttf(0)/m/n/12 其 中[] [] 
  []
 
 [85]
-Overfull \hbox (263.86507pt too wide) detected at line 2489
+Overfull \hbox (263.86507pt too wide) detected at line 2491
 []
  []
 
 
-Overfull \hbox (246.90694pt too wide) in paragraph at lines 2459--2491
+Overfull \hbox (246.90694pt too wide) in paragraph at lines 2461--2493
 \TU/fzsong.ttf(0)/m/n/12 其 中 []  [] 
  []
 
 [86] [87] [88] [89]
-Underfull \hbox (badness 10000) in paragraph at lines 2591--2593
+Underfull \hbox (badness 10000) in paragraph at lines 2593--2595
 
  []
 
@@ -5906,44 +5072,17 @@ Chapter 3.
 
 ]
 Chapter 4.
-\openout11 = `main.listing'.
-
-(./main.listing) (./main.listing)
-\openout11 = `main.listing'.
-
- (./main.listing) (./main.listing
-
-LaTeX Warning: Reference `subfig:icon' on page 96 undefined on input line 1.
-
-
-LaTeX Warning: Reference `tab:methodcompare' on page 96 undefined on input line
- 2.
-
-
-LaTeX Warning: Reference `algorithm' on page 96 undefined on input line 3.
-
-
-LaTeX Warning: Reference `lst:a_label' on page 96 undefined on input line 4.
-
-) [96
+) (./Main_Spine/c5.tex [96
 
 ]
-\openout11 = `main.listing'.
-
- (./main.listing) (./main.listing
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
-
- []
-
-)) (./Main_Spine/c5.tex [97]
 Chapter 5.
-[98
+) (./Main_Spine/c6.tex [97
 
-]) (./Main_Spine/c6.tex [99] [100]
+]
 Chapter 6.
-) [101
+) [98
 
-] (./Main_Miscellaneous/acknowledegment.tex) [102
+] (./Main_Miscellaneous/acknowledegment.tex) [99
 
 
 ]
@@ -5953,7 +5092,7 @@ LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <10.53937> not av
 ailable
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
 e 183.
- [103
+ [100
 
 
 ]
@@ -5961,7 +5100,7 @@ Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]
 OT:script=hani;language=dflt;!
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
-[104] [105] [106] [107] [108] [109] [110]
+[101] [102] [103] [104] [105] [106] [107]
 \l_tmpa_count=\count643
  (./Main_Miscellaneous/appendix_a.tex
 附录 附录A.
@@ -5993,10 +5132,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/times.ttf(0)/m/n/10.5 Sciantix Op-
  []
 
-[111
+[108
 
 
-] [112] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+] [109] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
@@ -6008,16 +5147,16 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 118.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.5> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 120.
- [113])
-(./Main_Miscellaneous/appendix_b.tex [114]
+ [110])
+(./Main_Miscellaneous/appendix_b.tex [111]
 附录 附录B.
 File: ./Materials/Icons/xjtu_red.pdf Graphic file (type pdf)
 <use ./Materials/Icons/xjtu_red.pdf>
 File: ./Materials/Icons/xjtu_blue.pdf Graphic file (type pdf)
 <use ./Materials/Icons/xjtu_blue.pdf>
-) [115
+) [112
 
-] (./Main_Miscellaneous/achievement.tex) [116
+] (./Main_Miscellaneous/achievement.tex) [113
 
 ]
 (./Main_Miscellaneous/decision.tex
@@ -6028,13 +5167,13 @@ fzsong.ttf(0)/m/n/12 具 有 \TU/times.ttf(0)/m/n/12 ××××× \TU/fzsong.ttf(0
 TU/times.ttf(0)/m/n/12 ××××××××××\TU/fzsong.ttf(0)/m/n/12 ，|
  []
 
-) [117
+) [114
 
 
-] [118
+] [115
 
 
-] [119
+] [116
 
 ] (./main.aux)
  ***********
@@ -6043,21 +5182,19 @@ L3 programming layer <2022/08/05>
  ***********
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
- )
-(\end occurred when \iftrue on line 8 was incomplete)
-(\end occurred when \iftrue on line 8 was incomplete) 
+ ) 
 Here is how much of TeX's memory you used:
- 68816 strings out of 468179
- 1561601 string characters out of 5433206
- 2721709 words of memory out of 5000000
- 96307 multiletter control sequences out of 15000+600000
+ 68646 strings out of 468179
+ 1554621 string characters out of 5433206
+ 2719693 words of memory out of 5000000
+ 96146 multiletter control sequences out of 15000+600000
  700672 words of font info for 239 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 117i,22n,157p,2473b,7440s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,22n,157p,2473b,7444s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (137 pages).
+Output written on main.pdf (134 pages).

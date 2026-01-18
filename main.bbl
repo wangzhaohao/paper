@@ -6931,6 +6931,419 @@
       \warn{\item Datamodel: online entry 'Hammond1979ornl5442' (References/reference.bib): Invalid field 'number' for entrytype 'online'}
       \warn{\item Datamodel: online entry 'Hammond1979ornl5442' (References/reference.bib): Invalid field 'publisher' for entrytype 'online'}
     \endentry
+    \entry{王永华2013现代电气控制及}{book}{}{}
+      \name{author}{4}{}{%
+        {{hash=584194fd865789e893240916454b04ca}{%
+           family={王永华},
+           familyi={王\bibinitperiod}}}%
+        {{hash=6499fc7409049355527ef6a2ba5706b8}{%
+           family={张},
+           familyi={张\bibinitperiod}}}%
+        {{hash=46900173a2e62ba55dedacfdfd7e7441}{%
+           family={李},
+           familyi={李\bibinitperiod}}}%
+        {{hash=f749a117654baef0f9ee4b845301ffce}{%
+           family={赵},
+           familyi={赵\bibinitperiod}}}%
+      }
+      \name{namea}{4}{}{%
+        {{hash=584194fd865789e893240916454b04ca}{%
+           family={王永华},
+           familyi={王\bibinitperiod}}}%
+        {{hash=6499fc7409049355527ef6a2ba5706b8}{%
+           family={张},
+           familyi={张\bibinitperiod}}}%
+        {{hash=46900173a2e62ba55dedacfdfd7e7441}{%
+           family={李},
+           familyi={李\bibinitperiod}}}%
+        {{hash=f749a117654baef0f9ee4b845301ffce}{%
+           family={赵},
+           familyi={赵\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \list{location}{1}{%
+        {北京}%
+      }
+      \list{publisher}{1}{%
+        {北京航空航天大学出版社}%
+      }
+      \strng{namehash}{780afe7495a16dc54efa8c33049c06d7}
+      \strng{fullhash}{cf248eb60e6035a3559849ef817fd75f}
+      \strng{fullhashraw}{cf248eb60e6035a3559849ef817fd75f}
+      \strng{bibnamehash}{1fcb99ae28f90a31766062a384a80ca3}
+      \strng{authorbibnamehash}{1fcb99ae28f90a31766062a384a80ca3}
+      \strng{authornamehash}{780afe7495a16dc54efa8c33049c06d7}
+      \strng{authorfullhash}{cf248eb60e6035a3559849ef817fd75f}
+      \strng{authorfullhashraw}{cf248eb60e6035a3559849ef817fd75f}
+      \strng{nameabibnamehash}{1fcb99ae28f90a31766062a384a80ca3}
+      \strng{nameanamehash}{780afe7495a16dc54efa8c33049c06d7}
+      \strng{nameafullhash}{cf248eb60e6035a3559849ef817fd75f}
+      \strng{nameafullhashraw}{cf248eb60e6035a3559849ef817fd75f}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{现代电气控制及 PLC 应用技术}
+      \field{usera}{M}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \true{nocite}
+      \keyw{王永华2013现代电气控制及}
+      \warn{\item Datamodel: book entry '王永华2013现代电气控制及' (References/reference.bib): Field 'address' invalid in data model - ignoring}
+      \warn{\item Datamodel: book entry '王永华2013现代电气控制及' (References/reference.bib): Invalid field 'languageid' for entrytype 'book'}
+      \warn{\item Datamodel: book entry '王永华2013现代电气控制及' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'book'}
+    \endentry
+    \entry{刘海龙2010浅谈电气自动化的现状与发展方向}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=44ed8f553f5054869ecc66a274a6a2a0}{%
+           family={刘海龙},
+           familyi={刘\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=44ed8f553f5054869ecc66a274a6a2a0}{%
+           family={刘海龙},
+           familyi={刘\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{fullhash}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{fullhashraw}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{bibnamehash}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{authorbibnamehash}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{authornamehash}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{authorfullhash}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{authorfullhashraw}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{nameabibnamehash}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{nameanamehash}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{nameafullhash}{44ed8f553f5054869ecc66a274a6a2a0}
+      \strng{nameafullhashraw}{44ed8f553f5054869ecc66a274a6a2a0}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{黑龙江科技信息}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{number}{5}
+      \field{title}{浅谈电气自动化的现状与发展方向}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{volume}{6}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \true{nocite}
+      \keyw{刘海龙2010浅谈电气自动化的现状与发展方向}
+      \warn{\item Datamodel: article entry '刘海龙2010浅谈电气自动化的现状与发展方向' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry '刘海龙2010浅谈电气自动化的现状与发展方向' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{陈众励2007建筑电气节能技术综述}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=f8be1aad9d8dfe6ab28027f36fbb6370}{%
+           family={陈众励},
+           familyi={陈\bibinitperiod}}}%
+        {{hash=7b49cd7a5319a0e6242040eb9b07a9f2}{%
+           family={赵济安},
+           familyi={赵\bibinitperiod}}}%
+        {{hash=74dbc643680be39ec1bc726e668bdf68}{%
+           family={邵民杰},
+           familyi={邵\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=f8be1aad9d8dfe6ab28027f36fbb6370}{%
+           family={陈众励},
+           familyi={陈\bibinitperiod}}}%
+        {{hash=7b49cd7a5319a0e6242040eb9b07a9f2}{%
+           family={赵济安},
+           familyi={赵\bibinitperiod}}}%
+        {{hash=74dbc643680be39ec1bc726e668bdf68}{%
+           family={邵民杰},
+           familyi={邵\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{c32e645a41e77a582faca47ad1fdcf88}
+      \strng{fullhash}{47ab6eba9918d8744c085f7bc518889d}
+      \strng{fullhashraw}{47ab6eba9918d8744c085f7bc518889d}
+      \strng{bibnamehash}{47ab6eba9918d8744c085f7bc518889d}
+      \strng{authorbibnamehash}{47ab6eba9918d8744c085f7bc518889d}
+      \strng{authornamehash}{c32e645a41e77a582faca47ad1fdcf88}
+      \strng{authorfullhash}{47ab6eba9918d8744c085f7bc518889d}
+      \strng{authorfullhashraw}{47ab6eba9918d8744c085f7bc518889d}
+      \strng{nameabibnamehash}{47ab6eba9918d8744c085f7bc518889d}
+      \strng{nameanamehash}{c32e645a41e77a582faca47ad1fdcf88}
+      \strng{nameafullhash}{47ab6eba9918d8744c085f7bc518889d}
+      \strng{nameafullhashraw}{47ab6eba9918d8744c085f7bc518889d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{低压电器}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{建筑电气节能技术综述}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{volume}{4}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \keyw{陈众励2007建筑电气节能技术综述}
+      \warn{\item Datamodel: article entry '陈众励2007建筑电气节能技术综述' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry '陈众励2007建筑电气节能技术综述' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{张燕2013电气自动化在电气工程中的应用探讨}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6437af49ae8e79ddd41e0811841a430d}{%
+           family={张燕},
+           familyi={张\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=6437af49ae8e79ddd41e0811841a430d}{%
+           family={张燕},
+           familyi={张\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{fullhash}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{fullhashraw}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{bibnamehash}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{authorbibnamehash}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{authornamehash}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{authorfullhash}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{authorfullhashraw}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{nameabibnamehash}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{nameanamehash}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{nameafullhash}{6437af49ae8e79ddd41e0811841a430d}
+      \strng{nameafullhashraw}{6437af49ae8e79ddd41e0811841a430d}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{电子技术与软件工程}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{电气自动化在电气工程中的应用探讨}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{volume}{17}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{199\bibrangedash 199}
+      \range{pages}{1}
+      \keyw{张燕2013电气自动化在电气工程中的应用探讨}
+      \warn{\item Datamodel: article entry '张燕2013电气自动化在电气工程中的应用探讨' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry '张燕2013电气自动化在电气工程中的应用探讨' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{王磊2011电气自动化控制设备可靠性探究}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=83e887aa728999208b13e2b0958ee08a}{%
+           family={王磊},
+           familyi={王\bibinitperiod}}}%
+        {{hash=3ed28c2f88286d9f538a3cefefd3d98f}{%
+           family={薛双苓},
+           familyi={薛\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=83e887aa728999208b13e2b0958ee08a}{%
+           family={王磊},
+           familyi={王\bibinitperiod}}}%
+        {{hash=3ed28c2f88286d9f538a3cefefd3d98f}{%
+           family={薛双苓},
+           familyi={薛\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{7481c08aa9ab9da398917b145500e18d}
+      \strng{fullhash}{f69e653929f37bcc61ff01d0a81844bb}
+      \strng{fullhashraw}{f69e653929f37bcc61ff01d0a81844bb}
+      \strng{bibnamehash}{f69e653929f37bcc61ff01d0a81844bb}
+      \strng{authorbibnamehash}{f69e653929f37bcc61ff01d0a81844bb}
+      \strng{authornamehash}{7481c08aa9ab9da398917b145500e18d}
+      \strng{authorfullhash}{f69e653929f37bcc61ff01d0a81844bb}
+      \strng{authorfullhashraw}{f69e653929f37bcc61ff01d0a81844bb}
+      \strng{nameabibnamehash}{f69e653929f37bcc61ff01d0a81844bb}
+      \strng{nameanamehash}{7481c08aa9ab9da398917b145500e18d}
+      \strng{nameafullhash}{f69e653929f37bcc61ff01d0a81844bb}
+      \strng{nameafullhashraw}{f69e653929f37bcc61ff01d0a81844bb}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{科技传播}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{电气自动化控制设备可靠性探究}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{volume}{19}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{51\bibrangedash 62}
+      \range{pages}{12}
+      \keyw{王磊2011电气自动化控制设备可靠性探究}
+      \warn{\item Datamodel: article entry '王磊2011电气自动化控制设备可靠性探究' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry '王磊2011电气自动化控制设备可靠性探究' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{黄雪芳2012探讨电气工程中自动化技术的应用}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=338508320afa3a28c21f76e51ed02878}{%
+           family={黄雪芳},
+           familyi={黄\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=338508320afa3a28c21f76e51ed02878}{%
+           family={黄雪芳},
+           familyi={黄\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {某大学}%
+      }
+      \list{language}{1}{%
+        {zh}%
+      }
+      \list{location}{1}{%
+        {某地}%
+      }
+      \strng{namehash}{338508320afa3a28c21f76e51ed02878}
+      \strng{fullhash}{338508320afa3a28c21f76e51ed02878}
+      \strng{fullhashraw}{338508320afa3a28c21f76e51ed02878}
+      \strng{bibnamehash}{338508320afa3a28c21f76e51ed02878}
+      \strng{authorbibnamehash}{338508320afa3a28c21f76e51ed02878}
+      \strng{authornamehash}{338508320afa3a28c21f76e51ed02878}
+      \strng{authorfullhash}{338508320afa3a28c21f76e51ed02878}
+      \strng{authorfullhashraw}{338508320afa3a28c21f76e51ed02878}
+      \strng{nameabibnamehash}{338508320afa3a28c21f76e51ed02878}
+      \strng{nameanamehash}{338508320afa3a28c21f76e51ed02878}
+      \strng{nameafullhash}{338508320afa3a28c21f76e51ed02878}
+      \strng{nameafullhashraw}{338508320afa3a28c21f76e51ed02878}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{探讨电气工程中自动化技术的应用}
+      \field{type}{phdthesis}
+      \field{usera}{D}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \true{nocite}
+      \keyw{黄雪芳2012探讨电气工程中自动化技术的应用}
+      \warn{\item Datamodel: thesis entry '黄雪芳2012探讨电气工程中自动化技术的应用' (References/reference.bib): Field 'address' invalid in data model - ignoring}
+    \endentry
+    \entry{sachdeva_effect_2021}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=9857976e4434d7159664a8388961181d}{%
+           family={Sachdeva},
+           familyi={S\bibinitperiod},
+           given={Bhawana},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1c5149b361a132bdee94149ea0e6be98}{%
+           family={Kaushik},
+           familyi={K\bibinitperiod},
+           given={Ravinder},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e2224a4b9b30a6e202308db2abf9faf2}{%
+           family={Arora},
+           familyi={A\bibinitperiod},
+           given={Sumit},
+           giveni={S\bibinitperiod}}}%
+        {{hash=09cf2844be96c96e7b5948877145602c}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Azhar},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{namea}{4}{}{%
+        {{hash=9857976e4434d7159664a8388961181d}{%
+           family={Sachdeva},
+           familyi={S\bibinitperiod},
+           given={Bhawana},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1c5149b361a132bdee94149ea0e6be98}{%
+           family={Kaushik},
+           familyi={K\bibinitperiod},
+           given={Ravinder},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e2224a4b9b30a6e202308db2abf9faf2}{%
+           family={Arora},
+           familyi={A\bibinitperiod},
+           given={Sumit},
+           giveni={S\bibinitperiod}}}%
+        {{hash=09cf2844be96c96e7b5948877145602c}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Azhar},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{7a0960214521e21ab6d31072818b81dd}
+      \strng{fullhash}{34eb7a2b9d399386b6a75ccfddb7fbfa}
+      \strng{fullhashraw}{34eb7a2b9d399386b6a75ccfddb7fbfa}
+      \strng{bibnamehash}{0ee6252265cb3c1059f8c09ab8be5857}
+      \strng{authorbibnamehash}{0ee6252265cb3c1059f8c09ab8be5857}
+      \strng{authornamehash}{7a0960214521e21ab6d31072818b81dd}
+      \strng{authorfullhash}{34eb7a2b9d399386b6a75ccfddb7fbfa}
+      \strng{authorfullhashraw}{34eb7a2b9d399386b6a75ccfddb7fbfa}
+      \strng{nameabibnamehash}{0ee6252265cb3c1059f8c09ab8be5857}
+      \strng{nameanamehash}{7a0960214521e21ab6d31072818b81dd}
+      \strng{nameafullhash}{34eb7a2b9d399386b6a75ccfddb7fbfa}
+      \strng{nameafullhashraw}{34eb7a2b9d399386b6a75ccfddb7fbfa}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The objective of this investigation was to evaluate the stability of vitamin A in fortified milk which was exposed to different processing conditions viz. heat treatments (pasteurization, boiling and sterilization), light exposure treatments (1485, 2970 and 4455 tux for 2, 4, 8, 16 and 32 h) and different packaging materials (polyethylene pouches and glass bottles) and also to evaluate the effect of fortified iron (ferric pyrophosphate soluble (FPP) and ferrous gluconate hydrate (FG) on vitamin A stability during processing and storage. Toned milk was fortified with 25 ppm iron and vitamin A acetate 2500 IU/L, singly and also in combination. The vitamin A analysis method was optimized and accuracy and precision were below +/- 5\%. The results indicated that vitamin A was heat-labile and its degradation increased with the increase in the intensity of heat treatments. Pasteurized milk (318.11 IU/L) showed non-significant (p {>} 0.05) decrease, however, boiling (250.21 IU/L) and sterilization (205.65 IU/L) showed a significant difference (p {<} 0.05) in vitamin A content in comparison to control (324.71 IU/L). Similarly, vitamin A was light sensitive and its degradation significantly increased (p {<} 0.05) with an increase in the intensity of light exposure (34.82 to 92.53\%). Loss of vitamin A (\%) was significantly greater (p {<} 0.05) in iron-fortified milk suggesting that iron might have played a rote in accelerating the degradation of vitamin A. Extent of losses were significantly higher (p {<} 0.05) in FG compared to FPP fortified milk. Vitamin A (microencapsulated form) which was added externally was more stable than the inherent vitamin A present in milk.}
+      \field{journaltitle}{International Journal for Vitamin and Nutrition Research}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{WOS:000614114700017}
+      \field{number}{1-2}
+      \field{title}{Effect of processing conditions on the stability of native vitamin {A} and fortified retinol acetate in milk}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{91}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{133\bibrangedash 142}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1024/0300-9831/a000617
+      \endverb
+      \keyw{sachdeva_effect_2021}
+      \warn{\item Datamodel: article entry 'sachdeva_effect_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'sachdeva_effect_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
     \entry{barella_situ_2021}{article}{}{}
       \name{author}{13}{}{%
         {{hash=444a1bb369c0e648d0adee552b4f068c}{%
@@ -7081,8 +7494,8 @@
       \strng{nameanamehash}{2bff41594ed47ccc420fb67cbff120c4}
       \strng{nameafullhash}{112aa50e3249323481e9d049a1b020c7}
       \strng{nameafullhashraw}{112aa50e3249323481e9d049a1b020c7}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Several fields of applications require a reliable characterization of the photothermal response and heat dissipation of nanoscopic systems, which remains a challenging task for both modeling and experimental measurements. Here, we present an implementation of anti-Stokes thermometry that enables the in situ photothermal characterization of individual nanoparticles (NPs) from a single hyperspectral photoluminescence confocal image. The method is label-free, potentially applicable to any NP with detectable anti-Stokes emission, and does not require any prior information about the NP itself or the surrounding media. With it, we first studied the photothermal response of spherical gold NPs of different sizes on glass substrates, immersed in water, and found that heat dissipation is mainly dominated by the water for NPs larger than 50 nm. Then, the role of the substrate was studied by comparing the photothermal response of 80 nm gold NPs on glass with sapphire and graphene, two materials with high thermal conductivity. For a given irradiance level, the NPs reach temperatures 18\% lower on sapphire and 24\% higher on graphene than on bare glass. The fact that the presence of a highly conductive material such as graphene leads to a poorer thermal dissipation demonstrates that interfacial thermal resistances play a very significant role in nanoscopic systems and emphasize the need for in situ experimental thermometry techniques. The developed method will allow addressing several open questions about the role of temperature in plasmon-assisted applications, especially ones where NPs of arbitrary shapes are present in complex matrixes and environments.}
@@ -7100,6 +7513,7 @@
       \field{volume}{15}
       \field{year}{2021}
       \field{dateera}{ce}
+      \true{nocite}
       \field{pages}{2458\bibrangedash 2467}
       \range{pages}{10}
       \verb{doi}
@@ -7108,474 +7522,6 @@
       \keyw{barella_situ_2021}
       \warn{\item Datamodel: article entry 'barella_situ_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
       \warn{\item Datamodel: article entry 'barella_situ_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{atta_enhanced_2021}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=334d2390688d596e650cc07a9fee102c}{%
-           family={Atta},
-           familyi={A\bibinitperiod},
-           given={Ali},
-           giveni={A\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=334d2390688d596e650cc07a9fee102c}{%
-           family={Atta},
-           familyi={A\bibinitperiod},
-           given={Ali},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{334d2390688d596e650cc07a9fee102c}
-      \strng{fullhash}{334d2390688d596e650cc07a9fee102c}
-      \strng{fullhashraw}{334d2390688d596e650cc07a9fee102c}
-      \strng{bibnamehash}{334d2390688d596e650cc07a9fee102c}
-      \strng{authorbibnamehash}{334d2390688d596e650cc07a9fee102c}
-      \strng{authornamehash}{334d2390688d596e650cc07a9fee102c}
-      \strng{authorfullhash}{334d2390688d596e650cc07a9fee102c}
-      \strng{authorfullhashraw}{334d2390688d596e650cc07a9fee102c}
-      \strng{nameabibnamehash}{334d2390688d596e650cc07a9fee102c}
-      \strng{nameanamehash}{334d2390688d596e650cc07a9fee102c}
-      \strng{nameafullhash}{334d2390688d596e650cc07a9fee102c}
-      \strng{nameafullhashraw}{334d2390688d596e650cc07a9fee102c}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This research studied the comprehensive dielectric properties of copper (Cu)/polyethylene terephthalate (PET) and copper/polytetrafluoroethylene (PTFE) composite films under the influence of copper nanoparticle (CuNP) sputtering time. Copper thin film was grown on flexible PET and PTFE using the ion beam sputtering technique. X-ray diffraction confirmed that CuNPs had been successfully synthesized on the polymer substrate. The electrical conductivity sigma(AC) of the films was measured using alternating-current conductivity impedance in the frequency range of 10(2)-10(6) Hz. It increased from 1.2 x 10(-6) S/cm for PET to 9.65 x 10(-7) S/cm for 75 min copper/PET and from 6.38 x 10(-7) S/cm for PTFE to 9.24 x 10(-1) S/cm for 75 min copper/PTFE. The dielectric constant epsilon' increased from 0.62 for pristine PET to 1.19 for 25 min copper/PET and from 1.88 for pristine PTFE to 2.25 for 25 min copper/PTFE at an applied frequency of 10(5) Hz. In addition, other parameters - namely, dielectric loss epsilon '', dielectric modulus m and dielectric tangent constant tan delta - were investigated. The comprehensive results showed that the dielectric properties of flexible PET and PTFE polymers improved due to the deposited conductive CuNPs. Flexible copper/PET and copper/PTFE composite films are promising as dielectric substrates for modern electronic applications that can resist hard environments and have long lifetimes.}
-      \field{journaltitle}{Surface Innovations}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{month}{2}
-      \field{note}{WOS:000601753900003}
-      \field{number}{1}
-      \field{title}{Enhanced dielectric properties of flexible {Cu}/polymer nanocomposite films}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{9}
-      \field{year}{2021}
-      \field{dateera}{ce}
-      \field{pages}{17\bibrangedash 24}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1680/jsuin.20.00020
-      \endverb
-      \keyw{atta_enhanced_2021}
-      \warn{\item Datamodel: article entry 'atta_enhanced_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'atta_enhanced_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{张燕2013电气自动化在电气工程中的应用探讨}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=6437af49ae8e79ddd41e0811841a430d}{%
-           family={张燕},
-           familyi={张\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=6437af49ae8e79ddd41e0811841a430d}{%
-           family={张燕},
-           familyi={张\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {chinese}%
-      }
-      \strng{namehash}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{fullhash}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{fullhashraw}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{bibnamehash}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{authorbibnamehash}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{authornamehash}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{authorfullhash}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{authorfullhashraw}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{nameabibnamehash}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{nameanamehash}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{nameafullhash}{6437af49ae8e79ddd41e0811841a430d}
-      \strng{nameafullhashraw}{6437af49ae8e79ddd41e0811841a430d}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{电子技术与软件工程}
-      \field{langid}{english}
-      \field{languageid}{chinese}
-      \field{lansortorder}{1}
-      \field{title}{电气自动化在电气工程中的应用探讨}
-      \field{usera}{J}
-      \field{userd}{chinese}
-      \field{userf}{chinese}
-      \field{volume}{17}
-      \field{year}{2013}
-      \field{dateera}{ce}
-      \field{pages}{199\bibrangedash 199}
-      \range{pages}{1}
-      \keyw{张燕2013电气自动化在电气工程中的应用探讨}
-      \warn{\item Datamodel: article entry '张燕2013电气自动化在电气工程中的应用探讨' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry '张燕2013电气自动化在电气工程中的应用探讨' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{黄雪芳2012探讨电气工程中自动化技术的应用}{thesis}{}{}
-      \name{author}{1}{}{%
-        {{hash=338508320afa3a28c21f76e51ed02878}{%
-           family={黄雪芳},
-           familyi={黄\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=338508320afa3a28c21f76e51ed02878}{%
-           family={黄雪芳},
-           familyi={黄\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {某大学}%
-      }
-      \list{language}{1}{%
-        {zh}%
-      }
-      \list{location}{1}{%
-        {某地}%
-      }
-      \strng{namehash}{338508320afa3a28c21f76e51ed02878}
-      \strng{fullhash}{338508320afa3a28c21f76e51ed02878}
-      \strng{fullhashraw}{338508320afa3a28c21f76e51ed02878}
-      \strng{bibnamehash}{338508320afa3a28c21f76e51ed02878}
-      \strng{authorbibnamehash}{338508320afa3a28c21f76e51ed02878}
-      \strng{authornamehash}{338508320afa3a28c21f76e51ed02878}
-      \strng{authorfullhash}{338508320afa3a28c21f76e51ed02878}
-      \strng{authorfullhashraw}{338508320afa3a28c21f76e51ed02878}
-      \strng{nameabibnamehash}{338508320afa3a28c21f76e51ed02878}
-      \strng{nameanamehash}{338508320afa3a28c21f76e51ed02878}
-      \strng{nameafullhash}{338508320afa3a28c21f76e51ed02878}
-      \strng{nameafullhashraw}{338508320afa3a28c21f76e51ed02878}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{探讨电气工程中自动化技术的应用}
-      \field{type}{phdthesis}
-      \field{usera}{D}
-      \field{userd}{chinese}
-      \field{userf}{chinese}
-      \field{year}{2012}
-      \field{dateera}{ce}
-      \keyw{黄雪芳2012探讨电气工程中自动化技术的应用}
-      \warn{\item Datamodel: thesis entry '黄雪芳2012探讨电气工程中自动化技术的应用' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-    \endentry
-    \entry{王磊2011电气自动化控制设备可靠性探究}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=83e887aa728999208b13e2b0958ee08a}{%
-           family={王磊},
-           familyi={王\bibinitperiod}}}%
-        {{hash=3ed28c2f88286d9f538a3cefefd3d98f}{%
-           family={薛双苓},
-           familyi={薛\bibinitperiod}}}%
-      }
-      \name{namea}{2}{}{%
-        {{hash=83e887aa728999208b13e2b0958ee08a}{%
-           family={王磊},
-           familyi={王\bibinitperiod}}}%
-        {{hash=3ed28c2f88286d9f538a3cefefd3d98f}{%
-           family={薛双苓},
-           familyi={薛\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {chinese}%
-      }
-      \strng{namehash}{7481c08aa9ab9da398917b145500e18d}
-      \strng{fullhash}{f69e653929f37bcc61ff01d0a81844bb}
-      \strng{fullhashraw}{f69e653929f37bcc61ff01d0a81844bb}
-      \strng{bibnamehash}{f69e653929f37bcc61ff01d0a81844bb}
-      \strng{authorbibnamehash}{f69e653929f37bcc61ff01d0a81844bb}
-      \strng{authornamehash}{7481c08aa9ab9da398917b145500e18d}
-      \strng{authorfullhash}{f69e653929f37bcc61ff01d0a81844bb}
-      \strng{authorfullhashraw}{f69e653929f37bcc61ff01d0a81844bb}
-      \strng{nameabibnamehash}{f69e653929f37bcc61ff01d0a81844bb}
-      \strng{nameanamehash}{7481c08aa9ab9da398917b145500e18d}
-      \strng{nameafullhash}{f69e653929f37bcc61ff01d0a81844bb}
-      \strng{nameafullhashraw}{f69e653929f37bcc61ff01d0a81844bb}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{科技传播}
-      \field{langid}{english}
-      \field{languageid}{chinese}
-      \field{lansortorder}{1}
-      \field{title}{电气自动化控制设备可靠性探究}
-      \field{usera}{J}
-      \field{userd}{chinese}
-      \field{userf}{chinese}
-      \field{volume}{19}
-      \field{year}{2011}
-      \field{dateera}{ce}
-      \field{pages}{51\bibrangedash 62}
-      \range{pages}{12}
-      \keyw{王磊2011电气自动化控制设备可靠性探究}
-      \warn{\item Datamodel: article entry '王磊2011电气自动化控制设备可靠性探究' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry '王磊2011电气自动化控制设备可靠性探究' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{王永华2013现代电气控制及}{book}{}{}
-      \name{author}{4}{}{%
-        {{hash=584194fd865789e893240916454b04ca}{%
-           family={王永华},
-           familyi={王\bibinitperiod}}}%
-        {{hash=6499fc7409049355527ef6a2ba5706b8}{%
-           family={张},
-           familyi={张\bibinitperiod}}}%
-        {{hash=46900173a2e62ba55dedacfdfd7e7441}{%
-           family={李},
-           familyi={李\bibinitperiod}}}%
-        {{hash=f749a117654baef0f9ee4b845301ffce}{%
-           family={赵},
-           familyi={赵\bibinitperiod}}}%
-      }
-      \name{namea}{4}{}{%
-        {{hash=584194fd865789e893240916454b04ca}{%
-           family={王永华},
-           familyi={王\bibinitperiod}}}%
-        {{hash=6499fc7409049355527ef6a2ba5706b8}{%
-           family={张},
-           familyi={张\bibinitperiod}}}%
-        {{hash=46900173a2e62ba55dedacfdfd7e7441}{%
-           family={李},
-           familyi={李\bibinitperiod}}}%
-        {{hash=f749a117654baef0f9ee4b845301ffce}{%
-           family={赵},
-           familyi={赵\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {chinese}%
-      }
-      \list{location}{1}{%
-        {北京}%
-      }
-      \list{publisher}{1}{%
-        {北京航空航天大学出版社}%
-      }
-      \strng{namehash}{780afe7495a16dc54efa8c33049c06d7}
-      \strng{fullhash}{cf248eb60e6035a3559849ef817fd75f}
-      \strng{fullhashraw}{cf248eb60e6035a3559849ef817fd75f}
-      \strng{bibnamehash}{1fcb99ae28f90a31766062a384a80ca3}
-      \strng{authorbibnamehash}{1fcb99ae28f90a31766062a384a80ca3}
-      \strng{authornamehash}{780afe7495a16dc54efa8c33049c06d7}
-      \strng{authorfullhash}{cf248eb60e6035a3559849ef817fd75f}
-      \strng{authorfullhashraw}{cf248eb60e6035a3559849ef817fd75f}
-      \strng{nameabibnamehash}{1fcb99ae28f90a31766062a384a80ca3}
-      \strng{nameanamehash}{780afe7495a16dc54efa8c33049c06d7}
-      \strng{nameafullhash}{cf248eb60e6035a3559849ef817fd75f}
-      \strng{nameafullhashraw}{cf248eb60e6035a3559849ef817fd75f}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{languageid}{chinese}
-      \field{lansortorder}{1}
-      \field{title}{现代电气控制及 PLC 应用技术}
-      \field{usera}{M}
-      \field{userd}{chinese}
-      \field{userf}{chinese}
-      \field{year}{2013}
-      \field{dateera}{ce}
-      \true{nocite}
-      \keyw{王永华2013现代电气控制及}
-      \warn{\item Datamodel: book entry '王永华2013现代电气控制及' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: book entry '王永华2013现代电气控制及' (References/reference.bib): Invalid field 'languageid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry '王永华2013现代电气控制及' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'book'}
-    \endentry
-    \entry{刘海龙2010浅谈电气自动化的现状与发展方向}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=44ed8f553f5054869ecc66a274a6a2a0}{%
-           family={刘海龙},
-           familyi={刘\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=44ed8f553f5054869ecc66a274a6a2a0}{%
-           family={刘海龙},
-           familyi={刘\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {chinese}%
-      }
-      \strng{namehash}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{fullhash}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{fullhashraw}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{bibnamehash}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{authorbibnamehash}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{authornamehash}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{authorfullhash}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{authorfullhashraw}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{nameabibnamehash}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{nameanamehash}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{nameafullhash}{44ed8f553f5054869ecc66a274a6a2a0}
-      \strng{nameafullhashraw}{44ed8f553f5054869ecc66a274a6a2a0}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{黑龙江科技信息}
-      \field{langid}{english}
-      \field{languageid}{chinese}
-      \field{lansortorder}{1}
-      \field{number}{5}
-      \field{title}{浅谈电气自动化的现状与发展方向}
-      \field{usera}{J}
-      \field{userd}{chinese}
-      \field{userf}{chinese}
-      \field{volume}{6}
-      \field{year}{2010}
-      \field{dateera}{ce}
-      \true{nocite}
-      \keyw{刘海龙2010浅谈电气自动化的现状与发展方向}
-      \warn{\item Datamodel: article entry '刘海龙2010浅谈电气自动化的现状与发展方向' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry '刘海龙2010浅谈电气自动化的现状与发展方向' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{陈众励2007建筑电气节能技术综述}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=f8be1aad9d8dfe6ab28027f36fbb6370}{%
-           family={陈众励},
-           familyi={陈\bibinitperiod}}}%
-        {{hash=7b49cd7a5319a0e6242040eb9b07a9f2}{%
-           family={赵济安},
-           familyi={赵\bibinitperiod}}}%
-        {{hash=74dbc643680be39ec1bc726e668bdf68}{%
-           family={邵民杰},
-           familyi={邵\bibinitperiod}}}%
-      }
-      \name{namea}{3}{}{%
-        {{hash=f8be1aad9d8dfe6ab28027f36fbb6370}{%
-           family={陈众励},
-           familyi={陈\bibinitperiod}}}%
-        {{hash=7b49cd7a5319a0e6242040eb9b07a9f2}{%
-           family={赵济安},
-           familyi={赵\bibinitperiod}}}%
-        {{hash=74dbc643680be39ec1bc726e668bdf68}{%
-           family={邵民杰},
-           familyi={邵\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {chinese}%
-      }
-      \strng{namehash}{c32e645a41e77a582faca47ad1fdcf88}
-      \strng{fullhash}{47ab6eba9918d8744c085f7bc518889d}
-      \strng{fullhashraw}{47ab6eba9918d8744c085f7bc518889d}
-      \strng{bibnamehash}{47ab6eba9918d8744c085f7bc518889d}
-      \strng{authorbibnamehash}{47ab6eba9918d8744c085f7bc518889d}
-      \strng{authornamehash}{c32e645a41e77a582faca47ad1fdcf88}
-      \strng{authorfullhash}{47ab6eba9918d8744c085f7bc518889d}
-      \strng{authorfullhashraw}{47ab6eba9918d8744c085f7bc518889d}
-      \strng{nameabibnamehash}{47ab6eba9918d8744c085f7bc518889d}
-      \strng{nameanamehash}{c32e645a41e77a582faca47ad1fdcf88}
-      \strng{nameafullhash}{47ab6eba9918d8744c085f7bc518889d}
-      \strng{nameafullhashraw}{47ab6eba9918d8744c085f7bc518889d}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{低压电器}
-      \field{langid}{english}
-      \field{languageid}{chinese}
-      \field{lansortorder}{1}
-      \field{title}{建筑电气节能技术综述}
-      \field{usera}{J}
-      \field{userd}{chinese}
-      \field{userf}{chinese}
-      \field{volume}{4}
-      \field{year}{2007}
-      \field{dateera}{ce}
-      \true{nocite}
-      \field{pages}{1\bibrangedash 5}
-      \range{pages}{5}
-      \keyw{陈众励2007建筑电气节能技术综述}
-      \warn{\item Datamodel: article entry '陈众励2007建筑电气节能技术综述' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry '陈众励2007建筑电气节能技术综述' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{sachdeva_effect_2021}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=9857976e4434d7159664a8388961181d}{%
-           family={Sachdeva},
-           familyi={S\bibinitperiod},
-           given={Bhawana},
-           giveni={B\bibinitperiod}}}%
-        {{hash=1c5149b361a132bdee94149ea0e6be98}{%
-           family={Kaushik},
-           familyi={K\bibinitperiod},
-           given={Ravinder},
-           giveni={R\bibinitperiod}}}%
-        {{hash=e2224a4b9b30a6e202308db2abf9faf2}{%
-           family={Arora},
-           familyi={A\bibinitperiod},
-           given={Sumit},
-           giveni={S\bibinitperiod}}}%
-        {{hash=09cf2844be96c96e7b5948877145602c}{%
-           family={Khan},
-           familyi={K\bibinitperiod},
-           given={Azhar},
-           giveni={A\bibinitperiod}}}%
-      }
-      \name{namea}{4}{}{%
-        {{hash=9857976e4434d7159664a8388961181d}{%
-           family={Sachdeva},
-           familyi={S\bibinitperiod},
-           given={Bhawana},
-           giveni={B\bibinitperiod}}}%
-        {{hash=1c5149b361a132bdee94149ea0e6be98}{%
-           family={Kaushik},
-           familyi={K\bibinitperiod},
-           given={Ravinder},
-           giveni={R\bibinitperiod}}}%
-        {{hash=e2224a4b9b30a6e202308db2abf9faf2}{%
-           family={Arora},
-           familyi={A\bibinitperiod},
-           given={Sumit},
-           giveni={S\bibinitperiod}}}%
-        {{hash=09cf2844be96c96e7b5948877145602c}{%
-           family={Khan},
-           familyi={K\bibinitperiod},
-           given={Azhar},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{7a0960214521e21ab6d31072818b81dd}
-      \strng{fullhash}{34eb7a2b9d399386b6a75ccfddb7fbfa}
-      \strng{fullhashraw}{34eb7a2b9d399386b6a75ccfddb7fbfa}
-      \strng{bibnamehash}{0ee6252265cb3c1059f8c09ab8be5857}
-      \strng{authorbibnamehash}{0ee6252265cb3c1059f8c09ab8be5857}
-      \strng{authornamehash}{7a0960214521e21ab6d31072818b81dd}
-      \strng{authorfullhash}{34eb7a2b9d399386b6a75ccfddb7fbfa}
-      \strng{authorfullhashraw}{34eb7a2b9d399386b6a75ccfddb7fbfa}
-      \strng{nameabibnamehash}{0ee6252265cb3c1059f8c09ab8be5857}
-      \strng{nameanamehash}{7a0960214521e21ab6d31072818b81dd}
-      \strng{nameafullhash}{34eb7a2b9d399386b6a75ccfddb7fbfa}
-      \strng{nameafullhashraw}{34eb7a2b9d399386b6a75ccfddb7fbfa}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The objective of this investigation was to evaluate the stability of vitamin A in fortified milk which was exposed to different processing conditions viz. heat treatments (pasteurization, boiling and sterilization), light exposure treatments (1485, 2970 and 4455 tux for 2, 4, 8, 16 and 32 h) and different packaging materials (polyethylene pouches and glass bottles) and also to evaluate the effect of fortified iron (ferric pyrophosphate soluble (FPP) and ferrous gluconate hydrate (FG) on vitamin A stability during processing and storage. Toned milk was fortified with 25 ppm iron and vitamin A acetate 2500 IU/L, singly and also in combination. The vitamin A analysis method was optimized and accuracy and precision were below +/- 5\%. The results indicated that vitamin A was heat-labile and its degradation increased with the increase in the intensity of heat treatments. Pasteurized milk (318.11 IU/L) showed non-significant (p {>} 0.05) decrease, however, boiling (250.21 IU/L) and sterilization (205.65 IU/L) showed a significant difference (p {<} 0.05) in vitamin A content in comparison to control (324.71 IU/L). Similarly, vitamin A was light sensitive and its degradation significantly increased (p {<} 0.05) with an increase in the intensity of light exposure (34.82 to 92.53\%). Loss of vitamin A (\%) was significantly greater (p {<} 0.05) in iron-fortified milk suggesting that iron might have played a rote in accelerating the degradation of vitamin A. Extent of losses were significantly higher (p {<} 0.05) in FG compared to FPP fortified milk. Vitamin A (microencapsulated form) which was added externally was more stable than the inherent vitamin A present in milk.}
-      \field{journaltitle}{International Journal for Vitamin and Nutrition Research}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{note}{WOS:000614114700017}
-      \field{number}{1-2}
-      \field{title}{Effect of processing conditions on the stability of native vitamin {A} and fortified retinol acetate in milk}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{91}
-      \field{year}{2021}
-      \field{dateera}{ce}
-      \true{nocite}
-      \field{pages}{133\bibrangedash 142}
-      \range{pages}{10}
-      \verb{doi}
-      \verb 10.1024/0300-9831/a000617
-      \endverb
-      \keyw{sachdeva_effect_2021}
-      \warn{\item Datamodel: article entry 'sachdeva_effect_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'sachdeva_effect_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
     \entry{wu_doublely-doped_2021}{article}{}{}
       \name{author}{7}{}{%
@@ -7667,8 +7613,8 @@
       \strng{nameanamehash}{0ed3aad33700a4e1dbbded2181342349}
       \strng{nameafullhash}{0cc70a1be20602fbab21f1ac06a1497a}
       \strng{nameafullhashraw}{0cc70a1be20602fbab21f1ac06a1497a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A doublely-doped layered double hydroxide (LDH) film was produced on an anodized magnesium alloy AZ31. The Ce-doped Mg-Al LDH film was prepared by in-situ hydrothermal treatment method, and the intercalation of vanadate was realized by ion-exchange reaction. The structure, morphology and composition of as-prepared LDH film were investigated by X-ray diffractometer, field-emission scanning electronic microscope and energy dispersive spectrometry. Results indicated that a uniform and compact LDH film was formed and the intercalation of Ce3+ and vanadate would change the crystal structure of LDHs. The results of the potentiodynamic polarization, electrochemical impedance spectra, hydrogen evolution and corrosion weight loss tests showed the Ce3+ and vanadate anions significantly improve the impedance of LDH film, and the active double-doped LDH film could effectively protect the magnesium substrate from corrosion. (C) 2020 Published by Elsevier Ltd on behalf of The editorial office of Journal of Materials Science \& Technology.}
@@ -7815,8 +7761,8 @@
       \strng{nameanamehash}{3a20952b5ba24f96b8829909815a8db8}
       \strng{nameafullhash}{7764e21a9c54cf6a0ba65665cf891ec2}
       \strng{nameafullhashraw}{7764e21a9c54cf6a0ba65665cf891ec2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Smart textile devices have now received increasing attention for potential application in wearable human motion monitoring, healthcare and personal thermal management. MXene (Ti3C2Tx), which is a new two-dimensional material with remarkable properties, has been widely applied in wearable electronics. However, it remains a challenge to prepare MXene based smart textile that possesses multifunctional wearable sensing applications and can also keep MXene from oxidizing. Here, we fabricated a waterproof and breathable smart textile by construction of a multiple core-shell structure, i.e., MXene decoration onto the polydopamine (PDA) modified elastic textile followed by polydimethylsiloxane (PDMS) coating. MXene wrapping the fibers formed the conductive network, while PDMS could not only protect the MXene from oxidation but also endow the textile with superhydrophobicity and thus corrosion resistance. The smart textile possessed outstanding and durable photo thermal and electro-thermal conversion performance. More importantly, the textile electronic exhibited sensitive and stable strain sensing performance and temperature sensing capacity with a high thermal coefficient of resistance. Evidently, such smart textile device is highly promising for application in next generation all-in-one wearable electronics.}
@@ -7913,8 +7859,8 @@
       \strng{nameanamehash}{8a46e79dd83ac7f24756d400469e7b0e}
       \strng{nameafullhash}{7368b88eeffc2b6f54608dbe2f0a7c88}
       \strng{nameafullhashraw}{7368b88eeffc2b6f54608dbe2f0a7c88}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Cyclodextrin (CD)-metal-organic frameworks (MOFs) are developed as a new type of food-acceptable multi-porous material, which shows a great potential for controlled volatile compound release. This study aimed to synthesize CD-MOFs from potassium nitrate, crystallized with alpha-cyclodextrin (alpha-CD), beta-CD or gamma-CD, and their complex capacities were further evaluated using menthol encapsulation. Compared with CD, all the CD-MOFs had highly ordered crystal structures and more regular shapes. beta-CD-MOF showed better thermal stability, with an initial thermal degradation temperature of 253 degrees C, higher than the other two CD-MOFs. The CD-MOFs were used for menthol encapsulation and the resulting menthol concentration within the inclusion complexes (ICs) was determined. The menthol concentration in ICs followed the order: beta-CD-MOF {>} beta-CD {>} gamma-CD-MOF {>} gamma-CD {>} alpha-CD {>}= alpha-CD-MOF. The menthol content and encapsulation efficiency of beta-CD-MOF were 21.76\% (w/w) and 22.54\% (w/w) respectively, significantly higher than those of other reported solid materials, such as amylose, CD and V-type starch.}
@@ -8032,8 +7978,8 @@
       \strng{nameanamehash}{1bb76fe2a661a07df3dd906bc9d86e8c}
       \strng{nameafullhash}{66991de125c8c8ebb6c24508ff9ef146}
       \strng{nameafullhashraw}{66991de125c8c8ebb6c24508ff9ef146}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Water pollution is an urgent problem in the world today. The discharge of industrial wastewater such as organic dyes will cause serious pollution to water bodies, thereby affecting people's lives. Facing the increasingly severe water pollution problem, the demand for efficient dye degradation materials is also increasing. Artemia cyst shell (ACS), as a natural biological material, has a large number of microporous structures, so it can be used as a carrier for high-efficiency nanoscale catalytic materials. In this work, ACS-ZnO nanocomposites were successfully synthesized by a combination of high-temperature calcination and hydrothermal synthesis, and their properties and photocatalytic degradation properties for dyes were studied. Artemia cyst shells are calcined at high temperature to form an organic porous skeleton after pretreated. The structure is then loaded with ZnO nanoparticles to synthesize the target product through a hydrothermal reaction. Finally, the material is used to degrade methylene blue, Rhodamine B, and neutral red respectively under light irradiation. The results show that the photodegradation effect of ACS-ZnO nanocomposites with a certain ZnO content is significantly stronger than that of pure ZnO nanoparticles. At the same time, cyclic experiments show the high stability and sustainable use of this composite material.}
@@ -8110,8 +8056,8 @@
       \strng{nameanamehash}{cd77f7e6ae7fb5adedb53b39a0cdc4b4}
       \strng{nameafullhash}{1457e2a007b56022e33b24487b645c23}
       \strng{nameafullhashraw}{1457e2a007b56022e33b24487b645c23}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Molecules in gas and liquid states, as well as in solution, exhibit significant and random Brownian motion. Molecules in the solid-state, although strongly immobilized, can still exhibit significant intramolecular dynamics. However, in most framework materials, these intramolecular dynamics are driven by temperature, and therefore are neither controlled nor spatially or temporarily aligned. In recent years, several examples of molecular machines that allow for a stimuli-responsive control of dynamical motion, such as rotation, have been reported. In this contribution, we investigate the local and global properties of a Lennard-Jones (LJ) fluid surrounding a molecular motor and consider the influence of cooperative and non-directional rotation for a molecular motor-containing pore system. This study uses classical molecular dynamics simulations to describe a minimal model, which was developed to resemble known molecular motors. The properties of an LJ liquid surrounding an isolated molecular motor remain mostly unaffected by the introduced rotation. We then considered an arrangement of motors within a one-dimensional pore. Changes in diffusivity for pore sizes approaching the length of the rotor were observed, resulting from rotation of the motors. We also considered the influence of cooperative motor directionality on the directional transport properties of this confined fluid. Importantly, we discovered that specific unidirectional rotation of altitudinal motors can produce directed diffusion. This study provides an essential insight into molecular machine-containing frameworks, highlighting the specific structural arrangements that can produce directional mass transport.}
@@ -8142,6 +8088,65 @@
       \keyw{evans_cooperative_2021}
       \warn{\item Datamodel: article entry 'evans_cooperative_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
       \warn{\item Datamodel: article entry 'evans_cooperative_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{atta_enhanced_2021}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=334d2390688d596e650cc07a9fee102c}{%
+           family={Atta},
+           familyi={A\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=334d2390688d596e650cc07a9fee102c}{%
+           family={Atta},
+           familyi={A\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{334d2390688d596e650cc07a9fee102c}
+      \strng{fullhash}{334d2390688d596e650cc07a9fee102c}
+      \strng{fullhashraw}{334d2390688d596e650cc07a9fee102c}
+      \strng{bibnamehash}{334d2390688d596e650cc07a9fee102c}
+      \strng{authorbibnamehash}{334d2390688d596e650cc07a9fee102c}
+      \strng{authornamehash}{334d2390688d596e650cc07a9fee102c}
+      \strng{authorfullhash}{334d2390688d596e650cc07a9fee102c}
+      \strng{authorfullhashraw}{334d2390688d596e650cc07a9fee102c}
+      \strng{nameabibnamehash}{334d2390688d596e650cc07a9fee102c}
+      \strng{nameanamehash}{334d2390688d596e650cc07a9fee102c}
+      \strng{nameafullhash}{334d2390688d596e650cc07a9fee102c}
+      \strng{nameafullhashraw}{334d2390688d596e650cc07a9fee102c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This research studied the comprehensive dielectric properties of copper (Cu)/polyethylene terephthalate (PET) and copper/polytetrafluoroethylene (PTFE) composite films under the influence of copper nanoparticle (CuNP) sputtering time. Copper thin film was grown on flexible PET and PTFE using the ion beam sputtering technique. X-ray diffraction confirmed that CuNPs had been successfully synthesized on the polymer substrate. The electrical conductivity sigma(AC) of the films was measured using alternating-current conductivity impedance in the frequency range of 10(2)-10(6) Hz. It increased from 1.2 x 10(-6) S/cm for PET to 9.65 x 10(-7) S/cm for 75 min copper/PET and from 6.38 x 10(-7) S/cm for PTFE to 9.24 x 10(-1) S/cm for 75 min copper/PTFE. The dielectric constant epsilon' increased from 0.62 for pristine PET to 1.19 for 25 min copper/PET and from 1.88 for pristine PTFE to 2.25 for 25 min copper/PTFE at an applied frequency of 10(5) Hz. In addition, other parameters - namely, dielectric loss epsilon '', dielectric modulus m and dielectric tangent constant tan delta - were investigated. The comprehensive results showed that the dielectric properties of flexible PET and PTFE polymers improved due to the deposited conductive CuNPs. Flexible copper/PET and copper/PTFE composite films are promising as dielectric substrates for modern electronic applications that can resist hard environments and have long lifetimes.}
+      \field{journaltitle}{Surface Innovations}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{2}
+      \field{note}{WOS:000601753900003}
+      \field{number}{1}
+      \field{title}{Enhanced dielectric properties of flexible {Cu}/polymer nanocomposite films}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{9}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{17\bibrangedash 24}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1680/jsuin.20.00020
+      \endverb
+      \keyw{atta_enhanced_2021}
+      \warn{\item Datamodel: article entry 'atta_enhanced_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'atta_enhanced_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
     \entry{mai2010}{article}{}{}
       \name{author}{4}{}{%
