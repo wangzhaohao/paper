@@ -26,7 +26,11 @@
                 %            General Reviewers List(Content), CHANGE THE STYLE of Achievements BY YOURSELF
 ]{XJTU-thesis}
 
-
+\usepackage{xltabular}  % 核心：用于跨页表格
+\usepackage{ragged2e}   % 核心：用于 \RaggedRight 左对齐
+\usepackage{booktabs}   % 用于三线表 (\toprule, \midrule)
+\usepackage{array}      % 基础表格增强
+\usepackage{placeins}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% fill the each blank for auto-generate contents
@@ -166,12 +170,13 @@
 % and KEEP Chinese Title as the FIRST argument, English Titile as the SECOND, if you use `english' option
 
 \thesisbody{
-    Main_Spine/c1,
-    Main_Spine/c2,
-    Main_Spine/c3,
-    Main_Spine/c4,
-    Main_Spine/c5,
-    Main_Spine/c6
+	Main_Spine/c1,
+	Main_Spine/c2,
+	Main_Spine/c3,
+	Main_Spine/c4,
+	Main_Spine/c5,
+	Main_Spine/c6,
+	Main_Spine/c7
 }
 
 % 致谢 修改 Main_Miscellaneous/acknowledegment.tex 中的内容
@@ -185,7 +190,7 @@
 % 附录（有几个附录就导入几个文件（不加.tex后缀）），
 % Appendi(x/ies), argument should not have the .tex suffix
 \thesisappendix{Main_Miscellaneous/appendix_a,
-                Main_Miscellaneous/appendix_b}
+	Main_Miscellaneous/appendix_b}
 
 % 攻读学位期间取得的研究成果 修改 Main_Miscellaneous/achievement.tex 中的内容 注意盲审时需要手动修改格式
 % Achievement, Rewrite your content in Main_Miscellaneous/achievement.tex
