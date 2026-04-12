@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.21)  19 MAR 2026 10:07
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.21)  12 APR 2026 20:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4359,31 +4359,122 @@ aoZhongQiKongQianYiDeDuoFangFaDuoWuLiChangMoNiYanJiu2025' (References/reference
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'dimarcelloImprovementsTRANSURANUSCode30':
-(biblatex)                - Datamodel: inproceedings entry 'dimarcelloImproveme
-ntsTRANSURANUSCode30' (References/reference.bib): Field 'address' invalid in da
-ta model - ignoring.
+(biblatex)                with 'clementPlutoniumRedistributionMixed1978':
+(biblatex)                - Datamodel: article entry 'clementPlutoniumRedistrib
+utionMixed1978' (References/reference.bib): Invalid field 'languageid' for entr
+ytype 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'dimarcelloImprovementsTRANSURANUSCode30':
-(biblatex)                - Datamodel: inproceedings entry 'dimarcelloImproveme
-ntsTRANSURANUSCode30' (References/reference.bib): Invalid field 'issn' for entr
-ytype 'inproceedings'.
+(biblatex)                with 'clementPlutoniumRedistributionMixed1978':
+(biblatex)                - Datamodel: article entry 'clementPlutoniumRedistrib
+utionMixed1978' (References/reference.bib): Invalid field 'lansortorder' for en
+trytype 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'dimarcelloImprovementsTRANSURANUSCode30':
-(biblatex)                - Datamodel: inproceedings entry 'dimarcelloImproveme
-ntsTRANSURANUSCode30' (References/reference.bib): Invalid field 'languageid' fo
-r entrytype 'inproceedings'.
+(biblatex)                with 'meyerAnalysisPlutoniumSegregation1974':
+(biblatex)                - Datamodel: article entry 'meyerAnalysisPlutoniumSeg
+regation1974' (References/reference.bib): Invalid field 'languageid' for entryt
+ype 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'dimarcelloImprovementsTRANSURANUSCode30':
-(biblatex)                - Datamodel: inproceedings entry 'dimarcelloImproveme
-ntsTRANSURANUSCode30' (References/reference.bib): Invalid field 'lansortorder' 
-for entrytype 'inproceedings'.
+(biblatex)                with 'meyerAnalysisPlutoniumSegregation1974':
+(biblatex)                - Datamodel: article entry 'meyerAnalysisPlutoniumSeg
+regation1974' (References/reference.bib): Invalid field 'lansortorder' for entr
+ytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'boberPlutoniumRedistributionFast1973':
+(biblatex)                - Datamodel: article entry 'boberPlutoniumRedistribut
+ionFast1973' (References/reference.bib): Invalid field 'languageid' for entryty
+pe 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'boberPlutoniumRedistributionFast1973':
+(biblatex)                - Datamodel: article entry 'boberPlutoniumRedistribut
+ionFast1973' (References/reference.bib): Invalid field 'lansortorder' for entry
+type 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'matzkeDiffusionProcessesSurface1983':
+(biblatex)                - Datamodel: article entry 'matzkeDiffusionProcessesS
+urface1983' (References/reference.bib): Invalid field 'languageid' for entrytyp
+e 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'matzkeDiffusionProcessesSurface1983':
+(biblatex)                - Datamodel: article entry 'matzkeDiffusionProcessesS
+urface1983' (References/reference.bib): Invalid field 'lansortorder' for entryt
+ype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'boberMATERIALTRANSPORTTEMPERATURE1973':
+(biblatex)                - Datamodel: incollection entry 'boberMATERIALTRANSPO
+RTTEMPERATURE1973' (References/reference.bib): Invalid field 'languageid' for e
+ntrytype 'incollection'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'boberMATERIALTRANSPORTTEMPERATURE1973':
+(biblatex)                - Datamodel: incollection entry 'boberMATERIALTRANSPO
+RTTEMPERATURE1973' (References/reference.bib): Invalid field 'lansortorder' for
+ entrytype 'incollection'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'boberMATERIALTRANSPORTTEMPERATURE1973':
+(biblatex)                - Datamodel: incollection entry 'boberMATERIALTRANSPO
+RTTEMPERATURE1973' (References/reference.bib): Missing mandatory field 'editor'
+.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'hoffmannCrackFormationCrack1974':
+(biblatex)                - Datamodel: article entry 'hoffmannCrackFormationCra
+ck1974' (References/reference.bib): Invalid field 'languageid' for entrytype 'a
+rticle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'hoffmannCrackFormationCrack1974':
+(biblatex)                - Datamodel: article entry 'hoffmannCrackFormationCra
+ck1974' (References/reference.bib): Invalid field 'lansortorder' for entrytype 
+'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'olanderKineticsActinideRedistribution1973':
+(biblatex)                - Datamodel: article entry 'olanderKineticsActinideRe
+distribution1973' (References/reference.bib): Invalid field 'languageid' for en
+trytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'olanderKineticsActinideRedistribution1973':
+(biblatex)                - Datamodel: article entry 'olanderKineticsActinideRe
+distribution1973' (References/reference.bib): Invalid field 'lansortorder' for 
+entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'ishiiInvestigationPuMigration2001':
+(biblatex)                - Datamodel: article entry 'ishiiInvestigationPuMigra
+tion2001' (References/reference.bib): Invalid field 'languageid' for entrytype 
+'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'ishiiInvestigationPuMigration2001':
+(biblatex)                - Datamodel: article entry 'ishiiInvestigationPuMigra
+tion2001' (References/reference.bib): Invalid field 'lansortorder' for entrytyp
+e 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -4417,59 +4508,45 @@ for entrytype 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'boberPlutoniumRedistributionFast1973':
-(biblatex)                - Datamodel: article entry 'boberPlutoniumRedistribut
-ionFast1973' (References/reference.bib): Invalid field 'languageid' for entryty
-pe 'article'.
+(biblatex)                with 'dimarcelloImprovementsTRANSURANUSCode30':
+(biblatex)                - Datamodel: inproceedings entry 'dimarcelloImproveme
+ntsTRANSURANUSCode30' (References/reference.bib): Field 'address' invalid in da
+ta model - ignoring.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'boberPlutoniumRedistributionFast1973':
-(biblatex)                - Datamodel: article entry 'boberPlutoniumRedistribut
-ionFast1973' (References/reference.bib): Invalid field 'lansortorder' for entry
-type 'article'.
+(biblatex)                with 'dimarcelloImprovementsTRANSURANUSCode30':
+(biblatex)                - Datamodel: inproceedings entry 'dimarcelloImproveme
+ntsTRANSURANUSCode30' (References/reference.bib): Invalid field 'issn' for entr
+ytype 'inproceedings'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'clementPlutoniumRedistributionMixed1978':
-(biblatex)                - Datamodel: article entry 'clementPlutoniumRedistrib
-utionMixed1978' (References/reference.bib): Invalid field 'languageid' for entr
-ytype 'article'.
+(biblatex)                with 'dimarcelloImprovementsTRANSURANUSCode30':
+(biblatex)                - Datamodel: inproceedings entry 'dimarcelloImproveme
+ntsTRANSURANUSCode30' (References/reference.bib): Invalid field 'languageid' fo
+r entrytype 'inproceedings'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'clementPlutoniumRedistributionMixed1978':
-(biblatex)                - Datamodel: article entry 'clementPlutoniumRedistrib
-utionMixed1978' (References/reference.bib): Invalid field 'lansortorder' for en
-trytype 'article'.
+(biblatex)                with 'dimarcelloImprovementsTRANSURANUSCode30':
+(biblatex)                - Datamodel: inproceedings entry 'dimarcelloImproveme
+ntsTRANSURANUSCode30' (References/reference.bib): Invalid field 'lansortorder' 
+for entrytype 'inproceedings'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'ishiiInvestigationPuMigration2001':
-(biblatex)                - Datamodel: article entry 'ishiiInvestigationPuMigra
-tion2001' (References/reference.bib): Invalid field 'languageid' for entrytype 
-'article'.
+(biblatex)                with 'c.f.AnalyticSolutionsMass1977':
+(biblatex)                - Datamodel: article entry 'c.f.AnalyticSolutionsMass
+1977' (References/reference.bib): Invalid field 'languageid' for entrytype 'art
+icle'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'ishiiInvestigationPuMigration2001':
-(biblatex)                - Datamodel: article entry 'ishiiInvestigationPuMigra
-tion2001' (References/reference.bib): Invalid field 'lansortorder' for entrytyp
-e 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'hoffmannCrackFormationCrack1974':
-(biblatex)                - Datamodel: article entry 'hoffmannCrackFormationCra
-ck1974' (References/reference.bib): Invalid field 'languageid' for entrytype 'a
+(biblatex)                with 'c.f.AnalyticSolutionsMass1977':
+(biblatex)                - Datamodel: article entry 'c.f.AnalyticSolutionsMass
+1977' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'a
 rticle'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'hoffmannCrackFormationCrack1974':
-(biblatex)                - Datamodel: article entry 'hoffmannCrackFormationCra
-ck1974' (References/reference.bib): Invalid field 'lansortorder' for entrytype 
-'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -4736,6 +4813,19 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Datamodel: report entry 'EXT-17-40975R4' (Reference
 s/reference.bib): Missing mandatory field 'type'.
 
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'glesser1985interdiffusao':
+(biblatex)                - Datamodel: thesis entry 'glesser1985interdiffusao' 
+(References/reference.bib): Invalid field 'languageid' for entrytype 'thesis'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'glesser1985interdiffusao':
+(biblatex)                - Datamodel: thesis entry 'glesser1985interdiffusao' 
+(References/reference.bib): Invalid field 'lansortorder' for entrytype 'thesis'
+.
+
 )
 Package biblatex Info: Reference section=0 on input line 145.
 Package biblatex Info: Reference segment=0 on input line 145.
@@ -4906,7 +4996,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 ] [9]
-Overfull \hbox (6.42062pt too wide) in paragraph at lines 78--78
+Overfull \hbox (6.42062pt too wide) in paragraph at lines 83--83
  [][] [][]\TU/times.ttf(0)/m/n/12 Development and Experimental Verification of 
 a Multiphysics Coupling Program Based 
  []
@@ -5796,32 +5886,108 @@ File: ./Figures/case2_sensitivity_15000_P0_v.png Graphic file (type bmp)
  [110] [111] [112] [113] [114] [115] [116] [117]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 745.
+(hyperref)                removing `math shift' on input line 748.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 745.
+(hyperref)                removing `subscript' on input line 748.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 748.
 
 [118]
+File: ./Figures/Pu_diffusion_Arrhenius.pdf Graphic file (type pdf)
+<use ./Figures/Pu_diffusion_Arrhenius.pdf>
+File: ./Figures/Pu_diffusion.pdf Graphic file (type pdf)
+<use ./Figures/Pu_diffusion.pdf>
+ [119]
 File: ./Figures/F_OM_Curve.png Graphic file (type bmp)
 <./Figures/F_OM_Curve.png>
- [119] [120] [121]) (./Main_Spine/c4.tex [122]
+ [120] [121] [122]
+Overfull \hbox (1.7013pt too wide) detected at line 915
+[][][][][] \OT1/lmr/m/n/12 = [][] []
+ []
+
+[123]
+File: ./Figures/plutonium_migration_flow_chart.pdf Graphic file (type pdf)
+<use ./Figures/plutonium_migration_flow_chart.pdf>
+ [124]
+Overfull \hbox (3.8301pt too wide) in paragraph at lines 943--944
+\TU/fzsong.ttf(0)/m/n/12 界 环 境。|  燃 料 材 料 参 数 采 用 \TU/times.ttf(0)/m/n/12 MOX \
+TU/fzsong.ttf(0)/m/n/12 燃 料 的 典 型 热 物 性 参 数，|  其 中 燃 料 密 度 取 $[][][][][] [][]$，
+|
+ []
+
+File: ./Figures/plutonium_redistribution.png Graphic file (type bmp)
+<./Figures/plutonium_redistribution.png>
+File: ./Figures/plutonium_redistribution_correction.png Graphic file (type bmp)
+
+<./Figures/plutonium_redistribution_correction.png>
+[125]
+Overfull \hbox (0.44734pt too wide) in paragraph at lines 1007--1008
+[]\TU/fzsong.ttf(0)/m/n/12 为 验 证 程 序 的 计 算 结 果，|  选 取 日 本 \TU/times.ttf(0)/m/n/
+12 PHENIX P–3 \TU/fzsong.ttf(0)/m/n/12 试 验 中 的 两 根 \TU/times.ttf(0)/m/n/12 MOX 
+\TU/fzsong.ttf(0)/m/n/12 燃 料 棒 \TU/times.ttf(0)/m/n/12 XD0992
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
+[]|\TU/times.ttf(0)/m/n/10.5 BOL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
+[]|\TU/times.ttf(0)/m/n/10.5 EOL
+ []
+
+[126]
+File: ./Figures/plutonium_redistribution_xd0992.pdf Graphic file (type pdf)
+<use ./Figures/plutonium_redistribution_xd0992.pdf>
+File: ./Figures/plutonium_redistribution_xd1071.pdf Graphic file (type pdf)
+<use ./Figures/plutonium_redistribution_xd1071.pdf>
+File: ./Figures/experiment_diffusion_coefficient_compare.pdf Graphic file (type
+ pdf)
+<use ./Figures/experiment_diffusion_coefficient_compare.pdf>
+File: ./Figures/experiment_temperature_compare.pdf Graphic file (type pdf)
+<use ./Figures/experiment_temperature_compare.pdf>
+ [127]
+File: ./Figures/plutonium_redistribution_modify_xd1071.pdf Graphic file (type p
+df)
+<use ./Figures/plutonium_redistribution_modify_xd1071.pdf>
+ [128]
+File: ./Figures/plutonium_enhance_vs_normal.pdf Graphic file (type pdf)
+<use ./Figures/plutonium_enhance_vs_normal.pdf>
+File: ./Figures/temperature_grad_350d.png Graphic file (type bmp)
+<./Figures/temperature_grad_350d.png>
+File: ./Figures/pore_velocity_0_350d.png Graphic file (type bmp)
+<./Figures/pore_velocity_0_350d.png>
+File: ./Figures/plutonium_diffusion_coeff_350d.png Graphic file (type bmp)
+<./Figures/plutonium_diffusion_coeff_350d.png>
+File: ./Figures/D_over_lv_350d.png Graphic file (type bmp)
+<./Figures/D_over_lv_350d.png>
+ [129]
+File: ./Figures/plutonium_sensitivity_D.pdf Graphic file (type pdf)
+<use ./Figures/plutonium_sensitivity_D.pdf>
+File: ./Figures/plutonium_sensitivity_Q.pdf Graphic file (type pdf)
+<use ./Figures/plutonium_sensitivity_Q.pdf>
+ [130]) (./Main_Spine/c4.tex [131]
 Chapter 4.
-) (./Main_Spine/c5.tex [123
+) (./Main_Spine/c5.tex [132
 
 ]
 Chapter 5.
-) (./Main_Spine/c6.tex [124
+) (./Main_Spine/c6.tex [133
 
 ]
 Chapter 6.
-) (./Main_Spine/c7.tex [125
+) (./Main_Spine/c7.tex [134
 
 ]
 Chapter 7.
-) [126
+) [135
 
-] (./Main_Miscellaneous/acknowledegment.tex) [127
+] (./Main_Miscellaneous/acknowledegment.tex) [136
 
 
 ]
@@ -5831,7 +5997,7 @@ LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <10.53937> not av
 ailable
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
 e 188.
- [128
+ [137
 
 
 ]
@@ -5839,12 +6005,12 @@ Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]
 OT:script=hani;language=dflt;!
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
-[129] [130] [131] [132] [133]
+[138] [139] [140] [141] [142]
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
-[134] [135] [136] [137]
+[143] [144] [145] [146] [147]
 \l_tmpa_count=\count643
  (./Main_Miscellaneous/appendix_a.tex
 附录 附录A.
@@ -5876,10 +6042,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/times.ttf(0)/m/n/10.5 Sciantix Op-
  []
 
-[138
+[148
 
 
-] [139] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+] [149] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
@@ -5891,19 +6057,19 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 118.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.5> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 120.
- [140])
-(./Main_Miscellaneous/appendix_b.tex [141]
+ [150])
+(./Main_Miscellaneous/appendix_b.tex [151]
 附录 A.
-[142
+[152
 
-] [143]
+] [153]
 Overfull \hbox (4.38306pt too wide) detected at line 59
 []\OML/lmm/m/it/12 =[] \OT1/lmr/m/n/12 = [] + [] \OMS/lmsy/m/n/12 ^^@ [][]
  []
 
-[144] [145] [146] [147]
-ignored error: Infinite glue shrinkage found in box being split [148]) [149]
-(./Main_Miscellaneous/achievement.tex) [150
+[154] [155] [156] [157]
+ignored error: Infinite glue shrinkage found in box being split [158]) [159]
+(./Main_Miscellaneous/achievement.tex) [160
 
 ] (./Main_Miscellaneous/decision.tex
 Overfull \hbox (1.52652pt too wide) in paragraph at lines 12--13
@@ -5913,13 +6079,13 @@ fzsong.ttf(0)/m/n/12 具 有 \TU/times.ttf(0)/m/n/12 ××××× \TU/fzsong.ttf(0
 TU/times.ttf(0)/m/n/12 ××××××××××\TU/fzsong.ttf(0)/m/n/12 ，|
  []
 
-) [151
+) [161
 
 
-] [152
+] [162
 
 
-] [153
+] [163
 
 ] (./main.aux)
  ***********
@@ -5930,17 +6096,20 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 69388 strings out of 468179
- 1588337 string characters out of 5433206
- 2783220 words of memory out of 5000000
- 96836 multiletter control sequences out of 15000+600000
- 712308 words of font info for 251 fonts, out of 8000000 for 9000
+ 69643 strings out of 468179
+ 1599422 string characters out of 5433206
+ 2796942 words of memory out of 5000000
+ 97074 multiletter control sequences out of 15000+600000
+ 712668 words of font info for 252 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  117i,22n,157p,2473b,7440s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (171 pages).
+Output written on main.pdf (181 pages).

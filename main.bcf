@@ -3101,24 +3101,57 @@
     <bcf:citekey order="124" intorder="1">novasconeModelingPorosityMigration2018</bcf:citekey>
     <bcf:citekey order="125" intorder="1">novasconeModelingPorosityMigration2018</bcf:citekey>
     <bcf:citekey order="126" intorder="1">ozawaDevelopmentFuelPerformance2021</bcf:citekey>
-    <bcf:citekey order="127" intorder="1">dimarcelloImprovementsTRANSURANUSCode30</bcf:citekey>
-    <bcf:citekey order="127" intorder="2">dimarcelloExtensionTRANSURANUSPlutonium2012</bcf:citekey>
-    <bcf:citekey order="128" intorder="1">olanderFundamentalAspectsNuclear1976</bcf:citekey>
-    <bcf:citekey order="129" intorder="1">dimarcelloModellingActinideRedistribution2014</bcf:citekey>
-    <bcf:citekey order="130" intorder="1">boberPlutoniumRedistributionFast1973</bcf:citekey>
-    <bcf:citekey order="131" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
-    <bcf:citekey order="132" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
-    <bcf:citekey order="133" intorder="1">ishiiInvestigationPuMigration2001</bcf:citekey>
-    <bcf:citekey order="134" intorder="1">ishiiInvestigationPuMigration2001</bcf:citekey>
-    <bcf:citekey order="134" intorder="2">dimarcelloModellingActinideRedistribution2014</bcf:citekey>
-    <bcf:citekey order="135" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
-    <bcf:citekey order="135" intorder="2">ishiiInvestigationPuMigration2001</bcf:citekey>
-    <bcf:citekey order="135" intorder="3">dimarcelloModellingActinideRedistribution2014</bcf:citekey>
-    <bcf:citekey order="136" intorder="1">dimarcelloModellingActinideRedistribution2014</bcf:citekey>
+    <bcf:citekey order="127" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="128" intorder="1">meyerAnalysisPlutoniumSegregation1974</bcf:citekey>
+    <bcf:citekey order="129" intorder="1">boberPlutoniumRedistributionFast1973</bcf:citekey>
+    <bcf:citekey order="129" intorder="2">matzkeDiffusionProcessesSurface1983</bcf:citekey>
+    <bcf:citekey order="130" intorder="1">boberMATERIALTRANSPORTTEMPERATURE1973</bcf:citekey>
+    <bcf:citekey order="130" intorder="2">hoffmannCrackFormationCrack1974</bcf:citekey>
+    <bcf:citekey order="130" intorder="3">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="131" intorder="1">olanderFundamentalAspectsNuclear1976</bcf:citekey>
+    <bcf:citekey order="132" intorder="1">boberMATERIALTRANSPORTTEMPERATURE1973</bcf:citekey>
+    <bcf:citekey order="133" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="133" intorder="2">olanderKineticsActinideRedistribution1973</bcf:citekey>
+    <bcf:citekey order="134" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="135" intorder="1">ishiiInvestigationPuMigration2001</bcf:citekey>
+    <bcf:citekey order="135" intorder="2">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="136" intorder="1">boberPlutoniumRedistributionFast1973</bcf:citekey>
     <bcf:citekey order="137" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
-    <bcf:citekey order="137" intorder="2">hoffmannCrackFormationCrack1974</bcf:citekey>
-    <bcf:citekey order="138" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
-    <bcf:citekey order="139" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="137" intorder="2">boberPlutoniumRedistributionFast1973</bcf:citekey>
+    <bcf:citekey order="138" intorder="1">ishiiInvestigationPuMigration2001</bcf:citekey>
+    <bcf:citekey order="139" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="140" intorder="1">dimarcelloExtensionTRANSURANUSPlutonium2012</bcf:citekey>
+    <bcf:citekey order="141" intorder="1">dimarcelloModellingActinideRedistribution2014</bcf:citekey>
+    <bcf:citekey order="142" intorder="1">dimarcelloExtensionTRANSURANUSPlutonium2012</bcf:citekey>
+    <bcf:citekey order="143" intorder="1">matzkeDiffusionProcessesSurface1983</bcf:citekey>
+    <bcf:citekey order="144" intorder="1">matzkeDiffusionProcessesSurface1983</bcf:citekey>
+    <bcf:citekey order="144" intorder="2">ishiiInvestigationPuMigration2001</bcf:citekey>
+    <bcf:citekey order="144" intorder="3">olanderFundamentalAspectsNuclear1976</bcf:citekey>
+    <bcf:citekey order="145" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="146" intorder="1">ishiiInvestigationPuMigration2001</bcf:citekey>
+    <bcf:citekey order="147" intorder="1">dimarcelloImprovementsTRANSURANUSCode30</bcf:citekey>
+    <bcf:citekey order="147" intorder="2">dimarcelloExtensionTRANSURANUSPlutonium2012</bcf:citekey>
+    <bcf:citekey order="148" intorder="1">olanderFundamentalAspectsNuclear1976</bcf:citekey>
+    <bcf:citekey order="149" intorder="1">dimarcelloModellingActinideRedistribution2014</bcf:citekey>
+    <bcf:citekey order="150" intorder="1">boberPlutoniumRedistributionFast1973</bcf:citekey>
+    <bcf:citekey order="151" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="152" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="153" intorder="1">ishiiInvestigationPuMigration2001</bcf:citekey>
+    <bcf:citekey order="154" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="154" intorder="2">ishiiInvestigationPuMigration2001</bcf:citekey>
+    <bcf:citekey order="155" intorder="1">ishiiInvestigationPuMigration2001</bcf:citekey>
+    <bcf:citekey order="155" intorder="2">dimarcelloModellingActinideRedistribution2014</bcf:citekey>
+    <bcf:citekey order="156" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="156" intorder="2">ishiiInvestigationPuMigration2001</bcf:citekey>
+    <bcf:citekey order="156" intorder="3">dimarcelloModellingActinideRedistribution2014</bcf:citekey>
+    <bcf:citekey order="157" intorder="1">dimarcelloModellingActinideRedistribution2014</bcf:citekey>
+    <bcf:citekey order="158" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="158" intorder="2">hoffmannCrackFormationCrack1974</bcf:citekey>
+    <bcf:citekey order="159" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="160" intorder="1">c.f.AnalyticSolutionsMass1977</bcf:citekey>
+    <bcf:citekey order="161" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="162" intorder="1">clementPlutoniumRedistributionMixed1978</bcf:citekey>
+    <bcf:citekey order="163" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

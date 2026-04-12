@@ -351,149 +351,169 @@
 \setcounter {tocdepth}{2}
 \contentsline {subsection}{\numberline {3.2.6}关键参数敏感性分析}{108}{section*.405}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {3.3}氧与钚的热扩散与重分布模型}{117}{section*.423}%
+\contentsline {section}{\numberline {3.3}钚的热扩散与重分布模型}{117}{section*.423}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {3.3}氧与钚的热扩散与重分布模型}{117}{section*.424}%
+\contentsline {section}{\numberline {3.3}钚的热扩散与重分布模型}{117}{section*.424}%
 \setcounter {tocdepth}{-5}
 \contentsline {subsection}{\numberline {3.3.1}钚元素的迁移机理}{117}{section*.426}%
 \setcounter {tocdepth}{2}
 \contentsline {subsection}{\numberline {3.3.1}钚元素的迁移机理}{117}{section*.427}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.3.2}有效扩散系数$D$}{118}{section*.429}%
+\contentsline {subsection}{\numberline {3.3.2}有效扩散系数$D_{\mathrm {Diff}}$}{118}{section*.429}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.3.2}有效扩散系数$D$}{118}{section*.430}%
+\contentsline {subsection}{\numberline {3.3.2}有效扩散系数$D_{\mathrm {Diff}}$}{118}{section*.430}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.3.3}气相迁移机制与参数设定}{119}{section*.433}%
+\contentsline {subsection}{\numberline {3.3.3}气相迁移机制与参数设定}{121}{section*.435}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.3.3}气相迁移机制与参数设定}{119}{section*.434}%
+\contentsline {subsection}{\numberline {3.3.3}气相迁移机制与参数设定}{121}{section*.436}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {3.4}裂变产物行为演化模型}{122}{section*.436}%
+\contentsline {subsection}{\numberline {3.3.4}温度驱动下的解析解}{122}{section*.438}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {3.4}裂变产物行为演化模型}{122}{section*.437}%
+\contentsline {subsection}{\numberline {3.3.4}温度驱动下的解析解}{122}{section*.439}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.4.1}惰性气体行为}{122}{section*.439}%
+\contentsline {subsection}{\numberline {3.3.5}程序框架}{123}{section*.441}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.4.1}惰性气体行为}{122}{section*.440}%
+\contentsline {subsection}{\numberline {3.3.5}程序框架}{123}{section*.442}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.4.2}挥发性产物迁移}{122}{section*.442}%
+\contentsline {subsection}{\numberline {3.3.6}钚重分布验证}{124}{section*.446}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.4.2}挥发性产物迁移}{122}{section*.443}%
+\contentsline {subsection}{\numberline {3.3.6}钚重分布验证}{124}{section*.447}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.4.3}固体产物导致的集总肿胀}{122}{section*.445}%
+\contentsline {subsection}{\numberline {3.3.7}耦合模型与文献实验结果对比验证}{126}{section*.453}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.4.3}固体产物导致的集总肿胀}{122}{section*.446}%
+\contentsline {subsection}{\numberline {3.3.7}耦合模型与文献实验结果对比验证}{126}{section*.454}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {4}基于隐式积分算法的多物理场耦合程序开发与实验验证}{123}{section*.448}%
+\contentsline {subsection}{\numberline {3.3.8}敏感性分析}{128}{section*.464}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {4}基于隐式积分算法的多物理场耦合程序开发与实验验证}{123}{section*.449}%
+\contentsline {subsection}{\numberline {3.3.8}敏感性分析}{128}{section*.465}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {4.1}基于MOOSE的多物理场求解框架}{123}{section*.451}%
+\contentsline {section}{\numberline {3.4}裂变产物行为演化模型}{131}{section*.475}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {4.1}基于MOOSE的多物理场求解框架}{123}{section*.452}%
+\contentsline {section}{\numberline {3.4}裂变产物行为演化模型}{131}{section*.476}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {4.2}隐式力学本构积分算法}{123}{section*.454}%
+\contentsline {subsection}{\numberline {3.4.1}惰性气体行为}{131}{section*.478}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {4.2}隐式力学本构积分算法}{123}{section*.455}%
+\contentsline {subsection}{\numberline {3.4.1}惰性气体行为}{131}{section*.479}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {4.2.1}弹塑性-蠕变本构离散化}{123}{section*.457}%
+\contentsline {subsection}{\numberline {3.4.2}挥发性产物迁移}{131}{section*.481}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {4.2.1}弹塑性-蠕变本构离散化}{123}{section*.458}%
+\contentsline {subsection}{\numberline {3.4.2}挥发性产物迁移}{131}{section*.482}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {4.2.2}径向返回算法的推导与实现}{123}{section*.460}%
+\contentsline {subsection}{\numberline {3.4.3}固体产物导致的集总肿胀}{131}{section*.484}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {4.2.2}径向返回算法的推导与实现}{123}{section*.461}%
+\contentsline {subsection}{\numberline {3.4.3}固体产物导致的集总肿胀}{131}{section*.485}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {4.3}多物理场耦合策略}{123}{section*.463}%
+\contentsline {chapter}{\numberline {4}基于隐式积分算法的多物理场耦合程序开发与实验验证}{132}{section*.487}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {4.3}多物理场耦合策略}{123}{section*.464}%
+\contentsline {chapter}{\numberline {4}基于隐式积分算法的多物理场耦合程序开发与实验验证}{132}{section*.488}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {4.3.1}全局耦合逻辑}{123}{section*.466}%
+\contentsline {section}{\numberline {4.1}基于MOOSE的多物理场求解框架}{132}{section*.490}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {4.3.1}全局耦合逻辑}{123}{section*.467}%
+\contentsline {section}{\numberline {4.1}基于MOOSE的多物理场求解框架}{132}{section*.491}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {4.3.2}时间步长的自适应控制}{123}{section*.469}%
+\contentsline {section}{\numberline {4.2}隐式力学本构积分算法}{132}{section*.493}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {4.3.2}时间步长的自适应控制}{123}{section*.470}%
+\contentsline {section}{\numberline {4.2}隐式力学本构积分算法}{132}{section*.494}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {4.4}程序验证与确认}{123}{section*.472}%
+\contentsline {subsection}{\numberline {4.2.1}弹塑性-蠕变本构离散化}{132}{section*.496}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {4.4}程序验证与确认}{123}{section*.473}%
+\contentsline {subsection}{\numberline {4.2.1}弹塑性-蠕变本构离散化}{132}{section*.497}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {4.5}本章小结}{123}{section*.475}%
+\contentsline {subsection}{\numberline {4.2.2}径向返回算法的推导与实现}{132}{section*.499}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {4.5}本章小结}{123}{section*.476}%
+\contentsline {subsection}{\numberline {4.2.2}径向返回算法的推导与实现}{132}{section*.500}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {5}考虑微观重构效应的燃料元件服役行为演化机理研究}{124}{section*.478}%
+\contentsline {section}{\numberline {4.3}多物理场耦合策略}{132}{section*.502}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {5}考虑微观重构效应的燃料元件服役行为演化机理研究}{124}{section*.479}%
+\contentsline {section}{\numberline {4.3}多物理场耦合策略}{132}{section*.503}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.1}组分重分布对热工性能的影响}{124}{section*.481}%
+\contentsline {subsection}{\numberline {4.3.1}全局耦合逻辑}{132}{section*.505}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.1}组分重分布对热工性能的影响}{124}{section*.482}%
+\contentsline {subsection}{\numberline {4.3.1}全局耦合逻辑}{132}{section*.506}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.2}裂变气体与间隙传热的互馈机制}{124}{section*.484}%
+\contentsline {subsection}{\numberline {4.3.2}时间步长的自适应控制}{132}{section*.508}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.2}裂变气体与间隙传热的互馈机制}{124}{section*.485}%
+\contentsline {subsection}{\numberline {4.3.2}时间步长的自适应控制}{132}{section*.509}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.3}典型瞬态工况下的PCMI行为}{124}{section*.487}%
+\contentsline {section}{\numberline {4.4}程序验证与确认}{132}{section*.511}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.3}典型瞬态工况下的PCMI行为}{124}{section*.488}%
+\contentsline {section}{\numberline {4.4}程序验证与确认}{132}{section*.512}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.4}本章小结}{124}{section*.490}%
+\contentsline {section}{\numberline {4.5}本章小结}{132}{section*.514}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.4}本章小结}{124}{section*.491}%
+\contentsline {section}{\numberline {4.5}本章小结}{132}{section*.515}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {6}基于物理信息驱动的快速预测代理模型}{125}{section*.493}%
+\contentsline {chapter}{\numberline {5}考虑微观重构效应的燃料元件服役行为演化机理研究}{133}{section*.517}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {6}基于物理信息驱动的快速预测代理模型}{125}{section*.494}%
+\contentsline {chapter}{\numberline {5}考虑微观重构效应的燃料元件服役行为演化机理研究}{133}{section*.518}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.1}数据集构建与预处理}{125}{section*.496}%
+\contentsline {section}{\numberline {5.1}组分重分布对热工性能的影响}{133}{section*.520}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.1}数据集构建与预处理}{125}{section*.497}%
+\contentsline {section}{\numberline {5.1}组分重分布对热工性能的影响}{133}{section*.521}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.2}代理模型架构设计}{125}{section*.499}%
+\contentsline {section}{\numberline {5.2}裂变气体与间隙传热的互馈机制}{133}{section*.523}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.2}代理模型架构设计}{125}{section*.500}%
+\contentsline {section}{\numberline {5.2}裂变气体与间隙传热的互馈机制}{133}{section*.524}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.3}模型训练与精度评估}{125}{section*.502}%
+\contentsline {section}{\numberline {5.3}典型瞬态工况下的PCMI行为}{133}{section*.526}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.3}模型训练与精度评估}{125}{section*.503}%
+\contentsline {section}{\numberline {5.3}典型瞬态工况下的PCMI行为}{133}{section*.527}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.4}本章小结}{125}{section*.505}%
+\contentsline {section}{\numberline {5.4}本章小结}{133}{section*.529}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.4}本章小结}{125}{section*.506}%
+\contentsline {section}{\numberline {5.4}本章小结}{133}{section*.530}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {7}总结与展望}{126}{section*.508}%
+\contentsline {chapter}{\numberline {6}基于物理信息驱动的快速预测代理模型}{134}{section*.532}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {7}总结与展望}{126}{section*.509}%
-\contentsline {chapter}{致谢}{127}{section*.511}%
-\contentsline {chapter}{参考文献}{128}{section*.514}%
-\contentsline {chapter}{附录}{138}{section*.517}%
+\contentsline {chapter}{\numberline {6}基于物理信息驱动的快速预测代理模型}{134}{section*.533}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {附录A}Sciantix耦合接口说明}{138}{section*.519}%
-\contentsline {section}{\numberline {附录A.1}引言}{138}{section*.520}%
-\contentsline {section}{\numberline {附录A.2}接口框架与调用流程}{138}{section*.521}%
-\contentsline {subsection}{\numberline {附录A.2.1}设计原则}{138}{section*.522}%
-\contentsline {subsubsection}{\numberline {附录A.2.1.1}类结构设计}{138}{section*.523}%
-\contentsline {section}{\numberline {附录A.3}关键参数映射}{138}{section*.526}%
-\contentsline {subsection}{\numberline {附录A.3.1}历史变量映射}{138}{section*.527}%
-\contentsline {subsection}{\numberline {附录A.3.2}模型选项配置}{140}{section*.530}%
-\contentsline {subsection}{\numberline {附录A.3.3}输出变量计算}{140}{section*.533}%
-\contentsline {chapter}{\numberline {A}气孔迁移速率模型计算公式}{142}{section*.535}%
-\contentsline {section}{\numberline {A.1}Rand--Markin 热力学模型}{142}{section*.536}%
-\contentsline {subsection}{\numberline {A.1.1}气孔迁移速率控制方程}{142}{section*.537}%
-\contentsline {subsection}{\numberline {A.1.2}各气相组分蒸气压表达式}{142}{section*.538}%
-\contentsline {subsection}{\numberline {A.1.3}Gibbs自由能表达式}{143}{section*.539}%
-\contentsline {subsection}{\numberline {A.1.4}氧分压与化学计量比关系}{144}{section*.540}%
-\contentsline {subsection}{\numberline {A.1.5}总蒸气压}{144}{section*.541}%
-\contentsline {section}{\numberline {A.2}经典气孔迁移速率模型}{146}{section*.542}%
-\contentsline {subsection}{\numberline {A.2.1}Lackey et al. (1972) 模型}{146}{section*.543}%
-\contentsline {subsection}{\numberline {A.2.2}Sens et al. (1972) 模型}{147}{section*.544}%
-\contentsline {subsection}{\numberline {A.2.3}Nichols (1967) 球形气孔模型}{147}{section*.545}%
-\contentsline {subsection}{\numberline {A.2.4}Nichols (1972) 透镜状气孔模型}{148}{section*.546}%
-\contentsline {subsection}{\numberline {A.2.5}Clement \& Finnis (1978) 模型}{149}{section*.547}%
+\contentsline {section}{\numberline {6.1}数据集构建与预处理}{134}{section*.535}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{攻读学位期间取得的研究成果}{149}{section*.548}%
-\contentsline {chapter}{答辩委员会会议决议}{151}{section*.551}%
-\contentsline {chapter}{常规评阅人名单}{152}{section*.555}%
+\contentsline {section}{\numberline {6.1}数据集构建与预处理}{134}{section*.536}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {6.2}代理模型架构设计}{134}{section*.538}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {6.2}代理模型架构设计}{134}{section*.539}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {6.3}模型训练与精度评估}{134}{section*.541}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {6.3}模型训练与精度评估}{134}{section*.542}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {6.4}本章小结}{134}{section*.544}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {6.4}本章小结}{134}{section*.545}%
+\setcounter {tocdepth}{-5}
+\contentsline {chapter}{\numberline {7}总结与展望}{135}{section*.547}%
+\setcounter {tocdepth}{2}
+\contentsline {chapter}{\numberline {7}总结与展望}{135}{section*.548}%
+\contentsline {chapter}{致谢}{136}{section*.550}%
+\contentsline {chapter}{参考文献}{137}{section*.553}%
+\contentsline {chapter}{附录}{148}{section*.556}%
+\setcounter {tocdepth}{-5}
+\contentsline {chapter}{\numberline {附录A}Sciantix耦合接口说明}{148}{section*.558}%
+\contentsline {section}{\numberline {附录A.1}引言}{148}{section*.559}%
+\contentsline {section}{\numberline {附录A.2}接口框架与调用流程}{148}{section*.560}%
+\contentsline {subsection}{\numberline {附录A.2.1}设计原则}{148}{section*.561}%
+\contentsline {subsubsection}{\numberline {附录A.2.1.1}类结构设计}{148}{section*.562}%
+\contentsline {section}{\numberline {附录A.3}关键参数映射}{148}{section*.565}%
+\contentsline {subsection}{\numberline {附录A.3.1}历史变量映射}{148}{section*.566}%
+\contentsline {subsection}{\numberline {附录A.3.2}模型选项配置}{150}{section*.569}%
+\contentsline {subsection}{\numberline {附录A.3.3}输出变量计算}{150}{section*.572}%
+\contentsline {chapter}{\numberline {A}气孔迁移速率模型计算公式}{152}{section*.574}%
+\contentsline {section}{\numberline {A.1}Rand--Markin 热力学模型}{152}{section*.575}%
+\contentsline {subsection}{\numberline {A.1.1}气孔迁移速率控制方程}{152}{section*.576}%
+\contentsline {subsection}{\numberline {A.1.2}各气相组分蒸气压表达式}{152}{section*.577}%
+\contentsline {subsection}{\numberline {A.1.3}Gibbs自由能表达式}{153}{section*.578}%
+\contentsline {subsection}{\numberline {A.1.4}氧分压与化学计量比关系}{154}{section*.579}%
+\contentsline {subsection}{\numberline {A.1.5}总蒸气压}{154}{section*.580}%
+\contentsline {section}{\numberline {A.2}经典气孔迁移速率模型}{156}{section*.581}%
+\contentsline {subsection}{\numberline {A.2.1}Lackey et al. (1972) 模型}{156}{section*.582}%
+\contentsline {subsection}{\numberline {A.2.2}Sens et al. (1972) 模型}{157}{section*.583}%
+\contentsline {subsection}{\numberline {A.2.3}Nichols (1967) 球形气孔模型}{157}{section*.584}%
+\contentsline {subsection}{\numberline {A.2.4}Nichols (1972) 透镜状气孔模型}{158}{section*.585}%
+\contentsline {subsection}{\numberline {A.2.5}Clement \& Finnis (1978) 模型}{159}{section*.586}%
+\setcounter {tocdepth}{2}
+\contentsline {chapter}{攻读学位期间取得的研究成果}{159}{section*.587}%
+\contentsline {chapter}{答辩委员会会议决议}{161}{section*.590}%
+\contentsline {chapter}{常规评阅人名单}{162}{section*.594}%
 \contentsfinish 

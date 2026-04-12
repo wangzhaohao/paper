@@ -68,37 +68,42 @@
 \contentsline {subsection}{\numberline {3.2.5}Verification of Pore Migration Velocity Models}{103}{section*.389}%
 \contentsline {subsection}{\numberline {3.2.6}Sensitivity Analysis of Key Parameters}{108}{section*.406}%
 \contentsline {section}{\numberline {3.3}Thermal Diffusion and Redistribution Model for Oxygen and Plutonium}{117}{section*.425}%
-\contentsline {subsection}{\numberline {3.3.1}在}{117}{section*.428}%
+\contentsline {subsection}{\numberline {3.3.1}polutonium magration}{117}{section*.428}%
 \contentsline {subsection}{\numberline {3.3.2}effective diffusion coefficient}{118}{section*.431}%
-\contentsline {subsection}{\numberline {3.3.3}Pore}{119}{section*.435}%
-\contentsline {section}{\numberline {3.4}Evolution Model for Fission Product Behavior}{122}{section*.438}%
-\contentsline {subsection}{\numberline {3.4.1}Inert Gas Behavior}{122}{section*.441}%
-\contentsline {subsection}{\numberline {3.4.2}Volatile Fission Product Migration}{122}{section*.444}%
-\contentsline {subsection}{\numberline {3.4.3}Solid Fission Product Induced Swelling}{122}{section*.447}%
-\contentsline {chapter}{\numberline {4}Development and Experimental Verification of a Multiphysics Coupling Program Based on Implicit Integration Algorithm}{123}{section*.450}%
-\contentsline {section}{\numberline {4.1}MOOSE-Based Multiphysics Solving Framework}{123}{section*.453}%
-\contentsline {section}{\numberline {4.2}Implicit Mechanical Constitutive Integration Algorithm}{123}{section*.456}%
-\contentsline {subsection}{\numberline {4.2.1}Discretization of Elasto-Plastic-Creep Constitutive Laws}{123}{section*.459}%
-\contentsline {subsection}{\numberline {4.2.2}Derivation and Implementation of the Radial Return Algorithm}{123}{section*.462}%
-\contentsline {section}{\numberline {4.3}Multiphysics Coupling Strategy}{123}{section*.465}%
-\contentsline {subsection}{\numberline {4.3.1}Global Coupling Logic}{123}{section*.468}%
-\contentsline {subsection}{\numberline {4.3.2}Adaptive Time Step Control}{123}{section*.471}%
-\contentsline {section}{\numberline {4.4}Program Verification and Validation}{123}{section*.474}%
-\contentsline {section}{\numberline {4.5}Chapter Summary}{123}{section*.477}%
-\contentsline {chapter}{\numberline {5}Study on the Evolution Mechanism of Fuel Rod In-Service Behavior Considering Microstructural Reconstruction Effects}{124}{section*.480}%
-\contentsline {section}{\numberline {5.1}Impact of Component Redistribution on Thermal Performance}{124}{section*.483}%
-\contentsline {section}{\numberline {5.2}Mutual Feedback Mechanism between Fission Gas Behavior and Gap Heat Transfer}{124}{section*.486}%
-\contentsline {section}{\numberline {5.3}PCMI Behavior under Typical Transient Conditions}{124}{section*.489}%
-\contentsline {section}{\numberline {5.4}Chapter Summary}{124}{section*.492}%
-\contentsline {chapter}{\numberline {6}Physics-Informed Data-Driven Surrogate Model for Fast Prediction}{125}{section*.495}%
-\contentsline {section}{\numberline {6.1}Dataset Construction and Preprocessing}{125}{section*.498}%
-\contentsline {section}{\numberline {6.2}Surrogate Model Architecture Design}{125}{section*.501}%
-\contentsline {section}{\numberline {6.3}Model Training and Accuracy Assessment}{125}{section*.504}%
-\contentsline {section}{\numberline {6.4}Chapter Summary}{125}{section*.507}%
-\contentsline {chapter}{\numberline {7}Summary and Outlook}{126}{section*.510}%
-\contentsline {chapter}{Acknowledgements}{127}{section*.512}%
-\contentsline {chapter}{References}{128}{section*.515}%
-\contentsline {chapter}{Appendices}{138}{section*.518}%
-\contentsline {chapter}{Achievements}{149}{section*.549}%
-\contentsline {chapter}{Decision of Defense Committee}{151}{section*.552}%
-\contentsline {chapter}{General Reviewers List}{152}{section*.556}%
+\contentsline {subsection}{\numberline {3.3.3}Pore}{121}{section*.437}%
+\contentsline {subsection}{\numberline {3.3.4}analytic solution}{122}{section*.440}%
+\contentsline {subsection}{\numberline {3.3.5}}{123}{section*.443}%
+\contentsline {subsection}{\numberline {3.3.6}Verification}{124}{section*.448}%
+\contentsline {subsection}{\numberline {3.3.7}Coupled Model Validation Against Literature Experiments}{126}{section*.455}%
+\contentsline {subsection}{\numberline {3.3.8}Sensivity analysis}{128}{section*.466}%
+\contentsline {section}{\numberline {3.4}Evolution Model for Fission Product Behavior}{131}{section*.477}%
+\contentsline {subsection}{\numberline {3.4.1}Inert Gas Behavior}{131}{section*.480}%
+\contentsline {subsection}{\numberline {3.4.2}Volatile Fission Product Migration}{131}{section*.483}%
+\contentsline {subsection}{\numberline {3.4.3}Solid Fission Product Induced Swelling}{131}{section*.486}%
+\contentsline {chapter}{\numberline {4}Development and Experimental Verification of a Multiphysics Coupling Program Based on Implicit Integration Algorithm}{132}{section*.489}%
+\contentsline {section}{\numberline {4.1}MOOSE-Based Multiphysics Solving Framework}{132}{section*.492}%
+\contentsline {section}{\numberline {4.2}Implicit Mechanical Constitutive Integration Algorithm}{132}{section*.495}%
+\contentsline {subsection}{\numberline {4.2.1}Discretization of Elasto-Plastic-Creep Constitutive Laws}{132}{section*.498}%
+\contentsline {subsection}{\numberline {4.2.2}Derivation and Implementation of the Radial Return Algorithm}{132}{section*.501}%
+\contentsline {section}{\numberline {4.3}Multiphysics Coupling Strategy}{132}{section*.504}%
+\contentsline {subsection}{\numberline {4.3.1}Global Coupling Logic}{132}{section*.507}%
+\contentsline {subsection}{\numberline {4.3.2}Adaptive Time Step Control}{132}{section*.510}%
+\contentsline {section}{\numberline {4.4}Program Verification and Validation}{132}{section*.513}%
+\contentsline {section}{\numberline {4.5}Chapter Summary}{132}{section*.516}%
+\contentsline {chapter}{\numberline {5}Study on the Evolution Mechanism of Fuel Rod In-Service Behavior Considering Microstructural Reconstruction Effects}{133}{section*.519}%
+\contentsline {section}{\numberline {5.1}Impact of Component Redistribution on Thermal Performance}{133}{section*.522}%
+\contentsline {section}{\numberline {5.2}Mutual Feedback Mechanism between Fission Gas Behavior and Gap Heat Transfer}{133}{section*.525}%
+\contentsline {section}{\numberline {5.3}PCMI Behavior under Typical Transient Conditions}{133}{section*.528}%
+\contentsline {section}{\numberline {5.4}Chapter Summary}{133}{section*.531}%
+\contentsline {chapter}{\numberline {6}Physics-Informed Data-Driven Surrogate Model for Fast Prediction}{134}{section*.534}%
+\contentsline {section}{\numberline {6.1}Dataset Construction and Preprocessing}{134}{section*.537}%
+\contentsline {section}{\numberline {6.2}Surrogate Model Architecture Design}{134}{section*.540}%
+\contentsline {section}{\numberline {6.3}Model Training and Accuracy Assessment}{134}{section*.543}%
+\contentsline {section}{\numberline {6.4}Chapter Summary}{134}{section*.546}%
+\contentsline {chapter}{\numberline {7}Summary and Outlook}{135}{section*.549}%
+\contentsline {chapter}{Acknowledgements}{136}{section*.551}%
+\contentsline {chapter}{References}{137}{section*.554}%
+\contentsline {chapter}{Appendices}{148}{section*.557}%
+\contentsline {chapter}{Achievements}{159}{section*.588}%
+\contentsline {chapter}{Decision of Defense Committee}{161}{section*.591}%
+\contentsline {chapter}{General Reviewers List}{162}{section*.595}%

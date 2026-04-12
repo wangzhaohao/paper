@@ -1012,6 +1012,7 @@
       \strng{nameanamehash}{8e53b29ce6977a194c6ac79c86b09c70}
       \strng{nameafullhash}{8e53b29ce6977a194c6ac79c86b09c70}
       \strng{nameafullhashraw}{8e53b29ce6977a194c6ac79c86b09c70}
+      \field{extraname}{1}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -7629,6 +7630,7 @@
       \strng{nameanamehash}{f777b4b390961b140ed358c6388a6012}
       \strng{nameafullhash}{f777b4b390961b140ed358c6388a6012}
       \strng{nameafullhashraw}{f777b4b390961b140ed358c6388a6012}
+      \field{extraname}{1}
       \field{sortinit}{9}
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
@@ -8635,107 +8637,606 @@
       \warn{\item Datamodel: article entry 'WangZhaoHaoYangHuaWuRanLiaoZhongQiKongQianYiDeDuoFangFaDuoWuLiChangMoNiYanJiu2025' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
       \warn{\item Datamodel: article entry 'WangZhaoHaoYangHuaWuRanLiaoZhongQiKongQianYiDeDuoFangFaDuoWuLiChangMoNiYanJiu2025' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
-    \entry{dimarcelloImprovementsTRANSURANUSCode30}{inproceedings}{}{}
-      \name{author}{4}{}{%
-        {{hash=81c6d7b755553d96bc0c4d03b48db8ed}{%
-           family={DI\bibnamedelima MARCELLO},
-           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
-           given={V.},
-           giveni={V\bibinitperiod}}}%
-        {{hash=f886d8c2e7b007785aec31b411e21048}{%
-           family={BOTAZZOLI},
-           familyi={B\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=e28cea1cb9759a83a86e8665eb52e64b}{%
-           family={SCHUBERT},
-           familyi={S\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=08e86719dfa316c89adb0128b14fc718}{%
-           family={VAN\bibnamedelima UFFELEN},
-           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
+    \entry{clementPlutoniumRedistributionMixed1978}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=5b76a1296541658826d2208201855e1a}{%
+           family={Clement},
+           familyi={C\bibinitperiod},
+           given={C.F.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a38a85885ed089b356c773ff3fdb07f2}{%
+           family={Finnis},
+           familyi={F\bibinitperiod},
+           given={M.W.},
+           giveni={M\bibinitperiod}}}%
       }
-      \name{namea}{4}{}{%
-        {{hash=81c6d7b755553d96bc0c4d03b48db8ed}{%
-           family={DI\bibnamedelima MARCELLO},
-           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
-           given={V.},
-           giveni={V\bibinitperiod}}}%
-        {{hash=f886d8c2e7b007785aec31b411e21048}{%
-           family={BOTAZZOLI},
-           familyi={B\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=e28cea1cb9759a83a86e8665eb52e64b}{%
-           family={SCHUBERT},
-           familyi={S\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=08e86719dfa316c89adb0128b14fc718}{%
-           family={VAN\bibnamedelima UFFELEN},
-           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
+      \name{namea}{2}{}{%
+        {{hash=5b76a1296541658826d2208201855e1a}{%
+           family={Clement},
+           familyi={C\bibinitperiod},
+           given={C.F.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a38a85885ed089b356c773ff3fdb07f2}{%
+           family={Finnis},
+           familyi={F\bibinitperiod},
+           given={M.W.},
+           giveni={M\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {english}%
       }
-      \list{location}{1}{%
-        {Vienna, Austria}%
-      }
-      \list{publisher}{1}{%
-        {International Atomic Energy Agency}%
-      }
-      \strng{namehash}{142a905041a18b88692dae1c7c9fd524}
-      \strng{fullhash}{71c870f50d61fda89b91920284a1df50}
-      \strng{fullhashraw}{71c870f50d61fda89b91920284a1df50}
-      \strng{bibnamehash}{4d4eeead97594ac1f7a0e57b51abbdc5}
-      \strng{authorbibnamehash}{4d4eeead97594ac1f7a0e57b51abbdc5}
-      \strng{authornamehash}{142a905041a18b88692dae1c7c9fd524}
-      \strng{authorfullhash}{71c870f50d61fda89b91920284a1df50}
-      \strng{authorfullhashraw}{71c870f50d61fda89b91920284a1df50}
-      \strng{nameabibnamehash}{4d4eeead97594ac1f7a0e57b51abbdc5}
-      \strng{nameanamehash}{142a905041a18b88692dae1c7c9fd524}
-      \strng{nameafullhash}{71c870f50d61fda89b91920284a1df50}
-      \strng{nameafullhashraw}{71c870f50d61fda89b91920284a1df50}
+      \strng{namehash}{a3a832bd12d6143b7a9dc59497816cef}
+      \strng{fullhash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
+      \strng{fullhashraw}{f55939dc1a91ab5fb5c9bcd19f0d8519}
+      \strng{bibnamehash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
+      \strng{authorbibnamehash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
+      \strng{authornamehash}{a3a832bd12d6143b7a9dc59497816cef}
+      \strng{authorfullhash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
+      \strng{authorfullhashraw}{f55939dc1a91ab5fb5c9bcd19f0d8519}
+      \strng{nameabibnamehash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
+      \strng{nameanamehash}{a3a832bd12d6143b7a9dc59497816cef}
+      \strng{nameafullhash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
+      \strng{nameafullhashraw}{f55939dc1a91ab5fb5c9bcd19f0d8519}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Design, Manufacturing and Irradiation Behaviour of Fast Reactor Fuel}
-      \field{endday}{3}
-      \field{endmonth}{6}
-      \field{endyear}{2011}
-      \field{eventtitle}{Technical Meeting on Design, Manufacturing and Irradiation Behaviour of Fast Reactor Fuel}
-      \field{isbn}{978-92-0-186510-6}
-      \field{issn}{1684-2073}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{month}{5}
-      \field{title}{Improvements of the TRANSURANUS Code for FBR Fuel Performance Analysis}
-      \field{usera}{C}
+      \field{month}{7}
+      \field{number}{1}
+      \field{shortjournal}{Journal of Nuclear Materials}
+      \field{title}{Plutonium Redistribution in Mixed Oxide (U, Pu)O2 Nuclear Fuel Elements}
+      \field{urlday}{28}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
-      \field{year}{30}
-      \field{enddateera}{ce}
+      \field{volume}{75}
+      \field{year}{1978}
       \field{dateera}{ce}
-      \field{pages}{137}
-      \range{pages}{1}
+      \field{urldateera}{ce}
+      \field{pages}{193\bibrangedash 200}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/0022-3115(78)90044-2
+      \endverb
       \verb{urlraw}
-      \verb https://www-pub.iaea.org/mtcd/publications/pdf/tecdoc-cd-1689/PDF/TECDOC_1689.pdf
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311578900442
       \endverb
       \verb{url}
-      \verb https://www-pub.iaea.org/mtcd/publications/pdf/tecdoc-cd-1689/PDF/TECDOC_1689.pdf
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311578900442
       \endverb
-      \keyw{dimarcelloImprovementsTRANSURANUSCode30}
-      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Invalid field 'issn' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
+      \keyw{clementPlutoniumRedistributionMixed1978}
+      \warn{\item Datamodel: article entry 'clementPlutoniumRedistributionMixed1978' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'clementPlutoniumRedistributionMixed1978' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{meyerAnalysisPlutoniumSegregation1974}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=4b4e0a412dc1a19798d64813fbd8b3c0}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={R.O.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=4b4e0a412dc1a19798d64813fbd8b3c0}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={R.O.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{fullhash}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{fullhashraw}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{bibnamehash}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{authorbibnamehash}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{authornamehash}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{authorfullhash}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{authorfullhashraw}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{nameabibnamehash}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{nameanamehash}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{nameafullhash}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \strng{nameafullhashraw}{4b4e0a412dc1a19798d64813fbd8b3c0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{2}
+      \field{number}{1}
+      \field{shortjournal}{Journal of Nuclear Materials}
+      \field{title}{Analysis of Plutonium Segregation and Central-Void Formation in Mixed-Oxide Fuels}
+      \field{urlday}{19}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{50}
+      \field{year}{1974}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{11\bibrangedash 24}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/0022-3115(74)90055-5
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311574900555
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311574900555
+      \endverb
+      \keyw{meyerAnalysisPlutoniumSegregation1974}
+      \warn{\item Datamodel: article entry 'meyerAnalysisPlutoniumSegregation1974' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'meyerAnalysisPlutoniumSegregation1974' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{boberPlutoniumRedistributionFast1973}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=3f1b6eb1a24826bd5c205a5877bac319}{%
+           family={Bober},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5339b588cffaf214603ae2492695441d}{%
+           family={Schumacher},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=95740b5faf8a09b694d46139d609d315}{%
+           family={Geithoff},
+           familyi={G\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=3f1b6eb1a24826bd5c205a5877bac319}{%
+           family={Bober},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5339b588cffaf214603ae2492695441d}{%
+           family={Schumacher},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=95740b5faf8a09b694d46139d609d315}{%
+           family={Geithoff},
+           familyi={G\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{a7f3b7d0b6c2501b397b75a2a33204dc}
+      \strng{fullhash}{b242521d6bf5b7cf17fd49e1b29fdb92}
+      \strng{fullhashraw}{b242521d6bf5b7cf17fd49e1b29fdb92}
+      \strng{bibnamehash}{b242521d6bf5b7cf17fd49e1b29fdb92}
+      \strng{authorbibnamehash}{b242521d6bf5b7cf17fd49e1b29fdb92}
+      \strng{authornamehash}{a7f3b7d0b6c2501b397b75a2a33204dc}
+      \strng{authorfullhash}{b242521d6bf5b7cf17fd49e1b29fdb92}
+      \strng{authorfullhashraw}{b242521d6bf5b7cf17fd49e1b29fdb92}
+      \strng{nameabibnamehash}{b242521d6bf5b7cf17fd49e1b29fdb92}
+      \strng{nameanamehash}{a7f3b7d0b6c2501b397b75a2a33204dc}
+      \strng{nameafullhash}{b242521d6bf5b7cf17fd49e1b29fdb92}
+      \strng{nameafullhashraw}{b242521d6bf5b7cf17fd49e1b29fdb92}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{影响因子: 2.8}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{6}
+      \field{number}{2}
+      \field{shortjournal}{Journal of Nuclear Materials}
+      \field{title}{Plutonium Redistribution in Fast Reactor Mixed Oxide Fuel Pins}
+      \field{urlday}{9}
+      \field{urlmonth}{9}
+      \field{urlyear}{2024}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{47}
+      \field{year}{1973}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{187\bibrangedash 197}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/0022-3115(73)90101-3
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311573901013
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311573901013
+      \endverb
+      \keyw{boberPlutoniumRedistributionFast1973}
+      \warn{\item Datamodel: article entry 'boberPlutoniumRedistributionFast1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'boberPlutoniumRedistributionFast1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{matzkeDiffusionProcessesSurface1983}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=2111012719071dc84b9135ccecdba540}{%
+           family={Matzke},
+           familyi={M\bibinitperiod},
+           given={Hj.},
+           giveni={Hj\bibinitperiod\bibinitdelim \bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=2111012719071dc84b9135ccecdba540}{%
+           family={Matzke},
+           familyi={M\bibinitperiod},
+           given={Hj.},
+           giveni={Hj\bibinitperiod\bibinitdelim \bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{2111012719071dc84b9135ccecdba540}
+      \strng{fullhash}{2111012719071dc84b9135ccecdba540}
+      \strng{fullhashraw}{2111012719071dc84b9135ccecdba540}
+      \strng{bibnamehash}{2111012719071dc84b9135ccecdba540}
+      \strng{authorbibnamehash}{2111012719071dc84b9135ccecdba540}
+      \strng{authornamehash}{2111012719071dc84b9135ccecdba540}
+      \strng{authorfullhash}{2111012719071dc84b9135ccecdba540}
+      \strng{authorfullhashraw}{2111012719071dc84b9135ccecdba540}
+      \strng{nameabibnamehash}{2111012719071dc84b9135ccecdba540}
+      \strng{nameanamehash}{2111012719071dc84b9135ccecdba540}
+      \strng{nameafullhash}{2111012719071dc84b9135ccecdba540}
+      \strng{nameafullhashraw}{2111012719071dc84b9135ccecdba540}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{2}
+      \field{number}{2--3}
+      \field{shortjournal}{Journal of Nuclear Materials}
+      \field{title}{Diffusion Processes and Surface Effects in Non-Stoichiometric Nuclear Fuel Oxides UO2+x, and (U, Pu)O2±x}
+      \field{urlday}{19}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{114}
+      \field{year}{1983}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{121\bibrangedash 135}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/0022-3115(83)90249-0
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311583902490
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311583902490
+      \endverb
+      \keyw{matzkeDiffusionProcessesSurface1983}
+      \warn{\item Datamodel: article entry 'matzkeDiffusionProcessesSurface1983' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'matzkeDiffusionProcessesSurface1983' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{boberMATERIALTRANSPORTTEMPERATURE1973}{incollection}{}{}
+      \name{author}{2}{}{%
+        {{hash=3f1b6eb1a24826bd5c205a5877bac319}{%
+           family={Bober},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5339b588cffaf214603ae2492695441d}{%
+           family={Schumacher},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=3f1b6eb1a24826bd5c205a5877bac319}{%
+           family={Bober},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5339b588cffaf214603ae2492695441d}{%
+           family={Schumacher},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{a7f3b7d0b6c2501b397b75a2a33204dc}
+      \strng{fullhash}{3ad001bc6a81296c08400249c9a65edc}
+      \strng{fullhashraw}{3ad001bc6a81296c08400249c9a65edc}
+      \strng{bibnamehash}{3ad001bc6a81296c08400249c9a65edc}
+      \strng{authorbibnamehash}{3ad001bc6a81296c08400249c9a65edc}
+      \strng{authornamehash}{a7f3b7d0b6c2501b397b75a2a33204dc}
+      \strng{authorfullhash}{3ad001bc6a81296c08400249c9a65edc}
+      \strng{authorfullhashraw}{3ad001bc6a81296c08400249c9a65edc}
+      \strng{nameabibnamehash}{3ad001bc6a81296c08400249c9a65edc}
+      \strng{nameanamehash}{a7f3b7d0b6c2501b397b75a2a33204dc}
+      \strng{nameafullhash}{3ad001bc6a81296c08400249c9a65edc}
+      \strng{nameafullhashraw}{3ad001bc6a81296c08400249c9a65edc}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Nuclear Science and Technology}
+      \field{isbn}{978-0-12-029307-0}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{MATERIAL TRANSPORT IN THE TEMPERATURE GRADIENT OF FAST REACTOR FUELS}
+      \field{urlday}{19}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{usera}{G}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{1973}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{121\bibrangedash 179}
+      \range{pages}{59}
+      \verb{doi}
+      \verb 10.1016/B978-0-12-029307-0.50009-3
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/B9780120293070500093
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/B9780120293070500093
+      \endverb
+      \keyw{boberMATERIALTRANSPORTTEMPERATURE1973}
+      \warn{\item Datamodel: incollection entry 'boberMATERIALTRANSPORTTEMPERATURE1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'incollection'}
+      \warn{\item Datamodel: incollection entry 'boberMATERIALTRANSPORTTEMPERATURE1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'incollection'}
+      \warn{\item Datamodel: incollection entry 'boberMATERIALTRANSPORTTEMPERATURE1973' (References/reference.bib): Missing mandatory field 'editor'}
+    \endentry
+    \entry{hoffmannCrackFormationCrack1974}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=a905bdb7dd472d0f413974f8f53fb6ce}{%
+           family={Hoffmann},
+           familyi={H\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=a905bdb7dd472d0f413974f8f53fb6ce}{%
+           family={Hoffmann},
+           familyi={H\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{fullhash}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{fullhashraw}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{bibnamehash}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{authorbibnamehash}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{authornamehash}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{authorfullhash}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{authorfullhashraw}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{nameabibnamehash}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{nameanamehash}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{nameafullhash}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \strng{nameafullhashraw}{a905bdb7dd472d0f413974f8f53fb6ce}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{11}
+      \field{number}{1}
+      \field{shortjournal}{Journal of Nuclear Materials}
+      \field{title}{Crack Formation, Crack Healing and Porosity Redistribution during Irradiation of UO2 and (U, Pu) O2}
+      \field{urlday}{2}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{54}
+      \field{year}{1974}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{9\bibrangedash 23}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/0022-3115(74)90072-5
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311574900725
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311574900725
+      \endverb
+      \keyw{hoffmannCrackFormationCrack1974}
+      \warn{\item Datamodel: article entry 'hoffmannCrackFormationCrack1974' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'hoffmannCrackFormationCrack1974' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{olanderKineticsActinideRedistribution1973}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1661b141bf0e4c89f300c24dd4ca912}{%
+           family={Olander},
+           familyi={O\bibinitperiod},
+           given={Donald\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=b1661b141bf0e4c89f300c24dd4ca912}{%
+           family={Olander},
+           familyi={O\bibinitperiod},
+           given={Donald\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{fullhash}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{fullhashraw}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{bibnamehash}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{authorbibnamehash}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{authornamehash}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{authorfullhash}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{authorfullhashraw}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{nameabibnamehash}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{nameanamehash}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{nameafullhash}{b1661b141bf0e4c89f300c24dd4ca912}
+      \strng{nameafullhashraw}{b1661b141bf0e4c89f300c24dd4ca912}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{11}
+      \field{number}{1}
+      \field{shortjournal}{Journal of Nuclear Materials}
+      \field{title}{The Kinetics of Actinide Redistribution by Vapor Migration in Mixed Oxide Fuels (I). By Cracks}
+      \field{urlday}{19}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{49}
+      \field{year}{1973}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{21\bibrangedash 34}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/0022-3115(73)90058-5
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311573900585
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311573900585
+      \endverb
+      \keyw{olanderKineticsActinideRedistribution1973}
+      \warn{\item Datamodel: article entry 'olanderKineticsActinideRedistribution1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'olanderKineticsActinideRedistribution1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{ishiiInvestigationPuMigration2001}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=b4aca0c7d576bc8e05ce0e377dbad33f}{%
+           family={Ishii},
+           familyi={I\bibinitperiod},
+           given={Tetsuya},
+           giveni={T\bibinitperiod}}}%
+        {{hash=17d8a9f6feef42e7985d39f1f0e3dcac}{%
+           family={Asaga},
+           familyi={A\bibinitperiod},
+           given={Takeo},
+           giveni={T\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=b4aca0c7d576bc8e05ce0e377dbad33f}{%
+           family={Ishii},
+           familyi={I\bibinitperiod},
+           given={Tetsuya},
+           giveni={T\bibinitperiod}}}%
+        {{hash=17d8a9f6feef42e7985d39f1f0e3dcac}{%
+           family={Asaga},
+           familyi={A\bibinitperiod},
+           given={Takeo},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{82e5d67060541acafb8b3a3063f91ef6}
+      \strng{fullhash}{f71737c2f872fcc80a2bc19f585b676e}
+      \strng{fullhashraw}{f71737c2f872fcc80a2bc19f585b676e}
+      \strng{bibnamehash}{f71737c2f872fcc80a2bc19f585b676e}
+      \strng{authorbibnamehash}{f71737c2f872fcc80a2bc19f585b676e}
+      \strng{authornamehash}{82e5d67060541acafb8b3a3063f91ef6}
+      \strng{authorfullhash}{f71737c2f872fcc80a2bc19f585b676e}
+      \strng{authorfullhashraw}{f71737c2f872fcc80a2bc19f585b676e}
+      \strng{nameabibnamehash}{f71737c2f872fcc80a2bc19f585b676e}
+      \strng{nameanamehash}{82e5d67060541acafb8b3a3063f91ef6}
+      \strng{nameafullhash}{f71737c2f872fcc80a2bc19f585b676e}
+      \strng{nameafullhashraw}{f71737c2f872fcc80a2bc19f585b676e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{JCR分区: Q1\\ 中科院分区升级版: 工程技术2区\\ 影响因子: 2.8\\ 5年影响因子: 3.1\\ EI: 是}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{american}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{4}
+      \field{number}{1--2}
+      \field{series}{10th Int. Symp. on Thermodynamics of Nuclear Materials}
+      \field{shortjournal}{J. Nucl. Mater.}
+      \field{title}{An Investigation of the Pu Migration Phenomena during Irradiation in Fast Reactor}
+      \field{urlday}{13}
+      \field{urlmonth}{9}
+      \field{urlyear}{2024}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{294}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{13\bibrangedash 17}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1016/S0022-3115(01)00445-7
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311501004457
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311501004457
+      \endverb
+      \keyw{ishiiInvestigationPuMigration2001}
+      \warn{\item Datamodel: article entry 'ishiiInvestigationPuMigration2001' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'ishiiInvestigationPuMigration2001' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
     \entry{dimarcelloExtensionTRANSURANUSPlutonium2012}{article}{}{}
       \name{author}{4}{}{%
@@ -8945,320 +9446,177 @@
       \warn{\item Datamodel: article entry 'dimarcelloModellingActinideRedistribution2014' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
       \warn{\item Datamodel: article entry 'dimarcelloModellingActinideRedistribution2014' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
-    \entry{boberPlutoniumRedistributionFast1973}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=3f1b6eb1a24826bd5c205a5877bac319}{%
-           family={Bober},
+    \entry{dimarcelloImprovementsTRANSURANUSCode30}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=81c6d7b755553d96bc0c4d03b48db8ed}{%
+           family={DI\bibnamedelima MARCELLO},
+           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=f886d8c2e7b007785aec31b411e21048}{%
+           family={BOTAZZOLI},
            familyi={B\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=5339b588cffaf214603ae2492695441d}{%
-           family={Schumacher},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e28cea1cb9759a83a86e8665eb52e64b}{%
+           family={SCHUBERT},
            familyi={S\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-        {{hash=95740b5faf8a09b694d46139d609d315}{%
-           family={Geithoff},
-           familyi={G\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=08e86719dfa316c89adb0128b14fc718}{%
+           family={VAN\bibnamedelima UFFELEN},
+           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
       }
-      \name{namea}{3}{}{%
-        {{hash=3f1b6eb1a24826bd5c205a5877bac319}{%
-           family={Bober},
+      \name{namea}{4}{}{%
+        {{hash=81c6d7b755553d96bc0c4d03b48db8ed}{%
+           family={DI\bibnamedelima MARCELLO},
+           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=f886d8c2e7b007785aec31b411e21048}{%
+           family={BOTAZZOLI},
            familyi={B\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=5339b588cffaf214603ae2492695441d}{%
-           family={Schumacher},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e28cea1cb9759a83a86e8665eb52e64b}{%
+           family={SCHUBERT},
            familyi={S\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-        {{hash=95740b5faf8a09b694d46139d609d315}{%
-           family={Geithoff},
-           familyi={G\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=08e86719dfa316c89adb0128b14fc718}{%
+           family={VAN\bibnamedelima UFFELEN},
+           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {english}%
       }
-      \strng{namehash}{a7f3b7d0b6c2501b397b75a2a33204dc}
-      \strng{fullhash}{b242521d6bf5b7cf17fd49e1b29fdb92}
-      \strng{fullhashraw}{b242521d6bf5b7cf17fd49e1b29fdb92}
-      \strng{bibnamehash}{b242521d6bf5b7cf17fd49e1b29fdb92}
-      \strng{authorbibnamehash}{b242521d6bf5b7cf17fd49e1b29fdb92}
-      \strng{authornamehash}{a7f3b7d0b6c2501b397b75a2a33204dc}
-      \strng{authorfullhash}{b242521d6bf5b7cf17fd49e1b29fdb92}
-      \strng{authorfullhashraw}{b242521d6bf5b7cf17fd49e1b29fdb92}
-      \strng{nameabibnamehash}{b242521d6bf5b7cf17fd49e1b29fdb92}
-      \strng{nameanamehash}{a7f3b7d0b6c2501b397b75a2a33204dc}
-      \strng{nameafullhash}{b242521d6bf5b7cf17fd49e1b29fdb92}
-      \strng{nameafullhashraw}{b242521d6bf5b7cf17fd49e1b29fdb92}
+      \list{location}{1}{%
+        {Vienna, Austria}%
+      }
+      \list{publisher}{1}{%
+        {International Atomic Energy Agency}%
+      }
+      \strng{namehash}{142a905041a18b88692dae1c7c9fd524}
+      \strng{fullhash}{71c870f50d61fda89b91920284a1df50}
+      \strng{fullhashraw}{71c870f50d61fda89b91920284a1df50}
+      \strng{bibnamehash}{4d4eeead97594ac1f7a0e57b51abbdc5}
+      \strng{authorbibnamehash}{4d4eeead97594ac1f7a0e57b51abbdc5}
+      \strng{authornamehash}{142a905041a18b88692dae1c7c9fd524}
+      \strng{authorfullhash}{71c870f50d61fda89b91920284a1df50}
+      \strng{authorfullhashraw}{71c870f50d61fda89b91920284a1df50}
+      \strng{nameabibnamehash}{4d4eeead97594ac1f7a0e57b51abbdc5}
+      \strng{nameanamehash}{142a905041a18b88692dae1c7c9fd524}
+      \strng{nameafullhash}{71c870f50d61fda89b91920284a1df50}
+      \strng{nameafullhashraw}{71c870f50d61fda89b91920284a1df50}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{annotation}{影响因子: 2.8}
-      \field{issn}{00223115}
-      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{booktitle}{Design, Manufacturing and Irradiation Behaviour of Fast Reactor Fuel}
+      \field{endday}{3}
+      \field{endmonth}{6}
+      \field{endyear}{2011}
+      \field{eventtitle}{Technical Meeting on Design, Manufacturing and Irradiation Behaviour of Fast Reactor Fuel}
+      \field{isbn}{978-92-0-186510-6}
+      \field{issn}{1684-2073}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{month}{6}
-      \field{number}{2}
-      \field{shortjournal}{Journal of Nuclear Materials}
-      \field{title}{Plutonium Redistribution in Fast Reactor Mixed Oxide Fuel Pins}
-      \field{urlday}{9}
-      \field{urlmonth}{9}
-      \field{urlyear}{2024}
-      \field{usera}{J}
+      \field{month}{5}
+      \field{title}{Improvements of the TRANSURANUS Code for FBR Fuel Performance Analysis}
+      \field{usera}{C}
       \field{userd}{english}
       \field{userf}{english}
-      \field{volume}{47}
-      \field{year}{1973}
+      \field{year}{30}
+      \field{enddateera}{ce}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{187\bibrangedash 197}
-      \range{pages}{11}
-      \verb{doi}
-      \verb 10.1016/0022-3115(73)90101-3
-      \endverb
+      \field{pages}{137}
+      \range{pages}{1}
       \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311573901013
+      \verb https://www-pub.iaea.org/mtcd/publications/pdf/tecdoc-cd-1689/PDF/TECDOC_1689.pdf
       \endverb
       \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311573901013
+      \verb https://www-pub.iaea.org/mtcd/publications/pdf/tecdoc-cd-1689/PDF/TECDOC_1689.pdf
       \endverb
-      \keyw{boberPlutoniumRedistributionFast1973}
-      \warn{\item Datamodel: article entry 'boberPlutoniumRedistributionFast1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'boberPlutoniumRedistributionFast1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+      \keyw{dimarcelloImprovementsTRANSURANUSCode30}
+      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Field 'address' invalid in data model - ignoring}
+      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Invalid field 'issn' for entrytype 'inproceedings'}
+      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
+      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
     \endentry
-    \entry{clementPlutoniumRedistributionMixed1978}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=5b76a1296541658826d2208201855e1a}{%
-           family={Clement},
+    \entry{c.f.AnalyticSolutionsMass1977}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=7e90a498ef4b0d507a2779e4dfde02c1}{%
+           family={C.F.},
            familyi={C\bibinitperiod},
-           given={C.F.},
+           given={Clement},
            giveni={C\bibinitperiod}}}%
-        {{hash=a38a85885ed089b356c773ff3fdb07f2}{%
-           family={Finnis},
-           familyi={F\bibinitperiod},
-           given={M.W.},
-           giveni={M\bibinitperiod}}}%
       }
-      \name{namea}{2}{}{%
-        {{hash=5b76a1296541658826d2208201855e1a}{%
-           family={Clement},
+      \name{namea}{1}{}{%
+        {{hash=7e90a498ef4b0d507a2779e4dfde02c1}{%
+           family={C.F.},
            familyi={C\bibinitperiod},
-           given={C.F.},
+           given={Clement},
            giveni={C\bibinitperiod}}}%
-        {{hash=a38a85885ed089b356c773ff3fdb07f2}{%
-           family={Finnis},
-           familyi={F\bibinitperiod},
-           given={M.W.},
-           giveni={M\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {english}%
       }
-      \strng{namehash}{a3a832bd12d6143b7a9dc59497816cef}
-      \strng{fullhash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
-      \strng{fullhashraw}{f55939dc1a91ab5fb5c9bcd19f0d8519}
-      \strng{bibnamehash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
-      \strng{authorbibnamehash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
-      \strng{authornamehash}{a3a832bd12d6143b7a9dc59497816cef}
-      \strng{authorfullhash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
-      \strng{authorfullhashraw}{f55939dc1a91ab5fb5c9bcd19f0d8519}
-      \strng{nameabibnamehash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
-      \strng{nameanamehash}{a3a832bd12d6143b7a9dc59497816cef}
-      \strng{nameafullhash}{f55939dc1a91ab5fb5c9bcd19f0d8519}
-      \strng{nameafullhashraw}{f55939dc1a91ab5fb5c9bcd19f0d8519}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{00223115}
-      \field{journaltitle}{Journal of Nuclear Materials}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{month}{7}
-      \field{number}{1}
-      \field{shortjournal}{Journal of Nuclear Materials}
-      \field{title}{Plutonium Redistribution in Mixed Oxide (U, Pu)O2 Nuclear Fuel Elements}
-      \field{urlday}{28}
-      \field{urlmonth}{1}
-      \field{urlyear}{2026}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{75}
-      \field{year}{1978}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{193\bibrangedash 200}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1016/0022-3115(78)90044-2
-      \endverb
-      \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311578900442
-      \endverb
-      \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311578900442
-      \endverb
-      \keyw{clementPlutoniumRedistributionMixed1978}
-      \warn{\item Datamodel: article entry 'clementPlutoniumRedistributionMixed1978' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'clementPlutoniumRedistributionMixed1978' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{ishiiInvestigationPuMigration2001}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=b4aca0c7d576bc8e05ce0e377dbad33f}{%
-           family={Ishii},
-           familyi={I\bibinitperiod},
-           given={Tetsuya},
-           giveni={T\bibinitperiod}}}%
-        {{hash=17d8a9f6feef42e7985d39f1f0e3dcac}{%
-           family={Asaga},
-           familyi={A\bibinitperiod},
-           given={Takeo},
-           giveni={T\bibinitperiod}}}%
-      }
-      \name{namea}{2}{}{%
-        {{hash=b4aca0c7d576bc8e05ce0e377dbad33f}{%
-           family={Ishii},
-           familyi={I\bibinitperiod},
-           given={Tetsuya},
-           giveni={T\bibinitperiod}}}%
-        {{hash=17d8a9f6feef42e7985d39f1f0e3dcac}{%
-           family={Asaga},
-           familyi={A\bibinitperiod},
-           given={Takeo},
-           giveni={T\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{82e5d67060541acafb8b3a3063f91ef6}
-      \strng{fullhash}{f71737c2f872fcc80a2bc19f585b676e}
-      \strng{fullhashraw}{f71737c2f872fcc80a2bc19f585b676e}
-      \strng{bibnamehash}{f71737c2f872fcc80a2bc19f585b676e}
-      \strng{authorbibnamehash}{f71737c2f872fcc80a2bc19f585b676e}
-      \strng{authornamehash}{82e5d67060541acafb8b3a3063f91ef6}
-      \strng{authorfullhash}{f71737c2f872fcc80a2bc19f585b676e}
-      \strng{authorfullhashraw}{f71737c2f872fcc80a2bc19f585b676e}
-      \strng{nameabibnamehash}{f71737c2f872fcc80a2bc19f585b676e}
-      \strng{nameanamehash}{82e5d67060541acafb8b3a3063f91ef6}
-      \strng{nameafullhash}{f71737c2f872fcc80a2bc19f585b676e}
-      \strng{nameafullhashraw}{f71737c2f872fcc80a2bc19f585b676e}
+      \strng{namehash}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{fullhash}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{fullhashraw}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{bibnamehash}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{authorbibnamehash}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{authornamehash}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{authorfullhash}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{authorfullhashraw}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{nameabibnamehash}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{nameanamehash}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{nameafullhash}{7e90a498ef4b0d507a2779e4dfde02c1}
+      \strng{nameafullhashraw}{7e90a498ef4b0d507a2779e4dfde02c1}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{JCR分区: Q1\\ 中科院分区升级版: 工程技术2区\\ 影响因子: 2.8\\ 5年影响因子: 3.1\\ EI: 是}
-      \field{issn}{00223115}
+      \field{day}{1}
+      \field{issn}{0022-3115}
       \field{journaltitle}{Journal of Nuclear Materials}
       \field{langid}{american}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{month}{4}
-      \field{number}{1--2}
-      \field{series}{10th Int. Symp. on Thermodynamics of Nuclear Materials}
+      \field{month}{9}
+      \field{number}{1}
       \field{shortjournal}{J. Nucl. Mater.}
-      \field{title}{An Investigation of the Pu Migration Phenomena during Irradiation in Fast Reactor}
+      \field{title}{Analytic Solutions to Mass Transport Equations for Cylindrical Nuclear Fuel Elements}
       \field{urlday}{13}
       \field{urlmonth}{9}
       \field{urlyear}{2024}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
-      \field{volume}{294}
-      \field{year}{2001}
+      \field{volume}{68}
+      \field{year}{1977}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{13\bibrangedash 17}
-      \range{pages}{5}
+      \field{pages}{54\bibrangedash 62}
+      \range{pages}{9}
       \verb{doi}
-      \verb 10.1016/S0022-3115(01)00445-7
+      \verb 10.1016/0022-3115(77)90216-1
       \endverb
       \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311501004457
+      \verb https://www.sciencedirect.com/science/article/abs/pii/0022311577902161
       \endverb
       \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311501004457
+      \verb https://www.sciencedirect.com/science/article/abs/pii/0022311577902161
       \endverb
-      \keyw{ishiiInvestigationPuMigration2001}
-      \warn{\item Datamodel: article entry 'ishiiInvestigationPuMigration2001' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ishiiInvestigationPuMigration2001' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{hoffmannCrackFormationCrack1974}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=a905bdb7dd472d0f413974f8f53fb6ce}{%
-           family={Hoffmann},
-           familyi={H\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=a905bdb7dd472d0f413974f8f53fb6ce}{%
-           family={Hoffmann},
-           familyi={H\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{fullhash}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{fullhashraw}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{bibnamehash}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{authorbibnamehash}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{authornamehash}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{authorfullhash}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{authorfullhashraw}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{nameabibnamehash}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{nameanamehash}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{nameafullhash}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \strng{nameafullhashraw}{a905bdb7dd472d0f413974f8f53fb6ce}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{00223115}
-      \field{journaltitle}{Journal of Nuclear Materials}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{month}{11}
-      \field{number}{1}
-      \field{shortjournal}{Journal of Nuclear Materials}
-      \field{title}{Crack Formation, Crack Healing and Porosity Redistribution during Irradiation of UO2 and (U, Pu) O2}
-      \field{urlday}{2}
-      \field{urlmonth}{2}
-      \field{urlyear}{2026}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{54}
-      \field{year}{1974}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{9\bibrangedash 23}
-      \range{pages}{15}
-      \verb{doi}
-      \verb 10.1016/0022-3115(74)90072-5
-      \endverb
-      \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311574900725
-      \endverb
-      \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311574900725
-      \endverb
-      \keyw{hoffmannCrackFormationCrack1974}
-      \warn{\item Datamodel: article entry 'hoffmannCrackFormationCrack1974' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hoffmannCrackFormationCrack1974' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+      \keyw{c.f.AnalyticSolutionsMass1977}
+      \warn{\item Datamodel: article entry 'c.f.AnalyticSolutionsMass1977' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'c.f.AnalyticSolutionsMass1977' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
     \entry{王永华2013现代电气控制及}{book}{}{}
       \name{author}{4}{}{%
@@ -11138,6 +11496,58 @@
       \warn{\item Datamodel: report entry 'EXT-17-40975R4' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
       \warn{\item Datamodel: report entry 'EXT-17-40975R4' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
       \warn{\item Datamodel: report entry 'EXT-17-40975R4' (References/reference.bib): Missing mandatory field 'type'}
+    \endentry
+    \entry{glesser1985interdiffusao}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=8c4cdf98e9c9148e08f6daffc01da8a7}{%
+           family={Glesser-Leme},
+           familyi={G\bibinithyphendelim L\bibinitperiod},
+           given={D},
+           giveni={D\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=8c4cdf98e9c9148e08f6daffc01da8a7}{%
+           family={Glesser-Leme},
+           familyi={G\bibinithyphendelim L\bibinitperiod},
+           given={D},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Ph. D. Thesis, Istitutos de Pesquisas Energeticas e Nucleares, Sao Paulo}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{fullhash}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{fullhashraw}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{bibnamehash}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{authorbibnamehash}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{authornamehash}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{authorfullhash}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{authorfullhashraw}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{nameabibnamehash}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{nameanamehash}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{nameafullhash}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \strng{nameafullhashraw}{8c4cdf98e9c9148e08f6daffc01da8a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Interdiffusao cationica nos sistemas UO2--(U, Pu) O2 e UO2--PuO2}
+      \field{type}{phdthesis}
+      \field{usera}{D}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{1985}
+      \field{dateera}{ce}
+      \true{nocite}
+      \keyw{glesser1985interdiffusao}
+      \warn{\item Datamodel: thesis entry 'glesser1985interdiffusao' (References/reference.bib): Invalid field 'languageid' for entrytype 'thesis'}
+      \warn{\item Datamodel: thesis entry 'glesser1985interdiffusao' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'thesis'}
     \endentry
   \enddatalist
 \endrefsection
