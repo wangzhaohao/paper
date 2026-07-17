@@ -937,8 +937,8 @@ MATPRO中对于水蒸气热导率的计算公式更为复杂，具体如下所�
 \]
 其中 \( \epsilon_1 \) 和 \( \epsilon_2 \) 为两表面的发射率。
 
+\xsubsection{裂变气体程序}{Sciantix Fission Gas Released Program}
 
-\xsection{裂变气体}{Fission Gas}
 在核反应堆燃料元件的服役过程中，裂变气体的行为是决定燃料棒热力学性能和安全裕度的关键因素之一。氧化物核燃料（如 UO$_2$ 或 MOX\footnote{本章所述的物理模型及基础参数主要源自二氧化铀（UO$_2$）的实验数据与理论推导。考虑到混合氧化物燃料（MOX）与 UO$_2$ 具有相似的萤石结构及物理化学性质，其裂变气体行为的基本物理机制（如扩散、捕获、晶界演化等）是通用的。在MOX燃料性能分析中，通常采用这套物理框架，并根据需要对特定参数（如扩散系数、氦气生成率）进行修正。本研究采用该通用物理模型作为分析基础。}）在发生核裂变反应时，会产生大量的裂变产物。其中，惰性气体氙（Xe）和氪（Kr）约占总裂变产物的 15\%。由于这些惰性气体原子在燃料晶格中的溶解度极低，它们倾向于从晶格中析出，形成气泡或释放到燃料棒自由体积中。
 
 裂变气体的行为对燃料棒的安全性主要体现在以下两个方面：
@@ -976,33 +976,33 @@ MATPRO中对于水蒸气热导率的计算公式更为复杂，具体如下所�
 	\centering
 	\caption{晶粒内单原子扩散系数 $D\,(\mathrm{m}^2\mathrm{s}^{-1})$ 的计算模型}
 	\label{tab:diffusivity}
-
+	
 	\begin{tabular}{p{11cm} p{4cm}}
 		\toprule
 		扩散系数模型       & 参考文献                                           \\
 		\midrule
-
+		
 		常数扩散系数（试算模型） & --                                             \\
-
+		
 		\addlinespace[1.5ex]
-
+		
 		\textbf{Turnbull 模型（热扩散 + 辐照增强扩散 + 非热扩散）} \newline
 		$\begin{aligned}
-				 D & = 7.6 \times 10^{-10}
-				 \exp\!\left(-\dfrac{4.86 \times 10^{-19}}{k_B T}\right) \\
-				   & \quad + 5.64 \times 10^{-25}
-				 \sqrt{F}\,
-				 \exp\!\left(-\dfrac{1.91 \times 10^{-19}}{k_B T}\right)
-				 + 8.0 \times 10^{-40} F
-			 \end{aligned}$
-		             & \cite{turnbullDiffusionCoefficientFission1989} \\
-
+			D & = 7.6 \times 10^{-10}
+			\exp\!\left(-\dfrac{4.86 \times 10^{-19}}{k_B T}\right) \\
+			& \quad + 5.64 \times 10^{-25}
+			\sqrt{F}\,
+			\exp\!\left(-\dfrac{1.91 \times 10^{-19}}{k_B T}\right)
+			+ 8.0 \times 10^{-40} F
+		\end{aligned}$
+		& \cite{turnbullDiffusionCoefficientFission1989} \\
+		
 		\addlinespace
-
+		
 		\textbf{Matzke 模型（经验 Arrhenius 形式）} \newline
 		$D = 5.0 \times 10^{-8} \exp(-40262/T)$
-		             & \cite{matzkeGasReleaseMechanisms1980a}         \\
-
+		& \cite{matzkeGasReleaseMechanisms1980a}         \\
+		
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1013,24 +1013,24 @@ MATPRO中对于水蒸气热导率的计算公式更为复杂，具体如下所�
 	\renewcommand{\arraystretch}{1.5}
 	\caption{晶粒内气体原子捕获率 $g\,(\mathrm{s}^{-1})$ 的物理模型}
 	\label{tab:intra-granular-trapping-rate}
-
+	
 	\begin{tabular}{p{11cm} p{4cm}}
 		\toprule
 		捕获率模型及参数说明  & 参考文献                                              \\
 		\midrule
-
+		
 		常数捕获率（试算模型） & --                                                \\
-
+		
 		\addlinespace
-
+		
 		\textbf{基于 Ham 理论的扩散控制捕获模型} \newline
 		$\displaystyle
-			g = 4\pi D (R_{ig} + R_{sg}) N_{ig}
+		g = 4\pi D (R_{ig} + R_{sg}) N_{ig}
 		$ \newline
 		其中：$D$ 为晶粒内扩散系数；$R_{ig}$ 为晶内气泡半径；\newline
 		$R_{sg}$ 为气体原子有效半径；$N_{ig}$ 为晶内气泡数密度
-		            & \cite{hamTheoryDiffusionlimitedPrecipitation1958} \\
-
+		& \cite{hamTheoryDiffusionlimitedPrecipitation1958} \\
+		
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1041,48 +1041,48 @@ MATPRO中对于水蒸气热导率的计算公式更为复杂，具体如下所�
 	\renewcommand{\arraystretch}{1.5}
 	\caption{晶粒内气泡再溶解率 $b\,(\mathrm{s}^{-1})$ 的计算模型}
 	\label{tab:intra-granular-resolution-rate}
-
+	
 	\begin{tabular}{p{11cm} p{4cm}}
 		\toprule
 		再溶解率模型及参数说明  & 参考文献                                                                   \\
 		\midrule
-
+		
 		常数再溶解率（试算模型） & --                                                                     \\
-
+		
 		\addlinespace
-
+		
 		\textbf{辐照诱导再溶解模型（Turnbull 型）} \newline
 		$\displaystyle
-			b = 2\pi \mu_{\rm ff} (R_{ig} + R_{ff})^2 F
+		b = 2\pi \mu_{\rm ff} (R_{ig} + R_{ff})^2 F
 		$ \newline
 		其中：$\mu_{\rm ff}=6.0\times10^{-6}\,\mathrm{m}$ 为裂变碎片径迹长度；\newline
 		$R_{ff}=1\,\mathrm{nm}$ 为裂变碎片径迹半径
-		             & \cite{turnbullDiffusionCoefficientFission1989}                         \\
-
+		& \cite{turnbullDiffusionCoefficientFission1989}                         \\
+		
 		\addlinespace
-
+		
 		\textbf{经验型辐照再溶解模型} \newline
 		$\displaystyle
-			b = 3.0 \times 10^{-23} F
+		b = 3.0 \times 10^{-23} F
 		$
-		             & \cite{losonenModellingIntragranularFission2002}                        \\
-
+		& \cite{losonenModellingIntragranularFission2002}                        \\
+		
 		\addlinespace
-
+		
 		\textbf{考虑氦气热再溶解的扩展模型} \newline
 		$\displaystyle
-			b = 2\pi \mu_{\rm ff} (R_{ig,\mathrm{He}} + R_{ff})^2 F + \gamma
+		b = 2\pi \mu_{\rm ff} (R_{ig,\mathrm{He}} + R_{ff})^2 F + \gamma
 		$ \newline
 		其中热再溶解率：
 		$\displaystyle
-			\gamma = \frac{3 D_{\mathrm{He}} k_H k_B T Z}{R_{ig,\mathrm{He}}^2}
+		\gamma = \frac{3 D_{\mathrm{He}} k_H k_B T Z}{R_{ig,\mathrm{He}}^2}
 		$ \newline
 		$\displaystyle
-			k_H = 4.1 \times 10^{24} \exp\!\left(-\frac{7543.5}{T}\right)
+		k_H = 4.1 \times 10^{24} \exp\!\left(-\frac{7543.5}{T}\right)
 		$ \newline
 		适用于 $1073$--$1773~\mathrm{K}$
-		             & \cite{vanbrutzelNewEquationState2019,cogniniHeliumSolubilityOxide2018} \\
-
+		& \cite{vanbrutzelNewEquationState2019,cogniniHeliumSolubilityOxide2018} \\
+		
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1100,24 +1100,24 @@ MATPRO中对于水蒸气热导率的计算公式更为复杂，具体如下所�
 	\renewcommand{\arraystretch}{1.5}
 	\caption{晶粒内气泡形核率 $\nu$ 的物理模型}
 	\label{tab:nucleation-rate}
-
+	
 	\begin{tabular}{p{11cm} p{4cm}}
 		\toprule
 		形核率模型及参数说明  & 参考文献                                                                                           \\
 		\midrule
-
+		
 		常数形核率（试算模型） & --                                                                                             \\
-
+		
 		\addlinespace
-
+		
 		\textbf{与裂变率相关的经验形核模型} \newline
 		$\displaystyle
-			\nu = 2 \eta F \qquad
-			(\text{bub}\,\mathrm{m}^{-3}\mathrm{s}^{-1})
+		\nu = 2 \eta F \qquad
+		(\text{bub}\,\mathrm{m}^{-3}\mathrm{s}^{-1})
 		$ \newline
 		其中：$\eta = 25$，表示单位裂变碎片产生的气泡数
-		            & \cite{whiteNewFissiongasRelease1983,olanderResolutionFissionGas2006,bakerFissionGasBubble1977} \\
-
+		& \cite{whiteNewFissiongasRelease1983,olanderResolutionFissionGas2006,bakerFissionGasBubble1977} \\
+		
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1141,11 +1141,11 @@ MATPRO中对于水蒸气热导率的计算公式更为复杂，具体如下所�
 	\frac{\partial q}{\partial t}
 	=
 	-\left[
-		\frac{3}{a}
-		\frac{\alpha}{\alpha+\beta}
-		D
-		\frac{\partial}{\partial r}(c_{1}+m)
-		\right]_{r=a}
+	\frac{3}{a}
+	\frac{\alpha}{\alpha+\beta}
+	D
+	\frac{\partial}{\partial r}(c_{1}+m)
+	\right]_{r=a}
 	-
 	R
 \end{equation}
@@ -1160,36 +1160,36 @@ MATPRO中对于水蒸气热导率的计算公式更为复杂，具体如下所�
 	\renewcommand{\arraystretch}{1.5}
 	\caption{晶界空位扩散系数 $D_v$（$\mathrm{m}^2\mathrm{s}^{-1}$）的计算模型}
 	\label{tab:Dv}
-
+	
 	\begin{tabular}{p{11cm} p{4cm}}
 		\toprule
 		空位扩散系数模型 & 参考文献                                             \\
 		\midrule
-
+		
 		常数扩散系数（低温或数值试算假设） \newline
 		$D_v = 1.0 \times 10^{-30}\ \mathrm{m}^2\mathrm{s}^{-1}$
-		         & --                                               \\
-
+		& --                                               \\
+		
 		\addlinespace
-
+		
 		\textbf{Arrhenius 型晶界空位扩散模型} \newline
 		$\displaystyle
-			D_v = 6.9 \times 10^{-4}
-			\exp\!\left(-\frac{3.88 \times 10^{4}}{T}\right)
+		D_v = 6.9 \times 10^{-4}
+		\exp\!\left(-\frac{3.88 \times 10^{4}}{T}\right)
 		$ \newline
 		其中 $T$ 为绝对温度（K）
-		         & \cite{reynoldsGrainboundaryDiffusionUranium1979} \\
-
+		& \cite{reynoldsGrainboundaryDiffusionUranium1979} \\
+		
 		\addlinespace
-
+		
 		\textbf{修正系数形式的经验模型} \newline
 		$\displaystyle
-			D_v = \frac{3}{5}\,
-			8.86 \times 10^{-6}
-			\exp\!\left(-\frac{4.17 \times 10^{4}}{T}\right)
+		D_v = \frac{3}{5}\,
+		8.86 \times 10^{-6}
+		\exp\!\left(-\frac{4.17 \times 10^{4}}{T}\right)
 		$
-		         & \cite{pastoreUncertaintySensitivityAnalysis2015} \\
-
+		& \cite{pastoreUncertaintySensitivityAnalysis2015} \\
+		
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -2218,7 +2218,7 @@ MMGR的SS316模型：
 其中
 \begin{align*}
 	\Omega         & : 9                                          \\
-	a_1            & = 134\exp\left(-\frac{188000}{RT}\right)     \\
+	a_1            & = 134\exp\left(-\frac{18800}{RT}\right)     \\
 	a_2            & = \exp\left(1.41 - \frac{24000}{T}\right)    \\
 	a_3            & = \exp\left(77.84 - \frac{95000}{T}\right)   \\
 	a_4            & = 7.25 \times 10^{-4}                        \\
@@ -2239,14 +2239,19 @@ FEAST程序中省略了第三项，同时如果使用文献\cite{batesDesignEqua
 \subsubsection{D9}
 D9的堆内辐照蠕变模型\cite{hofmanMetallicFuelsHandbook2019}如下：\\
 积分形式：
-\begin{equation}
-	\bar{\varepsilon} = A_1 \exp\left(-\frac{A_2}{T}\right) \left[1 - \exp\left(-3\Phi\right)\right] \bar{\sigma} + A_3 \Phi\bar{\sigma} + A_6 t \left(\frac{\bar{\sigma}}{Y}\right)^4 \exp\left(-\frac{A_7}{T}\right) + 2.2 R(T) \left(\Omega \right)^2 \bar{\sigma} \log_e\left[\cosh\left(\frac{\Phi}{\Omega}\right)\right] + A_4 t \bar{\sigma} \exp\left(-\frac{A_5}{T}\right)
-\end{equation}
+\begin{multline}
+	\bar{\varepsilon} = A_1 \exp\left(-\frac{A_2}{T}\right) \left[1 - \exp\left(-3\Phi\right)\right] \bar{\sigma} + A_3 \Phi\bar{\sigma} \\
+	+ A_6 t \left(\frac{\bar{\sigma}}{Y}\right)^4 \exp\left(-\frac{A_7}{T}\right) + 2.2 R(T) \left(\Omega \right)^2 \bar{\sigma} \log_e\left[\cosh\left(\frac{\Phi}{\Omega}\right)\right] \\
+	+ A_4 t \bar{\sigma} \exp\left(-\frac{A_5}{T}\right)
+\end{multline}
+
 需要注意，$A_6$和$A_4$开头的代表热蠕变。\\
 蠕变率形式：
-\begin{equation}
-	\dot{\bar{\varepsilon}} = \left[3A_1 \exp\left(-\frac{A_2}{T}\right) \exp\left(-3\Phi\right) \bar{\sigma} + A_3 \bar{\sigma} + 2.2 R(T)\Omega \bar{\sigma} \tanh\left(\frac{\Phi}{\Omega}\right)\right] \phi \times 10^{-7} + A_6 \left(\frac{\bar{\sigma}}{Y}\right)^4 \exp\left(-\frac{A_7}{T}\right) + A_4 \bar{\sigma} \exp\left(-\frac{A_5}{T}\right)
-\end{equation}
+\begin{multline}
+	\dot{\bar{\varepsilon}} = \left[3A_1 \exp\left(-\frac{A_2}{T}\right) \exp\left(-3\Phi\right) \bar{\sigma} + A_3 \bar{\sigma} + 2.2 R(T)\Omega \bar{\sigma} \tanh\left(\frac{\Phi}{\Omega}\right)\right] \phi \times 10^{-7} \\
+	+ A_6 \left(\frac{\bar{\sigma}}{Y}\right)^4 \exp\left(-\frac{A_7}{T}\right) + A_4 \bar{\sigma} \exp\left(-\frac{A_5}{T}\right)
+\end{multline}
+
 其中
 \begin{flalign*}
 	R(T)                    & = c_0 \exp \left[ -c_1 (T - c_2)^2 \right]                                                  & \\

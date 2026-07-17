@@ -1,6 +1,6 @@
 \contentsline {chapter}{摘~~~~要}{I}{section*.2}%
 \contentsline {chapter}{ABSTRACT}{III}{section*.5}%
-\contentsline {chapter}{主要符号表}{XI}{section*.9}%
+\contentsline {chapter}{主要符号表}{XIII}{section*.9}%
 \setcounter {tocdepth}{-5}
 \contentsline {chapter}{\numberline {1}绪论}{1}{section*.13}%
 \setcounter {tocdepth}{2}
@@ -174,135 +174,135 @@
 \contentsline {subsubsection}{\numberline {2.4.3.1}Stefan-Boltzmann 定律与线性化}{37}{section*.170}%
 \contentsline {subsubsection}{\numberline {2.4.3.2}发射率函数}{37}{section*.171}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {2.5}裂变气体}{38}{section*.172}%
+\contentsline {subsection}{\numberline {2.4.4}裂变气体程序}{38}{section*.172}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {2.5}裂变气体}{38}{section*.173}%
+\contentsline {subsection}{\numberline {2.4.4}裂变气体程序}{38}{section*.173}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.5.1}晶内气体行为模型}{39}{section*.177}%
+\contentsline {subsection}{\numberline {2.4.5}晶内气体行为模型}{39}{section*.177}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.5.1}晶内气体行为模型}{39}{section*.178}%
-\contentsline {subsubsection}{\numberline {2.5.1.1}单原子扩散与气泡行为模型}{39}{section*.180}%
-\contentsline {subsubsection}{\numberline {2.5.1.2}晶内气泡的演化与肿胀}{39}{section*.187}%
+\contentsline {subsection}{\numberline {2.4.5}晶内气体行为模型}{39}{section*.178}%
+\contentsline {subsubsection}{\numberline {2.4.5.1}单原子扩散与气泡行为模型}{39}{section*.180}%
+\contentsline {subsubsection}{\numberline {2.4.5.2}晶内气泡的演化与肿胀}{39}{section*.187}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.5.2}晶界裂变气体行为模型}{41}{section*.190}%
+\contentsline {subsection}{\numberline {2.4.6}晶界裂变气体行为模型}{41}{section*.190}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.5.2}晶界裂变气体行为模型}{41}{section*.191}%
-\contentsline {subsubsection}{\numberline {2.5.2.1}晶界气体守恒与扩散通量}{41}{section*.193}%
-\contentsline {subsubsection}{\numberline {2.5.2.2}晶界气泡生长与互连}{42}{section*.196}%
+\contentsline {subsection}{\numberline {2.4.6}晶界裂变气体行为模型}{41}{section*.191}%
+\contentsline {subsubsection}{\numberline {2.4.6.1}晶界气体守恒与扩散通量}{41}{section*.193}%
+\contentsline {subsubsection}{\numberline {2.4.6.2}晶界气泡生长与互连}{42}{section*.196}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.5.3}微观结构演化及其与裂变气体行为的耦合}{44}{section*.197}%
+\contentsline {subsection}{\numberline {2.4.7}微观结构演化及其与裂变气体行为的耦合}{44}{section*.197}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.5.3}微观结构演化及其与裂变气体行为的耦合}{44}{section*.198}%
-\contentsline {subsubsection}{\numberline {2.5.3.1}晶粒尺寸变化与裂变气体迁移的耦合关系}{44}{section*.200}%
+\contentsline {subsection}{\numberline {2.4.7}微观结构演化及其与裂变气体行为的耦合}{44}{section*.198}%
+\contentsline {subsubsection}{\numberline {2.4.7.1}晶粒尺寸变化与裂变气体迁移的耦合关系}{44}{section*.200}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.5.4}气体总肿胀模型}{44}{section*.201}%
+\contentsline {subsection}{\numberline {2.4.8}气体总肿胀模型}{44}{section*.201}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.5.4}气体总肿胀模型}{44}{section*.202}%
+\contentsline {subsection}{\numberline {2.4.8}气体总肿胀模型}{44}{section*.202}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.5.5}扩展模型}{45}{section*.204}%
+\contentsline {subsection}{\numberline {2.4.9}扩展模型}{45}{section*.204}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.5.5}扩展模型}{45}{section*.205}%
-\contentsline {subsubsection}{\numberline {2.5.5.1}氦气行为}{45}{section*.207}%
-\contentsline {subsubsection}{\numberline {2.5.5.2}放射性裂变气体的衰变效应}{46}{section*.210}%
+\contentsline {subsection}{\numberline {2.4.9}扩展模型}{45}{section*.205}%
+\contentsline {subsubsection}{\numberline {2.4.9.1}氦气行为}{45}{section*.207}%
+\contentsline {subsubsection}{\numberline {2.4.9.2}放射性裂变气体的衰变效应}{46}{section*.210}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {2.6}包壳材料堆内行为模型}{47}{section*.211}%
+\contentsline {section}{\numberline {2.5}包壳材料堆内行为模型}{47}{section*.211}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {2.6}包壳材料堆内行为模型}{47}{section*.212}%
+\contentsline {section}{\numberline {2.5}包壳材料堆内行为模型}{47}{section*.212}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.1}热导率}{49}{section*.218}%
+\contentsline {subsection}{\numberline {2.5.1}热导率}{49}{section*.218}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.1}热导率}{49}{section*.219}%
-\contentsline {subsubsection}{\numberline {2.6.1.1}SS316}{49}{section*.221}%
-\contentsline {subsubsection}{\numberline {2.6.1.2}HT9}{50}{section*.224}%
-\contentsline {subsubsection}{\numberline {2.6.1.3}D9}{51}{section*.227}%
+\contentsline {subsection}{\numberline {2.5.1}热导率}{49}{section*.219}%
+\contentsline {subsubsection}{\numberline {2.5.1.1}SS316}{49}{section*.221}%
+\contentsline {subsubsection}{\numberline {2.5.1.2}HT9}{50}{section*.224}%
+\contentsline {subsubsection}{\numberline {2.5.1.3}D9}{51}{section*.227}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.2}比热容}{52}{section*.230}%
+\contentsline {subsection}{\numberline {2.5.2}比热容}{52}{section*.230}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.2}比热容}{52}{section*.231}%
-\contentsline {subsubsection}{\numberline {2.6.2.1}HT9}{52}{section*.233}%
-\contentsline {subsubsection}{\numberline {2.6.2.2}D9}{52}{section*.234}%
+\contentsline {subsection}{\numberline {2.5.2}比热容}{52}{section*.231}%
+\contentsline {subsubsection}{\numberline {2.5.2.1}HT9}{52}{section*.233}%
+\contentsline {subsubsection}{\numberline {2.5.2.2}D9}{52}{section*.234}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.3}密度}{52}{section*.235}%
+\contentsline {subsection}{\numberline {2.5.3}密度}{52}{section*.235}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.3}密度}{52}{section*.236}%
-\contentsline {subsubsection}{\numberline {2.6.3.1}D9}{52}{section*.238}%
-\contentsline {subsubsection}{\numberline {2.6.3.2}HT9}{53}{section*.239}%
+\contentsline {subsection}{\numberline {2.5.3}密度}{52}{section*.236}%
+\contentsline {subsubsection}{\numberline {2.5.3.1}D9}{52}{section*.238}%
+\contentsline {subsubsection}{\numberline {2.5.3.2}HT9}{53}{section*.239}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.4}热膨胀}{53}{section*.240}%
+\contentsline {subsection}{\numberline {2.5.4}热膨胀}{53}{section*.240}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.4}热膨胀}{53}{section*.241}%
-\contentsline {subsubsection}{\numberline {2.6.4.1}D9}{53}{section*.243}%
-\contentsline {subsubsection}{\numberline {2.6.4.2}HT9}{54}{section*.246}%
+\contentsline {subsection}{\numberline {2.5.4}热膨胀}{53}{section*.241}%
+\contentsline {subsubsection}{\numberline {2.5.4.1}D9}{53}{section*.243}%
+\contentsline {subsubsection}{\numberline {2.5.4.2}HT9}{54}{section*.246}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.5}辐照肿胀}{55}{section*.249}%
+\contentsline {subsection}{\numberline {2.5.5}辐照肿胀}{55}{section*.249}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.5}辐照肿胀}{55}{section*.250}%
-\contentsline {subsubsection}{\numberline {2.6.5.1}CWSS316}{55}{section*.252}%
-\contentsline {subsubsection}{\numberline {2.6.5.2}SS316}{56}{section*.253}%
-\contentsline {subsubsection}{\numberline {2.6.5.3}HT9}{58}{section*.256}%
-\contentsline {subsubsection}{\numberline {2.6.5.4}D9}{59}{section*.259}%
+\contentsline {subsection}{\numberline {2.5.5}辐照肿胀}{55}{section*.250}%
+\contentsline {subsubsection}{\numberline {2.5.5.1}CWSS316}{55}{section*.252}%
+\contentsline {subsubsection}{\numberline {2.5.5.2}SS316}{56}{section*.253}%
+\contentsline {subsubsection}{\numberline {2.5.5.3}HT9}{58}{section*.256}%
+\contentsline {subsubsection}{\numberline {2.5.5.4}D9}{59}{section*.259}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.6}塑性}{61}{section*.264}%
+\contentsline {subsection}{\numberline {2.5.6}塑性}{61}{section*.264}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.6}塑性}{61}{section*.265}%
-\contentsline {subsubsection}{\numberline {2.6.6.1}SS316}{61}{section*.267}%
-\contentsline {subsubsection}{\numberline {2.6.6.2}HT9}{64}{section*.272}%
-\contentsline {subsubsection}{\numberline {2.6.6.3}D9}{65}{section*.274}%
+\contentsline {subsection}{\numberline {2.5.6}塑性}{61}{section*.265}%
+\contentsline {subsubsection}{\numberline {2.5.6.1}SS316}{61}{section*.267}%
+\contentsline {subsubsection}{\numberline {2.5.6.2}HT9}{64}{section*.272}%
+\contentsline {subsubsection}{\numberline {2.5.6.3}D9}{65}{section*.274}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.7}断裂失效}{66}{section*.277}%
+\contentsline {subsection}{\numberline {2.5.7}断裂失效}{66}{section*.277}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.7}断裂失效}{66}{section*.278}%
-\contentsline {subsubsection}{\numberline {2.6.7.1}SS316}{66}{section*.280}%
-\contentsline {subsubsection}{\numberline {2.6.7.2}D9}{68}{section*.281}%
-\contentsline {paragraph}{\numberline {2.6.7.2.1}稳态计算模型}{69}{section*.282}%
-\contentsline {paragraph}{\numberline {2.6.7.2.2}瞬态模型}{69}{section*.285}%
-\contentsline {subsubsection}{\numberline {2.6.7.3}HT9}{72}{section*.294}%
-\contentsline {paragraph}{\numberline {2.6.7.3.1}长/短时间尺度模型}{72}{section*.295}%
-\contentsline {paragraph}{\numberline {2.6.7.3.2}MFH}{73}{section*.296}%
-\contentsline {paragraph}{\numberline {2.6.7.3.3}WHC}{74}{section*.299}%
-\contentsline {paragraph}{\numberline {2.6.7.3.4}受约束空洞聚集模型(CCG)}{75}{section*.302}%
+\contentsline {subsection}{\numberline {2.5.7}断裂失效}{66}{section*.278}%
+\contentsline {subsubsection}{\numberline {2.5.7.1}SS316}{66}{section*.280}%
+\contentsline {subsubsection}{\numberline {2.5.7.2}D9}{68}{section*.281}%
+\contentsline {paragraph}{\numberline {2.5.7.2.1}稳态计算模型}{69}{section*.282}%
+\contentsline {paragraph}{\numberline {2.5.7.2.2}瞬态模型}{69}{section*.285}%
+\contentsline {subsubsection}{\numberline {2.5.7.3}HT9}{72}{section*.294}%
+\contentsline {paragraph}{\numberline {2.5.7.3.1}长/短时间尺度模型}{72}{section*.295}%
+\contentsline {paragraph}{\numberline {2.5.7.3.2}MFH}{73}{section*.296}%
+\contentsline {paragraph}{\numberline {2.5.7.3.3}WHC}{74}{section*.299}%
+\contentsline {paragraph}{\numberline {2.5.7.3.4}受约束空洞聚集模型(CCG)}{75}{section*.302}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.8}蠕变}{76}{section*.303}%
+\contentsline {subsection}{\numberline {2.5.8}蠕变}{76}{section*.303}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.8}蠕变}{76}{section*.304}%
-\contentsline {subsubsection}{\numberline {2.6.8.1}SS316}{76}{section*.306}%
-\contentsline {subsubsection}{\numberline {2.6.8.2}D9}{78}{section*.310}%
-\contentsline {subsubsection}{\numberline {2.6.8.3}HT9}{80}{section*.312}%
+\contentsline {subsection}{\numberline {2.5.8}蠕变}{76}{section*.304}%
+\contentsline {subsubsection}{\numberline {2.5.8.1}SS316}{76}{section*.306}%
+\contentsline {subsubsection}{\numberline {2.5.8.2}D9}{78}{section*.310}%
+\contentsline {subsubsection}{\numberline {2.5.8.3}HT9}{81}{section*.312}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.9}屈服应力}{84}{section*.315}%
+\contentsline {subsection}{\numberline {2.5.9}屈服应力}{85}{section*.315}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.9}屈服应力}{84}{section*.316}%
-\contentsline {subsubsection}{\numberline {2.6.9.1}SS316}{84}{section*.318}%
-\contentsline {subsubsection}{\numberline {2.6.9.2}D9}{85}{section*.321}%
-\contentsline {subsubsection}{\numberline {2.6.9.3}HT9}{86}{section*.322}%
+\contentsline {subsection}{\numberline {2.5.9}屈服应力}{85}{section*.316}%
+\contentsline {subsubsection}{\numberline {2.5.9.1}SS316}{85}{section*.318}%
+\contentsline {subsubsection}{\numberline {2.5.9.2}D9}{85}{section*.321}%
+\contentsline {subsubsection}{\numberline {2.5.9.3}HT9}{86}{section*.322}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.10}极限拉伸强度}{87}{section*.323}%
+\contentsline {subsection}{\numberline {2.5.10}极限拉伸强度}{87}{section*.323}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.10}极限拉伸强度}{87}{section*.324}%
-\contentsline {subsubsection}{\numberline {2.6.10.1}D9}{87}{section*.326}%
-\contentsline {subsubsection}{\numberline {2.6.10.2}HT9}{88}{section*.327}%
+\contentsline {subsection}{\numberline {2.5.10}极限拉伸强度}{87}{section*.324}%
+\contentsline {subsubsection}{\numberline {2.5.10.1}D9}{87}{section*.326}%
+\contentsline {subsubsection}{\numberline {2.5.10.2}HT9}{88}{section*.327}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.11}总伸长量}{88}{section*.328}%
+\contentsline {subsection}{\numberline {2.5.11}总伸长量}{88}{section*.328}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.11}总伸长量}{88}{section*.329}%
-\contentsline {subsubsection}{\numberline {2.6.11.1}D9}{88}{section*.331}%
-\contentsline {subsubsection}{\numberline {2.6.11.2}HT9}{89}{section*.332}%
+\contentsline {subsection}{\numberline {2.5.11}总伸长量}{88}{section*.329}%
+\contentsline {subsubsection}{\numberline {2.5.11.1}D9}{88}{section*.331}%
+\contentsline {subsubsection}{\numberline {2.5.11.2}HT9}{89}{section*.332}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.12}弹性模量和泊松比}{89}{section*.333}%
+\contentsline {subsection}{\numberline {2.5.12}弹性模量和泊松比}{89}{section*.333}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.12}弹性模量和泊松比}{89}{section*.334}%
-\contentsline {subsubsection}{\numberline {2.6.12.1}D9}{89}{section*.336}%
-\contentsline {subsubsection}{\numberline {2.6.12.2}HT9}{89}{section*.337}%
-\contentsline {subsubsection}{\numberline {2.6.12.3}SS316}{90}{section*.338}%
+\contentsline {subsection}{\numberline {2.5.12}弹性模量和泊松比}{89}{section*.334}%
+\contentsline {subsubsection}{\numberline {2.5.12.1}D9}{89}{section*.336}%
+\contentsline {subsubsection}{\numberline {2.5.12.2}HT9}{89}{section*.337}%
+\contentsline {subsubsection}{\numberline {2.5.12.3}SS316}{90}{section*.338}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.6.13}损伤}{90}{section*.340}%
+\contentsline {subsection}{\numberline {2.5.13}损伤}{90}{section*.340}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.6.13}损伤}{90}{section*.341}%
-\contentsline {subsubsection}{\numberline {2.6.13.1}线性损伤模型}{91}{section*.343}%
-\contentsline {subsubsection}{\numberline {2.6.13.2}延性耗竭}{92}{section*.344}%
-\contentsline {subsubsection}{\numberline {2.6.13.3}频率修正法}{92}{section*.345}%
-\contentsline {subsubsection}{\numberline {2.6.13.4}应变范围划分法}{93}{section*.346}%
-\contentsline {subsubsection}{\numberline {2.6.13.5}损伤率模型}{94}{section*.347}%
+\contentsline {subsection}{\numberline {2.5.13}损伤}{90}{section*.341}%
+\contentsline {subsubsection}{\numberline {2.5.13.1}线性损伤模型}{91}{section*.343}%
+\contentsline {subsubsection}{\numberline {2.5.13.2}延性耗竭}{92}{section*.344}%
+\contentsline {subsubsection}{\numberline {2.5.13.3}频率修正法}{92}{section*.345}%
+\contentsline {subsubsection}{\numberline {2.5.13.4}应变范围划分法}{93}{section*.346}%
+\contentsline {subsubsection}{\numberline {2.5.13.5}损伤率模型}{94}{section*.347}%
 \setcounter {tocdepth}{-5}
 \contentsline {chapter}{\numberline {3}强耦合演化模型：多组分迁移与微观重构的影响}{95}{section*.348}%
 \setcounter {tocdepth}{2}
@@ -312,208 +312,364 @@
 \setcounter {tocdepth}{2}
 \contentsline {section}{\numberline {3.1}引言}{95}{section*.352}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {3.2}气孔迁移与燃料重构动力学模型}{95}{section*.354}%
+\contentsline {section}{\numberline {3.2}气孔迁移与燃料重构动力学模型}{96}{section*.354}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {3.2}气孔迁移与燃料重构动力学模型}{95}{section*.355}%
+\contentsline {section}{\numberline {3.2}气孔迁移与燃料重构动力学模型}{96}{section*.355}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.2.1}气孔输运控制方程}{95}{section*.357}%
+\contentsline {subsection}{\numberline {3.2.1}气孔输运控制方程}{96}{section*.357}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.2.1}气孔输运控制方程}{95}{section*.358}%
+\contentsline {subsection}{\numberline {3.2.1}气孔输运控制方程}{96}{section*.358}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.2.2}气孔迁移速率模型}{96}{section*.360}%
+\contentsline {subsection}{\numberline {3.2.2}气孔迁移速率模型}{97}{section*.360}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.2.2}气孔迁移速率模型}{96}{section*.361}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}经验关系式模型}{96}{section*.363}%
-\contentsline {subsubsection}{\numberline {3.2.2.2}Rand--Markin多组分热力学模型}{97}{section*.367}%
+\contentsline {subsection}{\numberline {3.2.2}气孔迁移速率模型}{97}{section*.361}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}经验关系式模型}{97}{section*.363}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Rand--Markin多组分热力学模型}{99}{section*.367}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.2.3}数值离散与稳定化方法}{99}{section*.370}%
+\contentsline {subsection}{\numberline {3.2.3}数值离散与稳定化方法}{100}{section*.370}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.2.3}数值离散与稳定化方法}{99}{section*.371}%
-\contentsline {subsubsection}{\numberline {3.2.3.1}原始Galerkin弱形式}{100}{section*.373}%
-\contentsline {subsubsection}{\numberline {3.2.3.2}全迎风对流守恒法（FUC）}{100}{section*.374}%
-\contentsline {subsubsection}{\numberline {3.2.3.3}流线迎风Petrov--Galerkin法（SUPG）}{100}{section*.375}%
-\contentsline {subsubsection}{\numberline {3.2.3.4}间断有限元法（DG）}{101}{section*.376}%
-\contentsline {subsubsection}{\numberline {3.2.3.5}迎风有限体积法（FVM）}{101}{section*.377}%
+\contentsline {subsection}{\numberline {3.2.3}数值离散与稳定化方法}{100}{section*.371}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}原始Galerkin弱形式}{101}{section*.373}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}全迎风对流守恒法（FUC）}{101}{section*.374}%
+\contentsline {subsubsection}{\numberline {3.2.3.3}流线迎风Petrov--Galerkin法（SUPG）}{101}{section*.375}%
+\contentsline {subsubsection}{\numberline {3.2.3.4}间断有限元法（DG）}{102}{section*.376}%
+\contentsline {subsubsection}{\numberline {3.2.3.5}迎风有限体积法（FVM）}{102}{section*.377}%
 \setcounter {tocdepth}{-5}
 \contentsline {subsection}{\numberline {3.2.4}程序实现框架}{102}{section*.378}%
 \setcounter {tocdepth}{2}
 \contentsline {subsection}{\numberline {3.2.4}程序实现框架}{102}{section*.379}%
 \contentsline {subsubsection}{\numberline {3.2.4.1}经验模型计算流程}{102}{section*.381}%
-\contentsline {subsubsection}{\numberline {3.2.4.2}Rand--Markin计算流程}{102}{section*.384}%
+\contentsline {subsubsection}{\numberline {3.2.4.2}Rand--Markin计算流程}{103}{section*.384}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.2.5}气孔迁移速率模型验证}{103}{section*.387}%
+\contentsline {subsection}{\numberline {3.2.5}气孔迁移速率模型验证}{105}{section*.387}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.2.5}气孔迁移速率模型验证}{103}{section*.388}%
-\contentsline {subsubsection}{\numberline {3.2.5.1}经验关系式模型验证}{103}{section*.390}%
-\contentsline {subsubsection}{\numberline {3.2.5.2}Rand--Markin模型验证}{105}{section*.397}%
+\contentsline {subsection}{\numberline {3.2.5}气孔迁移速率模型验证}{105}{section*.388}%
+\contentsline {subsubsection}{\numberline {3.2.5.1}经验关系式模型验证}{105}{section*.390}%
+\contentsline {subsubsection}{\numberline {3.2.5.2}Rand--Markin模型验证}{106}{section*.397}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.2.6}关键参数敏感性分析}{108}{section*.404}%
+\contentsline {subsection}{\numberline {3.2.6}关键参数敏感性分析}{109}{section*.404}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.2.6}关键参数敏感性分析}{108}{section*.405}%
+\contentsline {subsection}{\numberline {3.2.6}关键参数敏感性分析}{109}{section*.405}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {3.3}钚的热扩散与重分布模型}{117}{section*.423}%
+\contentsline {section}{\numberline {3.3}钚的热扩散与重分布模型}{118}{section*.423}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {3.3}钚的热扩散与重分布模型}{117}{section*.424}%
+\contentsline {section}{\numberline {3.3}钚的热扩散与重分布模型}{118}{section*.424}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.3.1}钚元素的迁移机理}{117}{section*.426}%
+\contentsline {subsection}{\numberline {3.3.1}钚元素的迁移机理}{118}{section*.426}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.3.1}钚元素的迁移机理}{117}{section*.427}%
+\contentsline {subsection}{\numberline {3.3.1}钚元素的迁移机理}{118}{section*.427}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.3.2}有效扩散系数$D_{\mathrm {Diff}}$}{118}{section*.429}%
+\contentsline {subsection}{\numberline {3.3.2}有效扩散系数$D_{\mathrm {Diff}}$}{119}{section*.429}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.3.2}有效扩散系数$D_{\mathrm {Diff}}$}{118}{section*.430}%
+\contentsline {subsection}{\numberline {3.3.2}有效扩散系数$D_{\mathrm {Diff}}$}{119}{section*.430}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.3.3}气相迁移机制与参数设定}{121}{section*.435}%
+\contentsline {subsection}{\numberline {3.3.3}气相迁移机制与参数设定}{122}{section*.435}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.3.3}气相迁移机制与参数设定}{121}{section*.436}%
+\contentsline {subsection}{\numberline {3.3.3}气相迁移机制与参数设定}{122}{section*.436}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.3.4}温度驱动下的解析解}{122}{section*.438}%
+\contentsline {subsection}{\numberline {3.3.4}温度驱动下的解析解}{123}{section*.438}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.3.4}温度驱动下的解析解}{122}{section*.439}%
+\contentsline {subsection}{\numberline {3.3.4}温度驱动下的解析解}{123}{section*.439}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.3.5}程序框架}{123}{section*.441}%
+\contentsline {subsection}{\numberline {3.3.5}程序框架}{124}{section*.441}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.3.5}程序框架}{123}{section*.442}%
+\contentsline {subsection}{\numberline {3.3.5}程序框架}{124}{section*.442}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.3.6}钚重分布验证}{124}{section*.446}%
+\contentsline {subsection}{\numberline {3.3.6}钚重分布验证}{125}{section*.446}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.3.6}钚重分布验证}{124}{section*.447}%
+\contentsline {subsection}{\numberline {3.3.6}钚重分布验证}{125}{section*.447}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.3.7}耦合模型与文献实验结果对比验证}{126}{section*.453}%
+\contentsline {subsection}{\numberline {3.3.7}耦合模型与文献实验结果对比验证}{127}{section*.453}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.3.7}耦合模型与文献实验结果对比验证}{126}{section*.454}%
+\contentsline {subsection}{\numberline {3.3.7}耦合模型与文献实验结果对比验证}{127}{section*.454}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.3.8}敏感性分析}{128}{section*.464}%
+\contentsline {subsection}{\numberline {3.3.8}敏感性分析}{130}{section*.464}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.3.8}敏感性分析}{128}{section*.465}%
+\contentsline {subsection}{\numberline {3.3.8}敏感性分析}{130}{section*.465}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {3.4}裂变产物行为演化模型}{131}{section*.475}%
+\contentsline {subsection}{\numberline {3.3.9}镅元素重分布的扩展讨论}{135}{section*.489}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {3.4}裂变产物行为演化模型}{131}{section*.476}%
+\contentsline {subsection}{\numberline {3.3.9}镅元素重分布的扩展讨论}{135}{section*.490}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.4.1}惰性气体行为}{131}{section*.478}%
+\contentsline {section}{\numberline {3.4}氧金属比（O/M）分布及其耦合影响}{138}{section*.500}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.4.1}惰性气体行为}{131}{section*.479}%
+\contentsline {section}{\numberline {3.4}氧金属比（O/M）分布及其耦合影响}{138}{section*.501}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.4.2}挥发性产物迁移}{131}{section*.481}%
+\contentsline {subsection}{\numberline {3.4.1}氧金属比的迁移机理}{138}{section*.503}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.4.2}挥发性产物迁移}{131}{section*.482}%
+\contentsline {subsection}{\numberline {3.4.1}氧金属比的迁移机理}{138}{section*.504}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {3.4.3}固体产物导致的集总肿胀}{131}{section*.484}%
+\contentsline {subsection}{\numberline {3.4.2}模型关键参数}{140}{section*.506}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {3.4.3}固体产物导致的集总肿胀}{131}{section*.485}%
+\contentsline {subsection}{\numberline {3.4.2}模型关键参数}{140}{section*.507}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {4}基于隐式积分算法的多物理场耦合程序开发与实验验证}{132}{section*.487}%
+\contentsline {subsection}{\numberline {3.4.3}程序验证}{142}{section*.511}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {4}基于隐式积分算法的多物理场耦合程序开发与实验验证}{132}{section*.488}%
+\contentsline {subsection}{\numberline {3.4.3}程序验证}{142}{section*.512}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {4.1}基于MOOSE的多物理场求解框架}{132}{section*.490}%
+\contentsline {section}{\numberline {3.5}本章小结}{144}{section*.518}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {4.1}基于MOOSE的多物理场求解框架}{132}{section*.491}%
+\contentsline {section}{\numberline {3.5}本章小结}{144}{section*.519}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {4.2}隐式力学本构积分算法}{132}{section*.493}%
+\contentsline {chapter}{\numberline {4}燃料力学非线性、裂变气体与间隙导热模型的耦合实现及验证}{146}{section*.521}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {4.2}隐式力学本构积分算法}{132}{section*.494}%
+\contentsline {chapter}{\numberline {4}燃料力学非线性、裂变气体与间隙导热模型的耦合实现及验证}{146}{section*.522}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {4.2.1}弹塑性-蠕变本构离散化}{132}{section*.496}%
+\contentsline {section}{\numberline {4.1}引言}{146}{section*.524}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {4.2.1}弹塑性-蠕变本构离散化}{132}{section*.497}%
+\contentsline {section}{\numberline {4.1}引言}{146}{section*.525}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {4.2.2}径向返回算法的推导与实现}{132}{section*.499}%
+\contentsline {section}{\numberline {4.2}热弹塑性力学模型的离散与隐式积分}{146}{section*.527}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {4.2.2}径向返回算法的推导与实现}{132}{section*.500}%
+\contentsline {section}{\numberline {4.2}热弹塑性力学模型的离散与隐式积分}{146}{section*.528}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {4.3}多物理场耦合策略}{132}{section*.502}%
+\contentsline {subsection}{\numberline {4.2.1}热弹塑性控制方程与弱形式}{146}{section*.530}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {4.3}多物理场耦合策略}{132}{section*.503}%
+\contentsline {subsection}{\numberline {4.2.1}热弹塑性控制方程与弱形式}{146}{section*.531}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {4.3.1}全局耦合逻辑}{132}{section*.505}%
+\contentsline {subsection}{\numberline {4.2.2}径向返回算法}{149}{section*.533}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {4.3.1}全局耦合逻辑}{132}{section*.506}%
+\contentsline {subsection}{\numberline {4.2.2}径向返回算法}{149}{section*.534}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {4.3.2}时间步长的自适应控制}{132}{section*.508}%
+\contentsline {subsection}{\numberline {4.2.3}代码实现和程序框架}{155}{section*.540}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {4.3.2}时间步长的自适应控制}{132}{section*.509}%
+\contentsline {subsection}{\numberline {4.2.3}代码实现和程序框架}{155}{section*.541}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {4.4}程序验证与确认}{132}{section*.511}%
+\contentsline {section}{\numberline {4.3}裂变气体模型与间隙热导率模型}{158}{section*.551}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {4.4}程序验证与确认}{132}{section*.512}%
+\contentsline {section}{\numberline {4.3}裂变气体模型与间隙热导率模型}{158}{section*.552}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {4.5}本章小结}{132}{section*.514}%
+\contentsline {subsection}{\numberline {4.3.1}Forsberg--Massih裂变气体模型}{158}{section*.554}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {4.5}本章小结}{132}{section*.515}%
+\contentsline {subsection}{\numberline {4.3.1}Forsberg--Massih裂变气体模型}{158}{section*.555}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {5}考虑微观重构效应的燃料元件服役行为演化机理研究}{133}{section*.517}%
+\contentsline {subsection}{\numberline {4.3.2}细观机理裂变气体模型 SCIANTIX 及其接口实现}{162}{section*.560}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {5}考虑微观重构效应的燃料元件服役行为演化机理研究}{133}{section*.518}%
+\contentsline {subsection}{\numberline {4.3.2}细观机理裂变气体模型 SCIANTIX 及其接口实现}{162}{section*.561}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.1}组分重分布对热工性能的影响}{133}{section*.520}%
+\contentsline {subsection}{\numberline {4.3.3}间隙导热模型实现}{164}{section*.566}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.1}组分重分布对热工性能的影响}{133}{section*.521}%
+\contentsline {subsection}{\numberline {4.3.3}间隙导热模型实现}{164}{section*.567}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.2}裂变气体与间隙传热的互馈机制}{133}{section*.523}%
+\contentsline {subsection}{\numberline {4.3.4}裂变气体释放与间隙导热的耦合关系}{166}{section*.571}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.2}裂变气体与间隙传热的互馈机制}{133}{section*.524}%
+\contentsline {subsection}{\numberline {4.3.4}裂变气体释放与间隙导热的耦合关系}{166}{section*.572}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.3}典型瞬态工况下的PCMI行为}{133}{section*.526}%
+\contentsline {section}{\numberline {4.4}程序验证与确认}{167}{section*.576}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.3}典型瞬态工况下的PCMI行为}{133}{section*.527}%
+\contentsline {section}{\numberline {4.4}程序验证与确认}{167}{section*.577}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.4}本章小结}{133}{section*.529}%
+\contentsline {subsection}{\numberline {4.4.1}径向返回验证}{167}{section*.579}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.4}本章小结}{133}{section*.530}%
+\contentsline {subsection}{\numberline {4.4.1}径向返回验证}{167}{section*.580}%
+\contentsline {subsubsection}{\numberline {4.4.1.1}蠕变}{167}{section*.582}%
+\contentsline {subsubsection}{\numberline {4.4.1.2}硬化}{171}{section*.595}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {6}基于物理信息驱动的快速预测代理模型}{134}{section*.532}%
+\contentsline {subsection}{\numberline {4.4.2}裂变气体模型验证}{173}{section*.604}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {6}基于物理信息驱动的快速预测代理模型}{134}{section*.533}%
+\contentsline {subsection}{\numberline {4.4.2}裂变气体模型验证}{173}{section*.605}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}ForMas模型验证}{174}{section*.607}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}SCIANTIX耦合程序验证}{176}{section*.616}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.1}数据集构建与预处理}{134}{section*.535}%
+\contentsline {subsection}{\numberline {4.4.3}间隙导热模型验证}{178}{section*.627}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.1}数据集构建与预处理}{134}{section*.536}%
+\contentsline {subsection}{\numberline {4.4.3}间隙导热模型验证}{178}{section*.628}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.2}代理模型架构设计}{134}{section*.538}%
+\contentsline {section}{\numberline {4.5}本章小结}{179}{section*.632}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.2}代理模型架构设计}{134}{section*.539}%
+\contentsline {section}{\numberline {4.5}本章小结}{179}{section*.633}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.3}模型训练与精度评估}{134}{section*.541}%
+\contentsline {chapter}{\numberline {5}燃料中心温度与裂变气体释放模型的棒级验证及适用性分析}{181}{section*.635}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.3}模型训练与精度评估}{134}{section*.542}%
+\contentsline {chapter}{\numberline {5}燃料中心温度与裂变气体释放模型的棒级验证及适用性分析}{181}{section*.636}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.4}本章小结}{134}{section*.544}%
+\contentsline {section}{\numberline {5.1}引言}{181}{section*.638}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.4}本章小结}{134}{section*.545}%
+\contentsline {section}{\numberline {5.1}引言}{181}{section*.639}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {7}总结与展望}{135}{section*.547}%
+\contentsline {section}{\numberline {5.2}验证数据、计算模型与评价方法}{181}{section*.641}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {7}总结与展望}{135}{section*.548}%
-\contentsline {chapter}{致谢}{136}{section*.550}%
-\contentsline {chapter}{参考文献}{137}{section*.553}%
-\contentsline {chapter}{附录}{148}{section*.556}%
+\contentsline {section}{\numberline {5.2}验证数据、计算模型与评价方法}{181}{section*.642}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {附录A}Sciantix耦合接口说明}{148}{section*.558}%
-\contentsline {section}{\numberline {附录A.1}引言}{148}{section*.559}%
-\contentsline {section}{\numberline {附录A.2}接口框架与调用流程}{148}{section*.560}%
-\contentsline {subsection}{\numberline {附录A.2.1}设计原则}{148}{section*.561}%
-\contentsline {subsubsection}{\numberline {附录A.2.1.1}类结构设计}{148}{section*.562}%
-\contentsline {section}{\numberline {附录A.3}关键参数映射}{148}{section*.565}%
-\contentsline {subsection}{\numberline {附录A.3.1}历史变量映射}{148}{section*.566}%
-\contentsline {subsection}{\numberline {附录A.3.2}模型选项配置}{150}{section*.569}%
-\contentsline {subsection}{\numberline {附录A.3.3}输出变量计算}{150}{section*.572}%
-\contentsline {chapter}{\numberline {A}气孔迁移速率模型计算公式}{152}{section*.574}%
-\contentsline {section}{\numberline {A.1}Rand--Markin 热力学模型}{152}{section*.575}%
-\contentsline {subsection}{\numberline {A.1.1}气孔迁移速率控制方程}{152}{section*.576}%
-\contentsline {subsection}{\numberline {A.1.2}各气相组分蒸气压表达式}{152}{section*.577}%
-\contentsline {subsection}{\numberline {A.1.3}Gibbs自由能表达式}{153}{section*.578}%
-\contentsline {subsection}{\numberline {A.1.4}氧分压与化学计量比关系}{154}{section*.579}%
-\contentsline {subsection}{\numberline {A.1.5}总蒸气压}{154}{section*.580}%
-\contentsline {section}{\numberline {A.2}经典气孔迁移速率模型}{156}{section*.581}%
-\contentsline {subsection}{\numberline {A.2.1}Lackey et al. (1972) 模型}{156}{section*.582}%
-\contentsline {subsection}{\numberline {A.2.2}Sens et al. (1972) 模型}{157}{section*.583}%
-\contentsline {subsection}{\numberline {A.2.3}Nichols (1967) 球形气孔模型}{157}{section*.584}%
-\contentsline {subsection}{\numberline {A.2.4}Nichols (1972) 透镜状气孔模型}{158}{section*.585}%
-\contentsline {subsection}{\numberline {A.2.5}Clement \& Finnis (1978) 模型}{159}{section*.586}%
+\contentsline {subsection}{\numberline {5.2.1}公开基准数据与补充实验数据来源}{181}{section*.644}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{攻读学位期间取得的研究成果}{159}{section*.587}%
-\contentsline {chapter}{答辩委员会会议决议}{161}{section*.590}%
-\contentsline {chapter}{常规评阅人名单}{162}{section*.594}%
+\contentsline {subsection}{\numberline {5.2.1}公开基准数据与补充实验数据来源}{181}{section*.645}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.2.2}ForMas 与 SCIANTIX 裂变气体模型设置}{185}{section*.650}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.2.2}ForMas 与 SCIANTIX 裂变气体模型设置}{185}{section*.651}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.2.3}计算输入、边界条件与结果提取方法}{186}{section*.653}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.2.3}计算输入、边界条件与结果提取方法}{186}{section*.654}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.2.4}误差评价指标}{189}{section*.658}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.2.4}误差评价指标}{189}{section*.659}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {5.3}燃料中心温度验证}{190}{section*.661}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {5.3}燃料中心温度验证}{190}{section*.662}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.3.1}随燃耗演化的中心温度验证}{190}{section*.664}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.3.1}随燃耗演化的中心温度验证}{190}{section*.665}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.3.2}中心温度预测偏差来源分析}{196}{section*.677}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.3.2}中心温度预测偏差来源分析}{196}{section*.678}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}缩放因子敏感性分析方法}{196}{section*.680}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}代表燃料棒敏感性分析}{197}{section*.681}%
+\contentsline {subsubsection}{\numberline {5.3.2.3}不同燃料棒敏感性差异}{200}{section*.686}%
+\contentsline {subsubsection}{\numberline {5.3.2.4}中心温度偏差来源综合判断}{205}{section*.703}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {5.4}基于 ForMas 模型的裂变气体释放验证}{206}{section*.704}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {5.4}基于 ForMas 模型的裂变气体释放验证}{206}{section*.705}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.4.1}ForMas 模型的棒级计算流程}{206}{section*.707}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.4.1}ForMas 模型的棒级计算流程}{206}{section*.708}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.4.2}稳态辐照案例 FGR 验证}{206}{section*.710}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.4.2}稳态辐照案例 FGR 验证}{206}{section*.711}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.4.3}功率变化工况下的 FGR 响应}{206}{section*.713}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.4.3}功率变化工况下的 FGR 响应}{206}{section*.714}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.4.4}ForMas 模型偏差来源分析}{206}{section*.716}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.4.4}ForMas 模型偏差来源分析}{206}{section*.717}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {5.5}基于 SCIANTIX 模型的裂变气体释放验证}{206}{section*.719}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {5.5}基于 SCIANTIX 模型的裂变气体释放验证}{206}{section*.720}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.5.1}SCIANTIX 耦合计算设置}{206}{section*.722}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.5.1}SCIANTIX 耦合计算设置}{206}{section*.723}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.5.2}SCIANTIX 模型与公开实验数据对比}{206}{section*.725}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.5.2}SCIANTIX 模型与公开实验数据对比}{206}{section*.726}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.5.3}基于补充实验数据的 SCIANTIX 模型验证}{206}{section*.728}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.5.3}基于补充实验数据的 SCIANTIX 模型验证}{206}{section*.729}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.5.4}SCIANTIX 模型偏差来源分析}{207}{section*.731}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.5.4}SCIANTIX 模型偏差来源分析}{207}{section*.732}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {5.6}ForMas 与 SCIANTIX 模型对比及适用性分析}{207}{section*.734}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {5.6}ForMas 与 SCIANTIX 模型对比及适用性分析}{207}{section*.735}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.6.1}FGR 预测精度对比}{207}{section*.737}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.6.1}FGR 预测精度对比}{207}{section*.738}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.6.2}中心温度预测对比}{207}{section*.740}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.6.2}中心温度预测对比}{207}{section*.741}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.6.3}计算效率与数值稳定性对比}{207}{section*.743}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.6.3}计算效率与数值稳定性对比}{207}{section*.744}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.6.4}不同应用场景下的模型选择建议}{207}{section*.746}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.6.4}不同应用场景下的模型选择建议}{207}{section*.747}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {5.7}温度—裂变气体释放—间隙导热耦合机制分析}{207}{section*.749}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {5.7}温度—裂变气体释放—间隙导热耦合机制分析}{207}{section*.750}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.7.1}裂变气体释放对间隙气体组成的影响}{207}{section*.752}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.7.1}裂变气体释放对间隙气体组成的影响}{207}{section*.753}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.7.2}间隙气体组成对中心温度的反馈作用}{208}{section*.755}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.7.2}间隙气体组成对中心温度的反馈作用}{208}{section*.756}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.7.3}不同裂变气体模型下的耦合反馈差异}{208}{section*.758}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.7.3}不同裂变气体模型下的耦合反馈差异}{208}{section*.759}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {5.8}模型适用范围与不确定性分析}{208}{section*.761}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {5.8}模型适用范围与不确定性分析}{208}{section*.762}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.8.1}模型适用范围}{208}{section*.764}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.8.1}模型适用范围}{208}{section*.765}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.8.2}输入参数与实验数据不确定性}{208}{section*.767}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.8.2}输入参数与实验数据不确定性}{208}{section*.768}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {5.8.3}本章未覆盖行为及后续扩展方向}{208}{section*.770}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {5.8.3}本章未覆盖行为及后续扩展方向}{208}{section*.771}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {5.9}本章小结}{208}{section*.773}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {5.9}本章小结}{208}{section*.774}%
+\setcounter {tocdepth}{-5}
+\contentsline {chapter}{\numberline {6}基于物理信息驱动的快速预测代理模型}{209}{section*.776}%
+\setcounter {tocdepth}{2}
+\contentsline {chapter}{\numberline {6}基于物理信息驱动的快速预测代理模型}{209}{section*.777}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {6.1}数据集构建与预处理}{209}{section*.779}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {6.1}数据集构建与预处理}{209}{section*.780}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {6.2}代理模型架构设计}{209}{section*.782}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {6.2}代理模型架构设计}{209}{section*.783}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {6.3}模型训练与精度评估}{209}{section*.785}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {6.3}模型训练与精度评估}{209}{section*.786}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {6.4}本章小结}{209}{section*.788}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {6.4}本章小结}{209}{section*.789}%
+\setcounter {tocdepth}{-5}
+\contentsline {chapter}{\numberline {7}总结与展望}{210}{section*.791}%
+\setcounter {tocdepth}{2}
+\contentsline {chapter}{\numberline {7}总结与展望}{210}{section*.792}%
+\contentsline {chapter}{致谢}{211}{section*.794}%
+\contentsline {chapter}{参考文献}{212}{section*.797}%
+\contentsline {chapter}{附录}{224}{section*.800}%
+\setcounter {tocdepth}{-5}
+\contentsline {chapter}{\numberline {附录A}Sciantix耦合接口说明}{224}{section*.802}%
+\contentsline {section}{\numberline {附录A.1}引言}{224}{section*.803}%
+\contentsline {section}{\numberline {附录A.2}接口框架与调用流程}{224}{section*.804}%
+\contentsline {subsection}{\numberline {附录A.2.1}设计原则}{224}{section*.805}%
+\contentsline {subsubsection}{\numberline {附录A.2.1.1}类结构设计}{224}{section*.806}%
+\contentsline {section}{\numberline {附录A.3}关键参数映射}{224}{section*.809}%
+\contentsline {subsection}{\numberline {附录A.3.1}历史变量映射}{224}{section*.810}%
+\contentsline {subsection}{\numberline {附录A.3.2}模型选项配置}{226}{section*.813}%
+\contentsline {subsection}{\numberline {附录A.3.3}输出变量计算}{226}{section*.816}%
+\contentsline {chapter}{\numberline {A}气孔迁移速率模型计算公式}{228}{section*.818}%
+\contentsline {section}{\numberline {A.1}Rand--Markin 热力学模型}{228}{section*.819}%
+\contentsline {subsection}{\numberline {A.1.1}气孔迁移速率控制方程}{228}{section*.820}%
+\contentsline {subsection}{\numberline {A.1.2}各气相组分蒸气压表达式}{228}{section*.821}%
+\contentsline {subsection}{\numberline {A.1.3}Gibbs自由能表达式}{229}{section*.822}%
+\contentsline {subsection}{\numberline {A.1.4}氧分压与化学计量比关系}{230}{section*.823}%
+\contentsline {subsection}{\numberline {A.1.5}总蒸气压}{230}{section*.824}%
+\contentsline {section}{\numberline {A.2}经典气孔迁移速率模型}{232}{section*.825}%
+\contentsline {subsection}{\numberline {A.2.1}Lackey et al. (1972) 模型}{232}{section*.826}%
+\contentsline {subsection}{\numberline {A.2.2}Sens et al. (1972) 模型}{233}{section*.827}%
+\contentsline {subsection}{\numberline {A.2.3}Nichols (1967) 球形气孔模型}{233}{section*.828}%
+\contentsline {subsection}{\numberline {A.2.4}Nichols (1972) 透镜状气孔模型}{234}{section*.829}%
+\contentsline {subsection}{\numberline {A.2.5}Clement \& Finnis (1978) 模型}{235}{section*.830}%
+\setcounter {tocdepth}{2}
+\contentsline {chapter}{攻读学位期间取得的研究成果}{235}{section*.831}%
+\contentsline {chapter}{答辩委员会会议决议}{237}{section*.834}%
+\contentsline {chapter}{常规评阅人名单}{238}{section*.838}%
 \contentsfinish 
