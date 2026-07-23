@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.21)  16 JUL 2026 20:51
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.21)  21 JUL 2026 16:24
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -5250,28 +5250,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [5
 
 
-] [6] [7])
+] [6] [7] [8])
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
- [8] (./main.toe [9
+ [9] (./main.toe [10
 
 
-] [10] [11]
-Overfull \hbox (5.13748pt too wide) in paragraph at lines 126--126
+] [11] [12]
+Overfull \hbox (5.13748pt too wide) in paragraph at lines 125--125
  [][] [][]\TU/times.ttf(0)/m/n/12 Coupled Mechanism among Temperature, Fission 
 Gas Release, and Gap Heat Trans- 
  []
 
-)
+[13])
 \tf@toe=\write10
 \openout10 = `main.toe'.
 
- [12] (./main.gls) [13
+ [14] (./main.gls) [15
 
 
 
-] [14
+] [16
 
 ] (./Main_Spine/c1.tex
 Chapter 1.
@@ -6589,15 +6589,36 @@ rison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-651-r6/IFA-651-r6_temperature_geometristructure_alpha_compar
 ison.pdf>
  [204] [205] [206]
-[207]) (./Main_Spine/c6.tex [208]
+[207] [208]) (./Main_Spine/c6.tex [209] [210]
 Chapter 6.
-) (./Main_Spine/c7.tex [209
+[211
 
 ]
-Chapter 7.
-) [210
+Overfull \hbox (11.25113pt too wide) in paragraph at lines 114--115
+[]\TU/fzsong.ttf(0)/m/it/12 式 中，| $[][]$ 表 示 粗 网 格 或 其 他 网 格 结 果，| $[][]$ 表 示 细
+ 网 格 结 果。|  需 要 强 调 的 是，|  式 []衡
+ []
 
-] (./Main_Miscellaneous/acknowledegment.tex) [211
+[212]
+File: ./Figures/mesh_sensitivity/max_temperature_history.png Graphic file (type
+ bmp)
+<./Figures/mesh_sensitivity/max_temperature_history.png>
+File: ./Figures/mesh_sensitivity/max_abs_disp_r_history.png Graphic file (type 
+bmp)
+<./Figures/mesh_sensitivity/max_abs_disp_r_history.png>
+File: ./Figures/mesh_sensitivity/max_abs_disp_z_history.png Graphic file (type 
+bmp)
+<./Figures/mesh_sensitivity/max_abs_disp_z_history.png>
+ [213] [214] [215] [216] [217] [218] [219] [220]
+Missing character: There is no 重 ("91CD) in font rm-lmr8!
+Missing character: There is no 构 ("6784) in font rm-lmr8!
+Missing character: There is no 重 ("91CD) in font rm-lmr8!
+Missing character: There is no 构 ("6784) in font rm-lmr8!
+) (./Main_Spine/c7.tex [221]
+Chapter 7.
+) [222
+
+] (./Main_Miscellaneous/acknowledegment.tex) [223
 
 
 ]
@@ -6607,7 +6628,7 @@ LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <10.53937> not av
 ailable
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
 e 188.
- [212
+ [224
 
 
 ]
@@ -6615,12 +6636,12 @@ Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]
 OT:script=hani;language=dflt;!
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
-[213] [214] [215] [216] [217]
+[225] [226] [227] [228] [229]
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
-[218] [219] [220]
+[230] [231] [232]
 Missing character: There is no 徹 (U+5FB9) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
 Missing character: There is no 潤 (U+6F64) in font [Materials/Fonts/fzsong.ttf]/
@@ -6637,7 +6658,7 @@ Missing character: There is no 価 (U+4FA1) in font [Materials/Fonts/fzsong.ttf]
 OT:script=hani;language=dflt;!
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
-[221] [222] [223]
+[233] [234] [235]
 \l_tmpa_count=\count643
  (./Main_Miscellaneous/appendix_a.tex
 附录 附录A.
@@ -6646,10 +6667,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/times.ttf(0)/m/n/10.5 Sciantix Op-
  []
 
-[224
+[236
 
 
-] [225] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+] [237] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
@@ -6659,19 +6680,19 @@ File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.5> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 120.
- [226])
-(./Main_Miscellaneous/appendix_b.tex [227]
+ [238])
+(./Main_Miscellaneous/appendix_b.tex [239]
 附录 A.
-[228
+[240
 
-] [229]
+] [241]
 Overfull \hbox (4.38306pt too wide) detected at line 59
 []\OML/lmm/m/it/12 =[] \OT1/lmr/m/n/12 = [] + [] \OMS/lmsy/m/n/12 ^^@ [][]
  []
 
-[230] [231] [232] [233]
-ignored error: Infinite glue shrinkage found in box being split [234]) [235]
-(./Main_Miscellaneous/achievement.tex) [236
+[242] [243] [244] [245]
+ignored error: Infinite glue shrinkage found in box being split [246]) [247]
+(./Main_Miscellaneous/achievement.tex) [248
 
 ] (./Main_Miscellaneous/decision.tex
 Overfull \hbox (1.52652pt too wide) in paragraph at lines 12--13
@@ -6681,13 +6702,13 @@ Overfull \hbox (1.52652pt too wide) in paragraph at lines 12--13
  文 \TU/times.ttf(0)/m/n/12 ××××××××××\TU/fzsong.ttf(0)/m/it/12 ，|
  []
 
-) [237
+) [249
 
 
-] [238
+] [250
 
 
-] [239
+] [251
 
 ]
 
@@ -6710,12 +6731,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 71184 strings out of 468179
- 1667952 string characters out of 5433206
- 2891273 words of memory out of 5000000
- 98495 multiletter control sequences out of 15000+600000
+ 71277 strings out of 468179
+ 1671008 string characters out of 5433206
+ 2892481 words of memory out of 5000000
+ 98584 multiletter control sequences out of 15000+600000
  730146 words of font info for 296 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  117i,22n,157p,2473b,7440s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (259 pages).
+Output written on main.pdf (273 pages).

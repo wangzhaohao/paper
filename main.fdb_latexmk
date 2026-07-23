@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1784206262.05464 "main.bcf" "main.bbl" "main" 1784206328.51853 0
+["biber main"] 1784622273.92412 "main.bcf" "main.bbl" "main" 1784622342.45791 0
   "References/reference.bib" 1778828611.42644 89854 1b0fde6653d40226ced9c455a14dd1ed ""
-  "main.bcf" 1784206327.57895 157288 5fe8d1ee32a2954db00d037766850765 "pdflatex"
+  "main.bcf" 1784622341.45672 157288 5fe8d1ee32a2954db00d037766850765 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["cusdep glo gls main"] 1784206261.67702 "main.glo" "main.gls" "main" 1784206328.50962 0
-  "main.glo" 1784206327.5808 1522 73fa244471b4e413797397848a9e6516 "pdflatex"
+["cusdep glo gls main"] 1784622273.54215 "main.glo" "main.gls" "main" 1784622342.44858 0
+  "main.glo" 1784622341.45838 1522 73fa244471b4e413797397848a9e6516 "pdflatex"
   (generated)
   "main.gls"
   (rewritten before read)
-["pdflatex"] 1784206265.86496 "main.tex" "main.pdf" "main" 1784206328.50977 2
+["pdflatex"] 1784622277.66128 "main.tex" "main.pdf" "main" 1784622342.44872 2
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -501,6 +501,9 @@
   "Figures/hardening_flow_chat.pdf" 1778556099.18134 124765 4aa590ef0ca7d9a4d22f05bb0f223552 ""
   "Figures/ht9_creep_MFH.png" 1778808458.1267 329594 167a35307bd178aeaf25f0983b01d069 ""
   "Figures/ht9_creep_RKY.png" 1778808710.16228 225420 038316661ef9d89e6eed470837253b25 ""
+  "Figures/mesh_sensitivity/max_abs_disp_r_history.png" 1784601123.31645 165268 bc95c7b78dc0b21476ae56ef16dac243 ""
+  "Figures/mesh_sensitivity/max_abs_disp_z_history.png" 1784601123.71947 200683 99d18524a15f5cb58c81ecd4b9448d9d ""
+  "Figures/mesh_sensitivity/max_temperature_history.png" 1784601122.90845 204002 ba55f443b9e7a3aa68af45403026eb6a ""
   "Figures/method_compare.png" 1773059654.86501 106524 faf886e8f8f327d69bb57223bcbbdf6b ""
   "Figures/moose_fuel_rod_flowchart_editable.pdf" 1783825154.17285 131888 e59651d979926e1d24db25b93d8e809e ""
   "Figures/mox_species_vapor_pressure.png" 1772873074.97872 329337 e8bf78ea48e7081b061505bc61e8cd74 ""
@@ -563,20 +566,20 @@
   "Main_Spine/c2.tex" 1778207525.828 162392 8ec5347d6b5289dfb9d4eb65caa2881d ""
   "Main_Spine/c3.tex" 1776936537.68355 118402 9264479bc7b58c945dbb4596b07dbf20 ""
   "Main_Spine/c4.tex" 1778812973.38199 75454 5736056e8453cd0621041c7a1b3668ba ""
-  "Main_Spine/c5.tex" 1784206199.43905 71584 18c158b95e81efe224486e9f67f92bb7 ""
-  "Main_Spine/c6.tex" 1768736189.12729 524 abc406605ae171ad142984d623ed76cb ""
+  "Main_Spine/c5.tex" 1784513932.50855 76160 7656030a0258c598d468cb5263da33ef ""
+  "Main_Spine/c6.tex" 1784622209.45715 26983 d23f97f3e22d4821eb43b836d017b670 ""
   "Main_Spine/c7.tex" 1768787443.66289 1344 7dee12827bebd3b4901b92aa50a9a3e0 ""
   "Materials/Icons/xjtu.pdf" 1623307786 16293 124cffb55513b888e541c20ab46109df ""
   "References/reference.bib" 1778828611.42644 89854 1b0fde6653d40226ced9c455a14dd1ed ""
   "XJTU-thesis.cls" 1768551210.11797 53196 c579298eaa78f556067b2f126c6a3d9e ""
-  "main.aux" 1784206327.49395 180530 5a49d1afeebb1db47b98284a57317b92 "pdflatex"
-  "main.bbl" 1784206265.79712 562101 947d7ec0dc87a90472a694ff18fac845 "biber main"
-  "main.gls" 1784206262.04713 3841 c5e3c0102668adad5c566cc9156ae4b3 "cusdep glo gls main"
-  "main.listing" 1784206270.16043 86 940d0be3b8825c2d7d66dcea9e7eb5bd "pdflatex"
-  "main.run.xml" 1784206327.5808 2461 6a4e492fc8f2bf9dbf9d2ab3242c8b7e "pdflatex"
+  "main.aux" 1784622341.36771 195241 28f81a16ed5d48829bdbac15a9bb9f7b "pdflatex"
+  "main.bbl" 1784622277.59684 562101 947d7ec0dc87a90472a694ff18fac845 "biber main"
+  "main.gls" 1784622273.91679 3841 c5e3c0102668adad5c566cc9156ae4b3 "cusdep glo gls main"
+  "main.listing" 1784622281.96819 86 940d0be3b8825c2d7d66dcea9e7eb5bd "pdflatex"
+  "main.run.xml" 1784622341.45838 2461 6a4e492fc8f2bf9dbf9d2ab3242c8b7e "pdflatex"
   "main.tex" 1770257180.07311 11027 02ac6e31d13cf39ac2fa3a44fefb200d ""
-  "main.toc" 1784206327.5808 43074 fe635f50b14cf7b6376e06fc3d5c8927 "pdflatex"
-  "main.toe" 1784206327.5808 14036 213ed7ac738e8b8484b47d6139606e8d "pdflatex"
+  "main.toc" 1784622341.45838 48141 450266616b837e3bd4b47e612fdd2536 "pdflatex"
+  "main.toe" 1784622341.45838 15929 9dbf051668b984519d24247732c2f457 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

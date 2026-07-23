@@ -1,6 +1,6 @@
 \contentsline {chapter}{摘~~~~要}{I}{section*.2}%
 \contentsline {chapter}{ABSTRACT}{III}{section*.5}%
-\contentsline {chapter}{主要符号表}{XIII}{section*.9}%
+\contentsline {chapter}{主要符号表}{XV}{section*.9}%
 \setcounter {tocdepth}{-5}
 \contentsline {chapter}{\numberline {1}绪论}{1}{section*.13}%
 \setcounter {tocdepth}{2}
@@ -527,149 +527,224 @@
 \setcounter {tocdepth}{2}
 \contentsline {section}{\numberline {5.4}基于 ForMas 模型的裂变气体释放验证}{206}{section*.705}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.4.1}ForMas 模型的棒级计算流程}{206}{section*.707}%
+\contentsline {subsection}{\numberline {5.4.1}稳态辐照案例 FGR 验证}{206}{section*.707}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.4.1}ForMas 模型的棒级计算流程}{206}{section*.708}%
+\contentsline {subsection}{\numberline {5.4.1}稳态辐照案例 FGR 验证}{206}{section*.708}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.4.2}稳态辐照案例 FGR 验证}{206}{section*.710}%
+\contentsline {subsection}{\numberline {5.4.2}功率变化工况下的 FGR 响应}{207}{section*.712}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.4.2}稳态辐照案例 FGR 验证}{206}{section*.711}%
+\contentsline {subsection}{\numberline {5.4.2}功率变化工况下的 FGR 响应}{207}{section*.713}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.4.3}功率变化工况下的 FGR 响应}{206}{section*.713}%
+\contentsline {subsection}{\numberline {5.4.3}ForMas 模型偏差来源分析}{207}{section*.715}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.4.3}功率变化工况下的 FGR 响应}{206}{section*.714}%
+\contentsline {subsection}{\numberline {5.4.3}ForMas 模型偏差来源分析}{207}{section*.716}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.4.4}ForMas 模型偏差来源分析}{206}{section*.716}%
+\contentsline {section}{\numberline {5.5}基于 SCIANTIX 模型的裂变气体释放验证}{207}{section*.718}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.4.4}ForMas 模型偏差来源分析}{206}{section*.717}%
+\contentsline {section}{\numberline {5.5}基于 SCIANTIX 模型的裂变气体释放验证}{207}{section*.719}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.5}基于 SCIANTIX 模型的裂变气体释放验证}{206}{section*.719}%
+\contentsline {subsection}{\numberline {5.5.1}SCIANTIX 耦合计算设置}{207}{section*.721}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.5}基于 SCIANTIX 模型的裂变气体释放验证}{206}{section*.720}%
+\contentsline {subsection}{\numberline {5.5.1}SCIANTIX 耦合计算设置}{207}{section*.722}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.5.1}SCIANTIX 耦合计算设置}{206}{section*.722}%
+\contentsline {subsection}{\numberline {5.5.2}SCIANTIX 模型与公开实验数据对比}{208}{section*.724}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.5.1}SCIANTIX 耦合计算设置}{206}{section*.723}%
+\contentsline {subsection}{\numberline {5.5.2}SCIANTIX 模型与公开实验数据对比}{208}{section*.725}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.5.2}SCIANTIX 模型与公开实验数据对比}{206}{section*.725}%
+\contentsline {subsection}{\numberline {5.5.3}基于补充实验数据的 SCIANTIX 模型验证}{208}{section*.727}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.5.2}SCIANTIX 模型与公开实验数据对比}{206}{section*.726}%
+\contentsline {subsection}{\numberline {5.5.3}基于补充实验数据的 SCIANTIX 模型验证}{208}{section*.728}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.5.3}基于补充实验数据的 SCIANTIX 模型验证}{206}{section*.728}%
+\contentsline {subsection}{\numberline {5.5.4}SCIANTIX 模型偏差来源分析}{208}{section*.730}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.5.3}基于补充实验数据的 SCIANTIX 模型验证}{206}{section*.729}%
+\contentsline {subsection}{\numberline {5.5.4}SCIANTIX 模型偏差来源分析}{208}{section*.731}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.5.4}SCIANTIX 模型偏差来源分析}{207}{section*.731}%
+\contentsline {section}{\numberline {5.6}ForMas 与 SCIANTIX 模型对比及适用性分析}{208}{section*.733}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.5.4}SCIANTIX 模型偏差来源分析}{207}{section*.732}%
+\contentsline {section}{\numberline {5.6}ForMas 与 SCIANTIX 模型对比及适用性分析}{208}{section*.734}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.6}ForMas 与 SCIANTIX 模型对比及适用性分析}{207}{section*.734}%
+\contentsline {subsection}{\numberline {5.6.1}FGR 预测精度对比}{208}{section*.736}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.6}ForMas 与 SCIANTIX 模型对比及适用性分析}{207}{section*.735}%
+\contentsline {subsection}{\numberline {5.6.1}FGR 预测精度对比}{208}{section*.737}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.6.1}FGR 预测精度对比}{207}{section*.737}%
+\contentsline {subsection}{\numberline {5.6.2}中心温度预测对比}{208}{section*.739}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.6.1}FGR 预测精度对比}{207}{section*.738}%
+\contentsline {subsection}{\numberline {5.6.2}中心温度预测对比}{208}{section*.740}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.6.2}中心温度预测对比}{207}{section*.740}%
+\contentsline {subsection}{\numberline {5.6.3}计算效率与数值稳定性对比}{208}{section*.742}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.6.2}中心温度预测对比}{207}{section*.741}%
+\contentsline {subsection}{\numberline {5.6.3}计算效率与数值稳定性对比}{208}{section*.743}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.6.3}计算效率与数值稳定性对比}{207}{section*.743}%
+\contentsline {subsection}{\numberline {5.6.4}不同应用场景下的模型选择建议}{208}{section*.745}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.6.3}计算效率与数值稳定性对比}{207}{section*.744}%
+\contentsline {subsection}{\numberline {5.6.4}不同应用场景下的模型选择建议}{208}{section*.746}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.6.4}不同应用场景下的模型选择建议}{207}{section*.746}%
+\contentsline {section}{\numberline {5.7}温度—裂变气体释放—间隙导热耦合机制分析}{209}{section*.748}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.6.4}不同应用场景下的模型选择建议}{207}{section*.747}%
+\contentsline {section}{\numberline {5.7}温度—裂变气体释放—间隙导热耦合机制分析}{209}{section*.749}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.7}温度—裂变气体释放—间隙导热耦合机制分析}{207}{section*.749}%
+\contentsline {subsection}{\numberline {5.7.1}裂变气体释放对间隙气体组成的影响}{209}{section*.751}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.7}温度—裂变气体释放—间隙导热耦合机制分析}{207}{section*.750}%
+\contentsline {subsection}{\numberline {5.7.1}裂变气体释放对间隙气体组成的影响}{209}{section*.752}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.7.1}裂变气体释放对间隙气体组成的影响}{207}{section*.752}%
+\contentsline {subsection}{\numberline {5.7.2}间隙气体组成对中心温度的反馈作用}{209}{section*.754}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.7.1}裂变气体释放对间隙气体组成的影响}{207}{section*.753}%
+\contentsline {subsection}{\numberline {5.7.2}间隙气体组成对中心温度的反馈作用}{209}{section*.755}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.7.2}间隙气体组成对中心温度的反馈作用}{208}{section*.755}%
+\contentsline {subsection}{\numberline {5.7.3}不同裂变气体模型下的耦合反馈差异}{209}{section*.757}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.7.2}间隙气体组成对中心温度的反馈作用}{208}{section*.756}%
+\contentsline {subsection}{\numberline {5.7.3}不同裂变气体模型下的耦合反馈差异}{209}{section*.758}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.7.3}不同裂变气体模型下的耦合反馈差异}{208}{section*.758}%
+\contentsline {section}{\numberline {5.8}模型适用范围与不确定性分析}{209}{section*.760}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.7.3}不同裂变气体模型下的耦合反馈差异}{208}{section*.759}%
+\contentsline {section}{\numberline {5.8}模型适用范围与不确定性分析}{209}{section*.761}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.8}模型适用范围与不确定性分析}{208}{section*.761}%
+\contentsline {subsection}{\numberline {5.8.1}模型适用范围}{209}{section*.763}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.8}模型适用范围与不确定性分析}{208}{section*.762}%
+\contentsline {subsection}{\numberline {5.8.1}模型适用范围}{209}{section*.764}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.8.1}模型适用范围}{208}{section*.764}%
+\contentsline {subsection}{\numberline {5.8.2}输入参数与实验数据不确定性}{209}{section*.766}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.8.1}模型适用范围}{208}{section*.765}%
+\contentsline {subsection}{\numberline {5.8.2}输入参数与实验数据不确定性}{209}{section*.767}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.8.2}输入参数与实验数据不确定性}{208}{section*.767}%
+\contentsline {subsection}{\numberline {5.8.3}本章未覆盖行为及后续扩展方向}{209}{section*.769}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.8.2}输入参数与实验数据不确定性}{208}{section*.768}%
+\contentsline {subsection}{\numberline {5.8.3}本章未覆盖行为及后续扩展方向}{209}{section*.770}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.8.3}本章未覆盖行为及后续扩展方向}{208}{section*.770}%
+\contentsline {section}{\numberline {5.9}本章小结}{209}{section*.772}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.8.3}本章未覆盖行为及后续扩展方向}{208}{section*.771}%
+\contentsline {section}{\numberline {5.9}本章小结}{209}{section*.773}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.9}本章小结}{208}{section*.773}%
+\contentsline {chapter}{\numberline {6}基于POD代理模型的燃料性能快速预测}{211}{section*.775}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.9}本章小结}{208}{section*.774}%
+\contentsline {chapter}{\numberline {6}基于POD代理模型的燃料性能快速预测}{211}{section*.776}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {6}基于物理信息驱动的快速预测代理模型}{209}{section*.776}%
+\contentsline {section}{\numberline {6.1}燃料性能数据集构建与预处理}{211}{section*.778}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {6}基于物理信息驱动的快速预测代理模型}{209}{section*.777}%
+\contentsline {section}{\numberline {6.1}燃料性能数据集构建与预处理}{211}{section*.779}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.1}数据集构建与预处理}{209}{section*.779}%
+\contentsline {subsection}{\numberline {6.1.1}高保真燃料性能模型与预测变量}{211}{section*.781}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.1}数据集构建与预处理}{209}{section*.780}%
+\contentsline {subsection}{\numberline {6.1.1}高保真燃料性能模型与预测变量}{211}{section*.782}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.2}代理模型架构设计}{209}{section*.782}%
+\contentsline {subsection}{\numberline {6.1.2}参数空间与计算工况设计}{211}{section*.784}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.2}代理模型架构设计}{209}{section*.783}%
+\contentsline {subsection}{\numberline {6.1.2}参数空间与计算工况设计}{211}{section*.785}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.3}模型训练与精度评估}{209}{section*.785}%
+\contentsline {subsection}{\numberline {6.1.3}网格敏感性分析与训练网格选取}{211}{section*.787}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.3}模型训练与精度评估}{209}{section*.786}%
+\contentsline {subsection}{\numberline {6.1.3}网格敏感性分析与训练网格选取}{211}{section*.788}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}网格方案与计算条件}{211}{section*.790}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}网格差异评价指标}{212}{section*.793}%
+\contentsline {subsubsection}{\numberline {6.1.3.3}网格敏感性结果}{213}{section*.794}%
+\contentsline {subsubsection}{\numberline {6.1.3.4}训练网格选取}{215}{section*.799}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.4}本章小结}{209}{section*.788}%
+\contentsline {subsection}{\numberline {6.1.4}场快照采集与时间同步}{216}{section*.800}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.4}本章小结}{209}{section*.789}%
+\contentsline {subsection}{\numberline {6.1.4}场快照采集与时间同步}{216}{section*.801}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {7}总结与展望}{210}{section*.791}%
+\contentsline {subsection}{\numberline {6.1.5}数据集划分与预处理}{216}{section*.803}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {7}总结与展望}{210}{section*.792}%
-\contentsline {chapter}{致谢}{211}{section*.794}%
-\contentsline {chapter}{参考文献}{212}{section*.797}%
-\contentsline {chapter}{附录}{224}{section*.800}%
+\contentsline {subsection}{\numberline {6.1.5}数据集划分与预处理}{216}{section*.804}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {附录A}Sciantix耦合接口说明}{224}{section*.802}%
-\contentsline {section}{\numberline {附录A.1}引言}{224}{section*.803}%
-\contentsline {section}{\numberline {附录A.2}接口框架与调用流程}{224}{section*.804}%
-\contentsline {subsection}{\numberline {附录A.2.1}设计原则}{224}{section*.805}%
-\contentsline {subsubsection}{\numberline {附录A.2.1.1}类结构设计}{224}{section*.806}%
-\contentsline {section}{\numberline {附录A.3}关键参数映射}{224}{section*.809}%
-\contentsline {subsection}{\numberline {附录A.3.1}历史变量映射}{224}{section*.810}%
-\contentsline {subsection}{\numberline {附录A.3.2}模型选项配置}{226}{section*.813}%
-\contentsline {subsection}{\numberline {附录A.3.3}输出变量计算}{226}{section*.816}%
-\contentsline {chapter}{\numberline {A}气孔迁移速率模型计算公式}{228}{section*.818}%
-\contentsline {section}{\numberline {A.1}Rand--Markin 热力学模型}{228}{section*.819}%
-\contentsline {subsection}{\numberline {A.1.1}气孔迁移速率控制方程}{228}{section*.820}%
-\contentsline {subsection}{\numberline {A.1.2}各气相组分蒸气压表达式}{228}{section*.821}%
-\contentsline {subsection}{\numberline {A.1.3}Gibbs自由能表达式}{229}{section*.822}%
-\contentsline {subsection}{\numberline {A.1.4}氧分压与化学计量比关系}{230}{section*.823}%
-\contentsline {subsection}{\numberline {A.1.5}总蒸气压}{230}{section*.824}%
-\contentsline {section}{\numberline {A.2}经典气孔迁移速率模型}{232}{section*.825}%
-\contentsline {subsection}{\numberline {A.2.1}Lackey et al. (1972) 模型}{232}{section*.826}%
-\contentsline {subsection}{\numberline {A.2.2}Sens et al. (1972) 模型}{233}{section*.827}%
-\contentsline {subsection}{\numberline {A.2.3}Nichols (1967) 球形气孔模型}{233}{section*.828}%
-\contentsline {subsection}{\numberline {A.2.4}Nichols (1972) 透镜状气孔模型}{234}{section*.829}%
-\contentsline {subsection}{\numberline {A.2.5}Clement \& Finnis (1978) 模型}{235}{section*.830}%
+\contentsline {section}{\numberline {6.2}基于POD的燃料性能场降阶表示}{216}{section*.806}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{攻读学位期间取得的研究成果}{235}{section*.831}%
-\contentsline {chapter}{答辩委员会会议决议}{237}{section*.834}%
-\contentsline {chapter}{常规评阅人名单}{238}{section*.838}%
+\contentsline {section}{\numberline {6.2}基于POD的燃料性能场降阶表示}{216}{section*.807}%
+\contentsline {subsubsection}{\numberline {6.2.0.1}离散场表示与快照采集}{216}{section*.809}%
+\contentsline {subsubsection}{\numberline {6.2.0.2}参考场选取与快照矩阵构建}{217}{section*.810}%
+\contentsline {subsubsection}{\numberline {6.2.0.3}POD模态提取}{217}{section*.811}%
+\contentsline {subsubsection}{\numberline {6.2.0.4}POD阶数选取}{218}{section*.812}%
+\contentsline {subsubsection}{\numberline {6.2.0.5}POD系数投影与场重构}{219}{section*.813}%
+\contentsline {subsubsection}{\numberline {6.2.0.6}降阶重构误差评价}{220}{section*.814}%
+\contentsline {subsubsection}{\numberline {6.2.0.7}POD降阶模型与代理模型的衔接}{220}{section*.815}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.2.1}场快照矩阵构建}{221}{section*.816}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.2.1}场快照矩阵构建}{221}{section*.817}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.2.2}POD模态提取与阶数选取}{221}{section*.819}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.2.2}POD模态提取与阶数选取}{221}{section*.820}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.2.3}POD系数投影与场重构}{221}{section*.822}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.2.3}POD系数投影与场重构}{221}{section*.823}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.2.4}独立工况降阶重构验证}{221}{section*.825}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.2.4}独立工况降阶重构验证}{221}{section*.826}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {6.3}代理模型构建与训练}{221}{section*.828}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {6.3}代理模型构建与训练}{221}{section*.829}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.3.1}代理模型输入与输出参数}{221}{section*.831}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.3.1}代理模型输入与输出参数}{221}{section*.832}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.3.2}POD系数预测模型}{221}{section*.834}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.3.2}POD系数预测模型}{221}{section*.835}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.3.3}模型训练与超参数设置}{221}{section*.837}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.3.3}模型训练与超参数设置}{221}{section*.838}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {6.4}预测精度与计算效率分析}{221}{section*.840}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {6.4}预测精度与计算效率分析}{221}{section*.841}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.4.1}POD系数预测精度}{221}{section*.843}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.4.1}POD系数预测精度}{221}{section*.844}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.4.2}温度场与位移场重构精度}{221}{section*.846}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.4.2}温度场与位移场重构精度}{221}{section*.847}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.4.3}泛化能力与误差分布}{221}{section*.849}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.4.3}泛化能力与误差分布}{221}{section*.850}%
+\setcounter {tocdepth}{-5}
+\contentsline {subsection}{\numberline {6.4.4}计算效率对比}{221}{section*.852}%
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {6.4.4}计算效率对比}{221}{section*.853}%
+\setcounter {tocdepth}{-5}
+\contentsline {section}{\numberline {6.5}本章小结}{221}{section*.855}%
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {6.5}本章小结}{221}{section*.856}%
+\setcounter {tocdepth}{-5}
+\contentsline {chapter}{\numberline {7}总结与展望}{222}{section*.858}%
+\setcounter {tocdepth}{2}
+\contentsline {chapter}{\numberline {7}总结与展望}{222}{section*.859}%
+\contentsline {chapter}{致谢}{223}{section*.861}%
+\contentsline {chapter}{参考文献}{224}{section*.864}%
+\contentsline {chapter}{附录}{236}{section*.867}%
+\setcounter {tocdepth}{-5}
+\contentsline {chapter}{\numberline {附录A}Sciantix耦合接口说明}{236}{section*.869}%
+\contentsline {section}{\numberline {附录A.1}引言}{236}{section*.870}%
+\contentsline {section}{\numberline {附录A.2}接口框架与调用流程}{236}{section*.871}%
+\contentsline {subsection}{\numberline {附录A.2.1}设计原则}{236}{section*.872}%
+\contentsline {subsubsection}{\numberline {附录A.2.1.1}类结构设计}{236}{section*.873}%
+\contentsline {section}{\numberline {附录A.3}关键参数映射}{236}{section*.876}%
+\contentsline {subsection}{\numberline {附录A.3.1}历史变量映射}{236}{section*.877}%
+\contentsline {subsection}{\numberline {附录A.3.2}模型选项配置}{238}{section*.880}%
+\contentsline {subsection}{\numberline {附录A.3.3}输出变量计算}{238}{section*.883}%
+\contentsline {chapter}{\numberline {A}气孔迁移速率模型计算公式}{240}{section*.885}%
+\contentsline {section}{\numberline {A.1}Rand--Markin 热力学模型}{240}{section*.886}%
+\contentsline {subsection}{\numberline {A.1.1}气孔迁移速率控制方程}{240}{section*.887}%
+\contentsline {subsection}{\numberline {A.1.2}各气相组分蒸气压表达式}{240}{section*.888}%
+\contentsline {subsection}{\numberline {A.1.3}Gibbs自由能表达式}{241}{section*.889}%
+\contentsline {subsection}{\numberline {A.1.4}氧分压与化学计量比关系}{242}{section*.890}%
+\contentsline {subsection}{\numberline {A.1.5}总蒸气压}{242}{section*.891}%
+\contentsline {section}{\numberline {A.2}经典气孔迁移速率模型}{244}{section*.892}%
+\contentsline {subsection}{\numberline {A.2.1}Lackey et al. (1972) 模型}{244}{section*.893}%
+\contentsline {subsection}{\numberline {A.2.2}Sens et al. (1972) 模型}{245}{section*.894}%
+\contentsline {subsection}{\numberline {A.2.3}Nichols (1967) 球形气孔模型}{245}{section*.895}%
+\contentsline {subsection}{\numberline {A.2.4}Nichols (1972) 透镜状气孔模型}{246}{section*.896}%
+\contentsline {subsection}{\numberline {A.2.5}Clement \& Finnis (1978) 模型}{247}{section*.897}%
+\setcounter {tocdepth}{2}
+\contentsline {chapter}{攻读学位期间取得的研究成果}{247}{section*.898}%
+\contentsline {chapter}{答辩委员会会议决议}{249}{section*.901}%
+\contentsline {chapter}{常规评阅人名单}{250}{section*.905}%
 \contentsfinish 

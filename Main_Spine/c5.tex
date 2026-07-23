@@ -769,11 +769,72 @@ T_\alpha(B)-T_\mathrm{base}(B),
 
 \xsection{基于 ForMas 模型的裂变气体释放验证}{Validation of Fission Gas Release Based on the ForMas Model}
 
-\xsubsection{ForMas 模型的棒级计算流程}{Rod-Level Computational Procedure of the ForMas Model}
-介绍 ForMas 模型在燃料棒级计算中的耦合流程，包括裂变气体生成、晶内扩散、晶界累积、气体释放、气腔气体组分更新以及对间隙热导率和燃料温度的反馈。
+\xsubsection{稳态辐照案例 FGR 验证}
+{FGR Validation under Steady-State Irradiation Conditions}
 
-\xsubsection{稳态辐照案例 FGR 验证}{FGR Validation under Steady-State Irradiation Conditions}
-基于稳态辐照实验案例，对 ForMas 模型预测的裂变气体释放率进行验证，比较不同燃耗和线功率水平下的计算值与实验值，评价其在长时程稳态运行条件下的预测能力。
+本节所称的“稳态辐照”并非指燃料棒在整个辐照寿期内始终保持恒定功率，而是指燃料棒主要经历正常运行条件下的长时程辐照，功率和冷却剂边界条件可以随循环运行、停堆及功率调节发生缓慢变化，但不包含分钟级快速瞬态或专门设置的寿期末功率爬升过程。按照 FRAPCON-4.0 积分评估报告的分类，其评估数据库包括经历稳态功率运行的燃料棒，以及稳态辐照后进一步经历寿期末功率爬升的燃料棒，两类案例被分别用于稳态和功率快速上升下的裂变气体释放模型评估。评估案例的选择同时考虑了燃料棒设计与运行数据的完整性，并覆盖由低至高的燃耗和线功率范围，以检验模型在不同运行水平下的适用性。
+
+前文已经介绍，本文采用两种复杂程度不同的裂变气体行为模型。ForMas 模型采用相对简化的扩散--饱和--释放过程描述，主要根据燃料温度、裂变率和燃耗等宏观状态量预测裂变气体向晶界迁移及其释放；SCIANTIX 则进一步考虑晶内扩散、气体原子的再溶解与俘获、晶内和晶界气泡演化以及晶界气体释放等细观过程。由于两种模型在物理描述层次和计算成本方面存在明显差异，本文首先利用稳态辐照实验案例验证 ForMas 模型的裂变气体释放预测能力，随后再对 SCIANTIX 模型进行独立评估和比较。
+
+表~\ref{tab:steady_state_mox_fgr_assessment_cases} 汇总了本文选取的稳态 MOX 燃料棒案例，包括 Halden 反应堆 IFA 系列、美国先进试验堆（ATR）辐照棒以及 M504 和 M308 等试验燃料棒。所选案例的棒平均燃耗约为 20--68.3~GWd/MTU，实验裂变气体释放率则由不足 1\% 延伸至约 22\%，从而形成了较宽的燃耗和释放率覆盖范围。计算中采用各燃料棒的实际功率历史和边界条件，而不是以单一恒定功率代替整个辐照过程。
+
+FRAPCON-4.0 积分评估报告指出，全部稳态 MOX 案例的预测误差标准差约为 6.8 个百分点。部分 ATR 燃料棒存在较强的径向中子通量梯度，使棒平均功率的确定具有较大不确定性；排除这些 ATR 案例后，FRAPCON-4.0 稳态 MOX 裂变气体释放预测的绝对标准差降低至约 4.4 个百分点。报告认为，FRAPCON-4.0 在棒平均燃耗不超过约 62~GWd/MTU 时能够对较宽范围的 MOX 裂变气体释放率给出合理的最佳估计，但在更高燃耗区域存在逐渐低估 FGR 的可能性。 因此，表中超过 62~GWd/MTU 的 IFA-629-3r5 和 IFA-629-3r6 案例除用于评价模型总体预测能力外，还可用于考察 ForMas 模型在高燃耗区间的外推特征。
+
+对于 IFA-651.1 系列燃料棒，表中带星号的实验 FGR 并非由辐照后穿刺测量直接获得，而是根据燃料棒内压数据反演得到，其不确定性通常高于穿刺法测量结果。因此，在后续误差分析中，应结合实验数据来源和功率历史的不确定性综合评价模型偏差，不能仅依据单个燃料棒的计算值与实验值之差判断模型性能。
+
+\begin{table}[htbp]
+	\centering
+	\caption{Steady-State MOX FGR Assessment Cases}
+	\label{tab:steady_state_mox_fgr_assessment_cases}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c c}
+		\toprule
+		Rod &
+		\begin{tabular}[c]{@{}c@{}}
+			平均燃耗 \\
+			GWd/MTU
+		\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}
+			Measured FGR \\
+			\%
+		\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}
+			FRAPCON-4.0计算 \\
+			FGR, \%
+		\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}
+			ForMas程序计算 \\
+			FGR, \%
+		\end{tabular} \\
+		\midrule
+		
+		IFA-651.1r1               & 22.41 & $10^{*}$ & 1.13  & 4.73  \\
+		IFA-651.1r3               & 21.73 & $2^{*}$  & 1.68  & 4.31  \\
+		IFA-651.1r6               & 20.27 & $7^{*}$  & 1.88  & 2.61  \\
+		ATR PII C2 P5             & 21.00 & 1.146    & 22.19 & 6.25  \\
+		ATR PIII C3 P6            & 30.00 & 1.253    & 15.96 & 4.36  \\
+		ATR PIII C10 P13          & 30.00 & 2.019    & 16.98 & 4.74  \\
+		ATR PIV C4 P7             & 40.00 & 8.214    & 18.69 & 4.37  \\
+		ATR PIV C5 P8             & 50.00 & 3.009    & 7.12  & 1.19  \\
+		ATR PIV C6 P9             & 50.00 & 7.066    & 10.11 & 2.07  \\
+		ATR PIV C12 P15           & 50.00 & 8.761    & 9.87  & 1.95  \\
+		IFA-629.1                 & 29.00 & 21.7     & 19.13 & 5.77  \\
+		M504 H8                   & 37.50 & 0.54     & 0.26  & 1.24  \\
+		M504 I2                   & 43.00 & 0.85     & 0.75  & 1.77  \\
+		IFA-597.4/.5/.6/.7r10     & 35.70 & 17.0     & 13.17 & 4.65  \\
+		IFA-597.4/.5/.6/.7r11     & 36.80 & 14.0     & 20.95 & 3.54  \\
+		IFA-629-3r5               & 68.30 & 21.0     & 6.28  & 6.74  \\
+		IFA-629-3r6               & 63.60 & 12.0     & 5.73  & 36.24 \\
+		M308 Segment 2            & 57.50 & 5.0      & 4.24  & 0.10  \\
+		
+		\bottomrule
+		\multicolumn{5}{l}{
+			\footnotesize
+			$^{*}$基于棒内压力数据推算的寿期末 FGR，
+			其不确定性高于穿刺法直接测得的数据。
+		}
+	\end{tabularx}
+\end{table}
+
 
 \xsubsection{功率变化工况下的 FGR 响应}{FGR Response under Power-Varying Conditions}
 针对功率提升或功率变化实验案例，分析 ForMas 模型对温度升高和功率历史变化引起的裂变气体释放响应的预测能力，重点关注释放量突增、释放阈值以及高温阶段气体释放增强现象。

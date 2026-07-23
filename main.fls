@@ -1265,6 +1265,12 @@ INPUT ./Main_Spine/c6.tex
 INPUT ./Main_Spine/c6.tex
 INPUT ./Main_Spine/c6.tex
 INPUT Main_Spine/c6.tex
+INPUT ./Figures/mesh_sensitivity/max_temperature_history.png
+INPUT ./Figures/mesh_sensitivity/max_temperature_history.png
+INPUT ./Figures/mesh_sensitivity/max_abs_disp_r_history.png
+INPUT ./Figures/mesh_sensitivity/max_abs_disp_r_history.png
+INPUT ./Figures/mesh_sensitivity/max_abs_disp_z_history.png
+INPUT ./Figures/mesh_sensitivity/max_abs_disp_z_history.png
 INPUT ./Main_Spine/c7.tex
 INPUT ./Main_Spine/c7.tex
 INPUT ./Main_Spine/c7.tex
