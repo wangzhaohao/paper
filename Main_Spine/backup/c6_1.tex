@@ -1,0 +1,745 @@
+% !TeX root = ../main.tex
+
+\xchapter{基于POD代理模型的燃料性能快速预测}
+{POD-Based Surrogate Model for Fast Fuel Performance Prediction}
+
+\xsection{燃料性能数据集构建与预处理}
+{Fuel Performance Dataset Construction and Preprocessing}
+
+\xsubsection{高保真燃料性能模型与预测变量}
+{High-Fidelity Fuel Performance M0odel and Prediction Variables}
+
+\xsubsection{参数空间与计算工况设计}
+{Parameter Space and Simulation Case Design}
+
+\xsubsection{网格敏感性分析与训练网格选取}
+{Mesh Sensitivity Analysis and Selection of the Training Mesh}
+
+基于高保真燃料性能分析程序批量生成训练数据是构建降阶代理模型的基础。对于全寿期燃料棒热--力耦合分析，单个计算工况通常包含大量时间步，且每个时间步均需求解温度、位移及材料状态变量所构成的强非线性方程组。若在全部参数化工况中直接采用高分辨率网格，将显著增加数据集生成所需的计算时间和存储成本；反之，过于稀疏的空间离散可能无法充分解析描述燃料温度、燃料--包壳间隙换热以及局部变形特征，并将计算误差进一步传递至后续POD基和代理模型。因此，在开展大规模参数化计算之前，有必要对有限元网格进行敏感性分析，并在计算精度与数据生成成本之间确定合理的训练网格。
+
+\subsubsection{网格方案与计算条件}
+
+为考察空间网格分辨率对燃料性能计算结果的影响，本文在保持燃料棒几何尺寸、材料本构关系、初始条件、边界条件、功率历史、时间步进策略及结果输出时刻完全一致的条件下，分别建立粗网格、中等网格、增强型中等网格和细网格四套RZ轴对称有限元模型。四套网格均采用结构化四边形单元，并分别对燃料区域和包壳区域进行等距径向与轴向离散，具体配置见表~\ref{tab:mesh_configuration}。
+
+\begin{table}[htbp]
+	\centering
+	\caption{燃料棒模型的网格划分方案}
+	\label{tab:mesh_configuration}
+	\begin{tabularx}{\textwidth}
+		{>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}p{3.55cm}
+			>{\centering\arraybackslash}p{3.55cm}
+			>{\centering\arraybackslash}p{1.15cm}
+			>{\centering\arraybackslash}p{1.15cm}}
+		\toprule
+		网格类型
+		& 燃料区域径向$\times$轴向
+		& 包壳区域径向$\times$轴向
+		& 节点数
+		& 单元数 \\
+		\midrule
+		
+		粗网格
+		& $8\times80$
+		& $3\times100$
+		& 1133
+		& 940 \\
+		
+		中等网格
+		& $10\times150$
+		& $4\times180$
+		& 2566
+		& 2220 \\
+		
+		增强型中等网格
+		& $10\times300$
+		& $5\times400$
+		& 5717
+		& 5000 \\
+		
+		细网格
+		& $10\times800$
+		& $5\times1000$
+		& 14817
+		& 13000 \\
+		
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+由于四套网格具有不同的节点数量和节点坐标，直接对不同网格上的节点场进行逐点相减并不具有严格的物理对应关系。为此，本文首先选取能够反映燃料棒整体热力响应的标量特征量进行比较，包括各输出时刻的最大节点温度、最大绝对值的径向位移和最大绝对值的轴向位移，分别定义为
+
+\begin{equation}
+	T_{\max}(t)
+	=
+	\max_{1\leq i\leq N_{\mathrm{n}}}
+	T_i(t),
+	\label{eq:mesh_tmax}
+\end{equation}
+
+\begin{equation}
+	u_{r,\max}(t)
+	=
+	\max_{1\leq i\leq N_{\mathrm{n}}}
+	\left|u_{r,i}(t)\right|,
+	\label{eq:mesh_urmax}
+\end{equation}
+
+\begin{equation}
+	u_{z,\max}(t)
+	=
+	\max_{1\leq i\leq N_{\mathrm{n}}}
+	\left|u_{z,i}(t)\right|,
+	\label{eq:mesh_uzmax}
+\end{equation}
+
+式中，$N_{\mathrm{n}}$为当前网格的节点总数，$T_i$、$u_{r,i}$和$u_{z,i}$分别表示第$i$个节点处的温度、径向位移和轴向位移。除比较上述特征量的全寿期变化曲线外，还统计其全寿期峰值、峰值出现时刻及峰值所在位置，以同时评价不同网格对结果幅值和局部化位置的影响。
+
+\subsubsection{网格差异评价指标}
+
+在缺乏解析解的情况下，本文暂以当前分辨率最高的细网格结果作为参考解。对于任一标量响应$Q$，粗网格或中等网格相对于细网格的相对差异定义为
+
+\begin{equation}
+	\varepsilon_Q
+	=
+	\frac{
+		\left|Q_h-Q_{\mathrm{fine}}\right|
+	}{
+		\left|Q_{\mathrm{fine}}\right|
+	}
+	\times100\%,
+	\label{eq:mesh_relative_error}
+\end{equation}
+
+式中，$Q_h$表示粗网格或其他网格结果，$Q_{\mathrm{fine}}$表示细网格结果。需要强调的是，式~\eqref{eq:mesh_relative_error}衡量的是不同离散尺度结果之间的相对差异，细网格结果并不等同于严格意义上的解析真值。
+
+为评价不同网格在整个辐照寿期内的响应差异，本文除比较各物理量的全寿期峰值外，还对最大温度、最大径向位移绝对值和最大轴向位移绝对值的时间历程进行整体比较。四套网格采用相同的时间输出设置，共包含$N_t=109$个输出时刻，因此可在相同的时刻$t_j$直接比较不同网格的计算结果。
+
+同样的，以细网格结果作为参考，网格$h$对应响应量$Q$的全寿期均方根误差定义为
+
+\begin{equation}
+	\mathrm{RMSE}_{Q,h}
+	=
+	\sqrt{
+		\frac{1}{N_t}
+		\sum_{j=1}^{N_t}
+		\left[
+		Q_h(t_j)-Q_{\mathrm{fine}}(t_j)
+		\right]^2
+	},
+	\label{eq:mesh_history_rmse}
+\end{equation}
+
+式中，$Q_h(t_j)$表示粗网格、中等网格或增强型中等网格在第$j$个输出时刻的响应量，$Q_{\mathrm{fine}}(t_j)$表示细网格在相同时刻的参考结果，$N_t$为全寿期统一输出时刻总数。均方根误差综合考虑了全部输出时刻的差异，能够反映两条时间历程曲线的总体偏离程度，从而避免仅依据单一峰值判断网格敏感性。
+
+\subsubsection{网格敏感性结果}
+
+四套网格下的全寿期最大温度、最大径向位移绝对值和最大轴向位移绝对值如表~\ref{tab:mesh_peak_comparison}所示。
+
+\begin{table}[htbp]
+	\centering
+	\caption{不同网格下燃料棒热力响应峰值比较}
+	\label{tab:mesh_peak_comparison}
+	\begin{tabularx}{\textwidth}
+		{>{\centering\arraybackslash}p{1.8cm}
+			>{\centering\arraybackslash}p{1.7cm}
+			>{\centering\arraybackslash}p{1.8cm}
+			>{\centering\arraybackslash}p{1.8cm}
+			>{\centering\arraybackslash}p{2.6cm}
+			X}
+		\toprule
+		网格类型
+		& 最大温度/K
+		& 最大$|u_r|$/$\mu$m
+		& 最大$|u_z|$/$\mu$m
+		& 温度相对差异
+		& 位移相对差异 \\
+		\midrule
+		粗网格
+		& 1730.82
+		& 95.80
+		& 2270.63
+		& 1.00\%
+		& $u_r$: 4.14\%；$u_z$: 1.41\% \\
+		
+		中等网格
+		& 1741.13
+		& 95.83
+		& 2255.19
+		& 0.41\%
+		& $u_r$: 4.11\%；$u_z$: 2.08\% \\
+		
+		增强型中等网格
+		& 1743.75
+		& 96.26
+		& 2287.81
+		& 0.26\%
+		& $u_r$: 3.67\%；$u_z$: 0.66\% \\
+		
+		细网格
+		& 1748.29
+		& 99.94
+		& 2303.00
+		& ---
+		& --- \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+由表~\ref{tab:mesh_peak_comparison}可见，随着网格逐步加密，最大温度由粗网格的1730.82~K增加至细网格的1748.29~K，整体呈现逐渐趋近细网格参考结果的变化趋势。其中，中等网格和增强型中等网格相对于细网格的温度峰值差异分别为0.41\%和0.26\%，表明温度峰值对网格加密已表现出较好的稳定性。
+
+对于径向位移，粗网格、中等网格和增强型中等网格所得最大径向位移分别为95.80、95.83和96.26~$\mu$m，均低于细网格的99.94~$\mu$m。增强型中等网格相对于细网格的差异为3.67\%，较粗网格和中等网格的4.14\%和4.11\%有所降低，说明径向位移峰值随网格加密逐步接近细网格结果，但其收敛速度相对较慢。
+
+最大轴向位移未表现出严格的单调变化，其中粗网格和中等网格相对于细网格的差异分别为1.41\%和2.08\%。增强型中等网格所得最大轴向位移为2287.81~$\mu$m，与细网格2303.00~$\mu$m之间的差异降低至0.66\%，表明增强型中等网格能够较为准确地描述轴向位移峰值。综合而言，增强型中等网格在温度场和轴向位移场方面已与细网格具有较高一致性，而径向位移峰值仍表现出相对更强的网格敏感性。
+
+上述峰值比较反映了不同网格对全寿期极值响应的影响，但单一峰值不能完整表征各网格在整个辐照过程中的差异。为进一步考察不同空间离散方案对热力响应演化过程的影响，图~\ref{fig:mesh_sensitivity_histories}给出了四套网格下最大节点温度、最大径向位移绝对值和最大轴向位移绝对值随时间的变化。其中，图~\ref{fig:mesh_temperature_history}、图~\ref{fig:mesh_radial_displacement_history}和图~\ref{fig:mesh_axial_displacement_history}分别对应温度、径向位移和轴向位移的全寿期时间历程。
+
+\begin{figure}[htbp]
+	\centering
+	
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]
+		{mesh_sensitivity/max_temperature_history.png}
+		\caption{最大节点温度}
+		\label{fig:mesh_temperature_history}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]
+		{mesh_sensitivity/max_abs_disp_r_history.png}
+		\caption{最大径向位移绝对值}
+		\label{fig:mesh_radial_displacement_history}
+	\end{subfigure}
+	
+	\vspace{0.8em}
+	
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]
+		{mesh_sensitivity/max_abs_disp_z_history.png}
+		\caption{最大轴向位移绝对值}
+		\label{fig:mesh_axial_displacement_history}
+	\end{subfigure}
+	
+	\caption{不同网格下燃料棒主要热力响应参数的全寿期变化}
+	\label{fig:mesh_sensitivity_histories}
+\end{figure}
+
+由图~\ref{fig:mesh_sensitivity_histories}可见，四套网格对各响应量的主要变化阶段及功率调整引起的升降趋势均给出了较为一致的预测，说明不同网格能够捕捉燃料棒全寿期热力响应的总体演化规律。对于温度和轴向位移，增强型中等网格曲线在大部分运行阶段与细网格较为接近；对于径向位移，增强型中等网格虽然较粗网格和中等网格有所改善，但其幅值在部分运行阶段仍低于细网格结果，与表~\ref{tab:mesh_peak_comparison}所反映的径向位移峰值差异一致。因此，时间历程对比进一步表明，温度场和轴向位移场对增强型中等网格已具有较好的稳定性，而径向位移仍是当前网格敏感性分析中最需要关注的响应量。
+
+\subsubsection{训练网格选取}
+
+代理模型训练网格的选择应同时考虑有限元计算精度与参数化数据生成成本。由于POD基由给定网格上的场快照构造，训练网格自身的空间离散误差会进一步传递至POD模态及代理模型预测结果。因此，训练网格不仅需要准确描述主要热力响应量，还应避免因空间离散规模过大而显著增加全寿期参数化算例的计算和存储成本。
+
+本文从以下几个方面综合评价训练网格的适用性：
+
+\begin{enumerate}
+	\item 主要响应量的全寿期演化趋势应与细网格参考结果保持一致，不应出现明显的阶段性偏移或非物理振荡；
+	\item 最大温度、最大径向位移和最大轴向位移的幅值差异应处于可接受范围；
+	\item 关键响应量的峰值时刻和峰值空间位置应具有较好的稳定性；
+	\item 在满足主要热力响应精度要求的前提下，应尽可能降低网格节点数、单元数及场快照存储规模；
+	\item 所有POD训练和测试算例应采用相同的网格拓扑、节点编号及时间输出时刻，以保证不同工况场快照之间具有严格的一一对应关系。
+\end{enumerate}
+
+四套网格的比较结果表明，增强型中等网格所得最大温度和最大轴向位移相对于细网格的差异分别为0.26\%和0.66\%，已能够较准确地描述温度和轴向变形的全寿期响应。其最大径向位移与细网格之间仍存在3.67\%的幅值差异，但峰值出现时刻和峰值位置均与细网格保持一致，说明该网格已能够识别径向位移场中的主要局部变形区域。相较之下，中等网格虽然具有较低的空间离散规模，但其径向位移峰值位置尚未稳定，且轴向位移误差相对较大。
+
+增强型中等网格共包含5717个节点和5000个单元，相比细网格的14817个节点和13000个单元，节点数和单元数分别减少约61.42\%和61.54\%。因此，在保持主要热力响应特征与细网格结果较高一致性的同时，增强型中等网格能够显著降低后续参数化计算的空间离散规模。
+
+综合温度、径向位移和轴向位移的峰值差异、全寿期演化趋势、峰值时刻、峰值位置以及网格规模，本文选取增强型中等网格作为POD训练和测试数据集的统一计算网格。细网格作为当前最高分辨率参考网格，不直接用于全部参数化数据生成，而用于评估训练网格的空间离散误差，并对少量代表性工况进行高分辨率复核。粗网格和中等网格则主要用于输入卡调试、参数范围试算及网格加密趋势分析。
+
+
+\xsubsection{场快照采集与时间同步}
+{Field Snapshot Collection and Temporal Synchronization}
+
+\xsubsection{数据集划分与预处理}
+{Dataset Partitioning and Preprocessing}
+
+
+\xsection{基于POD的燃料性能场降阶表示}
+{POD-Based Reduced-Order Representation of Fuel Performance Fields}
+
+燃料性能有限元程序在每个输出时刻均计算输出分布于全部计算域上的温度场、径向位移场和轴向位移场。当有限元网格包含$N$个节点时，单一场变量可表示为$N$维离散向量。对于包含多个运行工况和大量时间节点的数据集，直接以全部节点值作为代理模型输出不仅会导致输出维数过高，还会增加模型训练难度和样本需求。
+
+本节采用本征正交分解（proper orthogonal decomposition，POD）提取燃料性能场中的主导空间结构，将高维有限元场表示为少量正交空间模态及其对应时间--参数系数的线性组合，从而为后续代理模型预测提供低维输出空间。
+
+本文对温度场$T$、径向位移场$u_r$和轴向位移场$u_z$分别构建独立POD基。这种分场降阶方式可避免温度与位移在物理量纲、数值尺度及空间演化特征上的差异对模态提取结果产生相互干扰。
+
+\subsubsection{离散场表示与快照采集}
+
+设燃料性能模型的输入参数向量为$\boldsymbol{\mu}\in\mathcal{P}$，其中可包括功率历史缩放因子、冷却剂温度、冷却剂压力及其他运行或制造参数。对于任一场变量$q$，有
+
+\begin{equation}
+	q\in\left\{T,u_r,u_z\right\}.
+	\label{eq:pod_field_set}
+\end{equation}
+
+在参数$\boldsymbol{\mu}$和时刻$t$下，其有限元离散结果表示为
+
+\begin{equation}
+	\boldsymbol{q}(t,\boldsymbol{\mu})
+	=
+	\begin{bmatrix}
+		q_1(t,\boldsymbol{\mu}) &
+		q_2(t,\boldsymbol{\mu}) &
+		\cdots &
+		q_N(t,\boldsymbol{\mu})
+	\end{bmatrix}^{\mathrm{T}}
+	\in\mathbb{R}^{N},
+	\label{eq:pod_discrete_field}
+\end{equation}
+
+式中，$q_i$表示第$i$个有限元节点处的场变量值，$N$为统一训练网格的节点总数。
+
+设训练数据集包含$N_{\mu}$个参数工况，每个工况在$N_t$个统一时刻输出场结果，
+则单一物理场的快照总数为
+
+\begin{equation}
+	N_s=N_{\mu}N_t.
+	\label{eq:number_of_snapshots}
+\end{equation}
+
+为保证不同工况下的场快照可以直接组成矩阵，所有训练和测试算例必须采用相同的
+几何模型、网格拓扑、节点编号及输出时刻。任意两个快照中的同一向量分量必须
+对应相同的物理位置，否则POD模态将失去明确的空间意义。
+
+\subsubsection{参考场选取与快照矩阵构建}
+
+传统POD处理中常采用全部训练快照的平均场作为中心化参考。然而，对于燃料棒
+全寿期分析，初始温度场和初始位移场具有明确的物理含义，且不同功率工况通常
+具有相同的初始状态。因此，本文采用初始场作为参考场：
+
+\begin{equation}
+	\boldsymbol{q}_{0}
+	=
+	\boldsymbol{q}(t_0,\boldsymbol{\mu}),
+	\label{eq:pod_reference_field}
+\end{equation}
+
+式中，$t_0$为初始时刻。采用初始场作为参考可使POD主要提取场变量相对于初始
+状态的演化特征，并使初始状态能够由零POD系数准确表示。
+
+将所有训练工况和输出时刻下的中心化场快照按列排列，得到快照矩阵
+
+\begin{equation}
+	\boldsymbol{S}_{q}
+	=
+	\begin{bmatrix}
+		\boldsymbol{q}^{(1)}-\boldsymbol{q}_{0}
+		&
+		\boldsymbol{q}^{(2)}-\boldsymbol{q}_{0}
+		&
+		\cdots
+		&
+		\boldsymbol{q}^{(N_s)}-\boldsymbol{q}_{0}
+	\end{bmatrix}
+	\in\mathbb{R}^{N\times N_s},
+	\label{eq:pod_snapshot_matrix}
+\end{equation}
+
+其中，$\boldsymbol{q}^{(j)}$表示第$j$个场快照。
+对于温度场、径向位移场和轴向位移场，分别构造
+$\boldsymbol{S}_T$、$\boldsymbol{S}_{u_r}$和$\boldsymbol{S}_{u_z}$。
+
+本文采用离散节点向量上的欧氏内积：
+
+\begin{equation}
+	\left\langle
+	\boldsymbol{x},\boldsymbol{y}
+	\right\rangle
+	=
+	\boldsymbol{x}^{\mathrm{T}}\boldsymbol{y},
+	\label{eq:pod_euclidean_inner_product}
+\end{equation}
+
+相应范数为
+
+\begin{equation}
+	\left\|\boldsymbol{x}\right\|_2
+	=
+	\sqrt{
+		\boldsymbol{x}^{\mathrm{T}}\boldsymbol{x}
+	}.
+	\label{eq:pod_euclidean_norm}
+\end{equation}
+
+由于本文全部参数化算例采用相同的结构化网格，欧氏内积可用于当前POD流程中的
+离散场比较。对于高度非均匀网格或不同单元尺度差异显著的情况，则可进一步采用
+有限元质量矩阵加权内积，以增强POD模态对连续场能量意义的表征能力。
+
+\subsubsection{POD模态提取}
+
+对快照矩阵$\boldsymbol{S}_q$进行奇异值分解：
+
+\begin{equation}
+	\boldsymbol{S}_q
+	=
+	\boldsymbol{U}_q
+	\boldsymbol{\Sigma}_q
+	\boldsymbol{V}_q^{\mathrm{T}},
+	\label{eq:pod_svd}
+\end{equation}
+
+其中，
+
+\begin{equation}
+	\boldsymbol{\Sigma}_q
+	=
+	\operatorname{diag}
+	\left(
+	\sigma_{q,1},
+	\sigma_{q,2},
+	\ldots,
+	\sigma_{q,r_{\max}}
+	\right),
+	\label{eq:pod_singular_matrix}
+\end{equation}
+
+且奇异值满足
+
+\begin{equation}
+	\sigma_{q,1}
+	\geq
+	\sigma_{q,2}
+	\geq
+	\cdots
+	\geq
+	\sigma_{q,r_{\max}}
+	\geq0,
+	\label{eq:pod_singular_order}
+\end{equation}
+
+式中，$r_{\max}=\min(N,N_s)$。矩阵$\boldsymbol{U}_q$的列向量构成
+离散空间中的正交基，$\boldsymbol{V}_q$描述各空间模态在不同训练快照中的
+组合特征。第$i$个左奇异向量定义为第$i$阶POD空间模态：
+
+\begin{equation}
+	\boldsymbol{\phi}_{q,i}
+	=
+	\boldsymbol{U}_q(:,i).
+	\label{eq:pod_mode_definition}
+\end{equation}
+
+保留前$r_q$阶模态，构成场变量$q$的降阶基矩阵：
+
+\begin{equation}
+	\boldsymbol{\Phi}_q
+	=
+	\begin{bmatrix}
+		\boldsymbol{\phi}_{q,1}
+		&
+		\boldsymbol{\phi}_{q,2}
+		&
+		\cdots
+		&
+		\boldsymbol{\phi}_{q,r_q}
+	\end{bmatrix}
+	\in\mathbb{R}^{N\times r_q}.
+	\label{eq:pod_reduced_basis}
+\end{equation}
+
+POD基满足正交归一条件
+
+\begin{equation}
+	\boldsymbol{\Phi}_q^{\mathrm{T}}
+	\boldsymbol{\Phi}_q
+	=
+	\boldsymbol{I}_{r_q}.
+	\label{eq:pod_orthogonality}
+\end{equation}
+
+在给定模态数$r_q$时，截断POD基能够在Frobenius范数意义下给出对训练快照矩阵
+的最优低秩近似，其截断误差为
+
+\begin{equation}
+	\left\|
+	\boldsymbol{S}_q
+	-
+	\boldsymbol{\Phi}_q
+	\boldsymbol{\Phi}_q^{\mathrm{T}}
+	\boldsymbol{S}_q
+	\right\|_{\mathrm{F}}^2
+	=
+	\sum_{i=r_q+1}^{r_{\max}}
+	\sigma_{q,i}^2.
+	\label{eq:pod_optimal_error}
+\end{equation}
+
+式~\eqref{eq:pod_optimal_error}表明，被舍弃奇异值的平方和直接决定了训练快照
+在降阶空间中的总体投影误差。
+
+\subsubsection{POD阶数选取}
+
+奇异值平方可用于衡量相应POD模态对全部训练快照变化量的贡献。定义前$r_q$阶
+模态的累计能量占比为
+
+\begin{equation}
+	\eta_{q,r_q}
+	=
+	\frac{
+		\displaystyle
+		\sum_{i=1}^{r_q}
+		\sigma_{q,i}^{2}
+	}{
+		\displaystyle
+		\sum_{i=1}^{r_{\max}}
+		\sigma_{q,i}^{2}
+	}.
+	\label{eq:pod_cumulative_energy}
+\end{equation}
+
+本文首先采用
+
+\begin{equation}
+	\eta_{q,r_q}
+	\geq 99.9\%
+	\label{eq:pod_energy_threshold}
+\end{equation}
+
+作为保留模态数的初始判据。需要指出的是，累计能量反映的是所有训练快照的整体
+逼近能力，并不能单独保证局部峰值、功率突变阶段或独立测试工况下的最大误差
+满足要求。因此，最终POD阶数需同时满足以下条件：
+
+\begin{enumerate}
+	\item 累计能量达到预设阈值；
+	\item 独立测试工况的平均重构误差满足精度要求；
+	\item 最大节点误差及关键时刻误差不超过允许范围；
+	\item 随模态数增加，重构误差的下降已趋于平缓。
+\end{enumerate}
+
+对于温度场、径向位移场和轴向位移场，分别确定$r_T$、$r_{u_r}$和$r_{u_z}$，
+而不强制采用相同的保留阶数。
+
+\subsubsection{POD系数投影与场重构}
+
+对于任一训练或测试快照$\boldsymbol{q}(t,\boldsymbol{\mu})$，其在POD空间中的
+低维系数通过正交投影获得：
+
+\begin{equation}
+	\boldsymbol{a}_q(t,\boldsymbol{\mu})
+	=
+	\boldsymbol{\Phi}_q^{\mathrm{T}}
+	\left[
+	\boldsymbol{q}(t,\boldsymbol{\mu})
+	-
+	\boldsymbol{q}_{0}
+	\right],
+	\label{eq:pod_projection}
+\end{equation}
+
+其中，
+
+\begin{equation}
+	\boldsymbol{a}_q
+	=
+	\begin{bmatrix}
+		a_{q,1} &
+		a_{q,2} &
+		\cdots &
+		a_{q,r_q}
+	\end{bmatrix}^{\mathrm{T}}
+	\in\mathbb{R}^{r_q}.
+	\label{eq:pod_coefficient_vector}
+\end{equation}
+
+根据POD系数，原始高维场可重构为
+
+\begin{equation}
+	\widehat{\boldsymbol{q}}(t,\boldsymbol{\mu})
+	=
+	\boldsymbol{q}_{0}
+	+
+	\boldsymbol{\Phi}_q
+	\boldsymbol{a}_q(t,\boldsymbol{\mu}).
+	\label{eq:pod_reconstruction}
+\end{equation}
+
+因此，三个燃料性能场分别表示为
+
+\begin{equation}
+	\widehat{\boldsymbol{T}}
+	=
+	\boldsymbol{T}_{0}
+	+
+	\boldsymbol{\Phi}_{T}
+	\boldsymbol{a}_{T},
+	\label{eq:pod_temperature_reconstruction}
+\end{equation}
+
+\begin{equation}
+	\widehat{\boldsymbol{u}}_{r}
+	=
+	\boldsymbol{u}_{r,0}
+	+
+	\boldsymbol{\Phi}_{u_r}
+	\boldsymbol{a}_{u_r},
+	\label{eq:pod_radial_reconstruction}
+\end{equation}
+
+\begin{equation}
+	\widehat{\boldsymbol{u}}_{z}
+	=
+	\boldsymbol{u}_{z,0}
+	+
+	\boldsymbol{\Phi}_{u_z}
+	\boldsymbol{a}_{u_z}.
+	\label{eq:pod_axial_reconstruction}
+\end{equation}
+
+通过式~\eqref{eq:pod_reconstruction}，原始$N$维有限元场被压缩为$r_q$维POD
+系数。在$r_q\ll N$的条件下，代理模型不再直接预测全部节点值，而仅需建立输入
+参数与少量POD系数之间的映射关系，从而显著降低模型输出维数。
+
+\subsubsection{降阶重构误差评价}
+
+为评价POD空间对独立有限元场的表征能力，定义第$j$个快照的相对$L_2$重构误差为
+
+\begin{equation}
+	\varepsilon_{q,L_2}^{(j)}
+	=
+	\frac{
+		\left\|
+		\widehat{\boldsymbol{q}}^{(j)}
+		-
+		\boldsymbol{q}^{(j)}
+		\right\|_2
+	}{
+		\left\|
+		\boldsymbol{q}^{(j)}
+		\right\|_2
+	}.
+	\label{eq:pod_relative_l2_error}
+\end{equation}
+
+对于温度场，由于温度向量在全部输出时刻均具有非零范数，
+式~\eqref{eq:pod_relative_l2_error}可用于评价总体相对误差。
+对于位移场，初始时刻的位移接近零，直接计算相对误差会因分母趋近于零而产生
+无实际物理意义的巨大数值。因此，径向位移和轴向位移主要采用节点均方根误差：
+
+\begin{equation}
+	\mathrm{RMSE}_{q}^{(j)}
+	=
+	\sqrt{
+		\frac{1}{N}
+		\sum_{i=1}^{N}
+		\left[
+		\widehat{q}_{i}^{(j)}
+		-
+		q_{i}^{(j)}
+		\right]^2
+	},
+	\label{eq:pod_snapshot_rmse}
+\end{equation}
+
+以及最大绝对误差
+
+\begin{equation}
+	e_{q,\max}^{(j)}
+	=
+	\max_{1\leq i\leq N}
+	\left|
+	\widehat{q}_{i}^{(j)}
+	-
+	q_{i}^{(j)}
+	\right|.
+	\label{eq:pod_max_absolute_error}
+\end{equation}
+
+为便于不同工况或不同量级结果之间的比较，还可采用基于全局变化范围的归一化
+均方根误差：
+
+\begin{equation}
+	\mathrm{NRMSE}_{q}^{(j)}
+	=
+	\frac{
+		\mathrm{RMSE}_{q}^{(j)}
+	}{
+		q_{\max}-q_{\min}
+	},
+	\label{eq:pod_nrmse}
+\end{equation}
+
+式中，$q_{\max}$和$q_{\min}$分别为独立测试数据集中该场变量的全局最大值和
+最小值。
+
+\subsubsection{POD降阶模型与代理模型的衔接}
+
+POD本身完成的是高维有限元场的压缩表示，并不直接实现对未知工况的快速预测。
+对于新的输入参数$\boldsymbol{\mu}^{*}$和时刻$t^{*}$，若仍通过完整有限元场
+计算式~\eqref{eq:pod_projection}中的POD系数，则不能降低高保真模型的计算成本。
+因此，后续代理模型的核心任务是建立如下低维映射：
+
+\begin{equation}
+	\mathcal{M}_{q}:
+	\left(
+	t,\boldsymbol{\mu}
+	\right)
+	\longmapsto
+	\boldsymbol{a}_{q}(t,\boldsymbol{\mu}),
+	\label{eq:surrogate_coefficient_mapping}
+\end{equation}
+
+其中，$\mathcal{M}_{q}$可采用人工神经网络、高斯过程回归或其他非线性回归方法
+实现。代理模型预测得到POD系数后，再通过式~\eqref{eq:pod_reconstruction}
+恢复完整温度场和位移场。由此，整个快速预测流程可表示为
+
+\begin{equation}
+	\left(
+	t,\boldsymbol{\mu}
+	\right)
+	\xrightarrow{\ \mathcal{M}_{q}\ }
+	\widehat{\boldsymbol{a}}_{q}
+	\xrightarrow{\ \mathrm{POD重构}\ }
+	\widehat{\boldsymbol{q}}.
+	\label{eq:pod_surrogate_workflow}
+\end{equation}
+
+该方法将原本针对$N$个有限元节点的高维场预测问题转化为针对$r_q$个POD系数
+的低维回归问题，在保留主要空间演化特征的同时显著降低代理模型的输出维数和
+训练复杂度。后续将分别构建温度、径向位移和轴向位移对应的POD系数预测模型，
+并通过未参与训练的独立功率工况评价其场重构精度与计算加速效果。
+
+\xsubsection{场快照矩阵构建}
+{Construction of the Field Snapshot Matrix}
+
+\xsubsection{POD模态提取与阶数选取}
+{POD Mode Extraction and Rank Selection}
+
+\xsubsection{POD系数投影与场重构}
+{Projection of POD Coefficients and Field Reconstruction}
+
+\xsubsection{独立工况降阶重构验证}
+{Reduced-Order Reconstruction Verification Using an Independent Case}
+
+
+\xsection{代理模型构建与训练}
+{Surrogate Model Construction and Training}
+
+\xsubsection{代理模型输入与输出参数}
+{Inputs and Outputs of the Surrogate Model}
+
+\xsubsection{POD系数预测模型}
+{Prediction Model for POD Coefficients}
+
+\xsubsection{模型训练与超参数设置}
+{Model Training and Hyperparameter Configuration}
+
+
+\xsection{预测精度与计算效率分析}
+{Prediction Accuracy and Computational Efficiency}
+
+\xsubsection{POD系数预测精度}
+{Prediction Accuracy of POD Coefficients}
+
+\xsubsection{温度场与位移场重构精度}
+{Reconstruction Accuracy of Temperature and Displacement Fields}
+
+\xsubsection{泛化能力与误差分布}
+{Generalization Capability and Error Distribution}
+
+\xsubsection{计算效率对比}
+{Comparison of Computational Efficiency}
+
+
+\xsection{本章小结}
+{Chapter Summary}

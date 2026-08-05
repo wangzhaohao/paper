@@ -19,609 +19,278 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{inoue2004}{article}{}{}
-      \name{author}{6}{}{%
-        {{hash=2e059f4905ab4d6c5940a124781c5b77}{%
-           family={Inoue},
-           familyi={I\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=3840becdc9c219505ae4518cfcc60a67}{%
-           family={Maeda},
-           familyi={M\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=2e373cbb03ecca929f4aa66f0161941f}{%
-           family={Katsuyama},
-           familyi={K\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=f3cdb8626da1f3061662eabc60da2b84}{%
-           family={Tanaka},
-           familyi={T\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=7a7d8c4b322fa4d9a75c194600714779}{%
-           family={Mondo},
-           familyi={M\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=a2c6b82214aee2166f67a58854e25b9d}{%
-           family={Hisada},
+    \entry{vanuffelenReviewFuelPerformance2019}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=026a046d8f967073d5bd9f53b13c5789}{%
+           family={Van\bibnamedelima Uffelen},
+           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9ee7d6f9774c96af08c7b2fcb0942d49}{%
+           family={Hales},
            familyi={H\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6e5b0e6cca2615e3baa1c9fd08a1f208}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=a2572230c5553acc2fb6431d68bd265f}{%
+           family={Rossiter},
+           familyi={R\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=faf46ce288f2c26b9d01e9e3f98eb1ed}{%
+           family={Williamson},
+           familyi={W\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
       }
-      \name{namea}{6}{}{%
-        {{hash=2e059f4905ab4d6c5940a124781c5b77}{%
-           family={Inoue},
-           familyi={I\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=3840becdc9c219505ae4518cfcc60a67}{%
-           family={Maeda},
-           familyi={M\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=2e373cbb03ecca929f4aa66f0161941f}{%
-           family={Katsuyama},
-           familyi={K\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=f3cdb8626da1f3061662eabc60da2b84}{%
-           family={Tanaka},
-           familyi={T\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=7a7d8c4b322fa4d9a75c194600714779}{%
-           family={Mondo},
-           familyi={M\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=a2c6b82214aee2166f67a58854e25b9d}{%
-           family={Hisada},
+      \name{namea}{5}{}{%
+        {{hash=026a046d8f967073d5bd9f53b13c5789}{%
+           family={Van\bibnamedelima Uffelen},
+           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9ee7d6f9774c96af08c7b2fcb0942d49}{%
+           family={Hales},
            familyi={H\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6e5b0e6cca2615e3baa1c9fd08a1f208}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=a2572230c5553acc2fb6431d68bd265f}{%
+           family={Rossiter},
+           familyi={R\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=faf46ce288f2c26b9d01e9e3f98eb1ed}{%
+           family={Williamson},
+           familyi={W\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {english}%
       }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{d842c3a0882862b61018164dbc466ac2}
-      \strng{fullhash}{4315481774ff94374c715d0110345078}
-      \strng{fullhashraw}{4315481774ff94374c715d0110345078}
-      \strng{bibnamehash}{44c0a3d7330f97aca2e3cf3e258ac293}
-      \strng{authorbibnamehash}{44c0a3d7330f97aca2e3cf3e258ac293}
-      \strng{authornamehash}{d842c3a0882862b61018164dbc466ac2}
-      \strng{authorfullhash}{4315481774ff94374c715d0110345078}
-      \strng{authorfullhashraw}{4315481774ff94374c715d0110345078}
-      \strng{nameabibnamehash}{44c0a3d7330f97aca2e3cf3e258ac293}
-      \strng{nameanamehash}{d842c3a0882862b61018164dbc466ac2}
-      \strng{nameafullhash}{4315481774ff94374c715d0110345078}
-      \strng{nameafullhashraw}{4315481774ff94374c715d0110345078}
+      \strng{namehash}{567797e08d6bfaea23d5ddd365eba30d}
+      \strng{fullhash}{e113dcd9a5ac9c38a470e37ddb17cff4}
+      \strng{fullhashraw}{e113dcd9a5ac9c38a470e37ddb17cff4}
+      \strng{bibnamehash}{cfa5a135e756cf799411714aa9dd9b91}
+      \strng{authorbibnamehash}{cfa5a135e756cf799411714aa9dd9b91}
+      \strng{authornamehash}{567797e08d6bfaea23d5ddd365eba30d}
+      \strng{authorfullhash}{e113dcd9a5ac9c38a470e37ddb17cff4}
+      \strng{authorfullhashraw}{e113dcd9a5ac9c38a470e37ddb17cff4}
+      \strng{nameabibnamehash}{cfa5a135e756cf799411714aa9dd9b91}
+      \strng{nameanamehash}{567797e08d6bfaea23d5ddd365eba30d}
+      \strng{nameafullhash}{e113dcd9a5ac9c38a470e37ddb17cff4}
+      \strng{nameafullhashraw}{e113dcd9a5ac9c38a470e37ddb17cff4}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{issn}{0022-3115}
       \field{journaltitle}{Journal of Nuclear Materials}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{1}
-      \field{title}{Fuel-to-cladding gap evolution and its impact on thermal performance of high burnup fast reactor type uranium-plutonium oxide fuel pins}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{326}
-      \field{year}{2004}
-      \field{dateera}{ce}
-      \field{pages}{59\bibrangedash 73}
-      \range{pages}{15}
-      \keyw{inoue2004}
-      \warn{\item Datamodel: article entry 'inoue2004' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'inoue2004' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'inoue2004' (References/reference.bib): Invalid field 'publisher' for entrytype 'article'}
-    \endentry
-    \entry{brucklacher_et_al_1973}{inproceedings}{}{}
-      \name{author}{3}{}{%
-        {{hash=5d4bd54d436dc82385c70b374a15f4c2}{%
-           family={Brucklacher},
-           familyi={B\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
-           family={Dienst},
-           familyi={D\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-        {{hash=6e50409014ca03ee678f43cea53236e9}{%
-           family={Thummler},
-           familyi={T\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
-      }
-      \name{namea}{3}{}{%
-        {{hash=5d4bd54d436dc82385c70b374a15f4c2}{%
-           family={Brucklacher},
-           familyi={B\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
-           family={Dienst},
-           familyi={D\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-        {{hash=6e50409014ca03ee678f43cea53236e9}{%
-           family={Thummler},
-           familyi={T\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
-      \strng{fullhash}{720157d17dd182ec770e31135e49039f}
-      \strng{fullhashraw}{720157d17dd182ec770e31135e49039f}
-      \strng{bibnamehash}{720157d17dd182ec770e31135e49039f}
-      \strng{authorbibnamehash}{720157d17dd182ec770e31135e49039f}
-      \strng{authornamehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
-      \strng{authorfullhash}{720157d17dd182ec770e31135e49039f}
-      \strng{authorfullhashraw}{720157d17dd182ec770e31135e49039f}
-      \strng{nameabibnamehash}{720157d17dd182ec770e31135e49039f}
-      \strng{nameanamehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
-      \strng{nameafullhash}{720157d17dd182ec770e31135e49039f}
-      \strng{nameafullhashraw}{720157d17dd182ec770e31135e49039f}
-      \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings {REAKTORTAGUNG} 1973 des Deutschen Atomforums/{KTG} held in Karlsruhe}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
       \field{month}{4}
-      \field{title}{Creep Behavior of Oxide Fuels Under Neutron Irradiation, {P}aper 251}
-      \field{usera}{C}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{year}{1973}
-      \field{dateera}{ce}
-      \field{pages}{413\bibrangedash 416}
-      \range{pages}{4}
-      \keyw{brucklacher_et_al_1973}
-      \warn{\item Datamodel: inproceedings entry 'brucklacher_et_al_1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'brucklacher_et_al_1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
-    \endentry
-    \entry{brucklacher_et_al_1972}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=5d4bd54d436dc82385c70b374a15f4c2}{%
-           family={Brucklacher},
-           familyi={B\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
-           family={Dienst},
-           familyi={D\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \name{namea}{2}{}{%
-        {{hash=5d4bd54d436dc82385c70b374a15f4c2}{%
-           family={Brucklacher},
-           familyi={B\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
-           family={Dienst},
-           familyi={D\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
-      \strng{fullhash}{417523bfaff330574852ab7639381378}
-      \strng{fullhashraw}{417523bfaff330574852ab7639381378}
-      \strng{bibnamehash}{417523bfaff330574852ab7639381378}
-      \strng{authorbibnamehash}{417523bfaff330574852ab7639381378}
-      \strng{authornamehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
-      \strng{authorfullhash}{417523bfaff330574852ab7639381378}
-      \strng{authorfullhashraw}{417523bfaff330574852ab7639381378}
-      \strng{nameabibnamehash}{417523bfaff330574852ab7639381378}
-      \strng{nameanamehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
-      \strng{nameafullhash}{417523bfaff330574852ab7639381378}
-      \strng{nameafullhashraw}{417523bfaff330574852ab7639381378}
-      \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Nuclear Materials}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{3}
-      \field{title}{Creep behavior of ceramic nuclear fuels under neutron irradiation}
+      \field{shortjournal}{J. Nucl. Mater.}
+      \field{title}{A Review of Fuel Performance Modelling}
+      \field{urlday}{1}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
-      \field{volume}{42}
-      \field{year}{1972}
+      \field{volume}{516}
+      \field{year}{2019}
       \field{dateera}{ce}
-      \field{pages}{285\bibrangedash 296}
-      \range{pages}{12}
+      \field{urldateera}{ce}
+      \field{pages}{373\bibrangedash 412}
+      \range{pages}{40}
       \verb{doi}
-      \verb 10.1016/0022-3115(72)90079-7
+      \verb 10.1016/j.jnucmat.2018.12.037
       \endverb
-      \keyw{brucklacher_et_al_1972}
-      \warn{\item Datamodel: article entry 'brucklacher_et_al_1972' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brucklacher_et_al_1972' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{perrin_1972}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=780227d8c235aa2a8b7a71d4958536d8}{%
-           family={Perrin},
-           familyi={P\bibinitperiod},
-           given={J.\bibnamedelimi S.},
-           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=780227d8c235aa2a8b7a71d4958536d8}{%
-           family={Perrin},
-           familyi={P\bibinitperiod},
-           given={J.\bibnamedelimi S.},
-           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{fullhash}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{fullhashraw}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{bibnamehash}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{authorbibnamehash}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{authornamehash}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{authorfullhash}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{authorfullhashraw}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{nameabibnamehash}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{nameanamehash}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{nameafullhash}{780227d8c235aa2a8b7a71d4958536d8}
-      \strng{nameafullhashraw}{780227d8c235aa2a8b7a71d4958536d8}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Nuclear Materials}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{title}{Effect of irradiation on creep of {UO}\_2-{P}u{O}\_2}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{42}
-      \field{year}{1972}
-      \field{dateera}{ce}
-      \field{pages}{101\bibrangedash 104}
-      \range{pages}{4}
-      \keyw{perrin_1972}
-      \warn{\item Datamodel: article entry 'perrin_1972' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'perrin_1972' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{solomon_1973}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=37f85358e9fcb274c0eff58505e05daf}{%
-           family={Solomon},
-           familyi={S\bibinitperiod},
-           given={A.\bibnamedelimi A.},
-           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=37f85358e9fcb274c0eff58505e05daf}{%
-           family={Solomon},
-           familyi={S\bibinitperiod},
-           given={A.\bibnamedelimi A.},
-           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{fullhash}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{fullhashraw}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{bibnamehash}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{authorbibnamehash}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{authornamehash}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{authorfullhash}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{authorfullhashraw}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{nameabibnamehash}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{nameanamehash}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{nameafullhash}{37f85358e9fcb274c0eff58505e05daf}
-      \strng{nameafullhashraw}{37f85358e9fcb274c0eff58505e05daf}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{American Ceramic Society}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{3}
-      \field{title}{Radiation induced creep of {UO}\_2}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{56}
-      \field{year}{1973}
-      \field{dateera}{ce}
-      \field{pages}{164\bibrangedash 171}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1111/j.1151-2916.1973.tb15435.x
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0022311518310298
       \endverb
-      \keyw{solomon_1973}
-      \warn{\item Datamodel: article entry 'solomon_1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'solomon_1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{dienst_1977}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
-           family={Dienst},
-           familyi={D\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
-           family={Dienst},
-           familyi={D\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{fullhash}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{fullhashraw}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{bibnamehash}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{authorbibnamehash}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{authornamehash}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{authorfullhash}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{authorfullhashraw}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{nameabibnamehash}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{nameanamehash}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{nameafullhash}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \strng{nameafullhashraw}{dc6ae2ff466bc35c2ca293d97705cea7}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Nuclear Materials}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{title}{Irradiation induced creep of ceramic materials}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{65}
-      \field{year}{1977}
-      \field{dateera}{ce}
-      \field{pages}{1\bibrangedash 8}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1016/0022-3115(77)90035-6
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0022311518310298
       \endverb
-      \keyw{dienst_1977}
-      \warn{\item Datamodel: article entry 'dienst_1977' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dienst_1977' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+      \keyw{vanuffelenReviewFuelPerformance2019}
+      \warn{\item Datamodel: article entry 'vanuffelenReviewFuelPerformance2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'vanuffelenReviewFuelPerformance2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
-    \entry{hwr-1006}{report}{}{}
+    \entry{hagrmanSCDAPRELAP5MOD1995}{online}{}{}
       \name{author}{3}{}{%
-        {{hash=46040a61565c47752a74061600d50094}{%
-           family={Sakai},
-           familyi={S\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=ca8c1acb109d5f1b724c4b8149dabdfb}{%
-           family={Hanakawa},
+        {{hash=b68b07d89ff98af593a3df40b3da698e}{%
+           family={Hagrman},
            familyi={H\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-        {{hash=bb9efad32840e18b4413facfafa7ed7b}{%
-           family={Tverberg},
-           familyi={T\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
+           given={D.\bibnamedelimi T.},
+           giveni={D\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=96dfd9f5b138cf0c673b2e00c64609e0}{%
+           family={Allison},
+           familyi={A\bibinitperiod},
+           given={C.\bibnamedelimi M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=316b379c249913f8ccac9fec28b9efcf}{%
+           family={Berna},
+           familyi={B\bibinitperiod},
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
       \name{namea}{3}{}{%
-        {{hash=46040a61565c47752a74061600d50094}{%
-           family={Sakai},
-           familyi={S\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=ca8c1acb109d5f1b724c4b8149dabdfb}{%
-           family={Hanakawa},
+        {{hash=b68b07d89ff98af593a3df40b3da698e}{%
+           family={Hagrman},
            familyi={H\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-        {{hash=bb9efad32840e18b4413facfafa7ed7b}{%
-           family={Tverberg},
-           familyi={T\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
+           given={D.\bibnamedelimi T.},
+           giveni={D\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=96dfd9f5b138cf0c673b2e00c64609e0}{%
+           family={Allison},
+           familyi={A\bibinitperiod},
+           given={C.\bibnamedelimi M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=316b379c249913f8ccac9fec28b9efcf}{%
+           family={Berna},
+           familyi={B\bibinitperiod},
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
       \list{institution}{1}{%
-        {OECD Halden Reactor Project}%
+        {US Nuclear Regulatory Commission (NRC), Washington, DC (United States). Div. of Systems Technology; Lockheed Idaho Technologies Co., Idaho Falls, ID (United States)}%
       }
       \list{language}{1}{%
         {english}%
       }
       \list{publisher}{1}{%
-        {OECD Halden Reactor Project}%
+        {US Nuclear Regulatory Commission (NRC), Washington, DC (United States). Div. of Systems Technology; Lockheed Idaho Technologies Co., Idaho Falls, ID (United States)}%
       }
-      \strng{namehash}{7bd17799aaf2199634a5b9d91675fd87}
-      \strng{fullhash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
-      \strng{fullhashraw}{68cc0738bfcb4fd77c6b0edfb3a293f8}
-      \strng{bibnamehash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
-      \strng{authorbibnamehash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
-      \strng{authornamehash}{7bd17799aaf2199634a5b9d91675fd87}
-      \strng{authorfullhash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
-      \strng{authorfullhashraw}{68cc0738bfcb4fd77c6b0edfb3a293f8}
-      \strng{nameabibnamehash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
-      \strng{nameanamehash}{7bd17799aaf2199634a5b9d91675fd87}
-      \strng{nameafullhash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
-      \strng{nameafullhashraw}{68cc0738bfcb4fd77c6b0edfb3a293f8}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \strng{namehash}{34d96b5d2229a421d71f9a2e994faf3e}
+      \strng{fullhash}{0dd5bdf25492f8c0bcb746fafc44621f}
+      \strng{fullhashraw}{0dd5bdf25492f8c0bcb746fafc44621f}
+      \strng{bibnamehash}{0dd5bdf25492f8c0bcb746fafc44621f}
+      \strng{authorbibnamehash}{0dd5bdf25492f8c0bcb746fafc44621f}
+      \strng{authornamehash}{34d96b5d2229a421d71f9a2e994faf3e}
+      \strng{authorfullhash}{0dd5bdf25492f8c0bcb746fafc44621f}
+      \strng{authorfullhashraw}{0dd5bdf25492f8c0bcb746fafc44621f}
+      \strng{nameabibnamehash}{0dd5bdf25492f8c0bcb746fafc44621f}
+      \strng{nameanamehash}{34d96b5d2229a421d71f9a2e994faf3e}
+      \strng{nameafullhash}{0dd5bdf25492f8c0bcb746fafc44621f}
+      \strng{nameafullhashraw}{0dd5bdf25492f8c0bcb746fafc44621f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{entrysubtype}{report}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{number}{HWR-1006}
-      \field{title}{Investigation of fission induced creep of {UO2} and {C}r-doped fuel in {IFA}-701}
+      \field{month}{6}
+      \field{title}{SCDAP/RELAP5/MOD 3.1 Code Manual: MATPRO, A Library of Materials Properties for Light-Water-Reactor Accident Analysis. Volume 4}
       \field{usera}{R}
       \field{userd}{english}
       \field{userf}{english}
-      \field{year}{2011}
+      \field{year}{1995}
       \field{dateera}{ce}
-      \keyw{hwr-1006}
-      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Missing mandatory field 'type'}
+      \verb{urlraw}
+      \verb https://www.osti.gov/biblio/100327
+      \endverb
+      \verb{url}
+      \verb https://www.osti.gov/biblio/100327
+      \endverb
+      \keyw{hagrmanSCDAPRELAP5MOD1995,report}
+      \warn{\item Datamodel: online entry 'hagrmanSCDAPRELAP5MOD1995' (References/reference.bib): Invalid field 'institution' for entrytype 'online'}
+      \warn{\item Datamodel: online entry 'hagrmanSCDAPRELAP5MOD1995' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
+      \warn{\item Datamodel: online entry 'hagrmanSCDAPRELAP5MOD1995' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
+      \warn{\item Datamodel: online entry 'hagrmanSCDAPRELAP5MOD1995' (References/reference.bib): Invalid field 'publisher' for entrytype 'online'}
     \endentry
-    \entry{hwr-1039}{report}{}{}
-      \name{author}{1}{}{%
-        {{hash=46040a61565c47752a74061600d50094}{%
-           family={Sakai},
-           familyi={S\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=46040a61565c47752a74061600d50094}{%
-           family={Sakai},
-           familyi={S\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {OECD Halden Reactor Project}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{publisher}{1}{%
-        {OECD Halden Reactor Project}%
-      }
-      \strng{namehash}{46040a61565c47752a74061600d50094}
-      \strng{fullhash}{46040a61565c47752a74061600d50094}
-      \strng{fullhashraw}{46040a61565c47752a74061600d50094}
-      \strng{bibnamehash}{46040a61565c47752a74061600d50094}
-      \strng{authorbibnamehash}{46040a61565c47752a74061600d50094}
-      \strng{authornamehash}{46040a61565c47752a74061600d50094}
-      \strng{authorfullhash}{46040a61565c47752a74061600d50094}
-      \strng{authorfullhashraw}{46040a61565c47752a74061600d50094}
-      \strng{nameabibnamehash}{46040a61565c47752a74061600d50094}
-      \strng{nameanamehash}{46040a61565c47752a74061600d50094}
-      \strng{nameafullhash}{46040a61565c47752a74061600d50094}
-      \strng{nameafullhashraw}{46040a61565c47752a74061600d50094}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{HWR-1039}
-      \field{title}{The fuel creep test {IFA}-701: results after four irradiation cycles}
-      \field{usera}{R}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{year}{2013}
-      \field{dateera}{ce}
-      \keyw{hwr-1039}
-      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Missing mandatory field 'type'}
-    \endentry
-    \entry{hwr-1092}{report}{}{}
+    \entry{luscherMaterialPropertyCorrelations2010}{online}{}{}
       \name{author}{2}{}{%
-        {{hash=3ebdc71053a24af943c02445cfe9d568}{%
-           family={Szoke},
-           familyi={S\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-        {{hash=bb9efad32840e18b4413facfafa7ed7b}{%
-           family={Tverberg},
-           familyi={T\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
+        {{hash=d2d3613c1d83d9eeeca22767fe4a109f}{%
+           family={Luscher},
+           familyi={L\bibinitperiod},
+           given={Walter\bibnamedelima G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=6175bcebece3a3ccbfc1dc4d60128c51}{%
+           family={Geelhood},
+           familyi={G\bibinitperiod},
+           given={Kenneth\bibnamedelima J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \name{namea}{2}{}{%
-        {{hash=3ebdc71053a24af943c02445cfe9d568}{%
-           family={Szoke},
-           familyi={S\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-        {{hash=bb9efad32840e18b4413facfafa7ed7b}{%
-           family={Tverberg},
-           familyi={T\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {OECD Halden Reactor Project}%
+        {{hash=d2d3613c1d83d9eeeca22767fe4a109f}{%
+           family={Luscher},
+           familyi={L\bibinitperiod},
+           given={Walter\bibnamedelima G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=6175bcebece3a3ccbfc1dc4d60128c51}{%
+           family={Geelhood},
+           familyi={G\bibinitperiod},
+           given={Kenneth\bibnamedelima J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {english}%
       }
-      \list{publisher}{1}{%
-        {OECD Halden Reactor Project}%
-      }
-      \strng{namehash}{380e27ca223e23e446099fd616e54aaa}
-      \strng{fullhash}{3087789bc485f5f3e162641cf439bffd}
-      \strng{fullhashraw}{3087789bc485f5f3e162641cf439bffd}
-      \strng{bibnamehash}{3087789bc485f5f3e162641cf439bffd}
-      \strng{authorbibnamehash}{3087789bc485f5f3e162641cf439bffd}
-      \strng{authornamehash}{380e27ca223e23e446099fd616e54aaa}
-      \strng{authorfullhash}{3087789bc485f5f3e162641cf439bffd}
-      \strng{authorfullhashraw}{3087789bc485f5f3e162641cf439bffd}
-      \strng{nameabibnamehash}{3087789bc485f5f3e162641cf439bffd}
-      \strng{nameanamehash}{380e27ca223e23e446099fd616e54aaa}
-      \strng{nameafullhash}{3087789bc485f5f3e162641cf439bffd}
-      \strng{nameafullhashraw}{3087789bc485f5f3e162641cf439bffd}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \strng{namehash}{fcff70db97ba9fcf7370983977906ddb}
+      \strng{fullhash}{f35b9e19fca21711347402c842778853}
+      \strng{fullhashraw}{f35b9e19fca21711347402c842778853}
+      \strng{bibnamehash}{f35b9e19fca21711347402c842778853}
+      \strng{authorbibnamehash}{f35b9e19fca21711347402c842778853}
+      \strng{authornamehash}{fcff70db97ba9fcf7370983977906ddb}
+      \strng{authorfullhash}{f35b9e19fca21711347402c842778853}
+      \strng{authorfullhashraw}{f35b9e19fca21711347402c842778853}
+      \strng{nameabibnamehash}{f35b9e19fca21711347402c842778853}
+      \strng{nameanamehash}{fcff70db97ba9fcf7370983977906ddb}
+      \strng{nameafullhash}{f35b9e19fca21711347402c842778853}
+      \strng{nameafullhashraw}{f35b9e19fca21711347402c842778853}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{1}
+      \field{entrysubtype}{report}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{number}{HWR-1092}
-      \field{title}{Update on in-pile results from the fuel creep test {IFA}-701}
+      \field{month}{8}
+      \field{number}{PNNL-19417, NUREG/CR-7024, 1030897}
+      \field{shorttitle}{Material Property Correlations}
+      \field{title}{Material Property Correlations: Comparisons between FRAPCON-3.4, FRAPTRAN 1.4, and MATPRO}
+      \field{urlday}{1}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
       \field{usera}{R}
       \field{userd}{english}
       \field{userf}{english}
-      \field{year}{2014}
+      \field{year}{2010}
       \field{dateera}{ce}
-      \keyw{hwr-1092}
-      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Missing mandatory field 'type'}
+      \field{urldateera}{ce}
+      \field{pages}{PNNL\bibrangedash 19417\bibrangessep NUREG/CR\bibrangedash 7024\bibrangessep 1030897}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.2172/1030897
+      \endverb
+      \verb{urlraw}
+      \verb http://www.osti.gov/servlets/purl/1030897
+      \endverb
+      \verb{url}
+      \verb http://www.osti.gov/servlets/purl/1030897
+      \endverb
+      \keyw{luscherMaterialPropertyCorrelations2010,report}
+      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
+      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
+      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'number' for entrytype 'online'}
+      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'pages' for entrytype 'online'}
     \endentry
-    \entry{HalesBISONTheoryManual2016}{report}{}{}
+    \entry{halesBISONTheoryManual2016}{report}{}{}
       \name{author}{9}{}{%
         {{hash=b8cd40a202c96d55f984c13b55ac6ec0}{%
            family={Hales},
@@ -732,32 +401,629 @@
       \strng{nameafullhash}{e282a5b5ff9491a3d20c44cbea44af24}
       \strng{nameafullhashraw}{e282a5b5ff9491a3d20c44cbea44af24}
       \field{extraname}{1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{day}{1}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
       \field{month}{9}
       \field{number}{INL/EXT--13-29930, 1374503}
-      \field{title}{BISON Theory Manual The Equations behind Nuclear Fuel Analysis}
+      \field{title}{{{BISON Theory Manual The Equations}} behind {{Nuclear Fuel Analysis}}}
+      \field{urlday}{28}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
       \field{usera}{R}
       \field{userd}{english}
       \field{userf}{english}
       \field{year}{2016}
       \field{dateera}{ce}
+      \field{urldateera}{ce}
       \field{pages}{INL/EXT\bibrangedash 13-29930\bibrangessep 1374503}
       \range{pages}{-1}
       \verb{doi}
       \verb 10.2172/1374503
       \endverb
-      \keyw{HalesBISONTheoryManual2016}
-      \warn{\item Datamodel: report entry 'HalesBISONTheoryManual2016' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'HalesBISONTheoryManual2016' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'HalesBISONTheoryManual2016' (References/reference.bib): Missing mandatory field 'type'}
-      \warn{\item Datamodel: report entry 'HalesBISONTheoryManual2016' (References/reference.bib): Missing mandatory field 'institution'}
+      \verb{file}
+      \verb /Users/wangzhaohao/Zotero/storage/BEPNI5SZ/Hales 等 - 2016 - BISON Theory Manual The Equations behind Nuclear F.pdf
+      \endverb
+      \keyw{halesBISONTheoryManual2016}
+      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Missing mandatory field 'type'}
+      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Missing mandatory field 'institution'}
+    \endentry
+    \entry{crawfordFuelsSodiumcooledFast2007}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=83ff1423ddd4a7f7343139fc2547dbd5}{%
+           family={Crawford},
+           familyi={C\bibinitperiod},
+           given={Douglas\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=d5bdda2c655d2b2711a84c271935c087}{%
+           family={Porter},
+           familyi={P\bibinitperiod},
+           given={Douglas\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=cb7bc50e541e5e8f18d51984fc3d0349}{%
+           family={Hayes},
+           familyi={H\bibinitperiod},
+           given={Steven\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=83ff1423ddd4a7f7343139fc2547dbd5}{%
+           family={Crawford},
+           familyi={C\bibinitperiod},
+           given={Douglas\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=d5bdda2c655d2b2711a84c271935c087}{%
+           family={Porter},
+           familyi={P\bibinitperiod},
+           given={Douglas\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=cb7bc50e541e5e8f18d51984fc3d0349}{%
+           family={Hayes},
+           familyi={H\bibinitperiod},
+           given={Steven\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{ce20c4c1fd000cada063a8a1510f32b5}
+      \strng{fullhash}{e01fc2986a2ea38b5a9def41843e9b9d}
+      \strng{fullhashraw}{e01fc2986a2ea38b5a9def41843e9b9d}
+      \strng{bibnamehash}{e01fc2986a2ea38b5a9def41843e9b9d}
+      \strng{authorbibnamehash}{e01fc2986a2ea38b5a9def41843e9b9d}
+      \strng{authornamehash}{ce20c4c1fd000cada063a8a1510f32b5}
+      \strng{authorfullhash}{e01fc2986a2ea38b5a9def41843e9b9d}
+      \strng{authorfullhashraw}{e01fc2986a2ea38b5a9def41843e9b9d}
+      \strng{nameabibnamehash}{e01fc2986a2ea38b5a9def41843e9b9d}
+      \strng{nameanamehash}{ce20c4c1fd000cada063a8a1510f32b5}
+      \strng{nameafullhash}{e01fc2986a2ea38b5a9def41843e9b9d}
+      \strng{nameafullhashraw}{e01fc2986a2ea38b5a9def41843e9b9d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{9}
+      \field{number}{1--3}
+      \field{shortjournal}{J. Nucl. Mater.}
+      \field{shorttitle}{Fuels for Sodium-Cooled Fast Reactors}
+      \field{title}{Fuels for Sodium-Cooled Fast Reactors: US Perspective}
+      \field{urlday}{1}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{371}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{202\bibrangedash 231}
+      \range{pages}{30}
+      \verb{doi}
+      \verb 10.1016/j.jnucmat.2007.05.010
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311507007532
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311507007532
+      \endverb
+      \keyw{crawfordFuelsSodiumcooledFast2007}
+      \warn{\item Datamodel: article entry 'crawfordFuelsSodiumcooledFast2007' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'crawfordFuelsSodiumcooledFast2007' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{inoueThermalConductivityUranium2000}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=69224ef2a70f4b1a38f7791b51d298b5}{%
+           family={Inoue},
+           familyi={I\bibinitperiod},
+           given={Masaki},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=69224ef2a70f4b1a38f7791b51d298b5}{%
+           family={Inoue},
+           familyi={I\bibinitperiod},
+           given={Masaki},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{fullhash}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{fullhashraw}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{bibnamehash}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{authorbibnamehash}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{authornamehash}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{authorfullhash}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{authorfullhashraw}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{nameabibnamehash}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{nameanamehash}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{nameafullhash}{69224ef2a70f4b1a38f7791b51d298b5}
+      \strng{nameafullhashraw}{69224ef2a70f4b1a38f7791b51d298b5}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{12}
+      \field{number}{2--3}
+      \field{shortjournal}{J. Nucl. Mater.}
+      \field{title}{Thermal Conductivity of Uranium–Plutonium Oxide Fuel for Fast Reactors}
+      \field{urlday}{1}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{282}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{186\bibrangedash 195}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/S0022-3115(00)00407-4
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311500004074
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311500004074
+      \endverb
+      \keyw{inoueThermalConductivityUranium2000}
+      \warn{\item Datamodel: article entry 'inoueThermalConductivityUranium2000' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'inoueThermalConductivityUranium2000' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{pizzocriSCIANTIXNewOpen2020}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=bf121afc41309e364d7a6ef985aea3e9}{%
+           family={Pizzocri},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=40583ca23b167466dbad9d8fbcfa1949}{%
+           family={Barani},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=2a61915dcdd1d58bd1c10d2574ecbc8d}{%
+           family={Luzzi},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=bf121afc41309e364d7a6ef985aea3e9}{%
+           family={Pizzocri},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=40583ca23b167466dbad9d8fbcfa1949}{%
+           family={Barani},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=2a61915dcdd1d58bd1c10d2574ecbc8d}{%
+           family={Luzzi},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{faa25cb3d6b3e434009827b9fcb900a1}
+      \strng{fullhash}{756ab0f5112b5369609033e9d8edb06e}
+      \strng{fullhashraw}{756ab0f5112b5369609033e9d8edb06e}
+      \strng{bibnamehash}{756ab0f5112b5369609033e9d8edb06e}
+      \strng{authorbibnamehash}{756ab0f5112b5369609033e9d8edb06e}
+      \strng{authornamehash}{faa25cb3d6b3e434009827b9fcb900a1}
+      \strng{authorfullhash}{756ab0f5112b5369609033e9d8edb06e}
+      \strng{authorfullhashraw}{756ab0f5112b5369609033e9d8edb06e}
+      \strng{nameabibnamehash}{756ab0f5112b5369609033e9d8edb06e}
+      \strng{nameanamehash}{faa25cb3d6b3e434009827b9fcb900a1}
+      \strng{nameafullhash}{756ab0f5112b5369609033e9d8edb06e}
+      \strng{nameafullhashraw}{756ab0f5112b5369609033e9d8edb06e}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{JCR分区: Q1\\ 中科院分区升级版: 工程技术2区\\ 影响因子: 2.8\\ 5年影响因子: 3.1\\ EI: 是\\ TLDR: SCIANTIX is an open source 0D stand-alone computer code designed to be included/coupled as a module in existing fuel performance codes, developed with full numerical consistency and entirely verified with the method of manufactured solutions.}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{american}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{4}
+      \field{shortjournal}{J. Nucl. Mater.}
+      \field{shorttitle}{SCIANTIX}
+      \field{title}{SCIANTIX: A New Open Source Multi-Scale Code for Fission Gas Behaviour Modelling Designed for Nuclear Fuel Performance Codes}
+      \field{urlday}{31}
+      \field{urlmonth}{10}
+      \field{urlyear}{2024}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{532}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{152042}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.jnucmat.2020.152042
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311519313868
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311519313868
+      \endverb
+      \keyw{pizzocriSCIANTIXNewOpen2020}
+      \warn{\item Datamodel: article entry 'pizzocriSCIANTIXNewOpen2020' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'pizzocriSCIANTIXNewOpen2020' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{garnerComparisonSwellingIrradiation2000}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=ef957d519cd1e528d08cbd227fbe6829}{%
+           family={Garner},
+           familyi={G\bibinitperiod},
+           given={F.A},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b0d5d2aee64b0ad197662514cba35a4f}{%
+           family={Toloczko},
+           familyi={T\bibinitperiod},
+           given={M.B},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2c84d5a98514bab3a97b92e9dd801dc0}{%
+           family={Sencer},
+           familyi={S\bibinitperiod},
+           given={B.H},
+           giveni={B\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=ef957d519cd1e528d08cbd227fbe6829}{%
+           family={Garner},
+           familyi={G\bibinitperiod},
+           given={F.A},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b0d5d2aee64b0ad197662514cba35a4f}{%
+           family={Toloczko},
+           familyi={T\bibinitperiod},
+           given={M.B},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2c84d5a98514bab3a97b92e9dd801dc0}{%
+           family={Sencer},
+           familyi={S\bibinitperiod},
+           given={B.H},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{3576c85e99d5b9fd621f1ad4ef3c0683}
+      \strng{fullhash}{02eedcac2af731b48f6f339bfdfe4f86}
+      \strng{fullhashraw}{02eedcac2af731b48f6f339bfdfe4f86}
+      \strng{bibnamehash}{02eedcac2af731b48f6f339bfdfe4f86}
+      \strng{authorbibnamehash}{02eedcac2af731b48f6f339bfdfe4f86}
+      \strng{authornamehash}{3576c85e99d5b9fd621f1ad4ef3c0683}
+      \strng{authorfullhash}{02eedcac2af731b48f6f339bfdfe4f86}
+      \strng{authorfullhashraw}{02eedcac2af731b48f6f339bfdfe4f86}
+      \strng{nameabibnamehash}{02eedcac2af731b48f6f339bfdfe4f86}
+      \strng{nameanamehash}{3576c85e99d5b9fd621f1ad4ef3c0683}
+      \strng{nameafullhash}{02eedcac2af731b48f6f339bfdfe4f86}
+      \strng{nameafullhashraw}{02eedcac2af731b48f6f339bfdfe4f86}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{1}
+      \field{number}{1--3}
+      \field{shortjournal}{J. Nucl. Mater.}
+      \field{title}{Comparison of Swelling and Irradiation Creep Behavior of Fcc-Austenitic and Bcc-Ferritic/Martensitic Alloys at High Neutron Exposure}
+      \field{urlday}{1}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{276}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{123\bibrangedash 142}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1016/S0022-3115(99)00225-1
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311599002251
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311599002251
+      \endverb
+      \keyw{garnerComparisonSwellingIrradiation2000}
+      \warn{\item Datamodel: article entry 'garnerComparisonSwellingIrradiation2000' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'garnerComparisonSwellingIrradiation2000' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{lathaThermalCreepProperties2008}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=8a7b189364ce54685a327a80e1c5b552}{%
+           family={Latha},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4d73fb9243b7d08474451f77a93fc3fe}{%
+           family={Mathew},
+           familyi={M\bibinitperiod},
+           given={M.D.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=220f6f24b886350dc6f3553100546b46}{%
+           family={Parameswaran},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=20306aa819fa27a17be3156b002fb92d}{%
+           family={Bhanu\bibnamedelimb Sankara\bibnamedelima Rao},
+           familyi={B\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=18d8921382f672b1e4824499dd040789}{%
+           family={Mannan},
+           familyi={M\bibinitperiod},
+           given={S.L.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \name{namea}{5}{}{%
+        {{hash=8a7b189364ce54685a327a80e1c5b552}{%
+           family={Latha},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4d73fb9243b7d08474451f77a93fc3fe}{%
+           family={Mathew},
+           familyi={M\bibinitperiod},
+           given={M.D.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=220f6f24b886350dc6f3553100546b46}{%
+           family={Parameswaran},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=20306aa819fa27a17be3156b002fb92d}{%
+           family={Bhanu\bibnamedelimb Sankara\bibnamedelima Rao},
+           familyi={B\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=18d8921382f672b1e4824499dd040789}{%
+           family={Mannan},
+           familyi={M\bibinitperiod},
+           given={S.L.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{63e03b5035d27dc9eecb16cda71095ad}
+      \strng{fullhash}{220fc8dc939f67ded1e8127fc712fde8}
+      \strng{fullhashraw}{220fc8dc939f67ded1e8127fc712fde8}
+      \strng{bibnamehash}{2182e4a1e1feb032a2380939ca889543}
+      \strng{authorbibnamehash}{2182e4a1e1feb032a2380939ca889543}
+      \strng{authornamehash}{63e03b5035d27dc9eecb16cda71095ad}
+      \strng{authorfullhash}{220fc8dc939f67ded1e8127fc712fde8}
+      \strng{authorfullhashraw}{220fc8dc939f67ded1e8127fc712fde8}
+      \strng{nameabibnamehash}{2182e4a1e1feb032a2380939ca889543}
+      \strng{nameanamehash}{63e03b5035d27dc9eecb16cda71095ad}
+      \strng{nameafullhash}{220fc8dc939f67ded1e8127fc712fde8}
+      \strng{nameafullhashraw}{220fc8dc939f67ded1e8127fc712fde8}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{03080161}
+      \field{journaltitle}{International Journal of Pressure Vessels and Piping}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{Thermal Creep Properties of Alloy D9 Stainless Steel and 316 Stainless Steel Fuel Clad Tubes}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{85}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{866\bibrangedash 870}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1016/j.ijpvp.2008.07.002
+      \endverb
+      \verb{file}
+      \verb Latha_2008_Thermal-creep-properties-of-alloy-d9.pdf
+      \endverb
+      \keyw{316SS thermal creep,D9 thermal creep}
+      \warn{\item Datamodel: article entry 'lathaThermalCreepProperties2008' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'lathaThermalCreepProperties2008' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'lathaThermalCreepProperties2008' (References/reference.bib): Invalid field 'publisher' for entrytype 'article'}
+    \endentry
+    \entry{leibowitzThermalConductivityThermal1988}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=28a586436def2762c81bf31b94219002}{%
+           family={Leibowitz},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=dcaad282b72f702981c1579b03c37f19}{%
+           family={Blomquist},
+           familyi={B\bibinitperiod},
+           given={R.\bibnamedelimi A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=28a586436def2762c81bf31b94219002}{%
+           family={Leibowitz},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=dcaad282b72f702981c1579b03c37f19}{%
+           family={Blomquist},
+           familyi={B\bibinitperiod},
+           given={R.\bibnamedelimi A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{c1eca6a1866b97bcbca9d7a165404ab8}
+      \strng{fullhash}{441e46216edc8058588c5ae7d78625ea}
+      \strng{fullhashraw}{441e46216edc8058588c5ae7d78625ea}
+      \strng{bibnamehash}{441e46216edc8058588c5ae7d78625ea}
+      \strng{authorbibnamehash}{441e46216edc8058588c5ae7d78625ea}
+      \strng{authornamehash}{c1eca6a1866b97bcbca9d7a165404ab8}
+      \strng{authorfullhash}{441e46216edc8058588c5ae7d78625ea}
+      \strng{authorfullhashraw}{441e46216edc8058588c5ae7d78625ea}
+      \strng{nameabibnamehash}{441e46216edc8058588c5ae7d78625ea}
+      \strng{nameanamehash}{c1eca6a1866b97bcbca9d7a165404ab8}
+      \strng{nameafullhash}{441e46216edc8058588c5ae7d78625ea}
+      \strng{nameafullhashraw}{441e46216edc8058588c5ae7d78625ea}
+      \field{extraname}{1}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{影响因子: 2.5}
+      \field{day}{1}
+      \field{issn}{1572-9567}
+      \field{journaltitle}{International Journal of Thermophysics}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{9}
+      \field{number}{5}
+      \field{shortjournal}{Int. J. Thermophys.}
+      \field{title}{Thermal Conductivity and Thermal Expansion of Stainless Steels D9 and HT9}
+      \field{urlday}{31}
+      \field{urlmonth}{10}
+      \field{urlyear}{2024}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{9}
+      \field{year}{1988}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{873\bibrangedash 883}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1007/BF00503252
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/BF00503252
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/BF00503252
+      \endverb
+      \keyw{leibowitzThermalConductivityThermal1988}
+      \warn{\item Datamodel: article entry 'leibowitzThermalConductivityThermal1988' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'leibowitzThermalConductivityThermal1988' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{chenIRRADIATIONEFFECTSHT92013}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=aacae5367d208d4ae582716f66fe126d}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yiren},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=aacae5367d208d4ae582716f66fe126d}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yiren},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{aacae5367d208d4ae582716f66fe126d}
+      \strng{fullhash}{aacae5367d208d4ae582716f66fe126d}
+      \strng{fullhashraw}{aacae5367d208d4ae582716f66fe126d}
+      \strng{bibnamehash}{aacae5367d208d4ae582716f66fe126d}
+      \strng{authorbibnamehash}{aacae5367d208d4ae582716f66fe126d}
+      \strng{authornamehash}{aacae5367d208d4ae582716f66fe126d}
+      \strng{authorfullhash}{aacae5367d208d4ae582716f66fe126d}
+      \strng{authorfullhashraw}{aacae5367d208d4ae582716f66fe126d}
+      \strng{nameabibnamehash}{aacae5367d208d4ae582716f66fe126d}
+      \strng{nameanamehash}{aacae5367d208d4ae582716f66fe126d}
+      \strng{nameafullhash}{aacae5367d208d4ae582716f66fe126d}
+      \strng{nameafullhashraw}{aacae5367d208d4ae582716f66fe126d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{17385733}
+      \field{journaltitle}{Nuclear Engineering and Technology}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{6}
+      \field{number}{3}
+      \field{shortjournal}{Nucl. Eng. Technol.}
+      \field{title}{IRRADIATION EFFECTS OF HT-9 MARTENSITIC STEEL}
+      \field{urlday}{1}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{45}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{311\bibrangedash 322}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.5516/NET.07.2013.706
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1738573315300176
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1738573315300176
+      \endverb
+      \keyw{chenIRRADIATIONEFFECTSHT92013}
+      \warn{\item Datamodel: article entry 'chenIRRADIATIONEFFECTSHT92013' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'chenIRRADIATIONEFFECTSHT92013' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
     \entry{MiletJNM1983}{article}{}{}
       \name{author}{2}{}{%
@@ -799,8 +1065,8 @@
       \strng{nameanamehash}{10eaf3b87897499637c40af244611c4f}
       \strng{nameafullhash}{fae210ace7b0d54caa2999f1146643cf}
       \strng{nameafullhashraw}{fae210ace7b0d54caa2999f1146643cf}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Nuclear Materials}
@@ -860,8 +1126,8 @@
       \strng{nameanamehash}{6daea4e8611667168209cb5038e481e5}
       \strng{nameafullhash}{bbe98333bb449e3b98a77152395d1af0}
       \strng{nameafullhashraw}{bbe98333bb449e3b98a77152395d1af0}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{annotation}{影响因子: 2.8}
@@ -1805,8 +2071,8 @@
       \strng{nameanamehash}{0b569883404c129450dfba37edbf6a4a}
       \strng{nameafullhash}{33257af2b1f991d70c14c2280e41d749}
       \strng{nameafullhashraw}{33257af2b1f991d70c14c2280e41d749}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{issn}{00223115}
@@ -3282,8 +3548,8 @@
       \strng{nameanamehash}{35a9ece2eb7546bf611a2cd91f34e0b5}
       \strng{nameafullhash}{35a9ece2eb7546bf611a2cd91f34e0b5}
       \strng{nameafullhashraw}{35a9ece2eb7546bf611a2cd91f34e0b5}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{00016160}
@@ -4409,8 +4675,8 @@
       \strng{nameanamehash}{1c532942cc9be9d10175a83128c9a81d}
       \strng{nameafullhash}{1c532942cc9be9d10175a83128c9a81d}
       \strng{nameafullhashraw}{1c532942cc9be9d10175a83128c9a81d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-85573-569-9}
@@ -4927,6 +5193,7 @@
       \strng{nameanamehash}{c1eca6a1866b97bcbca9d7a165404ab8}
       \strng{nameafullhash}{441e46216edc8058588c5ae7d78625ea}
       \strng{nameafullhashraw}{441e46216edc8058588c5ae7d78625ea}
+      \field{extraname}{2}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
@@ -5153,8 +5420,8 @@
       \strng{nameanamehash}{781d9727f59171661c07dd44dc5b6d5a}
       \strng{nameafullhash}{1a00bf4223201b997d9a721c97654e7d}
       \strng{nameafullhashraw}{1a00bf4223201b997d9a721c97654e7d}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -5791,114 +6058,6 @@
       \warn{\item Datamodel: article entry 'OnizawaDevelopmentCreepProperty2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
       \warn{\item Datamodel: article entry 'OnizawaDevelopmentCreepProperty2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
-    \entry{lathaThermalCreepProperties2008}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=8a7b189364ce54685a327a80e1c5b552}{%
-           family={Latha},
-           familyi={L\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=4d73fb9243b7d08474451f77a93fc3fe}{%
-           family={Mathew},
-           familyi={M\bibinitperiod},
-           given={M.D.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=220f6f24b886350dc6f3553100546b46}{%
-           family={Parameswaran},
-           familyi={P\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=20306aa819fa27a17be3156b002fb92d}{%
-           family={Bhanu\bibnamedelimb Sankara\bibnamedelima Rao},
-           familyi={B\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=18d8921382f672b1e4824499dd040789}{%
-           family={Mannan},
-           familyi={M\bibinitperiod},
-           given={S.L.},
-           giveni={S\bibinitperiod}}}%
-      }
-      \name{namea}{5}{}{%
-        {{hash=8a7b189364ce54685a327a80e1c5b552}{%
-           family={Latha},
-           familyi={L\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=4d73fb9243b7d08474451f77a93fc3fe}{%
-           family={Mathew},
-           familyi={M\bibinitperiod},
-           given={M.D.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=220f6f24b886350dc6f3553100546b46}{%
-           family={Parameswaran},
-           familyi={P\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=20306aa819fa27a17be3156b002fb92d}{%
-           family={Bhanu\bibnamedelimb Sankara\bibnamedelima Rao},
-           familyi={B\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=18d8921382f672b1e4824499dd040789}{%
-           family={Mannan},
-           familyi={M\bibinitperiod},
-           given={S.L.},
-           giveni={S\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{63e03b5035d27dc9eecb16cda71095ad}
-      \strng{fullhash}{220fc8dc939f67ded1e8127fc712fde8}
-      \strng{fullhashraw}{220fc8dc939f67ded1e8127fc712fde8}
-      \strng{bibnamehash}{2182e4a1e1feb032a2380939ca889543}
-      \strng{authorbibnamehash}{2182e4a1e1feb032a2380939ca889543}
-      \strng{authornamehash}{63e03b5035d27dc9eecb16cda71095ad}
-      \strng{authorfullhash}{220fc8dc939f67ded1e8127fc712fde8}
-      \strng{authorfullhashraw}{220fc8dc939f67ded1e8127fc712fde8}
-      \strng{nameabibnamehash}{2182e4a1e1feb032a2380939ca889543}
-      \strng{nameanamehash}{63e03b5035d27dc9eecb16cda71095ad}
-      \strng{nameafullhash}{220fc8dc939f67ded1e8127fc712fde8}
-      \strng{nameafullhashraw}{220fc8dc939f67ded1e8127fc712fde8}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{03080161}
-      \field{journaltitle}{International Journal of Pressure Vessels and Piping}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{month}{12}
-      \field{number}{12}
-      \field{title}{Thermal Creep Properties of Alloy D9 Stainless Steel and 316 Stainless Steel Fuel Clad Tubes}
-      \field{urlday}{20}
-      \field{urlmonth}{11}
-      \field{urlyear}{2024}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{85}
-      \field{year}{2008}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{866\bibrangedash 870}
-      \range{pages}{5}
-      \verb{doi}
-      \verb 10.1016/j.ijpvp.2008.07.002
-      \endverb
-      \verb{file}
-      \verb Latha_2008_Thermal-creep-properties-of-alloy-d9.pdf
-      \endverb
-      \keyw{316SS thermal creep,D9 thermal creep}
-      \warn{\item Datamodel: article entry 'lathaThermalCreepProperties2008' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lathaThermalCreepProperties2008' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lathaThermalCreepProperties2008' (References/reference.bib): Invalid field 'publisher' for entrytype 'article'}
-    \endentry
     \entry{KARAHAN2010283}{article}{}{}
       \name{author}{2}{}{%
         {{hash=c69b33b230bec8d31f85263ad0b4717e}{%
@@ -6238,8 +6397,8 @@
       \strng{nameanamehash}{296298ac09e8d99e5de872aa92693a7d}
       \strng{nameafullhash}{296298ac09e8d99e5de872aa92693a7d}
       \strng{nameafullhashraw}{296298ac09e8d99e5de872aa92693a7d}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{1}
@@ -6602,150 +6761,6 @@
       \warn{\item Datamodel: report entry 'hofmanMetallicFuelsHandbook2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
       \warn{\item Datamodel: report entry 'hofmanMetallicFuelsHandbook2019' (References/reference.bib): Missing mandatory field 'type'}
       \warn{\item Datamodel: report entry 'hofmanMetallicFuelsHandbook2019' (References/reference.bib): Missing mandatory field 'institution'}
-    \endentry
-    \entry{halesBISONTheoryManual2016}{report}{}{}
-      \name{author}{9}{}{%
-        {{hash=b8cd40a202c96d55f984c13b55ac6ec0}{%
-           family={Hales},
-           familyi={H\bibinitperiod},
-           given={J.\bibnamedelimi D.},
-           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=43d463dbcef1630a3c0772e5f04a1c70}{%
-           family={Williamson},
-           familyi={W\bibinitperiod},
-           given={R.\bibnamedelimi L.},
-           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-        {{hash=1e3437e923c512bbedf787141e6b6336}{%
-           family={Novascone},
-           familyi={N\bibinitperiod},
-           given={S.\bibnamedelimi R.},
-           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=deb9ed075389ae7d489b7620ea22ae17}{%
-           family={Pastore},
-           familyi={P\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-        {{hash=418f08e27a38eb456e5d67d14b30ec49}{%
-           family={Spencer},
-           familyi={S\bibinitperiod},
-           given={B.\bibnamedelimi W.},
-           giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-        {{hash=4762b89995049822864fb9896229a6b4}{%
-           family={Stafford},
-           familyi={S\bibinitperiod},
-           given={D.\bibnamedelimi S.},
-           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-        {{hash=f85d3fe8f0d3880a0efbd19cb9429667}{%
-           family={Gamble},
-           familyi={G\bibinitperiod},
-           given={K.\bibnamedelimi A.},
-           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=6bec3343ec6469d2409aa91a3faf0412}{%
-           family={Perez},
-           familyi={P\bibinitperiod},
-           given={D.\bibnamedelimi M.},
-           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=d8525af2f6ab588f2e4d6e5abd42ca8b}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \name{namea}{9}{}{%
-        {{hash=b8cd40a202c96d55f984c13b55ac6ec0}{%
-           family={Hales},
-           familyi={H\bibinitperiod},
-           given={J.\bibnamedelimi D.},
-           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=43d463dbcef1630a3c0772e5f04a1c70}{%
-           family={Williamson},
-           familyi={W\bibinitperiod},
-           given={R.\bibnamedelimi L.},
-           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-        {{hash=1e3437e923c512bbedf787141e6b6336}{%
-           family={Novascone},
-           familyi={N\bibinitperiod},
-           given={S.\bibnamedelimi R.},
-           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=deb9ed075389ae7d489b7620ea22ae17}{%
-           family={Pastore},
-           familyi={P\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-        {{hash=418f08e27a38eb456e5d67d14b30ec49}{%
-           family={Spencer},
-           familyi={S\bibinitperiod},
-           given={B.\bibnamedelimi W.},
-           giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-        {{hash=4762b89995049822864fb9896229a6b4}{%
-           family={Stafford},
-           familyi={S\bibinitperiod},
-           given={D.\bibnamedelimi S.},
-           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-        {{hash=f85d3fe8f0d3880a0efbd19cb9429667}{%
-           family={Gamble},
-           familyi={G\bibinitperiod},
-           given={K.\bibnamedelimi A.},
-           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=6bec3343ec6469d2409aa91a3faf0412}{%
-           family={Perez},
-           familyi={P\bibinitperiod},
-           given={D.\bibnamedelimi M.},
-           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=d8525af2f6ab588f2e4d6e5abd42ca8b}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{8a9c971fb1d59cfc841c4954462b0a64}
-      \strng{fullhash}{e282a5b5ff9491a3d20c44cbea44af24}
-      \strng{fullhashraw}{e282a5b5ff9491a3d20c44cbea44af24}
-      \strng{bibnamehash}{ef91790788688622a1c9ded73677017e}
-      \strng{authorbibnamehash}{ef91790788688622a1c9ded73677017e}
-      \strng{authornamehash}{8a9c971fb1d59cfc841c4954462b0a64}
-      \strng{authorfullhash}{e282a5b5ff9491a3d20c44cbea44af24}
-      \strng{authorfullhashraw}{e282a5b5ff9491a3d20c44cbea44af24}
-      \strng{nameabibnamehash}{ef91790788688622a1c9ded73677017e}
-      \strng{nameanamehash}{8a9c971fb1d59cfc841c4954462b0a64}
-      \strng{nameafullhash}{e282a5b5ff9491a3d20c44cbea44af24}
-      \strng{nameafullhashraw}{e282a5b5ff9491a3d20c44cbea44af24}
-      \field{extraname}{2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{month}{9}
-      \field{number}{INL/EXT--13-29930, 1374503}
-      \field{title}{{{BISON Theory Manual The Equations}} behind {{Nuclear Fuel Analysis}}}
-      \field{urlday}{28}
-      \field{urlmonth}{5}
-      \field{urlyear}{2024}
-      \field{usera}{R}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{year}{2016}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{INL/EXT\bibrangedash 13-29930\bibrangessep 1374503}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb 10.2172/1374503
-      \endverb
-      \verb{file}
-      \verb /Users/wangzhaohao/Zotero/storage/BEPNI5SZ/Hales 等 - 2016 - BISON Theory Manual The Equations behind Nuclear F.pdf
-      \endverb
-      \keyw{halesBISONTheoryManual2016}
-      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Missing mandatory field 'type'}
-      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Missing mandatory field 'institution'}
     \endentry
     \entry{Ryu:2011cy}{article}{}{}
       \name{author}{3}{}{%
@@ -7487,8 +7502,8 @@
       \strng{nameanamehash}{b07f476f05683046a37db43c6469eed8}
       \strng{nameafullhash}{8e6bc808d3eba47210686815b5de2c8d}
       \strng{nameafullhashraw}{8e6bc808d3eba47210686815b5de2c8d}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{影响因子: 1.9}
@@ -11043,95 +11058,6 @@
       \warn{\item Datamodel: article entry 'zulloSCIANTIXCodeFission2023' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
       \warn{\item Datamodel: article entry 'zulloSCIANTIXCodeFission2023' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
-    \entry{pizzocriSCIANTIXNewOpen2020}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=bf121afc41309e364d7a6ef985aea3e9}{%
-           family={Pizzocri},
-           familyi={P\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=40583ca23b167466dbad9d8fbcfa1949}{%
-           family={Barani},
-           familyi={B\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
-        {{hash=2a61915dcdd1d58bd1c10d2574ecbc8d}{%
-           family={Luzzi},
-           familyi={L\bibinitperiod},
-           given={L.},
-           giveni={L\bibinitperiod}}}%
-      }
-      \name{namea}{3}{}{%
-        {{hash=bf121afc41309e364d7a6ef985aea3e9}{%
-           family={Pizzocri},
-           familyi={P\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=40583ca23b167466dbad9d8fbcfa1949}{%
-           family={Barani},
-           familyi={B\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
-        {{hash=2a61915dcdd1d58bd1c10d2574ecbc8d}{%
-           family={Luzzi},
-           familyi={L\bibinitperiod},
-           given={L.},
-           giveni={L\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{faa25cb3d6b3e434009827b9fcb900a1}
-      \strng{fullhash}{756ab0f5112b5369609033e9d8edb06e}
-      \strng{fullhashraw}{756ab0f5112b5369609033e9d8edb06e}
-      \strng{bibnamehash}{756ab0f5112b5369609033e9d8edb06e}
-      \strng{authorbibnamehash}{756ab0f5112b5369609033e9d8edb06e}
-      \strng{authornamehash}{faa25cb3d6b3e434009827b9fcb900a1}
-      \strng{authorfullhash}{756ab0f5112b5369609033e9d8edb06e}
-      \strng{authorfullhashraw}{756ab0f5112b5369609033e9d8edb06e}
-      \strng{nameabibnamehash}{756ab0f5112b5369609033e9d8edb06e}
-      \strng{nameanamehash}{faa25cb3d6b3e434009827b9fcb900a1}
-      \strng{nameafullhash}{756ab0f5112b5369609033e9d8edb06e}
-      \strng{nameafullhashraw}{756ab0f5112b5369609033e9d8edb06e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{annotation}{JCR分区: Q1\\ 中科院分区升级版: 工程技术2区\\ 影响因子: 2.8\\ 5年影响因子: 3.1\\ EI: 是\\ TLDR: SCIANTIX is an open source 0D stand-alone computer code designed to be included/coupled as a module in existing fuel performance codes, developed with full numerical consistency and entirely verified with the method of manufactured solutions.}
-      \field{issn}{00223115}
-      \field{journaltitle}{Journal of Nuclear Materials}
-      \field{langid}{american}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{month}{4}
-      \field{shortjournal}{J. Nucl. Mater.}
-      \field{shorttitle}{SCIANTIX}
-      \field{title}{SCIANTIX: A New Open Source Multi-Scale Code for Fission Gas Behaviour Modelling Designed for Nuclear Fuel Performance Codes}
-      \field{urlday}{31}
-      \field{urlmonth}{10}
-      \field{urlyear}{2024}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{532}
-      \field{year}{2020}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{152042}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/j.jnucmat.2020.152042
-      \endverb
-      \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311519313868
-      \endverb
-      \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311519313868
-      \endverb
-      \keyw{pizzocriSCIANTIXNewOpen2020}
-      \warn{\item Datamodel: article entry 'pizzocriSCIANTIXNewOpen2020' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'pizzocriSCIANTIXNewOpen2020' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
     \entry{王永华2013现代电气控制及}{book}{}{}
       \name{author}{4}{}{%
         {{hash=584194fd865789e893240916454b04ca}{%
@@ -12257,8 +12183,8 @@
       \strng{nameanamehash}{cd77f7e6ae7fb5adedb53b39a0cdc4b4}
       \strng{nameafullhash}{1457e2a007b56022e33b24487b645c23}
       \strng{nameafullhashraw}{1457e2a007b56022e33b24487b645c23}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Molecules in gas and liquid states, as well as in solution, exhibit significant and random Brownian motion. Molecules in the solid-state, although strongly immobilized, can still exhibit significant intramolecular dynamics. However, in most framework materials, these intramolecular dynamics are driven by temperature, and therefore are neither controlled nor spatially or temporarily aligned. In recent years, several examples of molecular machines that allow for a stimuli-responsive control of dynamical motion, such as rotation, have been reported. In this contribution, we investigate the local and global properties of a Lennard-Jones (LJ) fluid surrounding a molecular motor and consider the influence of cooperative and non-directional rotation for a molecular motor-containing pore system. This study uses classical molecular dynamics simulations to describe a minimal model, which was developed to resemble known molecular motors. The properties of an LJ liquid surrounding an isolated molecular motor remain mostly unaffected by the introduced rotation. We then considered an arrangement of motors within a one-dimensional pore. Changes in diffusivity for pore sizes approaching the length of the rotor were observed, resulting from rotation of the motors. We also considered the influence of cooperative motor directionality on the directional transport properties of this confined fluid. Importantly, we discovered that specific unidirectional rotation of altitudinal motors can produce directed diffusion. This study provides an essential insight into molecular machine-containing frameworks, highlighting the specific structural arrangements that can produce directional mass transport.}
@@ -12320,8 +12246,8 @@
       \strng{nameanamehash}{334d2390688d596e650cc07a9fee102c}
       \strng{nameafullhash}{334d2390688d596e650cc07a9fee102c}
       \strng{nameafullhashraw}{334d2390688d596e650cc07a9fee102c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This research studied the comprehensive dielectric properties of copper (Cu)/polyethylene terephthalate (PET) and copper/polytetrafluoroethylene (PTFE) composite films under the influence of copper nanoparticle (CuNP) sputtering time. Copper thin film was grown on flexible PET and PTFE using the ion beam sputtering technique. X-ray diffraction confirmed that CuNPs had been successfully synthesized on the polymer substrate. The electrical conductivity sigma(AC) of the films was measured using alternating-current conductivity impedance in the frequency range of 10(2)-10(6) Hz. It increased from 1.2 x 10(-6) S/cm for PET to 9.65 x 10(-7) S/cm for 75 min copper/PET and from 6.38 x 10(-7) S/cm for PTFE to 9.24 x 10(-1) S/cm for 75 min copper/PTFE. The dielectric constant epsilon' increased from 0.62 for pristine PET to 1.19 for 25 min copper/PET and from 1.88 for pristine PTFE to 2.25 for 25 min copper/PTFE at an applied frequency of 10(5) Hz. In addition, other parameters - namely, dielectric loss epsilon '', dielectric modulus m and dielectric tangent constant tan delta - were investigated. The comprehensive results showed that the dielectric properties of flexible PET and PTFE polymers improved due to the deposited conductive CuNPs. Flexible copper/PET and copper/PTFE composite films are promising as dielectric substrates for modern electronic applications that can resist hard environments and have long lifetimes.}
@@ -12348,6 +12274,201 @@
       \keyw{atta_enhanced_2021}
       \warn{\item Datamodel: article entry 'atta_enhanced_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
       \warn{\item Datamodel: article entry 'atta_enhanced_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{brucklacher_et_al_1973}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=5d4bd54d436dc82385c70b374a15f4c2}{%
+           family={Brucklacher},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
+           family={Dienst},
+           familyi={D\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=6e50409014ca03ee678f43cea53236e9}{%
+           family={Thummler},
+           familyi={T\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=5d4bd54d436dc82385c70b374a15f4c2}{%
+           family={Brucklacher},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
+           family={Dienst},
+           familyi={D\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=6e50409014ca03ee678f43cea53236e9}{%
+           family={Thummler},
+           familyi={T\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
+      \strng{fullhash}{720157d17dd182ec770e31135e49039f}
+      \strng{fullhashraw}{720157d17dd182ec770e31135e49039f}
+      \strng{bibnamehash}{720157d17dd182ec770e31135e49039f}
+      \strng{authorbibnamehash}{720157d17dd182ec770e31135e49039f}
+      \strng{authornamehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
+      \strng{authorfullhash}{720157d17dd182ec770e31135e49039f}
+      \strng{authorfullhashraw}{720157d17dd182ec770e31135e49039f}
+      \strng{nameabibnamehash}{720157d17dd182ec770e31135e49039f}
+      \strng{nameanamehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
+      \strng{nameafullhash}{720157d17dd182ec770e31135e49039f}
+      \strng{nameafullhashraw}{720157d17dd182ec770e31135e49039f}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings {REAKTORTAGUNG} 1973 des Deutschen Atomforums/{KTG} held in Karlsruhe}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{4}
+      \field{title}{Creep Behavior of Oxide Fuels Under Neutron Irradiation, {P}aper 251}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{1973}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{413\bibrangedash 416}
+      \range{pages}{4}
+      \keyw{brucklacher_et_al_1973}
+      \warn{\item Datamodel: inproceedings entry 'brucklacher_et_al_1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
+      \warn{\item Datamodel: inproceedings entry 'brucklacher_et_al_1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
+    \endentry
+    \entry{brucklacher_et_al_1972}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=5d4bd54d436dc82385c70b374a15f4c2}{%
+           family={Brucklacher},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
+           family={Dienst},
+           familyi={D\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=5d4bd54d436dc82385c70b374a15f4c2}{%
+           family={Brucklacher},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
+           family={Dienst},
+           familyi={D\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
+      \strng{fullhash}{417523bfaff330574852ab7639381378}
+      \strng{fullhashraw}{417523bfaff330574852ab7639381378}
+      \strng{bibnamehash}{417523bfaff330574852ab7639381378}
+      \strng{authorbibnamehash}{417523bfaff330574852ab7639381378}
+      \strng{authornamehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
+      \strng{authorfullhash}{417523bfaff330574852ab7639381378}
+      \strng{authorfullhashraw}{417523bfaff330574852ab7639381378}
+      \strng{nameabibnamehash}{417523bfaff330574852ab7639381378}
+      \strng{nameanamehash}{81187d7eaf2fbf8f6a9542520d0fa6a3}
+      \strng{nameafullhash}{417523bfaff330574852ab7639381378}
+      \strng{nameafullhashraw}{417523bfaff330574852ab7639381378}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{3}
+      \field{title}{Creep behavior of ceramic nuclear fuels under neutron irradiation}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{42}
+      \field{year}{1972}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{285\bibrangedash 296}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/0022-3115(72)90079-7
+      \endverb
+      \keyw{brucklacher_et_al_1972}
+      \warn{\item Datamodel: article entry 'brucklacher_et_al_1972' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'brucklacher_et_al_1972' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{dienst_1977}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
+           family={Dienst},
+           familyi={D\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=dc6ae2ff466bc35c2ca293d97705cea7}{%
+           family={Dienst},
+           familyi={D\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{fullhash}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{fullhashraw}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{bibnamehash}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{authorbibnamehash}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{authornamehash}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{authorfullhash}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{authorfullhashraw}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{nameabibnamehash}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{nameanamehash}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{nameafullhash}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \strng{nameafullhashraw}{dc6ae2ff466bc35c2ca293d97705cea7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Irradiation induced creep of ceramic materials}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{65}
+      \field{year}{1977}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{1\bibrangedash 8}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/0022-3115(77)90035-6
+      \endverb
+      \keyw{dienst_1977}
+      \warn{\item Datamodel: article entry 'dienst_1977' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'dienst_1977' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
     \entry{mai2010}{article}{}{}
       \name{author}{4}{}{%
@@ -12430,6 +12551,560 @@
       \keyw{mai2010}
       \warn{\item Datamodel: article entry 'mai2010' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
       \warn{\item Datamodel: article entry 'mai2010' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{perrin_1972}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=780227d8c235aa2a8b7a71d4958536d8}{%
+           family={Perrin},
+           familyi={P\bibinitperiod},
+           given={J.\bibnamedelimi S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=780227d8c235aa2a8b7a71d4958536d8}{%
+           family={Perrin},
+           familyi={P\bibinitperiod},
+           given={J.\bibnamedelimi S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{fullhash}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{fullhashraw}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{bibnamehash}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{authorbibnamehash}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{authornamehash}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{authorfullhash}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{authorfullhashraw}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{nameabibnamehash}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{nameanamehash}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{nameafullhash}{780227d8c235aa2a8b7a71d4958536d8}
+      \strng{nameafullhashraw}{780227d8c235aa2a8b7a71d4958536d8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Effect of irradiation on creep of {UO}\_2-{P}u{O}\_2}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{42}
+      \field{year}{1972}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{101\bibrangedash 104}
+      \range{pages}{4}
+      \keyw{perrin_1972}
+      \warn{\item Datamodel: article entry 'perrin_1972' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'perrin_1972' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{hwr-1039}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=46040a61565c47752a74061600d50094}{%
+           family={Sakai},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=46040a61565c47752a74061600d50094}{%
+           family={Sakai},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {OECD Halden Reactor Project}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {OECD Halden Reactor Project}%
+      }
+      \strng{namehash}{46040a61565c47752a74061600d50094}
+      \strng{fullhash}{46040a61565c47752a74061600d50094}
+      \strng{fullhashraw}{46040a61565c47752a74061600d50094}
+      \strng{bibnamehash}{46040a61565c47752a74061600d50094}
+      \strng{authorbibnamehash}{46040a61565c47752a74061600d50094}
+      \strng{authornamehash}{46040a61565c47752a74061600d50094}
+      \strng{authorfullhash}{46040a61565c47752a74061600d50094}
+      \strng{authorfullhashraw}{46040a61565c47752a74061600d50094}
+      \strng{nameabibnamehash}{46040a61565c47752a74061600d50094}
+      \strng{nameanamehash}{46040a61565c47752a74061600d50094}
+      \strng{nameafullhash}{46040a61565c47752a74061600d50094}
+      \strng{nameafullhashraw}{46040a61565c47752a74061600d50094}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{HWR-1039}
+      \field{title}{The fuel creep test {IFA}-701: results after four irradiation cycles}
+      \field{usera}{R}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \keyw{hwr-1039}
+      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Missing mandatory field 'type'}
+    \endentry
+    \entry{hwr-1006}{report}{}{}
+      \name{author}{3}{}{%
+        {{hash=46040a61565c47752a74061600d50094}{%
+           family={Sakai},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ca8c1acb109d5f1b724c4b8149dabdfb}{%
+           family={Hanakawa},
+           familyi={H\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=bb9efad32840e18b4413facfafa7ed7b}{%
+           family={Tverberg},
+           familyi={T\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=46040a61565c47752a74061600d50094}{%
+           family={Sakai},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ca8c1acb109d5f1b724c4b8149dabdfb}{%
+           family={Hanakawa},
+           familyi={H\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=bb9efad32840e18b4413facfafa7ed7b}{%
+           family={Tverberg},
+           familyi={T\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {OECD Halden Reactor Project}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {OECD Halden Reactor Project}%
+      }
+      \strng{namehash}{7bd17799aaf2199634a5b9d91675fd87}
+      \strng{fullhash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
+      \strng{fullhashraw}{68cc0738bfcb4fd77c6b0edfb3a293f8}
+      \strng{bibnamehash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
+      \strng{authorbibnamehash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
+      \strng{authornamehash}{7bd17799aaf2199634a5b9d91675fd87}
+      \strng{authorfullhash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
+      \strng{authorfullhashraw}{68cc0738bfcb4fd77c6b0edfb3a293f8}
+      \strng{nameabibnamehash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
+      \strng{nameanamehash}{7bd17799aaf2199634a5b9d91675fd87}
+      \strng{nameafullhash}{68cc0738bfcb4fd77c6b0edfb3a293f8}
+      \strng{nameafullhashraw}{68cc0738bfcb4fd77c6b0edfb3a293f8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{HWR-1006}
+      \field{title}{Investigation of fission induced creep of {UO2} and {C}r-doped fuel in {IFA}-701}
+      \field{usera}{R}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \true{nocite}
+      \keyw{hwr-1006}
+      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Missing mandatory field 'type'}
+    \endentry
+    \entry{solomon_1973}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=37f85358e9fcb274c0eff58505e05daf}{%
+           family={Solomon},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=37f85358e9fcb274c0eff58505e05daf}{%
+           family={Solomon},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{fullhash}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{fullhashraw}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{bibnamehash}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{authorbibnamehash}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{authornamehash}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{authorfullhash}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{authorfullhashraw}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{nameabibnamehash}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{nameanamehash}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{nameafullhash}{37f85358e9fcb274c0eff58505e05daf}
+      \strng{nameafullhashraw}{37f85358e9fcb274c0eff58505e05daf}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Ceramic Society}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{3}
+      \field{title}{Radiation induced creep of {UO}\_2}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{56}
+      \field{year}{1973}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{164\bibrangedash 171}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1111/j.1151-2916.1973.tb15435.x
+      \endverb
+      \keyw{solomon_1973}
+      \warn{\item Datamodel: article entry 'solomon_1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'solomon_1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
+    \entry{hwr-1092}{report}{}{}
+      \name{author}{2}{}{%
+        {{hash=3ebdc71053a24af943c02445cfe9d568}{%
+           family={Szoke},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=bb9efad32840e18b4413facfafa7ed7b}{%
+           family={Tverberg},
+           familyi={T\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=3ebdc71053a24af943c02445cfe9d568}{%
+           family={Szoke},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=bb9efad32840e18b4413facfafa7ed7b}{%
+           family={Tverberg},
+           familyi={T\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {OECD Halden Reactor Project}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {OECD Halden Reactor Project}%
+      }
+      \strng{namehash}{380e27ca223e23e446099fd616e54aaa}
+      \strng{fullhash}{3087789bc485f5f3e162641cf439bffd}
+      \strng{fullhashraw}{3087789bc485f5f3e162641cf439bffd}
+      \strng{bibnamehash}{3087789bc485f5f3e162641cf439bffd}
+      \strng{authorbibnamehash}{3087789bc485f5f3e162641cf439bffd}
+      \strng{authornamehash}{380e27ca223e23e446099fd616e54aaa}
+      \strng{authorfullhash}{3087789bc485f5f3e162641cf439bffd}
+      \strng{authorfullhashraw}{3087789bc485f5f3e162641cf439bffd}
+      \strng{nameabibnamehash}{3087789bc485f5f3e162641cf439bffd}
+      \strng{nameanamehash}{380e27ca223e23e446099fd616e54aaa}
+      \strng{nameafullhash}{3087789bc485f5f3e162641cf439bffd}
+      \strng{nameafullhashraw}{3087789bc485f5f3e162641cf439bffd}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{HWR-1092}
+      \field{title}{Update on in-pile results from the fuel creep test {IFA}-701}
+      \field{usera}{R}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \true{nocite}
+      \keyw{hwr-1092}
+      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Missing mandatory field 'type'}
+    \endentry
+    \entry{HalesBISONTheoryManual2016}{report}{}{}
+      \name{author}{9}{}{%
+        {{hash=b8cd40a202c96d55f984c13b55ac6ec0}{%
+           family={Hales},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=43d463dbcef1630a3c0772e5f04a1c70}{%
+           family={Williamson},
+           familyi={W\bibinitperiod},
+           given={R.\bibnamedelimi L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=1e3437e923c512bbedf787141e6b6336}{%
+           family={Novascone},
+           familyi={N\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=deb9ed075389ae7d489b7620ea22ae17}{%
+           family={Pastore},
+           familyi={P\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=418f08e27a38eb456e5d67d14b30ec49}{%
+           family={Spencer},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi W.},
+           giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=4762b89995049822864fb9896229a6b4}{%
+           family={Stafford},
+           familyi={S\bibinitperiod},
+           given={D.\bibnamedelimi S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=f85d3fe8f0d3880a0efbd19cb9429667}{%
+           family={Gamble},
+           familyi={G\bibinitperiod},
+           given={K.\bibnamedelimi A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=6bec3343ec6469d2409aa91a3faf0412}{%
+           family={Perez},
+           familyi={P\bibinitperiod},
+           given={D.\bibnamedelimi M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d8525af2f6ab588f2e4d6e5abd42ca8b}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \name{namea}{9}{}{%
+        {{hash=b8cd40a202c96d55f984c13b55ac6ec0}{%
+           family={Hales},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=43d463dbcef1630a3c0772e5f04a1c70}{%
+           family={Williamson},
+           familyi={W\bibinitperiod},
+           given={R.\bibnamedelimi L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=1e3437e923c512bbedf787141e6b6336}{%
+           family={Novascone},
+           familyi={N\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=deb9ed075389ae7d489b7620ea22ae17}{%
+           family={Pastore},
+           familyi={P\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=418f08e27a38eb456e5d67d14b30ec49}{%
+           family={Spencer},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi W.},
+           giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=4762b89995049822864fb9896229a6b4}{%
+           family={Stafford},
+           familyi={S\bibinitperiod},
+           given={D.\bibnamedelimi S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=f85d3fe8f0d3880a0efbd19cb9429667}{%
+           family={Gamble},
+           familyi={G\bibinitperiod},
+           given={K.\bibnamedelimi A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=6bec3343ec6469d2409aa91a3faf0412}{%
+           family={Perez},
+           familyi={P\bibinitperiod},
+           given={D.\bibnamedelimi M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d8525af2f6ab588f2e4d6e5abd42ca8b}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{8a9c971fb1d59cfc841c4954462b0a64}
+      \strng{fullhash}{e282a5b5ff9491a3d20c44cbea44af24}
+      \strng{fullhashraw}{e282a5b5ff9491a3d20c44cbea44af24}
+      \strng{bibnamehash}{ef91790788688622a1c9ded73677017e}
+      \strng{authorbibnamehash}{ef91790788688622a1c9ded73677017e}
+      \strng{authornamehash}{8a9c971fb1d59cfc841c4954462b0a64}
+      \strng{authorfullhash}{e282a5b5ff9491a3d20c44cbea44af24}
+      \strng{authorfullhashraw}{e282a5b5ff9491a3d20c44cbea44af24}
+      \strng{nameabibnamehash}{ef91790788688622a1c9ded73677017e}
+      \strng{nameanamehash}{8a9c971fb1d59cfc841c4954462b0a64}
+      \strng{nameafullhash}{e282a5b5ff9491a3d20c44cbea44af24}
+      \strng{nameafullhashraw}{e282a5b5ff9491a3d20c44cbea44af24}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{9}
+      \field{number}{INL/EXT--13-29930, 1374503}
+      \field{title}{BISON Theory Manual The Equations behind Nuclear Fuel Analysis}
+      \field{usera}{R}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{INL/EXT\bibrangedash 13-29930\bibrangessep 1374503}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.2172/1374503
+      \endverb
+      \keyw{HalesBISONTheoryManual2016}
+      \warn{\item Datamodel: report entry 'HalesBISONTheoryManual2016' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'HalesBISONTheoryManual2016' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
+      \warn{\item Datamodel: report entry 'HalesBISONTheoryManual2016' (References/reference.bib): Missing mandatory field 'type'}
+      \warn{\item Datamodel: report entry 'HalesBISONTheoryManual2016' (References/reference.bib): Missing mandatory field 'institution'}
+    \endentry
+    \entry{inoue2004}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=2e059f4905ab4d6c5940a124781c5b77}{%
+           family={Inoue},
+           familyi={I\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3840becdc9c219505ae4518cfcc60a67}{%
+           family={Maeda},
+           familyi={M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=2e373cbb03ecca929f4aa66f0161941f}{%
+           family={Katsuyama},
+           familyi={K\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f3cdb8626da1f3061662eabc60da2b84}{%
+           family={Tanaka},
+           familyi={T\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=7a7d8c4b322fa4d9a75c194600714779}{%
+           family={Mondo},
+           familyi={M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=a2c6b82214aee2166f67a58854e25b9d}{%
+           family={Hisada},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{namea}{6}{}{%
+        {{hash=2e059f4905ab4d6c5940a124781c5b77}{%
+           family={Inoue},
+           familyi={I\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3840becdc9c219505ae4518cfcc60a67}{%
+           family={Maeda},
+           familyi={M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=2e373cbb03ecca929f4aa66f0161941f}{%
+           family={Katsuyama},
+           familyi={K\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f3cdb8626da1f3061662eabc60da2b84}{%
+           family={Tanaka},
+           familyi={T\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=7a7d8c4b322fa4d9a75c194600714779}{%
+           family={Mondo},
+           familyi={M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=a2c6b82214aee2166f67a58854e25b9d}{%
+           family={Hisada},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{d842c3a0882862b61018164dbc466ac2}
+      \strng{fullhash}{4315481774ff94374c715d0110345078}
+      \strng{fullhashraw}{4315481774ff94374c715d0110345078}
+      \strng{bibnamehash}{44c0a3d7330f97aca2e3cf3e258ac293}
+      \strng{authorbibnamehash}{44c0a3d7330f97aca2e3cf3e258ac293}
+      \strng{authornamehash}{d842c3a0882862b61018164dbc466ac2}
+      \strng{authorfullhash}{4315481774ff94374c715d0110345078}
+      \strng{authorfullhashraw}{4315481774ff94374c715d0110345078}
+      \strng{nameabibnamehash}{44c0a3d7330f97aca2e3cf3e258ac293}
+      \strng{nameanamehash}{d842c3a0882862b61018164dbc466ac2}
+      \strng{nameafullhash}{4315481774ff94374c715d0110345078}
+      \strng{nameafullhashraw}{4315481774ff94374c715d0110345078}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{1}
+      \field{title}{Fuel-to-cladding gap evolution and its impact on thermal performance of high burnup fast reactor type uranium-plutonium oxide fuel pins}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{326}
+      \field{year}{2004}
+      \field{dateera}{ce}
+      \true{nocite}
+      \field{pages}{59\bibrangedash 73}
+      \range{pages}{15}
+      \keyw{inoue2004}
+      \warn{\item Datamodel: article entry 'inoue2004' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'inoue2004' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'inoue2004' (References/reference.bib): Invalid field 'publisher' for entrytype 'article'}
     \endentry
     \entry{foster316StainlessSteel1995}{article}{}{}
       \name{author}{5}{}{%

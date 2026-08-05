@@ -1,0 +1,1010 @@
+% !TeX root = ../main.tex
+
+
+\xchapter{氧化物燃料元件材料基础物性模型}{MOX Fuel Model}
+\xsection{引言}{MOX Nuclear}
+燃料元件在堆内长期承受裂变释热、中子辐照、温度梯度、内压和燃料--包壳机械相互作用等多种载荷，其温度、应力、形变、裂变气体释放及包壳失效并非由某一项材料参数独立决定，而是热学、力学、辐照效应和微观组织演化相互耦合的结果\cite{vanuffelenReviewFuelPerformance2019}。例如，燃料热导率的偏差会首先改变燃料中心温度，随后通过影响热膨胀、蠕变、裂变气体释放和间隙闭合演化进一步影响包壳温度、内压与应力。因此，构建具有高保真性的燃料性能分析程序不仅要求数值离散和求解方法是否先进，还取决于材料模型是否完整、状态变量是否选取合理，以及模型适用范围与实验依据是否明确。
+
+为建立可用于稳态运行和瞬态工况的材料模型体系，本章以MATPRO材料属性库、FRAPCON/FRAPTRAN材料模型手册和BISON理论手册为基础\cite{hagrmanSCDAPRELAP5MOD1995,luscherMaterialPropertyCorrelations2010,halesBISONTheoryManual2016}，并结合氧化物燃料辐照试验和其他文献对有关模型进行补充与核查。调研不仅关注经验关联式本身，还重点梳理各模型的物理含义、输入状态变量、单位、适用温度与燃耗范围、参数来源及不确定性。对于同一物性存在多种关联式的情况，保留具有代表性的备选模型并比较其差异，以避免将面向特定材料成分或试验条件建立的公式直接外推至超出适用范围的工况。
+
+燃料侧以MOX为主要研究对象。MOX通常表示为$(\mathrm{U},\mathrm{Pu})\mathrm{O}_{2\pm x}$；相较于热堆MOX，快堆MOX通常具有更高的钚含量，相关文献给出的典型范围约为重金属质量的15\%--30\%\cite{crawfordFuelsSodiumcooledFast2007,inoueThermalConductivityUranium2000}。MOX物性不仅随温度变化，还显著受$\mathrm{PuO}_2$含量、氧金属比（O/M）、理论密度、孔隙率、燃耗、裂变率、晶粒尺寸及应力状态影响。基于这些特点，本章系统调研熔点、热导率、比热容、发射率、热膨胀和密度等基础热物性，以及弹性、蠕变、密实化、重定位、固体与气体裂变产物肿胀、燃料重构等热--力与材料演化模型。
+
+裂变气体行为和燃料--包壳间隙换热是连接燃料状态与包壳状态的两个关键环节。裂变气体在晶粒内的扩散、俘获与再溶解，以及在晶界处的气泡生长、连通和释放，会共同决定气体肿胀、燃料棒内压及间隙气体成分组成；氦和放射性裂变气体还会引入额外的生成、扩散与衰变过程。相关机理模型可在晶粒尺度与工程尺度燃料性能计算之间建立联系\cite{pizzocriSCIANTIXNewOpen2020}。与此同时，燃料热膨胀、重定位、密实化、蠕变和肿胀会改变间隙尺寸与接触压力，而裂变气体释放又会改变间隙气体导热能力。因此，本章分别调研间隙气体导热、固--固接触导热和热辐射模型，并通过三者之和描述总间隙传热系数。
+
+包壳侧选取快堆研究与工程应用中具有代表性的316系奥氏体不锈钢、D9奥氏体不锈钢和HT9铁素体/马氏体钢。SS316具有成熟的制造基础和良好的高温综合性能。D9是在316系基础上发展的Ti稳定化奥氏体钢，通常归类为15Cr--15Ni--Mo--Ti合金，其设计目的在于延缓空洞肿胀并提高高温蠕变强度。HT9则是以Fe--12Cr--1Mo--W--V为基础的回火马氏体钢，具有较低的辐照肿胀和较好的导热及尺寸稳定性，但其高温蠕变、温度相关强度和辐照脆化仍是寿命评价中的重要问题\cite{garnerComparisonSwellingIrradiation2000,lathaThermalCreepProperties2008,leibowitzThermalConductivityThermal1988,chenIRRADIATIONEFFECTSHT92013}。针对上述材料，本章进一步调研热导率、比热容、密度、热膨胀、弹性、塑性、蠕变、辐照肿胀与累积损伤模型。
+
+表\ref{tab:chapter2_model_scope}概括了本章研究对象、材料特征及模型调研范围。
+
+\begin{table}[htbp]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.30}
+	\caption{本章研究对象及材料模型调研范围}
+	\label{tab:chapter2_model_scope}
+	\begin{tabularx}{\textwidth}{
+			>{\raggedright\arraybackslash}p{2.35cm}
+			>{\raggedright\arraybackslash}p{3.15cm}
+			>{\raggedright\arraybackslash}X}
+		\toprule
+		研究对象 & 代表性特征 & 重点调研内容 \\
+		\midrule
+		MOX燃料
+		& 含有钚的氧化物陶瓷；物性受温度、O/M、孔隙率和燃耗共同影响
+		& 熔点、热导率、比热容、发射率、热膨胀、密度、弹性、蠕变、密实化、重定位、肿胀、重构及高温物性 \\
+		\addlinespace[0.5ex]
+		裂变气体与微观结构
+		& 晶内--晶界跨尺度迁移，并与晶粒生长、气泡演化和微裂纹耦合
+		& Xe/Kr/He的生成、扩散、俘获、再溶解、气泡生长与连通、稳定及放射性气体释放、晶粒生长和气体肿胀 \\
+		燃料--包壳间隙
+		& 几何间隙、气体状态、表面形貌和接触压力随运行历史演化
+		& 气体传导、固--固接触传导、热辐射以及混合气体导热与温度跳跃修正 \\
+		SS316
+		& 代表性Cr--Ni--Mo奥氏体钢
+		& 热物性、弹塑性、热蠕变、辐照蠕变与肿胀、累积损伤 \\
+		D9
+		& Ti稳定化改进型奥氏体钢；相较316系具有更强的抗肿胀和高温蠕变设计导向
+		& 热物性、弹塑性、屈服与拉伸强度、蠕变、辐照肿胀与辐照损伤 \\
+		HT9
+		& 12Cr系铁素体/马氏体钢；低肿胀、较高导热率并具有良好辐照尺寸稳定性
+		& 热物性、相变相关热膨胀、弹塑性、热蠕变、辐照蠕变和辐照损伤 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+本章节按照“燃料基础物性与变形行为--间隙传热--裂变气体与微观结构演化--包壳热力响应与失效”的层次组织材料模型。该调研结果为后续模型筛选、程序实现、单效应验证及燃料棒整体性能分析提供统一的物理基础和参数依据。
+
+\xsection{MOX燃料基础热力学性质}{Fundamental Thermophysical Properties of MOX Fuel}
+\label{sec:mox_thermophysical_properties}
+
+混合氧化物燃料通常表示为$(\mathrm{U},\mathrm{Pu})\mathrm{O}_{2\pm x}$。其热物性不仅随温度变化，还受到$\mathrm{PuO}_2$含量、氧金属比（O/M）、理论密度、孔隙率和燃耗等因素的共同影响。上述参数决定燃料内部的温度分布，并通过热膨胀、蠕变、裂变气体释放和燃料--包壳间隙演化进一步影响燃料元件的整体响应。本节展示相变温度、热导率、比热容、发射率、热膨胀和密度等用于燃料性能计算的核心关系式；其他备选关联式及其参数列于附录\ref{app:mox_thermal_conductivity_models}。
+
+\xsubsection{相变温度}{Phase-transition Temperatures of Fusion}
+
+MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及燃耗有关。根据Brassfield等人的实验数据及相应的最小二乘拟合，二者可表示为
+\begin{subequations}\label{eq:mox_phase_transition_temperature}
+	\begin{align}
+		T_{\mathrm{sol}}
+		&=3113.15-5.41395C_{\mathrm{Pu}}
+		+7.468390\times10^{-3}C_{\mathrm{Pu}}^{2}
+		-3.2\times10^{-3}F_{\mathrm{Bu}},
+		&& C_{\mathrm{Pu}}>0,\label{eq:mox_solidus_with_pu}\\
+		T_{\mathrm{liq}}
+		&=3113.15-3.21660C_{\mathrm{Pu}}
+		-1.448518\times10^{-2}C_{\mathrm{Pu}}^{2}
+		-3.2\times10^{-3}F_{\mathrm{Bu}},
+		&& C_{\mathrm{Pu}}>0,\label{eq:mox_liquidus_with_pu}\\
+		T_{\mathrm{sol}}
+		&=3113.15-3.2\times10^{-3}F_{\mathrm{Bu}},
+		&& C_{\mathrm{Pu}}=0,\label{eq:uo2_solidus}\\
+		T_{\mathrm{liq}}&=T_{\mathrm{sol}},
+		&& C_{\mathrm{Pu}}=0.\label{eq:uo2_liquidus}
+	\end{align}
+\end{subequations}
+式中，$T_{\mathrm{sol}}$和$T_{\mathrm{liq}}$分别为固相线温度和液相线温度，单位为K；$C_{\mathrm{Pu}}$为$\mathrm{PuO}_2$质量百分数；$F_{\mathrm{Bu}}$为按模型定义、以$\mathrm{MWd/tU}$计的燃耗。对于MOX燃料，$T_{\mathrm{sol}}<T<T_{\mathrm{liq}}$对应固液共存区间。
+
+\xsubsection{热导率}{Thermal Conductivity}
+
+热导率直接影响燃料内部的径向温度梯度，是燃料温度、O/M比、燃耗和孔隙率耦合影响最显著的物性之一。对于高钚含量MOX燃料，可采用Inoue等人建立并在BISON中实现的关联式\cite{inoueThermalConductivityUranium2000,halesBISONTheoryManual2016}。有效热导率写为
+\begin{equation}
+	k=F_1F_2F_3F_4k_0
+	\label{eq:fast_mox_thermal_conductivity}
+\end{equation}
+式中，$k$为有效热导率，单位为$\mathrm{W\,m^{-1}\,K^{-1}}$；$k_0$为全致密、未辐照燃料的热导率；$F_1$、$F_2$、$F_3$和$F_4$分别表示溶解态固体裂变产物、析出态固体裂变产物、辐照损伤和孔隙率的修正作用。
+
+本文提供多种全致密、未辐照MOX燃料的热导率，其中Inoue模型|\cite{inoueThermalConductivityUranium2000}为
+\begin{equation}
+	k_0=
+	\left[
+	0.06059+0.2754\sqrt{\left|2-\mathrm{O/M}\right|}
+	+2.011\times10^{-4}T
+	\right]^{-1}
+	+\frac{4.715\times10^{9}}{T^2}
+	\exp\!\left(-\frac{16361}{T}\right)
+	\label{eq:fast_mox_unirradiated_thermal_conductivity}
+\end{equation}
+其中，$T$为燃料温度，单位为K。式\eqref{eq:fast_mox_unirradiated_thermal_conductivity}的第一项表示晶格振动所贡献的热传导，第二项表示高温电子传导。该关联式的原始数据库主要覆盖$20$--$30\%$的钚重金属原子分数、$1.98$--$2.00$的O/M比以及约$94.3\%$--$96.4\%$的理论密度，超出该范围时不宜直接外推。另外Duriez--Ronchi、Amaya、Fink和Halden等其他未辐照燃料热导率模型见附录\ref{app:mox_thermal_conductivity_models}。
+
+孔隙率修正采用修正的Loeb关系：
+\begin{equation}
+	F_4=1-\alpha P,
+	\label{eq:fast_mox_porosity_correction}
+\end{equation}
+式中，$P$为孔隙体积分数，$\alpha$为孔隙修正系数。保守计算可取$\alpha=2.5$。$F_1$--$F_3$的具体表达式见附录\ref{app:mox_thermal_conductivity_models}。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.80\textwidth]{mox_thermal_conductivity_all_models.png}
+	\caption{不同MOX燃料热导率模型的计算结果对比}
+	\label{fig:mox_thermal_conductivity_models}
+\end{figure}
+
+\xsubsection{比热容}{Specific Heat Capacity}
+
+比热容决定燃料在给定释热条件下的温升速率。MATPRO将$\mathrm{UO}_2$和$\mathrm{PuO}_2$的定压比热容表示为\cite{hagrmanSCDAPRELAP5MOD1995}
+
+	\begin{equation}
+		c_p(T)
+		&=
+		\frac{K_1\theta^2\exp(\theta/T)}
+		{T^2\left[\exp(\theta/T)-1\right]^2}
+		+K_2T
+		+\frac{YK_3E_D}{2RT^2}
+		\exp\!\left(-\frac{E_D}{RT}\right),
+		\label{eq:oxide_specific_heat}
+	\end{equation}
+式中，$c_p$为比热容，单位为$\mathrm{J\,kg^{-1}\,K^{-1}}$；$T$为温度；$Y$为O/M比；$R=8.3143\ \mathrm{J\,mol^{-1}\,K^{-1}}$；$\theta$为特征温度；$E_D$为缺陷形成活化能。相应参数列于表\ref{tab:mox_specific_heat_parameters}。
+
+\begin{table}[htbp]
+	\centering
+	\caption{$\mathrm{UO}_2$和$\mathrm{PuO}_2$比热容模型参数}
+	\label{tab:mox_specific_heat_parameters}
+	\begin{tabularx}{\textwidth}{
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+		}
+		\toprule
+		参数 & $\mathrm{UO}_2$ & $\mathrm{PuO}_2$ & 单位 \\
+		\midrule
+		$K_1$    & 296.7               & 347.4               & $\mathrm{J\,kg^{-1}\,K^{-1}}$ \\
+		$K_2$    & $2.43\times10^{-2}$ & $3.95\times10^{-4}$ & $\mathrm{J\,kg^{-1}\,K^{-2}}$ \\
+		$K_3$    & $8.745\times10^{7}$ & $3.860\times10^{7}$ & $\mathrm{J\,kg^{-1}}$ \\
+		$\theta$ & 535.285             & 571.00              & $\mathrm{K}$ \\
+		$E_D$    & $1.577\times10^{5}$ & $1.967\times10^{5}$ & $\mathrm{J\,mol^{-1}}$ \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+MOX燃料的比热容可按各氧化物的质量分数进行线性混合：
+\begin{equation}
+	c_{p,\mathrm{MOX}}
+	=(1-w_{\mathrm{PuO}_2})c_{p,\mathrm{UO}_2}
+	+w_{\mathrm{PuO}_2}c_{p,\mathrm{PuO}_2},
+	\label{eq:mox_specific_heat_mixture}
+\end{equation}
+式中，$w_{\mathrm{PuO}_2}$为$\mathrm{PuO}_2$质量分数。液态$\mathrm{UO}_2$和$\mathrm{PuO}_2$的比热容均可近似取$503\ \mathrm{J\,kg^{-1}\,K^{-1}}$。在固相线附近，可在固态值与液态值之间进行连续插值，以避免相变区间内物性突变。
+
+\xsubsection{发射率}{Emissivity}
+
+燃料表面发射率影响燃料与包壳之间的辐射换热。MATPRO采用的经验关系为
+\begin{equation}
+	\varepsilon_f=0.7856+1.5263\times10^{-5}T
+	\label{eq:mox_emissivity}
+\end{equation}
+式中，$\varepsilon_f$为燃料表面发射率，$T$为温度，单位为K。该关系的实验标准误差约为$\pm6.8\%$，数据主要覆盖$T<2400\ \mathrm{K}$的范围。由于$\mathrm{PuO}_2$的独立数据有限，该关系通常也用于MOX燃料；高于实验范围的计算结果应视为外推值。
+
+\xsubsection{热膨胀}{Thermal Expansion}
+
+在MATPRO中，氧化物燃料的热膨胀应变由温度、$\mathrm{PuO}_2$含量和熔化分数确定。对于常规燃料组成，O/M偏离对热膨胀的影响通常小于温度和相变的影响。固态$\mathrm{UO}_2$或$\mathrm{PuO}_2$相对于$300\ \mathrm{K}$的线膨胀应变为
+\begin{equation}
+	\varepsilon_{\mathrm{th},i}(T)
+	=K_{1,i}T-K_{2,i}
+	+K_{3,i}\exp\!\left(-\frac{E_{D,i}}{k_{\mathrm{B}}T}\right)
+	\qquad i\in\{\mathrm{UO}_2,\mathrm{PuO}_2\}
+	\label{eq:oxide_solid_thermal_expansion}
+\end{equation}
+式中，$k_{\mathrm{B}}=1.38\times10^{-23}\ \mathrm{J\,K^{-1}}$为玻尔兹曼常数，其他参数列于表\ref{tab:mox_thermal_expansion_parameters}。
+
+\begin{table}[htbp]
+	\centering
+	\caption{$\mathrm{UO}_2$和$\mathrm{PuO}_2$热膨胀模型参数}
+	\label{tab:mox_thermal_expansion_parameters}
+	\begin{tabularx}{\textwidth}{
+			>{\centering\arraybackslash}p{0.12\textwidth}
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}p{0.26\textwidth}
+		}
+		\toprule
+		参数 & $\mathrm{UO}_2$ & $\mathrm{PuO}_2$ & 单位 \\
+		\midrule
+		$K_1$ & $1.0\times10^{-5}$  & $9.0\times10^{-6}$  & $\mathrm{K^{-1}}$ \\
+		$K_2$ & $3.0\times10^{-3}$  & $2.7\times10^{-3}$  & -- \\
+		$K_3$ & $4.0\times10^{-2}$  & $7.0\times10^{-2}$  & -- \\
+		$E_D$ & $6.9\times10^{-20}$ & $7.0\times10^{-20}$ & $\mathrm{J}$ \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+MOX燃料的固态热膨胀应变采用质量分数加权：
+\begin{equation}
+	\varepsilon_{\mathrm{th},\mathrm{MOX}}
+	=(1-w_{\mathrm{PuO}_2})\varepsilon_{\mathrm{th},\mathrm{UO}_2}
+	+w_{\mathrm{PuO}_2}\varepsilon_{\mathrm{th},\mathrm{PuO}_2}
+	\label{eq:mox_solid_thermal_expansion}
+\end{equation}
+
+在固液共存区内，热膨胀应变按熔化分数$f_m$修正为
+\begin{equation}
+	\varepsilon_{\mathrm{th}}
+	=\varepsilon_{\mathrm{th}}(T_{\mathrm{sol}})+0.043f_m
+	\qquad 0\leq f_m\leq1.
+	\label{eq:mox_partial_melting_expansion}
+\end{equation}
+完全熔化后，可进一步写为
+\begin{equation}
+	\varepsilon_{\mathrm{th}}
+	=\varepsilon_{\mathrm{th}}(T_{\mathrm{sol}})+0.043
+	+3.6\times10^{-5}\left[T-T_{\mathrm{liq}}\right].
+	\label{eq:mox_liquid_expansion}
+\end{equation}
+式中，$T_{\mathrm{liq}}=T_{\mathrm{sol}}+\Delta T_m$。该模型的不确定性随温度升高而增大，高温区的相对应变误差约为$\pm10\%$。
+
+\xsubsection{密度}{Density}
+
+忽略质量损失时，密度变化可由各向同性热膨胀近似得到。在线性应变较小时，有
+\begin{equation}
+	\rho(T)=\rho_0\left[1-3\varepsilon_{\mathrm{th}}(T)\right]
+	\label{eq:mox_density_linearized}
+\end{equation}
+式中，$\rho_0$为参考温度下的燃料密度，$\varepsilon_{\mathrm{th}}$为相对于该参考温度的线膨胀应变。对于全致密$\mathrm{UO}_2$，可取$\rho_0=10980\ \mathrm{kg\,m^{-3}}$；对于MOX燃料，$\rho_0$应根据组成和初始理论密度确定。若热膨胀较大，则宜采用质量守恒形式
+\begin{equation}
+	\rho(T)=\frac{\rho_0}{\left[1+\varepsilon_{\mathrm{th}}(T)\right]^3}
+	\label{eq:mox_density_exact}
+\end{equation}
+以避免线性化近似在高温区引入附加误差。
+
+\xsection{MOX燃料的力学物性}{Mechanical Properties}
+\label{sec:mox_mechanical_properties}
+
+MOX燃料属于多孔脆性陶瓷，其力学响应同时受温度、理论密度、O/M比、$\mathrm{PuO}_2$含量、晶粒尺寸、燃耗和裂变率控制。燃料性能分析中，弹性参数决定瞬时应力响应，蠕变控制高温应力松弛，密实化与裂变产物肿胀共同决定体积应变，而晶粒长大和重构又会反向影响热导率、裂变气体释放及蠕变。本节仅列出构成后续耦合计算所需的核心关系；模型的历史形式、参数表和分段表达式见附录\ref{app:mox_mechanical_correlations}。
+
+\xsubsection{弹性参数}{Elastic Properties}
+
+\subsubsection{杨氏模量}
+
+MATPRO以温度和理论密度分数描述$\mathrm{UO}_2$的杨氏模量：
+\begin{equation}
+	E_{\mathrm{UO}_2}
+	=2.334\times10^{11}
+	\left[1-2.752(1-D)\right]
+	\left(1-1.0915\times10^{-4}T\right)
+	\label{eq:uo2_youngs_modulus}
+\end{equation}
+式中，$E_{\mathrm{UO}_2}$的单位为Pa，$D$为理论密度分数，$T$为温度，单位为K。
+
+考虑非化学计量偏离和$\mathrm{PuO}_2$含量后，MOX燃料的杨氏模量可写为
+\begin{equation}
+	E_{\mathrm{MOX}}
+	=E_{\mathrm{UO}_2}\exp(-B_x|x|)
+	\left(1+0.15w_{\mathrm{PuO}_2}\right),
+	\label{eq:mox_youngs_modulus}
+\end{equation}
+式中，$x$为$(\mathrm{U},\mathrm{Pu})\mathrm{O}_{2\pm x}$中的化学计量偏离量，$w_{\mathrm{PuO}_2}$为$\mathrm{PuO}_2$质量分数；对于超化学计量和欠化学计量燃料，$B_x$可分别取1.34和1.75。该关系适用于固态燃料，接近熔点时应避免继续外推。
+
+\subsubsection{泊松比}
+
+对于各向同性材料，泊松比可由杨氏模量和剪切模量确定：
+\begin{equation}
+	\nu=\frac{E}{2G}-1,
+	\label{eq:mox_poisson_ratio}
+\end{equation}
+式中，$E$和$G$分别为杨氏模量和剪切模量。室温多晶$\mathrm{UO}_2$的泊松比约为0.306--0.314；MOX燃料的测量值为$0.276\pm0.094$。在缺少随温度和燃耗变化的可靠数据时，本文认为MOX燃料的泊松比$\nu=0.276$。
+
+\xsubsection{蠕变}{Creep}
+
+蠕变是氧化物燃料在高温和辐照条件下释放应力的主要机制。在本文采用的BISON MOX蠕变模型中，稳态蠕变速率由扩散控制的热蠕变项、位错控制的幂律热蠕变项和显式辐照蠕变项叠加得到，并通过时间相关修正因子计及初生蠕变。该模型主要考虑有效应力、温度、晶粒尺寸、相对理论密度、裂变率及$\mathrm{PuO}_2$质量分数的影响。
+
+BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTheoryManual2016,MiletJNM1983}
+\begin{equation}
+	\dot{\varepsilon}_{\mathrm{cr}}
+	=\left[1+a\exp(-bt)\right]\dot{\varepsilon}_{s},
+	\label{eq:mox_transient_creep}
+\end{equation}
+其中，$t$为自当前最大应力施加以来的时间，$a$和$b$控制初始瞬态蠕变的幅值及衰减速率。稳态蠕变率为
+\begin{align}
+	\dot{\varepsilon}_{s}
+	={}&\frac{B_1+B_2\dot{F}}{G^2}\,
+	\sigma_{\mathrm{eff}}
+	\exp\!\left[-\frac{Q_3}{T}+B_3(1-D)+B_4C_{\mathrm{Pu}}\right]
+	\notag\\
+	&+B_5\sigma_{\mathrm{eff}}^{4.5}
+	\exp\!\left[-\frac{Q_4}{T}+B_7(1-D)+B_4C_{\mathrm{Pu}}\right]
+	+A\sigma_{\mathrm{eff}}\dot{F},
+	\label{eq:mox_steady_creep}
+\end{align}
+式中，$\dot{\varepsilon}_{s}$为稳态等效蠕变率；$\sigma_{\mathrm{eff}}$为von Mises等效应力；$\dot{F}$为体积裂变率；$G$为晶粒尺寸；$D$为理论密度分数；$C_{\mathrm{Pu}}$为$\mathrm{PuO}_2$质量百分数。式\eqref{eq:mox_steady_creep}的三项依次表示低应力扩散蠕变、高应力位错蠕变和辐照蠕变。系数及其标定单位见附录\ref{app:mox_mechanical_correlations}；使用时必须保持应力、晶粒尺寸和裂变率单位与系数标定体系一致。
+
+对于高钚含量快堆MOX燃料，还可采用Routbort稳态热蠕变--辐照蠕变模型：
+\begin{equation}
+	\dot{\varepsilon}_{\mathrm{th+irr}}
+	=\frac{A_R}{G^2}\sigma_{\mathrm{eff}}
+	\exp\!\left(-\frac{Q_1}{RT}\right)
+	+B_R\sigma_{\mathrm{eff}}^{4.4}
+	\exp\!\left(-\frac{Q_2}{RT}\right)
+	+C_R\sigma_{\mathrm{eff}}\dot{F}.
+	\label{eq:fast_mox_creep}
+\end{equation}
+该模型不含显式的初生蠕变项，适用于以稳态热蠕变和辐照蠕变为主的快堆工况。两类模型的选取应与燃料成分、温度范围、载荷历史及后续验证数据保持一致。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.80\textwidth]{UO2_MOX_creep.png}
+	\caption{$\mathrm{UO}_2$与MOX燃料蠕变模型计算结果对比}
+	\label{fig:uo2_mox_creep_comparison}
+\end{figure}
+
+\xsubsection{重定位}
+
+燃料重定位是指氧化物燃料芯块在功率上升过程中发生开裂后，裂纹自由表面的形成以及碎块间的相对运动使芯块表观直径增大，并导致燃料--包壳间隙减小的现象。该过程主要由燃料内部显著的径向温度梯度及其产生的热应力驱动，并不表示燃料基体发生真实的体积膨胀。本文将燃料重定位等效为仅作用于径向的本征应变，并采用BISON中实现的修正ESCORE模型进行描述\cite{fancherESCOREEPRISteadystate1987,halesBISONTheoryManual2016}。
+
+修正ESCORE模型给出的有效径向重定位应变为
+\begin{equation}
+	\varepsilon_{\mathrm{rel}}
+	=
+	\frac{\Delta D}{D_0}
+	=
+	0.8\frac{G_0}{D_0}
+	\left(
+	0.005B^{0.3}-0.2D_0+0.3
+	\right)f(q),
+	\label{eq:escore_relocation_strain}
+\end{equation}
+其中，线功率修正函数$f(q)$表示为
+\begin{equation}
+	f(q)=
+	\begin{cases}
+		0,
+		& q<q_1,\\[4pt]
+		\dfrac{2q}{q_2},
+		& q_1\leq q\leq q_2,\\[8pt]
+		\dfrac{q-q_3}
+		{2.0\ \mathrm{kW\,ft^{-1}}},
+		& q>q_2,
+	\end{cases}
+	\label{eq:escore_relocation_power_function}
+\end{equation}
+式中，$\varepsilon_{\mathrm{rel}}$为有效径向重定位应变；$\Delta D$为重定位引起的芯块直径增量；$D_0$为制造态冷态芯块直径；$G_0$为制造态冷态燃料--包壳直径间隙；$B$为芯块平均燃耗，单位为$\mathrm{MWd\,MTU^{-1}}$；$q$为芯块平均线功率。经验关联式中，$D_0$和$G_0$采用英寸，$q$采用$\mathrm{kW\,ft^{-1}}$。线功率参数分别取
+\begin{equation}
+	q_1=1.52\ \mathrm{kW\,ft^{-1}},\qquad
+	q_2=14.0\ \mathrm{kW\,ft^{-1}},\qquad
+	q_3=10.0\ \mathrm{kW\,ft^{-1}}.
+\end{equation}
+其中，$q_1$为重定位启动阈值，$q_2$为两个线功率区间的转换值，$q_3$为高线功率区间的偏移量。在BISON中，线功率以$\mathrm{W\,m^{-1}}$输入，并在模型内部转换为经验关联式所需的单位。
+
+模型的标定范围为芯块平均线功率$1.52$--$22\ \mathrm{kW\,ft^{-1}}$和平均燃耗$0$--$11500\ \mathrm{MWd\,MTU^{-1}}$，超出该范围时应谨慎外推。数值计算中，重定位应变以增量形式施加，即根据相邻时间步的累计重定位应变之差更新径向本征应变，并可在达到指定燃耗或指定辐照时间后停止增长。
+
+\xsubsection{辐照密实化}{Irradiation-induced Densification}
+
+燃料在辐照初期会因制造孔隙收缩而发生密实化，其结果表现为负的体积应变，并可能导致燃料--包壳间隙增大。BISON采用ESCORE经验模型描述该过程：
+\begin{equation}
+	\varepsilon_D
+	=\Delta\rho_0
+	\left[
+	\exp\!\left(
+	\frac{Bu\ln(0.01)}{C_DBu_D}
+	\right)-1
+	\right],
+	\label{eq:mox_escore_densification}
+\end{equation}
+式中，$\varepsilon_D$为密实化应变，$\Delta\rho_0$为可发生的总密实化量，$Bu$为当前燃耗，$Bu_D$为密实化基本完成时的燃耗。温度修正系数$C_D$为
+\begin{equation}
+	C_D=
+	\begin{cases}
+		7.235-0.0086(T_C-25), & T_C<750\ ^\circ\mathrm{C},\\
+		1,                    & T_C\geq750\ ^\circ\mathrm{C},
+	\end{cases}
+	\label{eq:mox_densification_temperature_factor}
+\end{equation}
+其中，$T_C$为以摄氏度表示的燃料温度。式\eqref{eq:mox_densification_temperature_factor}在$750\ ^\circ\mathrm{C}$处连续。本文的另一个模型是基于再烧结密度变化和制造烧结温度的MATPRO分段模型，模型描述见附录\ref{app:mox_densification_correlations}。
+
+\xsubsection{裂变产物肿胀}{Fission-product Swelling}
+
+裂变产物肿胀由固体裂变产物和气体裂变产物共同引起。MATPRO/BISON模型将一个时间增量内的固体裂变产物体积肿胀写为
+\begin{equation}
+	\Delta\varepsilon_{\mathrm{sw,s}}
+	=5.577\times10^{-5}\rho\,\Delta Bu,
+	\label{eq:mox_solid_fission_product_swelling}
+\end{equation}
+气体裂变产物体积肿胀写为
+\begin{equation}
+	\begin{aligned}
+		\Delta\varepsilon_{\mathrm{sw,g}}
+		={}&1.96\times10^{-31}\rho\,\Delta Bu
+		(2800-T)^{11.73}\\
+		&\times\exp\!\left[-0.0162(2800-T)\right]
+		\exp(-0.0178\rho Bu),
+		\qquad T<2800\ \mathrm{K}.
+	\end{aligned}
+	\label{eq:mox_gaseous_fission_product_swelling}
+\end{equation}
+式中，$\rho$为燃料密度，单位为$\mathrm{kg\,m^{-3}}$；$Bu$和$\Delta Bu$分别为燃耗及其增量，均以每个铀原子的裂变数表示。模型假定$T\geq2800\ \mathrm{K}$时气体裂变产物肿胀为零，此时裂变气体被视为完全释放。若计算中已采用显式裂变气体气泡演化模型，则应统一气体肿胀的来源，避免经验肿胀项与机理模型重复计入。
+
+总的辐照体积应变增量为
+\begin{equation}
+	\Delta\varepsilon_{\mathrm{irr}}
+	=\Delta\varepsilon_D
+	+\Delta\varepsilon_R
+	+\Delta\varepsilon_{\mathrm{sw,s}}
+	+\Delta\varepsilon_{\mathrm{sw,g}}
+	\label{eq:mox_total_irradiation_volumetric_strain}
+\end{equation}
+其中，密实化项为负，重定位、固体和气体裂变产物肿胀项为正。
+
+\xsubsection{燃料重构}{Fuel Restructuring}
+
+在高温及显著径向温度梯度作用下，氧化物燃料可发生等轴晶粒长大、柱状晶形成及局部破碎等组织演化。上述重构过程会改变燃料的热导率、蠕变特性、裂变气体迁移行为和孔隙分布，并通过晶粒尺寸、重构区域和破碎状态等变量与热--力及裂变气体行为模型相互耦合。本文采用等轴晶粒长大模型描述晶粒尺寸演化，通过气孔沿温度梯度方向的迁移判定柱状晶区的形成，并采用经验能量判据识别高功率瞬态下的燃料破碎区域。相关控制方程、判定条件及数值实现将在第\ref{sec:pore_migration}节中详细介绍。
+
+\xsection{燃料--包壳间隙传热模型}{Fuel--Cladding Gap Heat Transfer Model}
+\label{sec:gap_heat_transfer_model}
+
+燃料--包壳间隙是燃料内部释热向包壳及冷却剂传递的主要热阻，其传热能力随间隙尺寸、填充气体组成与压力、表面状态及接触压力持续变化。间隙尚未闭合时，热量主要通过气体传导和表面辐射传递；燃料膨胀、肿胀或重构导致局部接触后，固--固接触传导逐渐增强。上述变化会直接影响燃料中心温度，并通过热膨胀、裂变气体释放及燃料--包壳机械相互作用形成热--力耦合反馈。
+
+本文调研燃料性能分析程序的间隙传热框架，以Ross--Stoute模型和MATPRO气体物性关系为基础描述气体传导、固--固接触传导和热辐射\cite{halesBISONTheoryManual2016,rossHEATTRANSFERCOEFFICIENT1962,hagrmanSCDAPRELAP5MOD1995}。正文仅提供燃料性能计算所需的核心关系；几何修正、温度跳跃、热适应系数、混合气体导热、高压修正、接触理论及化学相互作用层等补充关系见附录\ref{app:gap_heat_transfer_supplementary_models}。这些关联式主要依据$\mathrm{UO}_2$/锆合金轻水堆燃料棒建立，将其用于快堆MOX燃料与不锈钢包壳时，需修改表面粗糙度、发射率、包壳硬度、气体组成和适用温压范围。
+
+\xsubsection{总传热系数}{Total Gap Heat-transfer Coefficient}
+
+设燃料外表面温度为$T_f$，包壳内表面温度为$T_c$，单位面积间隙热流密度写为
+\begin{equation}
+	q_{\mathrm{gap}}
+	=h_{\mathrm{gap}}\left(T_f-T_c\right)
+	\label{eq:gap_heat_flux}
+\end{equation}
+其中，总间隙传热系数由气体传导、固--固接触传导和热辐射三部分叠加：
+\begin{equation}
+	h_{\mathrm{gap}}=h_g+h_s+h_r
+	\label{eq:gap_total_conductance}
+\end{equation}
+式中，$h_g$为填充气体传热系数，$h_s$为燃料与包壳发生接触后产生的附加接触传导系数，$h_r$为辐射传热系数，三者的单位均为$\mathrm{W\,m^{-2}\,K^{-1}}$。式\eqref{eq:gap_total_conductance}三种换热机制在相同的燃料表面与包壳内表面温差作用下同时传热，其对热流贡献相互叠加。各传热项所需的状态变量由热学、力学、裂变气体行为和气腔压力模型共同提供。
+
+\xsubsection{气体传导}{Fill-gas Conduction}
+
+气体传导采用Ross--Stoute形式\cite{rossHEATTRANSFERCOEFFICIENT1962,halesBISONTheoryManual2016}：
+\begin{equation}
+	h_g
+	=\frac{k_g\!\left(T_g,p_g,\boldsymbol{x}\right)}
+	{d_g+C_r\left(r_f+r_c\right)+g_f+g_c}
+	\label{eq:gap_gas_conductance}
+\end{equation}
+其中，$k_g$为混合气体热导率，$p_g$为间隙与气腔压力，$\boldsymbol{x}=\{x_i\}$为各气体组分的摩尔分数；$d_g$为由力学计算得到的等效几何间隙，$r_f$和$r_c$分别为燃料与包壳表面粗糙度，$C_r$为粗糙度系数，$g_f$和$g_c$为两侧表面的温度跳跃距离。气体温度可以通过后处理模块获取指定内表面的温度，默认是取两表面温度的算术平均值：
+\begin{equation}
+	T_g=\frac{T_f+T_c}{2}
+	\label{eq:gap_gas_temperature}
+\end{equation}
+
+对于由氦、氙、氪等组分构成的混合气体，热导率并非各纯组分热导率的简单线性平均。本文采用MATPRO/Brokaw型混合规则\cite{hagrmanSCDAPRELAP5MOD1995,brokawApproximateFormulasViscosity1958}：
+\begin{equation}
+	k_g
+	=\sum_{i=1}^{N_g}
+	\frac{x_i k_i}
+	{x_i+\displaystyle\sum_{\substack{j=1\\j\ne i}}^{N_g}
+		\Psi_{ij}x_j}
+	\label{eq:gap_gas_mixture_conductivity}
+\end{equation}
+其中，$k_i$和$M_i$分别为第$i$种纯气体的热导率和摩尔质量。$\Psi_{ij}$为二元权重系数，由两种气体的热导率比和摩尔质量比确定；其表达式、纯气体关系及参数表见附录\ref{app:gap_default_gas_conductivity}。
+
+温度跳跃项用于描述稀薄气体在固体壁面附近的非连续温度效应。其数值随气体压力、组分、热适应系数及几何构型变化；压力降低或热适应能力减弱时，$g_f+g_c$增大，从而降低$h_g$。本文通过调研模型，可采用Lanning--Hann模型或Toptan模型计算该项\cite{lanningReviewMethodsApplicable1975,toptanGapConductanceModeling2019,toptanModelingGapConductance2020}，具体关系见附录\ref{app:gap_temperature_jump_models}。当气体压力较高且稀薄气体假设不再适用时，可采用温度--压力相关的高级气体导热模型，其状态方程和密度修正见附录\ref{app:gap_advanced_gas_conductivity}。
+
+\xsubsection{固--固接触传导}{Solid--solid Contact Conduction}
+
+燃料与包壳接触后，微凸体接触斑点形成附加导热通道。通过调研，本文采用经修正的Ross--Stoute关系描述该贡献\cite{halesBISONTheoryManual2016,rossHEATTRANSFERCOEFFICIENT1962}：
+\begin{subequations}\label{eq:gap_solid_contact_model}
+	\begin{align}
+		h_s
+		&=
+		\begin{cases}
+			C_s k_m\dfrac{P_c}{H\sqrt{\delta}},&P_c>0,\\[1.0ex]
+			0,&P_c\leq0,
+		\end{cases}
+		\label{eq:gap_solid_contact_conductance}\\
+		k_m&=\frac{2k_fk_c}{k_f+k_c},
+		\label{eq:gap_effective_solid_conductivity}\\
+		\delta&=0.8\left(r_f+r_c\right),
+		\label{eq:gap_average_film_thickness}
+	\end{align}
+\end{subequations}
+式中，$P_c$为取压缩为正的接触压力，$H$为较软一侧材料的迈耶硬度，$k_f$和$k_c$分别为燃料与包壳的热导率，$\delta$为平均气膜厚度，$C_s$为经验系数。默认采用$C_s=10\ \mathrm{m^{-1/2}}$，但该值源自特定金属接触试验，不应作为MOX/SS316、MOX/D9或MOX/HT9界面的通用常数。
+
+接触项通过$P_c$与力学接触求解直接耦合。间隙开放时$P_c=0$，式\eqref{eq:gap_solid_contact_conductance}不产生贡献；接触建立后，$h_s$随接触压力增大而提高。包壳硬度应采用与材料牌号、冷加工状态和温度相匹配的关系，不能直接沿用针对锆合金给出的默认值。接触收缩热阻的理论来源、历史硬度关联式及化学相互作用层处理见附录\ref{app:gap_contact_supplementary_models}。
+
+\xsubsection{热辐射}{Thermal Radiation}
+
+间隙气体可视为非参与介质时，燃料外表面与包壳内表面之间的辐射换热可按两无限大平行灰体表面近似\cite{birdTransportPhenomena1976,halesBISONTheoryManual2016}：
+\begin{subequations}\label{eq:gap_radiation_model}
+	\begin{align}
+		q_r
+		&=\sigma F_{\varepsilon}
+		\left(T_f^4-T_c^4\right)
+		=h_r\left(T_f-T_c\right),
+		\label{eq:gap_radiation_heat_flux}\\
+		h_r
+		&=\sigma F_{\varepsilon}
+		\left(T_f^2+T_c^2\right)
+		\left(T_f+T_c\right),
+		\label{eq:gap_radiation_conductance}\\
+		F_{\varepsilon}
+		&=\left(
+		\frac{1}{\varepsilon_f}
+		+\frac{1}{\varepsilon_c}-1
+		\right)^{-1},
+		\label{eq:gap_emissivity_factor}
+	\end{align}
+\end{subequations}
+其中，$\sigma$为Stefan--Boltzmann常数，$\varepsilon_f$和$\varepsilon_c$分别为燃料与包壳表面发射率。由于$h_r$随绝对温度显著增大，该项在高温瞬态下更为重要；发射率应反映表面氧化、化学相互作用和沉积状态，而不宜始终采用未辐照表面的固定值。
+
+\xsubsection{耦合变量与适用范围}{Coupling Variables and Applicability}
+
+间隙传热模型所需变量及其耦合关系见表\ref{tab:gap_heat_transfer_coupling}。
+
+\begin{table}[htbp]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.18}
+	\caption{间隙传热模型的主要输入、来源及作用}
+	\label{tab:gap_heat_transfer_coupling}
+	\begin{tabularx}{\textwidth}{p{2.7cm}p{4cm}X}
+		\toprule
+		来源模块 & 传入变量 & 对间隙传热的作用 \\
+		\midrule
+		热学求解 & $T_f$、$T_c$、$k_f$、$k_c$、$\varepsilon_f$、$\varepsilon_c$
+		& 确定气体平均温度、接触等效热导率和辐射传热系数 \\
+		力学与接触求解 & $d_g$、$P_c$
+		& 更新气体传导路径，并在接触建立后激活固--固接触传导 \\
+		裂变气体与气腔模型 & $p_g$、各组分摩尔分数$x_i$
+		& 更新混合气体热导率、温度跳跃距离及高压修正 \\
+		材料与表面状态 & $r_f$、$r_c$、$H$及经验系数
+		& 描述表面形貌、包壳材料状态和真实接触导热能力 \\
+		间隙传热输出 & $h_g$、$h_s$、$h_r$、$h_{\mathrm{gap}}$及$q_{\mathrm{gap}}$
+		& 作为燃料和包壳界面的热通量边界条件返回热学求解 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+在每个全局时间步内，程序先根据当前变形状态更新$d_g$和$P_c$，再根据气腔压力及裂变气体组成计算$k_g$与温度跳跃距离，随后由式\eqref{eq:gap_total_conductance}得到总传热系数，并将式\eqref{eq:gap_heat_flux}作为燃料与包壳界面的耦合热通量。数值实现应保证间隙由开放转为接触时各传热项连续，且对气体摩尔分数、压力、有效间隙和材料硬度设置物理范围检查。
+
+上述模型适用于气体填充的燃料--包壳间隙。若燃料设计采用液态金属键合层，气体传导和温度跳跃关系不再适用，应改用相应液态金属物性、界面润湿和接触热阻模型。对于本文涉及的MOX/不锈钢体系，轻水堆来源的Ross--Stoute参数可作为模型框架和初始估计，但界面硬度、表面状态及高温气体物性仍需依据目标材料与工况进行修改。
+
+\xsection{SCIANTIX裂变气体行为模型}{SCIANTIX Fission Gas Behavior Model}
+\label{sec:sciantix_fission_gas_model}
+
+\xsubsection{程序定位与物理框架}{Program Scope and Physical Framework}
+
+裂变气体行对对燃料性能分析程序至关重要。本文提供其中一种方法是采用Pizzocri等开发的SCIANTIX程序计算燃料中的裂变气体行为\cite{pizzocriSCIANTIXNewOpen2020}。SCIANTIX以物理机制模型描述气体在晶粒内部和晶界处的迁移与演化，并给出裂变气体释放和气体肿胀等工程尺度输出。本文未重新开发SCIANTIX的内部理论模型，而是将其作为独立的裂变气体计算模块，与燃料性能分析程序交换状态变量。因此，本节仅介绍与程序耦合直接相关的物理过程、关键控制关系及输入输出，扩散系数、俘获率、再溶解率、晶界空位扩散系数和气泡几何等具体关联式不再逐项展开。
+
+裂变生成的氙和氪在燃料基体中的溶解度较低，其滞留、迁移与释放会同时影响燃料温度和力学响应。一方面，释放至间隙和气腔的裂变气体会改变气体组成、间隙导热能力及燃料棒内压；另一方面，滞留于晶内和晶界气泡中的气体会引起燃料肿胀，并进一步影响间隙闭合及燃料--包壳机械相互作用。SCIANTIX所描述的主要过程可归纳为：
+
+\begin{enumerate}
+	\item 生成与晶内扩散：裂变生成的气体原子以单原子形式在晶格中扩散，并向晶界迁移；
+	\item 晶内俘获与再溶解：气体原子被缺陷或纳米气泡俘获，气泡内原子又可在裂变碎片作用下重新进入晶格，两者的竞争决定有效扩散通量；
+	\item 晶界积聚与气泡生长：到达晶界的气体进入晶界气泡，气泡通过吸收或释放空位趋近力学平衡，并产生晶界气体肿胀；
+	\item 气泡互连与释放：晶界气泡随覆盖率增加而发生互连；当形成连续释放路径后，气体由晶界进入燃料棒自由体积。
+\end{enumerate}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.92\textwidth]{fission_gas_evolution_editable_preview.png}
+	\caption{裂变气体在晶内与晶界间的演化及释放过程（根据文献\cite{cazadoModelNuclearFuel2018}整理）}
+	\label{fig:sciantix_fission_gas_process}
+\end{figure}
+
+需要说明的是，SCIANTIX的基础物理框架和较多参数来源于UO$_2$燃料研究。将其用于MOX燃料时，可沿用晶内扩散、俘获--再溶解及晶界气泡演化等基本机制，但扩散、裂变产额、氦生成及微观结构演化等材料相关参数应依据MOX燃料的Pu含量、氧金属比和适用实验数据进行选择与验证。
+
+\xsubsection{关键控制关系}{Key Governing Relations}
+
+在球形晶粒假设下，晶内单原子气体浓度$c_1$与晶内气泡中气体浓度$m$之和记为$c_{\mathrm{ig}}$。采用俘获--再溶解等效处理后，其控制方程可写为
+\begin{equation}
+	\frac{\partial c_{\mathrm{ig}}}{\partial t}
+	=
+	D_{\mathrm{eff}}
+	\frac{1}{r^2}
+	\frac{\partial}{\partial r}
+	\left(
+	r^2\frac{\partial c_{\mathrm{ig}}}{\partial r}
+	\right)
+	+yF,
+	\qquad
+	c_{\mathrm{ig}}=c_1+m,
+	\qquad
+	D_{\mathrm{eff}}=\frac{b}{b+g}D,
+	\label{eq:sciantix_intragranular_balance}
+\end{equation}
+式中，$D$为单原子扩散系数，$g$和$b$分别为晶内俘获率和辐照诱导再溶解率，$y$为裂变气体产额，$F$为裂变率，$r$为晶粒径向坐标。式\eqref{eq:sciantix_intragranular_balance}反映了气体生成、晶内扩散以及俘获--再溶解竞争对晶界输运的共同作用。
+
+由晶内扩散到晶界的气体形成晶界气体存量$C_{\mathrm{gb}}$。按单位燃料体积计，其演化可表示为
+\begin{equation}
+	\frac{\mathrm{d}C_{\mathrm{gb}}}{\mathrm{d}t}
+	=
+	-\frac{3}{a}
+	D_{\mathrm{eff}}
+	\left.
+	\frac{\partial c_{\mathrm{ig}}}{\partial r}
+	\right|_{r=a}
+	-R_{\mathrm{rel}},
+	\label{eq:sciantix_intergranular_balance}
+\end{equation}
+式中，$a$为晶粒半径，$R_{\mathrm{rel}}$为晶界气体释放率。第一项表示由晶内扩散进入晶界的气体通量，第二项表示晶界互连或微裂纹等机制引起的释放。
+
+晶界气泡的生长由气泡实际压力$p_{\mathrm{b}}$与平衡压力$p_{\mathrm{eq}}$之差驱动。气泡覆盖率达到饱和值后，模型认为晶界形成连续释放路径，其核心关系为
+\begin{equation}
+	\begin{aligned}
+		p_{\mathrm{eq}}
+		&=\frac{2\gamma}{R_{\mathrm{gb}}}-\sigma_{\mathrm{h}},\\
+		\frac{\mathrm{d}n_{\mathrm{v}}}{\mathrm{d}t}
+		&=\frac{2\pi D_{\mathrm{v}}\delta_{\mathrm{g}}}
+		{k_{\mathrm{B}}T\,S(F_{\mathrm{gb}})}
+		\left(p_{\mathrm{b}}-p_{\mathrm{eq}}\right),\\
+		F_{\mathrm{gb}}
+		&=N_{\mathrm{gb}}A_{\mathrm{gb}},
+		\qquad
+		F_{\mathrm{gb}}\geq F_{\mathrm{gb,sat}}
+		\;\Longrightarrow\;
+		R_{\mathrm{rel}}>0.
+	\end{aligned}
+	\label{eq:sciantix_bubble_growth_interconnection}
+\end{equation}
+式中，$\gamma$为燃料/气体比表面能，$R_{\mathrm{gb}}$为晶界气泡曲率半径，$\sigma_{\mathrm{h}}$为静水应力，$n_{\mathrm{v}}$为气泡所含空位数，$D_{\mathrm{v}}$为晶界空位扩散系数，$\delta_{\mathrm{g}}$为晶界扩散层厚度，$S$为几何因子，$N_{\mathrm{gb}}$和$A_{\mathrm{gb}}$分别为晶界气泡面密度和平均投影面积。
+
+SCIANTIX向燃料性能计算提供的两个主要工程量为气体肿胀和裂变气体释放率，可分别写为
+\begin{equation}
+	\varepsilon_{v,\mathrm{gas}}^{\mathrm{sw}}
+	=
+	\left(\frac{\Delta V}{V}\right)_{\mathrm{intra}}
+	+
+	\left(\frac{\Delta V}{V}\right)_{\mathrm{inter}}
+	+
+	\left(\frac{\Delta V}{V}\right)_{\mathrm{sol}}
+	+
+	\left(\frac{\Delta V}{V}\right)_{\mathrm{HBS}},
+	\qquad
+	f_{\mathrm{FGR}}
+	=
+	\frac{N_{\mathrm{rel}}}{N_{\mathrm{gen}}},
+	\label{eq:sciantix_engineering_outputs}
+\end{equation}
+式中，下标$\mathrm{intra}$、$\mathrm{inter}$、$\mathrm{sol}$和$\mathrm{HBS}$分别表示晶内气泡、晶界气泡、燃料基体中固溶态气体原子和高燃耗结构区孔隙的贡献，$N_{\mathrm{rel}}$与$N_{\mathrm{gen}}$分别为累计释放和累计生成的气体原子数。晶粒长大、微裂纹、氦气及放射性气体衰变属于SCIANTIX的扩展模型，仅在相应分析工况启用时参与计算，其内部经验关系不在正文中列出\cite{baraniAnalysisTransientFission2017,pastoreModellingTransientFission2014}。
+
+\xsubsection{输入输出及耦合方法}{Inputs, Outputs, and Coupling Method}
+
+SCIANTIX与燃料性能分析程序之间的主要变量交换关系见表\ref{tab:sciantix_coupling_variables}。外部程序提供局部热学、功率、燃耗和力学状态，SCIANTIX据此推进气体与微观结构状态，并将释放量和肿胀量返回至燃料棒尺度模型。
+
+\begin{table}[htbp]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.18}
+	\caption{SCIANTIX与燃料性能分析程序的主要变量交换关系}
+	\label{tab:sciantix_coupling_variables}
+	\begin{tabularx}{\textwidth}{p{2.6cm}X X}
+		\toprule
+		类别 & 主要变量 & 在耦合计算中的作用 \\
+		\midrule
+		热学与功率输入
+		& 温度$T$、裂变率$F$、时间步长$\Delta t$
+		& 控制气体生成、热扩散及温度相关的气泡演化过程 \\
+		燃耗与力学输入
+		& 燃耗$Bu$、静水应力$\sigma_{\mathrm{h}}$、晶粒初始尺寸及初始气体状态
+		& 确定微观结构状态、气泡平衡压力及历史变量的演化 \\
+		气体行为输出
+		& 累计释放量$N_{\mathrm{rel}}$、滞留量、$f_{\mathrm{FGR}}$及各气体组分存量
+		& 更新气腔气体总量、燃料棒内压以及间隙气体组成和导热能力 \\
+		微观结构输出
+		& 气体肿胀$\varepsilon_{\mathrm{gas}}^{\mathrm{sw}}$、晶内/晶界气泡状态及晶粒尺寸
+		& 更新燃料非弹性体积应变，并为后续时间步的气体迁移提供状态变量 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+在每个全局时间步内，燃料性能分析程序将当前计算点的$T$、$F$、$Bu$和$\sigma_{\mathrm{h}}$等变量传递给SCIANTIX；SCIANTIX完成内部状态更新后，返回$f_{\mathrm{FGR}}$、气体释放增量和$\varepsilon_{\mathrm{gas}}^{\mathrm{sw}}$等结果。释放气体用于更新气腔气体存量、燃料棒内压和间隙传热条件，气体肿胀则作为燃料体积应变的一部分进入热--力计算。SCIANTIX内部的气泡数密度、气泡半径和晶界覆盖率等变量由该模块独立保存，不作为全局场变量求解。
+
+
+\xsection{包壳材料堆内行为模型}{In-reactor Behavior Models for Cladding Materials}
+\label{sec:cladding_incore_models}
+
+快堆燃料元件包壳在高温、内压和快中子辐照的共同作用下，持续发生导热、热膨胀、弹塑性变形、热蠕变、辐照蠕变及空洞肿胀。上述过程相互耦合，并进一步影响燃料--包壳接触、包壳应力重分布和失效裕量。本文所采用的包壳材料包括316型奥氏体不锈钢、D9奥氏体不锈钢和HT9铁素体/马氏体钢。其中，SS316表示316不锈钢；D9是在316系奥氏体钢基础上发展形成的钛稳定化合金；HT9则属于约12Cr--1Mo--W--V系回火马氏体钢\cite{hofmanMetallicFuelsHandbook2019,halesBISONTheoryManual2016}。
+
+为避免将材料牌号、加工状态和本构模型混为一体，本文按“材料体系--物理过程--适用工况”的层级组织包壳模型。正文保留燃料性能计算所需的核心关系式，详细成分、备选热物性关联式、模型参数组以及瞬态失效和蠕变--疲劳模型列于附录\ref{app:cladding_supplementary_models}。三类材料的主要特征及建模重点见表\ref{tab:cladding_material_overview}。
+
+\begin{table}[htbp]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.18}
+	\caption{快堆包壳材料的主要特征及建模重点}
+	\label{tab:cladding_material_overview}
+	\begin{tabularx}{\textwidth}{p{2.1cm}p{3.0cm}X X}
+		\toprule
+		材料 & 材料类别或状态 & 主要堆内行为 & 本文重点模型 \\
+		\midrule
+		SS316 & 奥氏体不锈钢 & 温度相关热物性、辐照硬化或软化、辐照蠕变及空洞肿胀 & 热物性、弹性、热--辐照蠕变、肿胀和累积损伤 \\
+		D9 & 钛稳定化奥氏体不锈钢 & 相比316型钢具有更好的抗肿胀和高温蠕变性能，但仍存在显著的辐照蠕变和空洞肿胀 & 热物性、弹塑性、热--辐照蠕变、肿胀及稳态/瞬态失效 \\
+		HT9 & 回火铁素体/马氏体钢 & 抗空洞肿胀能力较强；高温下热蠕变及强度退化控制包壳变形与失效 & 热物性、弹塑性、热--辐照蠕变、低肿胀及CDF/空洞长大失效 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+在小应变表述下，包壳总应变可分解为
+\begin{equation}
+	\boldsymbol{\varepsilon}
+	=\boldsymbol{\varepsilon}^{\mathrm e}
+	+\boldsymbol{\varepsilon}^{\mathrm p}
+	+\boldsymbol{\varepsilon}^{\mathrm{cr}}
+	+\boldsymbol{\varepsilon}^{\mathrm{th}}
+	+\boldsymbol{\varepsilon}^{\mathrm{sw}},
+	\label{eq:clad_total_strain_decomposition}
+\end{equation}
+式中，上标$\mathrm e$、$\mathrm p$、$\mathrm{cr}$、$\mathrm{th}$和$\mathrm{sw}$分别表示弹性、塑性、蠕变、热膨胀和辐照肿胀分量。在有限应变计算中，各非弹性分量应通过与程序运动学框架一致的增量形式更新。
+
+\xsubsection{热物性}{Thermophysical Properties}
+\label{sec:cladding_thermophysical_properties}
+
+包壳热导率和比热容控制包壳内的温度梯度及其瞬态热响应，热膨胀和密度则分别决定无应力热应变与热惯性。下列关系式均以绝对温度$T$（K）为自变量；除非另有说明，热导率$k$的单位为$\mathrm{W\,m^{-1}\,K^{-1}}$，定压比热容$c_p$的单位为$\mathrm{J\,kg^{-1}\,K^{-1}}$。
+
+\subsubsection{热导率与比热容}
+
+对于SS316，采用Mills数据的拟合关系\cite{mills2002,halesBISONTheoryManual2016}：
+\begin{subequations}\label{eq:ss316_thermal_properties}
+	\begin{align}
+		k_{316}(T)
+		&=-7.301\times10^{-6}T^2
+		+2.716\times10^{-2}T+6.308,
+		\label{eq:ss316_thermal_conductivity}\\
+		c_{p,316}(T)
+		&=428.46+0.1816T.
+		\label{eq:ss316_specific_heat}
+	\end{align}
+\end{subequations}
+NASA分段关系及其他SS316热导率备选模型列于附录\ref{app:cladding_alternative_thermal_models}，不在正文中重复展开。
+
+D9的热导率采用Leibowitz和Blomquist的分段关联式，比热容采用Banerjee等人的实验拟合\cite{Leibowitz_1988,banerjee2007_d9cp}：
+\begin{subequations}\label{eq:d9_thermal_properties}
+	\begin{align}
+		k_{\mathrm{D9}}(T)
+		&=
+		\begin{cases}
+			7.598+2.391\times10^{-2}T-8.899\times10^{-6}T^2,
+			&500\leq T\leq1030\ \mathrm{K},\\
+			7.260+1.509\times10^{-2}T,
+			&1030<T\leq1200\ \mathrm{K},
+		\end{cases}
+		\label{eq:d9_thermal_conductivity}\\
+		c_{p,\mathrm{D9}}(T)
+		&=431+17.7\times10^{-2}T
+		+\frac{8.72\times10^{-5}}{T^2}.
+		\label{eq:d9_specific_heat}
+	\end{align}
+\end{subequations}
+
+HT9的热导率和比热容分别采用金属燃料手册与Yamanouchi等人的关联式\cite{hofmanMetallicFuelsHandbook2019,Yamanouchi_1992}：
+\begin{subequations}\label{eq:ht9_thermal_properties}
+	\begin{align}
+		k_{\mathrm{HT9}}(T)
+		={}&29.65-6.668\times10^{-2}T
+		+2.184\times10^{-4}T^2
+		\notag\\
+		&-2.527\times10^{-7}T^3
+		+9.621\times10^{-11}T^4
+		\label{eq:ht9_thermal_conductivity}\\
+		c_{p,\mathrm{HT9}}(T)
+		&=380+0.257T
+		\label{eq:ht9_specific_heat}
+	\end{align}
+\end{subequations}
+式\eqref{eq:ht9_specific_heat}中的常数项在BISON测试程序使用的$370\ \mathrm{J\,kg^{-1}\,K^{-1}}$。HT9在高温区存在铁素体向奥氏体转变，接近或超过相变温区时，应采用分段物性或对外推结果单独评估。
+
+\subsubsection{热膨胀与密度}
+
+相对于无应力参考温度$T_{\mathrm{ref}}$，各向同性热膨胀应变可由瞬时线膨胀系数$\alpha(T)$积分得到：
+\begin{equation}
+	\varepsilon_{\mathrm{th}}(T)
+	=\int_{T_{\mathrm{ref}}}^{T}\alpha(\vartheta)\,\mathrm d\vartheta
+	\qquad
+	\boldsymbol{\varepsilon}^{\mathrm{th}}
+	=\varepsilon_{\mathrm{th}}\boldsymbol I
+	\label{eq:clad_thermal_strain_general}
+\end{equation}
+若直接使用相对于$293\ \mathrm{K}$的平均线膨胀应变，则D9和HT9可分别表示为\cite{Leibowitz_1988,hofmanMetallicFuelsHandbook2019}
+\begin{subequations}\label{eq:clad_d9_ht9_thermal_expansion}
+	\begin{align}
+		100\varepsilon_{\mathrm{th,D9}}
+		={}&0.72549-0.12875T^{1/2}
+		+5.1890\times10^{-3}T
+		-5.0431\times10^{-7}T^2
+		\nonumber\\[-0.2em]
+		&293<T<1200\ \mathrm{K},
+		\label{eq:d9_thermal_expansion}\\
+		100\varepsilon_{\mathrm{th,HT9}}
+		={}&-0.16256+1.62307\times10^{-4}T
+		\notag\\
+		&+1.42357\times10^{-6}T^2
+		-5.50344\times10^{-10}T^3
+		\nonumber\\[-0.2em]
+		&293<T<1050\ \mathrm{K}.
+		\label{eq:ht9_thermal_expansion}
+	\end{align}
+\end{subequations}
+式中，右端数值以百分数表示。超出标定温区时不应直接外推，尤其应避免跨越HT9相变区仍采用同一多项式。
+
+忽略质量损失时，温度相关密度可由体积守恒计算：
+\begin{equation}
+	\rho(T)
+	=\frac{\rho_{\mathrm{ref}}}
+	{\left[1+\varepsilon_{\mathrm{th}}(T)\right]^3}
+	\label{eq:clad_density_from_thermal_strain}
+\end{equation}
+其中$\rho_{\mathrm{ref}}$为参考温度下的初始密度。该处理可避免独立密度拟合与热膨胀模型不一致；若程序使用应变修正密度，则还应将塑性、蠕变和肿胀所引起的体积变化纳入更新。
+
+\xsubsection{弹塑性响应}{Elastic--plastic Response}
+\label{sec:cladding_elastoplastic_response}
+
+\subsubsection{弹性参数}
+
+D9和HT9的杨氏模量$E$、剪切模量$G$及泊松比$\nu$均随温度变化\cite{hofmanMetallicFuelsHandbook2019}。以摄氏温度$T_C=T-273.15$为自变量，存在：
+\begin{subequations}\label{eq:d9_elastic_properties}
+	\begin{align}
+		E_{\mathrm{D9}}&=2.01\times10^5-79.29T_C
+		\label{eq:d9_youngs_modulus}\\
+		G_{\mathrm{D9}}&=7.86\times10^4-38.41T_C
+		\label{eq:d9_shear_modulus}\\
+		\nu_{\mathrm{D9}}&=\frac{E_{\mathrm{D9}}}{2G_{\mathrm{D9}}}-1
+		\label{eq:d9_poisson_ratio}
+	\end{align}
+\end{subequations}
+以及
+\begin{subequations}\label{eq:ht9_elastic_properties}
+	\begin{align}
+		E_{\mathrm{HT9}}&=2.137\times10^5-102.74T_C
+		\label{eq:ht9_youngs_modulus}\\
+		G_{\mathrm{HT9}}&=8.964\times10^4-53.78T_C
+		\label{eq:ht9_shear_modulus}\\
+		\nu_{\mathrm{HT9}}&=\frac{E_{\mathrm{HT9}}}{2G_{\mathrm{HT9}}}-1
+		\label{eq:ht9_poisson_ratio}
+	\end{align}
+\end{subequations}
+式中，$E$和$G$的单位均为MPa。上述关系主要用于$0<T_C\leq800\ ^\circ\mathrm C$的范围。
+
+SS316采用ORNL基于动态测量拟合的弹性关系\cite{Hammond1979ornl5442}：
+\begin{subequations}\label{eq:ss316_elastic_properties}
+	\begin{align}
+		E_{316}
+		&=198.0\left(1-3.93625\times10^{-4}\Theta
+		\right.
+		\notag\\
+		&\left.\qquad
+		-8.37648\times10^{-8}\Theta^2
+		+9.26214\times10^{-11}\Theta^3\right)
+		\label{eq:ss316_youngs_modulus}\\
+		\nu_{316}
+		&=0.29015\left(1+3.55518\times10^{-4}\Theta
+		\right.
+		\notag\\
+		&\left.\qquad
+		-2.20321\times10^{-7}\Theta^2
+		+1.18177\times10^{-10}\Theta^3\right)
+		\label{eq:ss316_poisson_ratio}\\
+		\Theta&=T-297.15
+		\label{eq:ss316_reduced_temperature}
+	\end{align}
+\end{subequations}
+式中，$E_{316}$的单位为GPa。BISON还提供了Legacy IFR模型，本文仅将其作为程序兼容性选项列于附录。
+
+\subsubsection{屈服与硬化}
+
+包壳塑性采用$J_2$流动理论。对于D9和HT9，初始屈服应力由测试温度、辐照温度、快中子注量和应变率共同确定；其完整经验关系及适用范围见附录\ref{app:cladding_strength_models}。在缺少完整应力--应变曲线时，可利用屈服强度$\sigma_y$、极限拉伸强度$\sigma_u$和总伸长率$\varepsilon_t$构造等效线性硬化模型：
+\begin{subequations}\label{eq:clad_linear_hardening}
+	\begin{align}
+		\sigma_{\mathrm f}(p)&=\sigma_y+Hp
+		\label{eq:clad_flow_stress}\\
+		H&=\frac{\sigma_u-\sigma_y}{\varepsilon_t}
+		\label{eq:clad_hardening_modulus}
+	\end{align}
+\end{subequations}
+式中，$p$为等效塑性应变。该简化只保证屈服点与名义极限状态之间的平均斜率，不能描述屈服平台、循环硬化/软化或显著的动态回复。对于SS316，可采用温度相关幂律硬化或Chaboche饱和硬化；相应关系式和参数列于附录\ref{app:cladding_strength_models}。
+
+\xsubsection{辐照肿胀}{Irradiation-induced Swelling}
+\label{sec:cladding_irradiation_swelling}
+
+快中子辐照会促进点缺陷、气泡和空洞演化，从而产生近似各向同性的体积变化。SS316和D9在适宜温区可出现显著空洞肿胀，而HT9通常具有更低的肿胀速率。本文采用以温度和归一化快中子注量$\Phi$为自变量的经验模型，其中$\Phi$以$10^{22}\ \mathrm{n\,cm^{-2}}$表示，$\dot{\Phi}$采用相应的单位制\cite{halesBISONTheoryManual2016,hofmanMetallicFuelsHandbook2019}。
+
+三类材料的体积肿胀可统一写为
+\begin{subequations}\label{eq:clad_volumetric_swelling_models}
+	\begin{align}
+		\varepsilon_{v,316}^{\mathrm{sw}}
+		&=\frac{S_0}{1-S_0}
+		\label{eq:ss316_volumetric_swelling}\\
+		\varepsilon_{v,\mathrm{D9}}^{\mathrm{sw}}
+		&=S_0-D_{\mathrm{D9}}
+		\label{eq:d9_volumetric_swelling}\\
+		\varepsilon_{v,\mathrm{HT9}}^{\mathrm{sw}}
+		&=S_0+D_{\mathrm{HT9}}
+		\label{eq:ht9_volumetric_swelling}
+	\end{align}
+\end{subequations}
+其中，$S_0$为空洞形成引起的负分数密度变化，$D$表示固态反应或微观结构重排引起的密度修正。空洞项的一般形式为
+\begin{equation}
+	S_0(T,\Phi)
+	=0.01R(T)\Phi+
+	\frac{0.01R(T)}{\alpha}
+	\ln\!\left[
+	\frac{1+\exp\{\alpha[\tau(T)-\Phi]\}}
+	{1+\exp[\alpha\tau(T)]}
+	\right]
+	\label{eq:clad_void_swelling_inventory}
+\end{equation}
+式中，$R(T)$为稳态肿胀率参数，$\tau(T)$为孕育期参数，$\alpha$控制由孕育期向稳态肿胀阶段过渡的曲率。各材料的$R$、$\tau$、$D$及增量实现形式列于附录\ref{app:cladding_swelling_parameters}。
+
+对于各向同性肿胀，输入力学求解器的本征应变为
+\begin{equation}
+	\boldsymbol{\varepsilon}^{\mathrm{sw}}
+	=\frac{1}{3}\varepsilon_v^{\mathrm{sw}}\boldsymbol I
+	\label{eq:clad_isotropic_swelling_eigenstrain}
+\end{equation}
+由于上述关系主要基于特定快堆辐照数据库，在高于标定注量、不同冷加工量或不同热处理状态下直接外推可能高估肿胀。程序采用注量增量更新，并保留温度、快中子能谱和材料状态的一致性。
+
+\xsubsection{热蠕变与辐照蠕变}{Thermal and Irradiation Creep}
+\label{sec:cladding_creep}
+
+包壳蠕变由热激活变形与辐照增强变形共同构成。其等效蠕变速率写为
+\begin{equation}
+	\dot{\bar\varepsilon}_{\mathrm{cr}}
+	=\dot{\bar\varepsilon}_{\mathrm T}
+	+\dot{\bar\varepsilon}_{\mathrm I}
+	\label{eq:clad_total_creep_rate}
+\end{equation}
+式中，$\dot{\bar\varepsilon}_{\mathrm T}$和$\dot{\bar\varepsilon}_{\mathrm I}$分别为热蠕变率和辐照蠕变率。本文以稳态关系作为燃料寿期计算的主模型；一阶和三阶蠕变只在相应数据范围内用于瞬态或失效分析。
+
+D9模型将热蠕变和辐照蠕变分别写为\cite{hofmanMetallicFuelsHandbook2019,halesBISONTheoryManual2016}
+\begin{subequations}\label{eq:d9_creep_rate}
+	\begin{align}
+		\dot{\bar\varepsilon}_{\mathrm T,\mathrm{D9}}
+		={}&A_6\left(\frac{\bar\sigma}{Y}\right)^4
+		\exp\!\left(-\frac{A_7}{T}\right)
+		+A_4\bar\sigma\exp\!\left(-\frac{A_5}{T}\right)
+		\label{eq:d9_thermal_creep_rate}\\
+		\dot{\bar\varepsilon}_{\mathrm I,\mathrm{D9}}
+		={}&\left[
+		3A_1\exp\!\left(-\frac{A_2}{T}\right)
+		\exp(-3\Phi)\bar\sigma
+		+A_3\bar\sigma
+		\right.\notag\\
+		&\left.
+		+2.2R_{\mathrm{cr,D9}}(T)\Omega\bar\sigma
+		\right.\notag\\
+		&\left.
+		\tanh\!\left(\frac{\Phi}{\Omega}\right)
+		\right]\phi_{15}\times10^{-7}
+		\label{eq:d9_irradiation_creep_rate}
+	\end{align}
+\end{subequations}
+式中，$\bar\sigma$为等效应力（MPa），$Y$为杨氏模量（MPa）。$\phi_{15}$表示快中子通量以$10^{15}$为基准的归一化数值，通量单位为$\mathrm{n\,cm^{-2}\,s^{-1}}$。参数取值及模型范围见附录\ref{app:cladding_creep_parameters}。
+
+HT9的稳态热蠕变与辐照蠕变可合并表示为\cite{hofmanMetallicFuelsHandbook2019,halesBISONTheoryManual2016}
+\begin{align}
+	\dot{\bar\varepsilon}_{\mathrm{cr,HT9}}
+	={}&C_5\exp\!\left(-\frac{Q_4}{RT}\right)\bar\sigma^2
+	+C_6\exp\!\left(-\frac{Q_5}{RT}\right)\bar\sigma^5
+	\notag\\
+	&+\left[
+	B_0+A\exp\!\left(-\frac{Q}{RT}\right)
+	\right]\phi_{22}\bar\sigma^{1.3},
+	\label{eq:ht9_steady_creep_rate}
+\end{align}
+其中，$\phi_{22}$为按模型要求归一化的快中子通量。HT9初生、二次和三级热蠕变的完整关系以及参数见附录\ref{app:cladding_creep_parameters}。
+
+对于20\%冷加工SS316，热蠕变、瞬态辐照蠕变和稳态辐照蠕变由多项贡献叠加。由于不同来源对状态变量、归一化单位和瞬态项的处理并不一致，正文不再逐项展开；附录\ref{app:cladding_creep_parameters}提供了具有明确试验条件的简化关系和寿命关联。模型选取时必须与冷加工量、温度、应力和快中子能谱相匹配，不能将CW316参数直接用于退火态SS316。
+
+\xsubsection{强度、延性与失效判据}{Strength, Ductility, and Failure Criteria}
+\label{sec:cladding_failure_models}
+
+包壳失效评估应区分长期正常运行与快速事故瞬态。前者通常由蠕变断裂控制，可采用累积损伤分数（cumulative damage fraction，CDF）；后者还可能受到温升速率、辐照历史、塑性失稳和晶界空洞快速长大的影响\cite{FanningSAS4ASASSYS1Safety2017,KARAHAN2010283}。
+
+CDF定义为
+\begin{equation}
+	\mathrm{CDF}(t)
+	=\int_0^t
+	\frac{\mathrm dt'}
+	{t_r[\sigma_\theta(t'),T(t'),\Phi(t')]}
+	\qquad
+	\mathrm{CDF}\geq1\ \Longrightarrow\ \text{失效}
+	\label{eq:clad_cumulative_damage_fraction}
+\end{equation}
+式中，$t_r$为给定环向应力$\sigma_\theta$、温度和辐照状态下的蠕变断裂时间。D9和HT9的稳态断裂关系均可概括为
+\begin{equation}
+	\log_{10}t_r
+	=A+\frac{B}{T}
+	+\frac{C}{T}\log_{10}\sigma_\theta
+	+D\log_{10}\sigma_\theta
+	\label{eq:clad_generic_rupture_time}
+\end{equation}
+其中，系数随材料及应力区间变化。计算时应严格按照标定温度和应力范围选择参数，而不能在不同分区间平滑外推。D9稳态/瞬态关系、HT9长短时间尺度模型、MFH和WHC关系以及受约束空洞长大模型均列于附录\ref{app:cladding_rupture_models}。
+
+综上，包壳模型的选取应同时满足材料牌号、冷加工或热处理状态、温度、应力、应变率、快中子注量及瞬态时间尺度的一致性。后续计算以经过验证的热物性、弹塑性、肿胀和稳态蠕变模型为基础；失效模型则根据正常运行或事故瞬态分别启用，并通过独立试验数据进行校核。
+

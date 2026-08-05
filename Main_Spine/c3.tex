@@ -27,7 +27,7 @@
 	\label{eq:pore_transport}
 \end{equation}
 
-其中，$p$ 表示孔隙度（无量纲），$\vec{v}$ 为气孔的迁移速度（$\mathrm{m/s}$），
+式中：$p$ 表示孔隙度（无量纲），$\vec{v}$ 为气孔的迁移速度（$\mathrm{m/s}$），
 $\nu$ 为有效孔隙扩散系数（$\mathrm{m^2/s}$），用于表征通过表面扩散和固体扩散引起的气孔迁移行为。在公式中，$p$ 表示单位体积内的孔隙占比：当 $p=1$ 时，表示当前位置完全由气孔占据，不存在固态基体；当 $p=0$ 时，表示当前位置完全为基体材料，不含任何孔隙。项 $(1-p)p$ 用于将孔隙度限制在 $0 \leq p \leq 1$ 的物理合理区间内，与最初模型形式相比，该处理可视为其一阶近似。该非线性形式在 $p \to 0$ 和 $p \to 1$ 时均能自然退化为零通量，从而避免数值计算中出现非物理的孔隙生成或消失现象。类似的数值处理方法亦被应用于金属燃料中裂纹重分布的数值计算研究中\cite{gallowayModelingConstituentRedistribution2015}.
 
 \xsubsection{气孔迁移速率模型}{Pore Migration Velocity Models}
@@ -104,7 +104,7 @@ $\nu$ 为有效孔隙扩散系数（$\mathrm{m^2/s}$），用于表征通过表�
 	
 \end{xltabular}
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=5.8cm]{Pore_Velocity_Comparison_All_Five.png}
 	\caption{不同气孔迁移速率模型随温度变化的对比曲线}
@@ -138,7 +138,7 @@ $\nu$ 为有效孔隙扩散系数（$\mathrm{m^2/s}$），用于表征通过表�
 	O/M = 2 + g(C_{Pu},C_{Am}, P_{O_2}) - D(C_{Pu},C_{Am}, P_{O_2})^{-1/5}
 \end{equation}
 该关系通过Brouwer图分析了点缺陷平衡，能够统一描述不同钚含量下过化学计量与欠化学计量区域的氧势行为，与实验数据吻合良好。将该关系代入 Rand--Markin 框架，即可实现气孔迁移速率与燃料化学状态的耦合计算。相关热力学关系及参数取值详见附录B。
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering
 		\includegraphics[height=5.8cm]{mox_species_vapor_pressure.png}
@@ -183,7 +183,7 @@ $\nu$ 为有效孔隙扩散系数（$\mathrm{m^2/s}$），用于表征通过表�
 	\cdot
 	\nabla p
 	\,\mathrm d\Omega
-	=0 ,
+	=0 
 	\label{eq:galerkin_weak}
 \end{equation}
 
@@ -226,7 +226,7 @@ SUPG方法\cite{brooksStreamlineUpwindPetrovgalerkin1982,johnsonFiniteElementMet
 		\nabla\cdot(\nu\nabla p)
 		\right)
 		\,d\Omega
-		=0 .
+		=0 
 	\end{aligned}
 	\label{eq:supg_weak}
 \end{equation}
@@ -260,7 +260,7 @@ SUPG方法\cite{brooksStreamlineUpwindPetrovgalerkin1982,johnsonFiniteElementMet
 		+
 		\int_{\Gamma_{int}}
 		[\phi]\lambda^*\,d\Gamma
-		=0 ,
+		=0 
 	\end{aligned}
 	\label{eq:dg_weak}
 \end{equation}
@@ -281,7 +281,7 @@ SUPG方法\cite{brooksStreamlineUpwindPetrovgalerkin1982,johnsonFiniteElementMet
 	\mathbf v(1-p)p-\nu\nabla p
 	\right]\cdot\mathbf n
 	\,dS
-	=0 .
+	=0 
 	\label{eq:fvm_weak}
 \end{equation}
 
@@ -301,7 +301,7 @@ SUPG方法\cite{brooksStreamlineUpwindPetrovgalerkin1982,johnsonFiniteElementMet
 
 在数值实现中，各控制方程在有限元框架下采用完全耦合的方式同步求解，在每一时间步中将所有未知变量组装为统一的非线性方程组并进行隐式求解。
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=9.0cm]{pore_migration_emprical_flow_chart.pdf}
 	\caption{经验模型的计算流程示意图}
@@ -320,7 +320,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 
 与经验模型类似，各控制方程在有限元框架下采用完全耦合方式进行隐式求解。
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=9.0cm]{pore_migration_rand_markin_flow_chart.pdf}
 	\caption{Rank--Markin模型的计算流程示意图}
@@ -355,7 +355,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 	\end{tabularx}
 \end{table}
 在上述初始条件和边界条件下进行数值计算，并将计算结果与 Bison 程序的模拟结果进行对比。计算结果表明，在温度梯度驱动下燃料内部气孔逐渐向燃料中心迁移，在中心区域形成较高的孔隙率区域。计算 $10^4\,\mathrm{s}$ 后，燃料中心形成明显的中心孔，其半径约占燃料半径的 20\%。本文程序得到的径向孔隙率分布与 Bison 程序的计算结果具有良好一致性，表明所建立的数值模型以及程序实现能够正确描述氧化物燃料中气孔迁移过程，从而验证了程序实现的正确性。
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=5.8cm]{pore_compare_with_bison.png}
 	\caption{程序和Bison程度计算结果对比}
@@ -368,7 +368,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 但在孔隙率梯度较大的区域，不同离散方法之间仍然存在一定差异。例如，当网格数量较少时，FCU 方法仍可能出现一定程度的数值振荡，但振荡幅度明显小于 SUPG 方法；SUPG 方法在粗网格条件下虽然能够保持计算稳定，但孔隙率分布会向中心孔方向产生一定偏移。对于 FVM 方法，在较粗网格（如 $N=25$）条件下会出现明显的“台阶”状分布，这是由于有限体积方法采用常数形函数，在单元边界处孔隙率存在不连续所导致的。相比之下，DG 方法在保持计算稳定性的同时能够较好地描述孔隙率分布的变化特征，但是需要较长的计算时间。
 
 总体来看，各种数值方法均能够描述气孔迁移的基本物理规律，但在计算精度和数值稳定性方面存在一定差别。综合比较结果表明，在适当网格分辨率条件下，所采用的数值方法能够较好地捕捉孔隙率分布的变化特征，并保证计算过程的稳定性。
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=5.8cm]{method_compare.png}
 	\caption{不同方法的对比}
@@ -403,7 +403,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 
 同时，图中还给出了燃料温度的径向分布。可以看到 Miracle 与 Okami 程序计算得到的温度分布基本重合，温度从燃料中心向外逐渐降低，并在燃料表面达到边界条件温度。这表明两程序在热传导求解方面具有良好的一致性，同时该温度梯度也是驱动气孔向燃料中心迁移的主要物理机制。
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=5.8cm]{comparison_plot_case1.png}
 	\caption{Case 1 中 Miracle、CEPTAR 与 Okami 程序在 150000 s 时的计算结果对比}
@@ -420,7 +420,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 
 综合来看，在不同燃料组成和运行条件下，Miracle 程序均能够合理预测燃料内部温度分布以及气孔迁移行为，其计算结果与 Okami 程序保持良好一致，进一步验证了 Rand--Markin 气孔迁移模型在本文程序中的实现正确性与数值稳定性。
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=5.8cm]{comparison_plot_case2.png}
 	\caption{Case 2 中 Miracle 与 Okami 程序在 150000 s 时的计算结果对比}
@@ -476,38 +476,38 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 
 由于响应量既包含分布曲线（$v_p(r)$、$p(r,t)$、$T(r,t)$），也包含标量特征量（峰值、平均值、中心孔半径等），本文采用“曲线敏感性+标量敏感性”的统一评价方法。首先定义归一化敏感性指标：
 \begin{equation}
-	S_Y^\theta = \frac{\Delta Y / Y_0}{\Delta \theta / \theta_0},
+	S_Y^\theta = \frac{\Delta Y / Y_0}{\Delta \theta / \theta_0}
 	\label{eq:sensitivity_definition}
 \end{equation}
-其中，$\theta$为待分析参数，$Y$为响应量，下标$0$表示基准工况。在本文中，$Y$可按评价层次选取为迁移速度响应（如$Y=v_p(r,t^*)$或$Y=v_{p,\max}(t^*)$）与重构结果响应（如$Y=p(r,t^*)$或$Y=R_{\mathrm{void}}(t^*)$）。
+式中：$\theta$为待分析参数，$Y$为响应量，下标$0$表示基准工况。在本文中，$Y$可按评价层次选取为迁移速度响应（如$Y=v_p(r,t^*)$或$Y=v_{p,\max}(t^*)$）与重构结果响应（如$Y=p(r,t^*)$或$Y=R_{\mathrm{void}}(t^*)$）。
 
 对于一般扰动工况，若参数在基准值两侧均有取值（下限$\theta_-$与上限$\theta_+$），采用中心差分形式计算敏感性：
 \begin{equation}
 	S_Y^{\theta}\approx
 	\frac{\left[Y(\theta_+)-Y(\theta_-)\right]/Y(\theta_0)}{\left(\theta_+-\theta_-\right)/\theta_0},
-	\quad \theta_-<\theta_0<\theta_+.
+	\quad \theta_-<\theta_0<\theta_+
 \end{equation}
 若仅有单侧扰动结果，可采用前向或后向差分进行近似计算。
 
 对于跨数量级变化的参数（如人工扩散系数$\nu_{\mathrm{art}}$），采用对数敏感性指标以避免线性尺度下的权重偏置：
 \begin{equation}
 	S_Y^{\log \nu_{\mathrm{art}}}=
-	\frac{\Delta Y/Y_0}{\Delta \log_{10}(\nu_{\mathrm{art}})}.
+	\frac{\Delta Y/Y_0}{\Delta \log_{10}(\nu_{\mathrm{art}})}
 \end{equation}
 对应的中心差分形式为
 \begin{equation}
 	S_Y^{\log \nu_{\mathrm{art}}}\approx
-	\frac{\left[Y(\nu_+)-Y(\nu_-)\right]/Y(\nu_0)}{\log_{10}(\nu_+)-\log_{10}(\nu_-)}.
+	\frac{\left[Y(\nu_+)-Y(\nu_-)\right]/Y(\nu_0)}{\log_{10}(\nu_+)-\log_{10}(\nu_-)}
 \end{equation}
 
 当$Y$为径向分布曲线时，在每个径向位置分别计算，得到曲线敏感性分布：
 \begin{equation}
 	S_Y^{\theta}(r)=
-	\frac{\left[Y(r,\theta_+)-Y(r,\theta_-)\right]/Y(r,\theta_0)}{\left(\theta_+-\theta_-\right)/\theta_0}.
+	\frac{\left[Y(r,\theta_+)-Y(r,\theta_-)\right]/Y(r,\theta_0)}{\left(\theta_+-\theta_-\right)/\theta_0}
 \end{equation}
 该指标可用于识别参数影响最强的径向区域（中心区、过渡区和外缘区）。
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[b]{0.49\linewidth}
@@ -538,7 +538,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 	\label{fig:alpha_sensitivity}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[b]{0.49\linewidth}
@@ -569,7 +569,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 	\label{fig:OM_sensitivity}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[b]{0.49\linewidth}
@@ -600,7 +600,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 	\label{fig:Pu_sensitivity}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[b]{0.49\linewidth}
@@ -631,7 +631,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 	\label{fig:am_sensitivity}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[b]{0.49\linewidth}
@@ -662,7 +662,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 	\label{fig:pressure_sensitivity}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[b]{0.49\linewidth}
@@ -693,7 +693,7 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 	\label{fig:v_sensitivity}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[b]{0.49\linewidth}
@@ -752,21 +752,21 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 \xsubsection{有效扩散系数$D_{\mathrm{Diff}}$}{Effective Diffusion Coefficient}
 有效扩散系数是描述Pu在燃料中迁移能力的关键参数。早期的研究表明\cite{boberPlutoniumRedistributionFast1973}，在均匀 MOX 燃料中，$D_{\mathrm{Diff}}$ 可由铀和钚的化学扩散系数加权得到，即
 \begin{equation}
-	D_{\mathrm{Diff}} \approx c_{\mathrm{Pu}} D_{\mathrm{Pu}} + (1 - c_{\mathrm{Pu}}) D_{\mathrm{U}},
+	D_{\mathrm{Diff}} \approx c_{\mathrm{Pu}} D_{\mathrm{Pu}} + (1 - c_{\mathrm{Pu}}) D_{\mathrm{U}}
 \end{equation}
-式中，$c_{\mathrm{Pu}}$ 为 Pu 的摩尔分数，$D_{\mathrm{U}}$ 和 $D_{\mathrm{Pu}}$ 分别为铀和钚在 MOX 燃料中的本征化学扩散系数。
+式中：$c_{\mathrm{Pu}}$ 为 Pu 的摩尔分数，$D_{\mathrm{U}}$ 和 $D_{\mathrm{Pu}}$ 分别为铀和钚在 MOX 燃料中的本征化学扩散系数。
 
 在BOBER等人\cite{clementPlutoniumRedistributionMixed1978,boberPlutoniumRedistributionFast1973}的研究中给出根据$UO_2$中测量1250摄氏度～1550摄氏度下钚的扩散系数外推得到的扩散系数：
 \begin{equation}
 	D_{\mathrm{Diff}} = A\exp(-E / RT) \ \mathrm{m}^2/\mathrm{s}
 \end{equation}
-其中，$D_{\mathrm{Diff}}$ 为钚在燃料中的扩散系数（$\mathrm{m^2/s}$），$A$ 为指前因子，$E$ 为扩散激活能，$R$ 为气体常数，$T$ 为绝对温度。不同研究者基于不同实验条件和数据拟合方法得到的参数取值存在一定差异。
+式中：$D_{\mathrm{Diff}}$ 为钚在燃料中的扩散系数（$\mathrm{m^2/s}$），$A$ 为指前因子，$E$ 为扩散激活能，$R$ 为气体常数，$T$ 为绝对温度。不同研究者基于不同实验条件和数据拟合方法得到的参数取值存在一定差异。
 
 例如，Ishii 等人\cite{ishiiInvestigationPuMigration2001}给出的指前因子 $A$ 为 $2\times10^{3}$，激活能 $E$ 为 $130000\ \mathrm{cal/mol}$；Clement 等人\cite{clementPlutoniumRedistributionMixed1978}给出的参数分别为 $A=0.34\times10^{-4}$，$E=105000\ \mathrm{cal/mol}$。此外，Di~Marcello 等人\cite{dimarcelloExtensionTRANSURANUSPlutonium2012}给出的参数为 $A=1.5\times10^{-6}\ \mathrm{cm^2/s}$，$E=53000\ \mathrm{cal/mol}$。在其后续研究\cite{dimarcelloModellingActinideRedistribution2014}中，Di~Marcello 等人对该模型参数进行了进一步修正，给出的参数值为 $A=3.4\times10^{-5}$，$E=111055.417\ \mathrm{cal/mol}$。
 
 总之，钚扩散系数通常可以采用 Arrhenius 形式进行描述，但由于实验条件、燃料组成以及数据处理方法的不同，不同文献中得到的模型参数存在一定差异，如图\ref{fig:plutonium_diffusion}。因此，在具体计算中需要根据模型假设选择合适的参数组合。若不考虑 O/M 比的影响，本文建议采用 Clement 等人给出的参数；若考虑 O/M 比对扩散过程的修正，则建议采用 Di~Marcello 在文献\cite{dimarcelloExtensionTRANSURANUSPlutonium2012}中提出并结合 O/M 比修正的参数。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -792,46 +792,46 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 
 基于 Ishii\cite{ishiiInvestigationPuMigration2001}等人的研究结果，引入与 O/M 比相关的修正函数 $F_{O/M}$，用于描述氧非化学计量对有效扩散系数的影响。Pu的有效互扩散系数表示为
 \begin{equation}
-	D = F_{O/M} \cdot D^{\mathrm{sto}}_{\mathrm{Diff}},
+	D = F_{O/M} \cdot D^{\mathrm{sto}}_{\mathrm{Diff}}
 \end{equation}
-其中，$D^{\mathrm{sto}}_{\mathrm{Diff}}$ 为化学计量 MOX 燃料（O/M = 1.98）条件下的互扩散系数。和
+式中：$D^{\mathrm{sto}}_{\mathrm{Diff}}$ 为化学计量 MOX 燃料（O/M = 1.98）条件下的互扩散系数。和
 修正函数 $F_{O/M}$ 用于刻画氧非化学计量状态对互扩散行为的影响，其表达式为 O/M 比的分段函数：
 \begin{equation}
 	F_{O/M} =
 	\begin{cases}
-		\dfrac{N_{O/M=1.94}}{N_{O/M=2.00}}, & O/M \leq 1.94, \\[6pt]
-		a \exp\left(-{b}\footnotemark\cdot{O/M}\right), & 1.94 < O/M < O/M_{\min}, \\[6pt]
-		\dfrac{N_{O/M=O/M_{\min}}}{N_{O/M=2.00}}, & O/M = O/M_{\min}, \\[6pt]
+		\dfrac{N_{O/M=1.94}}{N_{O/M=2.00}}, & O/M \leq 1.94 \\[6pt]
+		a \exp\left(-{b}\footnotemark\cdot{O/M}\right), & 1.94 < O/M < O/M_{\min} \\[6pt]
+		\dfrac{N_{O/M=O/M_{\min}}}{N_{O/M=2.00}}, & O/M = O/M_{\min} \\[6pt]
 		\exp\!\left[
 		\ln\!\left(\dfrac{N_{O/M=O/M_{\min}}}{N_{O/M=2.00}}\right)
 		\dfrac{O/M - 2}{O/M_{\min} - 2}
-		\right], & O/M_{\min} < O/M \leq 2.00.
+		\right], & O/M_{\min} < O/M \leq 2.00
 	\end{cases}
 \end{equation}
 \footnotetext{原参考文献是除，但是根据图片曲线，应该为乘}
 其中，$O/M_{\min}$ 为与温度相关的最小氧金属比，其表达式为
 \begin{equation}
-	O/M_{\min} = 2 - \left\{16 \exp\left(-\frac{3.3\,\text{eV}}{kT}\right)\right\}^{1/4},
+	O/M_{\min} = 2 - \left\{16 \exp\left(-\frac{3.3\,\text{eV}}{kT}\right)\right\}^{1/4}
 \end{equation}
 式中 $k$ 为玻尔兹曼常数，$T$ 为绝对温度。
 
 $N_{O/M}$ 表示对应 O/M 条件下的有效缺陷浓度，其具体形式为
 \begin{align}
-	N_{O/M=1.94} &= 0.0009 \exp\left(-\frac{3.1\,\text{eV}}{kT}\right), \\
-	N_{O/M=O/M_{\min}} &= \frac{4}{(2 - O/M_{\min})^{2}} \exp\left(-\frac{6.4\,\text{eV}}{kT}\right), \\
-	N_{O/M=2.00} &= 2 \exp\left(-\frac{4.2\,\text{eV}}{kT}\right).
+	N_{O/M=1.94} &= 0.0009 \exp\left(-\frac{3.1\,\text{eV}}{kT}\right) \\
+	N_{O/M=O/M_{\min}} &= \frac{4}{(2 - O/M_{\min})^{2}} \exp\left(-\frac{6.4\,\text{eV}}{kT}\right) \\
+	N_{O/M=2.00} &= 2 \exp\left(-\frac{4.2\,\text{eV}}{kT}\right)
 \end{align}
 
 参数 $a$ 和 $b$ 为由连续性条件确定的辅助参数，其定义为
 \begin{align}
-	a &= \left(\frac{N_{O/M=1.94}}{N_{O/M=2.00}}\right)\exp(1.94\,b), \\
+	a &= \left(\frac{N_{O/M=1.94}}{N_{O/M=2.00}}\right)\exp(1.94\,b) \\
 	b &= \frac{1}{1.94 - O/M_{\min}}
-	\ln\left(\frac{N_{O/M=O/M_{\min}}}{N_{O/M=1.94}}\right).
+	\ln\left(\frac{N_{O/M=O/M_{\min}}}{N_{O/M=1.94}}\right)
 \end{align}
 
 上述表达式均引自DI MARCELLO, V\cite{dimarcelloImprovementsTRANSURANUSCode30,dimarcelloExtensionTRANSURANUSPlutonium2012}等人的研究工作，该修正模型反映了不同 O/M 区间内主导扩散机制的变化：在富氧条件下，氧空位主导扩散过程；随着 O/M 比降低，金属空位及间隙原子的作用逐渐增强；在低 O/M 区间内，缺陷聚集效应使扩散系数趋于稳定。通过引入 $F_{O/M}$，可在宏观燃料行为模型中合理考虑燃料化学状态对 Pu 迁移过程的影响。
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=5.8cm]{F_OM_Curve.png}
 \end{figure}
@@ -853,7 +853,7 @@ Clement 与 Finnis\cite{clementPlutoniumRedistributionMixed1978}进一步指出�
 
 气相扩散过程中涉及的有效扩散系数 $D_{\mathrm{pore}}$ 用于表征气孔前缘富集层内锕系元素的扩散能力。鉴于缺乏针对该区域的直接实验测量数据，本文参考 Clement 与 Finnis\cite{clementPlutoniumRedistributionMixed1978} 以及 Ishii\cite{ishiiInvestigationPuMigration2001} 等人的处理方法，假定 $D_{\mathrm{pore}}$ 近似等于燃料基体中的有效扩散系数$D_{\mathrm{Diff}}$。该假设在现有文献中\cite{clementPlutoniumRedistributionMixed1978,ishiiInvestigationPuMigration2001}被广泛采用，且不会显著影响对 Pu 再分布整体趋势的预测。
 
-参数 $A$ 为气相迁移通量中的比例系数，用于表征气孔前缘 Pu 富集强度与温度梯度之间的关系。该参数通常通过拟合辐照后燃料中 Pu 径向分布实验数据确定。根据公开文献中的实验结果及数值分析，本文采用与 Ishii 和 Asaga 等人\cite{ishiiInvestigationPuMigration2001,dimarcelloModellingActinideRedistribution2014}等人的结果，其取值通常位于 $10^{-4}$--$10^{-3}$ 的量级范围内。本文在数值计算中采用 $A = 5\times10^{-5}$\footnotemark \cite{clementPlutoniumRedistributionMixed1978,ishiiInvestigationPuMigration2001,dimarcelloModellingActinideRedistribution2014}，该取值与公开文献\cite{dimarcelloModellingActinideRedistribution2014}中报道的结果保持一致，可合理再现实验中观测到的 Pu 再分布趋势。，以保证模型结果与已有实验观测相符。
+参数 $A$ 为气相迁移通量中的比例系数，用于表征气孔前缘 Pu 富集强度与温度梯度之间的关系。该参数通常通过拟合辐照后燃料中 Pu 径向分布实验数据确定。根据公开文献中的实验结果及数值分析，本文采用与 Ishii 和 Asaga 等人\cite{ishiiInvestigationPuMigration2001,dimarcelloModellingActinideRedistribution2014}等人的结果，其取值通常位于 $10^{-4}$--$10^{-3}$ 的量级范围内。本文在数值计算中采用 $A = 5\times10^{-5}$\footnotemark \cite{clementPlutoniumRedistributionMixed1978,ishiiInvestigationPuMigration2001,dimarcelloModellingActinideRedistribution2014}，该取值与公开文献\cite{dimarcelloModellingActinideRedistribution2014}中报道的结果保持一致，可合理再现实验中观测到的 Pu 再分布趋势，以保证模型结果与已有实验观测相符。
 \footnotetext{参考文献给出的结果是$5\times10^{-2}$和$0.35$，但是本文模拟发现，此时气孔扩散的通量和热扩散+化学扩散通量在同一数量级，考虑到多数实验中给出的结论气孔增强扩散影响较小，因此对A进行了调整}
 
 此外，孔隙特征长度 $l$ 与等效直径 $d$ 用于描述燃料孔隙的几何尺度，其取值依据燃料显微结构观测结果确定。已有研究表明，在快堆 MOX 燃料中，孔隙沿温度梯度方向的特征长度通常位于 $20$--$80~\mu\mathrm{m}$ 范围内，分别对应于小尺寸孔隙和大尺寸孔隙，且该取值被认为具有代表性\cite{clementPlutoniumRedistributionMixed1978, hoffmannCrackFormationCrack1974}。
@@ -932,7 +932,7 @@ Clement 与 Finnis\cite{clementPlutoniumRedistributionMixed1978}进一步指出�
 
 最终，程序输出燃料内部的钚浓度的空间分布及其随时间的演化，从而得到钚元素在反应堆运行过程中的分布。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=9.0cm]{plutonium_migration_flow_chart.pdf}
 	\caption{钚重分布的计算流程图}
@@ -982,7 +982,7 @@ Clement 与 Finnis\cite{clementPlutoniumRedistributionMixed1978}进一步指出�
 \end{table}
 计算结果如图\ref{fig:pu_redistribution}所示。首先考虑在迁移项
 $c(1-c)\frac{Q}{RT^{2}}\nabla T$中保留$1-c$项，即考虑铀（U）浓度变化对Pu迁移过程的影响；随后将该项近似为$c\frac{Q}{RT^{2}}\nabla T$，即忽略铀浓度的影响，并将两种情况下的计算结果与解析解进行对比。
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1042,7 +1042,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 
 基于上述分析，本文进一步对 XD1071 的初始 Pu 含量进行了调整。通过对比不同初始条件的计算结果，发现当初始 Pu 含量设定为约 27\% 时，所得径向分布与实验数据的符合程度明显提高，如图 \ref{fig:xd1071_modified_pu_distribution} 所示。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1063,7 +1063,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 	
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1084,7 +1084,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 	
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=5.8cm]{plutonium_redistribution_modify_xd1071.pdf}
 	\caption{修正初始 Pu 含量后 XD1071 燃料棒的径向 Pu 再分布计算结果}
@@ -1138,14 +1138,14 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 \end{table}
 \footnotetext{文献中给出孔隙直径和孔隙厚度存在10倍关系，因此孔隙厚度也相应变化}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=5.8cm]{plutonium_enhance_vs_normal.pdf}
 	\caption{采用气孔迁移加强扩散不同时刻钚的径向分布}
 	\label{fig:pu_enhance_redistribution}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
@@ -1191,7 +1191,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 
 图\ref{fig:diffusion_sensitivity_analysis}(b)--\ref{fig:constant_A_sensitivity_analysis}(b)给出了基于式\ref{eq:sensitivity_definition}定义的敏感性指标在径向方向的分布及其峰值。针对不同参数的变化特征，本文采用差异化的敏感性定义方法：对于跨数量级变化的扩散系数，采用对数敏感性定义，以减弱非线性效应对结果的影响；而对于活化能、传输热、线功率及外表面温度等参数，则采用线性敏感性定义进行评估。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1211,7 +1211,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 	
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1231,7 +1231,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 	
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1251,7 +1251,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 	
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1271,7 +1271,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 	
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1291,7 +1291,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 	
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1311,7 +1311,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 	
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1331,7 +1331,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 	
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1363,7 +1363,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 
 已有实验研究表明\cite{tanakaRestructuringRedistributionActinides2013,maedaRadialRedistributionActinides2009}，在高径向温度梯度作用下，Am 与 Pu 表现出相似的再分布特征，均向燃料中心区域迁移并在中心空洞附近发生富集，而 Np 未表现出明显变化\cite{maedaRadialRedistributionActinides2009}。在辐照初期阶段（24 h），Am 的富集程度通常略高于 Pu，这是因为镅的扩散系数略大于钚（见图\ref{fig:americium_diffusion_coeff}），且该趋势随时间延长有所增强\cite{tanakaRestructuringRedistributionActinides2013}。这一现象表明，Am 在高温区具有相对更强的迁移能力。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=5.8cm]{americium_diffusion_coeff.pdf}
 	\caption{镅元素和钚元素的扩散系数随温度的变化曲线}
@@ -1401,7 +1401,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 	\footnotetext{表面温度未在文献中显式给出，根据Joyo实验堆的典型快堆冷却剂/包壳边界条件设定在 $\approx 1000 - 1200\,\text{K}$ 左右，因此本文估计边界温度为 $1150\,\text{K}$。}
 \end{table}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[height=5.8cm]{americium_1-2_power.pdf}
 	\caption{Am1-2-1工况下燃料线功率随时间的变化（功率史）}
@@ -1412,7 +1412,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 
 此外，对比不同 O/M 比条件下的实验结果可以发现，较高 O/M 比对应更为显著的镅中心富集现象。该行为可通过气孔中气相物种组成的变化进行解释。在较高 O/M 比条件下，气孔内以$UO_3$等含铀挥发性物种为主，其较高的分压促进铀从高温中心区域向外迁移。相对而言，Pu和Am的挥发能力较弱，从而在中心区域发生相对富集，最终形成明显的中心浓度升高。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}
@@ -1486,7 +1486,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 
 在过化学计量和欠化学计量条件下，扩散系数采用相同的表达式，文献给出的 Arrhenius 形式为：
 \begin{equation}
-	D = 1.39 \times 10^{-6} \exp{\left( \frac{-75900}{RT} \right)} \left(\text{m}^2/\text{s}\right).
+	D = 1.39 \times 10^{-6} \exp{\left( \frac{-75900}{RT} \right)} \left(\text{m}^2/\text{s}\right)
 \end{equation}
 
 在过化学计量条件（$c>0$）下，体系中氧过剩，为维持电中性，部分 $\mathrm{U}^{4+}$ 转化为 $\mathrm{U}^{5+}$，此时缺陷变量满足
@@ -1498,7 +1498,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 \begin{equation}
 	V_U = 4 + 2\left( \frac{c}{1 - q} \right), \quad q = \frac{q_0}{1 - Bu}
 \end{equation}
-其中，$V_U$ 为铀离子的平均价态，$q$ 为钚与重金属原子的原子数比，$q_0$ 为初始钚与重金属原子数比，$Bu$ 为初始重金属原子裂变分数表示的燃耗。
+式中：$V_U$ 为铀离子的平均价态，$q$ 为钚与重金属原子的原子数比，$q_0$ 为初始钚与重金属原子数比，$Bu$ 为初始重金属原子裂变分数表示的燃耗。
 
 输运热 $Q$ 由经验关系给出：
 \begin{equation}
@@ -1558,7 +1558,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 用于修正化学势梯度与浓度梯度之间的关系。
 
 由上述表达式可见，不同模型下氧扩散系数的量级及其对温度、非化学计量偏差的依赖关系存在明显差异。为直观比较各参数化模型的特征，图\ref{fig:oxygen_diffusion}给出了扩散系数随温度及非化学计量偏差变化的关系。可以看出，扩散系数总体上随温度升高而显著增大，表现出典型的热激活扩散特征；同时，其对非化学计量偏差的变化也较为敏感，这反映了缺陷浓度演化对氧迁移能力的控制作用。上述差异表明，在开展 O/M 重分布计算时，扩散系数模型的选取将直接影响氧迁移速率及最终径向分布结果。
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
@@ -1582,7 +1582,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 
 由于缺乏可直接对比的实验数据，本文采用 Bison 提供的测试算例对所建立的氧迁移模型进行验证。通过分别构建过化学计量与欠化学计量两类典型工况，对模型在不同初始化学计量状态下的适用性进行评估。计算所采用的径向一维燃料模型及其边界条件如图\ref{fig:oxygen_boundary_condition}所示。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{oxygen_boundary_condition_formulation.pdf}
 	\caption{用于氧迁移计算的燃料径向模型与边界条件定义}
@@ -1593,7 +1593,7 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 
 由图\ref{fig:different_oxygen_metal_ratio}可见，在过化学计量条件下，氧在温度梯度驱动下向燃料中心迁移，导致中心区域形成富氧区；而在欠化学计量条件下，氧向高温区域迁移受限，中心区域则表现为贫氧特征。随着初始 $\mathrm{O/M}$ 的降低，体系中氧空位浓度增加，氧迁移能力发生变化，从而使中心贫氧程度进一步加剧。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}{0.48\textwidth}

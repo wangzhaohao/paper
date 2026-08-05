@@ -1,0 +1,632 @@
+\chapter{包壳材料堆内行为模型补充关系式}
+\label{app:cladding_supplementary_models}
+
+本附录汇总正文\ref{sec:cladding_incore_models}中未展开的材料成分、备选物性关系、经验参数和失效模型。不同关系式所依据的材料批次、冷加工量、热处理状态及辐照条件并不相同；模型使用时应优先保证材料状态和适用范围一致，而不应仅依据计算曲线的连续性进行外推。
+
+\section{材料成分与状态}
+\label{app:cladding_material_compositions}
+
+\subsection{D9奥氏体不锈钢}
+
+D9是在316系奥氏体不锈钢基础上发展形成的钛稳定化合金。钛与碳形成稳定碳化物，可改善高温组织稳定性及抗蠕变性能。D9-C1和高纯度D9-C1P的名义成分见表\ref{tab:appendix_d9_composition}\cite{hofmanMetallicFuelsHandbook2019}。表中数值均为质量百分数，Fe为余量。
+
+\begin{table}[htbp]
+	\centering
+	\small
+	\caption{D9-C1与D9-C1P的名义化学成分（wt.\%）}
+	\label{tab:appendix_d9_composition}
+	\begin{tabular}{lcc@{\qquad}lcc}
+		\toprule
+		元素 & D9-C1 & D9-C1P & 元素 & D9-C1 & D9-C1P \\
+		\midrule
+		C  & 0.05 & 0.05 & Mn & 2.00 & 2.00 \\
+		Si & 1.00 & 0.90 & P  & $\leq0.020$ & $\leq0.010$ \\
+		S  & $\leq0.010$ & $\leq0.007$ & Cr & 13.5 & 13.5 \\
+		Ni & 15.5 & 15.5 & Mo & 1.50 & 1.65 \\
+		Cu & $\leq0.040$ & $\leq0.020$ & Nb & $\leq0.050$ & $\leq0.010$ \\
+		Al & $\leq0.050$ & $\leq0.010$ & Ti & 0.25 & 0.25 \\
+		As & $\leq0.030$ & $\leq0.030$ & Ta & $\leq0.020$ & $\leq0.010$ \\
+		V  & $\leq0.020$ & $\leq0.020$ & Zr & -- & $\leq0.001$ \\
+		Co & $\leq0.050$ & $\leq0.031$ & O  & -- & $\leq0.005$ \\
+		B  & $\leq0.001$ & $\leq0.001$ & N  & $\leq0.010$ & $\leq0.005$ \\
+		Fe & 余量 & 余量 & & & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsection{HT9铁素体/马氏体钢}
+
+HT9为约12Cr--1Mo--W--V系回火马氏体钢，其UNS牌号为S42100。典型成分范围见表\ref{tab:appendix_ht9_composition}\cite{hofmanMetallicFuelsHandbook2019}。
+
+\begin{table}[htbp]
+	\centering
+	\small
+	\caption{HT9的典型化学成分范围（wt.\%）}
+	\label{tab:appendix_ht9_composition}
+	\begin{tabular}{lc@{\qquad}lc}
+		\toprule
+		元素 & 含量 & 元素 & 含量 \\
+		\midrule
+		C  & 0.17--0.23 & Mn & 0.40--0.70 \\
+		P  & $\leq0.015$ & S  & $\leq0.010$ \\
+		Si & 0.20--0.30 & Ni & 0.30--0.80 \\
+		Cr & 11.0--12.5 & Mo & 0.80--1.20 \\
+		Nb & $\leq0.05$ & W  & 0.40--0.60 \\
+		Al & $\leq0.050$ & V & 0.25--0.35 \\
+		Fe & 余量 & & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\section{热物性备选关系式}
+\label{app:cladding_alternative_thermal_models}
+
+\subsection{SS316热导率备选模型}
+
+Matolich的NASA报告在$255.37$--$1255.37\ \mathrm{K}$范围内给出了分段热导率关系\cite{matolich1965thermal}：
+\begin{equation}
+	k_{316}^{\mathrm{NASA}}(T)
+	=\begin{cases}
+		3.155A_0(T/1.8)^{B_0},
+		&255.37\leq T\leq699.816\ \mathrm{K}\\
+		3.155\left(C_0+D_0T/1.8\right),
+		&699.816<T\leq1255.37\ \mathrm{K}
+	\end{cases}
+	\label{eq:appendix_ss316_nasa_thermal_conductivity}
+\end{equation}
+其中，$A_0=0.52048$、$B_0=0.43367$、$C_0=4.553$、$D_0=5.507\times10^{-3}$，式\eqref{eq:appendix_ss316_nasa_thermal_conductivity}已换算为SI单位。
+
+\subsection{独立密度拟合}
+
+若未采用正文式\eqref{eq:clad_density_from_thermal_strain}的质量守恒更新，可使用下列线性密度拟合：
+\begin{subequations}\label{eq:appendix_cladding_density_fits}
+	\begin{align}
+		\rho_{\mathrm{D9}}(T_C)
+		&=7.98-4.3\times10^{-4}T_C,
+		&&300<T_C<800\ ^\circ\mathrm C
+		\label{eq:appendix_d9_density_fit}\\
+		\rho_{\mathrm{HT9}}(T_C)
+		&=7.778-3.07\times10^{-4}T_C,
+		&&0\leq T_C\leq800\ ^\circ\mathrm C
+		\label{eq:appendix_ht9_density_fit}
+	\end{align}
+\end{subequations}
+式中，密度单位为$\mathrm{g\,cm^{-3}}$。HT9在高于约$800\ ^\circ\mathrm C$后接近相变区，不宜继续使用同一线性关系。
+
+\subsection{SS316 Legacy IFR弹性关系}
+
+为兼容早期快堆计算，部分程序仍保留下列SS316关系：
+\begin{subequations}\label{eq:appendix_ss316_legacy_elasticity}
+	\begin{align}
+		E_{316}^{\mathrm{legacy}}
+		&=2.15946\times10^{11}-7.07727\times10^7T
+		\label{eq:appendix_ss316_legacy_youngs_modulus}\\
+		\nu_{316}^{\mathrm{legacy}}&=0.31
+		\label{eq:appendix_ss316_legacy_poisson_ratio}
+	\end{align}
+\end{subequations}
+式中，$E$的单位为Pa，$T$的单位为K。由于该关系的原始来源已无法可靠追溯，正文不将其作为推荐模型。
+
+\section{辐照肿胀参数}
+\label{app:cladding_swelling_parameters}
+
+\subsection{SS316}
+
+正文式\eqref{eq:clad_void_swelling_inventory}中，SS316的温度参数为\cite{halesBISONTheoryManual2016,hofmanMetallicFuelsHandbook2019}
+\begin{subequations}\label{eq:appendix_ss316_swelling_parameters}
+	\begin{align}
+		\beta&=\frac{T-773}{100}
+		\label{eq:appendix_ss316_swelling_beta}\\
+		R(T)&=\exp\!\left(
+		0.497+0.795\beta-0.0948\beta^2
+		+0.908\beta^3-1.49\beta^4
+		\right)
+		\notag\\
+		&\quad+\exp[-8(\beta-1.35)^2]
+		\label{eq:appendix_ss316_swelling_R}\\
+		\alpha&=0.75
+		\label{eq:appendix_ss316_swelling_alpha}\\
+		\tau(T)&=
+		\begin{cases}
+			6.58-0.566\beta,&T<848\ \mathrm{K}\\
+			4.3105+2.46\beta,&T\geq848\ \mathrm{K}
+		\end{cases}
+		\label{eq:appendix_ss316_swelling_tau}
+	\end{align}
+\end{subequations}
+采用增量更新时，空洞项的变化率为
+\begin{equation}
+	\dot S_0
+	=\frac{0.01R(T)\dot\Phi}
+	{1+\exp\{\alpha[\tau(T)-\Phi]\}},
+	\qquad
+	\dot\varepsilon_{v,316}^{\mathrm{sw}}
+	=\frac{\dot S_0}{(1-S_0)^2}
+	\label{eq:appendix_ss316_swelling_rate}
+\end{equation}
+
+对于特定20\%冷加工316钢数据，也可用幂律近似表示肿胀：
+\begin{equation}
+	\frac{\Delta V}{V_0}=A_{\mathrm{sw}}\Phi^n
+	\label{eq:appendix_cw316_power_law_swelling}
+\end{equation}
+其中，$A_{\mathrm{sw}}$和$n$需根据材料炉批、温度和辐照装置确定。不同试验中$n$约为1.5--2.0，表明肿胀机制可能随气泡向空洞主导过程转变。
+
+\subsection{D9}
+
+D9的肿胀率、孕育期及固态密度修正为
+\begin{subequations}\label{eq:appendix_d9_swelling_parameters}
+	\begin{align}
+		R_{\mathrm{D9}}(T)
+		&=2.76\exp[-1.4\times10^{-4}(T-773.15)^2]
+		\label{eq:appendix_d9_swelling_R}\\
+		\alpha_{\mathrm{D9}}&=0.75,
+		\qquad
+		\tau_{\mathrm{D9}}=11.9
+		\label{eq:appendix_d9_swelling_alpha_tau}\\
+		D_{\mathrm{D9}}(T,\Phi)
+		&=0.01(1-\exp[-30\Phi])
+		(-1.7\times10^{-4}T+0.241)
+		\label{eq:appendix_d9_solid_state_density_change}
+	\end{align}
+\end{subequations}
+相应的增量形式为
+\begin{equation}
+	\dot\varepsilon_{v,\mathrm{D9}}^{\mathrm{sw}}
+	=\frac{0.01R_{\mathrm{D9}}(T)\dot\Phi}
+	{1+\exp[0.75(11.9-\Phi)]}
+	-0.3\dot\Phi\exp(-30\Phi)
+	(-1.7\times10^{-4}T+0.241)
+	\label{eq:appendix_d9_swelling_rate}
+\end{equation}
+
+\subsection{HT9}
+
+HT9的模型参数为
+\begin{subequations}\label{eq:appendix_ht9_swelling_parameters}
+	\begin{align}
+		R_{\mathrm{HT9}}(T)
+		&=0.085\exp[-1.0\times10^{-4}(T-673)^2]
+		\label{eq:appendix_ht9_swelling_R}\\
+		\alpha_{\mathrm{HT9}}&=0.75,
+		\qquad
+		\tau_{\mathrm{HT9}}=14.2
+		\label{eq:appendix_ht9_swelling_alpha_tau}\\
+		D_{\mathrm{HT9}}(\Phi)
+		&=0.0015[1-\exp(-0.1\Phi)]
+		\label{eq:appendix_ht9_solid_state_density_change}
+	\end{align}
+\end{subequations}
+其增量形式为
+\begin{equation}
+	\dot\varepsilon_{v,\mathrm{HT9}}^{\mathrm{sw}}
+	=\frac{0.01R_{\mathrm{HT9}}(T)\dot\Phi}
+	{1+\exp[0.75(14.2-\Phi)]}
+	+1.5\times10^{-4}\dot\Phi\exp(-0.1\Phi)
+	\label{eq:appendix_ht9_swelling_rate}
+\end{equation}
+
+\section{屈服强度、极限强度与延性}
+\label{app:cladding_strength_models}
+
+\subsection{D9与HT9屈服强度的一般形式}
+
+D9和HT9的$0.2\%$偏移屈服强度采用同一类热激活经验形式\cite{hofmanMetallicFuelsHandbook2019}：
+\begin{equation}
+	\ln\!\left(\frac{F\sigma^*}{\sigma_y}\right)
+	=A_y\left[
+	\frac{(\sigma^*/G)^M}
+	{\dot\varepsilon\exp(Q/RT)}
+	\right]^\lambda
+	\label{eq:appendix_cladding_yield_strength_general}
+\end{equation}
+式中，$F$为辐照修正因子，$\sigma^*$为温度相关特征应力，$G$为剪切模量，$\dot\varepsilon$为应变率。未辐照条件下取$F=1$。基本拟合参数见表\ref{tab:appendix_cladding_yield_parameters}；辐照修正函数应按所采用的金属燃料手册或程序版本保持一致。
+
+\begin{table}[htbp]
+	\centering
+	\caption{D9与HT9屈服强度模型的基本参数}
+	\label{tab:appendix_cladding_yield_parameters}
+	\begin{tabular}{cccccc}
+		\toprule
+		材料 & $A_y$ & $M$ & $\lambda$ & $Q$（cal/mol） & 适用快中子注量 \\
+		\midrule
+		D9  & 30000 & 5.5 & 0.22  & 70000 & $\Phi\leq12$ \\
+		HT9 & 20000 & 5.0 & 0.172 & 82000 & $\Phi\leq11$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+相应的特征应力和剪切模量为
+\begin{subequations}\label{eq:appendix_cladding_characteristic_stress}
+	\begin{align}
+		\sigma^*_{\mathrm{D9}}
+		&=450-240\tanh\!\left(\frac{T_C-760}{300}\right),
+		&
+		G_{\mathrm{D9}}&=78600-38.41T_C
+		\label{eq:appendix_d9_characteristic_stress}\\
+		\sigma^*_{\mathrm{HT9}}
+		&=430-190\tanh\!\left(\frac{T_C-640}{225}\right),
+		&
+		G_{\mathrm{HT9}}&=89640-53.78T_C
+		\label{eq:appendix_ht9_characteristic_stress}
+	\end{align}
+\end{subequations}
+式中，应力和模量单位均为MPa。
+
+\subsection{极限拉伸强度}
+
+D9和HT9的极限拉伸强度由屈服强度缩放得到：
+\begin{subequations}\label{eq:appendix_d9_ht9_ultimate_strength}
+	\begin{align}
+		\sigma_{u,\mathrm{D9}}
+		&=\sigma_{y,\mathrm{D9}}
+		\left[
+		0.295\left(1-0.9\tanh\frac{\Delta T+400}{150}\right)
+		+1.055
+		\right]
+		\label{eq:appendix_d9_ultimate_strength}\\
+		\sigma_{u,\mathrm{HT9}}
+		&=\sigma_{y,\mathrm{HT9}}
+		\left[
+		1.1-0.1\tanh\!\left(\frac{\Delta T-200}{200}\right)
+		\right]
+		\label{eq:appendix_ht9_ultimate_strength}
+	\end{align}
+\end{subequations}
+其中，$\Delta T=T_C-T_{i,C}$为测试温度与辐照温度之差。未辐照材料应采用相应手册规定的参考辐照温度处理，而不应任意令$\Delta T=0$。
+
+\subsection{总伸长率}
+
+D9和HT9的最小总伸长率分别为
+\begin{subequations}\label{eq:appendix_d9_ht9_total_elongation}
+	\begin{align}
+		\varepsilon_{t,\mathrm{D9}}(\%)
+		&=-2.22+1.64\times10^{-2}T_i
+		+2.17\times10^{-4}\exp\!\left(\frac{T_i}{100}\right)
+		-6.3\times10^{-3}T_t
+		\label{eq:appendix_d9_total_elongation}\\
+		\varepsilon_{t,\mathrm{HT9}}(\%)
+		&=9.97+1.34\times10^{-3}
+		\exp\!\left(\frac{T_t}{100}\right)
+		\label{eq:appendix_ht9_total_elongation}
+	\end{align}
+\end{subequations}
+D9关系主要适用于$640<T_i<1010\ \mathrm{K}$且$T_t=T_i$或$T_t=T_i+110\ \mathrm{K}$的试验路径；HT9关系的温度范围约为$273<T_t<973\ \mathrm{K}$。
+
+\subsection{SS316硬化备选模型}
+
+简单幂律各向同性硬化可写为
+\begin{equation}
+	\sigma_y(p)=\sigma_y^0+Kp^n
+	\label{eq:appendix_ss316_power_hardening}
+\end{equation}
+其中，$\sigma_y^0$、$K$和$n$均应依据材料状态和温度标定。若需描述逐渐饱和的各向同性硬化，可采用Chaboche形式：
+\begin{subequations}\label{eq:appendix_ss316_chaboche_isotropic_hardening}
+	\begin{align}
+		\dot r&=b(Q-r)\dot p
+		\label{eq:appendix_ss316_chaboche_rate}\\
+		r(p)&=Q[1-\exp(-bp)]
+		\label{eq:appendix_ss316_chaboche_integrated}\\
+		\sigma_y(p)&=\sigma_y^0+r(p)
+		\label{eq:appendix_ss316_chaboche_yield}
+	\end{align}
+\end{subequations}
+上述参数不可跨材料制备工艺直接移植；增材制造316L、退火态316和冷加工316的硬化响应可能存在显著差异。
+
+\section{蠕变模型参数与补充关系}
+\label{app:cladding_creep_parameters}
+
+\subsection{D9参数}
+
+正文式\eqref{eq:d9_creep_rate}所用参数为\cite{hofmanMetallicFuelsHandbook2019}
+\begin{table}[htbp]
+	\centering
+	\caption{D9热蠕变与辐照蠕变模型参数}
+	\label{tab:appendix_d9_creep_parameters}
+	\begin{tabular}{cccccccc}
+		\toprule
+		$A_1$ & $A_2$ & $A_3$ & $A_4$ & $A_5$ & $A_6$ & $A_7$ & $\Omega$ \\
+		\midrule
+		67 & 9461 & $1.0\times10^{-4}$ & 3955 & 27680 & $6.14\times10^{13}$ & 17111 & 9 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+温度修正函数为
+\begin{equation}
+	R_{\mathrm{cr,D9}}(T)
+	=1.9\times10^{-4}
+	\exp[-3.0\times10^{-5}(T-823)^2]
+	\label{eq:appendix_d9_creep_temperature_factor}
+\end{equation}
+该模型主要用于$350$--$750\ ^\circ\mathrm C$、低应变率以及约$2\times10^{15}\ \mathrm{n\,cm^{-2}\,s^{-1}}$量级的快中子通量。
+
+在$973\ \mathrm{K}$下，D9和20\%冷加工SS316的试验蠕变率可分别近似为\cite{lathaThermalCreepProperties2008}
+\begin{subequations}\label{eq:appendix_d9_ss316_973k_creep}
+	\begin{align}
+		\dot\varepsilon_{\mathrm{D9}}
+		&=6\times10^{-30}\sigma^{9.2}
+		\label{eq:appendix_d9_973k_creep}\\
+		\dot\varepsilon_{316}
+		&=6\times10^{-28}\sigma^9
+		\label{eq:appendix_ss316_973k_creep}
+	\end{align}
+\end{subequations}
+式中，$\dot\varepsilon$的单位为$\mathrm{s^{-1}}$，$\sigma$的单位为MPa。两式仅适用于相应试验温度和材料状态，不应作为全温区模型。
+
+\subsection{HT9一阶、二阶和三阶热蠕变}
+
+HT9总热蠕变由初生、稳态和三级分量构成：
+\begin{equation}
+	\bar\varepsilon_{\mathrm T}
+	=\bar\varepsilon_{\mathrm{TP}}
+	+\bar\varepsilon_{\mathrm{TS}}
+	+\bar\varepsilon_{\mathrm{TT}}
+	\label{eq:appendix_ht9_total_thermal_creep}
+\end{equation}
+各分量为
+\begin{subequations}\label{eq:appendix_ht9_thermal_creep_components}
+	\begin{align}
+		\bar\varepsilon_{\mathrm{TP}}
+		={}&\left[
+		C_1e^{-Q_1/(RT)}\bar\sigma
+		+C_2e^{-Q_2/(RT)}\bar\sigma^4
+		+C_3e^{-Q_3/(RT)}\bar\sigma^{1/2}
+		\right]
+		[1-e^{-C_4t}]
+		\label{eq:appendix_ht9_primary_creep}\\
+		\bar\varepsilon_{\mathrm{TS}}
+		={}&\left[
+		C_5e^{-Q_4/(RT)}\bar\sigma^2
+		+C_6e^{-Q_5/(RT)}\bar\sigma^5
+		\right]t
+		\label{eq:appendix_ht9_secondary_creep}\\
+		\bar\varepsilon_{\mathrm{TT}}
+		={}&C_7e^{-Q_6/(RT)}\bar\sigma^{10}t^4
+		\label{eq:appendix_ht9_tertiary_creep}
+	\end{align}
+\end{subequations}
+参数见表\ref{tab:appendix_ht9_thermal_creep_parameters}。
+
+\begin{table}[htbp]
+	\centering
+	\scriptsize
+	\caption{HT9热蠕变模型参数}
+	\label{tab:appendix_ht9_thermal_creep_parameters}
+	\begin{tabular}{cccccccc}
+		\toprule
+		$C_1$ & $C_2$ & $C_3$ & $C_4$ & $C_5$ & $C_6$ & $C_7$ \\
+		\midrule
+		13.4 & $8.43\times10^{-3}$ & $4.08\times10^{18}$ & $1.6\times10^{-6}$ & $1.17\times10^9$ & $8.33\times10^9$ & $9.53\times10^{21}$ \\
+		\midrule
+		$Q_1$ & $Q_2$ & $Q_3$ & $Q_4$ & $Q_5$ & $Q_6$ & $R$ \\
+		\midrule
+		15027 & 26451 & 89167 & 83142 & 108276 & 282700 & 1.987 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+活化能与气体常数采用一致的cal/mol单位制；$t$以s计，$T$以K计，$\bar\sigma$以MPa计。模型主要适用于$350$--$750\ ^\circ\mathrm C$及$0$--$250\ \mathrm{MPa}$。
+
+HT9辐照蠕变为
+\begin{equation}
+	\dot{\bar\varepsilon}_{\mathrm I,\mathrm{HT9}}
+	=\left[
+	1.83\times10^{-4}
+	+2.59\times10^{14}
+	\exp\!\left(-\frac{73000}{1.987T}\right)
+	\right]
+	\phi_{22}\bar\sigma^{1.3}
+	\label{eq:appendix_ht9_irradiation_creep}
+\end{equation}
+
+\subsection{Monkman--Grant关系}
+
+最小蠕变率与断裂时间可用Monkman--Grant及其修正形式关联。对于本文所列试验数据，有
+\begin{subequations}\label{eq:appendix_cladding_monkman_grant}
+	\begin{align}
+		\dot\varepsilon_{m,316}^{-0.66}t_r&=0.839,
+		&
+		\frac{\dot\varepsilon_{m,316}^{-0.97}t_r}{\varepsilon_t}&=0.306
+		\label{eq:appendix_ss316_monkman_grant}\\
+		\dot\varepsilon_{m,\mathrm{D9}}^{-0.722}t_r&=0.276,
+		&
+		\frac{\dot\varepsilon_{m,\mathrm{D9}}^{-0.85}t_r}{\varepsilon_t}&=1.77
+		\label{eq:appendix_d9_monkman_grant}
+	\end{align}
+\end{subequations}
+上述经验关系继承相应试验的单位制，使用前必须与原始数据保持一致。
+
+\section{断裂时间与瞬态失效模型}
+\label{app:cladding_rupture_models}
+
+\subsection{SS316蠕变断裂关系}
+
+ORNL关系将断裂时间表示为\cite{brinkmanElevatedTemperatureMechanicalProperties2001}
+\begin{equation}
+	\log_{10}t_r
+	=C_h-0.01312\sigma
+	-2.552\log_{10}\sigma
+	+\frac{20880}{T}
+	\label{eq:appendix_ss316_ornl_rupture_time}
+\end{equation}
+其中，$t_r$以h计，$\sigma$以MPa计，$T$以K计；平均材料批次可取$C_h=-11.870$。对于高强度和低强度包络，可分别采用$-11.065$和$-12.674$。
+
+316FR的区域化关系为\cite{OnizawaDevelopmentCreepProperty2019}
+\begin{equation}
+	(T_C+273.15)
+	[\log_{10}t_r+C+ZS]
+	=A_0+A_1\log_{10}\sigma
+	+A_2(\log_{10}\sigma)^2
+	\label{eq:appendix_316fr_rupture_time}
+\end{equation}
+其中，$Z=0$表示平均行为，$Z=1.64$和$2.33$可分别用于近似$5\%$和$1\%$失效概率。短期和长期参数应按原始文献划分，不可混用。
+
+\subsection{D9稳态断裂时间}
+
+D9-C1P采用
+\begin{equation}
+	\log_{10}t_r
+	=A+\frac{B}{T}
+	+\frac{C}{T}\log_{10}\sigma_\theta
+	\label{eq:appendix_d9_c1p_rupture_time}
+\end{equation}
+其参数见表\ref{tab:appendix_d9_c1p_rupture_parameters}。
+
+\begin{table}[htbp]
+	\centering
+	\caption{D9-C1P断裂时间模型参数}
+	\label{tab:appendix_d9_c1p_rupture_parameters}
+	\begin{tabular}{lrrrr}
+		\toprule
+		应力区间 & $A$ & $B$ & $C$ & 标准估计误差 \\
+		\midrule
+		高应力 & $-16.638$ & 34054 & $-7113$ & 0.26 \\
+		低应力 & $-12.637$ & 22219 & $-3591$ & 0.18 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+式中，$t_r$以h计，$T$以K计，$\sigma_\theta$以MPa计。建议范围为$770<T<1100\ \mathrm{K}$且$t_r\geq2\ \mathrm h$。若两个分区同时有效，取较小的断裂时间进行保守评估。
+
+D9-C1采用正文式\eqref{eq:clad_generic_rupture_time}，参数见表\ref{tab:appendix_d9_c1_rupture_parameters}。
+
+\begin{table}[htbp]
+	\centering
+	\caption{D9-C1断裂时间模型参数}
+	\label{tab:appendix_d9_c1_rupture_parameters}
+	\begin{tabular}{lrrrr}
+		\toprule
+		应力区间 & $A$ & $B$ & $C$ & $D$ \\
+		\midrule
+		高应力 & $-10.727$ & 29732 & $-7414.8$ & 0 \\
+		中应力 & $-53.034$ & 61542 & $-21246.8$ & 18.361 \\
+		低应力 & $-17.141$ & 32605 & $-6803.5$ & 0 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+建议范围为$640<T<1100\ \mathrm{K}$且$t_r\geq1\ \mathrm h$。应力分区边界随温度变化，应依据金属燃料手册或程序实现逐区判断。
+
+\subsection{D9瞬态失效关系}
+
+D9短时瞬态模型综合考虑环向应力、温度、辐照温度、快中子注量和温升速率\cite{FanningSAS4ASASSYS1Safety2017}：
+\begin{align}
+	\ln t_r
+	={}&A+B\ln\!\left[
+	\ln\!\left(\frac{\sigma^*}{\sigma_\theta}\right)
+	\right]
+	+\frac{Q}{T}
+	+\mathrm{TRAMP}
+	+C\tanh\Phi
+	\notag\\
+	&+125\tanh^{10}\!\left(\frac{\sigma_\theta}{550}\right)
+	\left[1-\tanh^{25}\!\left(\frac{T_i}{583}-F_0\right)\right]
+	\tanh\!\left(\frac{\Phi}{2.5}\right)
+	\label{eq:appendix_d9_transient_rupture_time}
+\end{align}
+其中
+\begin{subequations}\label{eq:appendix_d9_transient_auxiliary_functions}
+	\begin{align}
+		\mathrm{TRAMP}
+		&=-0.28+1.18\tanh[-0.5\ln(\dot T)-1]
+		\label{eq:appendix_d9_tramp}\\
+		\sigma^*
+		={}&775-387.5
+		\tanh\!\left(\frac{1000-T_i}{200}\right)
+		\tanh\!\left(\frac{\Phi}{2}
+		\right)
+		\notag\\
+		&+125\tanh^{10}\!\left(\frac{\sigma_\theta}{550}\right)
+		\left[1-\tanh^{25}\!\left(\frac{T_i}{583}-0.438\right)\right]
+		\tanh\!\left(\frac{\Phi}{2.5}\right)
+		\label{eq:appendix_d9_transient_characteristic_stress}
+	\end{align}
+\end{subequations}
+模型参数为$A=-43.06$、$B=7.312$、$C=-1.73$和$Q=41339$。$t_r$以h计，$\sigma_\theta$以MPa计，$T$与$T_i$以K计，$\dot T$以$\mathrm{K\,s^{-1}}$计。
+
+\subsection{HT9断裂时间}
+
+金属燃料手册采用高、低应力两组参数：
+\begin{equation}
+	\log_{10}t_r
+	=A+\frac{B}{T}
+	+\frac{C}{T}\log_{10}\sigma_\theta
+	\label{eq:appendix_ht9_mfh_rupture_time}
+\end{equation}
+高、低应力区的参数分别为
+\begin{subequations}\label{eq:appendix_ht9_mfh_rupture_parameters}
+	\begin{align}
+		(A,B,C)_{\mathrm H}
+		&=(-32.490,\ 57781,\ -11800)
+		\label{eq:appendix_ht9_mfh_high_stress_parameters}\\
+		(A,B,C)_{\mathrm L}
+		&=(-35.173,\ 45858,\ -5563.1)
+		\label{eq:appendix_ht9_mfh_low_stress_parameters}
+	\end{align}
+\end{subequations}
+式中，下标$\mathrm H$和$\mathrm L$分别表示高应力区与低应力区；$t_r$以h计，$\sigma_\theta$以MPa计，适用温度约为$700$--$1100\ \mathrm{K}$。
+
+WHC瞬态模型写为\cite{HuangTransientFailureBehavior1994}
+\begin{subequations}\label{eq:appendix_ht9_whc_failure_model}
+	\begin{align}
+		t_r&=\theta\exp\!\left(\frac{Q}{RT}\right)
+		\label{eq:appendix_ht9_whc_rupture_time}\\
+		\ln\theta
+		&=A_T+12.47\ln\!\left[
+		\ln\!\left(\frac{730}{\sigma_\theta}\right)
+		\right]
+		\label{eq:appendix_ht9_whc_dorn_parameter}\\
+		A_T&=
+		\begin{cases}
+			24.942-0.153T_C
+			+9.488\times10^{-5}T_C^2,
+			&T<1144.15\ \mathrm{K}\\
+			-36.1+1.5\tanh[(T-1144.15)/80],
+			&1144.15\leq T<1393.15\ \mathrm{K}\\
+			-36.1+1.5\tanh(179/80),
+			&T\geq1393.15\ \mathrm{K}
+		\end{cases}
+		\label{eq:appendix_ht9_whc_temperature_factor}
+	\end{align}
+\end{subequations}
+其中，$T_C=T-273.15$，$Q=70.17\ \mathrm{kcal\,mol^{-1}}$，$t_r$以s计。该模型面向快速升温条件，不应与长期稳态关系无条件拼接。
+
+\subsection{HT9受约束空洞长大模型}
+
+受约束空洞长大模型将晶界空洞半径$a$的变化率表示为\cite{TVERGAARD1985447,KARAHAN2010283}
+\begin{equation}
+	\dot a
+	=\frac{\dot V}{4\pi a^2h(\psi)},
+	\qquad
+	h(\psi)
+	=\frac{1}{\sin\psi}
+	\left[
+	\frac{1}{1+\cos\psi}-\frac{\cos\psi}{2}
+	\right]
+	\label{eq:appendix_ht9_cavity_radius_rate}
+\end{equation}
+当空洞以$2b$为间距周期分布时，可将$a=b$作为局部贯通失效条件。空洞体积增长率由扩散和幂律蠕变贡献叠加：
+\begin{equation}
+	\dot V=\dot V_{\mathrm d}+\dot V_{\mathrm c}
+	\label{eq:appendix_ht9_cavity_volume_rate}
+\end{equation}
+扩散贡献为
+\begin{equation}
+	\dot V_{\mathrm d}
+	=4\pi D_{\mathrm{gb}}
+	\frac{\sigma_n-(1-f)\sigma_s}
+	{\ln(1/f)-(3-f)(1-f)/2}
+	\label{eq:appendix_ht9_diffusional_cavity_growth}
+\end{equation}
+其中，$\sigma_s=2\gamma_s\sin\psi/a$，
+$D_{\mathrm{gb}}=D_B\delta_B\Omega_a/(RT)$，且
+\begin{equation}
+	f=\max\!\left[
+	\left(\frac{a}{b}\right)^2,
+	\left(\frac{a}{a+1.5L}\right)^2
+	\right],
+	\qquad
+	L=\left(\frac{D_{\mathrm{gb}}\sigma_e}
+	{\dot\varepsilon_e^{\mathrm c}}\right)^{1/3}
+	\label{eq:appendix_ht9_cavity_area_fraction}
+\end{equation}
+该模型对初始空洞半径和间距$b$高度敏感，必须由相应材料的显微组织或失效试验标定。
+
+

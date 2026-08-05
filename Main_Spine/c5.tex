@@ -182,7 +182,7 @@ SCIANTIX 模型是一种更高保真的细观机理裂变气体行为模型。�
 
 图~\ref{fig:fuel_rod_multiphysics_flowchart} 给出了本文燃料棒多物理耦合计算流程。可以看出，程序以几何参数、功率历史和冷却剂边界为输入，通过功率--燃耗--中子通量模块驱动热传导、组分迁移、裂变气体释放和力学响应计算；温度场、裂变气体释放、气腔压力、间隙传热和力学接触之间通过材料属性、后处理量和边界条件实现数据传递，最终形成热--裂变气体--力学强耦合迭代过程。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{moose_fuel_rod_flowchart_editable.pdf}
 	\caption{燃料棒级多物理耦合计算流程}
@@ -193,12 +193,12 @@ SCIANTIX 模型是一种更高保真的细观机理裂变气体行为模型。�
 \label{section:error_evalution_metrics}
 本文主要针对燃料中心线温度和裂变气体释放率两个评价量进行误差分析。对于燃料中心线温度，实验数据通常随功率历史和燃耗变化而变化，因此本文在相同时间或相同燃耗位置提取程序计算得到的中心线平均温度，并与实验测得的中心线温度进行逐点对比。单个测点的温度绝对误差和相对误差分别定义为
 \begin{equation}
-	\Delta T_i = T_{\mathrm{cal},i}-T_{\mathrm{exp},i},
+	\Delta T_i = T_{\mathrm{cal},i}-T_{\mathrm{exp},i}
 \end{equation}
 \begin{equation}
-	\delta T_i = \frac{T_{\mathrm{cal},i}-T_{\mathrm{exp},i}}{T_{\mathrm{exp},i}}\times 100\%,
+	\delta T_i = \frac{T_{\mathrm{cal},i}-T_{\mathrm{exp},i}}{T_{\mathrm{exp},i}}\times 100\%
 \end{equation}
-式中，$T_{\mathrm{cal},i}$ 为第 $i$ 个测点对应的计算中心线平均温度，$T_{\mathrm{exp},i}$ 为实验测得的燃料中心线温度。
+式中：$T_{\mathrm{cal},i}$ 为第 $i$ 个测点对应的计算中心线平均温度，$T_{\mathrm{exp},i}$ 为实验测得的燃料中心线温度。
 
 为评价不同燃料棒整体温度预测精度，进一步采用平均相对误差和均方根误差进行统计，其表达式分别为
 \begin{equation}
@@ -206,34 +206,34 @@ SCIANTIX 模型是一种更高保真的细观机理裂变气体行为模型。�
 	\frac{1}{N}\sum_{i=1}^{N}
 	\left|
 	\frac{T_{\mathrm{cal},i}-T_{\mathrm{exp},i}}{T_{\mathrm{exp},i}}
-	\right|\times 100\%,
+	\right|\times 100\%
 \end{equation}
 \begin{equation}
 	\mathrm{RMSE}_T =
 	\sqrt{
 		\frac{1}{N}\sum_{i=1}^{N}
 		\left(T_{\mathrm{cal},i}-T_{\mathrm{exp},i}\right)^2
-	},
+	}
 \end{equation}
-式中，$N$ 为该燃料棒可用于对比的中心温度测点数量。
+式中：$N$ 为该燃料棒可用于对比的中心温度测点数量。
 
 对于裂变气体释放行为，公开实验数据通常给出寿期末裂变气体释放率，因此本文采用寿期末计算得到的总裂变气体释放率与实验测量值进行对比。FGR 绝对误差定义为
 \begin{equation}
-	\Delta FGR = FGR_{\mathrm{cal}} - FGR_{\mathrm{exp}},
+	\Delta FGR = FGR_{\mathrm{cal}} - FGR_{\mathrm{exp}}
 \end{equation}
-其中，$FGR_{\mathrm{cal}}$ 为程序计算得到的寿期末裂变气体释放率，$FGR_{\mathrm{exp}}$ 为实验测得或由棒压反推得到的寿期末裂变气体释放率。
+式中：$FGR_{\mathrm{cal}}$ 为程序计算得到的寿期末裂变气体释放率，$FGR_{\mathrm{exp}}$ 为实验测得或由棒压反推得到的寿期末裂变气体释放率。
 
 由于部分燃料棒的实验 FGR 数值较小，此时相对误差容易被放大，因此本文优先采用 FGR 绝对误差评价裂变气体释放模型的预测能力。在需要进行整体统计时，采用平均绝对误差表示为
 \begin{equation}
 	\overline{\Delta FGR} =
 	\frac{1}{M}\sum_{j=1}^{M}
-	\left|FGR_{\mathrm{cal},j}-FGR_{\mathrm{exp},j}\right|,
+	\left|FGR_{\mathrm{cal},j}-FGR_{\mathrm{exp},j}\right|
 \end{equation}
-式中，$M$ 为参与 FGR 验证的燃料棒数量。对于实验 FGR 较高的案例，可进一步给出相对误差作为辅助评价指标：
+式中：$M$ 为参与 FGR 验证的燃料棒数量。对于实验 FGR 较高的案例，可进一步给出相对误差作为辅助评价指标：
 \begin{equation}
 	\delta FGR_j =
 	\frac{FGR_{\mathrm{cal},j}-FGR_{\mathrm{exp},j}}
-	{FGR_{\mathrm{exp},j}}\times 100\%.
+	{FGR_{\mathrm{exp},j}}\times 100\%
 \end{equation}
 
 综上，中心线温度验证主要关注随时间或燃耗变化过程中的逐点温度偏差及整体统计误差；裂变气体释放验证主要关注寿期末 FGR 的计算值与实验值差异。上述评价指标为后续不同燃料棒案例以及 ForMas 和 SCIANTIX 两类裂变气体模型的预测能力对比提供统一依据。
@@ -247,7 +247,7 @@ SCIANTIX 模型是一种更高保真的细观机理裂变气体行为模型。�
 图~ 给出了不同 MOX 燃料棒中心温度随燃耗演化的模拟结果与实验结果对比。总体来看，程序能够较好地再现实验曲线的主要变化趋势，包括功率变化引起的中心温度升降、燃耗积累导致的热物性退化影响，以及间隙闭合或燃料-包壳接触后中心温度降低的现象。不同燃料棒之间的温度水平差异主要来源于线功率历史、轴向功率分布、燃料几何尺寸、初始间隙以及冷却剂温度边界条件的差异。
 
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
@@ -279,7 +279,7 @@ SCIANTIX 模型是一种更高保真的细观机理裂变气体行为模型。�
 
 图~\ref{fig:temp_validation_ifa597_ifa606} 给出了 IFA-597-4/.5/.6/.7r10、IFA-597-4/.5/.6/.7r11 以及 IFA-606 Phase 2 的中心温度验证结果。可以看出，模拟曲线能够较好再现实验中心温度随燃耗变化的总体趋势。对于 IFA-597 系列燃料棒，中心温度随功率历史变化表现出明显波动，模拟结果能够捕捉主要升降趋势，说明程序对线功率变化和燃料热响应的一阶行为具有较好的描述能力。对于 IFA-606 Phase 2，温度曲线在中后期出现较明显的下降趋势，这与燃料-包壳间隙逐渐闭合、间隙导热增强以及接触传热作用增强有关。
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
@@ -314,7 +314,7 @@ SCIANTIX 模型是一种更高保真的细观机理裂变气体行为模型。�
 
 图~\ref{fig:temp_validation_ifa610_ifa6291} 对比了 IFA-610 与 IFA-629-1 系列燃料棒的中心温度。该组燃料棒覆盖约 29--57 GWd/MTM 的燃耗范围，能够反映中等燃耗区间内燃料热导率退化与间隙演化的耦合作用。模拟结果总体上能够跟随实验温度的变化趋势，但在部分燃耗区间仍存在一定偏差。该偏差可能与轴向功率分布、冷却剂温度边界条件、燃料重定位模型以及燃料-包壳接触发生时间有关。
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
@@ -348,7 +348,7 @@ SCIANTIX 模型是一种更高保真的细观机理裂变气体行为模型。�
 \end{figure}
 
 图~\ref{fig:temp_validation_high_burnup} 给出了 IFA-648 与 IFA-629.3 高燃耗燃料棒的中心温度验证结果。相比中低燃耗燃料棒，高燃耗阶段中心温度受燃料热导率退化、裂变气体释放、燃料肿胀以及燃料-包壳接触状态的共同影响更为明显。模拟曲线能够再现实验温度的主要变化趋势，说明模型能够在较宽燃耗范围内描述 MOX 燃料的热行为。然而，高燃耗区间内局部偏差有所增大，表明燃料热物性退化和间隙传热模型仍是影响中心温度预测精度的重要因素。
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
@@ -444,8 +444,8 @@ T_\alpha(B)-T_\mathrm{base}(B),
 
 为定量分析不同物理模型对中心温度的影响，本文分别引入燃料热导率缩放因子 \(\alpha_k\)、间隙导热缩放因子 \(\alpha_h\) 和燃料变形缩放因子 \(\alpha_\varepsilon\)，其作用形式可表示为
 \begin{align}
-	k_f^\ast &= \alpha_k k_f, \nonumber \\
-	h_\mathrm{gap}^\ast &= \alpha_h h_\mathrm{gap}, \nonumber \\
+	k_f^\ast &= \alpha_k k_f \nonumber \\
+	h_\mathrm{gap}^\ast &= \alpha_h h_\mathrm{gap} \nonumber \\
 	\varepsilon^\ast_\mathrm{fuel}
 	&=
 	\alpha_\varepsilon
@@ -455,22 +455,22 @@ T_\alpha(B)-T_\mathrm{base}(B),
 	\varepsilon_\mathrm{dens}
 	+
 	\varepsilon_\mathrm{swelling}
-	\right), \label{eq:fuel_params}
+	\right) \label{eq:fuel_params}
 \end{align}
-其中，\(k_f\) 为燃料热导率，\(h_\mathrm{gap}\) 为燃料-包壳间隙等效导热系数，\(\varepsilon_\mathrm{fuel}\) 表示与燃料几何演化相关的等效本征应变。
+式中：\(k_f\) 为燃料热导率，\(h_\mathrm{gap}\) 为燃料-包壳间隙等效导热系数，\(\varepsilon_\mathrm{fuel}\) 表示与燃料几何演化相关的等效本征应变。
 
 采用单因素扰动方法，在保持其他模型参数不变的条件下，缩放因子分别取
 \begin{align}
-	\alpha_k &= 0.9,\ 1.0,\ 1.1, \nonumber \\
-	\alpha_h &= 0.5,\ 1.0,\ 2.0, \nonumber \\
-	\alpha_\varepsilon &= 0.5,\ 1.0,\ 1.5, \label{eq:alpha_params}
+	\alpha_k &= 0.9,\ 1.0,\ 1.1 \nonumber \\
+	\alpha_h &= 0.5,\ 1.0,\ 2.0 \nonumber \\
+	\alpha_\varepsilon &= 0.5,\ 1.0,\ 1.5 \label{eq:alpha_params}
 \end{align}
 
 \subsubsection{代表燃料棒敏感性分析}
 
 通过比较不同扰动条件下中心温度曲线相对于实验曲线的变化方向和误差指标变化，可以进一步识别中心温度预测偏差对不同物理模型的敏感性。为说明缩放因子分析的具体作用，本文首先以 IFA-597-4-5-6-7r11 为代表燃料棒开展详细分析。该燃料棒的基准计算结果整体高于实验值，因此适合用于分析增强间隙传热、提高燃料热导率以及增强燃料几何演化对中心温度高估偏差的修正作用。
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
@@ -539,7 +539,7 @@ T_\alpha(B)-T_\mathrm{base}(B),
 \subsubsection{不同燃料棒敏感性差异}
 需要指出的是，IFA-597-4-5-6-7r11 仅代表基准模型高估中心温度的一类算例。对于其他燃料棒，基准模型相对于实验结果的偏差方向和燃耗阶段分布可能不同，因此相同缩放因子对误差指标的影响也可能发生变化。为避免单一算例结论的偶然性，本文进一步对 IFA-597-4-5-6-7r10、IFA-651-r1、IFA-651-r3 和 IFA-651-r6 开展相同的缩放因子分析，并比较不同燃料棒之间的敏感性差异。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
@@ -595,7 +595,7 @@ T_\alpha(B)-T_\mathrm{base}(B),
 
 图~\ref{fig:ifa597r10_temperature_alpha_sensitivity} 和表~\ref{tab:ifa597r10_temperature_alpha_sensitivity_error} 给出了 IFA-597-4-5-6-7r10 的敏感性分析结果。与 r11 不同，该燃料棒基准模型整体低估中心温度，MBE 为 \(-71.8\) K。对于燃料几何演化缩放因子，降低 \(\alpha_{\varepsilon}\) 可使 MBE 由负值转为正值，但 RMSE 并未明显降低；增大 \(\alpha_{\varepsilon}\) 则进一步降低中心温度并增大误差。间隙传热和燃料热导率缩放因子的影响相对较弱，基准模型在 RMSE 和平均相对误差上已经接近最优。该结果说明，r10 的温度偏差方向与 r11 不同，缩放因子分析应结合基准模型的高估或低估特征进行判断。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
@@ -650,7 +650,7 @@ T_\alpha(B)-T_\mathrm{base}(B),
 \end{table}
 图~\ref{fig:ifa651r1_temperature_alpha_sensitivity} 和表~\ref{tab:ifa651r1_temperature_alpha_sensitivity_error} 给出了 IFA-651-r1 的敏感性分析结果。该燃料棒基准模型整体低估中心温度，MBE 为 \(-87.0\) K。减小燃料几何演化缩放因子可明显改善误差，其中 \(\alpha_{\varepsilon}=0.5\) 时 MBE 降至 \(-18.3\) K，RMSE 也由 227.8 K 降至 192.3 K。减小燃料热导率缩放因子同样能够一定程度上改善低估偏差，而增大 \(\alpha_k\)、\(\alpha_h\) 或 \(\alpha_{\varepsilon}\) 通常会使中心温度进一步降低，导致负偏差扩大。需要注意的是，\(\alpha_{\varepsilon}=1.5\) 时有效对比燃耗范围缩短，说明较强的几何演化扰动可能加剧后期计算的不稳定性。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
@@ -705,7 +705,7 @@ T_\alpha(B)-T_\mathrm{base}(B),
 \end{table}
 图~\ref{fig:ifa651r3_temperature_alpha_sensitivity} 和表~\ref{tab:ifa651r3_temperature_alpha_sensitivity_error} 给出了 IFA-651-r3 的敏感性分析结果。该燃料棒基准模型的平均相对误差为 6.70\%，RMSE 为 147.4 K，整体预测精度相对较好。燃料几何演化缩放因子对误差指标影响较小，说明该算例中中心温度对几何演化扰动并不敏感。相比之下，间隙传热缩放因子影响更为明显，降低或提高 \(\alpha_h\) 均会使 MBE 明显偏离零值，并增大平均相对误差和 RMSE。燃料热导率缩放因子中，\(\alpha_k=0.9\) 可使 MBE 接近零，但整体误差指标改善有限。因此，IFA-651-r3 的基准模型已经能够较好描述中心温度演化，不需要较大的参数修正。
 
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}

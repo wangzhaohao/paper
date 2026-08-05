@@ -1,0 +1,1638 @@
+% !TeX root = ../main.tex
+
+\xchapter{强耦合演化模型：多组分迁移与微观重构的影响}{Strongly Coupled Evolution Model Incorporating Multi-component Migration and Microstructural Reconstruction}
+
+\xsection{引言}{Introduction}
+快堆 MOX 燃料在高功率密度、高温及强径向温度梯度条件下服役时，燃料内部并不是一个仅由热传导控制的简单体系，而是伴随着孔隙迁移、锕系元素再分布以及氧化学计量状态演化等多种过程的同时发生。这些过程分别作用于燃料的微观结构、组分分布和热化学平衡，并进一步反馈影响热导率、熔点、热膨胀、局部功率分布以及裂变产物行为。因此，对于快堆燃料而言，若仍将微观重构、组分迁移与氧金属比变化彼此割裂地处理，往往难以准确描述高燃耗条件下燃料性能的真实演化。
+
+从物理本质上看，气孔迁移与燃料重构改变了孔隙度分布、中心孔形成以及局部传热路径；钚、镅等重金属元素在温度梯度和气相输运作用下发生再分布，又会反过来改变局部裂变功率与材料热物性；氧金属比（O/M）的变化则通过影响缺陷结构、氧势、蒸气压及阳离子价态平衡，进一步调控气孔迁移速率以及锕系元素迁移驱动力。也就是说，孔隙演化、组分迁移与氧化学状态之间并非若干相互独立的子问题，而是通过温度场、蒸气压、氧分压和材料参数紧密耦合，构成一个典型的强耦合演化系统。
+
+现有研究通常分别针对某一过程建立模型。例如，在气孔迁移方面，研究重点多集中于蒸发--冷凝机制与固态扩散机制对重构行为的解释；在钚及次锕系元素再分布方面，已有模型多关注固相热扩散或气相迁移的单独贡献；在氧迁移方面，则通常围绕缺陷化学与热力学一致性构建 O/M 再分布方程。这些研究为认识单一机制提供了重要基础，但若要面向快堆 MOX 燃料的工程预测，仅有分立模型仍然不够，需要在统一框架下揭示这些过程之间的耦合关系及其对燃料宏观行为的综合影响。
+
+基于上述认识，本章围绕快堆 MOX 燃料服役过程中的“微观结构重构--多组分迁移--氧化学状态演化”这一主线，建立强耦合演化模型。首先，针对气孔迁移与燃料重构，构建孔隙输运控制方程，并比较经验关系式与 Rand--Markin 多组分热力学模型在气孔迁移速度描述上的差异；其次，建立钚重分布模型，并在此基础上扩展讨论镅元素的迁移行为，以描述温度梯度和气相输运共同作用下的锕系元素再分布；最后，针对氧金属比演化，构建考虑热扩散与化学扩散耦合的 O/M 重分布模型，分析其与孔隙迁移及组分迁移之间的双向反馈关系。通过上述建模，本章旨在为后续快堆 MOX 燃料高保真性能模拟提供更加完整的物理基础。
+
+\xsection{气孔迁移与燃料重构动力学模型}{Pore Migration and Fuel Restructuring Kinetics Model}\label{sec:pore_migration}
+
+氧化物燃料特别是MOX燃料在堆内运行达到全功率的过程中会出现燃料结构的重构，在微观上表现为气孔的迁移，在宏观上表现为中心孔的形成，尤其是快堆燃料棒在运行中的高温度和高温度梯度能显著加速这一过程。MOX燃料中的重构结果一般是将燃料分为四个部分：中心孔、柱状晶、等轴晶和接近初始状态的晶粒区域。
+
+重构可以看作是受到蒸汽输运驱动的气孔（大于1微米）在温度和温度梯度下定向迁移。气孔是在氧化物燃料烧结制备过程中引入的，初始孔隙率通常为5\~{}10\%。在反应堆运行过程中，气孔会向燃料高温部分迁移并最终形成中心孔，这直接导致燃料中密度分布不均匀；此外，还会影响燃料中功率分布和不同位置的热导率计算，因此需要采用多物理全耦合计算的方式以得到更加准确的孔隙分布。
+
+\xsubsection{气孔输运控制方程}{Governing Equation of Pore Transport}
+气孔迁移是氧化物燃料的微观结构变化的结果，近些年研究人员已经对气孔迁移现象进行了许多研究，并且发展了不同的模型。根据对目前相关研究的总结\cite{kanekoCalculationProgramMIVOID1969,vanceComputerSimulationPore2017,sensKineticsPoreMovement1972,ronchiPropertiesLenticularPores1974,novasconeModelingPorosityMigration2018,wellandMatterTransportFast2020}，迁移过程包含两种机理，固态的热扩散和蒸汽输运。固态热扩散是亚微米直径孔迁移的主要驱动机制，气孔可通过沿着气孔表面或者固体内部的原子来扩散，此过程的驱动力主要是燃料中的温度和温度梯度。蒸汽输运\cite{sensKineticsPoreMovement1972}主要是在大孔洞（大于1微米）中发生在气孔内壁的扩散，驱动力是固体材料内的蒸气压对温度的梯度。蒸汽输运表现为在气孔内的冷端和热端不断的凝结和蒸发，宏观上表现为气孔的迁移，下图是气孔迁移过程原理示意图。
+
+气孔的输运模型\cite{sensKineticsPoreMovement1972,novasconeModelingPorosityMigration2018}可以表示为：
+\begin{equation}
+	\frac{\partial p}{\partial t}
+	+ \nabla \cdot \left[ \vec{v}\,(1-p)p - \nu \nabla p \right] = 0
+	\label{eq:pore_transport}
+\end{equation}
+
+其中，$p$ 表示孔隙度（无量纲），$\vec{v}$ 为气孔的迁移速度（$\mathrm{m/s}$），
+$\nu$ 为有效孔隙扩散系数（$\mathrm{m^2/s}$），用于表征通过表面扩散和固体扩散引起的气孔迁移行为。在公式中，$p$ 表示单位体积内的孔隙占比：当 $p=1$ 时，表示当前位置完全由气孔占据，不存在固态基体；当 $p=0$ 时，表示当前位置完全为基体材料，不含任何孔隙。项 $(1-p)p$ 用于将孔隙度限制在 $0 \leq p \leq 1$ 的物理合理区间内，与最初模型形式相比，该处理可视为其一阶近似。该非线性形式在 $p \to 0$ 和 $p \to 1$ 时均能自然退化为零通量，从而避免数值计算中出现非物理的孔隙生成或消失现象。类似的数值处理方法亦被应用于金属燃料中裂纹重分布的数值计算研究中\cite{gallowayModelingConstituentRedistribution2015}.
+
+\xsubsection{气孔迁移速率模型}{Pore Migration Velocity Models}
+在气孔迁移模型中，最为关键的参数是气孔迁移速度。现有模型中对气孔迁移速度的描述主要可分为两类：一类基于经验关系式建立，通常通过实验结果拟合得到\cite{ronchiPropertiesLenticularPores1974,sensKineticsPoreMovement1972,nicholsTheoryColumnarGrain1967}；另一类则源于Rand--Markin模型\cite{olanderFundamentalAspectsNuclear1976}，基于局部氧分压演化的多组分耦合计算模型\cite{ikusawaDevelopmentVerificationThermal2014}。
+
+\subsubsection{经验关系式模型}
+在快堆氧化物燃料中，气孔在径向高温梯度驱动下通过蒸发--冷凝机制向燃料中心迁移，这是燃料组织重塑及中心孔形成的根本物理原因。对相关核心文献的系统梳理表明，气孔迁移速率$v$的描述经历了由基础物性推导向多因素修正与耦合建模逐步演进的过程。Nichols\cite{nicholsTheoryColumnarGrain1967,nicholsDiffusionalMobilitiesParticles1972}首先从第一性原理出发建立了蒸气输运控制的气孔迁移理论框架，其重要贡献在于指出在恒定孔内压力假设下，气孔迁移速率与孔径无关，并提出了气孔由球形向透镜状演化的形状稳定性判据。在此基础上，Sens\cite{sensKineticsPoreMovement1972}通过数值求解孔内蒸气扩散方程，系统考虑了孔形状对温度场与扩散通量的影响，给出了适用于透镜状气孔的等效迁移速率表达，并首次将该模型用于燃料整体重构与中心孔形成过程的工程计算。随后，Lackey等人\cite{lackeyPorosityActinideRedistribution1972}在上述模型框架内引入燃料化学计量比（O/M）对蒸气压的非线性修正，揭示了欠化学计量燃料中因蒸气压降低而导致的气孔迁移迟滞效应，使模型具备了描述非化学计量燃料动力学行为的能力。与此相呼应，Ronchi和Sari\cite{ronchiPropertiesLenticularPores1974}通过出堆实验验证了透镜状气孔内压遵循理想气体定律而非毛细管平衡假设，并测定了约5.0 eV的气孔迁移激活能，为后续燃料行为数值模拟提供了关键物性参数基础。本研究采用的各经典模型的数值计算形式及关键物理参数设定总结于表\ref{tab:pore_migration_formulations}中。
+
+为定量比较不同经典气孔迁移模型在快堆氧化物燃料条件下的预测差异，图\ref{fig:pore_velocity}给出了基于上述模型计算$v$得到的气孔迁移速率随归一化径向位置$r/R_0$的分布结果。计算中采用相同的燃料温度场及径向温度梯度分布，温度曲线同时绘于右轴以供参考，其余热工与几何参数保持一致，仅在气孔迁移速率模型及其关键物理参数设定上加以区分。因此，图中结果可用于定量评估不同理论假设（如孔形状处理、蒸气压模型及燃料化学计量比修正等）对气孔迁移速率预测的影响，并为后续模型选取与参数敏感性分析奠定基础。
+
+\begin{xltabular}{\textwidth}{@{}
+		>{\centering\arraybackslash}m{2.8cm}  % 第一列：固定宽度 2.8cm，水平居中 + 垂直居中
+		>{\centering\arraybackslash}X         % 第二列：自适应宽，水平居中 + 垂直居中
+		>{\RaggedRight\arraybackslash}X       % 第三列：自适应宽，左对齐 + 垂直居中
+		@{}}
+	
+	% --- 标题定义 ---
+	\caption{氧化物燃料气孔迁移速率模型的数值形式与物理参数设定}
+	\label{tab:pore_migration_formulations} \\
+	
+	% --- 第一页表头 ---
+	\toprule
+	模型来源 & 数值计算形式 & 物理参数设定与假设 \\
+	\midrule
+	\endfirsthead
+	
+	% --- 续页表头 (跨页后会自动显示) ---
+	\multicolumn{3}{c}{\small\textbf{续表 \thetable} \quad 氧化物燃料气孔迁移速率模型的数值形式与物理参数设定} \\
+	\toprule
+	\textbf{模型来源} & \textbf{数值计算形式} & \textbf{物理参数设定与假设} \\
+	\midrule
+	\endhead
+	
+	% --- 页脚 (每页底部显示) ---
+	\midrule
+	\multicolumn{3}{r}{\small\textit{（接下页）}} \\
+	\endfoot
+	
+	% --- 最终表尾 (表格结束时显示) ---
+	\bottomrule
+	\multicolumn{3}{p{\textwidth}}{\footnotesize \RaggedRight \textbf{注}：$P_{vap}$ 为燃料饱和蒸气压；$P_{pore}$ 为孔内总压；$l$ 为气孔特征长度；$\nabla T$ 为径向温度梯度；$\xi$ 为形状因子；$\mathcal{F}(T)$ 为经验修正函数；$Q$ 为特征温度参数。}
+	\endlastfoot
+	
+	% --- 表格内容 ---
+	
+	Lackey et al. \cite{lackeyPorosityActinideRedistribution1972} &
+	$\displaystyle v = 3.364 \frac{P_{vap}(O/M, T)}{P_{pore} \cdot T^{3/2}} \nabla T$ &
+	O/M 依赖性：$P_{vap}$ 采用含 $O/M$ 与 $T$ 交叉项的六参数多项式拟合；\newline
+	闭孔假设：孔内压遵循理想气体定律演化，$P_{pore} \propto P_0 (T/T_{sinter})$。 \\
+	\addlinespace
+	
+	Sens et al. \cite{sensKineticsPoreMovement1972} &
+	$\displaystyle v = C \cdot \frac{\mathcal{F}(T) P_{vap} \Delta H}{T^{5/2}} \nabla T$ &
+	温度修正：引入温度多项式因子 $\mathcal{F}(T)$ 及分段指前因子；\newline
+	幂律差异：采用了 $T^{-2.5}$ 的温度依赖关系（相比经典理论的 $T^{-1.5}$ 更强）。 \\
+	\addlinespace
+	
+	Nichols\cite{nicholsTheoryColumnarGrain1967} &
+	$\displaystyle v = \frac{9 \Omega \Delta H P_{vap} \sqrt{\Sigma M}}{16 P \sigma^2 T^{3/2} \sqrt{2\pi k M_1 M_2}} \nabla T$ &
+	球形刚体模型：基于 Chapman-Enskog 气体动力学理论推导；\newline
+	恒压假设：孔内总压设定为常数（如 $P=1 \text{ atm}$，He 环境）。 \\
+	\addlinespace
+	
+	Nichols\cite{nicholsDiffusionalMobilitiesParticles1972} &
+	$\displaystyle v = \xi \cdot \left( \frac{D_g P_{vap} \Omega}{k^2 T^3} \Delta H \right) \nabla T$ &
+	透镜状修正：引入形状因子 $\xi=2.0$，表征透镜状气孔对热流的聚焦效应；\newline
+	扩散机制：显式计算二元气体扩散系数 $D_g$。 \\
+	\addlinespace
+	
+	Clement \& Finnis \cite{ronchiPropertiesLenticularPores1974} &
+	$\displaystyle v = A \cdot l \cdot \exp\left(-\frac{Q}{T}\right) \nabla T$ &
+	尺寸依赖：唯一显式包含气孔长度 $l$ ($80 \mu\text{m}$) 的模型；\newline
+	经验拟合：适用于描述大尺寸气孔在低温区的快速迁移行为。 \\
+	
+\end{xltabular}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=5.8cm]{Pore_Velocity_Comparison_All_Five.png}
+	\caption{不同气孔迁移速率模型随温度变化的对比曲线}
+	\label{fig:pore_velocity}
+\end{figure}
+
+\subsubsection{Rand--Markin多组分热力学模型}
+在Rand--Markin模型框架下\cite{ikusawaDevelopmentVerificationThermal2014,ozawaDevelopmentFuelPerformance2021}，燃料气孔行为基于蒸发--冷凝机理。该模型认为，孔隙迁移是一个高度动态的多相演化过程，难以通过单一的拟合蒸气压进行描述。气孔内部的总蒸气压$P$由$\mathrm{UO}_3$、$\mathrm{UO}_2$、$\mathrm{PuO}_2$、$\mathrm{PuO}$、$\mathrm{UO}$、$\mathrm{U}$、$\mathrm{Pu}$、$\mathrm{AmO}_2$、$\mathrm{AmO}$、$\mathrm{Am}$、$\mathrm{O}_2$等十余种气相组分的分压叠加而成，此模型可以描述快堆条件下 MOX及MA-MOX燃料的组织重构过程。
+
+该模型中，气孔迁移速率$v$表示为蒸气相扩散通量与孔内有效温度梯度的函数，其形式可写为
+\begin{equation}
+	v = \Omega D \left( \frac{\mathrm{d}n}{\mathrm{d}T} \right)
+	\left( \frac{\mathrm{d}T}{\mathrm{d}r} \right)_{\mathrm{pore}}
+\end{equation}
+其中蒸气分子数对温度的导数$\mathrm{d}n/\mathrm{d}T$通过蒸气压对温度的变化率确定：
+\begin{equation}
+	\frac{dn}{dT}=\frac{d}{dT}\left( \frac{P}{kT}\right)=\frac{1}{kT^2}\left(\frac{TdP}{dT} - P\right)
+\end{equation}
+式中$P$为前述各气相组分（$\mathrm{UO}_2$、$\mathrm{PuO}_2$、$\mathrm{UO}$、$\mathrm{U}$、$\mathrm{UO}_3$、$\mathrm{PuO}$、$\mathrm{Pu}$、$\mathrm{AmO}_2$、$\mathrm{Am}$、$\mathrm{AmO}$、$\mathrm{O}_2$）的蒸气压之和。各组分分压与O/M的依赖关系如图\ref{fig:species_vapor_pressure}所示，其中$\mathrm{UO}_3$在较高O/M时占主导，而$\mathrm{PuO}_2$、$\mathrm{AmO}_2$等分压则随O/M降低而显著下降。
+
+各组分的蒸气压均基于Rand--Markin热力学模型计算，其一般形式为：
+\begin{equation}
+	P_i = f(P_{\mathrm{O}_2}) \exp(-\frac{\Delta G_i}{RT})
+\end{equation}
+其中$\Delta G_i=A_i-B_iT$为吉布斯自由能。模型显式考虑了燃料化学计量比（$\mathrm{O/M}$）及$\mathrm{Pu}$、$\mathrm{Am}$含量的影响。图\ref{fig:total_vapor_pressure}给出了不同 O/M 比下总蒸气压随温度的变化曲线，可以看出，O/M 越低，总蒸气压越小，且随温度升高呈指数增长。
+
+孔内温度梯度$(\mathrm{d}T/\mathrm{d}r)_{\mathrm{pore}}$通过引入比例因子$\alpha$与燃料基体温度梯度$(\mathrm{d}T/\mathrm{d}r)_{\mathrm{fuel}}$相关联，该参数在工程应用中通常通过出堆实验结果进行校准。
+
+上述模型中，氧分压$P_{\mathrm{O}_2}$的计算依赖于氧金属比$\mathrm{O/M}$。Kato等\cite{katoOxygenPotentialsOxygen2017}基于缺陷化学，利用更新的实验数据建立了$\mathrm{O/M}$与氧分压$P_{\mathrm{O}2}$、温度$T$及钚含量$C{_\mathrm{Pu}}$之间的定量关系:
+\begin{equation}
+	O/M = 2 + g(C_{Pu},C_{Am}, P_{O_2}) - D(C_{Pu},C_{Am}, P_{O_2})^{-1/5}
+\end{equation}
+该关系通过Brouwer图分析了点缺陷平衡，能够统一描述不同钚含量下过化学计量与欠化学计量区域的氧势行为，与实验数据吻合良好。将该关系代入 Rand--Markin 框架，即可实现气孔迁移速率与燃料化学状态的耦合计算。相关热力学关系及参数取值详见附录B。
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[height=5.8cm]{mox_species_vapor_pressure.png}
+		\subcaption{2273 K时各气相组分蒸气压随 O/M 比的变化（Pu: 30wt.\% HM, Am: 5wt.\% HM）}
+		\label{fig:species_vapor_pressure}
+	\end{subfigure}
+	\hfill % 添加间距，使两子图均匀分布
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[height=5.8cm]{mox_total_vapor_pressure.png}
+		\subcaption{不同 O/M 比下总蒸气压随温度的变化（Pu: 30wt.\% HM, Am: 5wt.\% HM）}
+		\label{fig:total_vapor_pressure}
+	\end{subfigure}
+	\caption{MOX燃料蒸气压特性}
+	\label{fig:vapor_pressure_combined}
+\end{figure}
+该方法的核心计算逻辑是：氧分压$p_{\mathrm{O}_2}$决定了系统的热力学平衡状态。在计算时，程序首先根据燃料局部的温度和化学计量比（$\mathrm{O/M}$ 比），求解出实时的氧分压。氧分压的微小变化会剧烈改变各锕系元素氧化物的 Gibbs 自由能，进而重新分配孔隙内的气体组分浓度。通过这种方式，程序能够自下而上地求得孔隙内总蒸气压 $P$ 及其对温度的导数（$\mathrm{d}P/\mathrm{d}T$），最终代入蒸汽输运方程得到气孔迁移速率。这种基于氧分压的计算途径物理保真度更高，能够准确捕捉燃料局部欠化学计量或过化学计量状态对气孔行为的非线性影响。
+
+\xsubsection{数值离散与稳定化方法}{Numerical Discretization and Stabilization}
+
+从气孔迁移模型的控制方程\eqref{eq:pore_transport}可以看出，该方程属于典型的对流--扩散型偏微分方程。如图\ref{fig:pore_velocity}所示，不同空间位置的迁移速度可能相差数倍甚至数十倍，因此在采用标准Galerkin有限元方法求解时，当局部区域出现对流占优现象时，数值解极易产生非物理振荡。传统上解决这一问题主要有两种思路：一是提高有限元插值函数的阶数，二是通过网格加密来捕捉剧烈变化区域。然而在实际工程问题中，尤其是三维模拟情况下，这两种方法往往会显著增加自由度数量，从而带来较大的计算开销。为了在不显著增加计算成本的前提下抑制数值振荡，本文在气孔迁移模型中引入四种常用的稳定化技术，包括全迎风对流守恒法（Full Upwind Convection Conservation, FUC）、流线迎风Petrov--Galerkin法（Streamline Upwind Petrov--Galerkin, SUPG）、间断Galerkin方法（Discontinuous Galerkin, DG）以及迎风有限体积法（Upwind Finite Volume Method, FVM）。下面分别给出这些方法在气孔迁移问题中的基本形式。
+
+\subsubsection{原始Galerkin弱形式}
+
+对于控制方程\eqref{eq:pore_transport}，在零通量边界条件下，其标准Galerkin有限元弱形式可写为
+
+\begin{equation}
+	\int_\Omega
+	\phi
+	\frac{\partial p}{\partial t}
+	\,\mathrm d\Omega
+	+
+	\int_\Omega
+	\nabla \phi
+	\cdot
+	[\mathbf{v}(1-p)p]
+	\,\mathrm d\Omega
+	+
+	\int_\Omega
+	\nu
+	\nabla \phi
+	\cdot
+	\nabla p
+	\,\mathrm d\Omega
+	=0 ,
+	\label{eq:galerkin_weak}
+\end{equation}
+
+其中$\phi$为测试函数，$\Omega$表示计算区域，$\mathbf v$为气孔迁移速度场，$\nu$为扩散系数。当对流项占主导时，直接离散式\eqref{eq:galerkin_weak}往往会产生明显的数值振荡，因此需要通过适当的稳定化技术进行改进。
+
+\subsubsection{全迎风对流守恒法（FUC）}
+
+FUC方法\cite{adhikaryAnalysisFiniteElement2011}通过在单元层面对对流项引入迎风权重，从而增强数值稳定性，其核心思想是根据物质输运方向对节点残差进行重新分配。对于单元中的节点$i$，首先定义方向相关参数$R_i=-(\nabla\psi_i,\mathbf v(1-p))$，其中$\psi_i$为节点形函数。当$R_i\ge0$时，该节点被认为是迎风节点，其残差贡献取为$R_i=p_i\tilde R_i$，其中$p_i$为节点处孔隙率，$\tilde R_i$为原始残差。进一步定义所有迎风节点的总流出量$M_{out}=\sum_{R_i\ge0}p_iR_i$，以及顺风节点的总流入量$M_{in}=-\sum_{R_i<0}R_i$。为了保证单元内质量守恒，需要对顺风节点的残差进行重新分配，即令$R_i=\tilde R_i(M_{out}/M_{in})$。通过这种沿流向重新分配残差的方式，可以有效抑制对流主导问题中出现的高频振荡，但由于该方法对原始弱形式进行了修正，因此在提高稳定性的同时也会引入一定程度的数值耗散。
+
+\subsubsection{流线迎风Petrov--Galerkin法（SUPG）}
+
+SUPG方法\cite{brooksStreamlineUpwindPetrovgalerkin1982,johnsonFiniteElementMethods1984}通过在标准Galerkin弱形式中引入沿流线方向的稳定化项来抑制振荡，同时保持弱形式的一致性。其基本思想是采用Petrov--Galerkin型测试函数，即将测试函数修正为$\phi^*=\phi+\tau\,\mathbf v_{eff}\cdot\nabla\phi$，其中$\tau$为稳定参数，$\mathbf v_{eff}$为有效对流速度。对于气孔迁移模型，由于对流通量形式为$\mathbf v(1-p)p$，其有效速度可写为$\mathbf v_{eff}=(1-2p)\mathbf v$。在此基础上，SUPG弱形式可表示为
+
+\begin{equation}
+	\begin{aligned}
+		&
+		\int_\Omega
+		\phi
+		\frac{\partial p}{\partial t}
+		\,d\Omega
+		+
+		\int_\Omega
+		\nabla\phi\cdot[\mathbf v(1-p)p]
+		\,d\Omega
+		+
+		\int_\Omega
+		\nu\nabla\phi\cdot\nabla p
+		\,d\Omega
+		\\
+		&
+		+
+		\sum_e
+		\int_{\Omega_e}
+		\tau\,\mathbf v_{eff}\cdot\nabla\phi
+		\left(
+		\frac{\partial p}{\partial t}
+		+
+		\nabla\cdot[\mathbf v(1-p)p]
+		-
+		\nabla\cdot(\nu\nabla p)
+		\right)
+		\,d\Omega
+		=0 .
+	\end{aligned}
+	\label{eq:supg_weak}
+\end{equation}
+
+其中稳定参数通常取$\tau=h/(2|\mathbf v_{eff}|)$，$h$为单元特征尺寸。对于一阶有限元单元，可忽略扩散项中的二阶导数项以得到简化形式。SUPG方法能够在保持Galerkin一致性的同时显著提高对流主导问题的数值稳定性，因此在工程模拟中应用十分广泛。
+
+\subsubsection{间断有限元法（DG）}
+
+间断Galerkin方法允许数值解在单元之间不连续，并通过在单元界面引入数值通量来维持整体守恒性\cite{shuonanStabilizedFiniteElement2024}。对于气孔迁移模型，其弱形式除了区域积分项之外，还包含内部界面的跳跃项。设$\Gamma_{int}$为内部单元界面，孔隙率在界面上的跳跃记为$[p]=p^+-p^-$，则弱形式可写为
+
+\begin{equation}
+	\begin{aligned}
+		&
+		\int_\Omega
+		\phi
+		\frac{\partial p}{\partial t}
+		\,d\Omega
+		+
+		\int_\Omega
+		\mathbf v(1-p)p\cdot\nabla\phi
+		\,d\Omega
+		-
+		\int_\Omega
+		\nu\nabla p\cdot\nabla\phi
+		\,d\Omega
+		\\
+		&
+		+
+		\int_{\Gamma_{int}}
+		\lambda^*[p]\,d\Gamma
+		+
+		\int_{\Gamma_{int}}
+		[\phi]\lambda^*\,d\Gamma
+		=0 ,
+	\end{aligned}
+	\label{eq:dg_weak}
+\end{equation}
+
+其中$\lambda^*$表示界面数值通量（或拉格朗日乘子）。DG方法在处理强对流或陡峭梯度问题时具有较好的稳定性和守恒性，但由于自由度数量增加以及界面通量计算较为复杂，其计算成本通常高于传统连续Galerkin方法。
+
+\subsubsection{迎风有限体积法（FVM）}
+
+有限体积方法直接基于守恒律的积分形式进行离散，因而具有天然的局部守恒特性\cite{moukalledFiniteVolumeMethod2016}。在MOOSE平台中通常采用单元中心格式，对控制体积$V$积分可得到
+
+\begin{equation}
+	\int_V
+	\frac{\partial p}{\partial t}
+	\,dV
+	+
+	\int_{\partial V}
+	\left[
+	\mathbf v(1-p)p-\nu\nabla p
+	\right]\cdot\mathbf n
+	\,dS
+	=0 .
+	\label{eq:fvm_weak}
+\end{equation}
+
+在离散过程中，对流通量一般采用迎风格式计算，而扩散通量则采用中心差分近似。由于通量直接通过单元界面计算，FVM在处理对流主导问题时具有较好的稳定性和守恒性。然而在以有限元为主体框架的软件中实现有限体积离散时，往往需要额外处理有限元自由度与控制体变量之间的数据映射，从而增加实现复杂度。
+
+综合比较上述四种方法可以发现，它们在粗网格条件下均能够不同程度地抑制数值振荡。其中，SUPG方法在计算稳定性、数值精度以及计算效率之间取得了较好的平衡，因此本文后续的多维数值模拟主要采用SUPG稳定化方法。关于各方法的详细比较与实现细节，可参考文献\cite{WangZhaoHaoYangHuaWuRanLiaoZhongQiKongQianYiDeDuoFangFaDuoWuLiChangMoNiYanJiu2025}。
+
+\xsubsection{程序实现框架}{Computational Framework}
+\subsubsection{经验模型计算流程}
+经验模型的气孔迁移过程的数值计算流程如图\ref{fig:pore_migration_emprical_flow_chart}所示。计算首先以燃料初始状态和运行条件作为输入，包括初始温度分布、初始孔隙率、燃料的氧金属比（O/M ratio）以及线功率随时间变化的功率历史函数。基于这些输入条件，首先在温度计算模块求解燃料内部的瞬态温度场。温度场通过热传导控制方程计算，其中包含热传导项、瞬态时间项以及裂变热源项，从而获得燃料内部的温度分布及其空间梯度。
+
+在得到温度场之后，通过材料模型计算气孔迁移速度。气孔迁移速度由材料属性模块给出，其主要由温度梯度驱动，并与燃料温度及氧金属比有关。在计算过程中首先根据经验关系计算蒸气压，然后结合气孔压力与温度关系确定气孔迁移系数，最终得到气孔迁移速度，该速度与温度梯度成正比关系。
+
+在得到气孔迁移速度表达式后，将其引入孔隙率的输运方程，对燃料中的孔隙率的时空演化过程进行求解。该方程包含孔隙率的瞬态变化项、由气孔迁移导致的对流输运项以及用于提高数值稳定性的扩散项。在数值实现中，时间导数项用于描述孔隙率的瞬态变化，对流项用于描述气孔在温度梯度驱动下的迁移过程，同时引入SUPG稳定化方法和人工扩散项以抑制高Péclet数条件下可能出现的数值振荡问题。
+
+通过上述计算步骤，可以得到燃料在给定功率历史条件下的孔隙率时空演化过程，并进一步获得气孔迁移速度、平均孔隙率以及孔隙率极值等物理量，从而分析气孔在温度梯度作用下向燃料中心迁移并逐渐形成中心孔的演化行为。
+
+在数值实现中，各控制方程在有限元框架下采用完全耦合的方式同步求解，在每一时间步中将所有未知变量组装为统一的非线性方程组并进行隐式求解。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=9.0cm]{pore_migration_emprical_flow_chart.pdf}
+	\caption{经验模型的计算流程示意图}
+	\label{fig:pore_migration_emprical_flow_chart}
+\end{figure}
+\subsubsection{Rand--Markin计算流程}
+Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\ref{fig:pore_migration_rand_markin_flow_chart}所示。然而，在气孔迁移速度的计算过程中需要考虑燃料中多组分蒸气压以及氧化还原平衡关系，因此计算过程更加复杂。在给定燃料温度、氧金属比（O/M）以及燃料中钚和镅含量的条件下，需要计算氧分压、氧势积分以及各挥发组分蒸气压等热力学量，这些物理量共同决定气孔迁移速度。
+
+首先，根据氧化还原平衡关系建立氧金属比（O/M）与氧分压之间的非线性关系方程，并采用二分法对该方程进行求解，从而得到燃料在给定条件下的氧分压。同时，为了后续计算蒸气压对温度的导数，利用隐函数求导方法计算氧分压对温度的导数。
+
+其次，为计算 Rand--Markin 模型中的氧势积分项，对氧金属比变化区间进行数值积分。在数值实现中采用辛普森积分方法对积分区间进行离散，从而得到氧势积分及其对温度的导数。
+
+此外，根据燃料中不同挥发组分的热力学关系计算各组分蒸气压，并进一步求得总蒸气压及其对温度的导数。
+
+在获得氧分压、氧势积分以及总蒸气压及其对温度的导数之后，在气孔迁移速度材料模型中计算气孔迁移速度。该迁移速度随后作为对流速度项引入孔隙率输运方程，并在有限元框架下进行数值求解，从而得到燃料中孔隙率的时空演化过程以及气孔迁移行为。
+
+与经验模型类似，各控制方程在有限元框架下采用完全耦合方式进行隐式求解。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=9.0cm]{pore_migration_rand_markin_flow_chart.pdf}
+	\caption{Rank--Markin模型的计算流程示意图}
+	\label{fig:pore_migration_rand_markin_flow_chart}
+\end{figure}
+
+\xsubsection{气孔迁移速率模型验证}{Verification of Pore Migration Velocity Models}
+\subsubsection{经验关系式模型验证}
+
+为了验证本文所开发程序的正确性，选取 Novascone 等文献\cite{novasconeModelingPorosityMigration2018}中的算例进行对比验证。由于实际燃料芯块通常为圆柱形结构，为了简化计算，本文采用一维轴对称几何模型，仅考虑燃料芯块的径向行为。计算区域为燃料芯块半径方向，燃料半径取 $R=2.675\,\mathrm{mm}$。
+
+在力学计算中采用广义平面应变假设，即轴向方向的变形受到约束，位移仅沿径向方向变化。燃料内部的初始孔隙率设定为均匀分布，其初始值为 $p_{initial}=0.15$。由于燃料表面不存在气孔的进入或逸出，因此在燃料中心 ($r=0$) 和燃料外表面 ($r=R$) 均施加零通量边界条件，即孔隙率在边界处满足无通量条件。
+
+温度边界条件和燃料芯块表面压力边界条件均随时间变化，其变化规律来源于快堆热工水力计算结果的统计数据。燃料表面温度随时间逐渐升高，由约 $600\,\mathrm{K}$ 线性增加至约 $1300\,\mathrm{K}$；同时燃料表面压力也随时间线性增加，由约 $0.2\,\mathrm{MPa}$ 增加至约 $0.4\,\mathrm{MPa}$。随着温度的升高，燃料内部逐渐形成较大的温度梯度，从而驱动气孔沿温度升高方向迁移。
+
+计算所需的材料参数取自文献数据\cite{novasconeModelingPorosityMigration2018}，其主要物性参数如表~\ref{tab:material_property} 所示，此外，氧金属比取为 2，Am 和 Np 的含量均为 0。
+\begin{table}[htbp]
+	\centering
+	\caption{计算所采用的主要参数}
+	\label{tab:material_property}
+	\begin{tabularx}{\textwidth}{YYYY}
+		\toprule
+		参数 & 符号 & 数值 & 单位 \\
+		\midrule
+		气孔扩散系数 & $D$ & $1.0\times10^{-12}$ & $\mathrm{m^2/s}$ \\
+		密度 & $\rho$ & $1.0662\times10^{4}$ & $\mathrm{kg/m^3}$ \\
+		比热容 & $c_p$ & 270 & $\mathrm{J/(kg\cdot K)}$ \\
+		杨氏模量 & $E$ & 200 & $\mathrm{GPa}$ \\
+		泊松比 & $\nu$ & 0.345 & -- \\
+		热膨胀系数 & $\alpha$ & $1.0\times10^{-6}$ & $\mathrm{K^{-1}}$ \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+在上述初始条件和边界条件下进行数值计算，并将计算结果与 Bison 程序的模拟结果进行对比。计算结果表明，在温度梯度驱动下燃料内部气孔逐渐向燃料中心迁移，在中心区域形成较高的孔隙率区域。计算 $10^4\,\mathrm{s}$ 后，燃料中心形成明显的中心孔，其半径约占燃料半径的 20\%。本文程序得到的径向孔隙率分布与 Bison 程序的计算结果具有良好一致性，表明所建立的数值模型以及程序实现能够正确描述氧化物燃料中气孔迁移过程，从而验证了程序实现的正确性。
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=5.8cm]{pore_compare_with_bison.png}
+	\caption{程序和Bison程度计算结果对比}
+	\label{fig:pore_compare_with_bison}
+\end{figure}
+为了进一步比较不同数值离散方法对计算结果的影响，在相同的初始条件和边界条件下，分别采用不同数值方法对该一维算例进行计算。本文选取前文介绍的几种典型离散格式，对燃料径向孔隙率分布随时间的演化进行模拟，并对计算结果进行对比分析。
+
+不同数值方法得到的径向孔隙率分布如图~\ref{fig:method_compare} 所示。本文分别采用 FCU、SUPG、FVM以及DG等数值方法对气孔迁移方程进行离散求解，并在不同径向网格数量（$N=25,50,100,200$）条件下对计算结果进行比较。从图中可以看出，各种数值方法在整体变化趋势上保持一致，均能够反映在温度梯度驱动下气孔向燃料中心迁移并逐渐形成中心孔的物理过程。
+
+但在孔隙率梯度较大的区域，不同离散方法之间仍然存在一定差异。例如，当网格数量较少时，FCU 方法仍可能出现一定程度的数值振荡，但振荡幅度明显小于 SUPG 方法；SUPG 方法在粗网格条件下虽然能够保持计算稳定，但孔隙率分布会向中心孔方向产生一定偏移。对于 FVM 方法，在较粗网格（如 $N=25$）条件下会出现明显的“台阶”状分布，这是由于有限体积方法采用常数形函数，在单元边界处孔隙率存在不连续所导致的。相比之下，DG 方法在保持计算稳定性的同时能够较好地描述孔隙率分布的变化特征，但是需要较长的计算时间。
+
+总体来看，各种数值方法均能够描述气孔迁移的基本物理规律，但在计算精度和数值稳定性方面存在一定差别。综合比较结果表明，在适当网格分辨率条件下，所采用的数值方法能够较好地捕捉孔隙率分布的变化特征，并保证计算过程的稳定性。
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=5.8cm]{method_compare.png}
+	\caption{不同方法的对比}
+	\label{fig:method_compare}
+\end{figure}
+\subsubsection{Rand--Markin模型验证}
+
+为进一步验证 Rand--Markin 模型在燃料孔隙迁移行为模拟方面的准确性，本节引用 Takayuki Ozawa 等人文章\cite{ozawaDevelopmentFuelPerformance2021}中的两个基准验证案例（Case 1 和 Case 2），将本文程序的计算结果分别与 Okami 和 CEPTAR 程序的计算结果进行对比。两个案例均采用一维轴对称几何模型，仅考虑燃料芯块的径向行为，其具体计算条件汇总于表~\ref{tab:benchmark_conditions}。其中，Case 1 旨在通过与 CEPTAR 程序的直接对比，验证程序在热传导和孔隙迁移求解方面的数值准确性；Case 2 则用于评估燃料组成（O/M 比和 Am 含量）对孔隙迁移行为的影响，检验程序对材料物性变化的响应能力。
+
+\begin{table}[htbp]
+	\centering
+	\caption{基准验证案例计算条件}
+	\label{tab:benchmark_conditions}
+	\begin{tabularx}{\textwidth}{YYY}
+		\toprule
+		参数 & Case 1 & Case 2 \\
+		\midrule
+		几何尺寸 & 半径4.1 mm，径向网格100 & 半径2.675 mm，径向网格100 \\
+		初始孔隙率 & 0.12 & 0.15 \\
+		初始温度 & 1400 K & 630 K \\
+		边界条件 & 外表面温度恒定为1400 K，孔隙通量为零 & 外表面温度在0--10000 s内从630 K线性升至1000 K，之后保持至15000 s，孔隙通量为零 \\
+		功率历史 & 0--80000 s线性升至38 kW/m，之后保持70000 s & 0--10000 s线性升至45 kW/m，之后保持5000 s \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+随后选取 Case 1 计算结束时刻（150000 s）的径向分布结果进行对比，如图 \ref{fig:cas1_results} 所示。图中给出了孔隙率以及燃料温度随归一化半径 $r/R$ 的分布情况，其中 Miracle 程序的计算结果分别与 Okami 和 CEPTAR 程序进行了比较。
+
+从孔隙率分布可以看出，在燃料中心区域孔隙率接近于 1，表明在强温度梯度作用下，大量气孔向燃料中心迁移并逐渐形成中心孔结构。随着径向位置向外增加，孔隙率迅速下降，并在 $r/R\approx0.25$ 附近出现明显的过渡区域。此后在燃料中部区域孔隙率保持较低水平，而在靠近燃料外表面区域孔隙率再次略有增加。该分布特征反映了气孔在温度梯度驱动下由高温区域向低温区域迁移并重新分布的过程。
+
+从不同程序的计算结果对比来看，Miracle 程序得到的孔隙率分布与 Okami 程序整体趋势一致，均能够较好地预测中心孔形成位置以及孔隙率的径向变化规律。与 CEPTAR 程序相比，Miracle 在燃料中心附近计算得到的孔隙率略高，这是由于 CEPTAR 程序采用移动边界方法描述中心孔演化，因此在中心孔区域不包含计算数据。
+
+同时，图中还给出了燃料温度的径向分布。可以看到 Miracle 与 Okami 程序计算得到的温度分布基本重合，温度从燃料中心向外逐渐降低，并在燃料表面达到边界条件温度。这表明两程序在热传导求解方面具有良好的一致性，同时该温度梯度也是驱动气孔向燃料中心迁移的主要物理机制。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=5.8cm]{comparison_plot_case1.png}
+	\caption{Case 1 中 Miracle、CEPTAR 与 Okami 程序在 150000 s 时的计算结果对比}
+	\label{fig:cas1_results}
+\end{figure}
+
+对于 Case 2，在不同燃料组成条件下对程序进行进一步验证，其计算得到的孔隙率和温度径向分布结果如图 \ref{fig:case2_results} 所示。与 Case 1 类似，Miracle 程序的计算结果与 Okami 程序结果进行了对比，以评估程序在不同材料参数条件下的计算一致性。
+
+从孔隙率分布可以看出，在燃料中心区域孔隙率同样接近于 1，表明气孔在温度梯度作用下持续向燃料中心迁移并形成中心孔结构。随着径向位置增加，孔隙率迅速降低，并在 $r/R\approx0.2$ 附近形成明显的过渡区域，在燃料中部区域保持较低水平，而在接近燃料外表面区域孔隙率再次略有增加。整体分布特征与 Case 1 的结果保持一致。
+
+从程序对比结果来看，Miracle 程序与 Okami 程序计算得到的孔隙率分布具有良好的一致性，两者均能够准确预测中心孔形成位置以及孔隙率的整体径向变化趋势，仅在过渡区域附近存在轻微差异。
+
+图中同时给出了燃料温度的径向分布。可以看到 Miracle 与 Okami 程序得到的温度分布趋势基本一致，温度沿径向由燃料中心向外逐渐降低。由于 Case 2 采用了不同的燃料组成参数，温度分布相较 Case 1 略有变化，但两程序计算结果之间仍保持良好一致性。
+
+综合来看，在不同燃料组成和运行条件下，Miracle 程序均能够合理预测燃料内部温度分布以及气孔迁移行为，其计算结果与 Okami 程序保持良好一致，进一步验证了 Rand--Markin 气孔迁移模型在本文程序中的实现正确性与数值稳定性。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=5.8cm]{comparison_plot_case2.png}
+	\caption{Case 2 中 Miracle 与 Okami 程序在 150000 s 时的计算结果对比}
+	\label{fig:case2_results}
+\end{figure}
+\xsubsection{关键参数敏感性分析}{Sensitivity Analysis of Key Parameters}
+\label{sec:sensitivity_analysis}
+为进一步量化模型中关键参数对气孔迁移行为及燃料重构结果的影响，本文在上述验证工况基础上开展参数敏感性分析。分析采用单参数扰动策略：每次仅改变一个参数，其余参数保持基准工况取值不变。对于无明确实验离散区间的参数，采用相对扰动区间（$\pm15\%$与$\pm30\%$）；对于具有明确物理边界的参数（如$O/M$、$C_{\mathrm{Pu}}$与$C_{\mathrm{Am}}$），在文献与工程可接受范围内选取离散点。
+
+结合附录B中Rand--Markin模型控制方程及各组分蒸气压表达式，本文选取以下参数作为敏感性分析对象：
+\begin{enumerate}
+	\item 气孔温度梯度修正因子 $\alpha$；
+	\item 氧金属比 $O/M$；
+	\item 燃料组成参数 $C_{\mathrm{Pu}}$ 与 $C_{\mathrm{Am}}$；
+	\item 孔内状态参数 $P_{\mathrm{pore}}$；
+	\item 人工扩散系数 $\nu$；
+	\item 初始孔隙率 $p_0$。
+\end{enumerate}
+
+在模型实现层面，尽管理论上孔内压力可由闭孔关系表示为温度函数（例如 $P_{\mathrm{pore}}=P_{\mathrm{close}}\,T_{\mathrm{close}}/T_{\mathrm{room}}$），本文程序中将$P_{\mathrm{pore}}$作为可调输入参数进行敏感性分析。为与程序实现保持一致，本文取$P_{\mathrm{pore}}$分析范围为$1\sim10\,\mathrm{atm}$，默认基准值为$1\,\mathrm{atm}$。
+
+为明确各参数的取值区间与基准工况，本文采用表\ref{tab:sensitivity_parameters}所示的敏感性分析设置。除特别说明外，其余参数均保持Case 2基准工况不变。
+
+\begin{table}[htbp]
+	\centering
+	\caption{关键参数敏感性分析取值与基准设定}
+	\label{tab:sensitivity_parameters}
+	\begin{tabularx}{\textwidth}{@{}
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}m{3.8cm}
+			>{\centering\arraybackslash}m{3.8cm}
+			>{\centering\arraybackslash}m{3cm}
+			@{}}
+		\toprule
+		参数 & 符号 & 取值范围 & 基准值 \\
+		\midrule
+		气孔温度梯度修正因子 & $\alpha$ & $1.5\sim6.5$ & $4.0$ \\
+		氧金属比 & $O/M$ & $1.96\sim2.00$ & $1.98$ \\
+		钚含量 & $C_{\mathrm{Pu}}$ & $0.10\sim0.30$ & $0.20$ \\
+		镅含量 & $C_{\mathrm{Am}}$ & $0\sim10\%$ & $5\%$ \\
+		孔内压力 & $P_{\mathrm{pore}}$ & $1\sim10\,\mathrm{atm}$ & $1\,\mathrm{atm}$ \\
+		人工扩散系数 & $\nu_{\mathrm{art}}$ & $10^{-13}\sim10^{-11}$ & $10^{-12}$ \\
+		初始孔隙率 & $p_0$ & $0.12\sim0.18$ & $0.15$ \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+上述参数分别对应模型中的温度驱动项、热力学平衡项、组分耦合项、孔内传质项和初始结构项，能够覆盖气孔迁移速率模型的主要不确定性来源。为增强分析结果的工程可解释性，本文将敏感性评价分为两个层次：
+\begin{itemize}
+	\item \textbf{迁移速度层面}：比较不同参数下气孔迁移速率 $\boldsymbol{v}(r)$ 的变化幅度及峰值位置变化；
+	\item \textbf{重构结果层面}：比较孔隙率分布 $p(r,t)$、中心孔半径演化 $R_{\mathrm{void}}(t)$ 以及重构边界位置随时间的变化。
+\end{itemize}
+
+由于响应量既包含分布曲线（$v_p(r)$、$p(r,t)$、$T(r,t)$），也包含标量特征量（峰值、平均值、中心孔半径等），本文采用“曲线敏感性+标量敏感性”的统一评价方法。首先定义归一化敏感性指标：
+\begin{equation}
+	S_Y^\theta = \frac{\Delta Y / Y_0}{\Delta \theta / \theta_0},
+	\label{eq:sensitivity_definition}
+\end{equation}
+其中，$\theta$为待分析参数，$Y$为响应量，下标$0$表示基准工况。在本文中，$Y$可按评价层次选取为迁移速度响应（如$Y=v_p(r,t^*)$或$Y=v_{p,\max}(t^*)$）与重构结果响应（如$Y=p(r,t^*)$或$Y=R_{\mathrm{void}}(t^*)$）。
+
+对于一般扰动工况，若参数在基准值两侧均有取值（下限$\theta_-$与上限$\theta_+$），采用中心差分形式计算敏感性：
+\begin{equation}
+	S_Y^{\theta}\approx
+	\frac{\left[Y(\theta_+)-Y(\theta_-)\right]/Y(\theta_0)}{\left(\theta_+-\theta_-\right)/\theta_0},
+	\quad \theta_-<\theta_0<\theta_+.
+\end{equation}
+若仅有单侧扰动结果，可采用前向或后向差分进行近似计算。
+
+对于跨数量级变化的参数（如人工扩散系数$\nu_{\mathrm{art}}$），采用对数敏感性指标以避免线性尺度下的权重偏置：
+\begin{equation}
+	S_Y^{\log \nu_{\mathrm{art}}}=
+	\frac{\Delta Y/Y_0}{\Delta \log_{10}(\nu_{\mathrm{art}})}.
+\end{equation}
+对应的中心差分形式为
+\begin{equation}
+	S_Y^{\log \nu_{\mathrm{art}}}\approx
+	\frac{\left[Y(\nu_+)-Y(\nu_-)\right]/Y(\nu_0)}{\log_{10}(\nu_+)-\log_{10}(\nu_-)}.
+\end{equation}
+
+当$Y$为径向分布曲线时，在每个径向位置分别计算，得到曲线敏感性分布：
+\begin{equation}
+	S_Y^{\theta}(r)=
+	\frac{\left[Y(r,\theta_+)-Y(r,\theta_-)\right]/Y(r,\theta_0)}{\left(\theta_+-\theta_-\right)/\theta_0}.
+\end{equation}
+该指标可用于识别参数影响最强的径向区域（中心区、过渡区和外缘区）。
+
+\begin{figure}[htbp]
+	\centering
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_alpha_pore.png}
+		\subcaption{$t=10000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_alpha_v.png}
+		\subcaption{$t=10000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\vspace{0.4em}
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_alpha_pore.png}
+		\subcaption{$t=15000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_alpha_v.png}
+		\subcaption{$t=15000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\caption{不同时间下气孔温度梯度修正系数对孔隙率和气孔迁移速度的敏感性指标沿燃料半径方向的分布}
+	\label{fig:alpha_sensitivity}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_OM_pore.png}
+		\subcaption{$t=10000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_OM_v.png}
+		\subcaption{$t=10000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\vspace{0.4em}
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_OM_pore.png}
+		\subcaption{$t=15000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_OM_v.png}
+		\subcaption{$t=15000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\caption{不同时间下 O/M 比对孔隙率和气孔迁移速度的敏感性指标沿燃料半径方向的分布}
+	\label{fig:OM_sensitivity}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_Pu_pore.png}
+		\subcaption{$t=10000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_Pu_v.png}
+		\subcaption{$t=10000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\vspace{0.4em}
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_Pu_pore.png}
+		\subcaption{$t=15000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_Pu_v.png}
+		\subcaption{$t=15000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\caption{不同时间下钚元素对孔隙率和气孔迁移速度的敏感性指标沿燃料半径方向的分布}
+	\label{fig:Pu_sensitivity}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_am_pore.png}
+		\subcaption{$t=10000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_am_v.png}
+		\subcaption{$t=10000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\vspace{0.4em}
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_am_pore.png}
+		\subcaption{$t=15000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_am_v.png}
+		\subcaption{$t=15000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\caption{不同时间下镅元素对孔隙率和气孔迁移速度的敏感性指标沿燃料半径方向的分布}
+	\label{fig:am_sensitivity}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_pressure_pore_pore.png}
+		\subcaption{$t=10000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_pressure_pore_v.png}
+		\subcaption{$t=10000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\vspace{0.4em}
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_pressure_pore_pore.png}
+		\subcaption{$t=15000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_pressure_pore_v.png}
+		\subcaption{$t=15000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\caption{不同时间下气孔压力对孔隙率和气孔迁移速度的敏感性指标沿燃料半径方向的分布}
+	\label{fig:pressure_sensitivity}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_v_pore.png}
+		\subcaption{$t=10000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_v_v.png}
+		\subcaption{$t=10000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\vspace{0.4em}
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_v_pore.png}
+		\subcaption{$t=15000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_v_v.png}
+		\subcaption{$t=15000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\caption{不同时间下人工扩散系数对孔隙率和气孔迁移速度的敏感性指标沿燃料半径方向的分布}
+	\label{fig:v_sensitivity}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_P0_pore.png}
+		\subcaption{$t=10000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_10000_P0_v.png}
+		\subcaption{$t=10000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\vspace{0.4em}
+	
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_P0_pore.png}
+		\subcaption{$t=15000\,\mathrm{s}$，孔隙率敏感性}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{case2_sensitivity_15000_P0_v.png}
+		\subcaption{$t=15000\,\mathrm{s}$，迁移速度敏感性}
+	\end{subfigure}
+	
+	\caption{不同时间下初始气孔值对孔隙率和气孔迁移速度的敏感性指标沿燃料半径方向的分布}
+	\label{fig:P0_sensitivity}
+\end{figure}
+
+由图\ref{fig:alpha_sensitivity}--图\ref{fig:P0_sensitivity}可见，不同参数对响应量的影响呈现明显分层特征。整体上，$\alpha$与$O/M$对气孔迁移速度敏感性曲线的幅值和峰值位置影响最显著，且在$\,t=15000\,\mathrm{s}$时相较$\,t=10000\,\mathrm{s}$表现出更强的累积效应，说明温度梯度驱动与热力学状态耦合是控制重构速率的主导因素。燃料组成参数$C_{\mathrm{Pu}}$与$C_{\mathrm{Am}}$的影响次之，主要体现在中高温区域对迁移速度与孔隙率分布形态的协同调制，这与其通过改变组分蒸气压及$\mathrm{d}P/\mathrm{d}T$进而影响蒸发--冷凝输运通量的机理一致。
+
+相比之下，$P_{\mathrm{pore}}$、人工扩散系数$\nu_{\mathrm{art}}$与初始孔隙率$P_0$对短时速度峰值的直接影响相对较弱，但在后期对孔隙率曲线平滑程度、重构边界位置以及中心孔演化速率仍具有不可忽略作用，体现出“短时弱敏感、长时强累积”的特征。因此，模型标定应优先约束$\alpha$、$O/M$及燃料组成参数，以提高速率预测与重构起始阶段的精度；同时结合辐照后显微组织数据反演$P_{\mathrm{pore}}$、$\nu_{\mathrm{art}}$和$P_0$，以增强长期演化预测的稳定性与可靠性。
+
+\xsection{钚的热扩散与重分布模型}{Thermal Diffusion and Redistribution Model for Plutonium}
+实验结果表明\cite{clementPlutoniumRedistributionMixed1978}，初始近似均匀分布的钚元素在辐照与燃耗过程中会逐步演化为显著的径向非均匀分布，该现象通常称为钚重分布。随着燃耗增加，钚组分总体呈向燃料高温中心区迁移的趋势，并对中心区域功率分布产生约束作用\cite{meyerAnalysisPlutoniumSegregation1974}。同时，钚浓度场的变化会进一步耦合影响燃料熔点、热导率等关键热物性参数，从而改变燃料棒的热工响应。因此，在高保真燃料性能分析程序中，有必要系统阐明钚重分布的主导机理，并建立可用于工程预测的定量模型。已有研究\cite{boberPlutoniumRedistributionFast1973,matzkeDiffusionProcessesSurface1983}指出，铀扩散系数、钚本征扩散系数、氧金属比（O/M）以及气孔迁移速率等因素均会显著影响钚元素迁移行为。
+
+\xsubsection{钚元素的迁移机理}{Migration Mechanism of Plutonium}\label{subsec:plutonium_migration}
+
+在快中子反应堆中，MOX燃料因承受剧烈的径向温度梯度，会引发孔隙迁移、裂纹演化及组织重构等一系列微观结构变化。在这种环境下，钚元素会发生显著的再分布。现有研究\cite{boberMATERIALTRANSPORTTEMPERATURE1973,hoffmannCrackFormationCrack1974,clementPlutoniumRedistributionMixed1978}普遍认为，该过程本质上是强非均匀温度场下 U--Pu 多组分耦合迁移的结果。围绕其机理，相关模型可归纳为以下两类。
+
+第一类模型认为，Pu 再分布主要受固相内扩散过程控制\cite{olanderFundamentalAspectsNuclear1976}。由于辐照过程中燃料内部形成较大的径向温度梯度，除常规的化学浓度扩散外，温度梯度还引入热扩散（Soret 效应），从而驱动燃料成分发生分离。该类模型通常将 Pu 的迁移通量表示为浓度梯度扩散项与温度梯度扩散项的叠加，用以描述固相中 Pu 在温度场作用下的再分布行为。
+
+第二类模型\cite{boberMATERIALTRANSPORTTEMPERATURE1973}强调，在快堆 MOX 燃料的高温辐照条件下，燃料局部区域可能发生显著的蒸发和气相迁移现象。由于气相中物质的迁移速率远高于固相扩散，Pu 元素可通过挥发性组分在燃料孔隙或裂隙中沿温度梯度快速迁移，并在低温区域重新沉积，从而对径向 Pu 分布产生重要影响。
+
+鉴于 MOX 燃料在高温下裂纹可较快闭合\cite{clementPlutoniumRedistributionMixed1978,olanderKineticsActinideRedistribution1973}，在长时间稳态运行阶段，经由裂纹通道的净迁移贡献通常有限；但在反应堆运行初期与重构快速发展阶段，气孔迁移显著增强，此时气相通道对 Pu 迁移的贡献不可忽略\cite{clementPlutoniumRedistributionMixed1978}。因此，固相热扩散与气相输运并非相互排斥，而是在不同温度区间、不同结构状态及不同时间尺度下共同作用。基于此，本文在统一质量守恒框架下构建同时包含固相扩散、热扩散与气相输运项的综合迁移模型，以更准确表征辐照过程中燃料内 Pu 的再分布行为。
+
+\begin{equation}
+	\frac{\partial c}{\partial t} - \nabla \cdot \left\{D_{\mathrm{Diff}}\left[ \nabla c + c(1-c)\frac{Q}{RT^{2}}\nabla T\right]    - D_{\mathrm{pore}}\left[ APc\frac{l}{d} \nabla T \text{exp}\left(-\frac{D}{lv_p}\right)\right] \right\} = 0
+\end{equation}
+括号内第一项表示固相内 Pu 的迁移通量，其中包括由浓度梯度引起的常规扩散项以及由温度梯度引起的热扩散项。式中，$c$ 为燃料中 Pu 的摩尔分数，$t$ 为时间，$\nabla$ 表示空间梯度算符。$D_{\mathrm{Diff}}$ 为 Pu 在燃料中的有效扩散系数，用以表征其在固相中的迁移能力,$T$ 为绝对温度，$R$ 为气体常数，$Q$ 为有效摩尔输运热，用于描述温度梯度对 Pu 迁移的驱动作用，根据文献\cite{ishiiInvestigationPuMigration2001,clementPlutoniumRedistributionMixed1978}中给出参考值设定为-35$kcal/mol$。
+
+第二项用于表征 Pu 通过燃料孔隙发生的气相迁移贡献，其中$D_{\mathrm{pore}}$是气孔加速后的扩散系数， $A$ 为比例常数，$P$ 为燃料孔隙率，$l$ 和 $d$ 分别表示孔隙特征长度和等效直径，$v_p$ 为孔隙中气相的有效迁移速度，指数项用于描述气相输运过程受到孔隙结构及扩散阻力限制时的衰减效应。
+
+因此，该控制方程在统一的质量守恒框架下，同时考虑了固相扩散、热扩散及孔隙气相迁移三种机制，用以描述辐照过程中燃料内 Pu 的再分布行为。
+\xsubsection{有效扩散系数$D_{\mathrm{Diff}}$}{Effective Diffusion Coefficient}
+有效扩散系数是描述Pu在燃料中迁移能力的关键参数。早期的研究表明\cite{boberPlutoniumRedistributionFast1973}，在均匀 MOX 燃料中，$D_{\mathrm{Diff}}$ 可由铀和钚的化学扩散系数加权得到，即
+\begin{equation}
+	D_{\mathrm{Diff}} \approx c_{\mathrm{Pu}} D_{\mathrm{Pu}} + (1 - c_{\mathrm{Pu}}) D_{\mathrm{U}},
+\end{equation}
+式中，$c_{\mathrm{Pu}}$ 为 Pu 的摩尔分数，$D_{\mathrm{U}}$ 和 $D_{\mathrm{Pu}}$ 分别为铀和钚在 MOX 燃料中的本征化学扩散系数。
+
+在BOBER等人\cite{clementPlutoniumRedistributionMixed1978,boberPlutoniumRedistributionFast1973}的研究中给出根据$UO_2$中测量1250摄氏度～1550摄氏度下钚的扩散系数外推得到的扩散系数：
+\begin{equation}
+	D_{\mathrm{Diff}} = A\exp(-E / RT) \ \mathrm{m}^2/\mathrm{s}
+\end{equation}
+其中，$D_{\mathrm{Diff}}$ 为钚在燃料中的扩散系数（$\mathrm{m^2/s}$），$A$ 为指前因子，$E$ 为扩散激活能，$R$ 为气体常数，$T$ 为绝对温度。不同研究者基于不同实验条件和数据拟合方法得到的参数取值存在一定差异。
+
+例如，Ishii 等人\cite{ishiiInvestigationPuMigration2001}给出的指前因子 $A$ 为 $2\times10^{3}$，激活能 $E$ 为 $130000\ \mathrm{cal/mol}$；Clement 等人\cite{clementPlutoniumRedistributionMixed1978}给出的参数分别为 $A=0.34\times10^{-4}$，$E=105000\ \mathrm{cal/mol}$。此外，Di~Marcello 等人\cite{dimarcelloExtensionTRANSURANUSPlutonium2012}给出的参数为 $A=1.5\times10^{-6}\ \mathrm{cm^2/s}$，$E=53000\ \mathrm{cal/mol}$。在其后续研究\cite{dimarcelloModellingActinideRedistribution2014}中，Di~Marcello 等人对该模型参数进行了进一步修正，给出的参数值为 $A=3.4\times10^{-5}$，$E=111055.417\ \mathrm{cal/mol}$。
+
+总之，钚扩散系数通常可以采用 Arrhenius 形式进行描述，但由于实验条件、燃料组成以及数据处理方法的不同，不同文献中得到的模型参数存在一定差异，如图\ref{fig:plutonium_diffusion}。因此，在具体计算中需要根据模型假设选择合适的参数组合。若不考虑 O/M 比的影响，本文建议采用 Clement 等人给出的参数；若考虑 O/M 比对扩散过程的修正，则建议采用 Di~Marcello 在文献\cite{dimarcelloExtensionTRANSURANUSPlutonium2012}中提出并结合 O/M 比修正的参数。
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Pu_diffusion_Arrhenius.pdf}
+		\caption{Arrhenius形式}
+		\label{fig:pu_diff_arrhenius}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Pu_diffusion.pdf}
+		\caption{普通坐标}
+		\label{fig:pu_diff_normal}
+	\end{subfigure}
+	
+	\caption{不同文献给出的钚扩散系数随温度的变化：(a) Arrhenius表示；(b) 线性坐标表示}
+	\label{fig:plutonium_diffusion}
+\end{figure}
+此外后续的研究发现\cite{matzkeDiffusionProcessesSurface1983}，实验测得的$D_{\mathrm{UPu}}$非常困难，存在很大的不确定性。此外，也缺少铀和钚的自扩散系数试验。因此后续的研究都是忽略扩散系数对$c_{Pu}$的依赖\cite{matzkeDiffusionProcessesSurface1983,ishiiInvestigationPuMigration2001,olanderFundamentalAspectsNuclear1976}。
+
+还有研究表明\cite{clementPlutoniumRedistributionMixed1978}，在混合氧化物燃料中，Pu的扩散行为不仅受温度控制，而且对燃料的化学计量比（O/M 比）具有显著依赖性。不同 O/M 条件下，燃料中点缺陷的类型及其浓度发生变化，从而显著影响钚元素的扩散机制和迁移速率。
+
+基于 Ishii\cite{ishiiInvestigationPuMigration2001}等人的研究结果，引入与 O/M 比相关的修正函数 $F_{O/M}$，用于描述氧非化学计量对有效扩散系数的影响。Pu的有效互扩散系数表示为
+\begin{equation}
+	D = F_{O/M} \cdot D^{\mathrm{sto}}_{\mathrm{Diff}},
+\end{equation}
+其中，$D^{\mathrm{sto}}_{\mathrm{Diff}}$ 为化学计量 MOX 燃料（O/M = 1.98）条件下的互扩散系数。和
+修正函数 $F_{O/M}$ 用于刻画氧非化学计量状态对互扩散行为的影响，其表达式为 O/M 比的分段函数：
+\begin{equation}
+	F_{O/M} =
+	\begin{cases}
+		\dfrac{N_{O/M=1.94}}{N_{O/M=2.00}}, & O/M \leq 1.94, \\[6pt]
+		a \exp\left(-{b}\footnotemark\cdot{O/M}\right), & 1.94 < O/M < O/M_{\min}, \\[6pt]
+		\dfrac{N_{O/M=O/M_{\min}}}{N_{O/M=2.00}}, & O/M = O/M_{\min}, \\[6pt]
+		\exp\!\left[
+		\ln\!\left(\dfrac{N_{O/M=O/M_{\min}}}{N_{O/M=2.00}}\right)
+		\dfrac{O/M - 2}{O/M_{\min} - 2}
+		\right], & O/M_{\min} < O/M \leq 2.00.
+	\end{cases}
+\end{equation}
+\footnotetext{原参考文献是除，但是根据图片曲线，应该为乘}
+其中，$O/M_{\min}$ 为与温度相关的最小氧金属比，其表达式为
+\begin{equation}
+	O/M_{\min} = 2 - \left\{16 \exp\left(-\frac{3.3\,\text{eV}}{kT}\right)\right\}^{1/4},
+\end{equation}
+式中 $k$ 为玻尔兹曼常数，$T$ 为绝对温度。
+
+$N_{O/M}$ 表示对应 O/M 条件下的有效缺陷浓度，其具体形式为
+\begin{align}
+	N_{O/M=1.94} &= 0.0009 \exp\left(-\frac{3.1\,\text{eV}}{kT}\right), \\
+	N_{O/M=O/M_{\min}} &= \frac{4}{(2 - O/M_{\min})^{2}} \exp\left(-\frac{6.4\,\text{eV}}{kT}\right), \\
+	N_{O/M=2.00} &= 2 \exp\left(-\frac{4.2\,\text{eV}}{kT}\right).
+\end{align}
+
+参数 $a$ 和 $b$ 为由连续性条件确定的辅助参数，其定义为
+\begin{align}
+	a &= \left(\frac{N_{O/M=1.94}}{N_{O/M=2.00}}\right)\exp(1.94\,b), \\
+	b &= \frac{1}{1.94 - O/M_{\min}}
+	\ln\left(\frac{N_{O/M=O/M_{\min}}}{N_{O/M=1.94}}\right).
+\end{align}
+
+上述表达式均引自DI MARCELLO, V\cite{dimarcelloImprovementsTRANSURANUSCode30,dimarcelloExtensionTRANSURANUSPlutonium2012}等人的研究工作，该修正模型反映了不同 O/M 区间内主导扩散机制的变化：在富氧条件下，氧空位主导扩散过程；随着 O/M 比降低，金属空位及间隙原子的作用逐渐增强；在低 O/M 区间内，缺陷聚集效应使扩散系数趋于稳定。通过引入 $F_{O/M}$，可在宏观燃料行为模型中合理考虑燃料化学状态对 Pu 迁移过程的影响。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=5.8cm]{F_OM_Curve.png}
+\end{figure}
+
+\xsubsection{气相迁移机制与参数设定}{Gas-phase Migration Mechanism and Parameter Settings}
+气相迁移是除固相扩散外，驱动混合氧化物燃料中锕系元素重分布的另一主导机制。在快堆燃料芯块内巨大的径向温度梯度驱动下，微观气孔通过蒸发-冷凝机制向高温中心迁移，这一过程伴随着显著的组分输运现象。与固相扩散不同，气相迁移对Pu的重新分布主要源于铀、钚氧化物在高温下的非一致性蒸发特性。
+
+根据 Olander\cite{olanderFundamentalAspectsNuclear1976}及 Di Marcello\cite{dimarcelloModellingActinideRedistribution2014}等人的理论模型，位于气孔高温侧的氧化物发生解离蒸发，穿越气孔腔体后在低温侧凝结，导致气孔整体向中心移动。在此过程中，由于铀氧化物（如 $UO_3$ 或 $UO_2$）的饱和蒸气压通常高于钚氧化物（$PuO_2$ 或 $PuO$），气孔在迁移时会优先蒸发铀组分，从而产生类似“扫掠”的过滤效应，导致Pu组分在气孔经过的路径后方（即中心孔外缘）发生富集。
+
+这种由气孔迁移引起的组分再分布过程在高温条件下尤为显著。研究表明，当燃料中心温度超过约1700--1800~$^\circ\mathrm{C}$\cite{boberPlutoniumRedistributionFast1973}时，气孔迁移速率迅速增大，气相输运成为影响Pu再分布的重要机制，尤其在辐照初期燃料重构阶段和裂纹愈合过程中表现突出。相比固相热扩散所主导的连续、长期迁移行为，气相迁移通常呈现出阶段性和非连续性特征。
+
+Clement 与 Finnis\cite{clementPlutoniumRedistributionMixed1978}进一步指出，气孔前缘会形成一层Pu浓度增强的富集层，其厚度与气孔迁移速率、孔隙尺寸以及局部温度梯度密切相关。随着气孔向燃料中心移动，该富集层被不断“推送”并累积，从而在宏观尺度上表现为Pu向高温区的径向迁移。该过程可通过定义与气孔迁移相关的宏观通量项加以描述，其本质来源于气相中挥发组分的快速输运。
+
+\begin{equation}
+	J_{\text{pore}} = \frac{P D_{\text{pore}}}{d} \frac{\vec{v_p}}{v_p}Alc\abs{\nabla T} \exp\left(-\frac{D_{\text{pore}}}{lv_p}\right)
+\end{equation}
+
+在宏观模型中，气相迁移通量通常表示为孔隙迁移速度与气孔前缘 Pu 浓度增强量的乘积形式，其中气孔迁移速度主要由燃料孔隙结构、孔隙内气相压力以及径向温度梯度共同决定。气孔迁移速度 $v_p$ 是气相迁移机制中的关键参数，其大小直接影响气相输运通量的幅值。研究表明，$v_p$ 主要受燃料径向温度梯度、孔隙内气相压力以及燃料化学计量状态的共同影响。针对欠化学计量混合氧化物燃料，本文\ref{sec:pore_migration}中总结了的经验关联式和Rand\--Markin模型，将气孔迁移速度表示为温度梯度的函数。该类模型已在多种快堆燃料计算中得到应用，能够较好地反映高温条件下孔隙迁移的量级特征。
+
+气相扩散过程中涉及的有效扩散系数 $D_{\mathrm{pore}}$ 用于表征气孔前缘富集层内锕系元素的扩散能力。鉴于缺乏针对该区域的直接实验测量数据，本文参考 Clement 与 Finnis\cite{clementPlutoniumRedistributionMixed1978} 以及 Ishii\cite{ishiiInvestigationPuMigration2001} 等人的处理方法，假定 $D_{\mathrm{pore}}$ 近似等于燃料基体中的有效扩散系数$D_{\mathrm{Diff}}$。该假设在现有文献中\cite{clementPlutoniumRedistributionMixed1978,ishiiInvestigationPuMigration2001}被广泛采用，且不会显著影响对 Pu 再分布整体趋势的预测。
+
+参数 $A$ 为气相迁移通量中的比例系数，用于表征气孔前缘 Pu 富集强度与温度梯度之间的关系。该参数通常通过拟合辐照后燃料中 Pu 径向分布实验数据确定。根据公开文献中的实验结果及数值分析，本文采用与 Ishii 和 Asaga 等人\cite{ishiiInvestigationPuMigration2001,dimarcelloModellingActinideRedistribution2014}等人的结果，其取值通常位于 $10^{-4}$--$10^{-3}$ 的量级范围内。本文在数值计算中采用 $A = 5\times10^{-5}$\footnotemark \cite{clementPlutoniumRedistributionMixed1978,ishiiInvestigationPuMigration2001,dimarcelloModellingActinideRedistribution2014}，该取值与公开文献\cite{dimarcelloModellingActinideRedistribution2014}中报道的结果保持一致，可合理再现实验中观测到的 Pu 再分布趋势。，以保证模型结果与已有实验观测相符。
+\footnotetext{参考文献给出的结果是$5\times10^{-2}$和$0.35$，但是本文模拟发现，此时气孔扩散的通量和热扩散+化学扩散通量在同一数量级，考虑到多数实验中给出的结论气孔增强扩散影响较小，因此对A进行了调整}
+
+此外，孔隙特征长度 $l$ 与等效直径 $d$ 用于描述燃料孔隙的几何尺度，其取值依据燃料显微结构观测结果确定。已有研究表明，在快堆 MOX 燃料中，孔隙沿温度梯度方向的特征长度通常位于 $20$--$80~\mu\mathrm{m}$ 范围内，分别对应于小尺寸孔隙和大尺寸孔隙，且该取值被认为具有代表性\cite{clementPlutoniumRedistributionMixed1978, hoffmannCrackFormationCrack1974}。
+
+在上述孔隙尺度范围内，孔隙沿温度梯度方向的特征长度 $l$ 通常大于其等效直径 $d$，但二者的比值变化范围有限。因此，$l/d$ 可近似视为常数，其典型取值位于 $\mathcal{O}(10)$ 的量级\cite{clementPlutoniumRedistributionMixed1978}。基于这一认识，本文在气相迁移模型中将 $l/d$ 作为常数参数处理，并取 $l/d = 10$ 作为代表值。
+
+\xsubsection{温度驱动下的解析解}{Analytical Solution under Temperature Gradient}\label{sec:analytical_solution}
+在温度梯度和热扩散驱动，钚元素的浓度发生迁移。此过程， clement\cite{c.f.AnalyticSolutionsMass1977}对径向抛物线温度分布的圆柱形燃料元件进行了系统性分析，给出了质量输运方程的一种解析近似解。
+
+根据\ref{subsec:plutonium_migration}中的模型，如果忽略气孔对钚元素迁移的增强作用，仅考虑浓度扩散和热扩散，则钚的质量守恒方程可写为：
+\begin{equation}
+	\rho \frac{\partial C_{Pu}}{\partial t} = \nabla \cdot \left(\rho D\left(\nabla C_{Pu} + C_{Pu} Q^{*}\frac{\nabla T}{RT^{2}}\right)\right)
+\end{equation}
+其中D为扩散系数，$Q^{*}$为输运热，R为气体常数，T为温度。
+
+扩散系数通常可以表示为Arrhenius关系：
+\begin{equation}
+	D = D_0 \exp\left(-\frac{E^{*}}{RT}\right)
+\end{equation}
+其中$D_0$为扩散前因子，$E^{*}$为扩散激活能。将上式带入质量守恒方程，可以得到：
+\begin{equation}
+	\frac{\partial C_{Pu}}{\partial t}
+	=
+	D
+	\left[
+	\nabla^{2}C_{Pu}
+	+
+	\frac{E^{*}+Q^{*}}{RT}
+	\frac{\nabla T}{T}\cdot\nabla C_{Pu}
+	+
+	U(r)C_{Pu}
+	\right]
+\end{equation}
+其中函数U(r)描述温度场空间变化对Pu迁移过程的影响，表达式为：
+\begin{equation}
+	U =
+	\frac{Q^{*}}{RT}
+	\left[
+	\left(\frac{E^{*}}{RT}-2\right)\left(\frac{\nabla T}{T}\right)^2
+	+
+	\frac{\nabla^2T}{T}
+	\right]
+\end{equation}
+
+由于扩散系数随温度降低迅速减小，在低温区域扩散过程明显减缓，因此可以在 Pu 浓度变化较小的条件下对上述方程进行渐近展开。Clement 给出了在短时间尺度下的近似解析解，其表达式为：
+\begin{equation}
+	C_{Pu} =
+	C_{Pu,0}
+	\left[
+	1
+	+
+	D(r)U(r)t
+	+
+	\frac{1}{2}D(r)U(r)^2 t^2
+	+
+	\frac{E^{*}+Q^{*}}{RT}
+	\frac{\nabla T}{T}
+	\cdot
+	\nabla(D(r)U(r))
+	+
+	\nabla^{2}(D(r)U(r))
+	\right]
+\end{equation}
+其中$C_{Pu,0}$为初始 Pu 浓度，$t$为时间。该表达式给出了 Pu 浓度在短时间尺度内随时间的演化规律。
+
+\xsubsection{程序框架}{Computational Framework}
+钚元素迁移的数值计算流程图如图\ref{fig:plutonium_flow_chart}所示。计算首先读取计算需要的初始输入参数，包括燃料的初始温度，O\/M比，功率分布和温度计算需要的材料属性。这些参数用于确定燃料运行前的状态，并未后续的控制方程提供初始条件和边界条件。
+
+在物理模型上，程序包括温度计算、钚扩散系数计算、钚重分布计算等多个模块。其中温度模块通过求解燃料内部的传热方程获取温度分布，考虑时间项和中子反应产生的热源项。得到温度场不仅决定燃料内的温度梯度分布，同时也是钚元素热扩散的驱动力和扩散系数计算的重要输入。
+
+在温度场的基础上，程序进一步根据用户选择是否考虑O\/M比对扩散系数的影响。通过计算修正函数$F(O/M)$，获得修正之后的钚扩散系数。对钚扩散系数及其激活能进行修正，以考虑燃料非化学计量组成对钚迁移行为的影响。
+
+钚重分布过程通过求解钚迁移控制方程实现。该方程同时考虑浓度梯度的普通扩散和温度梯度驱动的热扩散的影响。此外，为了描述燃料孔隙结构对钚元素重分布的影响，特别在模型中引入孔隙增强扩散机制，从而能够更准确全面的模拟燃料中钚元素迁移的物理过程。
+
+需要指出的是，虽然流程图中各个计算模块是按照物理依赖关系进行组织，但是在实际的数值实现上，上述的方程采用强耦合方式进行求解。即温度场与钚元素迁移方程在同一个求解器框架中组装到统一的非线性方程组，并通过同一个矩阵同时求解，而非按顺序逐步计算。这种耦合求解方式能够更好的保证温度和钚元素重分布过程的相互反馈，提供计算的精度。
+
+最终，程序输出燃料内部的钚浓度的空间分布及其随时间的演化，从而得到钚元素在反应堆运行过程中的分布。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=9.0cm]{plutonium_migration_flow_chart.pdf}
+	\caption{钚重分布的计算流程图}
+	\label{fig:plutonium_flow_chart}
+\end{figure}
+\xsubsection{钚重分布验证}{Verification of Plutonium Redistribution}
+
+为了验证程序中钚（Pu）浓度分布计算模块的正确性，本文结合第\ref{sec:analytical_solution}节给出的解析解，对数值模型进行标定与验证。通过构建典型计算算例，对温度梯度条件下燃料内部Pu的迁移行为进行数值模拟，并将数值计算结果与解析解进行对比分析，以评估模型在描述Pu再分布过程中的可靠性。
+
+表\ref{tab:pu_parameters}给出了Pu再分布计算模型所采用的主要物理参数。计算区域采用一维径向模型，以描述燃料内部的温度分布及Pu迁移过程，并在径向方向上划分为100个计算单元。计算区域对应燃料内部径向范围，半径从$7.68\times10^{-4}$ m延伸至$3.0\times10^{-3}$ m。
+
+在边界条件方面，燃料外表面温度固定为1173.15 K，以模拟燃料运行条件下的热边界环境。燃料材料参数采用MOX燃料的典型热物性参数，其中燃料密度取$10431\ \text{kg m}^{-3}$，热导率取$3\ \text{W m}^{-1}\text{K}^{-1}$。计算采用瞬态求解方式，总模拟时间为$3.024\times10^{7}$ s，以研究运行过程中燃料内部温度场及Pu浓度分布随时间的演化规律。
+
+计算过程中输出燃料内部温度分布以及Pu浓度分布，并将数值计算结果与解析解结果进行对比，从而验证所建立数值模型在描述温度梯度驱动Pu再分布过程中的准确性。
+
+\begin{table}[htbp]
+	\centering
+	\caption{Pu再分布计算模型主要物理参数}
+	\label{tab:pu_parameters}
+	
+	\begin{tabularx}{\textwidth}{X X X}
+		\toprule
+		物理量 & 数值 & 说明 \\
+		\midrule
+		
+		计算维度 & 1D & 采用一维径向模型描述燃料内部物理过程 \\
+		
+		计算区域 & $7.68\times10^{-4}$ -- $3.0\times10^{-3}$ m & 燃料内部径向计算范围 \\
+		
+		网格数量 & 100 & 计算区域离散单元数 \\
+		
+		外表面温度 & 1173.15 K & 燃料外边界温度条件 \\
+		
+		燃料密度 & $10431\ \text{kg m}^{-3}$ & MOX燃料密度 \\
+		
+		热导率 & $3\ \text{W m}^{-1}\text{K}^{-1}$ & 燃料有效热导率 \\
+		
+		模拟时间 & $3.024\times10^{7}$ s & 燃料运行时间（约350天） \\
+		
+		求解类型 & 瞬态计算 & 考虑温度场与Pu浓度随时间变化 \\
+		
+		输出物理量 & 温度、Pu浓度 & 计算得到燃料内部温度与Pu分布 \\
+		
+		\bottomrule
+	\end{tabularx}
+	
+\end{table}
+计算结果如图\ref{fig:pu_redistribution}所示。首先考虑在迁移项
+$c(1-c)\frac{Q}{RT^{2}}\nabla T$中保留$1-c$项，即考虑铀（U）浓度变化对Pu迁移过程的影响；随后将该项近似为$c\frac{Q}{RT^{2}}\nabla T$，即忽略铀浓度的影响，并将两种情况下的计算结果与解析解进行对比。
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_redistribution.png}
+		\caption{考虑铀浓度影响的Pu再分布结果}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_redistribution_correction.png}
+		\caption{忽略铀浓度影响的Pu再分布结果}
+	\end{subfigure}
+	
+	\caption{不同模型假设下Pu浓度再分布计算结果与解析解的对比}
+	\label{fig:pu_redistribution}
+	
+\end{figure}
+由图可以看出，在较短时间尺度内，数值计算结果与解析解具有较好的一致性。例如在250 d时，两者的Pu浓度分布基本吻合，特别是忽略了铀的浓度情况下。这主要是因为在短时间演化过程中，Pu浓度变化幅度较小，体系仍接近解析解推导时所假设的小扰动条件，此时忽略铀浓度变化对迁移项的影响是合理的。
+
+然而随着时间的延长，Pu在温度梯度作用下逐渐发生再分布，局部Pu浓度不断增加，使得铀浓度的变化逐渐变得不可忽略。当时间达到350 d时，数值解与解析解之间开始出现明显差异。这一差异主要来源于解析解本身的适用条件：该解析解是在小浓度扰动和短时间渐近展开的假设下得到的，仅适用于短时间尺度的稳定解。因此在长时间演化过程中，当Pu浓度变化逐渐增大时，解析解无法准确描述实际的浓度演化过程，从而导致与数值计算结果之间出现偏差。
+
+综上所述，解析解能够较好地描述Pu在短时间尺度下的再分布行为，但在长时间演化过程中，需要采用完整的数值模型以考虑组分耦合效应及浓度变化对迁移过程的影响。
+
+\xsubsection{耦合模型与文献实验结果对比验证}{Coupled Model Validation Against Literature Experiments}
+为验证程序的计算结果，选取日本 PHENIX P--3 试验中的两根 MOX 燃料棒 XD0992 和 XD1071 作为对比对象\cite{zotero-item-2022}。两根燃料棒的制造参数及辐照条件如表\ref{tab:pu_experiment}所示。
+
+\begin{table}[htbp]
+	\centering
+	\caption{PHENIX P--3 试验中 XD0992 与 XD1071 燃料棒参数}
+	\label{tab:pu_experiment}
+	\begin{tabularx}{\textwidth}{X X X X X X X}
+		\toprule
+		燃料棒 & 密度 & 芯块直径 & O/M & Pu 含量 & \multicolumn{2}{c}{功率} \\
+		\cmidrule(lr){6-7}
+		& [\%TD] & [mm] & [-] & [wt.\%] & BOL [W/cm] & EOL [W/cm] \\
+		\midrule
+		XD0992 & 93 & 5.440 & 1.99  & 26.97 & 440 & 297 \\
+		XD1071 & 85 & 5.440 & 1.955 & 29.78 & 444 & 300 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，其初始氧金属比（O/M）分别为 1.99 和 1.955，初始钚含量分别为 27 wt.\% 和 30 wt.\%。在辐照过程中，两者的燃耗分别达到了约 106 和 110 GWd/t。尽管两根燃料棒来源于不同的燃料元件，但其辐照条件基本一致，在寿命初期（BOL）的线功率约为 440 W/cm。
+
+需要指出的是，尽管整体辐照条件相近，由于钚在中心空洞附近的迁移行为不同，两根燃料棒在径向钚分布上呈现出明显差异。这种差异为模型验证提供了良好的对比基础，能够检验程序在不同初始组成和迁移行为下的适用性。
+
+文献\cite{zotero-item-2022,ishiiInvestigationPuMigration2001}中通过电子探针显微分析（EPMA）获得了燃料棒径向钚含量分布数据，同时结合热分析程序对燃料温度分布进行了计算。实验结果wa表明，在辐照末期（EOL），燃料内部由于气孔迁移及重构作用，会形成明显的中心空洞、柱状晶区以及等轴晶区，其对应的温度分布呈现显著的径向梯度。
+
+计算结果如图\ref{fig:pu_redistribution_exp}所示。该算例中同时考虑了化学扩散、热扩散以及由孔隙迁移所强化的组分输运，并采用了包含 O/M 比影响的有效扩散系数模型。计算表明，依据文献参数得到的 Pu 有效扩散系数整体较小，在相应温度场条件下，燃料内部 Pu 的径向迁移过程较为缓慢。此外图中给出了不同扩大倍数的扩散系数的计算结果，可以看到100倍的更符合实验结果。
+
+进一步分析发现，在该工况下，Pu 迁移控制方程的非线性残差量级明显低于温度场和孔隙迁移方程，采用常规残差判据时，求解器容易在耦合迭代初期即将该方程视为“已收敛”，从而削弱其在多物理场联立求解中的影响。为避免这一数值问题，本文对 Pu 浓度变量引入变量放大处理，在计算中设置其 scaling$=10^{10}$，并在自动缩放过程中排除该变量，以提高 Pu 迁移方程在耦合求解中的数值敏感性与参与度。
+
+图中第二纵坐标同时给出了孔隙率分布。根据参考文献报道，实验测得 XD0992 与 XD1071 的中心孔直径分别为 1.310 mm 和 1.856 mm，本文模拟结果在整体趋势上与实验观测保持一致，能够合理反映燃料在辐照条件下的径向再分布行为。
+
+对于 XD1071，需要进一步说明的是：计算结果表明，在靠近燃料外缘区域，Pu 的有效扩散系数显著降低，甚至接近于零（见图 \ref{fig:diffusion_temperature_comparison}(a)）。在该区域内，由于扩散驱动力和扩散能力均极为有限，导致 Pu 的径向迁移基本受限，从而使得边界附近的 Pu 浓度在整个计算过程中几乎保持不变。
+
+基于上述分析，本文进一步对 XD1071 的初始 Pu 含量进行了调整。通过对比不同初始条件的计算结果，发现当初始 Pu 含量设定为约 27\% 时，所得径向分布与实验数据的符合程度明显提高，如图 \ref{fig:xd1071_modified_pu_distribution} 所示。
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_redistribution_xd0992.pdf}
+		\caption{XD0992的径向分布和不同倍数下的扩散系数计算结果}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_redistribution_xd1071.pdf}
+		\caption{XD1071的径向分布和不同倍数下的扩散系数计算结果}
+	\end{subfigure}
+	
+	\caption{XD0992 与 XD1071 燃料棒中 Pu 径向再分布计算结果与文献实验数据的对比}
+	
+	\label{fig:pu_redistribution_exp}
+	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{experiment_diffusion_coefficient_compare.pdf}
+		\caption{径向扩散系数分布（不同扩散倍数）}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{experiment_temperature_compare.pdf}
+		\caption{径向温度分布（不同扩散倍数）}
+	\end{subfigure}
+	
+	\caption{XD0992 与 XD1071 燃料棒在不同扩散系数倍数（$D \times 1$、$D \times 10$、$D \times 100$）下的径向扩散系数与温度分布对比}
+	
+	\label{fig:diffusion_temperature_comparison}
+	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=5.8cm]{plutonium_redistribution_modify_xd1071.pdf}
+	\caption{修正初始 Pu 含量后 XD1071 燃料棒的径向 Pu 再分布计算结果}
+	\label{fig:xd1071_modified_pu_distribution}
+\end{figure}
+
+\xsubsection{敏感性分析}{Sensitivity Analysis}
+
+为确定影响钚再分布行为的关键因素，本文针对有效扩散系数、扩散活化能、传输热、线功率、燃料外表面温度、初始钚含量以及孔隙增强迁移参数等进行了敏感性分析。其中，有效扩散系数与扩散活化能共同决定 Pu 在燃料中的迁移能力，直接影响径向浓度分布的变化幅值及平滑程度；传输热、线功率和外表面温度则通过改变热扩散驱动力以及燃料内部温度梯度，控制 Pu 的迁移方向和迁移强度；初始 Pu 含量决定组分的初始状态，对最终径向分布形态具有重要影响。此外，孔隙增强迁移项中的孔隙特征尺寸和一致性系数也会改变气相通道对 Pu 迁移的强化程度，因此同样纳入敏感性分析范围。通过对上述参数进行系统扰动，可以较为全面地评估扩散能力、热驱动力和初始条件对 Pu 再分布行为的相对贡献。
+
+图\ref{fig:pu_enhance_redistribution} 给出了是否采用气孔加速扩散的计算结果。可以看到，采用气孔加速后钚的再分布程度明显提高。气孔加强后的钚元素分布的理论解在文献\cite{clementPlutoniumRedistributionMixed1978}中给出：
+\begin{equation}
+	\frac{c - c_0}{c_0} = \frac{P_0}{2r} \frac{\partial}{\partial r} \left[ \frac{1}{20} \left| \frac{dT}{dr} \right| \frac{\bar{D}}{dv} (r_1^2 - r^2) \exp\left(-\frac{\bar{D}}{lv}\right) \right]
+\end{equation}
+其中\(c\) 表示径向位置 \(r\) 处的钚浓度，\(c_0\) 为初始均匀浓度；\(P_0\) 是燃料的初始孔隙率；\(r\) 为径向坐标，\(r_1\) 为由公式$t = \int_r^1 \frac{dr'}{\nu(r')}$隐式定义的积分上限，代表孔隙在时间 \(t\) 内迁移到达的位置；\(\frac{dT}{dr}\) 为径向温度梯度；\(\bar{D}\) 为增强层中钚-铀互扩散系数的平均值；\(l\) 为气孔直径;\(d\)是气孔厚度；\(\nu\) 为孔隙迁移速度（方向指向燃料芯块中心）。
+
+在基准值的计算条件下，扩散系数（见图\ref{fig:diff_coeff}）、温度梯度（见图\ref{fig:temp_grad}）以及气孔迁移速度（见图\ref{fig:pore_vel}）的取值使得无量纲参数 \(\bar{D}/(d \nu)\) 越接近1，因此气孔对钚的增强输运效应十分显著。该结论与文献\cite{clementPlutoniumRedistributionMixed1978}中的理论分析一致。
+
+\begin{table}[htbp]
+	\centering
+	\caption{钚再分布敏感性分析关键参数}
+	\begin{tabularx}{\textwidth}{lXXX}
+		\toprule
+		类别 & 参数名称 & 基准值 & 变化范围 \\
+		\midrule
+		
+		扩散控制
+		& 有效扩散系数 $D$ & 材料模型计算值 & $0.1$--$100$倍 \\
+		& 活化能 $Q$ & 111 kJ/mol & $\pm 20\%$ \\
+		
+		\midrule
+		
+		热驱动
+		& 传输热 $Q^*$ & -146.5 kJ/mol & $\pm 20\%$ \\
+		& 线功率 $q_l$ & 50.5 kW/m & $\pm 20\%$ \\
+		& 表面温度 $T_s$ & 1150 K & $\pm 100$ K \\
+		
+		\midrule
+		
+		初始条件
+		& 初始 Pu 含量 $c_{\mathrm{Pu},0}$ & 0.20 & 0.16--0.24 \\
+		
+		\midrule
+		
+		孔隙增强迁移
+		& 孔隙直径\footnotemark $d_{\mathrm{pore}}$ & $8.0\times10^{-5}$ m & $\pm 20\%$ \\
+		& 一致性系数 $A$ & $5.0\times10^{-5}$ & $0.1$--$10$倍 \\
+		
+		\bottomrule
+	\end{tabularx}
+\end{table}
+\footnotetext{文献中给出孔隙直径和孔隙厚度存在10倍关系，因此孔隙厚度也相应变化}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=5.8cm]{plutonium_enhance_vs_normal.pdf}
+	\caption{采用气孔迁移加强扩散不同时刻钚的径向分布}
+	\label{fig:pu_enhance_redistribution}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{temperature_grad_350d.png}
+		\caption{温度梯度的径向分布}
+		\label{fig:temp_grad}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{pore_velocity_0_350d.png}
+		\caption{气孔迁移速率的径向分布}
+		\label{fig:pore_vel}
+	\end{subfigure}
+	
+	\vspace{0.5cm} % 两张与下图的间距
+	
+	% 第二行：一张子图居中
+	\begin{subfigure}[b]{0.45\textwidth}  % 可调整宽度
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_diffusion_coeff_350d.png}
+		\caption{扩散系数的径向分布}
+		\label{fig:diff_coeff}
+	\end{subfigure}
+	\hfil
+	\begin{subfigure}[b]{0.45\textwidth}  % 可调整宽度
+		\centering
+		\includegraphics[width=\linewidth]{  D_over_lv_350d.png}
+		\caption{$\frac{D}{lv}$的径向分布}
+		\label{fig:D_over_lv}
+	\end{subfigure}
+	
+	
+	\caption{含有气孔增强扩散与未含有气孔增强扩散条件下各物理量的径向分布对比（红色实线：增强；蓝色虚线：未增强）}
+	\label{fig:three_plots}
+\end{figure}
+
+敏感性分析采用单因素扰动方法进行。以基准工况为参照，每次仅改变一个参数，其余参数保持不变，分别计算不同扰动条件下的 Pu 径向分布，并通过与基准结果的对比评估该参数对钚再分布行为的影响程度。对于有效扩散系数，本文采用倍数扰动方式，如 $D\times0.1$、$D\times1$和 $D\times100$；对于活化能、传输热、线功率和外表面温度，采用相对扰动或定值扰动方式；对于初始 Pu 含量，则通过改变初始组成考察其对最终分布结果的影响。对于孔隙增强迁移项，则重点考察孔隙直径 $l_{\mathrm{pore}}$和一致性系数 $A$ 的扰动效应，以评估孔隙几何尺度和经验系数对 Pu 气相强化迁移的影响。
+
+敏感性分析的评价指标主要包括：Pu 浓度的径向分布特征、敏感性指标的径向分布及其峰值大小与对应位置。当某一参数发生扰动后，若 Pu 径向分布的峰值、峰位或整体梯度发生显著变化，则表明该参数对钚再分布行为具有较强影响；反之，若曲线形态及特征量变化较小，则说明该参数敏感性相对较弱。
+
+该分析方法与\ref{sec:sensitivity_analysis}中气孔迁移模型的敏感性分析思路一致，均通过单参数扰动与结果对比识别主导机制。但相比之下，本文更侧重于表征 Pu 径向富集程度及其峰值位置的变化规律。对于孔隙增强迁移相关参数，还需进一步关注中心区域富集层的发展情况，以评估气相强化输运对中心富集行为的贡献。
+
+图\ref{fig:diffusion_sensitivity_analysis}(b)--\ref{fig:constant_A_sensitivity_analysis}(b)给出了基于式\ref{eq:sensitivity_definition}定义的敏感性指标在径向方向的分布及其峰值。针对不同参数的变化特征，本文采用差异化的敏感性定义方法：对于跨数量级变化的扩散系数，采用对数敏感性定义，以减弱非线性效应对结果的影响；而对于活化能、传输热、线功率及外表面温度等参数，则采用线性敏感性定义进行评估。
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_D.pdf}
+		\caption{钚含量径向分布}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_definitation_D.pdf}
+		\caption{敏感性系数径向分布}
+	\end{subfigure}
+	
+	\caption{不同扩散系数条件下钚含量的径向分布（左）及其敏感性系数的径向分布（右）}
+	\label{fig:diffusion_sensitivity_analysis}
+	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_E.pdf}
+		\caption{钚含量径向分布}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_definitation_E.pdf}
+		\caption{敏感性系数径向分布}
+	\end{subfigure}
+	
+	\caption{不同激活能条件下钚含量的径向分布（左）及其敏感性系数的径向分布（右）}
+	\label{fig:activation_energy_sensitivity_analysis}
+	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_Q.pdf}
+		\caption{钚含量径向分布}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_definitation_Q.pdf}
+		\caption{敏感性系数径向分布}
+	\end{subfigure}
+	
+	\caption{不同输运热条件下钚含量的径向分布（左）及其敏感性系数的径向分布（右）}
+	\label{fig:heat_transport_sensitivity_analysis}
+	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_q.pdf}
+		\caption{钚含量径向分布}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_definitation_q.pdf}
+		\caption{敏感性系数径向分布}
+	\end{subfigure}
+	
+	\caption{不同线功率条件下钚含量的径向分布（左）及其敏感性系数的径向分布（右）}
+	\label{fig:power_line_sensitivity_analysis}
+	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_T.pdf}
+		\caption{钚含量径向分布}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_definitation_T.pdf}
+		\caption{敏感性系数径向分布}
+	\end{subfigure}
+	
+	\caption{不同表面温度条件下钚含量的径向分布（左）及其敏感性系数的径向分布（右）}
+	\label{fig:surface_T_sensitivity_analysis}
+	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_initial_P.pdf}
+		\caption{钚含量径向分布}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_definitation_initial_P.pdf}
+		\caption{敏感性系数径向分布}
+	\end{subfigure}
+	
+	\caption{不同初始钚含量条件下钚含量的径向分布（左）及其敏感性系数的径向分布（右）}
+	\label{fig:intial_pu_sensitivity_analysis}
+	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_pore_diameter.pdf}
+		\caption{钚含量径向分布}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_definitation_pore_diameter.pdf}
+		\caption{敏感性系数径向分布}
+	\end{subfigure}
+	
+	\caption{不同气孔直径条件下钚含量的径向分布（左）及其敏感性系数的径向分布（右）}
+	\label{fig:pore_diameter_sensitivity_analysis}
+	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_constant_A.pdf}
+		\caption{钚含量径向分布}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{plutonium_sensitivity_definitation_constant_A.pdf}
+		\caption{敏感性系数径向分布}
+	\end{subfigure}
+	
+	\caption{不同一致性系数条件下钚含量的径向分布（左）及其敏感性系数的径向分布（右）}
+	\label{fig:constant_A_sensitivity_analysis}
+	
+\end{figure}
+
+基于上述评价指标与敏感性定义，不同参数对钚再分布行为的影响表现出明显差异。扩散系数、激活能、线功率及表面温度对Pu再分布具有显著影响，其变化可明显改变Pu径向分布的梯度及峰值位置。这主要是由于上述参数直接或间接影响温度场分布及扩散系数大小，从而改变由温度梯度驱动的物质迁移通量，表明温度驱动的扩散机制在该过程占主导地位。
+
+相比之下，输运热对结果仅表现出次要修正作用，说明其主要通过调节热迁移项对整体迁移过程产生影响，而非主导控制因素。初始Pu含量主要改变整体浓度水平，而对径向分布形态影响较小，表明该参数更多体现为初始条件效应。
+
+对于孔隙增强迁移相关参数，气孔直径及一致性系数的敏感性较弱，说明在当前工况下气相强化迁移对Pu再分布的贡献有限，扩散机制仍然占据主导地位。
+
+\xsubsection{镅元素重分布的扩展讨论}{Extension Discussion on Americium Redistribution}
+
+在前述对 Pu 再分布行为的分析基础上，考虑到镅（Am）同样是快堆 MOX 燃料中的重要锕系元素，其在辐照条件下的迁移行为具有一定代表性，本文对其再分布行为进行补充分析。
+
+已有实验研究表明\cite{tanakaRestructuringRedistributionActinides2013,maedaRadialRedistributionActinides2009}，在高径向温度梯度作用下，Am 与 Pu 表现出相似的再分布特征，均向燃料中心区域迁移并在中心空洞附近发生富集，而 Np 未表现出明显变化\cite{maedaRadialRedistributionActinides2009}。在辐照初期阶段（24 h），Am 的富集程度通常略高于 Pu，这是因为镅的扩散系数略大于钚（见图\ref{fig:americium_diffusion_coeff}），且该趋势随时间延长有所增强\cite{tanakaRestructuringRedistributionActinides2013}。这一现象表明，Am 在高温区具有相对更强的迁移能力。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=5.8cm]{americium_diffusion_coeff.pdf}
+	\caption{镅元素和钚元素的扩散系数随温度的变化曲线}
+	\label{fig:americium_diffusion_coeff}
+\end{figure}
+在镅元素重分布机理上，存在和钚重分布类似的气孔迁移驱动的蒸发--冷凝输运及固态热扩散两类机制。其中，在短时辐照条件下，气孔迁移主导组分输运，而热扩散贡献相对有限。因此，本文参考文献\cite{dimarcelloModellingActinideRedistribution2014}中的处理方式，仍采用与 Pu 重分布一致的建模框架进行处理。
+
+在具体实现上，仅对模型中的材料参数进行调整。Am 的扩散系数采用 Arrhenius 形式：
+\begin{equation}
+	D_{Am} = D_0 \exp\left(-\frac{E^*}{RT}\right)
+\end{equation}
+其中参数选取参考已有研究\cite{maedaRadialRedistributionActinides2009,schmitzDiffusionHeavyElements1965}，取$D_0 \approx 0.02\,\text{cm}^2/\text{s}$，$E^* \approx 92\,\text{kcal/mol}$。
+
+为验证模型的可靠性，选取文献\cite{maedaRadialRedistributionActinides2009}中的两个实验工况（Am1-2-1和Am1-2-2）进行对比分析。两种燃料芯块的直径均为5.42\,\text{mm}，密度为理论密度的93\%。两者的 O/M 比分别为1.98和1.95。相关参数列于表\ref{tab:maeda_am_cases}中。
+
+燃料芯块高度$l$为200\,\text{mm}，表中$x/l$表示轴向相对位置，其中最大线功率和最高温度分别位于$x/l=0.5$和$x/l=0.54$处。辐照功率历程如图\ref{fig:power_history}所示，同时表中给出了稳态运行24小时对应的线功率值。
+
+\begin{table}[H]
+	\centering
+	\caption{燃料的规格和辐照条件}
+	\label{tab:maeda_am_cases}
+	\begin{tabularx}{\textwidth}{XXX}
+		\toprule
+		\textbf{燃料及照射参数} & \textbf{Am1-2-1} & \textbf{Am1-2-2} \\
+		\midrule
+		O/M 比 & 1.98 & 1.95 \\
+		初始 Am 含量 & $2.0\,\text{wt\%}$ & $2.0\,\text{wt\%}$ \\
+		初始 Pu 含量 & $28.8\,\text{wt\%}$ & $28.8\,\text{wt\%}$ \\
+		初始 Np 含量 & $2.0\,\text{wt\%}$ & $2.0\,\text{wt\%}$ \\
+		线功率  & $432\,\text{W/cm}$ & $429\,\text{W/cm}$ \\
+		照射时间  & $24\,\text{h}$ & $24\,\text{h}$ \\
+		温度边界 \footnotemark & $\approx 1150\,\text{K}$ & $\approx 1150\,\text{K}$ \\
+		\bottomrule
+	\end{tabularx}
+	\footnotetext{表面温度未在文献中显式给出，根据Joyo实验堆的典型快堆冷却剂/包壳边界条件设定在 $\approx 1000 - 1200\,\text{K}$ 左右，因此本文估计边界温度为 $1150\,\text{K}$。}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=5.8cm]{americium_1-2_power.pdf}
+	\caption{Am1-2-1工况下燃料线功率随时间的变化（功率史）}
+	\label{fig:power_history}
+\end{figure}
+
+如图\ref{fig:am_pu_redistribution}所示，图中同时给出了未考虑气孔增强迁移与考虑气孔增强迁移条件下的模拟结果。在24小时的稳态运行条件下，当未引入气孔增强迁移机制时，由于固相扩散系数较小，燃料中镅元素的迁移可以忽略，计算结果几乎不发生明显变化。而在考虑气孔增强迁移后，镅元素出现显著的径向再分布，与实验结果较为一致。这表明，在反应堆运行初期，燃料中镅的再分布过程主要受气孔迁移机制主导。
+
+此外，对比不同 O/M 比条件下的实验结果可以发现，较高 O/M 比对应更为显著的镅中心富集现象。该行为可通过气孔中气相物种组成的变化进行解释。在较高 O/M 比条件下，气孔内以$UO_3$等含铀挥发性物种为主，其较高的分压促进铀从高温中心区域向外迁移。相对而言，Pu和Am的挥发能力较弱，从而在中心区域发生相对富集，最终形成明显的中心浓度升高。
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{americium_redistribution_1-2-1.pdf}
+		\caption{Am1-2-1燃料中Am和Pu的径向分布（实验与模拟对比）}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{americium_redistribution_1-2-2.pdf}
+		\caption{Am1-2-2燃料中Am和Pu的径向分布（实验与模拟对比）}
+	\end{subfigure}
+	
+	\caption{Np-Am-MOX燃料中Am和Pu径向分布的实验与模拟对比，其中(a)和(b)分别对应不同初始 O/M 比条件}
+	
+	\label{fig:am_pu_redistribution}
+	
+\end{figure}
+
+\xsection{氧金属比（O/M）分布及其耦合影响}{O/M Distribution and Its Coupling Effects}
+
+在氧化物燃料中，氧金属比并非是在反应堆运行过程中保持恒定的，而是和钚，镅一样也存在显著的温度梯度下的重分布。这种现象的本质是因为，氧在芯块内同时受到温度梯度驱动的热扩散和化学浓度梯度驱动的扩散。实验结果表明\cite{ewartOxygenPotentialMeasurements1984}，在过化学计量比和欠化学计量比中，氧的行为存在很大的差异：在欠化学计量比的燃料内，氧倾向向低温区域迁移，而在过化学计量的燃料中，氧则向高温区域迁移。该过程可以通过氧空位或者间隙原子的扩散来描述，其驱动力可以归因为温度梯度驱动下的有效输运热以及氧化学势的耦合作用。
+
+从微观结构上看，氧化物燃料具有典型的萤石结构，其阳离子子晶格相对稳定，而氧离子子晶格中存在大量空位与间隙缺陷，使得氧的扩散系数远高于铀、钚等阳离子。因此，在热梯度作用下，氧迁移过程相较于热传导表现出更快的响应特性。为定量描述这种热扩散与物质扩散之间的相对时间尺度差异，Ramirez等人引入路易斯数（$Le = \kappa / D$）作为表征参数，Newman等人\cite{newmanThreeDimensionalCoupled2009}进一步将该分析拓展至三维情形。较大的路易斯数表明热扩散过程远快于物质扩散，从而使得温度场可以迅速达到稳态，而氧浓度场则在其驱动下发生再分布。在反应堆运行过程中，氧因此能够在较短时间内建立准稳态分布，形成显著的径向O/M梯度。
+
+进一步来说，氧金属比的分布不仅仅是一个独立的热化学问题，而且与燃料性能强相关。在燃料运行时，欠化学计量燃料由于重分布会在中心区域形成明显的贫氧区，而过化学计量燃料则相反。氧的重分布不仅显著影响热导率和熔点，还会改变燃料的热膨胀行为，使其力学位移成为局部 O/M 比的函数，进而影响芯块-包壳机械相互作用。因此，往往需要耦合氧金属比的计算来获取准确的燃料棒服役状态。
+
+\xsubsection{氧金属比的迁移机理}{The Migration of O/M}
+
+氧在氧化物燃料中的迁移本质上是由化学势梯度与温度梯度共同驱动的耦合扩散过程，其宏观表现可视为浓度梯度驱动的 Fick 扩散与温度梯度驱动的热扩散（Soret 效应）的叠加。在反应堆运行过程中，由于燃料芯块内部存在显著温度梯度，上述两种驱动力共同作用，导致氧金属比偏离化学计量状态并发生再分布。
+
+在这一统一物理框架下，不同研究者针对燃料类型与非化学计量特性提出了不同的建模方法。其中，Lassmann\cite{lassmannOxiredModelRedistribution1987}提出的模型主要面向MOX燃料，通过在经典 Fick 扩散项中引入温度梯度驱动项来描述氧迁移过程。该模型以间隙原子或者氧空位为基本变量，并进一步通过阳离子价态变化（如 U$^{4+}$/U$^{5+}$ 与 Pu$^{4+}$/Pu$^{3+}$ 的转化）建立输运热 $Q$ 与局部化学状态之间的函数关系，从而能够区分过化学计量与欠化学计量条件下氧迁移行为的差异。
+
+特别说明的是，在实际数值实现中，氧迁移方程中的主变量并不直接采用氧金属比（O/M），而是采用与缺陷浓度相关的等效变量。根据缺陷化学模型，在不同非化学计量区间内，O/M 与缺陷浓度之间存在不同的对应关系 \cite{lassmannOxiredModelRedistribution1987}。
+
+对于过化学计量条件（$ \mathrm{O/M} > 2 $），体系中主要缺陷为氧间隙原子，其原子分数记为 $c_i$，此时氧金属比可表示为：
+\begin{equation}
+	\frac{O}{M} = 2 + c_i
+\end{equation}
+
+而在欠化学计量条件（$ \mathrm{O/M} < 2 $）下，体系中以氧空位为主导缺陷，其原子分数记为 $c_v$，对应关系为：
+\begin{equation}
+	\frac{O}{M} = 2 - 2c_v
+\end{equation}
+
+由此可见，统一采用单一变量 $x=\mathrm{O/M}-2$ 描述非化学计量偏差时，其物理含义在不同区间内并不完全相同：在过化学计量区间，$c$ 可近似视为氧间隙原子浓度 $c_i$，满足 $c_i = x$；而在欠化学计量区间，$c$ 则与氧空位浓度 $c_v$ 满足 $c_v=-1/2x$ 的关系。因此，在数值求解氧扩散方程时，通常省略缺陷类型下标（$i$ 或 $v$），统一采用等效变量 $c$ 进行描述，但在构建热力学参数（如阳离子价态及输运热）时，需要根据当前的化学计量状态选取相应的物理关系。
+
+总的来说，对于MOX 燃料，氧迁移的控制方程可表示为：
+\begin{equation}
+	\frac{\partial c}{\partial t} + \nabla \cdot \left[ D \left( \nabla c + c \frac{Q}{R T^2} \nabla T \right) \right] = 0
+\end{equation}
+其中 $c$ 为间隙原子或者氧空位相对浓度，$D$ 为氧扩散系数，$Q$ 为有效输运热，$R$ 为气体常数，$T$ 为绝对温度。该表达式清晰体现了浓度梯度项与温度梯度项对氧通量的共同作用。
+
+另一方面，Ramirez和Newman等人\cite{ramirezSimulationsHeatOxygen2006,newmanThreeDimensionalCoupled2009}从热力学一致性出发，提出了包含热力学因子F的扩散通量表达式，主要用于描述接近化学计量条件下 UO$_2$ 燃料中的氧迁移行为。该模型在扩散驱动力中引入热力学因子 $F$，用于修正体系偏离理想状态时化学势梯度与浓度梯度之间的非线性关系，其表达式为：
+\begin{equation}
+	\frac{\partial c}{\partial t} + \nabla \cdot \left[ D \left( \nabla c + c \frac{Q^*}{F R T^2} \nabla T \right) \right] = 0
+\end{equation}
+其中 $x=\mathrm{O/M}-2$ 为非化学计量偏差，$Q^*$ 为输运热，$F$ 为热力学因子。相较于简单的 Fick-Soret 表达式，该模型能够更准确描述近化学计量区间内氧迁移对局部热力学状态的依赖性。
+
+总体而言，上述两类模型在形式上均体现了浓度梯度与温度梯度的耦合作用，但在建模侧重点上存在差异：Lassmann 模型强调通过经验关系刻画价态变化对输运热的影响，适用于非化学计量偏差较大的 MOX 燃料；而 Newman 模型则基于热力学推导引入修正因子，更适用于接近化学计量的 UO$_2$ 燃料。
+
+\xsubsection{模型关键参数}{Key Parameters}
+
+氧迁移模型中的关键参数取值与燃料的非化学计量状态密切相关，其本质来源于缺陷结构与阳离子价态平衡之间的耦合作用。对于不同类型的氧化物燃料，由于其主导缺陷形式及电荷补偿机制存在差异，参数化方法也有所不同。
+
+对于 MOX 燃料，通常采用基于价态平衡的参数化方法。非化学计量偏差定义为
+\begin{equation}
+	x = \frac{O}{M} - 2, \quad M = U + Pu
+\end{equation}
+
+在过化学计量和欠化学计量条件下，扩散系数采用相同的表达式，文献给出的 Arrhenius 形式为：
+\begin{equation}
+	D = 1.39 \times 10^{-6} \exp{\left( \frac{-75900}{RT} \right)} \left(\text{m}^2/\text{s}\right).
+\end{equation}
+
+在过化学计量条件（$c>0$）下，体系中氧过剩，为维持电中性，部分 $\mathrm{U}^{4+}$ 转化为 $\mathrm{U}^{5+}$，此时缺陷变量满足
+\begin{equation}
+	x = c
+\end{equation}
+
+对应的平均铀价态为
+\begin{equation}
+	V_U = 4 + 2\left( \frac{c}{1 - q} \right), \quad q = \frac{q_0}{1 - Bu}
+\end{equation}
+其中，$V_U$ 为铀离子的平均价态，$q$ 为钚与重金属原子的原子数比，$q_0$ 为初始钚与重金属原子数比，$Bu$ 为初始重金属原子裂变分数表示的燃耗。
+
+输运热 $Q$ 由经验关系给出：
+\begin{equation}
+	Q = -3.5 \times 10^{34} \exp\left(-17 V_U\right) \quad (\mathrm{J/mol})
+\end{equation}
+
+在欠化学计量条件（$c<0$）下，氧不足通过 $\mathrm{Pu}^{4+}$ 向 $\mathrm{Pu}^{3+}$ 的转化进行补偿，此时有
+\begin{equation}
+	x = -2c
+\end{equation}
+
+平均钚价态为
+\begin{equation}
+	V_{Pu} = 4 - 4\left( \frac{c}{q} \right)
+\end{equation}
+
+对应输运热 $Q$ 采用分段函数表示：
+\begin{equation}
+	Q =
+	\begin{cases}
+		-8.12 \times 10^{-4} \exp\left(4.85 V_{Pu}\right), & V_{Pu} < 3.3 \\[6pt]
+		-3.96 \times 10^{6} + 2.37 \times 10^{6} V_{Pu} - 3.6 \times 10^{5} V_{Pu}^2, & 3.3 \le V_{Pu} < 4
+	\end{cases}
+	\quad (\mathrm{J/mol})
+\end{equation}
+
+对于接近化学计量的 UO$_2$ 燃料，参数体系通常基于热力学一致性构建。同样非化学计量偏差定义为
+\begin{equation}
+	x = \frac{O}{U} - 2
+\end{equation}
+
+对应的输运热 $Q^*$ 表达为
+\begin{equation}
+	Q^* = -1380.8 - 134435.5 \exp\left(-\frac{x}{0.0261}\right)
+\end{equation}
+
+扩散系数 $D$ 在文献中存在多种表达形式。例如，Ramirez等人\cite{ramirezSimulationsHeatOxygen2006}给出形式为：
+\begin{equation}
+	\log D = -9.386 - \frac{4.26 \times 10^{3}}{T} + 1.2 \times 10^{-3} T x
+	+ 7.5 \times 10^{-4} T \log\left(\frac{2.0 + x}{x}\right)
+\end{equation}
+
+此外，文献\cite{ruelloChemicalDiffusionUranium2004}给出了在特定温度条件下（$T=1273\ \mathrm{K}$）的扩散系数：
+\begin{equation}
+	\log_{10} D(x) = -7.9 + 6x + \log_{10}(2.0 + x) - \log_{10}(x)
+\end{equation}
+
+或者采用另一个文献\cite{higgsConceptualModelFuel2007}给出的仅与温度相关的 Arrhenius 型表达式：
+\begin{equation}
+	D(T) = 2.5 \exp\left(-\frac{16400}{T}\right) \quad (\mathrm{cm}^2\cdot\mathrm{s}^{-1})
+\end{equation}
+
+为考虑非理想体系的影响，引入热力学因子F
+\begin{equation}
+	F = \frac{2 + x}{2(1 - 3x)(1 - 2x)}
+\end{equation}
+用于修正化学势梯度与浓度梯度之间的关系。
+
+由上述表达式可见，不同模型下氧扩散系数的量级及其对温度、非化学计量偏差的依赖关系存在明显差异。为直观比较各参数化模型的特征，图\ref{fig:oxygen_diffusion}给出了扩散系数随温度及非化学计量偏差变化的关系。可以看出，扩散系数总体上随温度升高而显著增大，表现出典型的热激活扩散特征；同时，其对非化学计量偏差的变化也较为敏感，这反映了缺陷浓度演化对氧迁移能力的控制作用。上述差异表明，在开展 O/M 重分布计算时，扩散系数模型的选取将直接影响氧迁移速率及最终径向分布结果。
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{oxygen_diffusion_vs_T.pdf}
+		\caption{氧扩散系数随温度 $T$ 的变化（$x = 0.2$）}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{oxygen_diffusion_vs_x.pdf}
+		\caption{氧扩散系数随非化学计量偏差 $x$ 的变化（$T = 1273$ K）}
+	\end{subfigure}
+	\caption{不同扩散系数模型的对比}
+	\label{fig:oxygen_diffusion}
+\end{figure}
+
+本文参考 Bison 程序说明书，默认采用 Ramirez 等人给出的扩散系数作为 UO$_2$ 的扩散系数。
+
+\xsubsection{程序验证}{Model Verification}
+
+由于缺乏可直接对比的实验数据，本文采用 Bison 提供的测试算例对所建立的氧迁移模型进行验证。通过分别构建过化学计量与欠化学计量两类典型工况，对模型在不同初始化学计量状态下的适用性进行评估。计算所采用的径向一维燃料模型及其边界条件如图\ref{fig:oxygen_boundary_condition}所示。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{oxygen_boundary_condition_formulation.pdf}
+	\caption{用于氧迁移计算的燃料径向模型与边界条件定义}
+	\label{fig:oxygen_boundary_condition}
+\end{figure}
+
+在具体算例设置中，过化学计量条件下选取初始 $\mathrm{O/M}=2.02$，欠化学计量条件下分别选取 $\mathrm{O/M}=1.98$ 和 $\mathrm{O/M}=1.912$，三种工况的模拟时间均为 $10000\,\mathrm{s}$。通过对比不同时刻的氧金属比径向分布，可以分析氧在燃料内部的迁移与再分布行为。
+
+由图\ref{fig:different_oxygen_metal_ratio}可见，在过化学计量条件下，氧在温度梯度驱动下向燃料中心迁移，导致中心区域形成富氧区；而在欠化学计量条件下，氧向高温区域迁移受限，中心区域则表现为贫氧特征。随着初始 $\mathrm{O/M}$ 的降低，体系中氧空位浓度增加，氧迁移能力发生变化，从而使中心贫氧程度进一步加剧。
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{oxygen_hypre_redistribution.pdf}
+		\caption{MOX过化学计量条件（$\mathrm{O/M}=2.02$）}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{oxygen_hypro_up_redistribution.pdf}
+		\caption{MOX轻微欠化学计量条件（$\mathrm{O/M}=1.98$）}
+	\end{subfigure}
+	
+	\vspace{0.5em}
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{oxygen_hypro_low_redistribution.pdf}
+		\caption{MOX显著欠化学计量条件（$\mathrm{O/M}=1.912$）}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{oxygen_uo2_redistribution.pdf}
+		\caption{UO2过化学计量条件（$\mathrm{O/M}=2.02$）}
+	\end{subfigure}
+	\caption{不同初始化学计量条件下氧化物燃料氧金属比（O/M）的径向再分布演化}
+	\label{fig:different_oxygen_metal_ratio}
+\end{figure}
+
+\xsection{本章小结}{}
+
+本章围绕快堆 MOX 燃料在强温度梯度和复杂热化学环境下的组织演化行为，建立了一个考虑气孔迁移、锕系元素重分布以及氧金属比再分布的强耦合演化模型，并对相关控制方程、关键参数及数值实现方法进行了系统讨论。
+
+首先，针对燃料重构过程中主导微观形貌演化的气孔迁移问题，建立了基于孔隙率守恒的输运控制方程，并分别引入经验关系式模型与 Rand--Markin 多组分热力学模型来描述蒸发--冷凝机制下的气孔迁移速度。其中，经验模型能够较为高效地反映孔形状、蒸气压及化学计量偏差对迁移速率的影响，而 Rand--Markin 模型则进一步从多组分蒸气分压与氧分压平衡出发，提高了模型对快堆 MOX 及含镅燃料局部热化学状态的刻画能力。针对该对流占优问题，本文进一步比较了 FUC、SUPG、DG 与迎风 FVM 等稳定化离散方法，并给出了程序实现框架、模型验证及关键参数敏感性分析结果，为后续多物理场耦合计算奠定了数值基础。
+
+其次，针对钚在 MOX 燃料中的热扩散与再分布行为，建立了考虑固相扩散与气相迁移共同作用的组分迁移模型，分析了有效扩散系数、气相迁移参数及温度梯度对钚径向分布的影响。在此基础上，结合程序实现、解析解对比以及文献实验数据验证，说明了模型能够较好再现快堆燃料中钚向高温区域富集的基本趋势。进一步地，本文还将该建模思路扩展至镅元素重分布问题，表明氧化学计量状态对次锕系元素迁移同样具有显著调控作用。
+
+最后，围绕氧金属比再分布及其耦合影响，本文总结了 MOX 燃料与近化学计量 UO$_2$ 燃料中氧迁移的两类典型建模框架，系统讨论了扩散系数、输运热及热力学因子等关键参数的物理含义与适用范围。程序验证结果表明，在温度梯度作用下，过化学计量燃料更易在中心区域形成富氧区，而欠化学计量燃料则表现出更明显的中心贫氧特征，且随着初始 O/M 的降低，这种贫氧趋势进一步增强。由于 O/M 分布将直接影响热导率、熔点、热膨胀以及组分迁移驱动力，因此其与气孔迁移、钚镅重分布之间存在显著的双向耦合关系。
+
+综上，本章所建立的强耦合演化模型能够较为统一地描述快堆 MOX 燃料在服役过程中的孔隙重构、组分迁移及热化学状态演变，为后续开展燃料性能精细化模拟以及分析高燃耗条件下微观结构演化对宏观行为的反馈机制提供了模型基础。
