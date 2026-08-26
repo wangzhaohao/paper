@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1600"
+   height="620"
+   viewBox="0 0 1600 620"
+   version="1.1"
+   id="svg73"
+   sodipodi:docname="fission-gas-evolution-editable.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview73"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.16875"
+     inkscape:cx="438.50267"
+     inkscape:cy="174.54545"
+     inkscape:window-width="1920"
+     inkscape:window-height="1002"
+     inkscape:window-x="0"
+     inkscape:window-y="663"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg73" />
+  <title
+     id="title1">裂变气体在核燃料中的微观演化与释放机制示意图</title>
+  <desc
+     id="desc1">四阶段示意：生成与晶内扩散、捕获与再溶解、晶界积聚与气泡生长、连通与释放。</desc>
+  <defs
+     id="defs3">
+    <style
+       id="style1">
+      .bg { fill: #ffffff; }
+      .header-line { stroke: #c7ced4; stroke-width: 1.5; }
+      .grain { fill: #f7f9fa; stroke: #9aa7b1; stroke-width: 2; }
+      .grain-line { fill: none; stroke: #9aa7b1; stroke-width: 2; }
+      .boundary { fill: none; stroke: #16877b; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .surface { stroke: #263238; stroke-width: 3; }
+      .atom { fill: #2563eb; stroke: #ffffff; stroke-width: 1.2; }
+      .bubble { fill: #fce9e4; stroke: #d55e00; stroke-width: 3; }
+      .channel { fill: none; stroke: #d55e00; stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; opacity: 0.58; }
+      .gas-arrow { fill: none; stroke: #2563eb; stroke-width: 2.5; stroke-linecap: round; }
+      .return-arrow { fill: none; stroke: #d55e00; stroke-width: 2.5; stroke-dasharray: 8 6; stroke-linecap: round; }
+      .vacancy-arrow { fill: none; stroke: #63727c; stroke-width: 2.2; stroke-dasharray: 6 5; stroke-linecap: round; }
+      .vacancy { fill: #ffffff; stroke: #63727c; stroke-width: 2; }
+      .defect { stroke: #63727c; stroke-width: 2.5; stroke-linecap: round; }
+      .pressure-arrow { fill: none; stroke: #d55e00; stroke-width: 2.2; }
+      .flow-arrow { fill: #6b7780; }
+      .index { fill: #6b7780; font: 500 22px &quot;Noto Sans SC Thin&quot;, &quot;Microsoft YaHei&quot;, sans-serif; }
+      .stage-title { fill: #1f2933; font: 500 23px &quot;Noto Sans SC Thin&quot;, &quot;Microsoft YaHei&quot;, sans-serif; }
+      .label { fill: #263238; font: 500 16px &quot;Noto Sans SC Thin&quot;, &quot;Microsoft YaHei&quot;, sans-serif; }
+      .sub-label { fill: #63727c; font: 400 14px &quot;Noto Sans SC Thin&quot;, &quot;Microsoft YaHei&quot;, sans-serif; }
+      .note { fill: #55636d; font: 400 16px &quot;Noto Sans SC Thin&quot;, &quot;Microsoft YaHei&quot;, sans-serif; text-anchor: middle; }
+      .legend { fill: #3f4d56; font: 400 16px &quot;Noto Sans SC Thin&quot;, &quot;Microsoft YaHei&quot;, sans-serif; }
+    </style>
+    <marker
+       id="arrow-blue"
+       markerWidth="10"
+       markerHeight="10"
+       refX="8.5"
+       refY="5"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0 L10,5 L0,10 Z"
+         fill="#2563eb"
+         id="path1" />
+    </marker>
+    <marker
+       id="arrow-orange"
+       markerWidth="10"
+       markerHeight="10"
+       refX="8.5"
+       refY="5"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0 L10,5 L0,10 Z"
+         fill="#d55e00"
+         id="path2" />
+    </marker>
+    <marker
+       id="arrow-gray"
+       markerWidth="10"
+       markerHeight="10"
+       refX="8.5"
+       refY="5"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0 L10,5 L0,10 Z"
+         fill="#63727c"
+         id="path3" />
+    </marker>
+  </defs>
+  <rect
+     id="background"
+     class="bg"
+     x="0"
+     y="0"
+     width="1600"
+     height="620" />
+  <!-- Stage-to-stage arrows are independent editable shapes. -->
+  <g
+     id="stage-flow-arrows">
+    <path
+       class="flow-arrow"
+       d="M382 276 H401 V267 L420 283 L401 299 V290 H382 Z"
+       id="path4" />
+    <path
+       class="flow-arrow"
+       d="M772 276 H791 V267 L810 283 L791 299 V290 H772 Z"
+       id="path5" />
+    <path
+       class="flow-arrow"
+       d="M1162 276 H1181 V267 L1200 283 L1181 299 V290 H1162 Z"
+       id="path6" />
+  </g>
+  <g
+     id="stage-1-generation-diffusion"
+     transform="translate(25,20)">
+    <g
+       id="stage-1-header">
+      <text
+         class="index"
+         x="0"
+         y="31"
+         id="text6"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#6b7780"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+           id="tspan74">01</tspan></text>
+      <text
+         class="stage-title"
+         x="42"
+         y="31"
+         id="text7"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:23px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#1f2933"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+           id="tspan73">生成与晶内扩散</tspan></text>
+      <line
+         class="header-line"
+         x1="0"
+         y1="50"
+         x2="350"
+         y2="50"
+         id="line7" />
+    </g>
+    <g
+       id="stage-1-scene"
+       transform="translate(0,75)">
+      <path
+         id="stage-1-grain"
+         class="grain"
+         d="M52 42 L151 22 L265 51 L314 141 L266 244 L143 257 L42 206 L24 111 Z" />
+      <path
+         id="stage-1-fission"
+         d="M74 72 L82 88 L101 82 L91 99 L108 111 L87 111 L83 132 L73 115 L54 128 L62 106 L44 98 L66 92 Z"
+         fill="#dbeafe"
+         stroke="#2563eb"
+         stroke-width="2.5" />
+      <text
+         class="sub-label"
+         x="47"
+         y="66"
+         id="text8"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:14px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#63727c">裂变</text>
+      <g
+         id="stage-1-atoms">
+        <circle
+           class="atom"
+           cx="126"
+           cy="80"
+           r="8"
+           id="circle8" />
+        <circle
+           class="atom"
+           cx="183"
+           cy="63"
+           r="8"
+           id="circle9" />
+        <circle
+           class="atom"
+           cx="239"
+           cy="96"
+           r="8"
+           id="circle10" />
+        <circle
+           class="atom"
+           cx="99"
+           cy="151"
+           r="8"
+           id="circle11" />
+        <circle
+           class="atom"
+           cx="177"
+           cy="133"
+           r="8"
+           id="circle12" />
+        <circle
+           class="atom"
+           cx="260"
+           cy="164"
+           r="8"
+           id="circle13" />
+        <circle
+           class="atom"
+           cx="153"
+           cy="211"
+           r="8"
+           id="circle14" />
+      </g>
+      <g
+         id="stage-1-diffusion-arrows">
+        <path
+           class="gas-arrow"
+           d="M125 92 C116 111 109 128 103 140"
+           marker-end="url(#arrow-blue)"
+           id="path14" />
+        <path
+           class="gas-arrow"
+           d="M194 69 C213 72 224 80 233 89"
+           marker-end="url(#arrow-blue)"
+           id="path15" />
+        <path
+           class="gas-arrow"
+           d="M184 145 C205 165 225 171 248 167"
+           marker-end="url(#arrow-blue)"
+           id="path16" />
+        <path
+           class="gas-arrow"
+           d="M145 204 C128 192 114 173 105 160"
+           marker-end="url(#arrow-blue)"
+           id="path17" />
+      </g>
+      <text
+         class="label"
+         x="223"
+         y="222"
+         id="text17">Xe / Kr</text>
+      <text
+         class="sub-label"
+         x="135"
+         y="246"
+         id="text18">晶粒内部</text>
+    </g>
+    <text
+       class="note"
+       x="175"
+       y="389"
+       id="text19"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;text-anchor:middle;fill:#55636d"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         id="tspan84">裂变源项 + 温度驱动的单原子扩散</tspan></text>
+  </g>
+  <g
+     id="stage-2-trapping-resolution"
+     transform="translate(415,20)">
+    <g
+       id="stage-2-header">
+      <text
+         class="index"
+         x="0"
+         y="31"
+         id="text20"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#6b7780"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+           id="tspan75">02</tspan></text>
+      <text
+         class="stage-title"
+         x="42"
+         y="31"
+         id="text21"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:23px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#1f2933"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:29.3333px;font-family:Sans;-inkscape-font-specification:'Sans, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+           id="tspan76">捕获与再溶解</tspan></text>
+      <line
+         class="header-line"
+         x1="0"
+         y1="50"
+         x2="350"
+         y2="50"
+         id="line21" />
+    </g>
+    <g
+       id="stage-2-scene"
+       transform="translate(0,75)">
+      <path
+         id="stage-2-grain"
+         class="grain"
+         d="M52 42 L151 22 L265 51 L314 141 L266 244 L143 257 L42 206 L24 111 Z" />
+      <ellipse
+         id="stage-2-nanobubble"
+         class="bubble"
+         cx="172"
+         cy="144"
+         rx="48"
+         ry="36" />
+      <g
+         id="stage-2-bubble-atoms">
+        <circle
+           class="atom"
+           cx="153"
+           cy="137"
+           r="7"
+           id="circle21" />
+        <circle
+           class="atom"
+           cx="175"
+           cy="154"
+           r="7"
+           id="circle22" />
+        <circle
+           class="atom"
+           cx="194"
+           cy="132"
+           r="7"
+           id="circle23" />
+      </g>
+      <circle
+         class="atom"
+         cx="75"
+         cy="101"
+         r="8"
+         id="circle24" />
+      <circle
+         class="atom"
+         cx="273"
+         cy="187"
+         r="8"
+         id="circle25" />
+      <path
+         class="gas-arrow"
+         d="M85 106 C109 113 126 122 138 131"
+         marker-end="url(#arrow-blue)"
+         id="path25" />
+      <path
+         class="gas-arrow"
+         d="M263 182 C238 176 224 165 211 156"
+         marker-end="url(#arrow-blue)"
+         id="path26" />
+      <path
+         class="return-arrow"
+         d="M159 104 C146 78 123 65 99 65"
+         marker-end="url(#arrow-orange)"
+         id="path27" />
+      <line
+         class="defect"
+         x1="242"
+         y1="77"
+         x2="260"
+         y2="95"
+         id="line27" />
+      <line
+         class="defect"
+         x1="260"
+         y1="77"
+         x2="242"
+         y2="95"
+         id="line28" />
+      <path
+         class="gas-arrow"
+         d="M231 91 C220 104 210 115 204 123"
+         marker-end="url(#arrow-blue)"
+         id="path28" />
+      <text
+         class="label"
+         x="45"
+         y="151"
+         id="text28">捕获</text>
+      <text
+         class="label"
+         x="90"
+         y="55"
+         id="text29">再溶解</text>
+      <text
+         class="sub-label"
+         x="230"
+         y="68"
+         id="text30">缺陷</text>
+      <text
+         class="sub-label"
+         x="120"
+         y="211"
+         id="text31">晶内纳米气泡</text>
+    </g>
+    <text
+       class="note"
+       x="175"
+       y="389"
+       id="text32"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;text-anchor:middle;fill:#55636d"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         id="tspan83">竞争平衡控制到达晶界的有效气体通量</tspan></text>
+  </g>
+  <g
+     id="stage-3-boundary-bubble-growth"
+     transform="translate(805,20)">
+    <g
+       id="stage-3-header">
+      <text
+         class="index"
+         x="0"
+         y="31"
+         id="text33"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#6b7780"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+           id="tspan77">03</tspan></text>
+      <text
+         class="stage-title"
+         x="42"
+         y="31"
+         id="text34"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:23px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#1f2933"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+           id="tspan78">晶界积聚与气泡生长</tspan></text>
+      <line
+         class="header-line"
+         x1="0"
+         y1="50"
+         x2="350"
+         y2="50"
+         id="line34" />
+    </g>
+    <g
+       id="stage-3-scene"
+       transform="translate(0,75)">
+      <path
+         id="stage-3-left-grain"
+         class="grain"
+         d="M18 46 L167 23 L172 257 L28 239 L7 151 Z" />
+      <path
+         id="stage-3-right-grain"
+         class="grain"
+         d="M174 23 L311 58 L337 165 L297 246 L172 257 Z" />
+      <path
+         id="stage-3-boundary"
+         class="boundary"
+         d="M171 23 C164 78 180 116 171 162 C164 201 175 232 172 257" />
+      <ellipse
+         id="stage-3-boundary-bubble"
+         class="bubble"
+         cx="172"
+         cy="145"
+         rx="42"
+         ry="55" />
+      <g
+         id="stage-3-bubble-atoms">
+        <circle
+           class="atom"
+           cx="159"
+           cy="126"
+           r="6"
+           id="circle34" />
+        <circle
+           class="atom"
+           cx="184"
+           cy="132"
+           r="6"
+           id="circle35" />
+        <circle
+           class="atom"
+           cx="164"
+           cy="157"
+           r="6"
+           id="circle36" />
+        <circle
+           class="atom"
+           cx="188"
+           cy="168"
+           r="6"
+           id="circle37" />
+      </g>
+      <circle
+         class="atom"
+         cx="79"
+         cy="111"
+         r="8"
+         id="circle38" />
+      <circle
+         class="atom"
+         cx="278"
+         cy="118"
+         r="8"
+         id="circle39" />
+      <path
+         class="gas-arrow"
+         d="M90 115 C116 121 128 128 136 136"
+         marker-end="url(#arrow-blue)"
+         id="path39" />
+      <path
+         class="gas-arrow"
+         d="M267 121 C240 126 221 133 209 139"
+         marker-end="url(#arrow-blue)"
+         id="path40" />
+      <circle
+         class="vacancy"
+         cx="77"
+         cy="211"
+         r="10"
+         id="circle40" />
+      <circle
+         class="vacancy"
+         cx="272"
+         cy="213"
+         r="10"
+         id="circle41" />
+      <path
+         class="vacancy-arrow"
+         d="M90 204 C110 195 125 184 137 172"
+         marker-end="url(#arrow-gray)"
+         id="path41" />
+      <path
+         class="vacancy-arrow"
+         d="M259 205 C239 195 224 185 208 173"
+         marker-end="url(#arrow-gray)"
+         id="path42" />
+      <path
+         class="pressure-arrow"
+         d="M158 145 H133"
+         marker-end="url(#arrow-orange)"
+         id="path43" />
+      <path
+         class="pressure-arrow"
+         d="M186 145 H211"
+         marker-end="url(#arrow-orange)"
+         id="path44" />
+      <text
+         class="label"
+         x="122"
+         y="72"
+         id="text45">p<tspan
+   baseline-shift="sub"
+   font-size="11"
+   id="tspan44">g</tspan> &gt; p<tspan
+   baseline-shift="sub"
+   font-size="11"
+   id="tspan45">eq</tspan></text>
+      <text
+         class="sub-label"
+         x="189"
+         y="42"
+         id="text46">晶界</text>
+      <text
+         class="sub-label"
+         x="218"
+         y="246"
+         id="text47">空位吸收</text>
+    </g>
+    <text
+       class="note"
+       x="175"
+       y="389"
+       id="text48"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;text-anchor:middle;fill:#55636d"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         id="tspan82">过压驱动空位吸收，晶界肿胀快速增加</tspan></text>
+  </g>
+  <g
+     id="stage-4-interconnection-release"
+     transform="translate(1195,20)">
+    <g
+       id="stage-4-header">
+      <text
+         class="index"
+         x="0"
+         y="31"
+         id="text49"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#6b7780"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+           id="tspan79">04</tspan></text>
+      <text
+         class="stage-title"
+         x="42"
+         y="31"
+         id="text50"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:23px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#1f2933"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+           id="tspan80">连通与释放</tspan></text>
+      <line
+         class="header-line"
+         x1="0"
+         y1="50"
+         x2="350"
+         y2="50"
+         id="line50" />
+    </g>
+    <g
+       id="stage-4-scene"
+       transform="translate(0,75)">
+      <path
+         class="grain-line"
+         d="M14 58 L109 34 L178 92 L260 48 L310 79"
+         id="path50" />
+      <path
+         class="grain-line"
+         d="M12 232 L92 257 L149 203 L225 246 L310 208"
+         id="path51" />
+      <path
+         class="grain-line"
+         d="M109 34 L103 130 L12 232"
+         id="path52" />
+      <path
+         class="grain-line"
+         d="M178 92 L149 203"
+         id="path53" />
+      <path
+         class="grain-line"
+         d="M260 48 L236 140 L310 208"
+         id="path54" />
+      <path
+         class="boundary"
+         d="M34 157 C68 132 86 129 103 130 C128 132 151 111 178 92 C201 106 216 126 236 140 C264 151 286 139 310 128"
+         id="path55" />
+      <path
+         class="channel"
+         d="M34 157 C68 132 86 129 103 130 C128 132 151 111 178 92 C201 106 216 126 236 140 C264 151 286 139 310 128"
+         id="path56" />
+      <ellipse
+         class="bubble"
+         cx="70"
+         cy="141"
+         rx="26"
+         ry="19"
+         id="ellipse56" />
+      <ellipse
+         class="bubble"
+         cx="113"
+         cy="126"
+         rx="28"
+         ry="21"
+         id="ellipse57" />
+      <ellipse
+         class="bubble"
+         cx="173"
+         cy="97"
+         rx="30"
+         ry="21"
+         id="ellipse58" />
+      <ellipse
+         class="bubble"
+         cx="235"
+         cy="140"
+         rx="30"
+         ry="21"
+         id="ellipse59" />
+      <g
+         id="stage-4-channel-atoms">
+        <circle
+           class="atom"
+           cx="67"
+           cy="141"
+           r="6"
+           id="circle59" />
+        <circle
+           class="atom"
+           cx="110"
+           cy="128"
+           r="6"
+           id="circle60" />
+        <circle
+           class="atom"
+           cx="173"
+           cy="99"
+           r="6"
+           id="circle61" />
+        <circle
+           class="atom"
+           cx="233"
+           cy="139"
+           r="6"
+           id="circle62" />
+        <circle
+           class="atom"
+           cx="276"
+           cy="134"
+           r="6"
+           id="circle63" />
+      </g>
+      <line
+         class="surface"
+         x1="310"
+         y1="30"
+         x2="310"
+         y2="258"
+         id="line63" />
+      <path
+         class="gas-arrow"
+         d="M296 130 C318 127 331 121 341 111"
+         marker-end="url(#arrow-blue)"
+         id="path63" />
+      <circle
+         class="atom"
+         cx="332"
+         cy="83"
+         r="6"
+         id="circle64" />
+      <circle
+         class="atom"
+         cx="344"
+         cy="58"
+         r="6"
+         id="circle65" />
+      <text
+         class="label"
+         x="203"
+         y="187"
+         id="text65">隧道网络</text>
+      <text
+         class="sub-label"
+         x="247"
+         y="278"
+         id="text66">自由表面</text>
+      <text
+         class="label"
+         x="330"
+         y="44"
+         id="text67"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif">释放</text>
+    </g>
+    <text
+       class="note"
+       x="175"
+       y="389"
+       id="text68"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;text-anchor:middle;fill:#55636d"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         id="tspan81">气泡合并并贯通表面，形成气体释放通道</tspan></text>
+  </g>
+  <g
+     id="legend"
+     transform="translate(175,538)">
+    <line
+       class="header-line"
+       x1="0"
+       y1="-20"
+       x2="1250"
+       y2="-20"
+       id="line68" />
+    <circle
+       class="atom"
+       cx="0"
+       cy="18"
+       r="7"
+       id="circle68" />
+    <text
+       class="legend"
+       x="17"
+       y="24"
+       id="text69">气体原子</text>
+    <ellipse
+       class="bubble"
+       cx="169"
+       cy="18"
+       rx="13"
+       ry="9"
+       id="ellipse69" />
+    <text
+       class="legend"
+       x="191"
+       y="24"
+       id="text70">气泡 / 连通通道</text>
+    <line
+       class="boundary"
+       x1="375"
+       y1="18"
+       x2="407"
+       y2="18"
+       id="line70" />
+    <text
+       class="legend"
+       x="421"
+       y="24"
+       id="text71">晶界</text>
+    <line
+       class="gas-arrow"
+       x1="515"
+       y1="18"
+       x2="553"
+       y2="18"
+       marker-end="url(#arrow-blue)"
+       id="line71" />
+    <text
+       class="legend"
+       x="570"
+       y="24"
+       id="text72">实线：扩散或捕获</text>
+    <line
+       class="return-arrow"
+       x1="783"
+       y1="18"
+       x2="821"
+       y2="18"
+       marker-end="url(#arrow-orange)"
+       id="line72" />
+    <text
+       class="legend"
+       x="838"
+       y="24"
+       id="text73">虚线：再溶解或空位迁移</text>
+  </g>
+</svg>

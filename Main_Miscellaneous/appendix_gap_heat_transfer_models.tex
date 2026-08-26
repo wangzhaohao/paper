@@ -1,27 +1,38 @@
 \chapter{燃料--包壳间隙传热模型补充关系式}
 \label{app:gap_heat_transfer_supplementary_models}
 
+
+% 为兼容原有子公式交叉引用：分组后保留旧标签，并统一指向所在关系组的公式编号。
+\makeatletter
+\providecommand{\appendixeqlabelalias}[1]{%
+  \begingroup
+  \edef\@currentlabel{\p@equation\theequation}%
+  \label{#1}%
+  \endgroup}
+\makeatother
+
 本附录汇总正文\ref{sec:gap_heat_transfer_model}中未展开的几何修正、温度跳跃、热适应系数、混合气体热导率、高压气体物性和接触传导关系。相关模型主要由轻水堆$\mathrm{UO}_2$/锆合金燃料棒试验与BISON、MATPRO实现发展而来；用于快堆MOX/不锈钢体系时，应分别核查几何、气体状态及界面材料参数，不应直接继承全部默认值。
 
 \section{等效间隙长度与几何修正}
 \label{app:gap_geometry_models}
 
-Ross--Stoute关系中的$d_g$为与传热面积定义一致的等效间隙长度。对于平板、圆柱和球形间隙，BISON采用\cite{halesBISONTheoryManual2016,toptanGapConductanceI2019}
-\begin{subequations}\label{eq:appendix_gap_effective_lengths}
-	\begin{align}
+Ross--Stoute关系中的$d_g$为与传热面积定义一致的等效间隙长度。对于平板、圆柱和球形间隙，BISON采用\cite{halesBISONTheoryManual2016,toptanGapConductanceModeling2019}
+\begin{equation}
+	\label{eq:appendix_gap_effective_lengths}
+	\begin{aligned}
 		d_g&=R_2-R_1,
-		&&\text{平板近似}
-		\label{eq:appendix_gap_plate_length}\\
+		&&\text{平板近似}\\
 		d_g&=R_{\mathrm{ref}}
 		\ln\!\left(\frac{R_2}{R_1}\right),
-		&&\text{圆柱间隙}
-		\label{eq:appendix_gap_cylinder_length}\\
+		&&\text{圆柱间隙}\\
 		d_g&=R_{\mathrm{ref}}^2
 		\left(\frac{1}{R_1}-\frac{1}{R_2}\right),
 		&&\text{球形间隙}
-		\label{eq:appendix_gap_sphere_length}
-	\end{align}
-\end{subequations}
+	\end{aligned}
+\end{equation}
+\appendixeqlabelalias{eq:appendix_gap_plate_length}
+\appendixeqlabelalias{eq:appendix_gap_cylinder_length}
+\appendixeqlabelalias{eq:appendix_gap_sphere_length}
 式中，$R_1$和$R_2$分别为内、外表面半径，$R_{\mathrm{ref}}$为热流密度所对应参考表面的半径。对于$d=R_2-R_1\ll R_1$的薄间隙，三种表达均趋近于几何间隙$d$。有限元实现中，$d_g$必须与界面热流所采用的参考面积保持一致，否则会重复引入曲率修正。
 
 \section{温度跳跃与热适应系数}
@@ -29,7 +40,7 @@ Ross--Stoute关系中的$d_g$为与传热面积定义一致的等效间隙长度
 
 \subsection{Lanning--Hann模型}
 
-Lanning--Hann模型基于Kennard理论，将两侧表面的总温度跳跃距离写为\cite{lanningHann1975,halesBISONTheoryManual2016}
+Lanning--Hann模型基于Kennard理论，将两侧表面的总温度跳跃距离写为\cite{lanningReviewMethodsApplicable1975,halesBISONTheoryManual2016}
 \begin{equation}
 	g_f+g_c
 	=C_L
@@ -47,27 +58,28 @@ Lanning--Hann模型基于Kennard理论，将两侧表面的总温度跳跃距离
 若程序内部统一使用SI单位，应先对式\eqref{eq:appendix_gap_lanning_jump_distance}进行整体单位换算，不得只替换单个输入量。
 
 MATPRO传统模型对氦和氙给出\cite{hagrmanSCDAPRELAP5MOD1995}
-\begin{subequations}\label{eq:appendix_gap_legacy_accommodation}
-	\begin{align}
+\begin{equation}
+	\label{eq:appendix_gap_legacy_accommodation}
+	\begin{aligned}
 		\alpha_{\mathrm{He}}
-		&=0.425-2.3\times10^{-4}T_g
-		\label{eq:appendix_gap_he_accommodation}\\
+		&=0.425-2.3\times10^{-4}T_g\\
 		\alpha_{\mathrm{Xe}}
-		&=0.749-2.5\times10^{-4}T_g
-		\label{eq:appendix_gap_xe_accommodation}\\
+		&=0.749-2.5\times10^{-4}T_g\\
 		\alpha_{\mathrm{mix}}
 		&=\alpha_{\mathrm{He}}
 		+\frac{\left(\alpha_{\mathrm{Xe}}-\alpha_{\mathrm{He}}\right)
 		\left(M_{\mathrm{mix}}-M_{\mathrm{He}}\right)}
 		{M_{\mathrm{Xe}}-M_{\mathrm{He}}}
-		\label{eq:appendix_gap_mixture_accommodation}
-	\end{align}
-\end{subequations}
+	\end{aligned}
+\end{equation}
+\appendixeqlabelalias{eq:appendix_gap_he_accommodation}
+\appendixeqlabelalias{eq:appendix_gap_xe_accommodation}
+\appendixeqlabelalias{eq:appendix_gap_mixture_accommodation}
 该插值主要面向He--Xe混合物。数值实现应将$\alpha$限制在$0<\alpha\leq1$的物理范围内；含Ar、Kr或其他组分时，应采用与实际气体--表面组合相匹配的多组分模型。
 
 \subsection{Toptan模型}
 
-Toptan等在曲线坐标下重新整理了Kennard温度跳跃关系，并显式引入两侧表面热适应系数及几何修正\cite{toptanGapConductanceI2019,toptanBISON2020}：
+Toptan等在曲线坐标下重新整理了Kennard温度跳跃关系，并显式引入两侧表面热适应系数及几何修正\cite{toptanGapConductanceModeling2019,toptanModelingGapConductance2020}：
 \begin{equation}
 	g_T
 	=\frac{C_K k_g}{p_g\Lambda_{12}}
@@ -85,26 +97,28 @@ Toptan等在曲线坐标下重新整理了Kennard温度跳跃关系，并显式�
 	\label{eq:appendix_gap_kennard_coefficients}
 \end{equation}
 两表面的几何--适应系数为
-\begin{subequations}\label{eq:appendix_gap_lambda_geometry}
-	\begin{align}
+\begin{equation}
+	\label{eq:appendix_gap_lambda_geometry}
+	\begin{aligned}
 		\Lambda_{12}^{\mathrm{plate}}
 		&=\frac{\alpha_1\alpha_2}
-		{\alpha_1+\alpha_2-\alpha_1\alpha_2}
-		\label{eq:appendix_gap_lambda_plate}\\
+		{\alpha_1+\alpha_2-\alpha_1\alpha_2}\\
 		\Lambda_{12}^{\mathrm{cyl}}
 		&=\frac{\alpha_1\alpha_2}
-		{\alpha_2+\alpha_1(1-\alpha_2)(R_1/R_2)}
-		\label{eq:appendix_gap_lambda_cylinder}\\
+		{\alpha_2+\alpha_1(1-\alpha_2)(R_1/R_2)}\\
 		\Lambda_{12}^{\mathrm{sph}}
 		&=\frac{\alpha_1\alpha_2}
 		{\alpha_2+\alpha_1(1-\alpha_2)(R_1/R_2)^2}
-		\label{eq:appendix_gap_lambda_sphere}
-	\end{align}
-\end{subequations}
+	\end{aligned}
+\end{equation}
+\appendixeqlabelalias{eq:appendix_gap_lambda_plate}
+\appendixeqlabelalias{eq:appendix_gap_lambda_cylinder}
+\appendixeqlabelalias{eq:appendix_gap_lambda_sphere}
 
 Toptan模型采用经实验数据标定的热适应系数关系
-\begin{subequations}\label{eq:appendix_gap_toptan_accommodation}
-	\begin{align}
+\begin{equation}
+	\label{eq:appendix_gap_toptan_accommodation}
+	\begin{aligned}
 		\alpha(T_g)
 		&=1-
 		\left\{
@@ -113,30 +127,35 @@ Toptan模型采用经实验数据标定的热适应系数关系
 		\frac{\sqrt{M_gT_g}}{\alpha_{\infty}}\theta_1
 		\right]
 		\right\}
-		\exp\!\left(-\frac{\theta_2}{T_g}\right)
-		\label{eq:appendix_gap_toptan_alpha}\\
+		\exp\!\left(-\frac{\theta_2}{T_g}\right)\\
 		\alpha_{\infty}
 		&=\frac{2.4\mu}{(1+\mu)^2},
 		\qquad
 		\mu=\frac{M_g}{M_s}
-		\label{eq:appendix_gap_toptan_alpha_infinity}
-	\end{align}
-\end{subequations}
+	\end{aligned}
+\end{equation}
+\appendixeqlabelalias{eq:appendix_gap_toptan_alpha}
+\appendixeqlabelalias{eq:appendix_gap_toptan_alpha_infinity}
 标定中固体表观摩尔质量取$M_s=10^5\ \mathrm{g\,mol^{-1}}$。系数见表\ref{tab:appendix_gap_toptan_accommodation_parameters}。
 
 \begin{table}[htbp]
 	\centering
 	\small
-	\caption{Toptan热适应系数模型参数\cite{toptanGapConductanceI2019}}
+	\caption{Toptan热适应系数模型参数\cite{toptanModelingGapConductance2020}}
 	\label{tab:appendix_gap_toptan_accommodation_parameters}
-	\begin{tabular}{lccccc}
+	
+	\begin{tabular*}{0.80\textwidth}{
+			@{\extracolsep{\fill}}
+			cccccc
+			@{}
+		}
 		\toprule
 		参数 & He & Ne & Ar & Kr & Xe \\
 		\midrule
 		$\theta_1$ & $-1.055$ & $-0.611$ & $0.032$ & $0.344$ & $0.784$ \\
 		$\theta_2$ & $146.7$ & $360.6$ & $591.3$ & $724.7$ & $916.7$ \\
 		\bottomrule
-	\end{tabular}
+	\end{tabular*}
 \end{table}
 
 \section{混合气体热导率}
@@ -144,16 +163,16 @@ Toptan模型采用经实验数据标定的热适应系数关系
 \subsection{MATPRO温度相关模型}
 \label{app:gap_default_gas_conductivity}
 
-正文式\eqref{eq:gap_gas_mixture_conductivity}中的二元权重系数可写为\cite{brokaw1958GasMixtures,hagrmanSCDAPRELAP5MOD1995}
-\begin{subequations}\label{eq:appendix_gap_brokaw_weights}
-	\begin{align}
+正文式\eqref{eq:gap_gas_mixture_conductivity}中的二元权重系数可写为\cite{brokawApproximateFormulasViscosity1958,hagrmanSCDAPRELAP5MOD1995}
+\begin{equation}
+	\label{eq:appendix_gap_brokaw_weights}
+	\begin{aligned}
 		\Psi_{ij}
 		&=\phi_{ij}
 		\left[
 		1+2.41
 		\frac{(M_i-M_j)(M_i-0.142M_j)}{(M_i+M_j)^2}
-		\right]
-		\label{eq:appendix_gap_psi_ij}\\
+		\right]\\
 		\phi_{ij}
 		&=\frac{
 		\left[
@@ -161,22 +180,27 @@ Toptan模型采用经实验数据标定的热适应系数关系
 		\left(M_i/M_j\right)^{1/4}
 		\right]^2}
 		{2^{3/2}\left(1+M_i/M_j\right)^{1/2}}
-		\label{eq:appendix_gap_phi_ij}
-	\end{align}
-\end{subequations}
+	\end{aligned}
+\end{equation}
+\appendixeqlabelalias{eq:appendix_gap_psi_ij}
+\appendixeqlabelalias{eq:appendix_gap_phi_ij}
 纯气体热导率采用
 \begin{equation}
 	k_i(T_g)=A_iT_g^{B_i}
 	\label{eq:appendix_gap_pure_gas_conductivity}
 \end{equation}
-其中，$k_i$的单位为$\mathrm{W\,m^{-1}\,K^{-1}}$。MATPRO及高温补充数据对应的参数见表\ref{tab:appendix_gap_gas_conductivity_coefficients}\cite{hagrmanSCDAPRELAP5MOD1995,springerWingeier1973}。
+其中，$k_i$的单位为$\mathrm{W\,m^{-1}\,K^{-1}}$。MATPRO及高温补充数据对应的参数见表\ref{tab:appendix_gap_gas_conductivity_coefficients}\cite{hagrmanSCDAPRELAP5MOD1995,springerThermalConductivityNeon1973}。
 
 \begin{table}[htbp]
 	\centering
 	\small
 	\caption{纯气体热导率关系$k_i=A_iT^{B_i}$的经验系数}
 	\label{tab:appendix_gap_gas_conductivity_coefficients}
-	\begin{tabular}{lccc}
+	\begin{tabular*}{0.80\textwidth}{
+			@{\extracolsep{\fill}}
+			lccc
+			@{}
+		}
 		\toprule
 		气体 & $A_i$ & $B_i$ & 温度范围（K） \\
 		\midrule
@@ -194,7 +218,7 @@ Toptan模型采用经实验数据标定的热适应系数关系
 		CO & $1.403\times10^{-4}$ & 0.9090 & -- \\
 		$\mathrm{CO}_2$ & $9.460\times10^{-6}$ & 1.3120 & -- \\
 		\bottomrule
-	\end{tabular}
+	\end{tabular*}
 \end{table}
 
 若事故工况需要考虑水蒸气进入燃料棒自由体积，可采用MATPRO关系
@@ -208,30 +232,27 @@ Toptan模型采用经实验数据标定的热适应系数关系
 	\right]
 	\label{eq:appendix_gap_steam_conductivity}
 \end{equation}
-其中，$T_C=T_g-273.15$，$T_C$的单位为$^\circ\mathrm C$。对于正常密封的快堆燃料棒，水蒸气通常不属于初始或裂变生成气体，式\eqref{eq:appendix_gap_steam_conductivity}不应默认启用。
+其中，$T_C=T_g-273.15$，$T_C$的单位为$^\circ\mathrm C$。对于正常密封的快堆燃料棒，水蒸气通常不属于初始或裂变生成气体，式\eqref{eq:appendix_gap_steam_conductivity}默认未启用。
 
 \subsection{温度--压力相关高级模型}
 \label{app:gap_advanced_gas_conductivity}
 
-MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，气体热导率随压力近似增加；在约$1\ \mathrm{MPa}$以下的常用工程区间，压力影响通常较弱；压力进一步升高后，密度效应可能不可忽略\cite{toptanGapConductanceI2019,tournierElGenk2008NobleGases}。Tournier--El-Genk模型将纯惰性气体热导率写为
-\begin{subequations}\label{eq:appendix_gap_advanced_conductivity_model}
-	\begin{align}
+MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，气体热导率随压力近似增加；在约$1\ \mathrm{MPa}$以下的常用工程区间，压力影响通常较弱；压力进一步升高后，密度效应可能不可忽略\cite{toptanGapConductanceModeling2019,tournierPropertiesNobleGases2008}。Tournier--El-Genk模型将纯惰性气体热导率写为
+\begin{equation}
+	\label{eq:appendix_gap_advanced_conductivity_model}
+	\begin{aligned}
 		k_i(T_g,p_g)
-		&=k_i^0(T_g)+k_{i,c}^{*}\Psi_k(\rho_{r,i})
-		\label{eq:appendix_gap_advanced_k}\\
+		&=k_i^0(T_g)+k_{i,c}^{*}\Psi_k(\rho_{r,i})\\
 		k_i^0(T_g)
-		&=\frac{15R_g}{4M_i}\mu_i^0(T_g)
-		\label{eq:appendix_gap_dilute_k}\\
+		&=\frac{15R_g}{4M_i}\mu_i^0(T_g)\\
 		\mu_i^0(T_g)
-		&=A_{\mu,i}\left(T_g-T_{\mu,i}\right)^{n_i}
-		\label{eq:appendix_gap_dilute_viscosity}\\
+		&=A_{\mu,i}\left(T_g-T_{\mu,i}\right)^{n_i}\\
 		k_{i,c}^{*}
 		&=\frac{0.201\times10^{-4}
 		T_{c,i}^{0.277}M_i^{-0.465}}
 		{\left(0.291V_i^{*}\right)^{0.415}},
 		\qquad
-		V_i^{*}=\frac{R_gT_{c,i}}{p_{c,i}}
-		\label{eq:appendix_gap_pseudocritical_k}\\
+		V_i^{*}=\frac{R_gT_{c,i}}{p_{c,i}}\\
 		\Psi_k(\rho_{r,i})
 		&=0.645\rho_{r,i}
 		+0.331\rho_{r,i}^2
@@ -239,17 +260,25 @@ MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，�
 		-0.0128\rho_{r,i}^4,
 		\qquad
 		\rho_{r,i}=\frac{\rho_i}{\rho_{c,i}}
-		\label{eq:appendix_gap_excess_conductivity}
-	\end{align}
-\end{subequations}
+	\end{aligned}
+\end{equation}
+\appendixeqlabelalias{eq:appendix_gap_advanced_k}
+\appendixeqlabelalias{eq:appendix_gap_dilute_k}
+\appendixeqlabelalias{eq:appendix_gap_dilute_viscosity}
+\appendixeqlabelalias{eq:appendix_gap_pseudocritical_k}
+\appendixeqlabelalias{eq:appendix_gap_excess_conductivity}
 所需临界参数见表\ref{tab:appendix_gap_critical_gas_properties}。
 
 \begin{table}[htbp]
 	\centering
 	\small
-	\caption{高级气体热导率模型的临界参数\cite{tournierElGenk2008NobleGases}}
+	\caption{高级气体热导率模型的临界参数\cite{tournierPropertiesNobleGases2008}}
 	\label{tab:appendix_gap_critical_gas_properties}
-	\begin{tabular}{lccccc}
+	\begin{tabular*}{0.90\textwidth}{
+			@{\extracolsep{\fill}}
+			lccccc
+			@{}
+		}
 		\toprule
 		参数 & He & Ne & Ar & Kr & Xe \\
 		\midrule
@@ -261,7 +290,7 @@ MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，�
 		$T_\mu$（K） & $-21.33$ & 16.47 & 65.70 & 71.07 & 112.31 \\
 		$n$ & 0.724 & 0.643 & 0.640 & 0.667 & 0.655 \\
 		\bottomrule
-	\end{tabular}
+	\end{tabular*}
 \end{table}
 
 高级模型通过三阶维里状态方程计算摩尔密度$\hat\rho$：
@@ -278,15 +307,16 @@ MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，�
 \subsection{收缩热阻与真实接触面积}
 
 设$A_0$为表观接触面积、$\dot Q$为通过界面的总热流率，则界面接触热阻和单位面积热阻分别为
-\begin{subequations}\label{eq:appendix_gap_contact_resistance}
-	\begin{align}
+\begin{equation}
+	\label{eq:appendix_gap_contact_resistance}
+	\begin{aligned}
 		R_c&=\frac{\Delta T_c}{\dot Q}
-		=\frac{1}{h_sA_0}
-		\label{eq:appendix_gap_total_contact_resistance}\\
+		=\frac{1}{h_sA_0}\\
 		R_c''&=A_0R_c=\frac{1}{h_s}
-		\label{eq:appendix_gap_area_contact_resistance}
-	\end{align}
-\end{subequations}
+	\end{aligned}
+\end{equation}
+\appendixeqlabelalias{eq:appendix_gap_total_contact_resistance}
+\appendixeqlabelalias{eq:appendix_gap_area_contact_resistance}
 对于半无限固体之间半径为$a$的单个圆形接触斑点，收缩热阻可近似写为
 \begin{equation}
 	R_{c,a}=\frac{1}{2ak_m},
@@ -319,15 +349,3 @@ MATPRO/BISON提供的锆合金历史关系为\cite{hagrmanSCDAPRELAP5MOD1995,hal
 
 该关系不适用于SS316、D9或HT9。快堆不锈钢包壳计算应采用对应材料及加工状态下的温度相关硬度；若缺少数据，应将$H$和$C_s$纳入敏感性或不确定性分析，而不应将BISON默认$680\ \mathrm{MPa}$视为材料常数。
 
-\section{辐射近似与数值实现要求}
-
-正文式\eqref{eq:gap_radiation_model}基于两无限大平行灰体表面、视角因子近似为1且间隙气体不参与辐射的假设。当局部间隙远小于燃料半径时，该近似可用于圆柱燃料棒；若存在较大裂口、显著偏心或轴向端部效应，应采用相应曲面视角因子或辐射传递模型。
-
-数值实现时应满足以下要求：
-\begin{enumerate}
-	\item 对摩尔分数执行$x_i\geq0$及$\sum_i x_i=1$检查，并在裂变气体释放后重新归一化；
-	\item 对$p_g$、$d_g$、$H$、$\alpha_i$和各传热系数设置正值约束，避免零压力、负间隙或经验式外推导致非物理解；
-	\item 在间隙闭合附近，使气体传导项与接触传导项连续切换，避免$d_g\rightarrow0$造成分母突变；
-	\item 纯气体和高压修正关系超出标定温度、压力或组分范围时，应记录外推范围并开展敏感性分析；
-	\item 若采用液态钠等金属键合层，应以液态金属传热和界面模型替代本附录的气体温度跳跃关系。
-\end{enumerate}

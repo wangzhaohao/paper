@@ -587,61 +587,52 @@ von Mises 屈服面在该坐标下表现为椭圆。
 \begin{algorithm}[H]
 	\SetAlgoLined
 	
-	\KwData{$\Delta t$, $T$, $P$, $G_i^{n-1}$, $G_B^{n-1}$, $\tau^{n-1}$}
-	\KwResult{$G_i^{n}$, $G_B^{n}$, $\tau^{n}$, $F_R$}
+	\KwData{$\Delta t$, $T^n$, $P^n$,
+		$G_i^{n-1}$, $G_B^{n-1}$, $\tau^{n-1}$}
+	\KwResult{$G_i^n$, $G_B^n$, $\tau^n$, $F_R$}
 	
-	初始化：$G_i=0$, $G_B=0$, $\tau=0$\;
+	初始化 $G_i$, $G_B$ 和 $\tau$\;
 	
 	\For{每个时间步 $n$}{
 		
-		计算扩散系数 $D^n$\;
-		计算气体生成速率 $P^n$\;
+		根据当前温度计算扩散系数 $D^n$\;
 		
-		更新扩散时间变量：
-		$\tau^n = \tau^{n-1} + D^n \Delta t$\;
+		根据当前裂变状态计算气体生成速率 $P^n$\;
 		
-		计算 $\Delta\tau = \tau^n - \tau^{n-1}$\;
+		更新扩散时间变量
+		$\tau^n=\tau^{n-1}+D^n\Delta t$\;
+		
+		计算扩散时间增量
+		$\Delta\tau=\tau^n-\tau^{n-1}$\;
 		
 		\For{$i=1,2,3$}{
-			$f_n^{(i)} = \exp\left(-B_i \frac{\Delta\tau}{a^2}\right) - 1$\;
+			计算核函数增量 $f_n^{(i)}$\;
 		}
 		
-		计算核函数项：
-		$t_1 = \sum_{i=1}^{3} \frac{A_i}{B_i} f_n^{(i)}$\;
+		计算核函数项 $t_1$ 和 $t_2$\;
 		
-		$t_2 = \frac{4}{\sqrt{\pi}} \left(\frac{\Delta\tau}{a^2}\right)^{3/2}
-		- \frac{3}{2} \left(\frac{\Delta\tau}{a^2}\right)^2$\;
+		根据上一时间步晶界气体状态计算历史项
+		$t_3$ 和 $t_4$\;
 		
-		计算再溶解与历史项：
-		$t_3 = h_4 G_B^{n-1} \frac{1}{\Delta t}
-		\left(\frac{P^n}{D^n} - \frac{P^{n-1}}{D^{n-1}}\right)$\;
+		求解辅助变量 $a_{2q}$\;
 		
-		$t_4 = \sum_{i=1}^{3} f_n^{(i)} G_i^{n-1}$\;
+		\For{$i=1,2,3$}{
+			更新晶内历史变量 $G_i^n$\;
+		}
 		
-		求解辅助变量：
-		$a_{2q} =
-		\frac{
-			\frac{1}{2}(P^{n-1}+P^n)\Delta t - t_3
-			+ h_4 \frac{P^n}{D^n} t_4
+		更新晶界气体存量 $G_B^n$\;
+		
+		\eIf{$G_B^n>G_s$}{
+			计算释放量 $F_R$\;
+			
+			更新释放后的晶界气体存量 $G_B^n$\;
 		}{
-			- t_1 + \left(1 + h_4 \frac{P^n}{D^n}\right) t_2
-		}$\;
-		
-		\For{$i=1,2,3$}{
-			$G_i^n = G_i^{n-1} + f_n^{(i)} G_i^{n-1}
-			- a_{2q} \frac{A_i}{B_i} f_n^{(i)}$\;
-		}
-		
-		更新晶界气体：
-		$G_B^n = G_B^{n-1} + a_{2q} t_2 - t_4$\;
-		
-		\If{$G_B^n > G_s$}{
-			$F_R = f (G_B^n - G_s)$\;
-			$G_B^n = G_B^n - F_R$\;
+			$F_R=0$\;
 		}
 	}
 	
 	\caption{Forsberg--Massih裂变气体模型数值实现流程}
+	\label{alg:forsberg_massih}
 \end{algorithm}
 
 \xsubsection{细观机理裂变气体模型 SCIANTIX 及其接口实现}{Sciantix}

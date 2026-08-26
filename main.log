@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.21)  5 AUG 2026 20:18
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.21)  23 AUG 2026 15:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2584,6 +2584,58 @@ Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl
 
 Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'worldnuclearassociationWorldNuclearEnergy2026':
+
+(biblatex)                - Datamodel: report entry 'worldnuclearassociationWor
+ldNuclearEnergy2026' (References/reference.bib): Invalid field 'languageid' for
+ entrytype 'report'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'worldnuclearassociationWorldNuclearEnergy2026':
+
+(biblatex)                - Datamodel: report entry 'worldnuclearassociationWor
+ldNuclearEnergy2026' (References/reference.bib): Invalid field 'lansortorder' f
+or entrytype 'report'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'worldnuclearassociationWorldNuclearEnergy2026':
+
+(biblatex)                - Datamodel: report entry 'worldnuclearassociationWor
+ldNuclearEnergy2026' (References/reference.bib): Invalid field 'publisher' for 
+entrytype 'report'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'parrishReviewMicrostructuralFeatures2018':
+(biblatex)                - Datamodel: article entry 'parrishReviewMicrostructu
+ralFeatures2018' (References/reference.bib): Invalid field 'languageid' for ent
+rytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'parrishReviewMicrostructuralFeatures2018':
+(biblatex)                - Datamodel: article entry 'parrishReviewMicrostructu
+ralFeatures2018' (References/reference.bib): Invalid field 'lansortorder' for e
+ntrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'boberPlutoniumRedistributionFast1973':
+(biblatex)                - Datamodel: article entry 'boberPlutoniumRedistribut
+ionFast1973' (References/reference.bib): Invalid field 'languageid' for entryty
+pe 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'boberPlutoniumRedistributionFast1973':
+(biblatex)                - Datamodel: article entry 'boberPlutoniumRedistribut
+ionFast1973' (References/reference.bib): Invalid field 'lansortorder' for entry
+type 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'vanuffelenReviewFuelPerformance2019':
 (biblatex)                - Datamodel: article entry 'vanuffelenReviewFuelPerfo
 rmance2019' (References/reference.bib): Invalid field 'languageid' for entrytyp
@@ -2595,6 +2647,390 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Datamodel: article entry 'vanuffelenReviewFuelPerfo
 rmance2019' (References/reference.bib): Invalid field 'lansortorder' for entryt
 ype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'porterFAST10Computer2020':
+(biblatex)                - Datamodel: report entry 'porterFAST10Computer2020' 
+(References/reference.bib): Invalid field 'languageid' for entrytype 'report'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'porterFAST10Computer2020':
+(biblatex)                - Datamodel: report entry 'porterFAST10Computer2020' 
+(References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'
+.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'porterFAST10Computer2020':
+(biblatex)                - Datamodel: report entry 'porterFAST10Computer2020' 
+(References/reference.bib): Invalid field 'publisher' for entrytype 'report'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'porterFAST10Computer2020':
+(biblatex)                - Datamodel: report entry 'porterFAST10Computer2020' 
+(References/reference.bib): Missing mandatory field 'type'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'lassmannTRANSURANUSFuelRod1992':
+(biblatex)                - Datamodel: article entry 'lassmannTRANSURANUSFuelRo
+d1992' (References/reference.bib): Invalid field 'languageid' for entrytype 'ar
+ticle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'lassmannTRANSURANUSFuelRod1992':
+(biblatex)                - Datamodel: article entry 'lassmannTRANSURANUSFuelRo
+d1992' (References/reference.bib): Invalid field 'lansortorder' for entrytype '
+article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'udagawaModelUpdatesFEMAXI2019':
+(biblatex)                - Datamodel: article entry 'udagawaModelUpdatesFEMAXI
+2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'art
+icle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'udagawaModelUpdatesFEMAXI2019':
+(biblatex)                - Datamodel: article entry 'udagawaModelUpdatesFEMAXI
+2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'a
+rticle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'udagawaModelUpdatesFEMAXI2019':
+(biblatex)                - Datamodel: article entry 'udagawaModelUpdatesFEMAXI
+2019' (References/reference.bib): Invalid field 'publisher' for entrytype 'arti
+cle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'yuDevelopmentFuelROd2012':
+(biblatex)                - Datamodel: article entry 'yuDevelopmentFuelROd2012'
+ (References/reference.bib): Invalid field 'languageid' for entrytype 'article'
+.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'yuDevelopmentFuelROd2012':
+(biblatex)                - Datamodel: article entry 'yuDevelopmentFuelROd2012'
+ (References/reference.bib): Invalid field 'lansortorder' for entrytype 'articl
+e'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'liaoModificationUpdateFROBA2019':
+(biblatex)                - Datamodel: article entry 'liaoModificationUpdateFRO
+BA2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'a
+rticle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'liaoModificationUpdateFROBA2019':
+(biblatex)                - Datamodel: article entry 'liaoModificationUpdateFRO
+BA2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 
+'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'xingFuelRodAnalysis2021':
+(biblatex)                - Datamodel: article entry 'xingFuelRodAnalysis2021' 
+(References/reference.bib): Invalid field 'languageid' for entrytype 'article'.
+
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'xingFuelRodAnalysis2021':
+(biblatex)                - Datamodel: article entry 'xingFuelRodAnalysis2021' 
+(References/reference.bib): Invalid field 'lansortorder' for entrytype 'article
+'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'moalSCANAIRTransientFuel2014':
+(biblatex)                - Datamodel: article entry 'moalSCANAIRTransientFuel2
+014' (References/reference.bib): Invalid field 'languageid' for entrytype 'arti
+cle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'moalSCANAIRTransientFuel2014':
+(biblatex)                - Datamodel: article entry 'moalSCANAIRTransientFuel2
+014' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'ar
+ticle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'hanValidationApplicationFTPAC2014':
+(biblatex)                - Datamodel: article entry 'hanValidationApplicationF
+TPAC2014' (References/reference.bib): Invalid field 'languageid' for entrytype 
+'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'hanValidationApplicationFTPAC2014':
+(biblatex)                - Datamodel: article entry 'hanValidationApplicationF
+TPAC2014' (References/reference.bib): Invalid field 'lansortorder' for entrytyp
+e 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'introiniALCYONEFuelPerformance2024':
+(biblatex)                - Datamodel: article entry 'introiniALCYONEFuelPerfor
+mance2024' (References/reference.bib): Invalid field 'languageid' for entrytype
+ 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'introiniALCYONEFuelPerformance2024':
+(biblatex)                - Datamodel: article entry 'introiniALCYONEFuelPerfor
+mance2024' (References/reference.bib): Invalid field 'lansortorder' for entryty
+pe 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'williamsonBISONFlexibleCode2021':
+(biblatex)                - Datamodel: article entry 'williamsonBISONFlexibleCo
+de2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'a
+rticle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'williamsonBISONFlexibleCode2021':
+(biblatex)                - Datamodel: article entry 'williamsonBISONFlexibleCo
+de2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 
+'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'dimarcelloExtensionTRANSURANUSPlutonium2012':
+(biblatex)                - Datamodel: article entry 'dimarcelloExtensionTRANSU
+RANUSPlutonium2012' (References/reference.bib): Invalid field 'languageid' for 
+entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'dimarcelloExtensionTRANSURANUSPlutonium2012':
+(biblatex)                - Datamodel: article entry 'dimarcelloExtensionTRANSU
+RANUSPlutonium2012' (References/reference.bib): Invalid field 'lansortorder' fo
+r entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'dimarcelloModellingActinideRedistribution2014':
+
+(biblatex)                - Datamodel: article entry 'dimarcelloModellingActini
+deRedistribution2014' (References/reference.bib): Invalid field 'languageid' fo
+r entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'dimarcelloModellingActinideRedistribution2014':
+
+(biblatex)                - Datamodel: article entry 'dimarcelloModellingActini
+deRedistribution2014' (References/reference.bib): Invalid field 'lansortorder' 
+for entrytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'dengUpgradeFROBACode2026':
+(biblatex)                - Datamodel: article entry 'dengUpgradeFROBACode2026'
+ (References/reference.bib): Invalid field 'languageid' for entrytype 'article'
+.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'dengUpgradeFROBACode2026':
+(biblatex)                - Datamodel: article entry 'dengUpgradeFROBACode2026'
+ (References/reference.bib): Invalid field 'lansortorder' for entrytype 'articl
+e'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'weiModelingFuelRodJASMINE2017':
+(biblatex)                - Datamodel: inproceedings entry 'weiModelingFuelRodJ
+ASMINE2017' (References/reference.bib): Field 'address' invalid in data model -
+ ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'weiModelingFuelRodJASMINE2017':
+(biblatex)                - Datamodel: inproceedings entry 'weiModelingFuelRodJ
+ASMINE2017' (References/reference.bib): Invalid field 'languageid' for entrytyp
+e 'inproceedings'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'weiModelingFuelRodJASMINE2017':
+(biblatex)                - Datamodel: inproceedings entry 'weiModelingFuelRodJ
+ASMINE2017' (References/reference.bib): Invalid field 'lansortorder' for entryt
+ype 'inproceedings'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'wangAnalysisAssessmentBeO2024':
+(biblatex)                - Datamodel: inproceedings entry 'wangAnalysisAssessm
+entBeO2024' (References/reference.bib): Field 'address' invalid in data model -
+ ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'wangAnalysisAssessmentBeO2024':
+(biblatex)                - Datamodel: inproceedings entry 'wangAnalysisAssessm
+entBeO2024' (References/reference.bib): Invalid field 'languageid' for entrytyp
+e 'inproceedings'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'wangAnalysisAssessmentBeO2024':
+(biblatex)                - Datamodel: inproceedings entry 'wangAnalysisAssessm
+entBeO2024' (References/reference.bib): Invalid field 'lansortorder' for entryt
+ype 'inproceedings'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'xuStudyAnalysisPlutonium2025':
+(biblatex)                - Datamodel: article entry 'xuStudyAnalysisPlutonium2
+025' (References/reference.bib): Invalid field 'languageid' for entrytype 'arti
+cle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'xuStudyAnalysisPlutonium2025':
+(biblatex)                - Datamodel: article entry 'xuStudyAnalysisPlutonium2
+025' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'ar
+ticle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'lassmannOXIREDModelRedistribution1987':
+(biblatex)                - Datamodel: article entry 'lassmannOXIREDModelRedist
+ribution1987' (References/reference.bib): Invalid field 'languageid' for entryt
+ype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'lassmannOXIREDModelRedistribution1987':
+(biblatex)                - Datamodel: article entry 'lassmannOXIREDModelRedist
+ribution1987' (References/reference.bib): Invalid field 'lansortorder' for entr
+ytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'forsbergDiffusionTheoryFission1985':
+(biblatex)                - Datamodel: article entry 'forsbergDiffusionTheoryFi
+ssion1985' (References/reference.bib): Invalid field 'languageid' for entrytype
+ 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'forsbergDiffusionTheoryFission1985':
+(biblatex)                - Datamodel: article entry 'forsbergDiffusionTheoryFi
+ssion1985' (References/reference.bib): Invalid field 'lansortorder' for entryty
+pe 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'pizzocriSCIANTIXNewOpen2020':
+(biblatex)                - Datamodel: article entry 'pizzocriSCIANTIXNewOpen20
+20' (References/reference.bib): Invalid field 'languageid' for entrytype 'artic
+le'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'pizzocriSCIANTIXNewOpen2020':
+(biblatex)                - Datamodel: article entry 'pizzocriSCIANTIXNewOpen20
+20' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'art
+icle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'zulloSCIANTIXCodeFission2023':
+(biblatex)                - Datamodel: article entry 'zulloSCIANTIXCodeFission2
+023' (References/reference.bib): Invalid field 'languageid' for entrytype 'arti
+cle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'zulloSCIANTIXCodeFission2023':
+(biblatex)                - Datamodel: article entry 'zulloSCIANTIXCodeFission2
+023' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'ar
+ticle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'magniApplicationSCIANTIXFission2022':
+(biblatex)                - Datamodel: article entry 'magniApplicationSCIANTIXF
+ission2022' (References/reference.bib): Invalid field 'languageid' for entrytyp
+e 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'magniApplicationSCIANTIXFission2022':
+(biblatex)                - Datamodel: article entry 'magniApplicationSCIANTIXF
+ission2022' (References/reference.bib): Invalid field 'lansortorder' for entryt
+ype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'kouDevelopmentApplicationMechanism2026':
+(biblatex)                - Datamodel: article entry 'kouDevelopmentApplication
+Mechanism2026' (References/reference.bib): Invalid field 'languageid' for entry
+type 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'kouDevelopmentApplicationMechanism2026':
+(biblatex)                - Datamodel: article entry 'kouDevelopmentApplication
+Mechanism2026' (References/reference.bib): Invalid field 'lansortorder' for ent
+rytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'cheMachineLearningAssistedSurrogate2022':
+(biblatex)                - Datamodel: article entry 'cheMachineLearningAssiste
+dSurrogate2022' (References/reference.bib): Invalid field 'languageid' for entr
+ytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'cheMachineLearningAssistedSurrogate2022':
+(biblatex)                - Datamodel: article entry 'cheMachineLearningAssiste
+dSurrogate2022' (References/reference.bib): Invalid field 'lansortorder' for en
+trytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'zhouDeepHeterogeneousJoint2025':
+(biblatex)                - Datamodel: article entry 'zhouDeepHeterogeneousJoin
+t2025' (References/reference.bib): Invalid field 'languageid' for entrytype 'ar
+ticle'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'zhouDeepHeterogeneousJoint2025':
+(biblatex)                - Datamodel: article entry 'zhouDeepHeterogeneousJoin
+t2025' (References/reference.bib): Invalid field 'lansortorder' for entrytype '
+article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'zhangLearningSimulateQuasiSteady2025':
+(biblatex)                - Datamodel: article entry 'zhangLearningSimulateQuas
+iSteady2025' (References/reference.bib): Invalid field 'languageid' for entryty
+pe 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'zhangLearningSimulateQuasiSteady2025':
+(biblatex)                - Datamodel: article entry 'zhangLearningSimulateQuas
+iSteady2025' (References/reference.bib): Invalid field 'lansortorder' for entry
+type 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -2704,20 +3140,6 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Datamodel: article entry 'inoueThermalConductivityU
 ranium2000' (References/reference.bib): Invalid field 'lansortorder' for entryt
 ype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'pizzocriSCIANTIXNewOpen2020':
-(biblatex)                - Datamodel: article entry 'pizzocriSCIANTIXNewOpen20
-20' (References/reference.bib): Invalid field 'languageid' for entrytype 'artic
-le'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'pizzocriSCIANTIXNewOpen2020':
-(biblatex)                - Datamodel: article entry 'pizzocriSCIANTIXNewOpen20
-20' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'art
-icle'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -3570,20 +3992,6 @@ ytype 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'boberPlutoniumRedistributionFast1973':
-(biblatex)                - Datamodel: article entry 'boberPlutoniumRedistribut
-ionFast1973' (References/reference.bib): Invalid field 'languageid' for entryty
-pe 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'boberPlutoniumRedistributionFast1973':
-(biblatex)                - Datamodel: article entry 'boberPlutoniumRedistribut
-ionFast1973' (References/reference.bib): Invalid field 'lansortorder' for entry
-type 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'matzkeDiffusionProcessesSurface1983':
 (biblatex)                - Datamodel: article entry 'matzkeDiffusionProcessesS
 urface1983' (References/reference.bib): Invalid field 'languageid' for entrytyp
@@ -3658,36 +4066,6 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Datamodel: article entry 'ishiiInvestigationPuMigra
 tion2001' (References/reference.bib): Invalid field 'lansortorder' for entrytyp
 e 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'dimarcelloExtensionTRANSURANUSPlutonium2012':
-(biblatex)                - Datamodel: article entry 'dimarcelloExtensionTRANSU
-RANUSPlutonium2012' (References/reference.bib): Invalid field 'languageid' for 
-entrytype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'dimarcelloExtensionTRANSURANUSPlutonium2012':
-(biblatex)                - Datamodel: article entry 'dimarcelloExtensionTRANSU
-RANUSPlutonium2012' (References/reference.bib): Invalid field 'lansortorder' fo
-r entrytype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'dimarcelloModellingActinideRedistribution2014':
-
-(biblatex)                - Datamodel: article entry 'dimarcelloModellingActini
-deRedistribution2014' (References/reference.bib): Invalid field 'languageid' fo
-r entrytype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'dimarcelloModellingActinideRedistribution2014':
-
-(biblatex)                - Datamodel: article entry 'dimarcelloModellingActini
-deRedistribution2014' (References/reference.bib): Invalid field 'lansortorder' 
-for entrytype 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -3906,20 +4284,6 @@ entrytype 'book'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'forsbergDiffusionTheoryFission1985':
-(biblatex)                - Datamodel: article entry 'forsbergDiffusionTheoryFi
-ssion1985' (References/reference.bib): Invalid field 'languageid' for entrytype
- 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'forsbergDiffusionTheoryFission1985':
-(biblatex)                - Datamodel: article entry 'forsbergDiffusionTheoryFi
-ssion1985' (References/reference.bib): Invalid field 'lansortorder' for entryty
-pe 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'denisSimulationIsothermalFission1996':
 (biblatex)                - Datamodel: article entry 'denisSimulationIsothermal
 Fission1996' (References/reference.bib): Invalid field 'languageid' for entryty
@@ -3961,20 +4325,6 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Datamodel: online entry 'giozuSciantixSciantixoffic
 ialSCIANTIX2025' (References/reference.bib): Invalid field 'lansortorder' for e
 ntrytype 'online'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'zulloSCIANTIXCodeFission2023':
-(biblatex)                - Datamodel: article entry 'zulloSCIANTIXCodeFission2
-023' (References/reference.bib): Invalid field 'languageid' for entrytype 'arti
-cle'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'zulloSCIANTIXCodeFission2023':
-(biblatex)                - Datamodel: article entry 'zulloSCIANTIXCodeFission2
-023' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'ar
-ticle'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -5379,6 +5729,54 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Datamodel: report entry 'ML16118A434' (References/r
 eference.bib): Missing mandatory field 'institution'.
 
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'congDevelopmentEvaluationFuel2022':
+(biblatex)                - Datamodel: article entry 'congDevelopmentEvaluation
+Fuel2022' (References/reference.bib): Invalid field 'languageid' for entrytype 
+'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'congDevelopmentEvaluationFuel2022':
+(biblatex)                - Datamodel: article entry 'congDevelopmentEvaluation
+Fuel2022' (References/reference.bib): Invalid field 'lansortorder' for entrytyp
+e 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'springerThermalConductivityNeon1973':
+(biblatex)                - Datamodel: article entry 'springerThermalConductivi
+tyNeon1973' (References/reference.bib): Invalid field 'languageid' for entrytyp
+e 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'springerThermalConductivityNeon1973':
+(biblatex)                - Datamodel: article entry 'springerThermalConductivi
+tyNeon1973' (References/reference.bib): Invalid field 'lansortorder' for entryt
+ype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'springerThermalConductivityNeon1973':
+(biblatex)                - Datamodel: article entry 'springerThermalConductivi
+tyNeon1973' (References/reference.bib): Invalid ISSN in value of field 'issn'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'tournierPropertiesNobleGases2008':
+(biblatex)                - Datamodel: article entry 'tournierPropertiesNobleGa
+ses2008' (References/reference.bib): Invalid field 'languageid' for entrytype '
+article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'tournierPropertiesNobleGases2008':
+(biblatex)                - Datamodel: article entry 'tournierPropertiesNobleGa
+ses2008' (References/reference.bib): Invalid field 'lansortorder' for entrytype
+ 'article'.
+
 )
 Package biblatex Info: Reference section=0 on input line 145.
 Package biblatex Info: Reference segment=0 on input line 145.
@@ -5390,21 +5788,7 @@ File: Materials/Icons/XJTU.pdf Graphic file (type pdf)
 
 ] [2
 
-]
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.148 \thesistitles
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[3] [4
+] [3] [4
 
 ]
 \spaceWidth=\dimen418
@@ -5467,98 +5851,73 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 (./Main_Miscellaneous/abstract_chs.tex
-Overfull \hbox (2.0pt too wide) in paragraph at lines 17--17
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 11.
+ [1
+
+]
+Overfull \hbox (2.0pt too wide) in paragraph at lines 13--13
 [][] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
-
- []
-
-
-Overfull \hbox (2.0pt too wide) in paragraph at lines 21--21
+Overfull \hbox (2.0pt too wide) in paragraph at lines 15--15
 [][] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
-[1
-
-]) [2
+[2]) (./Main_Miscellaneous/abstract_eng.tex [3
 
 
-] (./Main_Miscellaneous/abstract_eng.tex
+
+]
+Overfull \hbox (2.0pt too wide) in paragraph at lines 14--14
+[][] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+[4]
+Overfull \hbox (2.0pt too wide) in paragraph at lines 16--16
+[][] [] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
+) [5] [6
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--20
+] (./main.toc [7
 
- []
-
-
-Overfull \hbox (2.0pt too wide) in paragraph at lines 27--27
-[][] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-
-Overfull \hbox (2.0pt too wide) in paragraph at lines 31--31
-[][] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
-
- []
-
-[3
-
-]) [4] (./main.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 1.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 1.
- [5
-
-
-] [6] [7] [8])
+] [8] [9])
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
- [9] (./main.toe [10
+ [10] (./main.toe [11
 
 
-] [11] [12]
-Overfull \hbox (5.13748pt too wide) in paragraph at lines 112--112
- [][] [][]\TU/times.ttf(0)/m/n/12 Coupled Mechanism among Temperature, Fission 
-Gas Release, and Gap Heat Trans- 
- []
-
-[13])
+] [12] [13])
 \tf@toe=\write10
 \openout10 = `main.toe'.
 
- [14] (./main.gls) [15
+ [14]
+(./main.gls) [15
 
 
 
@@ -5566,170 +5925,36 @@ Gas Release, and Gap Heat Trans-
 
 ] (./Main_Spine/c1.tex
 Chapter 1.
-
-Package fontspec Info: 
-(fontspec)             Script 'CJK' not explicitly supported within font
-(fontspec)             'FandolFang-Regular'. Check the typeset output, and if
-(fontspec)             it is okay then ignore this warning. Otherwise a
-(fontspec)             different font should be chosen.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'FandolFang-Regular(0)' created for font
-(fontspec)             'FandolFang-Regular' with options
-(fontspec)             [Script={CJK},Extension={.otf}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[FandolFang-Regular.otf]/OT:script=hani;language=dfl
-t;"
-
 [1
 
-] [2
+] [2]
+Overfull \hbox (1.81754pt too wide) in paragraph at lines 31--32
+[]\TU/fzsong.ttf(0)/m/n/12 法 国 原 子 能 和 替 代 能 源 委 员 会  |（\TU/times.ttf(0)/m/n/12
+ CEA\TU/fzsong.ttf(0)/m/n/12 ） 、|  法 国 电 力 集 团  |（\TU/times.ttf(0)/m/n/12 EDF\T
+U/fzsong.ttf(0)/m/n/12 ）|  和 法 马 通 公 司  |（\TU/times.ttf(0)/m/n/12 Fram-
+ []
 
-]
-\g__tcobox_out_iow=\write11
-\openout11 = `main.listing'.
+[3] [4]
+Overfull \hbox (3.82144pt too wide) in paragraph at lines 45--46
+[]\TU/fzsong.ttf(0)/m/n/12 综 上，|  现 有 燃 料 性 能 分 析 程 序 在 长 期 发 展 过 程 中 形 成 了 不 同
+ 的 数 值 技 术 路 线。| \TU/times.ttf(0)/m/n/12 FAST\TU/fzsong.ttf(0)/m/n/12 、|
+ []
 
- (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2025/11/14 1.11b listings language file
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2025/11/14 1.11b listings language file
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2025/11/14 1.11b listings language file
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2025/11/14 1.11b listings language file
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2025/11/14 1.11b listings language file
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2025/11/14 1.11b listings language file
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-)
-(./main.listing) (./main.listing)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 103.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 103.
- [3]
-\openout11 = `main.listing'.
-
- (./main.listing) (./main.listing)
-[4
-
-]
-
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 162.
-
-\openout11 = `main.listing'.
-
-(./main.listing) (./main.listing
-LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <12> not availabl
-e
-(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
-e 3.
-LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <8> not available
-
-(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
-e 3.
-LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <6> not available
-
-(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
-e 3.
-) [5]
-\openout11 = `main.listing'.
-
- (./main.listing) (./main.listing
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 1.
-Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
-line 6.
-)
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
-input line 212.
-Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on i
-nput line 218.
-Package hyperref Info: bookmark level for unknown axiom defaults to 0 on input 
-line 222.
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 226.
-
-[6
-
-]
-\openout11 = `main.listing'.
-
- (./main.listing) (./main.listing)) (./Main_Spine/c2.tex [7]
+[5] [6] [7] [8] [9]
+File: ./Figures/技术路线.png Graphic file (type bmp)
+<./Figures/技术路线.png>
+) (./Main_Spine/c2.tex [10]
 Chapter 2.
-[8
+[11
 
-] [9] [10]
+] [12] [13]
 File: ./Figures/mox_thermal_conductivity_all_models.png Graphic file (type bmp)
 
 <./Figures/mox_thermal_conductivity_all_models.png>
- [11] [12] [13] [14]
+ [14] [15] [16] [17]
 File: ./Figures/UO2_MOX_creep.png Graphic file (type bmp)
 <./Figures/UO2_MOX_creep.png>
-
-Runaway argument?
-{\protect \numberline {\csname thesubsection\endcsname }
-! Paragraph ended before \temp was complete.
-<to be read again> 
-                   \par 
-l.341 
-      
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Too many }'s.
-\addengcontents ...e {\csname the#1\endcsname }#2}
-                                                   
-l.341 
-      
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-Runaway argument?
-{\thesubsection 
-! Paragraph ended before \\pdfbookmark was complete.
-<to be read again> 
-                   \par 
-l.341 
-      
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Too many }'s.
-\xsubsection ...tion ~~\itemi }{\thesubsection #2}
-                                                   
-l.341 
-      
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-[15]
+ [18]
 Overfull \hbox (8.07869pt too wide) in paragraph at lines 369--371
 \TU/fzsong.ttf(0)/m/n/12 芯 块 直 径；| $[][]$ 为 制 造 态 冷 态 燃 料\TU/times.ttf(0)/m/n/1
 2 –\TU/fzsong.ttf(0)/m/n/12 包 壳 直 径 间 隙；| $[]$ 为 芯 块 平 均 燃 耗，|  单 位 为 $[]$；|
@@ -5742,119 +5967,21 @@ Overfull \hbox (15.14163pt too wide) in paragraph at lines 378--379
 TU/times.ttf(0)/m/n/12 –$[][][][][] []$\TU/fzsong.ttf(0)/m/n/12 ，|
  []
 
-[16] [17] [18] [19] [20]
+[19] [20] [21] [22] [23]
 File: ./Figures/fission_gas_evolution_editable_preview.png Graphic file (type b
 mp)
 <./Figures/fission_gas_evolution_editable_preview.png>
- [21] [22]
+ [24] [25] [26]
 Underfull \hbox (badness 5274) in paragraph at lines 723--723
 []|\TU/fzsong.ttf(0)/m/n/10.5 回 火 铁 素 体\TU/times.ttf(0)/m/n/10.5 /\TU/fzsong.tt
 f(0)/m/n/10.5 马 氏
  []
 
-[23] [24] [25]
-! Missing delimiter (. inserted).
-<to be read again> 
-                   \MH_let:NwN 
-l.887 ^^I\end{align}
-                    
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   \MH_let:NwN 
-l.887 ^^I\end{align}
-                    
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   \MH_let:NwN 
-l.887 ^^I\end{align}
-                    
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   \MH_let:NwN 
-l.887 ^^I\end{align}
-                    
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-[26] [27]
-! Missing delimiter (. inserted).
-<to be read again> 
-                   \MH_let:NwN 
-l.977 ^^I\end{align}
-                    
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   \MH_let:NwN 
-l.977 ^^I\end{align}
-                    
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   \MH_let:NwN 
-l.977 ^^I\end{align}
-                    
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   \MH_let:NwN 
-l.977 ^^I\end{align}
-                    
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-[28]) (./Main_Spine/c3.tex [29]
+[27] [28] [29] [30] [31]) (./Main_Spine/c3.tex [32]
 Chapter 3.
-[30
+[33
 
-] [31]
+] [34]
 Overfull \hbox (10.73438pt too wide) in alignment at lines 105--105
  [] [] [] 
  []
@@ -5864,151 +5991,62 @@ Overfull \hbox (10.73438pt too wide) in alignment at lines 105--105
  [] [] [] 
  []
 
-[32]
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 3-1 on input line 105.
+Overfull \hbox (10.73438pt too wide) in alignment at lines 105--105
+ [] [] [] 
+ []
 
+
+Overfull \hbox (10.73438pt too wide) in alignment at lines 105--105
+ [] [] [] 
+ []
+
+
+Overfull \hbox (10.73438pt too wide) in alignment at lines 105--105
+ [] [] [] 
+ []
+
+[35]
 File: ./Figures/Pore_Velocity_Comparison_All_Five.png Graphic file (type bmp)
 <./Figures/Pore_Velocity_Comparison_All_Five.png>
-[33]
+ [36]
 File: ./Figures/mox_species_vapor_pressure.png Graphic file (type bmp)
 <./Figures/mox_species_vapor_pressure.png>
-
-Overfull \hbox (29.88531pt too wide) in paragraph at lines 144--145
- [][] 
- []
-
 File: ./Figures/mox_total_vapor_pressure.png Graphic file (type bmp)
 <./Figures/mox_total_vapor_pressure.png>
+ [37]
+LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <12> not availabl
+e
+(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
+e 177.
+LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <8> not available
 
-Overfull \hbox (30.82907pt too wide) in paragraph at lines 151--152
- [][] 
- []
+(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
+e 177.
+LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <6> not available
 
-[34] [35] [36] [37]
+(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
+e 177.
+ [38] [39] [40]
 File: ./Figures/pore_migration_emprical_flow_chart.pdf Graphic file (type pdf)
 <use ./Figures/pore_migration_emprical_flow_chart.pdf>
- [38]
+ [41]
 File: ./Figures/pore_migration_rand_markin_flow_chart.pdf Graphic file (type pd
 f)
 <use ./Figures/pore_migration_rand_markin_flow_chart.pdf>
- [39]
+ [42]
 File: ./Figures/pore_compare_with_bison.png Graphic file (type bmp)
 <./Figures/pore_compare_with_bison.png>
- [40]
+ [43]
 File: ./Figures/method_compare.png Graphic file (type bmp)
 <./Figures/method_compare.png>
-
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [Materials/Fonts/times.ttf]/O
-T:language=dflt;mapping=tex-text;!
-[41]
+ [44]
 File: ./Figures/comparison_plot_case1.png Graphic file (type bmp)
 <./Figures/comparison_plot_case1.png>
- [42]
+ [45]
 File: ./Figures/comparison_plot_case2.png Graphic file (type bmp)
 <./Figures/comparison_plot_case2.png>
- [43] [44]
+ [46] [47]
 File: ./Figures/case2_sensitivity_10000_alpha_pore.png Graphic file (type bmp)
 <./Figures/case2_sensitivity_10000_alpha_pore.png>
 File: ./Figures/case2_sensitivity_10000_alpha_v.png Graphic file (type bmp)
@@ -6069,7 +6107,8 @@ File: ./Figures/case2_sensitivity_15000_P0_pore.png Graphic file (type bmp)
 <./Figures/case2_sensitivity_15000_P0_pore.png>
 File: ./Figures/case2_sensitivity_15000_P0_v.png Graphic file (type bmp)
 <./Figures/case2_sensitivity_15000_P0_v.png>
- [45] [46] [47] [48]
+ [48] [49]
+[50] [51]
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 752.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14> on input line 752.
@@ -6102,15 +6141,19 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 752.
 
-[49] [50]
+[52] [53]
 File: ./Figures/Pu_diffusion_Arrhenius.pdf Graphic file (type pdf)
 <use ./Figures/Pu_diffusion_Arrhenius.pdf>
 File: ./Figures/Pu_diffusion.pdf Graphic file (type pdf)
 <use ./Figures/Pu_diffusion.pdf>
- [51] [52] [53]
+ [54] [55] [56]
 File: ./Figures/F_OM_Curve.png Graphic file (type bmp)
 <./Figures/F_OM_Curve.png>
- [54]
+ [57]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 857.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 857.
 LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <9> not available
 
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
@@ -6119,28 +6162,27 @@ LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <5> not available
 
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
 e 857.
- [55]
+ [58]
 Overfull \hbox (1.7013pt too wide) detected at line 919
 [][][][][] \OT1/lmr/m/n/12 = [][] []
  []
 
-[56]
+[59]
 File: ./Figures/plutonium_migration_flow_chart.pdf Graphic file (type pdf)
 <use ./Figures/plutonium_migration_flow_chart.pdf>
-
+ [60]
 Overfull \hbox (3.8301pt too wide) in paragraph at lines 947--948
 \TU/fzsong.ttf(0)/m/n/12 界 环 境。|  燃 料 材 料 参 数 采 用 \TU/times.ttf(0)/m/n/12 MOX \
 TU/fzsong.ttf(0)/m/n/12 燃 料 的 典 型 热 物 性 参 数，|  其 中 燃 料 密 度 取 $[][][][][] [][]$，
 |
  []
 
-[57]
 File: ./Figures/plutonium_redistribution.png Graphic file (type bmp)
 <./Figures/plutonium_redistribution.png>
 File: ./Figures/plutonium_redistribution_correction.png Graphic file (type bmp)
 
 <./Figures/plutonium_redistribution_correction.png>
- [58]
+[61]
 Overfull \hbox (0.44734pt too wide) in paragraph at lines 1011--1012
 []\TU/fzsong.ttf(0)/m/n/12 为 验 证 程 序 的 计 算 结 果，|  选 取 日 本 \TU/times.ttf(0)/m/n/
 12 PHENIX P–3 \TU/fzsong.ttf(0)/m/n/12 试 验 中 的 两 根 \TU/times.ttf(0)/m/n/12 MOX 
@@ -6157,7 +6199,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1026--1026
 []|\TU/times.ttf(0)/m/n/10.5 EOL
  []
 
-[59]
+[62]
 File: ./Figures/plutonium_redistribution_xd0992.pdf Graphic file (type pdf)
 <use ./Figures/plutonium_redistribution_xd0992.pdf>
 File: ./Figures/plutonium_redistribution_xd1071.pdf Graphic file (type pdf)
@@ -6170,7 +6212,7 @@ File: ./Figures/experiment_temperature_compare.pdf Graphic file (type pdf)
 File: ./Figures/plutonium_redistribution_modify_xd1071.pdf Graphic file (type p
 df)
 <use ./Figures/plutonium_redistribution_modify_xd1071.pdf>
- [60] [61]
+ [63] [64]
 File: ./Figures/plutonium_enhance_vs_normal.pdf Graphic file (type pdf)
 <use ./Figures/plutonium_enhance_vs_normal.pdf>
 File: ./Figures/temperature_grad_350d.png Graphic file (type bmp)
@@ -6181,7 +6223,7 @@ File: ./Figures/plutonium_diffusion_coeff_350d.png Graphic file (type bmp)
 <./Figures/plutonium_diffusion_coeff_350d.png>
 File: ./Figures/D_over_lv_350d.png Graphic file (type bmp)
 <./Figures/D_over_lv_350d.png>
- [62] [63]
+ [65] [66]
 File: ./Figures/plutonium_sensitivity_D.pdf Graphic file (type pdf)
 <use ./Figures/plutonium_sensitivity_D.pdf>
 File: ./Figures/plutonium_sensitivity_definitation_D.pdf Graphic file (type pdf
@@ -6223,26 +6265,27 @@ File: ./Figures/plutonium_sensitivity_constant_A.pdf Graphic file (type pdf)
 File: ./Figures/plutonium_sensitivity_definitation_constant_A.pdf Graphic file 
 (type pdf)
 <use ./Figures/plutonium_sensitivity_definitation_constant_A.pdf>
- [64] [65] [66]
+ [67] [68] [69]
 File: ./Figures/americium_diffusion_coeff.pdf Graphic file (type pdf)
 <use ./Figures/americium_diffusion_coeff.pdf>
- [67]
+
+ignored error: Infinite glue shrinkage found in box being split [70]
 File: ./Figures/americium_1-2_power.pdf Graphic file (type pdf)
 <use ./Figures/americium_1-2_power.pdf>
- [68]
 File: ./Figures/americium_redistribution_1-2-1.pdf Graphic file (type pdf)
 <use ./Figures/americium_redistribution_1-2-1.pdf>
 File: ./Figures/americium_redistribution_1-2-2.pdf Graphic file (type pdf)
 <use ./Figures/americium_redistribution_1-2-2.pdf>
- [69] [70] [71] [72]
+ [71]
+[72] [73] [74] [75]
 File: ./Figures/oxygen_diffusion_vs_T.pdf Graphic file (type pdf)
 <use ./Figures/oxygen_diffusion_vs_T.pdf>
 File: ./Figures/oxygen_diffusion_vs_x.pdf Graphic file (type pdf)
 <use ./Figures/oxygen_diffusion_vs_x.pdf>
- [73]
 File: ./Figures/oxygen_boundary_condition_formulation.pdf Graphic file (type pd
 f)
 <use ./Figures/oxygen_boundary_condition_formulation.pdf>
+ [76]
 File: ./Figures/oxygen_hypre_redistribution.pdf Graphic file (type pdf)
 <use ./Figures/oxygen_hypre_redistribution.pdf>
 File: ./Figures/oxygen_hypro_up_redistribution.pdf Graphic file (type pdf)
@@ -6251,30 +6294,29 @@ File: ./Figures/oxygen_hypro_low_redistribution.pdf Graphic file (type pdf)
 <use ./Figures/oxygen_hypro_low_redistribution.pdf>
 File: ./Figures/oxygen_uo2_redistribution.pdf Graphic file (type pdf)
 <use ./Figures/oxygen_uo2_redistribution.pdf>
-
-[74] [75]) (./Main_Spine/c4.tex [76]
+ [77]) (./Main_Spine/c4.tex [78]
 Chapter 4.
-[77
+[79
 
-] [78] [79] [80]
+] [80] [81] [82]
 File: ./Figures/J2_yield_surface_principal_stress_space.pdf Graphic file (type 
 pdf)
 <use ./Figures/J2_yield_surface_principal_stress_space.pdf>
 File: ./Figures/J2_yield_surface_deviatoric_plane.pdf Graphic file (type pdf)
 <use ./Figures/J2_yield_surface_deviatoric_plane.pdf>
- [81] [82] [83]
+ [83] [84] [85]
 File: ./Figures/stress_strain_update.pdf Graphic file (type pdf)
 <use ./Figures/stress_strain_update.pdf>
- [84] [85] [86]
+ [86] [87] [88]
 File: ./Figures/radial_return_moose.pdf Graphic file (type pdf)
 <use ./Figures/radial_return_moose.pdf>
- [87] [88]
+ [89] [90]
 Overfull \hbox (8.93764pt too wide) in paragraph at lines 510--511
 []\TU/fzsong.ttf(0)/m/n/12 在 上 述 离 散 形 式 基 础 上，|  可 进 一 步 得 到 晶 界 气 体 累 积 过 程 的
  代 数 表 达。|  根 据 \TU/times.ttf(0)/m/n/12 Forsberg–
  []
 
-[89] [90]
+[91] [92]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
 562.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmtt.fd
@@ -6284,8 +6326,29 @@ File: ./Figures/gas_diffusion_forsberg.png Graphic file (type bmp)
 <./Figures/gas_diffusion_forsberg.png>
 File: ./Figures/gas_diffusion_turnbull.png Graphic file (type bmp)
 <./Figures/gas_diffusion_turnbull.png>
- [91]
-[92] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+ [93]
+
+Package fontspec Info: 
+(fontspec)             Script 'CJK' not explicitly supported within font
+(fontspec)             'FandolFang-Regular'. Check the typeset output, and if
+(fontspec)             it is okay then ignore this warning. Otherwise a
+(fontspec)             different font should be chosen.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'FandolFang-Regular(0)' created for font
+(fontspec)             'FandolFang-Regular' with options
+(fontspec)             [Script={CJK},Extension={.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FandolFang-Regular.otf]/OT:script=hani;language=dfl
+t;"
+
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang2.sty
@@ -6293,9 +6356,9 @@ File: lstlang2.sty 2025/11/14 1.11b listings language file
 )
 (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-)
+) [94]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 650.
+nput line 641.
 
 Package fontspec Info: 
 (fontspec)             Script 'CJK' not explicitly supported within font
@@ -6336,8 +6399,8 @@ Missing character: There is no − (U+2212) in font [Materials/Fonts/times.ttf]/
 T:language=dflt;mapping=tex-text;!
 File: ./Figures/coupled_sciantix.pdf Graphic file (type pdf)
 <use ./Figures/coupled_sciantix.pdf>
-[93] [94]
-Overfull \hbox (36.56268pt too wide) in paragraph at lines 707--708
+[95] [96]
+Overfull \hbox (36.56268pt too wide) in paragraph at lines 698--699
 []|\TU/fzsong.ttf(0)/m/it/12 （\TU/times.ttf(0)/m/n/12 3\TU/fzsong.ttf(0)/m/it/1
 2 ）|  自 动 生 成 边 界 条 件。|  根 据 用 户 指 定 的 导 热 模 型 类 型  |（如 默 认 \TU/lmtt/m/n/12 Gap
 PerfectConductance
@@ -6345,10 +6408,10 @@ PerfectConductance
 
 File: ./Figures/thermal_contact.pdf Graphic file (type pdf)
 <use ./Figures/thermal_contact.pdf>
-[95]
+[97]
 File: ./Figures/coupled_sciantix_with_gap.pdf Graphic file (type pdf)
 <use ./Figures/coupled_sciantix_with_gap.pdf>
- [96] [97]
+ [98] [99]
 File: ./Figures/creep_flow_chat.pdf Graphic file (type pdf)
 <use ./Figures/creep_flow_chat.pdf>
 File: ./Figures/creep_case.pdf Graphic file (type pdf)
@@ -6357,39 +6420,39 @@ File: ./Figures/ht9_creep_MFH.png Graphic file (type bmp)
 <./Figures/ht9_creep_MFH.png>
 File: ./Figures/ht9_creep_RKY.png Graphic file (type bmp)
 <./Figures/ht9_creep_RKY.png>
- [98]
+ [100]
 File: ./Figures/ss316_creep_complex.png Graphic file (type bmp)
 <./Figures/ss316_creep_complex.png>
 File: ./Figures/ss316_creep_bison.png Graphic file (type bmp)
 <./Figures/ss316_creep_bison.png>
 File: ./Figures/d9_creep.png Graphic file (type bmp)
 <./Figures/d9_creep.png>
- [99] [100]
+ [101] [102]
 File: ./Figures/hardening_case.pdf Graphic file (type pdf)
 <use ./Figures/hardening_case.pdf>
- [101]
+ [103]
 File: ./Figures/hardening_flow_chat.pdf Graphic file (type pdf)
 <use ./Figures/hardening_flow_chat.pdf>
 File: ./Figures/D9_hardening_verify.png Graphic file (type bmp)
 <./Figures/D9_hardening_verify.png>
 
-Overfull \hbox (9.71773pt too wide) in paragraph at lines 922--923
+Overfull \hbox (9.71773pt too wide) in paragraph at lines 913--914
  [][] 
  []
 
 File: ./Figures/HT9_hardening_verify.png Graphic file (type bmp)
 <./Figures/HT9_hardening_verify.png>
 
-Overfull \hbox (10.05916pt too wide) in paragraph at lines 929--930
+Overfull \hbox (10.05916pt too wide) in paragraph at lines 920--921
  [][] 
  []
 
 File: ./Figures/SS316_hardening_verify.png Graphic file (type bmp)
 <./Figures/SS316_hardening_verify.png>
-[102]
+[104]
 File: ./Figures/ForMas_temperature_history.pdf Graphic file (type pdf)
 <use ./Figures/ForMas_temperature_history.pdf>
- [103]
+ [105]
 File: ./Figures/Gb_Gs.pdf Graphic file (type pdf)
 <use ./Figures/Gb_Gs.pdf>
 File: ./Figures/gas_released_density.pdf Graphic file (type pdf)
@@ -6398,13 +6461,13 @@ File: ./Figures/Gb_Gs_compare.pdf Graphic file (type pdf)
 <use ./Figures/Gb_Gs_compare.pdf>
 File: ./Figures/gas_released_density_compare.pdf Graphic file (type pdf)
 <use ./Figures/gas_released_density_compare.pdf>
- [104] [105]
+ [106] [107]
 File: ./Figures/academic_fgr_bark.png Graphic file (type bmp)
 <./Figures/academic_fgr_bark.png>
 File: ./Figures/academic_swelling_bark.png Graphic file (type bmp)
 <./Figures/academic_swelling_bark.png>
 
-Overfull \hbox (10.8185pt too wide) in paragraph at lines 1061--1080
+Overfull \hbox (10.8185pt too wide) in paragraph at lines 1052--1071
 []\TU/fzsong.ttf(0)/m/it/12 综 上，|  四 类 代 表 性 算 例 从 晶 内、|  晶 界、|  组 织 演 化 和 热 化 
 学 行 为 等 不 同 层 面 对 \TU/times.ttf(0)/m/n/12 SCIANTIX
  []
@@ -6419,27 +6482,23 @@ File: ./Figures/academic_swelling_hbs.png Graphic file (type bmp)
 <./Figures/academic_swelling_hbs.png>
 File: ./Figures/academic_deviation.png Graphic file (type bmp)
 <./Figures/academic_deviation.png>
-[106] [107]
+[108] [109]
 File: ./Figures/academic_verification_plot.png Graphic file (type bmp)
 <./Figures/academic_verification_plot.png>
- [108]) (./Main_Spine/c5.tex [109] [110]
+ [110]) (./Main_Spine/c5.tex [111] [112]
 Chapter 5.
-[111
+[113
 
 ]
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 5-1 on input line 95.
-
-ignored error: Infinite glue shrinkage found in box being split [112] [113]
-[114]
+ignored error: Infinite glue shrinkage found in box being split [114] [115]
+[116]
 Overfull \hbox (8.5001pt too wide) in paragraph at lines 145--146
 []\TU/fzsong.ttf(0)/m/it/12 在 本 文 程 序 中，| \TU/times.ttf(0)/m/n/12 SCIANTIX \TU/
 fzsong.ttf(0)/m/it/12 通 过 动 态 链 接 库 形 式 与 \TU/times.ttf(0)/m/n/12 MOOSE \TU/fzs
 ong.ttf(0)/m/it/12 主 程 序 进 行 耦 合。| \TU/times.ttf(0)/m/n/12 MOOSE
  []
 
-[115] [116]
+[117] [118]
 Overfull \hbox (3.35332pt too wide) in paragraph at lines 159--172
 \TU/lmtt/m/n/12 PiecewiseMultilinear \TU/fzsong.ttf(0)/m/it/12 函 数 读 入。|  在 计 算
  过 程 中，|  程 序 基 于 上 述 功 率 函 数，|  通 过 \TU/lmtt/m/n/12 Fission
@@ -6459,10 +6518,10 @@ m/n/12 InletEnthalpyAux \TU/fzsong.ttf(0)/m/it/12 计 算 入 口 热 力 学 �
 lmtt/m/n/12 CoolantPerAux
  []
 
-[117]
+[119]
 File: ./Figures/moose_fuel_rod_flowchart_editable.pdf Graphic file (type pdf)
 <use ./Figures/moose_fuel_rod_flowchart_editable.pdf>
- [118] [119]
+ [120] [121]
 File: ./Figures/IFA-597-4-5-6-7r10.pdf Graphic file (type pdf)
 <use ./Figures/IFA-597-4-5-6-7r10.pdf>
 File: ./Figures/IFA-597-4-5-6-7r11.pdf Graphic file (type pdf)
@@ -6477,7 +6536,7 @@ File: ./Figures/IFA-629-1r1.pdf Graphic file (type pdf)
 <use ./Figures/IFA-629-1r1.pdf>
 File: ./Figures/IFA-629-1r2.pdf Graphic file (type pdf)
 <use ./Figures/IFA-629-1r2.pdf>
- [120]
+ [122]
 File: ./Figures/IFA-648-r1.pdf Graphic file (type pdf)
 <use ./Figures/IFA-648-r1.pdf>
 File: ./Figures/IFA-648-r2.pdf Graphic file (type pdf)
@@ -6492,12 +6551,7 @@ File: ./Figures/IFA-651-r3.pdf Graphic file (type pdf)
 <use ./Figures/IFA-651-r3.pdf>
 File: ./Figures/IFA-651-r6.pdf Graphic file (type pdf)
 <use ./Figures/IFA-651-r6.pdf>
- [121]
-Overfull \hbox (4.5422pt too wide) in paragraph at lines 391--411
- [][] 
- []
-
-[122] [123] [124] [125]
+ [123] [124] [125] [126] [127]
 File: ./Figures/IFA-597-4-5-6-7r11/IFA-597-4-5-6-7r11_temperature_fuel_thermal_
 conductivity_alpha_comparison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-597-4-5-6-7r11/IFA-597-4-5-6-7r11_temperature_fuel_thermal_c
@@ -6510,7 +6564,7 @@ File: ./Figures/IFA-597-4-5-6-7r11/IFA-597-4-5-6-7r11_temperature_geometricstru
 cture_alpha_comparison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-597-4-5-6-7r11/IFA-597-4-5-6-7r11_temperature_geometricstruc
 ture_alpha_comparison.pdf>
- [126] [127]
+ [128] [129]
 File: ./Figures/IFA-597-4-5-6-7r10/IFA-597-4-5-6-7r10_temperature_fuel_thermal_
 conductivity_alpha_comparison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-597-4-5-6-7r10/IFA-597-4-5-6-7r10_temperature_fuel_thermal_c
@@ -6523,7 +6577,7 @@ File: ./Figures/IFA-597-4-5-6-7r10/IFA-597-4-5-6-7r10_temperature_geometricstru
 cture_alpha_comparison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-597-4-5-6-7r10/IFA-597-4-5-6-7r10_temperature_geometricstruc
 ture_alpha_comparison.pdf>
- [128] [129]
+ [130]
 File: ./Figures/IFA-651-r1/IFA-651-r1_temperature_fuel_thermal_conductivity_alp
 ha_comparison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-651-r1/IFA-651-r1_temperature_fuel_thermal_conductivity_alph
@@ -6536,7 +6590,8 @@ File: ./Figures/IFA-651-r1/IFA-651-r1_temperature_geometricstructure_alpha_comp
 arison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-651-r1/IFA-651-r1_temperature_geometricstructure_alpha_compa
 rison.pdf>
- [130]
+
+[131] [132]
 File: ./Figures/IFA-651-r3/IFA-651-r3_temperature_fuel_thermal_conductivity_alp
 ha_comparison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-651-r3/IFA-651-r3_temperature_fuel_thermal_conductivity_alph
@@ -6549,7 +6604,7 @@ File: ./Figures/IFA-651-r3/IFA-651-r3_temperature_geometricstructure_alpha_comp
 arison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-651-r3/IFA-651-r3_temperature_geometricstructure_alpha_compa
 rison.pdf>
- [131]
+ [133]
 File: ./Figures/IFA-651-r6/IFA-651-r6_temperature_fuel_thermal_conductivity_alp
 ha_comparison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-651-r6/IFA-651-r6_temperature_fuel_thermal_conductivity_alph
@@ -6562,8 +6617,7 @@ File: ./Figures/IFA-651-r6/IFA-651-r6_temperature_geometristructure_alpha_compa
 rison.pdf Graphic file (type pdf)
 <use ./Figures/IFA-651-r6/IFA-651-r6_temperature_geometristructure_alpha_compar
 ison.pdf>
- [132] [133]
-[134] [135] [136]) (./Main_Spine/c6.tex [137] [138]
+ [134] [135] [136] [137]) (./Main_Spine/c6.tex [138]
 Chapter 6.
 [139
 
@@ -6578,7 +6632,7 @@ File: ./Figures/mesh_sensitivity/max_abs_disp_z_history.png Graphic file (type
 bmp)
 <./Figures/mesh_sensitivity/max_abs_disp_z_history.png>
  [141] [142] [143] [144] [145] [146]
-Underfull \hbox (badness 10000) in paragraph at lines 594--594
+Underfull \hbox (badness 10000) in paragraph at lines 592--592
 []|\TU/fzsong.ttf(0)/m/n/10.5 盲 测 最 大
  []
 
@@ -6588,21 +6642,30 @@ File: ./Figures/pod_lstm/formal_pod_rank_scan.png Graphic file (type bmp)
  [148]
 Missing character: There is no ^^S (U+0013) in font [Materials/Fonts/times.ttf]
 /OT:language=dflt;mapping=tex-text;!
-[149]
+[149] [150]
 File: ./Figures/pod_gpr/case_pf10375_temperature_K_gpr_2d_comparison.png Graphi
 c file (type bmp)
 <./Figures/pod_gpr/case_pf10375_temperature_K_gpr_2d_comparison.png>
+File: ./Figures/pod_gpr/case_pf10375_disp_r_gpr_maximum_error_2d.png Graphic fi
+le (type bmp)
+<./Figures/pod_gpr/case_pf10375_disp_r_gpr_maximum_error_2d.png>
 
-Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
-OT:script=hani;language=dflt;!
-Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
-OT:script=hani;language=dflt;!
-[150] [151] [152] [153] [154]
+Overfull \hbox (2.22618pt too wide) in paragraph at lines 750--751
+[]\TU/fzsong.ttf(0)/m/it/12 图[]\TU/times.ttf(0)/m/n/12 6-5[]\TU/fzsong.ttf(0)/m
+/it/12 给 出 了 轴 向 位 移 场 在 最 大 重 构 误 差 时 刻 的 二 维 分 布。|  该 时 刻 同 样 为 $[] \OT1/lmr/
+m/n/12 = []\OML/lmm/m/it/12 :[][][] \OMS/lmsy/m/n/12 ^^B
+ []
+
+[151]
+File: ./Figures/pod_gpr/case_pf10375_disp_z_baseline_maximum_error_2d.png Graph
+ic file (type bmp)
+<./Figures/pod_gpr/case_pf10375_disp_z_baseline_maximum_error_2d.png>
+ [152] [153] [154] [155]
 File: ./Figures/pod_lstm/power_history_overview.pdf Graphic file (type pdf)
 <use ./Figures/pod_lstm/power_history_overview.pdf>
 File: ./Figures/pod_lstm/training_validation_loss.png Graphic file (type bmp)
 <./Figures/pod_lstm/training_validation_loss.png>
- [155] [156]
+ [156] [157]
 File: ./Figures/pod_lstm/blind_case_mean_relative_l2.png Graphic file (type bmp
 )
 <./Figures/pod_lstm/blind_case_mean_relative_l2.png>
@@ -6615,24 +6678,31 @@ File: ./Figures/pod_lstm/blind_error_history_disp_r.png Graphic file (type bmp)
 File: ./Figures/pod_lstm/blind_error_history_disp_z.png Graphic file (type bmp)
 
 <./Figures/pod_lstm/blind_error_history_disp_z.png>
- [157] [158]
+ [158] [159]
 File: ./Figures/pod_lstm/blind_full_field_comparison.png Graphic file (type bmp
 )
 <./Figures/pod_lstm/blind_full_field_comparison.png>
- [159]
+ [160]
 File: ./Figures/pod_lstm/online_power_and_response_histories.png Graphic file (
 type bmp)
 <./Figures/pod_lstm/online_power_and_response_histories.png>
- [160]
+ [161]
 File: ./Figures/pod_lstm/online_representative_2d_fields.png Graphic file (type
  bmp)
 <./Figures/pod_lstm/online_representative_2d_fields.png>
- [161]
-[162] [163]) (./Main_Spine/c7.tex [164]
+ [162]
+[163] [164]) (./Main_Spine/c7.tex [165]
 Chapter 7.
-) [165
+[166
 
-] (./Main_Miscellaneous/acknowledegment.tex) [166
+]
+Overfull \hbox (13.37848pt too wide) in paragraph at lines 17--18
+\TU/fzsong.ttf(0)/m/it/12 了 燃 料 中 心 温 度 与 裂 变 气 体 释 放 的 棒 级 计 算 模 型，|  并 分 别 采 
+用 \TU/times.ttf(0)/m/n/12 ForMas \TU/fzsong.ttf(0)/m/it/12 和 \TU/times.ttf(0)/m
+/n/12 SCIANTIX
+ []
+
+[167] [168]) [169] (./Main_Miscellaneous/acknowledegment.tex) [170
 
 
 ]
@@ -6642,18 +6712,19 @@ LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <10.53937> not av
 ailable
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
 e 188.
-
-Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
-OT:script=hani;language=dflt;!
-[167
+ [171
 
 
-] [168] [169]
+]
+[172]
+Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
+OT:script=hani;language=dflt;!
+[173] [174] [175]
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
-[170] [171]
+[176] [177]
 Missing character: There is no 徹 (U+5FB9) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
 Missing character: There is no 潤 (U+6F64) in font [Materials/Fonts/fzsong.ttf]/
@@ -6668,27 +6739,32 @@ Missing character: There is no 評 (U+8A55) in font [Materials/Fonts/fzsong.ttf]
 OT:script=hani;language=dflt;!
 Missing character: There is no 価 (U+4FA1) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
-[172]
+[178]
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
-[173] [174]
+[179] [180]
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
 Missing character: There is no – (U+2013) in font [Materials/Fonts/fzsong.ttf]/
 OT:script=hani;language=dflt;!
-[175] [176] [177] [178] [179] [180]
+[181] [182] [183] [184]
+Missing character: There is no Ś (U+015A) in font [Materials/Fonts/times.ttf]/O
+T:language=dflt;mapping=tex-text;!
+[185] [186]
 \l_tmpa_count=\count643
  (./Main_Miscellaneous/appendix_a.tex
 附录 附录A.
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--101
-[]|\TU/times.ttf(0)/m/n/10.5 Sciantix Op-
+Overfull \hbox (10.38103pt too wide) in paragraph at lines 117--117
+[]|\TU/lmtt/m/n/10.5 sciantix_iGrainBoundaryVacancyDiffusivity|  
  []
 
-[181
+[187
 
 
-] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+]
+ignored error: Infinite glue shrinkage found in box being split [188]
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -6698,114 +6774,36 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.5> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 120.
- [182])
-(./Main_Miscellaneous/appendix_b.tex [183]
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 135.
+ [189])
+(./Main_Miscellaneous/appendix_b.tex [190]
 附录 附录B.
-[184
+[191
 
-] [185]
-Overfull \hbox (4.38306pt too wide) detected at line 57
-[]\OML/lmm/m/it/12 =[] \OT1/lmr/m/n/12 = [] + [] \OMS/lmsy/m/n/12 ^^@ [][]
- []
-
-[186] [187] [188] [189]
-ignored error: Infinite glue shrinkage found in box being split [190])
-(./Main_Miscellaneous/appendix_mox_thermomechanical_models.tex [191]
-附录 附录C.
-[192
-
-] [193] [194]
-Underfull \hbox (badness 1226) in paragraph at lines 211--211
-[]|$[][] \OMS/lmsy/m/n/10.5 ^^T [][] []$\TU/fzsong.ttf(0)/m/n/10.5 ，|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
-[]|\TU/times.ttf(0)/m/n/10.5 Inoue \TU/fzsong.ttf(0)/m/n/10.5 快 堆
- []
-
-
-Underfull \hbox (badness 3977) in paragraph at lines 211--211
-[]|\TU/fzsong.ttf(0)/m/n/10.5 含 次 锕 系 元 素
- []
-
-[195] [196] [197]) (./Main_Miscellaneous/appendix_cladding_incore_models.tex
-[198]
-附录 附录D.
-[199
-
-] [200] [201] [202] [203] [204] [205] [206] [207])
-(./Main_Miscellaneous/appendix_gap_heat_transfer_models.tex [208]
-附录 附录E.
-
-LaTeX Warning: Citation 'toptanGapConductanceI2019' on page 209 undefined on in
-put line 9.
-
-
-LaTeX Warning: Citation 'lanningHann1975' on page 209 undefined on input line 3
-2.
-
-
-Overfull \hbox (24.48451pt too wide) in paragraph at lines 32--33
-[]\TU/times.ttf(0)/m/n/12 Lanning–Hann \TU/fzsong.ttf(0)/m/it/12 模 型 基 于 \TU/ti
-mes.ttf(0)/m/n/12 Kennard \TU/fzsong.ttf(0)/m/it/12 理 论，|  将 两 侧 表 面 的 总 温 度 跳 
-跃 距 离 写 为$[]$ 
- []
-
-[209
-
+] [192]
+Overfull \hbox (4.38306pt too wide) detected at line 67
+[][][][]\OML/lmm/m/it/12 =[] \OT1/lmr/m/n/12 = [] + [] \OMS/lmsy/m/n/12 ^^@ [][
 ]
-
-LaTeX Warning: Citation 'toptanGapConductanceI2019' on page 210 undefined on in
-put line 70.
-
-
-LaTeX Warning: Citation 'toptanBISON2020' on page 210 undefined on input line 7
-0.
-
-[210]
-
-LaTeX Warning: Citation 'toptanGapConductanceI2019' on page 211 undefined on in
-put line 130.
-
-
-LaTeX Warning: Citation 'toptanGapConductanceI2019' on page 211 undefined on in
-put line 130.
-
-
-LaTeX Warning: Citation 'brokaw1958GasMixtures' on page 211 undefined on input 
-line 147.
-
-
-LaTeX Warning: Citation 'springerWingeier1973' on page 211 undefined on input l
-ine 172.
-
-
-Overfull \hbox (19.52817pt too wide) in paragraph at lines 171--173
-\TU/fzsong.ttf(0)/m/it/12 其 中，| $[][]$ 的 单 位 为 $[]$。| \TU/times.ttf(0)/m/n/12 M
-ATPRO \TU/fzsong.ttf(0)/m/it/12 及 高 温 补 充 数 据 对 应 的 参 数 见 表[]\TU/times.ttf(0)/m
-/n/12 2[]$[]$\TU/fzsong.ttf(0)/m/it/12 。| 
  []
 
-[211]
+[193]
+ignored error: Infinite glue shrinkage found in box being split [194] [195]
+[196] [197] [198])
+(./Main_Miscellaneous/appendix_mox_thermomechanical_models.tex [199]
+附录 附录C.
+[200
 
-LaTeX Warning: Citation 'toptanGapConductanceI2019' on page 212 undefined on in
-put line 216.
+] [201] [202] [203] [204] [205])
+(./Main_Miscellaneous/appendix_cladding_incore_models.tex [206]
+附录 附录D.
+[207
 
+] [208] [209] [210] [211] [212] [213] [214] [215])
+(./Main_Miscellaneous/appendix_gap_heat_transfer_models.tex [216]
+附录 附录E.
+[217
 
-LaTeX Warning: Citation 'tournierElGenk2008NobleGases' on page 212 undefined on
- input line 216.
-
-
-LaTeX Warning: Citation 'tournierElGenk2008NobleGases' on page 212 undefined on
- input line 250.
-
-
-LaTeX Warning: Citation 'tournierElGenk2008NobleGases' on page 212 undefined on
- input line 250.
-
-[212] [213]) [214] (./Main_Miscellaneous/achievement.tex) [215
+] [218] [219] [220]) [221] (./Main_Miscellaneous/achievement.tex) [222
 
 ]
 (./Main_Miscellaneous/decision.tex
@@ -6816,19 +6814,15 @@ Overfull \hbox (1.52652pt too wide) in paragraph at lines 12--13
  文 \TU/times.ttf(0)/m/n/12 ××××××××××\TU/fzsong.ttf(0)/m/it/12 ，|
  []
 
-) [216
+) [223
 
 
-] [217
+] [224
 
 
-] [218
+] [225
 
-]
-
-Package longtable Warning: Table widths have changed. Rerun LaTeX.
-
-(./main.aux)
+] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
@@ -6837,28 +6831,17 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 71375 strings out of 468179
- 1674125 string characters out of 5433206
- 2929910 words of memory out of 5000000
- 98681 multiletter control sequences out of 15000+600000
- 742390 words of font info for 310 fonts, out of 8000000 for 9000
+ 69614 strings out of 468179
+ 1631745 string characters out of 5433206
+ 2968525 words of memory out of 5000000
+ 96960 multiletter control sequences out of 15000+600000
+ 742022 words of font info for 308 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 117i,20n,157p,2473b,7402s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,20n,131p,2473b,7407s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (240 pages).
+Output written on main.pdf (247 pages).

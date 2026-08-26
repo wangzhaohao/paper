@@ -2,239 +2,142 @@
 
 \xchapter{绪论}{Introductions}
 
-\xsection{背景}{Backgrounds}
+\xsection{研究背景和意义}{Research Background and Significance}
 
-本文档仅提供部分可能用到的示例，系统的学习 \LaTeX 用法请参考其他书目，如 \emph{lshort}，可通过在 shell(命令行/cmd) 中执行 \clist{texdoc lshort-zh} 获得中文版。
+在全球能源需求持续增长、能源系统低碳化转型以及能源安全问题日益受到重视的背景下，核能凭借高能量密度、低全生命周期碳排放和稳定供能等特点，仍是重要的低碳能源选择。全球核能协会发布的《世界核能展望报告》指出，2024年全球核电发电量已达到2667~TWh，创历史新高；截至2025年10月，全球共有438台可运行反应堆，总装机容量约397~GWe，其中压水堆数量占比超过70\%，另有约78~GWe核电容量处于建设阶段。综合现有机组延寿、在建和规划项目以及各国核能发展目标，2050年全球核电装机容量可能达到1446~GWe\cite{worldnuclearassociationWorldNuclearEnergy2026}。核能规模的持续扩大意味着核燃料需求同步增长，也对燃料利用效率、服役可靠性和安全裕度提出了更高要求。按照该报告给出预测性的估计，在反应堆技术构成基本不变的条件下，当全球核电规模接近1200~GWe时，年铀需求可能由目前约$7\times10^4$~tU增加至约$2.5\times10^5$~tU\cite{worldnuclearassociationWorldNuclearEnergy2026}。
 
-同时，务必意识到 \LaTeX 的工作及使用方式与 Microsoft Word 有极大的不同，不要问「怎么在 \LaTeX 中实现 Word 的 xx 功能」。
+氧化物燃料具有熔点高、化学稳定性和辐照稳定性较好、工程应用经验丰富等特点，是目前核动力反应堆最重要的燃料形式之一。UO$_2$长期作为轻水堆的主要燃料，而由UO$_2$和PuO$_2$组成的混合氧化物（mixed oxide，MOX）燃料能够实现钚资源回收利用，并与快中子反应堆和闭式燃料循环的发展需求相适应\cite{parrishReviewMicrostructuralFeatures2018}。与常规轻水堆UO$_2$燃料相比，快堆MOX燃料通常处于更高功率密度和更强径向温度梯度环境，燃料内部会发生气孔迁移和重构、中心孔形成、锕系元素再分布以及氧金属比（O/M）变化等现象。这些微观和组分演化会进一步改变热导率、熔点、裂变气体行为和燃料变形，使燃料性能呈现显著的多物理场耦合特征\cite{parrishReviewMicrostructuralFeatures2018,boberPlutoniumRedistributionFast1973}。
 
-\xsection{符号说明}{Examples}
+燃料性能分析程序是连接燃料材料模型、堆内辐照实验与反应堆工程安全分析的重要工具。其基本任务是在给定燃料棒几何、材料参数、功率历史和冷却剂边界条件的基础上，综合求解燃料和包壳传热、力学变形、裂变气体释放、棒内压力、间隙演化以及燃料--包壳相互作用等行为，预测中心温度、包壳应力应变、裂变气体释放率等关键安全参数\cite{vanuffelenReviewFuelPerformance2019}。由于堆内实验周期长、成本高且难以覆盖全部运行历史和设计参数组合，经过验证和确认的燃料性能分析程序已成为燃料设计、运行评价和安全分析不可替代的计算手段。
 
-为了更加清楚的说明本模板的用法，特意使用了如下几种标记方式来标记「\LaTeX 源码」及「说明」：
+经过长期发展，国内外燃料性能分析已形成多层次的程序与数值方法体系。其中，FAST、TRANSURANUS、FEMAXI和FROBA等代表性工程程序主要是一维或1.5维计算程序，具有计算效率高、模型体系成熟和验证数据丰富等特点\cite{porterFAST10Computer2020,lassmannTRANSURANUSFuelRod1992,udagawaModelUpdatesFEMAXI2019,yuDevelopmentFuelROd2012,liaoModificationUpdateFROBA2019}；FUPAC等国内自主程序也已形成较完整的压水堆燃料热工、力学及辐照行为分析能力，并持续开展国产燃料和包壳材料模型扩展\cite{xingFuelRodAnalysis2021}；SCANAIR和FTPAC等程序主要面向事故瞬态工况，强化了快速功率变化条件下热工、力学及相关物理过程的耦合描述\cite{moalSCANAIRTransientFuel2014,hanValidationApplicationFTPAC2014}；ALCYONE和BISON则依托多维有限元方法，可开展二维及三维燃料性能分析，提高了对复杂几何、局部接触及多物理场空间非均匀性的描述能力\cite{introiniALCYONEFuelPerformance2024,williamsonBISONFlexibleCode2021}。
 
-\clist{行内的灰色字块}表示简短的代码（\LaTeX 或 shell）；
+总体而言，现有燃料性能分析程序已形成较为完善的热工、力学和辐照行为分析能力，但多数传统工程程序仍以一维或1.5维模型为主，对燃料内部局部空间非均匀性及复杂多物理场耦合过程的描述能力有限；已有多维有限元程序虽然能够提供更加精细的空间场分析能力，但针对快堆MOX燃料特有的微观重构、组分迁移及其与裂变气体、间隙传热和非线性力学之间的耦合仍有进一步发展的空间，同时高保真多维计算带来的较大计算开销也限制了其在大规模分析和快速预测中的应用。因此，建立兼顾多维有限元分析能力、微观演化机理、多物理强耦合和计算效率的快堆MOX燃料性能分析方法，对于提高先进氧化物燃料服役行为预测能力、支撑燃料设计优化和安全评价具有重要意义。
 
-\clist[columbiablue]{行内的蓝色字块}表示宏包的名称。
+\xsection{国内外研究现状}{State of the Art at Home and Abroad}
 
-\begin{tcolorbox}
-  灰色框用来放置有一定长度的 \LaTeX 源码（及执行结果）
-\end{tcolorbox}
+\xsubsection{燃料性能分析程序的发展}{Development of Fuel Performance Analysis Codes}
 
-\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
-  红色框用来放置学校的学位论文模板的\textbf{格式}要求
-\end{tcolorbox}
+燃料性能分析程序的发展经历了由经验关联式和工程性的模型向机理化、多尺度和多物理场耦合方法演化的过程。早期工程程序主要基于有限差分方法围绕单根燃料棒稳态或瞬态行为建立热工、力学、裂变气体和包壳腐蚀等模型，在较低计算成本下完成燃料设计与安全限值评价。Van~Uffelen等\cite{vanuffelenReviewFuelPerformance2019}对国际主流燃料性能程序进行了系统综述，指出燃料性能分析程序建模的发展重点已经从单一物理过程的经验拟合，逐步转向先进燃料模型、多物理程序耦合、微观机理引入以及不确定性与敏感性分析。
 
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
-  蓝色框用来放置学校的学位论文模板的\textbf{内容}要求
-\end{tcolorbox}
+美国核管会长期采用FRAPCON和FRAPTRAN作为燃料性能独立审评的重要计算工具，其中FRAPCON主要用于燃料棒长期稳态和缓慢瞬态性能分析，FRAPTRAN主要用于反应性引入事故、失水事故等快速瞬态条件下的燃料行为分析。二者均继承了传统燃料性能程序轴向分段和径向求解的工程化建模思想，可计算燃料温度、间隙变化、燃料和包壳变形、裂变气体释放、棒内压力以及包壳氧化等关键参数。随后，美国核管会和太平洋西北国家实验室将FRAPCON与FRAPTRAN的主要功能统一整合至Fuel Analysis under Steady-state and Transients（FAST）程序，使同一计算框架能够连续处理长期辐照、预期运行事件和设计基准事故等不同时间尺度下的燃料行为\cite{porterFAST10Computer2020}。FAST延续了传统工程燃料性能程序计算效率较高、实验验证数据库较丰富的特点，并逐步增加事故容错燃料以及钠冷快堆金属燃料等先进燃料模型，但其总体定位仍以单根燃料棒工程性能分析为主。
 
+欧洲联合研究中心开发的TRANSURANUS是国际上应用范围较广的燃料性能分析程序之一。该程序最初面向快中子增殖堆燃料开发，随后逐步扩展至压水堆、沸水堆和VVER等轻水堆燃料，并能够处理正常运行、功率瞬态、事故以及辐照后贮存等不同阶段的燃料行为\cite{lassmannTRANSURANUSFuelRod1992}。TRANSURANUS采用典型的1.5维燃料棒分析思想，将整根燃料棒沿轴向划分为多个计算段，并在各截面内求解燃料和包壳的热学、力学及物质输运行为。经过长期发展，其模型已覆盖热传导、燃料致密化与肿胀、燃料和包壳蠕变、裂变气体释放、芯块--包壳相互作用以及同位素演化等过程。由于TRANSURANUS早期即具有快堆燃料分析基础，其后续版本进一步发展了适用于MOX燃料的Pu迁移、O/M再分布、燃耗演化和He释放等模型，并用于快堆MOX燃料性能分析\cite{dimarcelloExtensionTRANSURANUSPlutonium2012,dimarcelloModellingActinideRedistribution2014}。因此，TRANSURANUS也是目前将传统棒级燃料性能分析与MOX燃料组分迁移模型相结合的代表性程序之一。
 
-\clearpage
+日本原子能研究开发机构开发的FEMAXI系列程序是日本具有代表性的轻水堆燃料性能分析程序。早期FEMAXI-III已经将整根燃料棒的径向热学计算与局部轴对称有限元力学计算相结合，用于描述功率变化条件下的芯块--包壳机械相互作用；此后FEMAXI-IV及后续版本进一步增加瞬态传热、裂变气体和高燃耗燃料模型。最新一代FEMAXI-8总体采用1.5维燃料棒建模方式，将燃料棒沿轴向划分为多个计算段，燃料和包壳在各截面内进一步进行环形离散；热学部分主要求解径向传热，力学部分则采用有限元方法计算燃料和包壳应力应变\cite{udagawaModelUpdatesFEMAXI2019}。FEMAXI-8针对高燃耗条件下的芯块重定位、裂变气体释放、气体肿胀以及燃料开裂等模型进行了持续改进，并采用大量UO$_2$和MOX燃料辐照试验开展系统验证。该程序体现了传统1.5维棒级分析与局部有限元力学求解相结合的发展思路。
 
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=绪论部分的要求]
-  绪论部分主要论述论文的选题意义及应用背景、国内外研究现状分析及论文的主要研究内容等。
-\end{tcolorbox}
+法国辐射防护与核安全研究机构开发的SCANAIR主要面向反应性引入事故（re\-ac\-tiv\-i\-ty-initiated accident，RIA）条件下的燃料棒瞬态行为分析。与以整个服役周期为对象的通用燃料性能程序不同，SCANAIR重点描述快速功率脉冲条件下燃料温升、芯块热膨胀、芯块--包壳机械相互作用、包壳塑性变形、裂变气体行为以及高温传热等过程。程序采用1.5维燃料棒模型，并通过热学、热工水力、力学和气体行为模块之间的耦合计算燃料棒在快速瞬态过程中的响应\cite{moalSCANAIRTransientFuel2014}。SCANAIR长期采用CABRI和NSRR等反应堆中的RIA试验进行验证，并被用于评价高燃耗燃料在PCMI和高温阶段的失效风险。该程序表明，随着燃料性能分析应用范围由正常运行拓展至事故工况，针对特定瞬态过程建立更精细的强耦合模型已成为燃料性能程序发展的重要方向。
 
-\xsection{基本功能}{Basic Functions}
+法国原子能和替代能源委员会（CEA）、法国电力集团（EDF）和法马通公司（Framatome）联合开发的ALCYONE，则代表了燃料性能分析由传统1.5维方法向多维有限元方法发展的另一条技术路线。ALCYONE建立在PLEIADES多物理场燃料计算平台之上，主要面向压水堆燃料棒正常运行、异常运行和事故条件下的性能分析\cite{introiniALCYONEFuelPerformance2024}。其计算框架同时提供1.5维、二维和三维求解模式：整棒工程分析可采用轴向分层的1.5维模型，而在研究芯块裂纹附近的包壳应力集中、芯块碎块与包壳接触以及其他局部效应时，可采用二维或三维有限元模型。不同维度模型共享基本材料属性和物理模型，从而能够根据研究对象在计算效率与局部空间分辨能力之间进行选择。ALCYONE的这种多层次建模方式体现了现代燃料性能程序由整棒平均行为分析向局部高保真行为分析发展的趋势。
 
-\xsubsection{文档层级}{Level of this document}
+美国爱达荷国家实验室开发的BISON进一步将多维有限元和多物理场强耦合作为燃料性能分析的核心计算方式。BISON建立在MOOSE多物理场有限元框架之上，可采用一维、1.5维、二维轴对称、二维平面以及完整三维几何模型，并在统一框架下求解热传导、力学平衡和组分扩散等控制方程\cite{williamsonBISONFlexibleCode2021}。程序包含燃料热物性、致密化、固体和气体裂变产物肿胀、热蠕变和辐照蠕变、裂变气体释放、包壳塑性及蠕变、间隙传热、机械接触和气腔压力等模型。由于不同物理场变量均定义于有限元网格上，BISON能够直接获得温度、位移、应力应变和组分等变量的空间分布，并能够利用MOOSE框架扩展新的材料模型和耦合方程。其应用对象已经由传统轻水堆UO$_2$燃料扩展至事故容错燃料、TRISO燃料、金属燃料及其他先进燃料体系。相对于传统1.5维工程程序，BISON具有更强的复杂几何和局部多场效应描述能力，但相应计算规模和非线性求解难度也明显增加。
 
-按照学校的要求，正文最多应具有七个层级，分别使用以下命令，为了方便中英目录的生成，前三层命令是由模板自定义的，同时第六层目录的命令是由模板新增的。注意，不论正文主体是中或英，目录顺序均为先中后英，这些命令有两个参数的也是先中后英。
+我国燃料性能分析程序的自主研发起步相对较晚，但近年来已逐步形成覆盖正常运行、瞬态事故及先进燃料分析的程序体系。Van~Uffelen等\cite{vanuffelenReviewFuelPerformance2019}的国际燃料性能程序综述中，将西安交通大学FROBA、中国原子能科学研究院FTPAC、中国核动力研究设计院FUPAC以及中国广核集团JASMINE列为中国具有代表性的燃料性能分析程序。上述程序最初主要围绕压水堆UO$_2$/锆合金燃料体系建立，随着国内核燃料研究的发展，其材料模型、事故分析能力和先进燃料适用范围均在持续扩展。
 
-\begin{table}[H]
-  \begin{tabularx}{\textwidth}{YY}
-  \toprule
-      层级 & 命令 \\
-  \midrule
-      0  & \lstinline|\\xchapter{Chs}{Eng}| \\
-      1  & \lstinline|\\xsection{Chs}{Eng}| \\
-      2  & \lstinline|\\xsubsection{Chs}{Eng}| \\
-      3  & \lstinline|\\subsubsection{Chs/Eng}| \\
-      4  & \lstinline|\\paragraph{Chs/Eng}| \\
-      5  & \lstinline|\\subparagraph{Chs/Eng}| \\
-      6  & \lstinline|\\subsubparagraph{Chs/Eng}| \\
-  \bottomrule
-  \end{tabularx}
+西安交通大学开发的FROBA（Fuel ROd Behavior Analysis）最初面向压水堆燃料棒长期稳态热--力行为分析，采用轴向分段和径向离散相结合的1.5维计算思想，对燃料温度、燃耗、芯块变形、间隙变化、裂变气体释放以及燃料和包壳应力应变进行耦合计算\cite{yuDevelopmentFuelROd2012}。随后FROBA-ROD进一步更新了燃料热物性、裂变气体释放、燃耗分布和瞬态分析等模型，提高了正常运行及事故条件下的燃料性能预测能力\cite{liaoModificationUpdateFROBA2019}。在此基础上，FROBA又逐步向不同反应堆和燃料形式拓展。近期研究针对铅铋冷却快堆MOX--T91燃料体系增加了燃料组分迁移、芯块重构以及包壳腐蚀等快堆特有模型，使FROBA由传统轻水堆燃料棒性能分析进一步延伸至液态金属冷却快堆燃料分析\cite{dengUpgradeFROBACode2026}。
+
+中国原子能科学研究院开发的FTPAC主要面向事故工况下单根燃料元件的瞬态性能分析。该程序围绕快速瞬态过程中最主要的热工和力学响应建立温度、力学变形、棒内气体压力以及包壳高温氧化等模型，用于计算功率快速变化条件下燃料和包壳的温度、应力应变及相关安全参数\cite{hanValidationApplicationFTPAC2014}。FTPAC采用FRAP-T6标准算例进行了程序间比对，并进一步对NSRR和CABRI反应性引入事故试验燃料棒进行了计算验证。与主要关注长期正常运行的燃料性能程序相比，FTPAC更加侧重事故条件下短时间尺度的热--力响应，是国内面向燃料元件瞬态安全分析开展自主程序开发的代表性工作。
+
+中国核动力研究设计院开发的FUPAC主要用于压水堆燃料棒长期服役性能分析，并围绕国产燃料组件及包壳材料持续开展模型自主化工作。FUPAC能够计算燃料和包壳温度、燃料棒变形、芯块--包壳间隙、棒内压力及辐照相关行为。在FUPAC V1.1基础上，针对CF3燃料组件采用的N36锆合金包壳，FUPAC V2.0进一步建立并耦合了N36材料物性、腐蚀以及辐照生长模型，并利用堆外材料试验和燃料棒池边检查数据进行了初步验证\cite{xingFuelRodAnalysis2021}。FUPAC的发展体现了国内燃料性能程序从基本功能自主化向国产燃料和包壳材料专用模型逐步完善的发展过程。
+
+中国广核集团开发的JASMINE是另一套具有代表性的自主燃料棒性能分析程序。JASMINE采用准二维分析框架，将整根燃料棒划分为多个轴向计算区，并在局部截面中描述燃料、间隙和包壳的热学与力学行为，同时设置相应的棒级整体状态变量\cite{weiModelingFuelRodJASMINE2017}。程序包含燃料热传导、热膨胀、致密化和肿胀、芯块--包壳热机械相互作用、裂变气体释放以及棒内压力等模型，并通过图形化前后处理平台实现输入、计算和结果分析。随着程序发展，JASMINE进一步开展了高燃耗燃料及掺杂氧化物燃料模型扩展，例如针对UO$_2$--BeO燃料建立相应物性和燃料性能模型并开展评价\cite{wangAnalysisAssessmentBeO2024}。其准二维计算方式在传统1.5维工程程序与完整二维有限元分析之间形成了一种兼顾计算效率和局部行为描述能力的实现方式。
+
+综上，现有燃料性能分析程序在长期发展过程中形成了不同的数值技术路线。FAST、TRANSURANUS、FEMAXI以及FROBA等程序以一维或1.5维工程化模型为主，具有计算效率高、模型体系成熟和验证数据丰富等特点；SCANAIR、FTPAC等程序针对快速瞬态或事故工况进一步强化了特定物理过程的耦合描述；JASMINE采用准二维方法提高了局部燃料行为的分析能力；ALCYONE和BISON则进一步发展了一维、二维及三维有限元多物理场计算能力，使燃料性能分析能够由整棒平均响应向局部空间场和复杂几何条件下的高保真计算拓展。上述发展表明，燃料性能分析正由传统工程化低维模型逐步向多维、机理化及多尺度耦合方向发展，也为进一步研究快堆MOX燃料中微观重构、组分迁移和强非线性多物理场耦合行为提出了计算需求。
+
+\xsubsection{快堆MOX燃料微观重构与组分迁移研究}{Microstructural Restructuring and Constituent Redistribution in Fast-Reactor MOX Fuel}
+
+快堆MOX燃料在高温和强径向温度梯度下会经历显著的微观结构变化。初始孔隙在温度梯度作用下发生迁移和重新分布，高温区域晶粒发生长大并可能形成柱状晶和中心孔；与此同时，燃料中Pu、U、Am等锕系元素以及氧发生径向迁移。微观结构、组分分布和氧化学计量状态的共同变化将改变局部热物性与裂变功率分布，因此是快堆MOX燃料区别于常规轻水堆燃料的重要行为之一\cite{parrishReviewMicrostructuralFeatures2018}。
+
+在锕系元素迁移方面，Bober等\cite{boberPlutoniumRedistributionFast1973}基于RAPSODIE快堆辐照燃料研究了温度梯度下U、Pu再分布，指出热扩散以及蒸发--凝结过程均可能参与Pu迁移，并给出了相应的扩散描述。后续研究逐步将Pu迁移由单独的热扩散问题拓展为与燃耗、局部功率和氧化学计量相关的耦合问题。Di~Marcello等\cite{dimarcelloExtensionTRANSURANUSPlutonium2012}扩展了TRANSURANUS中的PUREDI模型，在Pu迁移计算中引入局部功率密度、燃耗及O/M的影响，并结合SUPERFACT辐照后检查数据进行了评估；进一步的研究将固态热扩散与气相输运同时用于Pu和Am再分布预测，并采用JOYO实验数据进行验证\cite{dimarcelloModellingActinideRedistribution2014}。国内近期也针对液态金属反应堆氧化物燃料开展了Pu径向迁移及其对功率分布和热工裕度影响的研究，说明高功率和高燃耗条件下组分迁移对燃料温度评价具有不可忽略的作用\cite{xuStudyAnalysisPlutonium2025}。
+
+氧迁移与锕系元素迁移紧密相关。对于非化学计量U--Pu氧化物，温度梯度驱动的氧再分布将改变局部O/M，进而影响氧势、缺陷结构、锕系元素价态以及迁移驱动力。Lassmann提出的OXIRED模型能够计算非化学计量U--Pu氧化物中O/M随温度、燃耗和时间的径向演化，并被集成至TRANSURANUS中\cite{lassmannOXIREDModelRedistribution1987}。在此基础上，后续TRANSURANUS模型进一步考虑了氧迁移与Pu/Am迁移之间的反馈\cite{dimarcelloExtensionTRANSURANUSPlutonium2012,dimarcelloModellingActinideRedistribution2014}。
+
+在燃料重构方面，中心孔和孔隙重分布既改变燃料几何形态，也直接改变径向传热路径。近年来，高保真燃料性能程序逐步增加了MOX燃料中心孔形成和快堆评估能力\cite{williamsonBISONFlexibleCode2021}；国内最新FROBA快堆扩展也已考虑芯块重构和组分迁移\cite{dengUpgradeFROBACode2026}。这些工作表明，快堆燃料性能研究正由独立现象模型向更完整的机理描述发展。但现有模型中，孔隙迁移与中心孔形成、Pu/Am迁移、O/M演化以及热物性变化仍常以不同模块或顺序调用方式处理。如何在同一场变量体系下建立这些过程的双向反馈，并研究其对燃料宏观温度和服役性能的累积影响，仍是快堆MOX精细化燃料性能分析的重要问题。
+
+\xsubsection{裂变气体、间隙传热与非线性力学耦合研究}{Coupled Fission Gas, Gap Heat Transfer and Nonlinear Mechanics}
+
+裂变气体行为是燃料性能分析中的另一关键问题。Xe、Kr等裂变气体在燃料晶粒内产生后，可经历扩散、俘获、再溶解、气泡成核与长大，并在晶界累积、连通后释放至燃料--包壳间隙和气腔。Forsberg--Massih模型通过对球形晶粒内扩散过程进行解析和数值简化，为工程燃料性能程序中处理时变扩散系数和源项提供了高效方法\cite{forsbergDiffusionTheoryFission1985}。随着计算能力提高，裂变气体模型逐步从经验释放关系向细观机理模型发展。Pizzocri等开发的SCIANTIX以晶粒尺度速率理论为基础，描述晶内和晶界气体及气泡演化\cite{pizzocriSCIANTIXNewOpen2020}；后续版本进一步扩充了模型、数值方法和独立效应验证数据库\cite{zulloSCIANTIXCodeFission2023}。SCIANTIX还已与TRANSURANUS和GERMINAL等燃料性能程序耦合，并用于钠冷快堆MOX燃料棒的整体性能分析\cite{magniApplicationSCIANTIXFission2022}。国内FROBA近期也引入了考虑原子扩散、晶内气泡再溶解、晶界扫掠和晶界气泡演化的机理裂变气体模型\cite{kouDevelopmentApplicationMechanism2026}。
+
+裂变气体释放并不是一个独立输出量。气体释放至气腔后会改变He/Xe/Kr等气体组成和燃料棒内压，从而影响间隙气体热导率；燃料热膨胀、密实化、肿胀、蠕变以及包壳塑性和蠕变又持续改变间隙宽度和接触压力，进一步反馈燃料温度。温度变化反过来影响裂变气体扩散与材料本构，形成典型的热--气--力闭环。现有成熟程序通常通过时间步内迭代或模块顺序更新处理这些反馈，而BISON等有限元程序则提供了全耦合热--力求解框架\cite{williamsonBISONFlexibleCode2021}。对于快堆MOX燃料，当细观裂变气体模型、非线性接触、塑性、蠕变以及温度相关材料属性同时参与计算时，局部材料积分与全局非线性平衡相互影响，易产生较强数值非线性。因此，如何在保证机理模型描述能力的同时构造稳定的局部本构积分和全局耦合策略，是高保真燃料性能程序实现中的关键数值问题。
+
+\xsubsection{燃料性能快速预测与代理模型研究}{Rapid Prediction and Surrogate Modeling for Fuel Performance}
+
+高保真燃料性能模型能够提供更丰富的空间信息，但复杂多场模型需要在每个时间步重复求解非线性方程和大量内部状态变量，计算成本明显高于传统工程程序。当燃料性能分析进一步用于全堆燃料棒评价、参数优化、不确定性传播和在线状态评估时，直接重复运行高保真模型的计算代价成为重要限制。为此，近年来机器学习、降阶模型和神经算子开始被用于构建燃料性能代理模型。
+
+Che等\cite{cheMachineLearningAssistedSurrogate2022}利用机器学习方法建立燃料性能关键量代理模型，通过对功率历史进行特征化，实现了面向全堆燃料性能评价的快速预测，并在其研究工况中获得了相对于FRAPCON显著的计算加速。该类方法主要针对温度、应力或其他安全相关特征量，适合大规模燃料棒筛选和堆芯优化。Zhou等\cite{zhouDeepHeterogeneousJoint2025}进一步以TRANSURANUS生成的功率历史和燃料性能数据为基础，构建结合时间卷积与Fourier算子的时序代理模型，使大量燃料棒的时间序列预测达到毫秒级。与此同时，代理模型研究已开始从标量或少量特征量向空间场预测发展。Zhang等\cite{zhangLearningSimulateQuasiSteady2025}将Fourier神经算子与LSTM结合，直接学习功率历史到燃料热工和力学时空场之间的映射，在保持较高预测精度的同时显著降低了相对于1.5维燃料性能程序的计算时间。
+
+这些研究说明，数据驱动方法已经成为提高燃料性能计算效率的重要方向，也意味着完整场快速预测并非单纯依靠传统标量代理即可解决。对于本文所关注的快堆MOX问题，高保真有限元模型包含微观重构、组分迁移、裂变气体和非线性力学等多种历史相关状态，直接在高维网格场上训练代理模型需要较大的数据量和网络规模。因此，将物理场首先投影至低维正交空间，再学习随运行历史演化的低维状态，是兼顾高保真场信息和计算效率的一条可行途径。围绕快堆MOX强耦合有限元模型，如何构建统一降阶基、保持温度场和位移场空间结构，并验证代理模型对未见变功率历史的泛化能力，仍值得进一步研究。
+
+\xsubsection{研究现状总结与本文切入点}{Summary of Research Status and Scope of This Work}
+
+综合上述研究可以看出，国内外燃料性能分析已形成从工程程序、有限元高保真模型到细观机理模块和数据驱动代理模型的多层次技术体系。现有研究为本文提供了充分的模型与数值基础，但针对快堆MOX燃料的微观演化、跨尺度强耦合以及高保真计算效率问题，仍存在进一步整合和发展的空间。表~\ref{tab:research_status_summary}对相关研究进展及本文关注的问题进行了概括。
+
+\begin{table}[!htb]
+	\centering
+	\caption{国内外相关研究进展概述}
+	\label{tab:research_status_summary}
+	\small
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabularx}{\textwidth}{
+			>{\raggedright\arraybackslash}p{2.4cm}
+			>{\raggedright\arraybackslash}p{4.0cm}
+			>{\raggedright\arraybackslash}X
+		}
+		\toprule
+		研究方向 &
+		代表性研究或程序 &
+		主要研究进展 \\
+		\midrule
+		
+		工程燃料性能分析 &
+		FAST、TRANSURANUS、FEMAXI、SCANAIR、FROBA、FTPAC、FUPAC、JASMINE &
+		已形成较成熟的燃料温度、变形、裂变气体释放、棒内压力及燃料--包壳相互作用分析体系，并逐步由正常运行拓展至事故瞬态、MOX燃料及快堆应用 \\
+		
+		高保真多物理场计算 &
+		ALCYONE、BISON及基于MOOSE的有限元方法 &
+		支持二维、三维复杂几何以及热传导、力学、接触和物质输运等多物理场求解，具备较强的局部场解析能力和模型扩展能力 \\
+		
+		MOX微观重构与多组分迁移 &
+		Bober模型、OXIRED、PUREDI、TRANSURANUS及FROBA快堆扩展模型 &
+		已能够描述气孔迁移与中心孔形成、Pu/Am热扩散与气相迁移以及O/M径向再分布，并逐步考虑温度、燃耗和燃料组成等因素的影响 \\
+		
+		裂变气体、间隙传热与非线性力学 &
+		Forsberg--Massih、SCIANTIX、BISON及SCIANTIX与燃料性能程序的耦合应用 &
+		裂变气体模型已由工程化扩散模型发展至晶内--晶界气泡演化的细观机理模型，并可与棒内压力、间隙传热及燃料变形等燃料性能模型进行耦合 \\
+		
+		燃料性能快速预测 &
+		机器学习代理模型、时序网络、Fourier神经算子及LSTM等 &
+		数据驱动方法已能够快速预测燃料温度、应力等关键响应，并逐步由标量和时间序列预测拓展至热工和力学时空场的快速预测 \\
+		
+		\bottomrule
+	\end{tabularx}
 \end{table}
 
-示例如下：
+据此，本文的研究切入点集中在三个相互衔接的层面：首先，从燃料内部状态演化出发，将孔隙迁移和微观重构与Pu/Am、O/M再分布联系起来，研究微观结构和组分变化对局部物性及温度场的反馈；其次，从程序数值实现出发，将非线性力学本构、裂变气体状态更新与间隙传热组织到统一多物理场求解流程中，提高强耦合计算的稳定性；最后，从计算效率出发，对高保真有限元场进行降阶表示并建立历史相关代理模型，为变功率条件下燃料温度场和位移场的快速预测提供方法基础。
 
-\subsubsection{第四级标题$1$}
+\xsection{本文研究内容}{Research Contents of This Dissertation}
 
-\paragraph{第五级标题$1$}
+本文以快堆MOX燃料元件为主要研究对象，围绕“基础物性与行为模型--微观重构及组分迁移--热/气/力强耦合数值实现--棒级验证与机理分析--完整场快速预测”的技术路线开展研究。整体工作基于统一多物理场有限元MOOSE框架，在调研成熟燃料性能模型的基础上，重点提高对快堆MOX燃料特有微观演化行为、强非线性耦合过程以及高保真计算效率的描述能力。全文共七章，各章主要内容如下。
 
-\paragraph{第五级标题$2$}
+第一章为绪论。首先从核能发展、氧化物燃料及燃料性能分析需求出发说明论文研究背景和意义；随后综述国内外燃料性能分析程序、快堆MOX燃料微观重构与组分迁移、裂变气体及热--力耦合、燃料性能代理模型等研究进展，并据此明确本文关注的关键问题和研究内容。
 
-\paragraph{第五级标题$3$}
+第二章建立快堆燃料元件材料基础物性与行为模型。系统整理并实现MOX燃料的热导率、热容、热膨胀、密度、弹性、蠕变、密实化、肿胀、压力烧结和蒸气压等模型，同时建立燃料--包壳间隙气体传热、接触传热和辐射传热模型，并整理D9、HT9、SS316等典型快堆包壳材料的热物性与堆内行为模型。该章为后续微观演化和棒级多物理场计算提供材料模型基础。
 
-\subparagraph{第六级标题$1$}
+第三章研究快堆MOX燃料多组分迁移与微观重构的强耦合演化。针对高温度梯度下气孔向中心迁移及中心孔形成过程，建立孔隙迁移和燃料重构模型；在此基础上建立考虑固相扩散、热扩散及孔隙气相迁移的Pu再分布模型，并将相同思路扩展至Am迁移；进一步建立O/M径向迁移模型，分析氧化学计量状态对物性和组分迁移的影响。通过将孔隙演化、Pu/Am再分布、O/M变化与温度场和材料物性相互反馈，形成对“微观结构--组分分布--热化学状态”协同演化的统一描述。
 
-\subparagraph{第六级标题$2$}
+第四章研究燃料力学非线性、裂变气体与间隙导热模型的耦合实现及验证。建立热弹塑性控制方程的有限元离散形式，采用径向返回算法对$J_2$塑性及相关非弹性本构进行隐式积分；分别实现Forsberg--Massih简化裂变气体模型和SCIANTIX细观裂变气体模块接口，并将裂变气体释放、棒内压力、气体组成和间隙导热纳入统一计算流程。通过材料单元、裂变气体和间隙传热算例验证局部本构更新与全局多物理耦合求解的正确性和稳定性。
 
-\subparagraph{第六级标题$3$}
+第五章开展燃料中心温度与裂变气体释放模型的棒级验证及适用性分析。基于公开MOX燃料辐照实验和补充实验数据，按照燃耗、功率历史和验证对象建立棒级验证算例，对中心温度、裂变气体释放及相关热工响应进行比较；分别评价Forsberg--Massih模型与SCIANTIX模型的预测特征、适用范围和计算代价，并结合参数敏感性分析讨论燃料热导率、间隙传热和燃料变形等因素对预测偏差的影响。在此基础上分析温度--裂变气体释放--间隙导热之间的反馈关系，为前述模型的工程应用提供验证依据。
 
-第六级下的一些文字
+第六章研究基于POD--LSTM的燃料性能完整场快速预测方法。首先利用高保真多物理场模型生成不同功率历史下的温度场、径向位移场和轴向位移场数据，开展网格敏感性分析和数据预处理；随后采用本征正交分解（proper orthogonal decomposition，POD）提取主要空间模态，将高维有限元场压缩为低维POD系数；在此基础上构建面向变功率历史的LSTM时序预测模型，根据时间、瞬时功率、功率变化率和累积功率特征预测POD系数演化，并恢复完整二维场。通过独立盲测工况评价降阶误差、代理模型误差和在线计算效率，为燃料性能在线快速评估和数字孪生应用提供方法基础。
 
-\subsubparagraph{第七级标题$1$}
+第七章总结全文主要研究工作和结论，归纳本文在快堆MOX燃料微观重构与组分迁移耦合、强非线性热--气--力数值求解以及高保真完整场快速预测方面取得的主要进展，并讨论当前模型的适用范围及后续可进一步开展的研究工作。
 
-第七级下的一些文字
+上述章节构成了“问题--基础模型--验证评价--快速预测--总结”的总分总的结构。整个论文的技术路线如下图所示：
 
-\xsubsection{加粗，斜体与其他字体设置}{Bold, Emph and Other Font Settings}
-
-在中文学位论文的写作中，不推荐使用加粗，斜体等方式突出重点。
-
-使用\clist{\textbf{text}}进行可以对字加粗；同时，请注意到在英文中，正确的强调方式不是使用加粗，而是使用斜体，即使用\clist{\emph{text}}进行强调。如：
-\begin{texcode}[]{}
-  为了突出\textbf{重点}，英文可以这样：This is the \emph{key question}.
-\end{texcode}
-
-使用\clist{\textit{text}}、\clist{\underline{text}}等实现斜体，下划线等格式。
-
-
-
-
-
-\xsubsection{脚注及其使用}{Footnotes}
-
-\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
-  脚注可用小号字（一般小五号宋体）列在相应正文同一页最下部并与正文部分用细线（版面宽度的1/4长）隔开。
-\end{tcolorbox}
-
-脚注\footnote{脚注序号“\ding{172}，……，\ding{180}”的字体是“正文”，不是“上标”，序号与脚注内容文字之间空$1$个半角字符，脚注的段落格式为：单倍行距，段前空$0$磅，段后空$0$磅，悬挂缩进$1.5$字符；中文用宋体，字号为小五号，英文和数字用Times New Roman字体，字号为$9$磅；中英文混排时，所有标点符号（例如逗号“，”、括号“（）”等）一律使用中文输入状态下的标点符号，但小数点采用英文状态下的样式“.”。}\footnote{脚注序号“\ding{172}，……，\ding{180}”的字体是“正文”，不是“上标”，序号与脚注内容文字之间空$1$个半角字符，脚注的段落格式为：单倍行距，段前空$0$磅，段后空$0$磅，悬挂缩进$1.5$字符；中文用宋体，字号为小五号，英文和数字用Times New Roman字体，字号为$9$磅；中英文混排时，所有标点符号（例如逗号“，”、括号“（）”等）一律使用中文输入状态下的标点符号，但小数点采用英文状态下的样式“.”。}\footnote{脚注序号“\ding{172}，……，\ding{180}”的字体是“正文”，不是“上标”，序号与脚注内容文字之间空$1$个半角字符，脚注的段落格式为：单倍行距，段前空$0$磅，段后空$0$磅，悬挂缩进$1.5$字符；中文用宋体，字号为小五号，英文和数字用Times New Roman字体，字号为$9$磅；中英文混排时，所有标点符号（例如逗号“，”、括号“（）”等）一律使用中文输入状态下的标点符号，但小数点采用英文状态下的样式“.”。}是对文中有关内容的解释、说明或补充，使用上角标（序号\ding{172}、\ding{173}、$\cdots$）进行标注。
-
-脚注可以通过 \clist{\footnote{}}自动编号生成，也可使用\clist{\footnotetex{text}}手动添加脚注。
-
-摘要中关于项目资助的标识，是使用脚注生成的：
-
-\begin{tcolorbox}
-  \lstinline|\footnotetext{*本研究得到某某基金（编号：）的资助}|
-\end{tcolorbox}
-
-
-\clearpage
-
-\xsection{数字、公式和定理环境}{Equation and Theorem}
-
-\xsubsection{数字与单位}{Numbers and Units}
-
-模板引入了\clist[columbiablue]{siunitx}宏包实现数字与单位的正确排版，具体使用细节请自行查看该宏包，即 \clist{texdoc siunitx}。
-
-为了输入不同格式及角度的数字，可以使用\clist{\num{3.45d-4}}得到\num{3.45d-4}，使用\clist{\num{-e10}}得到\num{-e10}，使用\clist{\ang{1;2;3}}得到\ang{1;2;3}，避免了手动调节格式的问题。
-
-该宏包预先定义了部分单位，可以直接调用，同时生成较为复杂的单位。如：
-
-使用\clist{\SI{10}{\hertz}}得到 \SI{10}{\hertz}。
-
-\xsubsection{公式、矩阵与数学符号}{Equations, Matrix and Mathematical Symbols}
-
-
-\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
-  \begin{enumerate}[leftmargin=0.5cm]
-    \item 公式应另起一行，居中编排，较长的公式尽可能在等号后换行，或者在“+”、“-”等符号后换行。公式中分数线的横线，长短要分清，主要的横线应与等号取平。
-    \item 公式后应注明编号，公式号应置于小括号中，如公式（2-3）。写在右边行末，中间不加虚线；
-    \item 公式下面的“式中：”两字左起顶格编排，后接符号及其解释；解释顺序为先左后右，先上后下；解释与解释之间用“；”隔开。
-    \item 公式中各物理量及量纲均按国际标准（SI）及国家规定的法定符号和法定计量单位标注，禁止使用已废弃的符号和计量单位。
-  \end{enumerate}
-\end{tcolorbox}
-
-此部分是 \LaTeX 中比较精彩的一部分，具体的使用细节请自行查阅资料，本模板未对其进行修改。
-
-\begin{texcode}[]{}
-  公式如下：
-  \begin{equation}
-      -e^{\max}_\text{dis} \leq a_t \leq e^{\max}_\text{ch}\label{eqn:c1:mdl:constraint_discharge}
-  \end{equation}
-  式中：$e$为xxx；$a$为xxx。
-\end{texcode}
-
-所以如式\eqref{eqn:c1:mdl:constraint_discharge}所示：
-\begin{equation}
-    -e^{\max}_\text{dis} \leq a_t \leq e^{\max}_\text{ch}
-\end{equation}
-
-请注意，本模板已经定义了\clist{\diff}命令作为微分符号，请不要自己使用新的符号，使用效果如下：
-\begin{align}\label{eqn:c1:diff}
-  \biggl(\int_{-\infty}^\infty e^{-x^2}\diff x\biggr)^2 
-    &= \int_{-\infty}^\infty\int_{-\infty}^\infty e^{-(x^2+y^2)}\diff x\diff y \\
-    &= \int_0^{2\pi}\int_0^\infty e^{-r^2}r\diff r\diff\theta \\
-    &= \int_0^{2\pi}\biggl(-{e^{-r^2}\over2}\bigg\vert_{r=0}^{r=\infty}\,\biggr)\diff\theta \\
-    &= \pi
-\end{align}
-
-
-同时，定义了部分用于简化输入的命令：
-
-\begin{texcode}[sidebyside]{}
-  $\seq{x}{n}$ \\ % serise
-  $\iprod{i}{j}$ \\ % inner product
-  $\mbf{B}$ \\ % acronym of \mathbf
-  $\Re{Q},\Im{Q}$
-\end{texcode}
-
-\clearpage
-
-\xsubsection{定理相关}{Theorems}
-
-本模板通过\clist[columbiablue]{thmtools}宏包定义了以下环境，其中\textbf{证明}环境默认具有缩进，没有编号，同时使用\clist{\qedhere}结束证明，其他环境样式一致。
-
-\begin{table}[H]
-  \begin{tabularx}{\textwidth}{YYY|YYY}
-  \toprule
-    环境 & 英文名称 & 中文名称 & 环境 & 英文名称 & 中文名称 \\
-  \midrule
-    proof & Proof & 证明 & theorem & Theorem & 定理 \\
-    axiom & Axiom & 公理 & corollary & Corollary & 推论 \\
-    lemma & Lemma & 引理 & definition & Definition & 定义 \\
-    example & Example & 例子 & proposition & Proposition & 命题 \\
-    assumption & Assumption & 假设 & remark & Remark & 注 \\
-    problem & Problem & 问题 & conjecture & Conjecture & 猜想 \\
-  \bottomrule
-  \end{tabularx}
-\end{table}
-
-
-\begin{texcode}[]{}
-  \begin{theorem}[勾股定理]
-    若 $a,b$ 为直角三角形的两条直角边，$c$ 为斜边，那么 $a^2 + b^2 + c^2.$
-  \end{theorem}
-
-  \begin{proof}
-    通过\ldots
-
-    所以：
-    \begin{equation*}
-        G(x, y) = G(y, x).  \qedhere
-    \end{equation*}
-  \end{proof}
-\end{texcode}
-
-\begin{proposition}
-  所以：
-  \begin{equation*}
-      G(x, y) = G(y, x).
-  \end{equation*}
-\end{proposition}
-
-\begin{conjecture}[勾股定理]
-    若 $a,b$ 为直角三角形的两条直角边，$c$ 为斜边，那么 $a^2 + b^2 + c^2.$
-\end{conjecture}
-
-\begin{axiom}[勾股定理]
-    若 $a,b$ 为直角三角形的两条直角边，$c$ 为斜边，那么 $a^2 + b^2 + c^2.$ 若 $a,b$ 为直角三角形的两条直角边，$c$ 为斜边，那么 $a^2 + b^2 + c^2.$ 若 $a,b$ 为直角三角形的两条直角边，$c$ 为斜边，那么 $a^2 + b^2 + c^2.$
-\end{axiom}
-
-\begin{definition}[勾股定理]
-    若 $a,b$ 为直角三角形的两条直角边，$c$ 为斜边，那么 $a^2 + b^2 + c^2.$
-\end{definition}
-
-\xsection{其他环境}{Other Environments}
-
-\xsubsection{枚举环境}{Enumerates}
-
-\begin{texcode}[]{}
-  \begin{enumerate}
-    \item 123
-    \item 231421
-    \item 124124
-  \end{enumerate}
-\end{texcode}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{技术路线.png}
+	\caption{本文的技术路线}
+	\label{fig:technical_route}
+\end{figure}

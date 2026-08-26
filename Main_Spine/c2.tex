@@ -337,7 +337,7 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	\label{fig:uo2_mox_creep_comparison}
 \end{figure}
 
-\xsubsection{重定位}
+\xsubsection{重定位}{Relocation}
 
 燃料重定位是指氧化物燃料芯块在功率上升过程中发生开裂后，裂纹自由表面的形成以及碎块间的相对运动使芯块表观直径增大，并导致燃料--包壳间隙减小的现象。该过程主要由燃料内部显著的径向温度梯度及其产生的热应力驱动，并不表示燃料基体发生真实的体积膨胀。本文将燃料重定位等效为仅作用于径向的本征应变，并采用BISON中实现的修正ESCORE模型进行描述\cite{fancherESCOREEPRISteadystate1987,halesBISONTheoryManual2016}。
 
@@ -867,20 +867,22 @@ SS316采用ORNL基于动态测量拟合的弹性关系\cite{Hammond1979ornl5442}
 \begin{subequations}\label{eq:ss316_elastic_properties}
 	\begin{align}
 		E_{316}
-		&=198.0\left(1-3.93625\times10^{-4}\Theta
-		\right
+		&=198.0\Bigl(
+		1-3.93625\times10^{-4}\Theta
 		\notag\\
-		&\left.\qquad
+		&\qquad
 		-8.37648\times10^{-8}\Theta^2
-		+9.26214\times10^{-11}\Theta^3\right)
+		+9.26214\times10^{-11}\Theta^3
+		\Bigr)
 		\label{eq:ss316_youngs_modulus}\\
 		\nu_{316}
-		&=0.29015\left(1+3.55518\times10^{-4}\Theta
-		\right
+		&=0.29015\Bigl(
+		1+3.55518\times10^{-4}\Theta
 		\notag\\
-		&\left.\qquad
+		&\qquad
 		-2.20321\times10^{-7}\Theta^2
-		+1.18177\times10^{-10}\Theta^3\right)
+		+1.18177\times10^{-10}\Theta^3
+		\Bigr)
 		\label{eq:ss316_poisson_ratio}\\
 		\Theta&=T-297.15
 		\label{eq:ss316_reduced_temperature}
@@ -962,17 +964,15 @@ D9模型将热蠕变和辐照蠕变分别写为\cite{hofmanMetallicFuelsHandbook
 		+A_4\bar\sigma\exp\!\left(-\frac{A_5}{T}\right)
 		\label{eq:d9_thermal_creep_rate}\\
 		\dot{\bar\varepsilon}_{\mathrm I,\mathrm{D9}}
-		={}&\left[
+		={}&\Biggl[
 		3A_1\exp\!\left(-\frac{A_2}{T}\right)
 		\exp(-3\Phi)\bar\sigma
 		+A_3\bar\sigma
-		\right\notag\\
-		&\left.
+		\notag\\
+		&\quad
 		+2.2R_{\mathrm{cr,D9}}(T)\Omega\bar\sigma
-		\right\notag\\
-		&\left.
 		\tanh\!\left(\frac{\Phi}{\Omega}\right)
-		\right]\phi_{15}\times10^{-7}
+		\Biggr]\phi_{15}\times10^{-7}
 		\label{eq:d9_irradiation_creep_rate}
 	\end{align}
 \end{subequations}

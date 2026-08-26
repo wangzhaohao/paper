@@ -106,7 +106,7 @@ $\nu$ 为有效孔隙扩散系数（$\mathrm{m^2/s}$），用于表征通过表�
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[height=5.8cm]{Pore_Velocity_Comparison_All_Five.png}
+	\includegraphics[height=6.75cm]{Pore_Velocity_Comparison_All_Five.png}
 	\caption{不同气孔迁移速率模型随温度变化的对比曲线}
 	\label{fig:pore_velocity}
 \end{figure}
@@ -139,16 +139,16 @@ $\nu$ 为有效孔隙扩散系数（$\mathrm{m^2/s}$），用于表征通过表�
 \end{equation}
 该关系通过Brouwer图分析了点缺陷平衡，能够统一描述不同钚含量下过化学计量与欠化学计量区域的氧势行为，与实验数据吻合良好。将该关系代入 Rand--Markin 框架，即可实现气孔迁移速率与燃料化学状态的耦合计算。相关热力学关系及参数取值详见附录B。
 \begin{figure}[!htb]
-	\begin{subfigure}[b]{0.49\linewidth}
+	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
-		\includegraphics[height=5.8cm]{mox_species_vapor_pressure.png}
+		\includegraphics[width=\linewidth]{mox_species_vapor_pressure.png}
 		\subcaption{2273 K时各气相组分蒸气压随 O/M 比的变化（Pu: 30wt.\% HM, Am: 5wt.\% HM）}
 		\label{fig:species_vapor_pressure}
 	\end{subfigure}
 	\hfill % 添加间距，使两子图均匀分布
-	\begin{subfigure}[b]{0.49\linewidth}
+	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
-		\includegraphics[height=5.8cm]{mox_total_vapor_pressure.png}
+		\includegraphics[width=\linewidth]{mox_total_vapor_pressure.png}
 		\subcaption{不同 O/M 比下总蒸气压随温度的变化（Pu: 30wt.\% HM, Am: 5wt.\% HM）}
 		\label{fig:total_vapor_pressure}
 	\end{subfigure}
@@ -384,13 +384,13 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 	\label{tab:benchmark_conditions}
 	\begin{tabularx}{\textwidth}{YYY}
 		\toprule
-		参数 & Case 1 & Case 2 \\
+		参数 & Case~1 & Case~2 \\
 		\midrule
-		几何尺寸 & 半径4.1 mm，径向网格100 & 半径2.675 mm，径向网格100 \\
+		几何尺寸 & 半径4.1~mm，径向网格100 & 半径2.675~mm，径向网格100 \\
 		初始孔隙率 & 0.12 & 0.15 \\
-		初始温度 & 1400 K & 630 K \\
-		边界条件 & 外表面温度恒定为1400 K，孔隙通量为零 & 外表面温度在0--10000 s内从630 K线性升至1000 K，之后保持至15000 s，孔隙通量为零 \\
-		功率历史 & 0--80000 s线性升至38 kW/m，之后保持70000 s & 0--10000 s线性升至45 kW/m，之后保持5000 s \\
+		初始温度 & 1400~K & 630~K \\
+		边界条件 & 外表面温度恒定为1400~K，孔隙通量为零 & 外表面温度在0--10000~s内从630~K线性升至1000~K，之后保持至15000~s，孔隙通量为零 \\
+		功率历史 & 0--80000~s线性升至38~kW/m，之后保持70000~s & 0--10000~s线性升至45~kW/m，之后保持5000~s \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -470,8 +470,8 @@ Rand--Markin模型的整体计算流程与经验关系式模型类似，如图\r
 
 上述参数分别对应模型中的温度驱动项、热力学平衡项、组分耦合项、孔内传质项和初始结构项，能够覆盖气孔迁移速率模型的主要不确定性来源。为增强分析结果的工程可解释性，本文将敏感性评价分为两个层次：
 \begin{itemize}
-	\item \textbf{迁移速度层面}：比较不同参数下气孔迁移速率 $\boldsymbol{v}(r)$ 的变化幅度及峰值位置变化；
-	\item \textbf{重构结果层面}：比较孔隙率分布 $p(r,t)$、中心孔半径演化 $R_{\mathrm{void}}(t)$ 以及重构边界位置随时间的变化。
+	\item 迁移速度层面：比较不同参数下气孔迁移速率 $\boldsymbol{v}(r)$ 的变化幅度及峰值位置变化；
+	\item 重构结果层面：比较孔隙率分布 $p(r,t)$、中心孔半径演化 $R_{\mathrm{void}}(t)$ 以及重构边界位置随时间的变化。
 \end{itemize}
 
 由于响应量既包含分布曲线（$v_p(r)$、$p(r,t)$、$T(r,t)$），也包含标量特征量（峰值、平均值、中心孔半径等），本文采用“曲线敏感性+标量敏感性”的统一评价方法。首先定义归一化敏感性指标：
@@ -1381,25 +1381,42 @@ XD0992 与 XD1071 均经历了约 560 有效满功率日（EFPD）的辐照，�
 
 燃料芯块高度$l$为200\,\text{mm}，表中$x/l$表示轴向相对位置，其中最大线功率和最高温度分别位于$x/l=0.5$和$x/l=0.54$处。辐照功率历程如图\ref{fig:power_history}所示，同时表中给出了稳态运行24小时对应的线功率值。
 
-\begin{table}[H]
-	\centering
+\begin{xltabular}{\textwidth}{@{}
+		>{\RaggedRight\arraybackslash}X
+		>{\centering\arraybackslash}X
+		>{\centering\arraybackslash}X
+		@{}}
 	\caption{燃料的规格和辐照条件}
-	\label{tab:maeda_am_cases}
-	\begin{tabularx}{\textwidth}{XXX}
-		\toprule
-		\textbf{燃料及照射参数} & \textbf{Am1-2-1} & \textbf{Am1-2-2} \\
-		\midrule
-		O/M 比 & 1.98 & 1.95 \\
-		初始 Am 含量 & $2.0\,\text{wt\%}$ & $2.0\,\text{wt\%}$ \\
-		初始 Pu 含量 & $28.8\,\text{wt\%}$ & $28.8\,\text{wt\%}$ \\
-		初始 Np 含量 & $2.0\,\text{wt\%}$ & $2.0\,\text{wt\%}$ \\
-		线功率  & $432\,\text{W/cm}$ & $429\,\text{W/cm}$ \\
-		照射时间  & $24\,\text{h}$ & $24\,\text{h}$ \\
-		温度边界 \footnotemark & $\approx 1150\,\text{K}$ & $\approx 1150\,\text{K}$ \\
-		\bottomrule
-	\end{tabularx}
-	\footnotetext{表面温度未在文献中显式给出，根据Joyo实验堆的典型快堆冷却剂/包壳边界条件设定在 $\approx 1000 - 1200\,\text{K}$ 左右，因此本文估计边界温度为 $1150\,\text{K}$。}
-\end{table}
+	\label{tab:maeda_am_cases} \\
+	\toprule
+	燃料及照射参数 & Am1-2-1 & Am1-2-2 \\
+	\midrule
+	\endfirsthead
+	\multicolumn{3}{c}{
+		\small 续表 \thetable
+		\quad 燃料的规格和辐照条件
+	} \\
+	\toprule
+	燃料及照射参数 & Am1-2-1 & Am1-2-2 \\
+	\midrule
+	\endhead
+	\midrule
+	\multicolumn{3}{r}{\small\textit{（接下页）}} \\
+	\endfoot
+	\bottomrule
+	\endlastfoot
+	O/M 比 & 1.98 & 1.95 \\
+	初始 Am 含量 & $2.0\,\text{wt\%}$ & $2.0\,\text{wt\%}$ \\
+	初始 Pu 含量 & $28.8\,\text{wt\%}$ & $28.8\,\text{wt\%}$ \\
+	初始 Np 含量 & $2.0\,\text{wt\%}$ & $2.0\,\text{wt\%}$ \\
+	线功率  & $432\,\mathrm{W\,cm^{-1}}$ & $429\,\mathrm{W\,cm^{-1}}$ \\
+	照射时间  & $24\,\text{h}$ & $24\,\text{h}$ \\
+	温度边界 \footnotemark & $\approx 1150\,\text{K}$ & $\approx 1150\,\text{K}$ \\
+\end{xltabular}
+\footnotetext{
+	表面温度未在文献中显式给出，根据 Joyo 实验堆的典型快堆冷却剂/包壳边界条件，
+	设定在 $\approx 1000$--$1200\,\text{K}$ 范围内，因此本文估计边界温度为
+	$1150\,\text{K}$。}
 
 \begin{figure}[!htb]
 	\centering

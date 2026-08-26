@@ -1,37 +1,18 @@
 % !TeX root = ../main.tex
 \begin{englishabstract}
-\footnotetext{*The work was supported by the Foundation (foundation ID).}
+% \footnotetext{*The work was supported by the Foundation (foundation ID).}
 % \astfootnote{The work was supported by the Foundation (foundation ID).}
 
-英文摘要撰写要求如下：
+Fast-reactor mixed oxide (MOX) fuel operates under conditions characterized by high power density, steep temperature gradients, and intense neutron irradiation. Under such conditions, pore migration and microstructural restructuring, actinide redistribution, evolution of oxygen stoichiometry, and fission gas release occur simultaneously and interact strongly with fuel--cladding gap heat transfer and nonlinear mechanical response, giving rise to pronounced multiphysics coupling. Existing fuel performance analysis methods remain insufficient for a unified description of these microstructural evolution processes and their cross-scale feedback, while the high computational cost of multidimensional high-fidelity finite-element models limits their application to large-scale operating-condition analyses and online state assessment. To address these issues, this dissertation focuses on fast-reactor MOX fuel elements and, based on the MOOSE multiphysics finite-element framework, systematically investigates material and behavioral models, microstructural restructuring and constituent redistribution, strongly coupled thermo--gas--mechanical numerical methods, fuel-rod-level validation, and rapid full-field prediction.
 
-（1）用词准确，符合语法；
+A material and behavioral modeling system for oxide fuel elements is established. Thermophysical properties, elasticity, creep, densification, swelling, and relocation models for MOX fuel are implemented. Thermophysical and in-reactor mechanical behavior models are also developed for representative fast-reactor cladding materials, including SS316, D9, and HT9, together with a fuel--cladding gap heat-transfer model incorporating multicomponent gas conduction, solid--solid contact conduction, and thermal radiation. On this basis, the microstructural evolution of fast-reactor MOX fuel under steep temperature gradients is investigated. A pore transport equation is formulated, and both empirical-correlation-based and Rand--Markin multicomponent thermodynamic models are implemented to describe pore migration. Stabilized discretization schemes are employed to improve numerical robustness under convection-dominated conditions. A plutonium redistribution model accounting simultaneously for chemical diffusion, thermal diffusion, and pore-migration effects is further established and extended to americium transport. In addition, an oxygen-to-metal ratio (O/M) evolution model coupling thermal and chemical diffusion is developed. The calculated results reproduce the major characteristics of pore migration toward high-temperature regions, Pu and Am enrichment near the fuel center, and radial oxygen redistribution under different initial O/M conditions, thereby enabling bidirectional coupling among microstructure, constituent distribution, thermochemical state, and temperature field.
 
-（2）关键词按相应专业的标准术语写出，尽量从《英语主题词表》中摘选；
+To address the strong nonlinear coupling inherent in fuel performance calculations, a finite-element formulation of the thermo-elasto-plastic governing equations is established, and a radial return algorithm is employed to implicitly update stresses and inelastic state variables at material integration points. Two approaches for fission gas behavior are implemented: the ForMas fission gas model based on the Forsberg--Massih theory and a coupling interface to the mechanistic SCIANTIX code. Fission gas release, rod internal pressure, gas composition, gap conductance, and fuel deformation are incorporated into a unified closed-loop coupled computational framework. Verification cases involving material response, fission gas behavior, and gap heat transfer confirm the correctness of the implemented models and their coupled numerical realization. Rod-level validation is further performed using publicly available MOX fuel irradiation data and supplementary experimental data. The calculated fuel centerline temperatures generally reproduce the major trends of the measurements with power and burnup. The results indicate that degradation of fuel thermal conductivity, evolution of the fuel--cladding gap, fission gas release, and contact heat transfer are important factors governing temperature prediction at high burnup. Therefore, temperature, fission gas release, and gap heat transfer should be solved within a closed feedback loop in which these processes mutually interact.
 
-（3）如果论文的主体工作得到了有关基金资助，应用英文在摘要第一页的页脚处标注：本研究得到某某基金（编号：）资助；
-
-中文摘要和英文摘要均不要求学位申请人及其指导教师签字。
-
-摘要正文每段开头不空格，每段之间空一行；\newline
-
-The key parts in drip irrigation facilities are emitters. The structural design parameters of emitters can directly affect its performance and the function of the whole drip irrigation system …… 
-\newline
-
-\begin{enumerate}[wide,leftmargin=0pt,itemsep=\baselineskip]
-    \item Because……
-    \item Only ……
-    \item To support ……
-\end{enumerate}
-
-\englishKeywords{XXX; XXX; XXX; XXX}
-
-每个关键词组的第一个字母大写，其余为小写，每一关键词之间用分号分开，最后一个关键词后不打标点符号。例如：Drip irrigation emitter; RP\&M; Hydraulics; Labyrinth flow channel\newline
-
-\englishType{XXXX}
-
-须与中文摘要中的论文类型一致；每个单词第一个字母大写，其余为小写。例如：Applied Research
-
-论文类型包括：a.理论研究(Theoretical Research)；b.应用基础(Application Fundamentals)；c.应用研究(Application Research)；d.研究报告(Research Report)；e.设计报告(Design Report)；f.案例分析(Case Study)；g.调研报告(Investigation Report)；h.产品研发(Product Development)；i.工程设计(Engineering Design)；j.工程/项目管理(Engineering/Project Management)；k.其它（Others）。
-
+To reduce the online computational cost of the high-fidelity model, a POD--LSTM full-field rapid prediction method for variable power histories is proposed. High-fidelity datasets of temperature, radial displacement, and axial displacement fields are generated using a unified two-dimensional axisymmetric model. Proper orthogonal decomposition (POD) reduces the 17,151-dimensional multi-field nodal output to 28 low-dimensional coefficients, while a long short-term memory (LSTM) network is employed to learn the temporal mapping between power histories and the evolution of the reduced-order states. Evaluation using a dataset consisting of 40 training histories, 10 validation histories, and 10 independent blind-test histories shows that the mean relative $L_2$ errors for temperature, radial displacement, and axial displacement are 1.256\%, 1.528\%, and 2.549\%, respectively. For a single 109-step operating history, prediction of the reduced-order coefficients and reconstruction of the three complete fields require approximately 0.0743~s on average. These results demonstrate that, within the range covered by the training conditions, the proposed methodology can simultaneously retain a high-fidelity representation of the complex multiphysics behavior of fast-reactor MOX fuel and provide rapid prediction of complete thermo-mechanical fields, thereby providing a methodological basis for large-scale operating-history analysis of fuel performance and digital-twin-oriented online state assessment.
+	
+\englishKeywords{Mixed oxide fuel; Fuel performance analysis; Multiphysics coupling; Fission gas; Reduced-order model}
+	
+\englishType{Application Fundamentals}
+	
 \end{englishabstract}

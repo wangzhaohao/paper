@@ -6,20 +6,24 @@
 \subsection{气孔迁移速率控制方程}
 
 气孔迁移速率由以下方程描述：
-\begin{align*}
+\begin{equation}
+\begin{aligned}
 	v_p &= \Omega D_{12} \frac{dn}{dT} \frac{dT}{dr} \\
 	\Omega &= \frac{1}{4} (X_{\text{PuO}_2} C_{\text{PuO}_2} + X_{\text{UO}_2} C_{\text{UO}_2})^3 \\
 	D_{12} &= \frac{3}{8} \frac{1}{\pi nd^2} \sqrt{\frac{\pi kT}{2m^*}} \\
 	\frac{1}{m^*} &= \left( \frac{1}{18} + \frac{1}{270} \right) \times 6.023 \times 10^{23} \\
 	\frac{dn}{dT} &= \frac{d}{dT} (\frac{P}{kT}) = \frac{1}{kT^2} \left( \frac{TdP}{dT} - P \right) \\
 	\left( \frac{dT}{dr} \right)_{\text{void}} &= \alpha \left( \frac{dT}{dr} \right)_{\text{matrix}}
-\end{align*}
+\end{aligned}
+\label{eq:app_b_rand_markin_migration_control}
+\end{equation}
 其中，$\Omega$为燃料分子体积（cm$^3$），$X_{\text{PuO}_2}$和$X_{\text{UO}_2}$分别为PuO$_2$和UO$_2$的摩尔分数，$C_{\text{PuO}_2}$和$C_{\text{UO}_2}$分别为PuO$_2$和UO$_2$的晶格参数（取值分别为$5.396 \times 10^{-8}$ cm和$5.4704 \times 10^{-8}$ cm），$D_{12}$为PuO$_2$和UO$_2$气体在孔隙中的扩散系数，$k$为玻尔兹曼常数（$1.3708 \times 10^{-16}$ cm$^2$/(s$\cdot$K)），$m^*$为质量转换因子，$n$为烧结过程中被孔隙捕获的气体分子数，$d$为气体分子直径（$4.33 \times 10^{-8}$ cm），$\frac{dn}{dT}$为孔隙内气体分子浓度随温度的变化率，$T$为温度（K），$\alpha$为气孔迁移速度的修正因子，用于关联孔隙内温度梯度与燃料基体内温度梯度的比值，$P$为由相关自由能计算得到的蒸气压之和，具体包括以下燃料组分的蒸气压：UO$_2$、PuO$_2$、UO、U、UO$_3$、PuO、Pu、AmO$_2$、Am、AmO 和 O$_2$。$\alpha$是气孔的温度梯度和燃料温度梯度之间的转换系数。
 
 \subsection{各气相组分蒸气压表达式}
 
 对于含有Pu和Am的混合氧化物燃料，各气相组分的蒸气压可表示为：
-\begin{align*}
+\begin{equation}
+\begin{aligned}
 	p_{\text{UO}_2} &= (1 - q - r) \exp \left( -\frac{\Delta G_{\text{UO}_2,\text{vap}}}{RT} \right) \\
 	p_{\text{PuO}_2} &= q (p_{\text{O}_2})^{m/2} \exp \left( -\frac{\Delta G_A}{RT} \right) \\
 	p_{\text{UO}} &= \frac{p_{\text{UO}_2}}{\exp \left( -\frac{\Delta G_{\text{UO/UO}_2}}{RT} \right) (p_{\text{O}_2})^{1/2}} \\
@@ -30,12 +34,15 @@
 	p_{\text{AmO}_2} &= r (p_{\text{O}_2})^{-n/2\footnotemark} \exp \left( -\frac{\Delta G_B}{RT} \right) \\
 	p_{\text{AmO}} &= \frac{p_{\text{AmO}_2}}{\exp \left( -\frac{\Delta G_{\text{AmO}_2/\text{Am}}}{RT} \right) p_{\text{O}_2}^{1/2}} \\
 	p_{\text{Am}} &= \frac{p_{\text{AmO}}}{(p_{\text{O}_2})^{1/2} \exp \left( -\frac{\Delta G_{\text{AmO/Am}}}{RT} \right)}
-\end{align*}
+\end{aligned}
+\label{eq:app_b_rand_markin_vapor_pressures}
+\end{equation}
 \footnotetext{根据文章图片确定。}
 其中，$p(i)$为各组分蒸气压（以标准大气压1atm归一化），$x$为$\text{MO}_{2.00-x}$中的化学计量偏离，$q$为Pu的摩尔分数，$r$为Am的摩尔分数，$\Delta G_i$为吉布斯自由能，$R$为气体常数，$T$为开尔文温度（$K$）。
 
 \subsection{Gibbs自由能表达式}
-\begin{align*}
+\begin{equation}
+\begin{aligned}
 	\Delta G_A &= -\frac{1}{2} \int_0^m RT \ln(p_{\text{O}_2}) \, dx + \Delta G_{\text{PuO}_2,\text{vap}} \\
 	\Delta G_B &= -\frac{1}{2} \int_0^n RT \ln(p_{\text{O}_2}) \, dx + \Delta G_{\text{AmO}_2,\text{vap}} \\
 	\Delta G_{\text{UO}_2,\text{vap}} &= 567000 - 150T \\
@@ -48,35 +55,45 @@
 	\Delta G_{\text{AmO}_2,\text{vap}} &= -R T \ln(10^{7.28 - 28260/T}) \\
 	\Delta G_{\text{AmO/Am}} &= (-137700 - 28.8T) - (263650 - 112.32T) \\
 	\Delta G_{\text{AmO}_2/\text{Am}} &= (-388300 + 30.7T) - (263650 - 112.32T)
-\end{align*}
+\end{aligned}
+\label{eq:app_b_rand_markin_gibbs_relations}
+\end{equation}
 
 \subsection{氧分压与化学计量比关系}
 氧分压$p_{\text{O}_2}$与燃料化学计量比$O/M$的关系由以下方程描述：
-\[
+\begin{equation}
 O/M = 2 + \left[ \exp\left( -\frac{22.8 + 84.5 C_{\text{Pu}}}{R} \right) \exp\left( \frac{105000}{RT} \right) (p_{\text{O}_2})^{1/2} \right] - \left[ {T_1 + T_2 + T_3 + T_4 + T_5} \right]^{-1/5}
-\]
+\label{eq:app_b_oxygen_pressure_stoichiometry}
+\end{equation}
 
 其中各项系数定义为：
-\begin{align*}
+\begin{equation}
+\begin{aligned}
 	T_1 &= \left\{ \exp\left( \frac{44 + 55.8 C_{\text{Pu}}}{R} \right) \exp\left( -\frac{376000}{RT} \right) (p_{\text{O}_2})^{-1/2} \right\}^{-5} \\
 	T_2 &= \left\{ \left[ \exp\left( \frac{68.8 + 131.3 C_{\text{Pu}}}{R} \right) \exp\left( -\frac{515000}{RT} \right) \right]^{1/2} (p_{\text{O}_2})^{-1/4} \right\}^{-5} \\
 	T_3 &= \left\{ \left[ 2 \exp\left( \frac{153.5 + 96.5 C_{\text{Pu}} + 331 C_{\text{Pu}}^2}{R} \right) \exp\left( -\frac{891000}{RT} \right) \right]^{1/3} (p_{\text{O}_2})^{-1/3} \right\}^{-5} \\
 	T_4 &= \left\{ \left[ \exp\left( \frac{111.2 + 20 C_{\text{Pu}}}{R} \right) \exp\left( -\frac{445000}{RT} \right) \right]^{1/2} (p_{\text{O}_2})^{-1/4} \right\}^{-5} \\
 	T_5 &= \left( \frac{C_{\text{Pu}}}{2} \right)^{-5}
-\end{align*}
+\end{aligned}
+\label{eq:app_b_oxygen_pressure_auxiliary_terms}
+\end{equation}
 
 对于不同类型的燃料，$C_{\text{Pu}}$定义为：
-\begin{align*}
+\begin{equation}
+\begin{aligned}
 	\text{MOX: } & C_{\text{Pu}} = \frac{Pu}{U + Pu} \\
 	\text{Am-MOX: } & C_{\text{Pu}} = \frac{Pu}{U + Pu + Am} + 2.5 \frac{Am}{U + Pu + Am}
-\end{align*}
+\end{aligned}
+\label{eq:app_b_plutonium_concentration_definition}
+\end{equation}
 
 \subsection{总蒸气压}
 
 总蒸气压$P$为所有气相组分蒸气压之和：
-\[
+\begin{equation}
 P = p_{\text{UO}_2} + p_{\text{PuO}_2} + p_{\text{UO}} + p_{\text{U}} + p_{\text{UO}_3} + p_{\text{PuO}} + p_{\text{Pu}} + p_{\text{AmO}_2} + p_{\text{Am}} + p_{\text{AmO}}
-\]
+\label{eq:app_b_total_vapor_pressure}
+\end{equation}
 
 该总蒸气压$P$及其温度导数$dP/dT$用于计算气孔迁移速率。
 
@@ -138,22 +155,25 @@ Rand--Markin模型所用的变量如下：
 \subsection{Lackey et al. (1972) 模型}
 
 Lackey模型基于蒸发-冷凝机制的气孔迁移理论，考虑了燃料化学计量比（O/M）对蒸气压力的影响，其迁移速率计算公式为：
-\[
+\begin{equation}
 v = 3.364 \frac{p_0 \exp(-H/RT)}{P_{\text{pore}} \cdot T^{3/2}} \frac{dT}{dx}
-\]
+\label{eq:app_b_lackey_migration_velocity}
+\end{equation}
 
 其中，$p_0 \exp(-H/RT)$表示铀和钚蒸气组分的分压之和。对于$U_{0.8}Pu_{0.2}O_{2-x}$燃料，蒸气压力与化学计量比及温度的关系为：
-\[
+\begin{equation}
 \begin{split}
 	\ln[p_0 \exp(-H/RT)] = & -212.275 + 65.842(O/M) + 8.9453 \times 10^{-2}T \\
 	& - 2.55399 \times 10^{-2}(O/M)T + 2.956(O/M)^2 - 5.6541 \times 10^{-6}T^2
 \end{split}
-\]
+\label{eq:app_b_lackey_vapor_pressure_fit}
+\end{equation}
 孔内压力$P_{\text{pore}}$由闭孔假设及理想气体定律确定：
 
-\[
+\begin{equation}
 P_{\text{pore}} = P_0 \left( \frac{T}{T_{\text{sinter}}} \right)
-\]
+\label{eq:app_b_lackey_pore_pressure}
+\end{equation}
 
 式中，$P_0 = 1.0$ atm（常压），$T_{\text{sinter}} = 1973$ K（典型烧结温度）。
 
@@ -184,30 +204,36 @@ P_{\text{pore}} = P_0 \left( \frac{T}{T_{\text{sinter}}} \right)
 \subsection{Sens et al. (1972) 模型}
 
 Sens模型通过数值求解孔内蒸气扩散方程，考虑了孔形状对温度场与扩散通量的影响：
-\[
+\begin{equation}
 v = C \cdot \frac{\mathcal{F}(T) P_{\text{vap}} \Delta H}{T^{5/2}} \nabla T
-\]
+\label{eq:app_b_sens_migration_velocity}
+\end{equation}
 
 其中，$C = 5.006 \times 10^{-12}$为常数，$\mathcal{F}(T)$为温度多项式修正因子：
-\[
+\begin{equation}
 \mathcal{F}(T) = 0.988 + 6.395 \times 10^{-6}T + 3.543 \times 10^{-9}T^2 + 3 \times 10^{-12}T^3
-\]
+\label{eq:app_b_sens_temperature_factor}
+\end{equation}
 
 蒸气压力$P_{\text{vap}}$由分段函数给出：
-\begin{align*}
+\begin{equation}
+\begin{aligned}
 	&T < 2000 \text{ K}: \quad P_{\text{vap}} = 0.1 \exp\left(33.785 - \frac{5.98 \times 10^5}{RT}\right) \\
 	&2000 \leq T < 2200 \text{ K}: \quad P_{\text{vap}} = 0.1 \exp\left(34.107 - \frac{6.17 \times 10^5}{RT}\right) \\
 	&T \geq 2200 \text{ K}: \quad P_{\text{vap}} = 0.1 \exp\left(35.813 - \frac{6.35 \times 10^5}{RT}\right)
-\end{align*}
+\end{aligned}
+\label{eq:app_b_sens_vapor_pressure}
+\end{equation}
 
 $\Delta H$为蒸发能，取值与温度区间对应。
 
 \subsection{Nichols (1967) 球形气孔模型}
 
 Nichols从第一性原理出发建立了蒸气输运控制的气孔迁移理论框架：
-\[
+\begin{equation}
 V \cong \frac{9 p_0 \Omega \Delta H_v [(M_1 + M_2)]^{1/2} \exp\{-\Delta H_v/(RT)\}}{16 P \sigma^2 T^{3/2} (2 \pi R M_1 M_2)^{1/2}} \cdot \frac{dT}{dx}
-\]
+\label{eq:app_b_nichols1967_migration_velocity}
+\end{equation}
 
 式中各参数取值及其单位如下：
 \begin{center}
@@ -231,23 +257,27 @@ V \cong \frac{9 p_0 \Omega \Delta H_v [(M_1 + M_2)]^{1/2} \exp\{-\Delta H_v/(RT)
 \subsection{Nichols (1972) 透镜状气孔模型}
 
 该模型引入形状因子$\xi=2.0$表征透镜状气孔对热流的聚焦效应：
-\[
+\begin{equation}
 V_g = \frac{D_g \Delta H_{vap} \alpha \exp(-\Delta H_{vap}/kT)}{k T^2} \nabla T
-\]
+\label{eq:app_b_nichols1972_migration_velocity}
+\end{equation}
 
 孔隙内部的温度梯度$\nabla T$与宏观温度梯度$\nabla T_\infty$是不同的，取决于孔隙形状和气体的热导率。
-\[
+\begin{equation}
 \nabla T = \frac{\nabla T_\infty}{1 + C_0 (K_g/K_m - 1)}
-\]
+\label{eq:app_b_nichols1972_temperature_gradient}
+\end{equation}
 二元气体扩散系数$D_g$显式计算：
-\[
+\begin{equation}
 D_g = \frac{3}{8 n \sigma^2} \sqrt{\frac{R T (M_1 + M_2)}{2\pi M_1 M_2}}
-\]
+\label{eq:app_b_nichols1972_binary_diffusivity}
+\end{equation}
 
 气体分子数密度$n$由理想气体状态方程计算：
-\[
+\begin{equation}
 n = \frac{P}{k T}
-\]
+\label{eq:app_b_nichols1972_number_density}
+\end{equation}
 
 蒸气压力$P_{\text{vap}}$与球形气孔模型相同。
 
@@ -297,9 +327,10 @@ n = \frac{P}{k T}
 \subsection{Clement \& Finnis (1978) 模型}
 
 该模型为经验关系式，显式包含气孔长度参数：
-\[
+\begin{equation}
 v = A \cdot l \cdot \exp\left(-\frac{Q}{T}\right) \nabla T
-\]
+\label{eq:app_b_clement_finnis_migration_velocity}
+\end{equation}
 
 式中各参数取值及其单位如下：
 \begin{center}
