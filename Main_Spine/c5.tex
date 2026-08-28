@@ -602,34 +602,53 @@ T_\alpha(B)-T_\mathrm{base}(B),
 
 图~\ref{fig:ifa597r10_temperature_alpha_sensitivity} 和表~\ref{tab:ifa597r10_temperature_alpha_sensitivity_error} 给出了 IFA-597-4-5-6-7r10 的敏感性分析结果。与 r11 不同，该燃料棒基准模型整体低估中心温度，MBE 为 \(-71.8\) K。对于燃料几何演化缩放因子，降低 \(\alpha_{\varepsilon}\) 可使 MBE 由负值转为正值，但 RMSE 并未明显降低；增大 \(\alpha_{\varepsilon}\) 则进一步降低中心温度并增大误差。间隙传热和燃料热导率缩放因子的影响相对较弱，基准模型在 RMSE 和平均相对误差上已经接近最优。该结果说明，r10 的温度偏差方向与 r11 不同，缩放因子分析应结合基准模型的高估或低估特征进行判断。
 
+% =========================
+% 第一页：子图 (a)、(b)
+% =========================
 \begin{figure}[!htb]
 	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{IFA-651-r1/IFA-651-r1_temperature_fuel_thermal_conductivity_alpha_comparison.pdf}
+		\includegraphics[width=\linewidth]
+		{IFA-651-r1/IFA-651-r1_temperature_fuel_thermal_conductivity_alpha_comparison.pdf}
 		\caption{燃料热导率缩放因子}
 		\label{fig:ifa651r1_temp_alpha_fuel_thermal_conductivity}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{IFA-651-r1/IFA-651-r1_temperature_gap_conductivity_alpha_comparison.pdf}
+		\includegraphics[width=\linewidth]
+		{IFA-651-r1/IFA-651-r1_temperature_gap_conductivity_alpha_comparison.pdf}
 		\caption{间隙传热缩放因子}
 		\label{fig:ifa651r1_temp_alpha_gap_conductance}
 	\end{subfigure}
 	
-	\vspace{0.5em}
+	\caption{IFA-651-r1 燃料中心温度对不同物理模型缩放因子的响应}
+	\label{fig:ifa651r1_temperature_alpha_sensitivity}
+\end{figure}
+
+
+% 如果你明确要求下面这个图从下一页开始，可以加
+\clearpage
+
+
+% =========================
+% 第二页：子图 (c)
+% =========================
+\begin{figure}[!htb]
+	\ContinuedFloat
+	\centering
 	
 	\begin{subfigure}[t]{0.48\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{IFA-651-r1/IFA-651-r1_temperature_geometricstructure_alpha_comparison.pdf}
+		\includegraphics[width=\linewidth]
+		{IFA-651-r1/IFA-651-r1_temperature_geometricstructure_alpha_comparison.pdf}
 		\caption{燃料几何演化缩放因子}
 		\label{fig:ifa651r1_temp_alpha_geometric_evolution}
 	\end{subfigure}
 	
-	\caption{IFA-651-r1 燃料中心温度对不同物理模型缩放因子的响应}
-	\label{fig:ifa651r1_temperature_alpha_sensitivity}
+	\caption{IFA-651-r1 燃料中心温度对不同物理模型缩放因子的响应（续）}
 \end{figure}
 
 \begin{table}[H]
@@ -752,33 +771,62 @@ T_\alpha(B)-T_\mathrm{base}(B),
 	\label{fig:ifa651r6_temperature_alpha_sensitivity}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\caption{IFA-651-r6 不同缩放因子下中心温度预测误差统计}
-	\label{tab:ifa651-r6_temperature_alpha_sensitivity_error}
+{
 	\small
-	\begin{tabular*}{0.9\textwidth}{
+	
+	\begin{xltabular}{0.9\textwidth}{
 			@{\extracolsep{\fill}}
 			llccccc
 			@{}
 		}
+		
+		\caption{IFA-651-r6 不同缩放因子下中心温度预测误差统计}
+		\label{tab:ifa651-r6_temperature_alpha_sensitivity_error}
+		\\
+		
 		\toprule
 		扰动对象 & 缩放因子 & 燃耗范围 & 对比点数 & MBE/K & $\overline{\delta T}$/\% & RMSE/K \\
 		\midrule
+		\endfirsthead
+		
+		\multicolumn{7}{c}{
+			\tablename~\thetable\quad
+			IFA-651-r6 不同缩放因子下中心温度预测误差统计（续）
+		}
+		\\
+		
+		\toprule
+		扰动对象 & 缩放因子 & 燃耗范围 & 对比点数 & MBE/K & $\overline{\delta T}$/\% & RMSE/K \\
+		\midrule
+		\endhead
+		
+		\midrule
+		\multicolumn{7}{r}{续下页}
+		\\
+		\endfoot
+		
+		\bottomrule
+		\endlastfoot
+		
 		力学 & $\alpha_{\varepsilon}=0.5$ & 0.09--22.03 & 496 & -67.9 & 16.49 & 244.5 \\
 		力学 & $\alpha_{\varepsilon}=1.0$ & 0.09--21.99 & 495 & -249.9 & 21.98 & 299.6 \\
 		力学 & $\alpha_{\varepsilon}=1.5$ & 0.09--21.94 & 494 & -455.8 & 39.59 & 471.1 \\
+		
 		\midrule
+		
 		间隙传热 & $\alpha_h=0.5$ & 0.09--22.16 & 499 & -104.7 & 11.96 & 206.4 \\
 		间隙传热 & $\alpha_h=1.0$ & 0.09--21.99 & 495 & -249.9 & 21.98 & 299.6 \\
 		间隙传热 & $\alpha_h=2.0$ & 0.09--21.81 & 491 & -398.6 & 34.98 & 421.0 \\
+		
 		\midrule
+		
 		燃料热导率 & $\alpha_k=0.9$ & 0.09--22.03 & 496 & -200.3 & 18.01 & 265.5 \\
 		燃料热导率 & $\alpha_k=1.0$ & 0.09--21.99 & 495 & -249.9 & 21.98 & 299.6 \\
 		燃料热导率 & $\alpha_k=1.1$ & 0.09--21.94 & 494 & -296.6 & 25.99 & 335.4 \\
-		\bottomrule
-	\end{tabular*}
-\end{table}
+		
+	\end{xltabular}
+	
+}
 
 图~\ref{fig:ifa651r6_temperature_alpha_sensitivity} 和表~\ref{tab:ifa651-r6_temperature_alpha_sensitivity_error} 给出了 IFA-651-r6 的敏感性分析结果。该燃料棒基准模型明显低估中心温度，MBE 为 \(-249.9\) K，平均相对误差为 21.98\%，RMSE 为 299.6 K。减小燃料几何演化、间隙传热和燃料热导率缩放因子均能够提高中心温度并改善误差，其中 \(\alpha_h=0.5\) 的改善最为明显，平均相对误差降低至 11.96\%，RMSE 降低至 206.4 K。相反，增大 \(\alpha_{\varepsilon}\)、\(\alpha_h\) 或 \(\alpha_k\) 会使中心温度进一步降低，导致负偏差显著扩大。该结果表明，IFA-651-r6 的偏差主要与间隙传热能力偏强、燃料几何演化导致的间隙闭合过强或燃料热导率偏高有关。
 

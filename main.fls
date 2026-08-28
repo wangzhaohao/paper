@@ -1175,8 +1175,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy5.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/euler/eurb10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/euler/eurb7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/euler/eurb5.tfm
-INPUT ./Figures/pod_lstm/power_history_overview.pdf
-INPUT ./Figures/pod_lstm/power_history_overview.pdf
+INPUT ./Figures/pod_lstm/power_history_overview.png
+INPUT ./Figures/pod_lstm/power_history_overview.png
 INPUT ./Figures/pod_lstm/training_validation_loss.png
 INPUT ./Figures/pod_lstm/training_validation_loss.png
 INPUT ./Figures/pod_lstm/blind_case_mean_relative_l2.png

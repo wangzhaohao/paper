@@ -6,7 +6,7 @@
 高保真燃料性能程序能够描述燃料棒在长期辐照条件下的传热、变形、间隙演化、裂变气体释放及材料性能退化等多物理过程，但其计算成本较高，难以直接用于大规模运行历史分析和在线状态评估。另一方面，仅预测燃料中心温度、包壳最大位移等少量标量响应，无法保留燃料棒内部温度梯度、界面附近局部变形及轴向累积响应等空间信息。为此，本章建立一种基于本征正交分解和长短期记忆网络的非侵入式降阶代理模型，通过高保真
 MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间维数，再由LSTM根据变功率历史预测低维POD系数，最终恢复完整二维节点场。
 
-本章采用分阶段研究策略。首先，在固定功率历史形状下改变整体功率倍率，构建POD系数插值和POD--GPR模型，以验证网格统一、POD降阶、系数预测和二维场恢复流程，并形成规则一维参数空间下的基准结果。在此基础上，进一步生成具有不同整体幅值、局部幅值、瞬态时刻和持续时间的功率历史，构建正式POD--LSTM模型。该模型以时间、瞬时功率、功率变化率和累积功率积分特征为序列输入，预测温度、径向位移和轴向位移的POD系数增量，并采用可训练的循环初始状态减小固定初始条件下的序列冷启动误差。
+本章采用分阶段研究策略。首先，在固定功率历史形状下改变整体功率倍率，构建POD系数插值和POD--GPR模型，以验证网格统一、POD降阶、系数预测和二维场恢复流程，并形成规则一维参数空间下的基准结果。在此基础上，进一步生成具有不同整体幅值、局部幅值、瞬态时刻和持续时间的功率历史，构建POD--LSTM时序代理模型。该模型以时间、瞬时功率、功率变化率和累积功率积分特征为序列输入，预测温度、径向位移和轴向位移的POD系数增量，并采用可训练的循环初始状态减小固定初始条件下的序列冷启动误差。
 
 本章研究范围限定为固定燃料棒几何、固定材料模型、固定冷却剂边界和统一有限元网格下的运行历史快速预测。本章将功率历史作为主要变化的运行输入，冷却剂温度、压力、填充气体压力及几何参数保持不变，从而在受控参数空间内评价时序代理模型对完整热--力场的预测能力。最终模型的预测关系表示为
 
@@ -32,39 +32,39 @@ MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间
 代表性燃料棒模型的几何尺寸见表~\ref{tab:pod_geometry}.燃料有效半径为$4.0198\times10^{-3}$~m，燃料有效长度为$0.224001$~m；包壳内、外半径分别为$4.1148\times10^{-3}$~m和$4.7498\times10^{-3}$~m，对应初始径向间隙约为$95~\mu$m。包壳计算长度为$0.271702$~m，以同时描述燃料段和气室段的热力响应。
 
 \begin{table}[htbp]
-    \centering
-    \caption{POD数据集采用的代表性燃料棒几何参数}
-    \label{tab:pod_geometry}
-    \begin{tabularx}{\textwidth}
-        {>{\centering\arraybackslash}X
-         >{\centering\arraybackslash}p{3.0cm}
-         >{\centering\arraybackslash}p{3.0cm}}
-        \toprule
-        几何参数 & 数值 & 单位 \\
-        \midrule
-        燃料半径 & $4.0198\times10^{-3}$ & m \\
-        燃料有效长度 & $0.224001$ & m \\
-        包壳内半径 & $4.1148\times10^{-3}$ & m \\
-        包壳外半径 & $4.7498\times10^{-3}$ & m \\
-        初始径向间隙 & $95$ & $\mu$m \\
-        包壳计算长度 & $0.271702$ & m \\
-        \bottomrule
-    \end{tabularx}
+	\centering
+	\caption{POD数据集采用的代表性燃料棒几何参数}
+	\label{tab:pod_geometry}
+	\begin{tabularx}{\textwidth}
+		{>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}p{3.0cm}
+			>{\centering\arraybackslash}p{3.0cm}}
+		\toprule
+		几何参数 & 数值 & 单位 \\
+		\midrule
+		燃料半径 & $4.0198\times10^{-3}$ & m \\
+		燃料有效长度 & $0.224001$ & m \\
+		包壳内半径 & $4.1148\times10^{-3}$ & m \\
+		包壳外半径 & $4.7498\times10^{-3}$ & m \\
+		初始径向间隙 & $95$ & $\mu$m \\
+		包壳计算长度 & $0.271702$ & m \\
+		\bottomrule
+	\end{tabularx}
 \end{table}
 
 本章选取温度$T$、径向位移$u_r$和轴向位移$u_z$作为降阶与快速预测对象。选择这三个变量的原因在于：温度场直接控制燃料热物性、裂变气体释放和热应力水平；径向位移反映间隙闭合、燃料膨胀和包壳径向变形；轴向位移则用于描述燃料与包壳的轴向热膨胀和蠕变累积。对于统一网格上的任一场变量$q$，其离散形式表示为
 
 \begin{equation}
-    \boldsymbol{q}(t,\boldsymbol{\mu})
-    =
-    \begin{bmatrix}
-        q_1(t,\boldsymbol{\mu}) &
-        q_2(t,\boldsymbol{\mu}) &
-        \cdots &
-        q_N(t,\boldsymbol{\mu})
-    \end{bmatrix}^{\mathrm T}
-    \in\mathbb{R}^{N}
-    \label{eq:pod_discrete_field_ch6}
+	\boldsymbol{q}(t,\boldsymbol{\mu})
+	=
+	\begin{bmatrix}
+		q_1(t,\boldsymbol{\mu}) &
+		q_2(t,\boldsymbol{\mu}) &
+		\cdots &
+		q_N(t,\boldsymbol{\mu})
+	\end{bmatrix}^{\mathrm T}
+	\in\mathbb{R}^{N}
+	\label{eq:pod_discrete_field_ch6}
 \end{equation}
 
 式中：$N$为统一训练网格的节点总数。本章代理模型预测并重构的是式~\eqref{eq:pod_discrete_field_ch6}所表示的完整节点场，而不是仅预测最大温度或最大位移等标量响应。
@@ -201,43 +201,43 @@ MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间
 为首先验证POD降阶与系数代理模型的完整流程，基准阶段保持功率历史$P_0(t)$的时间变化形状不变，仅采用功率缩放因子$\alpha_P$调节整体功率水平：
 
 \begin{equation}
-    P(t,\alpha_P)=\alpha_P P_0(t),
-    \qquad
-    \alpha_P\in[0.90,1.10]
-    \label{eq:scaled_power_history_ch6}
+	P(t,\alpha_P)=\alpha_P P_0(t),
+	\qquad
+	\alpha_P\in[0.90,1.10]
+	\label{eq:scaled_power_history_ch6}
 \end{equation}
 
 此时有限元模型的独立参数向量为
 
 \begin{equation}
-    \boldsymbol{\mu}=\begin{bmatrix}\alpha_P\end{bmatrix}
-    \label{eq:current_parameter_vector}
+	\boldsymbol{\mu}=\begin{bmatrix}\alpha_P\end{bmatrix}
+	\label{eq:current_parameter_vector}
 \end{equation}
 
 当前共完成13个全寿期有限元工况，其中5个用于POD基提取和代理模型训练，4个中间功率工况用于POD阶数选择和代理模型验证，另外4个从未参与模型构建的工况用于最终盲测。具体划分见表~\ref{tab:pod_case_design_complete}。
 
 \begin{table}[htbp]
-    \centering
-    \caption{固定功率史形状下的数据集划分}
-    \label{tab:pod_case_design_complete}
-    \begin{tabularx}{\textwidth}
-        {>{\centering\arraybackslash}p{2.5cm}
-         >{\centering\arraybackslash}p{6.2cm}
-         X}
-        \toprule
-        数据类别 & 功率缩放因子$\alpha_P$ & 主要用途 \\
-        \midrule
-        训练集
-        & 0.900，0.950，1.000，1.050，1.100
-        & 构建POD快照矩阵、提取POD基并训练系数代理模型 \\
-        验证集
-        & 0.925，0.975，1.025，1.075
-        & POD阶数扫描、GPR超参数选择及模型比较 \\
-        独立盲测集
-        & 0.9375，0.9875，1.0375，1.0875
-        & 在模型结构冻结后评价端到端泛化能力 \\
-        \bottomrule
-    \end{tabularx}
+	\centering
+	\caption{固定功率史形状下的数据集划分}
+	\label{tab:pod_case_design_complete}
+	\begin{tabularx}{\textwidth}
+		{>{\centering\arraybackslash}p{2.5cm}
+			>{\centering\arraybackslash}p{6.2cm}
+			X}
+		\toprule
+		数据类别 & 功率缩放因子$\alpha_P$ & 主要用途 \\
+		\midrule
+		训练集
+		& 0.900，0.950，1.000，1.050，1.100
+		& 构建POD快照矩阵、提取POD基并训练系数代理模型 \\
+		验证集
+		& 0.925，0.975，1.025，1.075
+		& POD阶数扫描、GPR超参数选择及模型比较 \\
+		独立盲测集
+		& 0.9375，0.9875，1.0375，1.0875
+		& 在模型结构冻结后评价端到端泛化能力 \\
+		\bottomrule
+	\end{tabularx}
 \end{table}
 
 上述设计使训练、验证和盲测工况在功率参数空间中相互分离。特别地，盲测工况不参与POD阶数选择、GPR核函数调节或模型选择，从而避免将验证信息泄漏至最终精度评价中。
@@ -262,7 +262,7 @@ MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间
 	\label{eq:formal_variable_power_history}
 \end{equation}
 
-式中：$\alpha_g$为全寿期整体功率倍率，$\alpha_e$、$\alpha_m$和$\alpha_l$分别控制前期、中期和后期的局部功率水平，$\Delta t_{\mathrm{tr}}$表示关键瞬态发生时刻的平移量，$s_{\mathrm{tr}}$表示瞬态持续时间倍率，$\mathcal W$为分段幅值变换和时间变换算子。正式数据生成程序采用的参数范围见表~\ref{tab:formal_power_parameter_ranges}。
+式中：$\alpha_g$为全寿期整体功率倍率，$\alpha_e$、$\alpha_m$和$\alpha_l$分别控制前期、中期和后期的局部功率水平，$\Delta t_{\mathrm{tr}}$表示关键瞬态发生时刻的平移量，$s_{\mathrm{tr}}$表示瞬态持续时间倍率，$\mathcal W$为分段幅值变换和时间变换算子。变功率历史生成程序采用的参数范围见表~\ref{tab:formal_power_parameter_ranges}。
 
 \begin{table}[htbp]
 	\centering
@@ -283,7 +283,7 @@ MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间
 	\end{tabularx}
 \end{table}
 
-数据集设计为40条训练历史、10条验证历史和10条独立盲测历史。所有样本均按照完整功率历史划分，而不是将同一工况的不同时间点随机拆分。训练历史用于构建正式POD基、计算标准化参数和更新网络权重；验证历史用于POD阶数选择、早停和有限超参数选择；盲测历史在POD阶数、网络结构和训练策略冻结后仅评价一次。
+数据集设计为40条训练历史、10条验证历史和10条独立盲测历史。所有样本均按照完整功率历史划分，而不是将同一工况的不同时间点随机拆分。训练历史用于构建POD基、计算标准化参数和更新网络权重；验证历史用于POD阶数选择、早停和有限超参数选择；盲测历史在POD阶数、网络结构和训练策略冻结后仅评价一次。
 
 \begin{table}[htbp]
 	\centering
@@ -296,7 +296,7 @@ MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间
 		\toprule
 		数据类别 & 实际工况数 & 用途 \\
 		\midrule
-		训练集 & 40 & 正式POD基提取、标准化统计量和LSTM权重训练 \\
+		训练集 & 40 & POD基提取、标准化统计量和LSTM权重训练 \\
 		验证集 & 10 & POD阶数选择、模型早停和有限超参数选择 \\
 		独立盲测集 & 10 & 冻结后评价未见功率史形状的泛化能力 \\
 		\bottomrule
@@ -317,10 +317,10 @@ MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间
 	\label{eq:baseline_training_snapshot_count}
 \end{equation}
 
-正式变功率历史数据集包含40条通过完整性检查的训练历史，因此单场训练快照数为$40\times109=4360$，对应快照矩阵尺寸为
+变功率历史数据集包含40条通过完整性检查的训练历史，因此单场训练快照数为$40\times109=4360$，对应快照矩阵尺寸为
 
 \begin{equation}
-	\boldsymbol S_q^{\mathrm{formal}}
+	\boldsymbol S_q^{\mathrm{var}}
 	\in
 	\mathbb R^{5717\times4360}
 	\label{eq:formal_snapshot_matrix_size}
@@ -532,33 +532,33 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 为了区分POD截断误差与系数代理误差，首先将4个盲测有限元场直接投影至固定POD空间，再进行重构。该过程仍需要完整有限元场，因而不属于快速预测，但能够给出当前POD基对未知工况的表示误差下限。结果见表~\ref{tab:blind_pod_projection_results}。
 
 \begin{table}[htbp]
-    \centering
-    \caption{盲测工况的POD直接投影重构精度}
-    \label{tab:blind_pod_projection_results}
-    \begin{tabularx}{\textwidth}
-        {>{\centering\arraybackslash}p{2.2cm}
-         >{\centering\arraybackslash}p{3.2cm}
-         >{\centering\arraybackslash}p{3.2cm}
-         >{\centering\arraybackslash}p{2.2cm}
-         X}
-        \toprule
-        场变量 & 平均相对$L_2$误差/\% & 最大相对$L_2$误差/\% & 平均RMSE & 最大节点误差 \\
-        \midrule
-        温度$T$ & 0.0152 & 0.0767 & 0.124~K & 21.61~K \\
-        径向位移$u_r$ & 0.0259 & 0.1017 & $0.0129~\mu$m & $1.16~\mu$m \\
-        轴向位移$u_z$ & 0.0146 & 0.0464 & $0.105~\mu$m & $5.61~\mu$m \\
-        \bottomrule
-    \end{tabularx}
+	\centering
+	\caption{盲测工况的POD直接投影重构精度}
+	\label{tab:blind_pod_projection_results}
+	\begin{tabularx}{\textwidth}
+		{>{\centering\arraybackslash}p{2.2cm}
+			>{\centering\arraybackslash}p{3.2cm}
+			>{\centering\arraybackslash}p{3.2cm}
+			>{\centering\arraybackslash}p{2.2cm}
+			X}
+		\toprule
+		场变量 & 平均相对$L_2$误差/\% & 最大相对$L_2$误差/\% & 平均RMSE & 最大节点误差 \\
+		\midrule
+		温度$T$ & 0.0152 & 0.0767 & 0.124~K & 21.61~K \\
+		径向位移$u_r$ & 0.0259 & 0.1017 & $0.0129~\mu$m & $1.16~\mu$m \\
+		轴向位移$u_z$ & 0.0146 & 0.0464 & $0.105~\mu$m & $5.61~\mu$m \\
+		\bottomrule
+	\end{tabularx}
 \end{table}
 
 盲测结果与验证集结果处于同一量级，说明由5个训练功率工况提取的POD基能够表示功率参数区间内部的未见工况。由此可判断，后续端到端预测中的主要误差来自POD系数预测，而不是POD空间本身缺少必要的空间模态。
 
-\xsubsection{正式变功率数据集下的POD重新选阶}
-{POD Rank Reselection for the Formal Variable-Power Dataset}
+\xsubsection{变功率数据集下的POD重新选阶}
+{POD Rank Reselection for the Variable-Power Dataset}
 
 前述$r_T=10$、$r_{u_r}=10$和$r_{u_z}=8$是固定功率倍率基准数据集的阶数，
-用于插值和GPR模型。对于正式POD--LSTM数据集，本文仅使用40条训练历史重新
-构造三个场的快照矩阵和POD基，并在10条验证历史上重新扫描阶数。正式输出维数定义为
+用于插值和GPR模型。对于变功率历史数据集，本文仅使用40条训练历史重新
+构造三个场的快照矩阵和POD基，并在10条验证历史上重新扫描阶数。POD--LSTM模型的总输出维数定义为
 
 \begin{equation}
 	r_{\mathrm{tot}}
@@ -568,12 +568,12 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 \end{equation}
 
 阶数选择同时考虑累计能量、验证集平均相对$L_2$误差、最大瞬时RMSE和最大
-节点误差。阶数冻结后，再对正式盲测历史进行一次POD直接投影，以获得空间
+节点误差。阶数冻结后，再对独立盲测历史进行一次POD直接投影，以获得空间
 基对未见功率历史的表示误差下限。
 
 \begin{table}[htbp]
 	\centering
-	\caption{正式变功率数据集的POD阶数与直接投影精度}
+	\caption{变功率数据集的POD阶数与直接投影精度}
 	\label{tab:formal_pod_results}
 	\begin{tabularx}{\textwidth}
 		{>{\centering\arraybackslash}p{2.0cm}
@@ -583,7 +583,7 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 			>{\centering\arraybackslash}p{3.0cm}
 			X}
 		\toprule
-		场变量 & 正式阶数 & 累计能量/\% & 验证平均相对$L_2$/\% & 盲测平均相对$L_2$/\% & 盲测最大RMSE \\
+		场变量 & POD阶数 & 累计能量/\% & 验证平均相对$L_2$\% & 盲测平均相对$L_2$\% & 盲测最大RMSE \\
 		\midrule
 		温度$T$ & 10 & 99.99997 & 0.0211 & 0.0192 & 1.360~K \\
 		径向位移$u_r$ & 10 & 99.99997 & 0.0360 & 0.0380 & 0.060~$\mu$m \\
@@ -592,13 +592,13 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 	\end{tabularx}
 \end{table}
 
-由表~\ref{tab:formal_pod_results}可见，温度、径向位移和轴向位移分别保留10、10和8阶模态后，验证集与盲测集的平均POD直接投影相对$L_2$误差均低于0.04\%。相应盲测最大瞬时RMSE分别为1.360~K、$0.060~\mu$m和$0.646~\mu$m，显著低于后续POD--LSTM端到端误差。因此，正式数据集采用的POD空间能够充分表示未见变功率工况，端到端模型误差主要来自POD系数的时序预测，而不是POD截断。
+由表~\ref{tab:formal_pod_results}可见，温度、径向位移和轴向位移分别保留10、10和8阶模态后，验证集与盲测集的平均POD直接投影相对$L_2$误差均低于0.04\%。相应盲测最大瞬时RMSE分别为1.360~K、$0.060~\mu$m和$0.646~\mu$m，显著低于后续POD--LSTM端到端误差。因此，所构建的POD空间能够充分表示未见变功率工况，端到端模型误差主要来自POD系数的时序预测，而不是POD截断。
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.80\textwidth]
 	{pod_lstm/formal_pod_rank_scan.png}
-	\caption{正式验证集上的POD阶数扫描结果}
+	\caption{验证集上的POD阶数扫描结果}
 	\label{fig:formal_pod_rank_scan}
 \end{figure}
 
@@ -720,7 +720,7 @@ POD--GPR对温度和径向位移的平均预测误差低于插值模型，其中
 
 两种系数代理模型的平均误差均较小，但最大瞬时相对误差达到约6\%，且温度最大节点误差达到约149~K。结合逐时刻误差可知，误差主要集中在快速升功率和热--力状态转折附近，而不是在全寿期持续存在。由于盲测POD直接投影的最大温度相对误差仅为0.0767\%，可确认这些局部峰值主要来自系数预测，而非POD截断。
 
-上述固定功率倍率结果构成无记忆代理模型的对照基线，其主要作用是验证POD系数预测与完整场恢复流程，并揭示仅依赖当前时刻和整体功率倍率的模型在快速功率变化及热--力状态转折附近仍会出现局部误差。由于正式POD--LSTM采用不同形状的变功率历史数据集，二者不直接比较绝对误差大小，而是分别用于评价规则单参数空间和历史依赖时序问题下的预测能力。
+上述固定功率倍率结果构成无记忆代理模型的对照基线，其主要作用是验证POD系数预测与完整场恢复流程，并揭示仅依赖当前时刻和整体功率倍率的模型在快速功率变化及热--力状态转折附近仍会出现局部误差。由于POD--LSTM模型采用不同形状的变功率历史数据集，二者不直接比较绝对误差大小，而是分别用于评价规则单参数空间和历史依赖时序问题下的预测能力。
 
 \xsubsection{单参数代理模型的二维完整场恢复结果}
 {Two-Dimensional Full-Field Reconstruction Results of the Single-Parameter Surrogate Models}
@@ -768,7 +768,7 @@ POD--GPR对温度和径向位移的平均预测误差低于插值模型，其中
 {Temporal Modeling Strategy and Input Features}
 
 燃料性能响应不仅取决于当前功率，还与此前功率历史、累计热输入、间隙演化
-和材料状态有关。对于第$j$个统一输出时刻，正式模型的动态输入定义为
+和材料状态有关。对于第$j$个统一输出时刻，POD--LSTM模型的动态输入定义为
 
 \begin{equation}
 	\boldsymbol x_j
@@ -797,12 +797,12 @@ POD--GPR对温度和径向位移的平均预测误差低于插值模型，其中
 
 时间特征用于标识寿期位置，瞬时功率描述当前热源水平，功率变化率用于区分
 升功率与降功率过程，累积能量用于表征长期历史作用。当前冷却剂边界和静态
-制造参数保持不变，因此不作为正式网络输入。
+制造参数保持不变，因此不作为当前网络输入。
 
 \xsubsection{POD系数增量与可训练初始状态}
 {POD-Coefficient Increments and Trainable Initial States}
 
-所有正式工况共享相同物理初始场。为避免LSTM重复学习较大的固定初始温度
+所有变功率工况共享相同物理初始场。为避免LSTM重复学习较大的固定初始温度
 系数，对每个物理场定义相对于初始时刻的POD系数增量：
 
 \begin{equation}
@@ -909,13 +909,13 @@ POD--LSTM采用共享LSTM主干和三个分场输出头。共享主干提取功�
 	\label{eq:formal_lstm_heads}
 \end{align}
 
-经验证集上的有限超参数选择后，正式模型冻结为单层LSTM、32个隐藏单元、
+经验证集上的有限超参数选择后，POD--LSTM模型冻结为单层LSTM、32个隐藏单元、
 Dropout为0.05，并以每条109步完整历史作为一个序列样本。训练、验证和盲测均
 保持完整工况划分，盲测集不参与任何结构或超参数调整。
 
 \begin{table}[htbp]
 	\centering
-	\caption{正式POD--LSTM模型的冻结配置}
+	\caption{POD--LSTM模型的冻结配置}
 	\label{tab:formal_lstm_configuration}
 	\begin{tabularx}{\textwidth}
 		{XXX}
@@ -1003,8 +1003,8 @@ $\mathcal L_0$约束初始增量状态，$\boldsymbol\theta$为全部网络参�
 损失最低的epoch保存。盲测集不参与标准化、POD选阶、网络训练、早停或
 结构选择，模型冻结后仅运行一次。
 
-\xsection{正式POD--LSTM结果与讨论}
-{Results and Discussion of the Formal POD--LSTM Model}
+\xsection{POD--LSTM模型预测结果与讨论}
+{Prediction Results and Discussion of the POD--LSTM Model}
 
 \xsubsection{误差评价指标}
 {Error Metrics}
@@ -1062,21 +1062,21 @@ $\mathcal L_0$约束初始增量状态，$\boldsymbol\theta$为全部网络参�
 
 除总体误差外，本文进一步统计10条独立盲测历史在各输出时刻的RMSE均值和最大值，并分析关键瞬态附近的局部误差峰值，以评价长序列预测中的误差集中位置及其时间演化特征。
 
-\xsubsection{正式数据覆盖与POD投影精度}
-{Formal Data Coverage and POD Projection Accuracy}
+\xsubsection{数据集覆盖范围与POD投影精度}
+{Dataset Coverage and POD Projection Accuracy}
 
-正式数据集由40条训练历史、10条验证历史和10条独立盲测历史组成。所有60条历史均已成功生成109步序列文件。由case manifest统计可知，样本的累积线功率积分相对基准值覆盖0.858--1.146，最大功率相对基准峰值覆盖0.892--1.140。训练集的最大功率变化率比值为0.828--1.173；盲测工况\texttt{case\_lstm\_bl\_0002}的该比值达到1.863，因此正式盲测不仅包含训练参数组合的重新组合，还包含有限程度的功率斜率外推。
+变功率历史数据集由40条训练历史、10条验证历史和10条独立盲测历史组成。所有60条历史均已成功生成109步序列文件。由case manifest统计可知，样本的累积线功率积分相对基准值覆盖0.858--1.146，最大功率相对基准峰值覆盖0.892--1.140。训练集的最大功率变化率比值为0.828--1.173；盲测工况\texttt{case\_lstm\_bl\_0002}的该比值达到1.863，因此独立盲测集不仅包含训练参数组合的重新组合，还包含有限程度的功率斜率外推。
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=\textwidth]{pod_lstm/power_history_overview.pdf}
-	\caption{正式POD--LSTM数据集中的变功率历史}
+	\includegraphics[width=\textwidth]{pod_lstm/power_history_overview.png}
+	\caption{POD--LSTM数据集的变功率历史}
 	\label{fig:power_history_overview}
 \end{figure}
 
-由表~\ref{tab:formal_pod_results}可知，正式盲测集中温度、径向位移和轴向位移
+由表~\ref{tab:formal_pod_results}可知，独立盲测集中温度、径向位移和轴向位移
 的POD直接投影平均相对$L_2$误差分别为0.0192\%、0.0380\%和0.0200\%，
-显著低于后续端到端POD--LSTM盲测误差。由此可确认，正式POD空间对未见
+显著低于后续端到端POD--LSTM盲测误差。由此可确认，所构建的POD空间对未见
 变功率历史具有充分的表示能力，端到端误差主要来自POD系数的时序预测。
 
 \xsubsection{训练收敛与验证集表现}
@@ -1086,7 +1086,7 @@ $\mathcal L_0$约束初始增量状态，$\boldsymbol\theta$为全部网络参�
 	\centering
 	\includegraphics[width=0.82\textwidth]
 	{pod_lstm/training_validation_loss.png}
-	\caption{正式POD--LSTM模型的训练与验证损失}
+	\caption{POD--LSTM模型的训练与验证损失}
 	\label{fig:formal_lstm_training}
 \end{figure}
 
@@ -1094,7 +1094,7 @@ $\mathcal L_0$约束初始增量状态，$\boldsymbol\theta$为全部网络参�
 
 \begin{table}[htbp]
 	\centering
-	\caption{正式POD--LSTM模型的验证集完整场误差}
+	\caption{POD--LSTM模型的验证集完整场误差}
 	\label{tab:formal_lstm_validation_results}
 	\begin{tabularx}{\textwidth}
 		{XXXXX}
@@ -1117,7 +1117,7 @@ $\mathcal L_0$约束初始增量状态，$\boldsymbol\theta$为全部网络参�
 
 \begin{table}[htbp]
 	\centering
-	\caption{正式POD--LSTM独立盲测总体结果}
+	\caption{POD--LSTM独立盲测总体结果}
 	\label{tab:formal_lstm_blind_results}
 	\begin{tabularx}{\textwidth}
 		{XXXXX}
@@ -1131,7 +1131,7 @@ $\mathcal L_0$约束初始增量状态，$\boldsymbol\theta$为全部网络参�
 	\end{tabularx}
 \end{table}
 
-从10条盲测历史的平均结果看，温度、径向位移和轴向位移的平均相对$L_2$误差分别为1.256\%、1.528\%和2.549\%，表明冻结后的POD--LSTM能够在未见功率历史上保持较好的完整场预测精度。与此同时，三个场的最大相对$L_2$误差分别达到15.144\%、10.987\%和17.913\%，说明总体误差并非在全寿期内均匀分布，而是存在少量局部高误差时刻。三个场的最大节点绝对误差分别为193.43~K、$24.32~\mu$m和$462.40~\mu$m。结合前述正式POD直接投影结果可知，POD截断误差显著低于上述端到端预测误差，因此当前误差主要来源于POD系数的时序预测，而不是低维空间缺少必要的空间模态。
+从10条盲测历史的平均结果看，温度、径向位移和轴向位移的平均相对$L_2$误差分别为1.256\%、1.528\%和2.549\%，表明冻结后的POD--LSTM能够在未见功率历史上保持较好的完整场预测精度。与此同时，三个场的最大相对$L_2$误差分别达到15.144\%、10.987\%和17.913\%，说明总体误差并非在全寿期内均匀分布，而是存在少量局部高误差时刻。三个场的最大节点绝对误差分别为193.43~K、$24.32~\mu$m和$462.40~\mu$m。结合前述POD直接投影结果可知，POD截断误差显著低于上述端到端预测误差，因此当前误差主要来源于POD系数的时序预测，而不是低维空间缺少必要的空间模态。
 
 \begin{figure}[!htb]
 	\centering
@@ -1248,7 +1248,7 @@ POD--LSTM仍能够较好保持温度场和位移场的主要空间分布特征�
 模型训练、验证和盲测的功率历史，并直接以该功率历史作为在线预测输入。
 该功率历史覆盖0--736.77~d，在不同寿期阶段包含多次升功率、降功率及平台变化。
 其累计功率积分、最大功率和最大功率变化率相对于基准历史的比值分别为
-0.991、0.940和0.926，均处于正式训练数据的覆盖范围内。因此，本算例用于
+0.991、0.940和0.926，均处于训练数据的覆盖范围内。因此，本算例用于
 检验冻结模型在训练包络内对新增功率历史的直接预测能力，而不用于评价超出训练
 范围的外推性能。
 
@@ -1322,7 +1322,7 @@ POD--LSTM仍能够较好保持温度场和位移场的主要空间分布特征�
 
 \begin{table}[htbp]
 	\centering
-	\caption{正式POD--LSTM在线计算时间}
+	\caption{POD--LSTM在线计算时间}
 	\label{tab:formal_timing_results}
 	\begin{tabularx}{\textwidth}
 		{XXX}
@@ -1344,15 +1344,15 @@ POD--LSTM仍能够较好保持温度场和位移场的主要空间分布特征�
 {Applicability and Model Limitations}
 
 固定功率倍率下的插值和GPR模型仅适用于相同基准功率史形状的整体幅值变化。
-正式POD--LSTM可处理训练数据包络内的不同功率史形状，但并不意味着能够对
+POD--LSTM模型可处理训练数据包络内的不同功率史形状，但并不意味着能够对
 任意幅值、变化率或持续时间的未见历史进行无条件外推。新功率历史的峰值、
-因此，本文给出的有效适用范围限定为新功率历史的峰值、变化率、关键瞬态时刻、平台持续时间和累积功率积分特征处于正式训练数据覆盖范围内或其邻近区域。
+因此，本文给出的有效适用范围限定为新功率历史的峰值、变化率、关键瞬态时刻、平台持续时间和累积功率积分特征处于训练数据覆盖范围内或其邻近区域。
 
 当前POD基建立在固定5717节点网格和固定燃料棒几何上。改变燃料半径、包壳
 厚度、初始间隙或燃料棒长度会改变节点坐标和物理对应关系，需要首先将不同
 几何上的场映射至统一参考域，不能直接混合现有快照矩阵。
 
-冷却剂温度和压力在当前正式模型中保持不变。将冷却剂温度历史扩展为新的
+冷却剂温度和压力在当前POD--LSTM模型中保持不变。将冷却剂温度历史扩展为新的
 输入通道时，需要重新设计功率--冷却剂温度联合样本、重新运行高保真模型、
 重新构建POD基并重新建立训练、验证和盲测数据集。因此，多边界条件问题属于
 本文模型适用范围之外的扩展方向，不影响本章在固定冷却剂边界条件下的结论。
@@ -1370,14 +1370,14 @@ POD--LSTM仍能够较好保持温度场和位移场的主要空间分布特征�
 和GPR的主要误差集中在快速功率变化和热--力状态转折阶段，说明进一步引入
 完整功率历史和时序状态具有必要性。
 
-在此基础上，构建了正式变功率历史数据集和POD--LSTM模型。正式模型以时间、
+在此基础上，构建了变功率历史数据集和POD--LSTM模型。该模型以时间、
 瞬时功率、功率变化率和累积功率积分特征为输入，预测三个物理场相对于共同初始状态
 的POD系数增量，并将LSTM初始隐藏状态和记忆状态设置为可训练参数。全部
 训练、验证和盲测历史按照完整工况划分，以避免时间点随机划分造成数据泄漏。
 
-正式数据集包含40条训练历史、
+变功率历史数据集包含40条训练历史、
 10条验证历史和10条
-独立盲测历史。正式POD重新选取的温度、径向位移和轴向位移阶数分别为
+独立盲测历史。基于该数据集重新选取的温度、径向位移和轴向位移POD阶数分别为
 10、10和8，三个场在盲测集上的平均直接投影相对$L_2$误差均低于0.04\%。
 
 冻结后的POD--LSTM在独立盲测集上的温度、径向位移和轴向位移平均相对
@@ -1390,7 +1390,7 @@ $L_2$误差分别为
 增强型中等网格在20个MPI进程下单个全寿期MOOSE工况的代表性壁钟时间为
 1346.20~s，对应预测与完整场重构的加速比约为$1.81\times10^4$。
 
-正式盲测的最大误差集中在\texttt{case\_lstm\_bl\_0006}的寿期后段，而其余
+独立盲测中的最大误差集中在\texttt{case\_lstm\_bl\_0006}的寿期后段，而其余
 大部分寿期内的温度和位移空间分布
 能够得到准确恢复。结果表明，所建立的POD--LSTM模型能够在固定几何、固定
 冷却剂边界和训练功率历史包络内实现燃料棒全寿期热--力场的快速预测，为
