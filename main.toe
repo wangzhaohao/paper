@@ -92,56 +92,52 @@
 \contentsline {section}{\numberline {5.3}Validation of Fuel Centerline Temperature}{122}{section*.478}%
 \contentsline {subsection}{\numberline {5.3.1}Validation of Centerline Temperature Evolution with Burnup}{122}{section*.481}%
 \contentsline {subsection}{\numberline {5.3.2}Analysis of Deviation Sources in Centerline Temperature Prediction}{126}{section*.494}%
-\contentsline {section}{\numberline {5.4}Validation of Fission Gas Release Based on the ForMas Model}{135}{section*.522}%
-\contentsline {subsection}{\numberline {5.4.1}FGR Validation under Steady-State Irradiation Conditions}{135}{section*.525}%
-\contentsline {subsection}{\numberline {5.4.2}FGR Response under Power-Varying Conditions}{136}{section*.530}%
-\contentsline {subsection}{\numberline {5.4.3}Analysis of Deviation Sources in the ForMas Model}{136}{section*.533}%
-\contentsline {section}{\numberline {5.5}Validation of Fission Gas Release Based on the SCIANTIX Model}{137}{section*.536}%
-\contentsline {subsection}{\numberline {5.5.1}Coupled Computational Settings of SCIANTIX}{137}{section*.539}%
-\contentsline {subsection}{\numberline {5.5.2}Comparison between SCIANTIX Predictions and Public Experimental Data}{137}{section*.542}%
-\contentsline {subsection}{\numberline {5.5.3}Validation of SCIANTIX Using Supplementary Experimental Data}{137}{section*.545}%
-\contentsline {section}{\numberline {5.6}Chapter Summary}{138}{section*.548}%
-\contentsline {chapter}{\numberline {6}Fast Fuel Performance Prediction Using a POD--LSTM Surrogate Model}{139}{section*.551}%
-\contentsline {section}{\numberline {6.1}Fuel Performance Dataset Construction and Preprocessing}{139}{section*.554}%
-\contentsline {subsection}{\numberline {6.1.1}High-Fidelity Fuel Performance Model and Prediction Variables}{139}{section*.557}%
-\contentsline {subsection}{\numberline {6.1.2}Mesh Sensitivity Analysis and Selection of the Training Mesh}{140}{section*.562}%
-\contentsline {subsection}{\numberline {6.1.3}Parameter Space and Staged Simulation Case Design}{142}{section*.571}%
-\contentsline {subsection}{\numberline {6.1.4}Field Snapshot Collection, Temporal Synchronization, and Data Integrity}{144}{section*.582}%
-\contentsline {section}{\numberline {6.2}POD-Based Reduced-Order Representation of Fuel Performance Fields}{145}{section*.585}%
-\contentsline {subsection}{\numberline {6.2.1}Snapshot Matrix and Reference Field}{145}{section*.588}%
-\contentsline {subsection}{\numberline {6.2.2}POD Mode Extraction and Rank Selection}{145}{section*.591}%
-\contentsline {subsection}{\numberline {6.2.3}Projection of POD Coefficients and Full-Field Reconstruction}{146}{section*.596}%
-\contentsline {subsection}{\numberline {6.2.4}POD Representation Capability for Independent Blind Cases}{147}{section*.599}%
-\contentsline {subsection}{\numberline {6.2.5}POD Rank Reselection for the Variable-Power Dataset}{147}{section*.604}%
-\contentsline {section}{\numberline {6.3}Baseline Surrogate Models under Fixed-Shape Power Histories}{148}{section*.611}%
-\contentsline {subsection}{\numberline {6.3.1}Inputs and Outputs of the Baseline Models}{148}{section*.614}%
-\contentsline {subsection}{\numberline {6.3.2}Baseline Model Based on POD-Coefficient Interpolation}{149}{section*.617}%
-\contentsline {subsection}{\numberline {6.3.3}Stage-Wise POD--GPR Surrogate Model}{149}{section*.620}%
-\contentsline {subsection}{\numberline {6.3.4}Validation and Independent Blind-Test Results of the Single-Parameter Models}{150}{section*.623}%
-\contentsline {subsection}{\numberline {6.3.5}Two-Dimensional Full-Field Reconstruction Results of the Single-Parameter Surrogate Models}{150}{section*.628}%
-\contentsline {section}{\numberline {6.4}POD--LSTM Model for Variable Power Histories}{152}{section*.637}%
-\contentsline {subsection}{\numberline {6.4.1}Temporal Modeling Strategy and Input Features}{152}{section*.640}%
-\contentsline {subsection}{\numberline {6.4.2}POD-Coefficient Increments and Trainable Initial States}{153}{section*.643}%
-\contentsline {subsection}{\numberline {6.4.3}Shared Recurrent Trunk and Field-Specific Output Heads}{154}{section*.647}%
-\contentsline {subsection}{\numberline {6.4.4}Loss Function, Training, and Model Freezing}{154}{section*.652}%
-\contentsline {section}{\numberline {6.5}Prediction Results and Discussion of the POD--LSTM Model}{155}{section*.655}%
-\contentsline {subsection}{\numberline {6.5.1}Error Metrics}{155}{section*.658}%
-\contentsline {subsection}{\numberline {6.5.2}Dataset Coverage and POD Projection Accuracy}{156}{section*.661}%
-\contentsline {subsection}{\numberline {6.5.3}Training Convergence and Validation Performance}{156}{section*.666}%
-\contentsline {subsection}{\numberline {6.5.4}Overall Accuracy on the Independent Blind-Test Set}{158}{section*.673}%
-\contentsline {subsection}{\numberline {6.5.5}Error Histories and Critical Transients}{158}{section*.680}%
-\contentsline {subsection}{\numberline {6.5.6}Recovery of Complete Two-Dimensional Fields}{159}{section*.685}%
-\contentsline {subsection}{\numberline {6.5.7}Online Prediction Example for an Independent Power History}{160}{section*.690}%
-\contentsline {subsection}{\numberline {6.5.8}Computational Efficiency and Speedup}{163}{section*.697}%
-\contentsline {section}{\numberline {6.6}Applicability and Model Limitations}{164}{section*.702}%
-\contentsline {section}{\numberline {6.7}Chapter Summary}{164}{section*.705}%
-\contentsline {chapter}{\numberline {7}Conclusions and Outlook}{166}{section*.708}%
-\contentsline {section}{\numberline {7.1}Main Research Work and Conclusions}{166}{section*.711}%
-\contentsline {section}{\numberline {7.2}Main Innovations}{167}{section*.714}%
-\contentsline {section}{\numberline {7.3}Research Outlook}{168}{section*.717}%
-\contentsline {chapter}{Acknowledgements}{170}{section*.719}%
-\contentsline {chapter}{References}{171}{section*.722}%
-\contentsline {chapter}{Appendices}{186}{section*.725}%
-\contentsline {chapter}{Achievements}{220}{section*.832}%
-\contentsline {chapter}{Decision of Defense Committee}{222}{section*.835}%
-\contentsline {chapter}{General Reviewers List}{223}{section*.839}%
+\contentsline {section}{\numberline {5.4}Validation and Comparison of Fission Gas Release Models}{135}{section*.522}%
+\contentsline {subsection}{\numberline {5.4.1}FGR Validation and Model Comparison under Steady-State Irradiation}{136}{section*.525}%
+\contentsline {subsection}{\numberline {5.4.2}End-of-Life Validation and Dynamic FGR Response under Power-Ramp Conditions}{138}{section*.532}%
+\contentsline {subsection}{\numberline {5.4.3}FGR Prediction Characteristics under Different Operating Conditions}{140}{section*.537}%
+\contentsline {subsection}{\numberline {5.4.4}Model Differences, Deviation Sources, and Applicability}{141}{section*.540}%
+\contentsline {chapter}{\numberline {6}Fast Fuel Performance Prediction Using a POD--LSTM Surrogate Model}{143}{section*.543}%
+\contentsline {section}{\numberline {6.1}Fuel Performance Dataset Construction and Preprocessing}{143}{section*.546}%
+\contentsline {subsection}{\numberline {6.1.1}High-Fidelity Fuel Performance Model and Prediction Variables}{143}{section*.549}%
+\contentsline {subsection}{\numberline {6.1.2}Mesh Sensitivity Analysis and Selection of the Training Mesh}{144}{section*.554}%
+\contentsline {subsection}{\numberline {6.1.3}Parameter Space and Staged Simulation Case Design}{146}{section*.563}%
+\contentsline {subsection}{\numberline {6.1.4}Field Snapshot Collection, Temporal Synchronization, and Data Integrity}{148}{section*.574}%
+\contentsline {section}{\numberline {6.2}POD-Based Reduced-Order Representation of Fuel Performance Fields}{149}{section*.577}%
+\contentsline {subsection}{\numberline {6.2.1}Snapshot Matrix and Reference Field}{149}{section*.580}%
+\contentsline {subsection}{\numberline {6.2.2}POD Mode Extraction and Rank Selection}{149}{section*.583}%
+\contentsline {subsection}{\numberline {6.2.3}Projection of POD Coefficients and Full-Field Reconstruction}{150}{section*.588}%
+\contentsline {subsection}{\numberline {6.2.4}POD Representation Capability for Independent Blind Cases}{151}{section*.591}%
+\contentsline {subsection}{\numberline {6.2.5}POD Rank Reselection for the Variable-Power Dataset}{151}{section*.596}%
+\contentsline {section}{\numberline {6.3}Baseline Surrogate Models under Fixed-Shape Power Histories}{152}{section*.603}%
+\contentsline {subsection}{\numberline {6.3.1}Inputs and Outputs of the Baseline Models}{152}{section*.606}%
+\contentsline {subsection}{\numberline {6.3.2}Baseline Model Based on POD-Coefficient Interpolation}{153}{section*.609}%
+\contentsline {subsection}{\numberline {6.3.3}Stage-Wise POD--GPR Surrogate Model}{153}{section*.612}%
+\contentsline {subsection}{\numberline {6.3.4}Validation and Independent Blind-Test Results of the Single-Parameter Models}{154}{section*.615}%
+\contentsline {subsection}{\numberline {6.3.5}Two-Dimensional Full-Field Reconstruction Results of the Single-Parameter Surrogate Models}{154}{section*.620}%
+\contentsline {section}{\numberline {6.4}POD--LSTM Model for Variable Power Histories}{156}{section*.629}%
+\contentsline {subsection}{\numberline {6.4.1}Temporal Modeling Strategy and Input Features}{156}{section*.632}%
+\contentsline {subsection}{\numberline {6.4.2}POD-Coefficient Increments and Trainable Initial States}{157}{section*.635}%
+\contentsline {subsection}{\numberline {6.4.3}Shared Recurrent Trunk and Field-Specific Output Heads}{158}{section*.639}%
+\contentsline {subsection}{\numberline {6.4.4}Loss Function, Training, and Model Freezing}{158}{section*.644}%
+\contentsline {section}{\numberline {6.5}Prediction Results and Discussion of the POD--LSTM Model}{159}{section*.647}%
+\contentsline {subsection}{\numberline {6.5.1}Error Metrics}{159}{section*.650}%
+\contentsline {subsection}{\numberline {6.5.2}Dataset Coverage and POD Projection Accuracy}{160}{section*.653}%
+\contentsline {subsection}{\numberline {6.5.3}Training Convergence and Validation Performance}{160}{section*.658}%
+\contentsline {subsection}{\numberline {6.5.4}Overall Accuracy on the Independent Blind-Test Set}{162}{section*.665}%
+\contentsline {subsection}{\numberline {6.5.5}Error Histories and Critical Transients}{162}{section*.672}%
+\contentsline {subsection}{\numberline {6.5.6}Recovery of Complete Two-Dimensional Fields}{163}{section*.677}%
+\contentsline {subsection}{\numberline {6.5.7}Online Prediction Example for an Independent Power History}{164}{section*.682}%
+\contentsline {subsection}{\numberline {6.5.8}Computational Efficiency and Speedup}{167}{section*.689}%
+\contentsline {section}{\numberline {6.6}Applicability and Model Limitations}{168}{section*.694}%
+\contentsline {section}{\numberline {6.7}Chapter Summary}{168}{section*.697}%
+\contentsline {chapter}{\numberline {7}Conclusions and Outlook}{170}{section*.700}%
+\contentsline {section}{\numberline {7.1}Main Research Work and Conclusions}{170}{section*.703}%
+\contentsline {section}{\numberline {7.2}Main Innovations}{171}{section*.706}%
+\contentsline {section}{\numberline {7.3}Research Outlook}{172}{section*.709}%
+\contentsline {chapter}{Acknowledgements}{174}{section*.711}%
+\contentsline {chapter}{References}{175}{section*.714}%
+\contentsline {chapter}{Appendices}{190}{section*.717}%
+\contentsline {chapter}{Achievements}{224}{section*.824}%
+\contentsline {chapter}{Decision of Defense Committee}{226}{section*.827}%
+\contentsline {chapter}{General Reviewers List}{227}{section*.831}%

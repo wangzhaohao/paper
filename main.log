@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.21)  28 AUG 2026 16:25
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.21)  4 SEP 2026 09:52
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2909,6 +2909,20 @@ ticle'.
 
 
 Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'lassmannOxiredModelRedistribution1987':
+(biblatex)                - Datamodel: article entry 'lassmannOxiredModelRedist
+ribution1987' (References/reference.bib): Invalid field 'languageid' for entryt
+ype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'lassmannOxiredModelRedistribution1987':
+(biblatex)                - Datamodel: article entry 'lassmannOxiredModelRedist
+ribution1987' (References/reference.bib): Invalid field 'lansortorder' for entr
+ytype 'article'.
+
+
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'forsbergDiffusionTheoryFission1985':
 (biblatex)                - Datamodel: article entry 'forsbergDiffusionTheoryFi
 ssion1985' (References/reference.bib): Invalid field 'languageid' for entrytype
@@ -4108,20 +4122,6 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Datamodel: article entry 'newmanThreeDimensionalCou
 pled2009' (References/reference.bib): Invalid field 'lansortorder' for entrytyp
 e 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'lassmannOxiredModelRedistribution1987':
-(biblatex)                - Datamodel: article entry 'lassmannOxiredModelRedist
-ribution1987' (References/reference.bib): Invalid field 'languageid' for entryt
-ype 'article'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'lassmannOxiredModelRedistribution1987':
-(biblatex)                - Datamodel: article entry 'lassmannOxiredModelRedist
-ribution1987' (References/reference.bib): Invalid field 'lansortorder' for entr
-ytype 'article'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -5724,12 +5724,7 @@ Overfull \hbox (3.82144pt too wide) in paragraph at lines 45--46
  的 数 值 技 术 路 线。| \TU/times.ttf(0)/m/n/12 FAST\TU/fzsong.ttf(0)/m/n/12 、|
  []
 
-[5]
-
-LaTeX Warning: Citation 'lassmannOXIREDModelRedistribution1987' on page 6 undef
-ined on input line 53.
-
-[6] [7] [8] [9]
+[5] [6] [7] [8] [9]
 File: ./Figures/技术路线.png Graphic file (type bmp)
 <./Figures/技术路线.png>
 ) (./Main_Spine/c2.tex [10]
@@ -6410,11 +6405,101 @@ rison.pdf Graphic file (type pdf)
 ison.pdf>
 
 ignored error: Infinite glue shrinkage found in box being split [134] [135]
-[136]) (./Main_Spine/c6.tex [137] [138]
-Chapter 6.
-[139
+[136] [137] [138]
 
-] [140]
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 1029.
+
+
+Overfull \hbox (14.58618pt too wide) in paragraph at lines 1029--1029
+[]|\TU/times.ttf(0)/m/n/10.5 M501 
+ []
+
+
+Overfull \hbox (7.58276pt too wide) in paragraph at lines 1029--1029
+\TU/times.ttf(0)/m/n/10.5 HR- 
+ []
+
+
+Overfull \hbox (14.58618pt too wide) in paragraph at lines 1029--1029
+[]|\TU/times.ttf(0)/m/n/10.5 M501 
+ []
+
+
+Overfull \hbox (7.58276pt too wide) in paragraph at lines 1029--1029
+\TU/times.ttf(0)/m/n/10.5 HR- 
+ []
+
+
+Overfull \hbox (14.58618pt too wide) in paragraph at lines 1029--1029
+[]|\TU/times.ttf(0)/m/n/10.5 M501 
+ []
+
+
+Overfull \hbox (7.58276pt too wide) in paragraph at lines 1029--1029
+\TU/times.ttf(0)/m/n/10.5 HR- 
+ []
+
+
+Overfull \hbox (14.58618pt too wide) in paragraph at lines 1029--1029
+[]|\TU/times.ttf(0)/m/n/10.5 M501 
+ []
+
+
+Overfull \hbox (7.58276pt too wide) in paragraph at lines 1029--1029
+\TU/times.ttf(0)/m/n/10.5 HR- 
+ []
+
+
+Overfull \hbox (14.58618pt too wide) in paragraph at lines 1029--1029
+[]|\TU/times.ttf(0)/m/n/10.5 M501 
+ []
+
+
+Overfull \hbox (9.33618pt too wide) in paragraph at lines 1029--1029
+\TU/times.ttf(0)/m/n/10.5 MR- 
+ []
+
+
+Overfull \hbox (14.58618pt too wide) in paragraph at lines 1029--1029
+[]|\TU/times.ttf(0)/m/n/10.5 M501 
+ []
+
+
+Overfull \hbox (9.33618pt too wide) in paragraph at lines 1029--1029
+\TU/times.ttf(0)/m/n/10.5 MR- 
+ []
+
+
+Overfull \hbox (14.58618pt too wide) in paragraph at lines 1029--1029
+[]|\TU/times.ttf(0)/m/n/10.5 M501 
+ []
+
+
+Overfull \hbox (9.33618pt too wide) in paragraph at lines 1029--1029
+\TU/times.ttf(0)/m/n/10.5 MR- 
+ []
+
+
+Overfull \hbox (14.58618pt too wide) in paragraph at lines 1029--1029
+[]|\TU/times.ttf(0)/m/n/10.5 M501 
+ []
+
+
+Overfull \hbox (9.33618pt too wide) in paragraph at lines 1029--1029
+\TU/times.ttf(0)/m/n/10.5 MR- 
+ []
+
+
+Overfull \hbox (27.7438pt too wide) in alignment at lines 1029--1029
+[][][][][][][][] 
+ []
+
+[139] [140] [141]) (./Main_Spine/c6.tex [142]
+Chapter 6.
+[143
+
+] [144]
 File: ./Figures/mesh_sensitivity/max_temperature_history.png Graphic file (type
  bmp)
 <./Figures/mesh_sensitivity/max_temperature_history.png>
@@ -6424,18 +6509,18 @@ bmp)
 File: ./Figures/mesh_sensitivity/max_abs_disp_z_history.png Graphic file (type 
 bmp)
 <./Figures/mesh_sensitivity/max_abs_disp_z_history.png>
- [141] [142] [143] [144] [145] [146]
+ [145] [146] [147] [148] [149] [150]
 Underfull \hbox (badness 10000) in paragraph at lines 592--592
 []|\TU/fzsong.ttf(0)/m/n/10.5 盲 测 最 大
  []
 
-[147]
+[151]
 File: ./Figures/pod_lstm/formal_pod_rank_scan.png Graphic file (type bmp)
 <./Figures/pod_lstm/formal_pod_rank_scan.png>
- [148]
+ [152]
 Missing character: There is no ^^S (U+0013) in font [Materials/Fonts/times.ttf]
 /OT:language=dflt;mapping=tex-text;!
-[149] [150]
+[153] [154]
 File: ./Figures/pod_gpr/case_pf10375_temperature_K_gpr_2d_comparison.png Graphi
 c file (type bmp)
 <./Figures/pod_gpr/case_pf10375_temperature_K_gpr_2d_comparison.png>
@@ -6449,16 +6534,16 @@ Overfull \hbox (2.22618pt too wide) in paragraph at lines 750--751
 m/n/12 = []\OML/lmm/m/it/12 :[][][] \OMS/lmsy/m/n/12 ^^B
  []
 
-[151]
+[155]
 File: ./Figures/pod_gpr/case_pf10375_disp_z_baseline_maximum_error_2d.png Graph
 ic file (type bmp)
 <./Figures/pod_gpr/case_pf10375_disp_z_baseline_maximum_error_2d.png>
- [152] [153] [154] [155]
+ [156] [157] [158] [159]
 File: ./Figures/pod_lstm/power_history_overview.png Graphic file (type bmp)
 <./Figures/pod_lstm/power_history_overview.png>
 File: ./Figures/pod_lstm/training_validation_loss.png Graphic file (type bmp)
 <./Figures/pod_lstm/training_validation_loss.png>
- [156] [157]
+ [160] [161]
 File: ./Figures/pod_lstm/blind_case_mean_relative_l2.png Graphic file (type bmp
 )
 <./Figures/pod_lstm/blind_case_mean_relative_l2.png>
@@ -6471,24 +6556,24 @@ File: ./Figures/pod_lstm/blind_error_history_disp_r.png Graphic file (type bmp)
 File: ./Figures/pod_lstm/blind_error_history_disp_z.png Graphic file (type bmp)
 
 <./Figures/pod_lstm/blind_error_history_disp_z.png>
- [158] [159]
+ [162] [163]
 File: ./Figures/pod_lstm/blind_full_field_comparison.png Graphic file (type bmp
 )
 <./Figures/pod_lstm/blind_full_field_comparison.png>
- [160]
+ [164]
 File: ./Figures/pod_lstm/online_power_and_response_histories.png Graphic file (
 type bmp)
 <./Figures/pod_lstm/online_power_and_response_histories.png>
- [161]
+ [165]
 File: ./Figures/pod_lstm/online_representative_2d_fields.png Graphic file (type
  bmp)
 <./Figures/pod_lstm/online_representative_2d_fields.png>
- [162]
-[163] [164]) (./Main_Spine/c7.tex [165]
+ [166]
+[167] [168]) (./Main_Spine/c7.tex [169]
 Chapter 7.
-[166
+[170
 
-] [167] [168]) [169] (./Main_Miscellaneous/acknowledegment.tex) [170
+] [171] [172]) [173] (./Main_Miscellaneous/acknowledegment.tex) [174
 
 
 ]
@@ -6499,11 +6584,11 @@ ailable
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input lin
 e 188.
 
-[171
+[175
 
 
-] [172] [173] [174] [175] [176] [177] [178] [179] [180] [181] [182]
-[183] [184] [185]
+] [176] [177] [178] [179] [180] [181] [182] [183] [184] [185] [186]
+[187] [188] [189]
 \l_tmpa_count=\count643
  (./Main_Miscellaneous/appendix_a.tex
 附录 附录A.
@@ -6512,11 +6597,11 @@ Overfull \hbox (10.38103pt too wide) in paragraph at lines 117--117
 []|\TU/lmtt/m/n/10.5 sciantix_iGrainBoundaryVacancyDiffusivity|  
  []
 
-[186
+[190
 
 
 ]
-ignored error: Infinite glue shrinkage found in box being split [187]
+ignored error: Infinite glue shrinkage found in box being split [191]
 (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
@@ -6528,35 +6613,35 @@ File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.5> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 135.
- [188])
-(./Main_Miscellaneous/appendix_b.tex [189]
+ [192])
+(./Main_Miscellaneous/appendix_b.tex [193]
 附录 附录B.
-[190
+[194
 
-] [191]
+] [195]
 Overfull \hbox (4.38306pt too wide) detected at line 67
 [][][][]\OML/lmm/m/it/12 =[] \OT1/lmr/m/n/12 = [] + [] \OMS/lmsy/m/n/12 ^^@ [][
 ]
  []
 
-[192]
-ignored error: Infinite glue shrinkage found in box being split [193] [194]
-[195] [196] [197])
-(./Main_Miscellaneous/appendix_mox_thermomechanical_models.tex [198]
+[196]
+ignored error: Infinite glue shrinkage found in box being split [197] [198]
+[199] [200] [201])
+(./Main_Miscellaneous/appendix_mox_thermomechanical_models.tex [202]
 附录 附录C.
-[199
+[203
 
-] [200] [201] [202] [203] [204])
-(./Main_Miscellaneous/appendix_cladding_incore_models.tex [205]
+] [204] [205] [206] [207] [208])
+(./Main_Miscellaneous/appendix_cladding_incore_models.tex [209]
 附录 附录D.
-[206
+[210
 
-] [207] [208] [209] [210] [211] [212] [213] [214])
-(./Main_Miscellaneous/appendix_gap_heat_transfer_models.tex [215]
+] [211] [212] [213] [214] [215] [216] [217] [218])
+(./Main_Miscellaneous/appendix_gap_heat_transfer_models.tex [219]
 附录 附录E.
-[216
+[220
 
-] [217] [218] [219]) [220] (./Main_Miscellaneous/achievement.tex) [221
+] [221] [222] [223]) [224] (./Main_Miscellaneous/achievement.tex) [225
 
 ]
 (./Main_Miscellaneous/decision.tex
@@ -6567,13 +6652,13 @@ Overfull \hbox (1.52652pt too wide) in paragraph at lines 12--13
  文 \TU/times.ttf(0)/m/n/12 ××××××××××\TU/fzsong.ttf(0)/m/it/12 ，|
  []
 
-) [222
+) [226
 
 
-] [223
+] [227
 
 
-] [224
+] [228
 
 ] (./main.aux)
  ***********
@@ -6584,25 +6669,17 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 69556 strings out of 468179
- 1628161 string characters out of 5433206
- 2938637 words of memory out of 5000000
- 96902 multiletter control sequences out of 15000+600000
+ 69570 strings out of 468179
+ 1628917 string characters out of 5433206
+ 2939969 words of memory out of 5000000
+ 96916 multiletter control sequences out of 15000+600000
  742022 words of font info for 308 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  117i,20n,131p,2473b,7396s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (246 pages).
+Output written on main.pdf (250 pages).

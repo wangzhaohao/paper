@@ -1964,6 +1964,72 @@
       \warn{\item Datamodel: article entry 'xuStudyAnalysisPlutonium2025' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
       \warn{\item Datamodel: article entry 'xuStudyAnalysisPlutonium2025' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
+    \entry{lassmannOxiredModelRedistribution1987}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6dd0974721c537740e00913161235fdc}{%
+           family={Lassmann},
+           familyi={L\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=6dd0974721c537740e00913161235fdc}{%
+           family={Lassmann},
+           familyi={L\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{6dd0974721c537740e00913161235fdc}
+      \strng{fullhash}{6dd0974721c537740e00913161235fdc}
+      \strng{fullhashraw}{6dd0974721c537740e00913161235fdc}
+      \strng{bibnamehash}{6dd0974721c537740e00913161235fdc}
+      \strng{authorbibnamehash}{6dd0974721c537740e00913161235fdc}
+      \strng{authornamehash}{6dd0974721c537740e00913161235fdc}
+      \strng{authorfullhash}{6dd0974721c537740e00913161235fdc}
+      \strng{authorfullhashraw}{6dd0974721c537740e00913161235fdc}
+      \strng{nameabibnamehash}{6dd0974721c537740e00913161235fdc}
+      \strng{nameanamehash}{6dd0974721c537740e00913161235fdc}
+      \strng{nameafullhash}{6dd0974721c537740e00913161235fdc}
+      \strng{nameafullhashraw}{6dd0974721c537740e00913161235fdc}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{1}
+      \field{title}{The Oxired Model for Redistribution of Oxygen in Nonstoichiometric Uranium-Plutonium Oxides}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2024}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{150}
+      \field{year}{1987}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{10\bibrangedash 16}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/0022-3115(87)90088-2
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311587900882
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311587900882
+      \endverb
+      \keyw{lassmannOxiredModelRedistribution1987}
+      \warn{\item Datamodel: article entry 'lassmannOxiredModelRedistribution1987' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
+      \warn{\item Datamodel: article entry 'lassmannOxiredModelRedistribution1987' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
+    \endentry
     \entry{forsbergDiffusionTheoryFission1985}{article}{}{}
       \name{author}{2}{}{%
         {{hash=7d420c1d36c2d190b3012884f5e784e3}{%
@@ -8114,72 +8180,6 @@
       \keyw{newmanThreeDimensionalCoupled2009}
       \warn{\item Datamodel: article entry 'newmanThreeDimensionalCoupled2009' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
       \warn{\item Datamodel: article entry 'newmanThreeDimensionalCoupled2009' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-    \endentry
-    \entry{lassmannOxiredModelRedistribution1987}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=6dd0974721c537740e00913161235fdc}{%
-           family={Lassmann},
-           familyi={L\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=6dd0974721c537740e00913161235fdc}{%
-           family={Lassmann},
-           familyi={L\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{6dd0974721c537740e00913161235fdc}
-      \strng{fullhash}{6dd0974721c537740e00913161235fdc}
-      \strng{fullhashraw}{6dd0974721c537740e00913161235fdc}
-      \strng{bibnamehash}{6dd0974721c537740e00913161235fdc}
-      \strng{authorbibnamehash}{6dd0974721c537740e00913161235fdc}
-      \strng{authornamehash}{6dd0974721c537740e00913161235fdc}
-      \strng{authorfullhash}{6dd0974721c537740e00913161235fdc}
-      \strng{authorfullhashraw}{6dd0974721c537740e00913161235fdc}
-      \strng{nameabibnamehash}{6dd0974721c537740e00913161235fdc}
-      \strng{nameanamehash}{6dd0974721c537740e00913161235fdc}
-      \strng{nameafullhash}{6dd0974721c537740e00913161235fdc}
-      \strng{nameafullhashraw}{6dd0974721c537740e00913161235fdc}
-      \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Nuclear Materials}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{1}
-      \field{title}{The Oxired Model for Redistribution of Oxygen in Nonstoichiometric Uranium-Plutonium Oxides}
-      \field{urlday}{1}
-      \field{urlmonth}{9}
-      \field{urlyear}{2024}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{150}
-      \field{year}{1987}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{10\bibrangedash 16}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.1016/0022-3115(87)90088-2
-      \endverb
-      \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311587900882
-      \endverb
-      \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/0022311587900882
-      \endverb
-      \keyw{lassmannOxiredModelRedistribution1987}
-      \warn{\item Datamodel: article entry 'lassmannOxiredModelRedistribution1987' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lassmannOxiredModelRedistribution1987' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
     \entry{ramirezSimulationsHeatOxygen2006}{article}{}{}
       \name{author}{3}{}{%

@@ -391,277 +391,261 @@
 \contentsline {subsubsection}{\numberline {5.3.2.3}不同燃料棒敏感性差异}{130}{section*.501}%
 \contentsline {subsubsection}{\numberline {5.3.2.4}中心温度偏差来源综合判断}{135}{section*.519}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.4}基于 ForMas 模型的裂变气体释放验证}{135}{section*.520}%
+\contentsline {section}{\numberline {5.4}裂变气体释放模型的验证与对比}{135}{section*.520}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.4}基于 ForMas 模型的裂变气体释放验证}{135}{section*.521}%
+\contentsline {section}{\numberline {5.4}裂变气体释放模型的验证与对比}{135}{section*.521}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.4.1}稳态辐照案例 FGR 验证}{135}{section*.523}%
+\contentsline {subsection}{\numberline {5.4.1}稳态辐照案例FGR验证与模型对比}{136}{section*.523}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.4.1}稳态辐照案例 FGR 验证}{135}{section*.524}%
+\contentsline {subsection}{\numberline {5.4.1}稳态辐照案例FGR验证与模型对比}{136}{section*.524}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.4.2}功率变化工况下的 FGR 响应}{136}{section*.528}%
+\contentsline {subsection}{\numberline {5.4.2}功率提升工况FGR终值验证与动态响应}{138}{section*.530}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.4.2}功率变化工况下的 FGR 响应}{136}{section*.529}%
+\contentsline {subsection}{\numberline {5.4.2}功率提升工况FGR终值验证与动态响应}{138}{section*.531}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.4.3}ForMas 模型偏差来源分析}{136}{section*.531}%
+\contentsline {subsection}{\numberline {5.4.3}不同运行条件下的FGR预测规律}{140}{section*.535}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.4.3}ForMas 模型偏差来源分析}{136}{section*.532}%
+\contentsline {subsection}{\numberline {5.4.3}不同运行条件下的FGR预测规律}{140}{section*.536}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.5}基于 SCIANTIX 模型的裂变气体释放验证}{137}{section*.534}%
+\contentsline {subsection}{\numberline {5.4.4}模型差异、偏差来源与适用范围}{141}{section*.538}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.5}基于 SCIANTIX 模型的裂变气体释放验证}{137}{section*.535}%
+\contentsline {subsection}{\numberline {5.4.4}模型差异、偏差来源与适用范围}{141}{section*.539}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.5.1}SCIANTIX 耦合计算设置}{137}{section*.537}%
+\contentsline {chapter}{\numberline {6}基于POD--LSTM代理模型的燃料性能快速预测}{143}{section*.541}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.5.1}SCIANTIX 耦合计算设置}{137}{section*.538}%
+\contentsline {chapter}{\numberline {6}基于POD--LSTM代理模型的燃料性能快速预测}{143}{section*.542}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.5.2}SCIANTIX 模型与公开实验数据对比}{137}{section*.540}%
+\contentsline {section}{\numberline {6.1}燃料性能数据集构建与预处理}{143}{section*.544}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.5.2}SCIANTIX 模型与公开实验数据对比}{137}{section*.541}%
+\contentsline {section}{\numberline {6.1}燃料性能数据集构建与预处理}{143}{section*.545}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {5.5.3}基于补充实验数据的 SCIANTIX 模型验证}{137}{section*.543}%
+\contentsline {subsection}{\numberline {6.1.1}高保真燃料性能模型与预测变量}{143}{section*.547}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {5.5.3}基于补充实验数据的 SCIANTIX 模型验证}{137}{section*.544}%
+\contentsline {subsection}{\numberline {6.1.1}高保真燃料性能模型与预测变量}{143}{section*.548}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {5.6}本章小结}{138}{section*.546}%
+\contentsline {subsection}{\numberline {6.1.2}网格敏感性分析与训练网格选取}{144}{section*.552}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {5.6}本章小结}{138}{section*.547}%
+\contentsline {subsection}{\numberline {6.1.2}网格敏感性分析与训练网格选取}{144}{section*.553}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {6}基于POD--LSTM代理模型的燃料性能快速预测}{139}{section*.549}%
+\contentsline {subsection}{\numberline {6.1.3}参数空间与分阶段计算工况设计}{146}{section*.561}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {6}基于POD--LSTM代理模型的燃料性能快速预测}{139}{section*.550}%
+\contentsline {subsection}{\numberline {6.1.3}参数空间与分阶段计算工况设计}{146}{section*.562}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}固定功率史形状下的单参数数据集}{146}{section*.564}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}面向POD--LSTM的变功率历史数据集}{147}{section*.567}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.1}燃料性能数据集构建与预处理}{139}{section*.552}%
+\contentsline {subsection}{\numberline {6.1.4}场快照采集、时间同步与数据完整性}{148}{section*.572}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.1}燃料性能数据集构建与预处理}{139}{section*.553}%
+\contentsline {subsection}{\numberline {6.1.4}场快照采集、时间同步与数据完整性}{148}{section*.573}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.1.1}高保真燃料性能模型与预测变量}{139}{section*.555}%
+\contentsline {section}{\numberline {6.2}基于POD的燃料性能场降阶}{149}{section*.575}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.1.1}高保真燃料性能模型与预测变量}{139}{section*.556}%
+\contentsline {section}{\numberline {6.2}基于POD的燃料性能场降阶}{149}{section*.576}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.1.2}网格敏感性分析与训练网格选取}{140}{section*.560}%
+\contentsline {subsection}{\numberline {6.2.1}快照矩阵与参考场}{149}{section*.578}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.1.2}网格敏感性分析与训练网格选取}{140}{section*.561}%
+\contentsline {subsection}{\numberline {6.2.1}快照矩阵与参考场}{149}{section*.579}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.1.3}参数空间与分阶段计算工况设计}{142}{section*.569}%
+\contentsline {subsection}{\numberline {6.2.2}POD模态提取与阶数选取}{149}{section*.581}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.1.3}参数空间与分阶段计算工况设计}{142}{section*.570}%
-\contentsline {subsubsection}{\numberline {6.1.3.1}固定功率史形状下的单参数数据集}{142}{section*.572}%
-\contentsline {subsubsection}{\numberline {6.1.3.2}面向POD--LSTM的变功率历史数据集}{143}{section*.575}%
+\contentsline {subsection}{\numberline {6.2.2}POD模态提取与阶数选取}{149}{section*.582}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.1.4}场快照采集、时间同步与数据完整性}{144}{section*.580}%
+\contentsline {subsection}{\numberline {6.2.3}POD系数投影与完整场重构}{150}{section*.586}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.1.4}场快照采集、时间同步与数据完整性}{144}{section*.581}%
+\contentsline {subsection}{\numberline {6.2.3}POD系数投影与完整场重构}{150}{section*.587}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.2}基于POD的燃料性能场降阶}{145}{section*.583}%
+\contentsline {subsection}{\numberline {6.2.4}独立盲测工况的POD表示能力}{151}{section*.589}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.2}基于POD的燃料性能场降阶}{145}{section*.584}%
+\contentsline {subsection}{\numberline {6.2.4}独立盲测工况的POD表示能力}{151}{section*.590}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.2.1}快照矩阵与参考场}{145}{section*.586}%
+\contentsline {subsection}{\numberline {6.2.5}变功率数据集下的POD重新选阶}{151}{section*.594}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.2.1}快照矩阵与参考场}{145}{section*.587}%
+\contentsline {subsection}{\numberline {6.2.5}变功率数据集下的POD重新选阶}{151}{section*.595}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.2.2}POD模态提取与阶数选取}{145}{section*.589}%
+\contentsline {section}{\numberline {6.3}固定功率历史下的基准代理模型}{152}{section*.601}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.2.2}POD模态提取与阶数选取}{145}{section*.590}%
+\contentsline {section}{\numberline {6.3}固定功率历史下的基准代理模型}{152}{section*.602}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.2.3}POD系数投影与完整场重构}{146}{section*.594}%
+\contentsline {subsection}{\numberline {6.3.1}基准模型的输入与输出}{152}{section*.604}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.2.3}POD系数投影与完整场重构}{146}{section*.595}%
+\contentsline {subsection}{\numberline {6.3.1}基准模型的输入与输出}{152}{section*.605}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.2.4}独立盲测工况的POD表示能力}{147}{section*.597}%
+\contentsline {subsection}{\numberline {6.3.2}POD系数插值基准模型}{153}{section*.607}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.2.4}独立盲测工况的POD表示能力}{147}{section*.598}%
+\contentsline {subsection}{\numberline {6.3.2}POD系数插值基准模型}{153}{section*.608}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.2.5}变功率数据集下的POD重新选阶}{147}{section*.602}%
+\contentsline {subsection}{\numberline {6.3.3}POD--GPR阶段性代理模型}{153}{section*.610}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.2.5}变功率数据集下的POD重新选阶}{147}{section*.603}%
+\contentsline {subsection}{\numberline {6.3.3}POD--GPR阶段性代理模型}{153}{section*.611}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.3}固定功率历史下的基准代理模型}{148}{section*.609}%
+\contentsline {subsection}{\numberline {6.3.4}单参数模型验证与独立盲测结果}{154}{section*.613}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.3}固定功率历史下的基准代理模型}{148}{section*.610}%
+\contentsline {subsection}{\numberline {6.3.4}单参数模型验证与独立盲测结果}{154}{section*.614}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.3.1}基准模型的输入与输出}{148}{section*.612}%
+\contentsline {subsection}{\numberline {6.3.5}单参数代理模型的二维完整场恢复结果}{154}{section*.618}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.3.1}基准模型的输入与输出}{148}{section*.613}%
+\contentsline {subsection}{\numberline {6.3.5}单参数代理模型的二维完整场恢复结果}{154}{section*.619}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.3.2}POD系数插值基准模型}{149}{section*.615}%
+\contentsline {section}{\numberline {6.4}面向变功率历史的POD--LSTM模型}{156}{section*.627}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.3.2}POD系数插值基准模型}{149}{section*.616}%
+\contentsline {section}{\numberline {6.4}面向变功率历史的POD--LSTM模型}{156}{section*.628}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.3.3}POD--GPR阶段性代理模型}{149}{section*.618}%
+\contentsline {subsection}{\numberline {6.4.1}时序建模思路与输入特征}{156}{section*.630}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.3.3}POD--GPR阶段性代理模型}{149}{section*.619}%
+\contentsline {subsection}{\numberline {6.4.1}时序建模思路与输入特征}{156}{section*.631}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.3.4}单参数模型验证与独立盲测结果}{150}{section*.621}%
+\contentsline {subsection}{\numberline {6.4.2}POD系数增量与可训练初始状态}{157}{section*.633}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.3.4}单参数模型验证与独立盲测结果}{150}{section*.622}%
+\contentsline {subsection}{\numberline {6.4.2}POD系数增量与可训练初始状态}{157}{section*.634}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}LSTM单元与隐藏状态更新}{157}{section*.636}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.3.5}单参数代理模型的二维完整场恢复结果}{150}{section*.626}%
+\contentsline {subsection}{\numberline {6.4.3}共享主干与分场输出头}{158}{section*.637}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.3.5}单参数代理模型的二维完整场恢复结果}{150}{section*.627}%
+\contentsline {subsection}{\numberline {6.4.3}共享主干与分场输出头}{158}{section*.638}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.4}面向变功率历史的POD--LSTM模型}{152}{section*.635}%
+\contentsline {subsection}{\numberline {6.4.4}损失函数、训练与模型冻结}{158}{section*.642}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.4}面向变功率历史的POD--LSTM模型}{152}{section*.636}%
+\contentsline {subsection}{\numberline {6.4.4}损失函数、训练与模型冻结}{158}{section*.643}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.4.1}时序建模思路与输入特征}{152}{section*.638}%
+\contentsline {section}{\numberline {6.5}POD--LSTM模型预测结果与讨论}{159}{section*.645}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.4.1}时序建模思路与输入特征}{152}{section*.639}%
+\contentsline {section}{\numberline {6.5}POD--LSTM模型预测结果与讨论}{159}{section*.646}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.4.2}POD系数增量与可训练初始状态}{153}{section*.641}%
+\contentsline {subsection}{\numberline {6.5.1}误差评价指标}{159}{section*.648}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.4.2}POD系数增量与可训练初始状态}{153}{section*.642}%
-\contentsline {subsubsection}{\numberline {6.4.2.1}LSTM单元与隐藏状态更新}{153}{section*.644}%
+\contentsline {subsection}{\numberline {6.5.1}误差评价指标}{159}{section*.649}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.4.3}共享主干与分场输出头}{154}{section*.645}%
+\contentsline {subsection}{\numberline {6.5.2}数据集覆盖范围与POD投影精度}{160}{section*.651}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.4.3}共享主干与分场输出头}{154}{section*.646}%
+\contentsline {subsection}{\numberline {6.5.2}数据集覆盖范围与POD投影精度}{160}{section*.652}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.4.4}损失函数、训练与模型冻结}{154}{section*.650}%
+\contentsline {subsection}{\numberline {6.5.3}训练收敛与验证集表现}{160}{section*.656}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.4.4}损失函数、训练与模型冻结}{154}{section*.651}%
+\contentsline {subsection}{\numberline {6.5.3}训练收敛与验证集表现}{160}{section*.657}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.5}POD--LSTM模型预测结果与讨论}{155}{section*.653}%
+\contentsline {subsection}{\numberline {6.5.4}独立盲测总体精度}{162}{section*.663}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.5}POD--LSTM模型预测结果与讨论}{155}{section*.654}%
+\contentsline {subsection}{\numberline {6.5.4}独立盲测总体精度}{162}{section*.664}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.5.1}误差评价指标}{155}{section*.656}%
+\contentsline {subsection}{\numberline {6.5.5}误差时间历程与关键瞬态}{162}{section*.670}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.5.1}误差评价指标}{155}{section*.657}%
+\contentsline {subsection}{\numberline {6.5.5}误差时间历程与关键瞬态}{162}{section*.671}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.5.2}数据集覆盖范围与POD投影精度}{156}{section*.659}%
+\contentsline {subsection}{\numberline {6.5.6}完整二维场恢复}{163}{section*.675}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.5.2}数据集覆盖范围与POD投影精度}{156}{section*.660}%
+\contentsline {subsection}{\numberline {6.5.6}完整二维场恢复}{163}{section*.676}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.5.3}训练收敛与验证集表现}{156}{section*.664}%
+\contentsline {subsection}{\numberline {6.5.7}独立功率历史的在线预测示例}{164}{section*.680}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.5.3}训练收敛与验证集表现}{156}{section*.665}%
+\contentsline {subsection}{\numberline {6.5.7}独立功率历史的在线预测示例}{164}{section*.681}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.5.4}独立盲测总体精度}{158}{section*.671}%
+\contentsline {subsection}{\numberline {6.5.8}计算效率与加速比}{167}{section*.687}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.5.4}独立盲测总体精度}{158}{section*.672}%
+\contentsline {subsection}{\numberline {6.5.8}计算效率与加速比}{167}{section*.688}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.5.5}误差时间历程与关键瞬态}{158}{section*.678}%
+\contentsline {section}{\numberline {6.6}适用范围与模型局限性}{168}{section*.692}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.5.5}误差时间历程与关键瞬态}{158}{section*.679}%
+\contentsline {section}{\numberline {6.6}适用范围与模型局限性}{168}{section*.693}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.5.6}完整二维场恢复}{159}{section*.683}%
+\contentsline {section}{\numberline {6.7}本章小结}{168}{section*.695}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.5.6}完整二维场恢复}{159}{section*.684}%
+\contentsline {section}{\numberline {6.7}本章小结}{168}{section*.696}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.5.7}独立功率历史的在线预测示例}{160}{section*.688}%
+\contentsline {chapter}{\numberline {7}总结与展望}{170}{section*.698}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.5.7}独立功率历史的在线预测示例}{160}{section*.689}%
+\contentsline {chapter}{\numberline {7}总结与展望}{170}{section*.699}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.5.8}计算效率与加速比}{163}{section*.695}%
+\contentsline {section}{\numberline {7.1}主要研究工作与结论}{170}{section*.701}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.5.8}计算效率与加速比}{163}{section*.696}%
+\contentsline {section}{\numberline {7.1}主要研究工作与结论}{170}{section*.702}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.6}适用范围与模型局限性}{164}{section*.700}%
+\contentsline {section}{\numberline {7.2}主要创新点}{171}{section*.704}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.6}适用范围与模型局限性}{164}{section*.701}%
+\contentsline {section}{\numberline {7.2}主要创新点}{171}{section*.705}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {6.7}本章小结}{164}{section*.703}%
+\contentsline {section}{\numberline {7.3}研究展望}{172}{section*.707}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {6.7}本章小结}{164}{section*.704}%
+\contentsline {section}{\numberline {7.3}研究展望}{172}{section*.708}%
+\contentsline {chapter}{致谢}{174}{section*.710}%
+\contentsline {chapter}{参考文献}{175}{section*.713}%
+\contentsline {chapter}{附录}{190}{section*.716}%
 \setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {7}总结与展望}{166}{section*.706}%
+\contentsline {chapter}{\numberline {附录A}Sciantix耦合接口说明}{190}{section*.718}%
+\contentsline {section}{\numberline {附录A.1}接口框架与调用流程}{190}{section*.719}%
+\contentsline {subsection}{\numberline {附录A.1.1}设计原则}{190}{section*.720}%
+\contentsline {subsubsection}{\numberline {附录A.1.1.1}类结构设计}{190}{section*.721}%
+\contentsline {section}{\numberline {附录A.2}关键参数映射}{190}{section*.724}%
+\contentsline {subsection}{\numberline {附录A.2.1}历史变量映射}{190}{section*.725}%
+\contentsline {subsection}{\numberline {附录A.2.2}模型选项配置}{191}{section*.728}%
+\contentsline {subsection}{\numberline {附录A.2.3}输出变量计算}{192}{section*.730}%
+\contentsline {chapter}{\numberline {附录B}气孔迁移速率模型计算公式}{194}{section*.732}%
+\contentsline {section}{\numberline {附录B.1}Rand--Markin 热力学模型}{194}{section*.733}%
+\contentsline {subsection}{\numberline {附录B.1.1}气孔迁移速率控制方程}{194}{section*.734}%
+\contentsline {subsection}{\numberline {附录B.1.2}各气相组分蒸气压表达式}{194}{section*.735}%
+\contentsline {subsection}{\numberline {附录B.1.3}Gibbs自由能表达式}{195}{section*.736}%
+\contentsline {subsection}{\numberline {附录B.1.4}氧分压与化学计量比关系}{196}{section*.737}%
+\contentsline {subsection}{\numberline {附录B.1.5}总蒸气压}{197}{section*.738}%
+\contentsline {section}{\numberline {附录B.2}经典气孔迁移速率模型}{198}{section*.739}%
+\contentsline {subsection}{\numberline {附录B.2.1}Lackey et al. (1972) 模型}{198}{section*.740}%
+\contentsline {subsection}{\numberline {附录B.2.2}Sens et al. (1972) 模型}{199}{section*.741}%
+\contentsline {subsection}{\numberline {附录B.2.3}Nichols (1967) 球形气孔模型}{200}{section*.742}%
+\contentsline {subsection}{\numberline {附录B.2.4}Nichols (1972) 透镜状气孔模型}{200}{section*.743}%
+\contentsline {subsection}{\numberline {附录B.2.5}Clement \& Finnis (1978) 模型}{201}{section*.744}%
+\contentsline {chapter}{\numberline {附录C}MOX燃料热力学与力学模型补充关系式}{203}{section*.745}%
+\contentsline {section}{\numberline {附录C.1}MOX燃料热导率备选模型}{203}{section*.746}%
+\contentsline {subsection}{\numberline {附录C.1.1}MATPRO关系式}{203}{section*.747}%
+\contentsline {subsection}{\numberline {附录C.1.2}BISON中未辐照MOX热导率的一般构成}{203}{section*.748}%
+\contentsline {subsection}{\numberline {附录C.1.3}Duriez--Ronchi模型}{204}{section*.749}%
+\contentsline {subsection}{\numberline {附录C.1.4}Amaya模型}{204}{section*.750}%
+\contentsline {subsection}{\numberline {附录C.1.5}Fink模型}{204}{section*.751}%
+\contentsline {subsection}{\numberline {附录C.1.6}Halden模型}{205}{section*.752}%
+\contentsline {subsection}{\numberline {附录C.1.7}快堆MOX燃耗与辐照修正}{205}{section*.753}%
+\contentsline {subsection}{\numberline {附录C.1.8}含次锕系元素的快堆MOX模型}{206}{section*.754}%
+\contentsline {section}{\numberline {附录C.2}MOX燃料弹性与蠕变补充关系式}{206}{section*.757}%
+\contentsline {subsection}{\numberline {附录C.2.1}杨氏模量不确定性}{206}{section*.758}%
+\contentsline {subsection}{\numberline {附录C.2.2}MATPRO $\mathrm {UO}_2$蠕变模型}{207}{section*.759}%
+\contentsline {subsection}{\numberline {附录C.2.3}BISON通用MOX蠕变模型参数}{207}{section*.760}%
+\contentsline {subsection}{\numberline {附录C.2.4}快堆MOX稳态蠕变模型参数}{208}{section*.763}%
+\contentsline {section}{\numberline {附录C.3}MATPRO密实化分段关系}{208}{section*.764}%
+\contentsline {chapter}{\numberline {附录D}包壳材料堆内行为模型补充关系式}{210}{section*.765}%
+\contentsline {section}{\numberline {附录D.1}材料成分与状态}{210}{section*.766}%
+\contentsline {subsection}{\numberline {附录D.1.1}D9奥氏体不锈钢}{210}{section*.767}%
+\contentsline {subsection}{\numberline {附录D.1.2}HT9铁素体/马氏体钢}{210}{section*.770}%
+\contentsline {section}{\numberline {附录D.2}热物性备选关系式}{210}{section*.773}%
+\contentsline {subsection}{\numberline {附录D.2.1}SS316热导率备选模型}{210}{section*.774}%
+\contentsline {subsection}{\numberline {附录D.2.2}独立密度拟合}{211}{section*.775}%
+\contentsline {subsection}{\numberline {附录D.2.3}SS316 Legacy IFR弹性关系}{211}{section*.776}%
+\contentsline {section}{\numberline {附录D.3}辐照肿胀参数}{212}{section*.777}%
+\contentsline {subsection}{\numberline {附录D.3.1}SS316}{212}{section*.778}%
+\contentsline {subsection}{\numberline {附录D.3.2}D9}{212}{section*.779}%
+\contentsline {subsection}{\numberline {附录D.3.3}HT9}{213}{section*.780}%
+\contentsline {section}{\numberline {附录D.4}屈服强度、极限强度与延性}{213}{section*.781}%
+\contentsline {subsection}{\numberline {附录D.4.1}D9与HT9屈服强度的一般形式}{213}{section*.782}%
+\contentsline {subsection}{\numberline {附录D.4.2}极限拉伸强度}{214}{section*.785}%
+\contentsline {subsection}{\numberline {附录D.4.3}总伸长率}{214}{section*.786}%
+\contentsline {subsection}{\numberline {附录D.4.4}SS316硬化备选模型}{214}{section*.787}%
+\contentsline {section}{\numberline {附录D.5}蠕变模型参数与补充关系}{215}{section*.788}%
+\contentsline {subsection}{\numberline {附录D.5.1}D9参数}{215}{section*.789}%
+\contentsline {subsection}{\numberline {附录D.5.2}HT9一阶、二阶和三阶热蠕变}{215}{section*.792}%
+\contentsline {subsection}{\numberline {附录D.5.3}Monkman--Grant关系}{216}{section*.795}%
+\contentsline {section}{\numberline {附录D.6}断裂时间与瞬态失效模型}{216}{section*.796}%
+\contentsline {subsection}{\numberline {附录D.6.1}SS316蠕变断裂关系}{216}{section*.797}%
+\contentsline {subsection}{\numberline {附录D.6.2}D9稳态断裂时间}{217}{section*.798}%
+\contentsline {subsection}{\numberline {附录D.6.3}D9瞬态失效关系}{217}{section*.803}%
+\contentsline {subsection}{\numberline {附录D.6.4}HT9断裂时间}{218}{section*.804}%
+\contentsline {subsection}{\numberline {附录D.6.5}HT9受约束空洞长大模型}{218}{section*.805}%
+\contentsline {chapter}{\numberline {附录E}燃料--包壳间隙传热模型补充关系式}{220}{section*.806}%
+\contentsline {section}{\numberline {附录E.1}等效间隙长度与几何修正}{220}{section*.807}%
+\contentsline {section}{\numberline {附录E.2}温度跳跃与热适应系数}{220}{section*.808}%
+\contentsline {subsection}{\numberline {附录E.2.1}Lanning--Hann模型}{220}{section*.809}%
+\contentsline {subsection}{\numberline {附录E.2.2}Toptan模型}{221}{section*.810}%
+\contentsline {section}{\numberline {附录E.3}混合气体热导率}{222}{section*.813}%
+\contentsline {subsection}{\numberline {附录E.3.1}MATPRO温度相关模型}{222}{section*.814}%
+\contentsline {subsection}{\numberline {附录E.3.2}温度--压力相关高级模型}{223}{section*.817}%
+\contentsline {section}{\numberline {附录E.4}固--固接触传导补充模型}{224}{section*.820}%
+\contentsline {subsection}{\numberline {附录E.4.1}收缩热阻与真实接触面积}{224}{section*.821}%
+\contentsline {subsection}{\numberline {附录E.4.2}迈耶硬度的历史关系}{224}{section*.822}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{\numberline {7}总结与展望}{166}{section*.707}%
-\setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {7.1}主要研究工作与结论}{166}{section*.709}%
-\setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {7.1}主要研究工作与结论}{166}{section*.710}%
-\setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {7.2}主要创新点}{167}{section*.712}%
-\setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {7.2}主要创新点}{167}{section*.713}%
-\setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {7.3}研究展望}{168}{section*.715}%
-\setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {7.3}研究展望}{168}{section*.716}%
-\contentsline {chapter}{致谢}{170}{section*.718}%
-\contentsline {chapter}{参考文献}{171}{section*.721}%
-\contentsline {chapter}{附录}{186}{section*.724}%
-\setcounter {tocdepth}{-5}
-\contentsline {chapter}{\numberline {附录A}Sciantix耦合接口说明}{186}{section*.726}%
-\contentsline {section}{\numberline {附录A.1}接口框架与调用流程}{186}{section*.727}%
-\contentsline {subsection}{\numberline {附录A.1.1}设计原则}{186}{section*.728}%
-\contentsline {subsubsection}{\numberline {附录A.1.1.1}类结构设计}{186}{section*.729}%
-\contentsline {section}{\numberline {附录A.2}关键参数映射}{186}{section*.732}%
-\contentsline {subsection}{\numberline {附录A.2.1}历史变量映射}{186}{section*.733}%
-\contentsline {subsection}{\numberline {附录A.2.2}模型选项配置}{187}{section*.736}%
-\contentsline {subsection}{\numberline {附录A.2.3}输出变量计算}{188}{section*.738}%
-\contentsline {chapter}{\numberline {附录B}气孔迁移速率模型计算公式}{190}{section*.740}%
-\contentsline {section}{\numberline {附录B.1}Rand--Markin 热力学模型}{190}{section*.741}%
-\contentsline {subsection}{\numberline {附录B.1.1}气孔迁移速率控制方程}{190}{section*.742}%
-\contentsline {subsection}{\numberline {附录B.1.2}各气相组分蒸气压表达式}{190}{section*.743}%
-\contentsline {subsection}{\numberline {附录B.1.3}Gibbs自由能表达式}{191}{section*.744}%
-\contentsline {subsection}{\numberline {附录B.1.4}氧分压与化学计量比关系}{192}{section*.745}%
-\contentsline {subsection}{\numberline {附录B.1.5}总蒸气压}{193}{section*.746}%
-\contentsline {section}{\numberline {附录B.2}经典气孔迁移速率模型}{194}{section*.747}%
-\contentsline {subsection}{\numberline {附录B.2.1}Lackey et al. (1972) 模型}{194}{section*.748}%
-\contentsline {subsection}{\numberline {附录B.2.2}Sens et al. (1972) 模型}{195}{section*.749}%
-\contentsline {subsection}{\numberline {附录B.2.3}Nichols (1967) 球形气孔模型}{196}{section*.750}%
-\contentsline {subsection}{\numberline {附录B.2.4}Nichols (1972) 透镜状气孔模型}{196}{section*.751}%
-\contentsline {subsection}{\numberline {附录B.2.5}Clement \& Finnis (1978) 模型}{197}{section*.752}%
-\contentsline {chapter}{\numberline {附录C}MOX燃料热力学与力学模型补充关系式}{199}{section*.753}%
-\contentsline {section}{\numberline {附录C.1}MOX燃料热导率备选模型}{199}{section*.754}%
-\contentsline {subsection}{\numberline {附录C.1.1}MATPRO关系式}{199}{section*.755}%
-\contentsline {subsection}{\numberline {附录C.1.2}BISON中未辐照MOX热导率的一般构成}{199}{section*.756}%
-\contentsline {subsection}{\numberline {附录C.1.3}Duriez--Ronchi模型}{200}{section*.757}%
-\contentsline {subsection}{\numberline {附录C.1.4}Amaya模型}{200}{section*.758}%
-\contentsline {subsection}{\numberline {附录C.1.5}Fink模型}{200}{section*.759}%
-\contentsline {subsection}{\numberline {附录C.1.6}Halden模型}{201}{section*.760}%
-\contentsline {subsection}{\numberline {附录C.1.7}快堆MOX燃耗与辐照修正}{201}{section*.761}%
-\contentsline {subsection}{\numberline {附录C.1.8}含次锕系元素的快堆MOX模型}{202}{section*.762}%
-\contentsline {section}{\numberline {附录C.2}MOX燃料弹性与蠕变补充关系式}{202}{section*.765}%
-\contentsline {subsection}{\numberline {附录C.2.1}杨氏模量不确定性}{202}{section*.766}%
-\contentsline {subsection}{\numberline {附录C.2.2}MATPRO $\mathrm {UO}_2$蠕变模型}{203}{section*.767}%
-\contentsline {subsection}{\numberline {附录C.2.3}BISON通用MOX蠕变模型参数}{203}{section*.768}%
-\contentsline {subsection}{\numberline {附录C.2.4}快堆MOX稳态蠕变模型参数}{204}{section*.771}%
-\contentsline {section}{\numberline {附录C.3}MATPRO密实化分段关系}{204}{section*.772}%
-\contentsline {chapter}{\numberline {附录D}包壳材料堆内行为模型补充关系式}{206}{section*.773}%
-\contentsline {section}{\numberline {附录D.1}材料成分与状态}{206}{section*.774}%
-\contentsline {subsection}{\numberline {附录D.1.1}D9奥氏体不锈钢}{206}{section*.775}%
-\contentsline {subsection}{\numberline {附录D.1.2}HT9铁素体/马氏体钢}{206}{section*.778}%
-\contentsline {section}{\numberline {附录D.2}热物性备选关系式}{206}{section*.781}%
-\contentsline {subsection}{\numberline {附录D.2.1}SS316热导率备选模型}{206}{section*.782}%
-\contentsline {subsection}{\numberline {附录D.2.2}独立密度拟合}{207}{section*.783}%
-\contentsline {subsection}{\numberline {附录D.2.3}SS316 Legacy IFR弹性关系}{207}{section*.784}%
-\contentsline {section}{\numberline {附录D.3}辐照肿胀参数}{208}{section*.785}%
-\contentsline {subsection}{\numberline {附录D.3.1}SS316}{208}{section*.786}%
-\contentsline {subsection}{\numberline {附录D.3.2}D9}{208}{section*.787}%
-\contentsline {subsection}{\numberline {附录D.3.3}HT9}{209}{section*.788}%
-\contentsline {section}{\numberline {附录D.4}屈服强度、极限强度与延性}{209}{section*.789}%
-\contentsline {subsection}{\numberline {附录D.4.1}D9与HT9屈服强度的一般形式}{209}{section*.790}%
-\contentsline {subsection}{\numberline {附录D.4.2}极限拉伸强度}{210}{section*.793}%
-\contentsline {subsection}{\numberline {附录D.4.3}总伸长率}{210}{section*.794}%
-\contentsline {subsection}{\numberline {附录D.4.4}SS316硬化备选模型}{210}{section*.795}%
-\contentsline {section}{\numberline {附录D.5}蠕变模型参数与补充关系}{211}{section*.796}%
-\contentsline {subsection}{\numberline {附录D.5.1}D9参数}{211}{section*.797}%
-\contentsline {subsection}{\numberline {附录D.5.2}HT9一阶、二阶和三阶热蠕变}{211}{section*.800}%
-\contentsline {subsection}{\numberline {附录D.5.3}Monkman--Grant关系}{212}{section*.803}%
-\contentsline {section}{\numberline {附录D.6}断裂时间与瞬态失效模型}{212}{section*.804}%
-\contentsline {subsection}{\numberline {附录D.6.1}SS316蠕变断裂关系}{212}{section*.805}%
-\contentsline {subsection}{\numberline {附录D.6.2}D9稳态断裂时间}{213}{section*.806}%
-\contentsline {subsection}{\numberline {附录D.6.3}D9瞬态失效关系}{213}{section*.811}%
-\contentsline {subsection}{\numberline {附录D.6.4}HT9断裂时间}{214}{section*.812}%
-\contentsline {subsection}{\numberline {附录D.6.5}HT9受约束空洞长大模型}{214}{section*.813}%
-\contentsline {chapter}{\numberline {附录E}燃料--包壳间隙传热模型补充关系式}{216}{section*.814}%
-\contentsline {section}{\numberline {附录E.1}等效间隙长度与几何修正}{216}{section*.815}%
-\contentsline {section}{\numberline {附录E.2}温度跳跃与热适应系数}{216}{section*.816}%
-\contentsline {subsection}{\numberline {附录E.2.1}Lanning--Hann模型}{216}{section*.817}%
-\contentsline {subsection}{\numberline {附录E.2.2}Toptan模型}{217}{section*.818}%
-\contentsline {section}{\numberline {附录E.3}混合气体热导率}{218}{section*.821}%
-\contentsline {subsection}{\numberline {附录E.3.1}MATPRO温度相关模型}{218}{section*.822}%
-\contentsline {subsection}{\numberline {附录E.3.2}温度--压力相关高级模型}{219}{section*.825}%
-\contentsline {section}{\numberline {附录E.4}固--固接触传导补充模型}{220}{section*.828}%
-\contentsline {subsection}{\numberline {附录E.4.1}收缩热阻与真实接触面积}{220}{section*.829}%
-\contentsline {subsection}{\numberline {附录E.4.2}迈耶硬度的历史关系}{220}{section*.830}%
-\setcounter {tocdepth}{2}
-\contentsline {chapter}{攻读学位期间取得的研究成果}{220}{section*.831}%
-\contentsline {chapter}{答辩委员会会议决议}{222}{section*.834}%
-\contentsline {chapter}{常规评阅人名单}{223}{section*.838}%
+\contentsline {chapter}{攻读学位期间取得的研究成果}{224}{section*.823}%
+\contentsline {chapter}{答辩委员会会议决议}{226}{section*.826}%
+\contentsline {chapter}{常规评阅人名单}{227}{section*.830}%
 \contentsfinish 
