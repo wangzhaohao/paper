@@ -14,7 +14,7 @@
 \end{enumerate}
 \subsubsection{类结构设计}
 
-\texttt{SciantixWrapper} 类继承自 MOOSE 的 \texttt{Material} 基类，其主要成员函数和变量如附录A表 \ref{tab:sciantix-class-members} 所示。
+\texttt{SciantixWrapper} 类继承自 MOOSE 的 \texttt{Material} 基类，其主要成员函数和变量如\tablename\ref{tab:sciantix-class-members} 所示。
 
 \begin{table}[htbp]
 	\centering
@@ -39,7 +39,7 @@
 \section{关键参数映射}
 
 \subsection{历史变量映射}
-MOOSE传递给Sciantix的驱动变量存储在 \texttt{Sciantix\_history} 数组中。接口程序在传递前进行了必要的单位转换，具体映射关系如附录A表\ref{tab:history_map}所示。
+MOOSE传递给Sciantix的驱动变量存储在 \texttt{Sciantix\_history} 数组中。接口程序在传递前进行了必要的单位转换，具体映射关系如\tablename\ref{tab:history_map}所示。
 
 \begin{table}[htbp]
 	\centering
@@ -64,7 +64,7 @@ MOOSE传递给Sciantix的驱动变量存储在 \texttt{Sciantix\_history} 数组
 \end{table}
 
 \subsection{模型选项配置}
-接口通过输入文件参数（Input Parameters）灵活控制Sciantix内部物理模型的开启与关闭。主要模型选项及其对应的数组索引如附录A表\ref{tab:model_options}所示。
+接口通过输入文件参数（Input Parameters）灵活控制Sciantix内部物理模型的开启与关闭。主要模型选项及其对应的数组索引如\tablename\ref{tab:model_options}所示。
 
 \begin{xltabular}{\textwidth}{
 		>{\hsize=1.55\hsize\raggedright\arraybackslash}X
@@ -78,6 +78,7 @@ MOOSE传递给Sciantix的驱动变量存储在 \texttt{Sciantix\_history} 数组
 	\midrule
 	\endfirsthead
 	
+	\multicolumn{3}{c}{\tablename\thetable（续）} \\
 	\toprule
 	参数名称 (MOOSE) & 物理模型含义 & Sciantix Options索引 \\
 	\midrule

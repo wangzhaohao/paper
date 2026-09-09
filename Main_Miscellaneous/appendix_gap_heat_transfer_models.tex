@@ -33,7 +33,7 @@ Ross--Stoute关系中的$d_g$为与传热面积定义一致的等效间隙长度
 \appendixeqlabelalias{eq:appendix_gap_plate_length}
 \appendixeqlabelalias{eq:appendix_gap_cylinder_length}
 \appendixeqlabelalias{eq:appendix_gap_sphere_length}
-式中，$R_1$和$R_2$分别为内、外表面半径，$R_{\mathrm{ref}}$为热流密度所对应参考表面的半径。对于$d=R_2-R_1\ll R_1$的薄间隙，三种表达均趋近于几何间隙$d$。有限元实现中，$d_g$必须与界面热流所采用的参考面积保持一致，否则会重复引入曲率修正。
+\noindent 式中：$R_1$和$R_2$分别为内、外表面半径；$R_{\mathrm{ref}}$为热流密度所对应参考表面的半径。对于$d=R_2-R_1\ll R_1$的薄间隙，三种表达均趋近于几何间隙$d$。有限元实现中；$d_g$必须与界面热流所采用的参考面积保持一致，否则会重复引入曲率修正。
 
 \section{温度跳跃与热适应系数}
 \label{app:gap_temperature_jump_models}
@@ -50,7 +50,7 @@ Lanning--Hann模型基于Kennard理论，将两侧表面的总温度跳跃距离
 	\left(\sum_{i=1}^{N_g}\frac{x_i}{M_i}\right)^{-1/2}
 	\label{eq:appendix_gap_lanning_jump_distance}
 \end{equation}
-其中，$\alpha_{\mathrm{mix}}$为混合气体热适应系数。BISON的传统实现取$C_L=5756$，该常数对应以下旧制单位：
+\noindent 式中：$\alpha_{\mathrm{mix}}$为混合气体热适应系数。BISON的传统实现取$C_L=5756$，该常数对应以下旧制单位：
 \begin{itemize}
 	\item $g_f+g_c$采用$\mathrm{cm}$，$k_g$采用$\mathrm{cal\,cm^{-1}\,s^{-1}\,K^{-1}}$；
 	\item $p_g$采用$\mathrm{dyn\,cm^{-2}}$，$M_i$采用$\mathrm{g\,mol^{-1}}$。
@@ -86,7 +86,7 @@ Toptan等在曲线坐标下重新整理了Kennard温度跳跃关系，并显式�
 	\sqrt{\frac{T_g}{R_gM_g}}
 	\label{eq:appendix_gap_toptan_jump_distance}
 \end{equation}
-其中，$R_g$为气体常数，$M_g$为气体摩尔质量，$C_K$为与分子自由度有关的Kennard系数。BISON采用
+\noindent 式中：$R_g$为气体常数；$M_g$为气体摩尔质量；$C_K$为与分子自由度有关的Kennard系数。BISON采用
 \begin{equation}
 	C_K=
 	\begin{cases}
@@ -136,15 +136,14 @@ Toptan模型采用经实验数据标定的热适应系数关系
 \end{equation}
 \appendixeqlabelalias{eq:appendix_gap_toptan_alpha}
 \appendixeqlabelalias{eq:appendix_gap_toptan_alpha_infinity}
-标定中固体表观摩尔质量取$M_s=10^5\ \mathrm{g\,mol^{-1}}$。系数见表\ref{tab:appendix_gap_toptan_accommodation_parameters}。
+标定中固体表观摩尔质量取$M_s=10^5\ \mathrm{g\,mol^{-1}}$。系数见\tablename\ref{tab:appendix_gap_toptan_accommodation_parameters}。
 
 \begin{table}[htbp]
 	\centering
-	\small
 	\caption{Toptan热适应系数模型参数\cite{toptanModelingGapConductance2020}}
 	\label{tab:appendix_gap_toptan_accommodation_parameters}
 	
-	\begin{tabular*}{0.80\textwidth}{
+	\begin{tabular*}{\textwidth}{
 			@{\extracolsep{\fill}}
 			cccccc
 			@{}
@@ -189,14 +188,13 @@ Toptan模型采用经实验数据标定的热适应系数关系
 	k_i(T_g)=A_iT_g^{B_i}
 	\label{eq:appendix_gap_pure_gas_conductivity}
 \end{equation}
-其中，$k_i$的单位为$\mathrm{W\,m^{-1}\,K^{-1}}$。MATPRO及高温补充数据对应的参数见表\ref{tab:appendix_gap_gas_conductivity_coefficients}\cite{hagrmanSCDAPRELAP5MOD1995,springerThermalConductivityNeon1973}。
+\noindent 式中：$k_i$的单位为$\mathrm{W\,m^{-1}\,K^{-1}}$。MATPRO及高温补充数据对应的参数见\tablename\ref{tab:appendix_gap_gas_conductivity_coefficients}\cite{hagrmanSCDAPRELAP5MOD1995,springerThermalConductivityNeon1973}。
 
 \begin{table}[htbp]
 	\centering
-	\small
 	\caption{纯气体热导率关系$k_i=A_iT^{B_i}$的经验系数}
 	\label{tab:appendix_gap_gas_conductivity_coefficients}
-	\begin{tabular*}{0.80\textwidth}{
+	\begin{tabular*}{\textwidth}{
 			@{\extracolsep{\fill}}
 			lccc
 			@{}
@@ -232,7 +230,7 @@ Toptan模型采用经实验数据标定的热适应系数关系
 	\right]
 	\label{eq:appendix_gap_steam_conductivity}
 \end{equation}
-其中，$T_C=T_g-273.15$，$T_C$的单位为$^\circ\mathrm C$。对于正常密封的快堆燃料棒，水蒸气通常不属于初始或裂变生成气体，式\eqref{eq:appendix_gap_steam_conductivity}默认未启用。
+\noindent 式中：$T_C=T_g-273.15$；$T_C$的单位为$^\circ\mathrm C$。对于正常密封的快堆燃料棒，水蒸气通常不属于初始或裂变生成气体，式\eqref{eq:appendix_gap_steam_conductivity}默认未启用。
 
 \subsection{温度--压力相关高级模型}
 \label{app:gap_advanced_gas_conductivity}
@@ -267,14 +265,13 @@ MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，�
 \appendixeqlabelalias{eq:appendix_gap_dilute_viscosity}
 \appendixeqlabelalias{eq:appendix_gap_pseudocritical_k}
 \appendixeqlabelalias{eq:appendix_gap_excess_conductivity}
-所需临界参数见表\ref{tab:appendix_gap_critical_gas_properties}。
+所需临界参数见\tablename\ref{tab:appendix_gap_critical_gas_properties}。
 
 \begin{table}[htbp]
 	\centering
-	\small
 	\caption{高级气体热导率模型的临界参数\cite{tournierPropertiesNobleGases2008}}
 	\label{tab:appendix_gap_critical_gas_properties}
-	\begin{tabular*}{0.90\textwidth}{
+	\begin{tabular*}{\textwidth}{
 			@{\extracolsep{\fill}}
 			lccccc
 			@{}
@@ -299,7 +296,7 @@ MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，�
 	=\hat\rho+B_2(T_g)\hat\rho^2+B_3(T_g)\hat\rho^3
 	\label{eq:appendix_gap_virial_equation}
 \end{equation}
-其中，$B_2$和$B_3$分别为第二、第三维里系数。BISON在求解式\eqref{eq:appendix_gap_virial_equation}时选取满足模型约束的最大正实根。该处理仅在启用温度--压力相关气体导热模型时需要；对于常压附近的传统MATPRO模型，不应额外重复施加密度修正。
+\noindent 式中：$B_2$和$B_3$分别为第二、第三维里系数。BISON在求解式\eqref{eq:appendix_gap_virial_equation}时选取满足模型约束的最大正实根。该处理仅在启用温度--压力相关气体导热模型时需要；对于常压附近的传统MATPRO模型，不应额外重复施加密度修正。
 
 \section{固--固接触传导补充模型}
 \label{app:gap_contact_supplementary_models}
@@ -330,7 +327,7 @@ MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，�
 	=C_A\left(\frac{P_c}{H}\right)^n
 	\label{eq:appendix_gap_real_contact_area}
 \end{equation}
-其中，$C_A$为表面形貌系数，$n$反映微凸体由弹性向塑性变形的偏离程度。Ross--Stoute模型以粗糙度和接触压力替代难以直接测量的接触斑点数量与尺度，得到正文式\eqref{eq:gap_solid_contact_model}所示工程关联。
+\noindent 式中：$C_A$为表面形貌系数；$n$反映微凸体由弹性向塑性变形的偏离程度。Ross--Stoute模型以粗糙度和接触压力替代难以直接测量的接触斑点数量与尺度，得到正文式\eqref{eq:gap_solid_contact_model}所示工程关联。
 
 \subsection{迈耶硬度的历史关系}
 
@@ -345,7 +342,7 @@ MATPRO/BISON提供的锆合金历史关系为\cite{hagrmanSCDAPRELAP5MOD1995,hal
 	\end{aligned}
 	\label{eq:appendix_gap_zircaloy_meyer_hardness}
 \end{equation}
-其中，$H_{\mathrm{Zr}}$的单位为Pa，$T$的单位为K。该式基于锆合金数据。
+\noindent 式中：$H_{\mathrm{Zr}}$的单位为Pa；$T$的单位为K。该式基于锆合金数据。
 
 该关系不适用于SS316、D9或HT9。快堆不锈钢包壳计算应采用对应材料及加工状态下的温度相关硬度；若缺少数据，应将$H$和$C_s$纳入敏感性或不确定性分析，而不应将BISON默认$680\ \mathrm{MPa}$视为材料常数。
 
