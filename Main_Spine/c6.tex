@@ -140,7 +140,7 @@ MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间
 			>{\centering\arraybackslash}p{2.0cm}
 			X}
 		\toprule
-		网格类型 & 最大温度/$\mathrm{K}$ & 最大$|u_r|/\upmu\mathrm{m}$ & 最大$|u_z|/\upmu\mathrm{m}$ & 温度差异 & 位移差异 \\
+		网格类型 & 最大温度/$\mathrm{K}$ & 最大$|u_r|/\upmu\mathrm{m}$ & 最大$|u_z|/\upmu\mathrm{m}$ & 温度差异 & {\centering 位移差异\par} \\
 		\midrule
 		粗网格 & 1730.82 & 95.80 & 2270.63 & 1.00\% & $u_r$: 4.14\%；$u_z$: 1.41\% \\
 		中等网格 & 1741.13 & 95.83 & 2255.19 & 0.41\% & $u_r$: 4.11\%；$u_z$: 2.08\% \\
@@ -189,7 +189,7 @@ MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间
 增强型中等网格包含5717个节点和5000个单元，相比细网格节点数和单元数分别减少约61.42\%和61.54\%。综合峰值差异、时间历程、峰值位置和批量数据生成成本，本文选取增强型中等网格作为全部POD训练、验证和盲测工况的统一网格。细网格仅用于空间离散误差评价和少量代表性工况复核，粗网格与中等网格用于输入卡调试和加密趋势分析。本章代理模型误差均在固定增强型中等网格上评价，因此代理误差与本节所识别的空间离散误差分别讨论。
 
 \xsubsection{参数空间与分阶段计算工况设计}
-{Parameter Space and Staged Simulation Case Design}
+{Parameter Space and Stage-Wise Design of Simulation Cases}
 
 \subsubsection{固定功率史形状下的单参数数据集}
 
@@ -218,7 +218,7 @@ MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间
 			>{\centering\arraybackslash}p{6.2cm}
 			X}
 		\toprule
-		数据类别 & 功率缩放因子$\alpha_P$ & 主要用途 \\
+		数据类别 & 功率缩放因子$\alpha_P$ & {\centering 主要用途\par} \\
 		\midrule
 		训练集
 		& 0.900，0.950，1.000，1.050，1.100
@@ -260,10 +260,13 @@ MOOSE计算生成训练场快照，利用POD压缩温度场和位移场的空间
 	\centering
 	\caption{变功率历史的参数范围}
 	\label{tab:formal_power_parameter_ranges}
-	\begin{tabularx}{\textwidth}
-		{XXX}
+	\begin{tabularx}{\textwidth}{@{}
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			@{}}
 		\toprule
-		参数 & 取值范围 & 物理含义 \\
+		{\centering 参数\par} & {\centering 取值范围\par} & {\centering 物理含义\par} \\
 		\midrule
 		$\alpha_g$ & $0.92$--$1.08$ & 全寿期整体功率倍率 \\
 		$\alpha_e$ & $0.90$--$1.10$ & 前期局部功率倍率 \\
@@ -284,9 +287,11 @@ POD--LSTM数据集的训练、验证与独立盲测划分见表\ref{tab:formal_l
 	\caption{POD--LSTM数据集划分}
 	\label{tab:formal_lstm_dataset_split}
 	\begin{tabularx}{\textwidth}
-		{>{\centering\arraybackslash}p{2.5cm}
+		{
+			>{\centering\arraybackslash}p{2.5cm}
 			>{\centering\arraybackslash}p{2.2cm}
-			X}
+			>{\centering\arraybackslash}X
+		}
 		\toprule
 		数据类别 & 实际工况数 & 用途 \\
 		\midrule
@@ -455,9 +460,9 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 			>{\centering\arraybackslash}p{2.0cm}
 			>{\centering\arraybackslash}p{3.4cm}
 			>{\centering\arraybackslash}p{2.0cm}
-			X}
+			>{\centering\arraybackslash}X}
 		\toprule
-		场变量 & 阶数 & 累计能量/\% & 平均相对$L_2$误差/\% & 平均RMSE & 最大节点误差 \\
+		场变量 & 阶数 & 累计能量/\% & 平均相对$L_2$误差/\% & 平均RMSE & {\centering 最大节点误差\par} \\
 		\midrule
 		温度$T$ & 10 & 99.999987 & 0.0142 & $0.115\,\mathrm{K}$ & $9.39\,\mathrm{K}$ \\
 		径向位移$u_r$ & 10 & 99.999992 & 0.0227 & $0.011\,\upmu\mathrm{m}$ & $0.763\,\upmu\mathrm{m}$ \\
@@ -506,7 +511,7 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 因此，无论系数来自直接投影、参数插值、GPR还是LSTM，最终均可恢复至5717个节点上的温度、径向位移和轴向位移。式~\eqref{eq:pod_reconstruction_complete}也是后续绘制二维温度分布、二维位移分布和空间误差云图的基础。
 
 \xsubsection{独立盲测工况的POD表示能力}
-{POD Representation Capability for Independent Blind Cases}
+{POD Representational Capability for Independent Blind-Test Cases}
 
 为了区分POD截断误差与系数代理误差，首先将4个盲测有限元场直接投影至固定POD空间，再进行重构。该过程仍需要完整有限元场，因而不属于快速预测，但能够给出当前POD基对未知工况的表示误差下限。结果见表~\ref{tab:blind_pod_projection_results}。
 
@@ -519,9 +524,9 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 			>{\centering\arraybackslash}p{3.2cm}
 			>{\centering\arraybackslash}p{3.2cm}
 			>{\centering\arraybackslash}p{2.2cm}
-			X}
+			>{\centering\arraybackslash}X}
 		\toprule
-		场变量 & 平均相对$L_2$误差/\% & 最大相对$L_2$误差/\% & 平均RMSE & 最大节点误差 \\
+		场变量 & 平均相对$L_2$误差/\% & 最大相对$L_2$误差/\% & 平均RMSE & {\centering 最大节点误差\par} \\
 		\midrule
 		温度$T$ & 0.0152 & 0.0767 & $0.124\,\mathrm{K}$ & $21.61\,\mathrm{K}$ \\
 		径向位移$u_r$ & 0.0259 & 0.1017 & $0.0129\,\upmu\mathrm{m}$ & $1.16\,\upmu\mathrm{m}$ \\
@@ -533,7 +538,7 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 盲测结果与验证集结果处于同一量级，说明由5个训练功率工况提取的POD基能够表示功率参数区间内部的未见工况。由此可判断，后续端到端预测中的主要误差来自POD系数预测，而不是POD空间本身缺少必要的空间模态。
 
 \xsubsection{变功率数据集下的POD重新选阶}
-{POD Rank Reselection for the Variable-Power Dataset}
+{Re-selection of the POD Rank for the Variable-Power Dataset}
 
 前述$r_T=10$、$r_{u_r}=10$和$r_{u_z}=8$是固定功率倍率基准数据集的阶数，
 用于插值和GPR模型。对于变功率历史数据集，本文仅使用40条训练历史重新
@@ -561,9 +566,9 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 			>{\centering\arraybackslash}p{2.0cm}
 			>{\centering\arraybackslash}p{3.0cm}
 			>{\centering\arraybackslash}p{3.0cm}
-			X}
+			>{\centering\arraybackslash}X}
 		\toprule
-		场变量 & POD阶数 & 累计能量/\% & 验证平均相对$L_2$/\% & 盲测平均相对$L_2$/\% & 盲测最大RMSE \\
+		场变量 & POD阶数 & 累计能量/\% & 验证平均相对$L_2$/\% & 盲测平均相对$L_2$/\% & {\centering 盲测最大RMSE\par} \\
 		\midrule
 		温度$T$ & 10 & 99.99997 & 0.0211 & 0.0192 & $1.360\,\mathrm{K}$ \\
 		径向位移$u_r$ & 10 & 99.99997 & 0.0360 & 0.0380 & $0.060\,\upmu\mathrm{m}$ \\
@@ -640,7 +645,7 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 插值模型仅适用于当前一维规则参数空间。当输入扩展为多种功率史形状或多个运行参数时，逐维规则插值将面临样本数量指数增长和状态转折错位问题，因此不能作为最终变功率历史代理模型。
 
 \xsubsection{POD--GPR阶段性代理模型}
-{Stage-Wise POD--GPR Surrogate Model}
+{POD--GPR Surrogate Model for the Baseline Stage}
 
 高斯过程回归用于建立输入特征与各物理场POD系数之间的非线性映射。对于$q\in\{T,u_r,u_z\}$，其映射关系写为
 \begin{equation}
@@ -708,7 +713,7 @@ POD--GPR对温度和径向位移的平均预测误差低于插值模型，其中
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]
+	\includegraphics[width=15.5cm,height=11.00cm,keepaspectratio]
 	{pod_gpr/case_pf10375_temperature_K_gpr_2d_comparison.png}
 	\caption{固定功率倍率独立盲测工况下POD--GPR温度场二维重构结果}
 	\label{fig:case_pf10375_temperature_K_gpr_2d_comparison}
@@ -888,21 +893,56 @@ POD--LSTM模型的最终冻结配置见表\ref{tab:formal_lstm_configuration}。
 	\centering
 	\caption{POD--LSTM模型的冻结配置}
 	\label{tab:formal_lstm_configuration}
-	\begin{tabularx}{\textwidth}
-		{XXX}
+	
+	\begin{tabularx}{\linewidth}{@{}
+			>{\centering\arraybackslash}m{3.2cm}
+			>{\centering\arraybackslash}m{2.5cm}
+			>{\centering\arraybackslash}X
+			@{}}
 		\toprule
 		项目 & 最终值 & 说明 \\
 		\midrule
-		输入维数 & 4 & $t$、$P$、$\dot P$和$E$ \\
-		输出维数 & 28 & $10+10+8$个POD系数增量 \\
-		LSTM层数 & 1 & 共享循环主干 \\
-		隐藏单元数 & 32 & 单层隐藏状态维数 \\
-		Dropout & 0.05 & 冻结配置 \\
-		Batch size & 2 & 每个样本为一条109步完整历史 \\
-		初始学习率 & $5\times10^{-4}$ & Adam优化器 \\
-		最佳epoch & 487 & 验证总损失为0.735390 \\
-		停止epoch & 567 & 连续80轮未改善后早停 \\
-		可训练参数总数 & 5852 & 包含$\boldsymbol h_0$和$\boldsymbol c_0$ \\
+		
+		输入维数
+		& 4
+		& $t$、$P$、$\dot P$和$E$ \\
+		
+		输出维数
+		& 28
+		& $10+10+8$个POD系数增量 \\
+		
+		LSTM层数
+		& 1
+		& 共享循环主干 \\
+		
+		隐藏单元数
+		& 32
+		& 单层隐藏状态维数 \\
+		
+		Dropout
+		& 0.05
+		& 冻结配置 \\
+		
+		Batch size
+		& 2
+		& 每个样本为一条109步完整历史 \\
+		
+		初始学习率
+		& $5\times10^{-4}$
+		& Adam优化器 \\
+		
+		最佳epoch
+		& 487
+		& 验证总损失为0.735390 \\
+		
+		停止epoch
+		& 567
+		& 连续80轮未改善后早停 \\
+		
+		可训练参数总数
+		& 5852
+		& 包含$\boldsymbol h_0$和$\boldsymbol c_0$ \\
+		
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -1035,7 +1075,7 @@ POD--LSTM数据集采用的变功率历史如图\ref{fig:power_history_overview}
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]{pod_lstm/power_history_overview.png}
+	\includegraphics[width=9.cm,height=6.75cm,keepaspectratio]{pod_lstm/power_history_overview.png}
 	\caption{POD--LSTM数据集的变功率历史}
 	\label{fig:power_history_overview}
 \end{figure}
@@ -1066,14 +1106,40 @@ POD--LSTM模型在验证集上的完整场误差见表\ref{tab:formal_lstm_valid
 	\centering
 	\caption{POD--LSTM模型的验证集完整场误差}
 	\label{tab:formal_lstm_validation_results}
-	\begin{tabularx}{\textwidth}
-		{XXXXX}
+	
+	\begin{tabularx}{\linewidth}{@{}
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			@{}}
 		\toprule
-		场变量 & 平均相对$L_2$/\% & 最大相对$L_2$/\% & 平均RMSE & 最大瞬时RMSE \\
+		场变量
+		& 平均相对$L_2$/\%
+		& 最大相对$L_2$/\%
+		& 平均RMSE
+		& 最大瞬时RMSE \\
 		\midrule
-		温度$T$ & 1.3392 & 9.2876 & $11.313\,\mathrm{K}$ & $92.091\,\mathrm{K}$ \\
-		径向位移$u_r$ & 1.7168 & 9.8165 & $0.921\,\upmu\mathrm{m}$ & $5.702\,\upmu\mathrm{m}$ \\
-		轴向位移$u_z$ & 2.4290 & 15.5215 & $18.174\,\upmu\mathrm{m}$ & $95.683\,\upmu\mathrm{m}$ \\
+		
+		温度$T$
+		& 1.3392
+		& 9.2876
+		& $11.313\,\mathrm{K}$
+		& $92.091\,\mathrm{K}$ \\
+		
+		径向位移$u_r$
+		& 1.7168
+		& 9.8165
+		& $0.921\,\upmu\mathrm{m}$
+		& $5.702\,\upmu\mathrm{m}$ \\
+		
+		轴向位移$u_z$
+		& 2.4290
+		& 15.5215
+		& $18.174\,\upmu\mathrm{m}$
+		& $95.683\,\upmu\mathrm{m}$ \\
+		
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -1089,10 +1155,15 @@ POD--LSTM模型在验证集上的完整场误差见表\ref{tab:formal_lstm_valid
 	\centering
 	\caption{POD--LSTM独立盲测总体结果}
 	\label{tab:formal_lstm_blind_results}
-	\begin{tabularx}{\textwidth}
-		{XXXXX}
+	\begin{tabularx}{\linewidth}{@{}
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			@{}}
 		\toprule
-		场变量 & 平均相对$L_2$/\% & 最大相对$L_2$/\% & 平均RMSE & 最大瞬时RMSE \\
+		{\centering 场变量\par} & {\centering 平均相对$L_2$/\%\par} & {\centering 最大相对$L_2$/\%\par} & {\centering 平均RMSE\par} & {\centering 最大瞬时RMSE\par} \\
 		\midrule
 		温度$T$ & 1.2560 & 15.1438 & $10.335\,\mathrm{K}$ & $98.835\,\mathrm{K}$ \\
 		径向位移$u_r$ & 1.5284 & 10.9866 & $0.785\,\upmu\mathrm{m}$ & $6.543\,\upmu\mathrm{m}$ \\
@@ -1107,12 +1178,11 @@ POD--LSTM模型在验证集上的完整场误差见表\ref{tab:formal_lstm_valid
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]
+	\includegraphics[width=9cm,height=6.75cm,keepaspectratio]
 	{pod_lstm/blind_case_mean_relative_l2.png}
 	\caption{各独立盲测工况的平均相对$L_2$误差}
 	\label{fig:formal_blind_case_errors}
 \end{figure}
-
 
 \xsubsection{误差时间历程与关键瞬态}
 {Error Histories and Critical Transients}
@@ -1124,7 +1194,21 @@ POD--LSTM模型在验证集上的完整场误差见表\ref{tab:formal_lstm_valid
 的平均误差均保持在较低水平，而较大的瞬时误差主要集中于若干功率变化较为
 显著的时间区间，表现为局部峰值而非全寿期范围内的持续偏离。
 
-\begin{figure}[!htb]
+三个物理场的全局最大瞬时RMSE均来自
+\texttt{case\_lstm\_bl\_0006}，但对应时刻并不完全一致。温度场最大RMSE为
+$98.835\,\mathrm{K}$，发生在
+$t=5.5373472\times10^{7}\,\mathrm{s}$；轴向位移场最大RMSE为
+$141.135\,\upmu\mathrm{m}$，发生在
+$t=5.7374784\times10^{7}\,\mathrm{s}$；径向位移场最大RMSE为
+$6.543\,\upmu\mathrm{m}$，发生在
+$t=6.3656928\times10^{7}\,\mathrm{s}$。三个误差峰值均集中于寿期后段，
+且来源于同一独立盲测工况，表明该功率历史对应的后期热力响应对代理模型
+而言具有较高预测难度。与此同时，三个场的峰值时刻存在一定时间偏移，说明
+温度场与位移场误差并非简单同步变化，而可能受到热响应、燃料变形以及
+间隙/接触状态演化等不同时间尺度过程的共同影响。因此，图中局部误差峰值更适合视为复杂瞬态与累计状态共同作用下代理模型
+预测难度增加的表现，而不宜简单归因于网络随机误差。由于三个物理场的峰值
+时刻并不同步，现有结果也不足以支持单一热--力传递机制的定量因果归因。
+\begin{figure}[!htbp]
 	\centering
 	
 	\begin{subfigure}[b]{0.45\textwidth}
@@ -1157,23 +1241,8 @@ POD--LSTM模型在验证集上的完整场误差见表\ref{tab:formal_lstm_valid
 	\label{fig:formal_blind_error_history}
 \end{figure}
 
-三个物理场的全局最大瞬时RMSE均来自
-\texttt{case\_lstm\_bl\_0006}，但对应时刻并不完全一致。温度场最大RMSE为
-$98.835\,\mathrm{K}$，发生在
-$t=5.5373472\times10^{7}\,\mathrm{s}$；轴向位移场最大RMSE为
-$141.135\,\upmu\mathrm{m}$，发生在
-$t=5.7374784\times10^{7}\,\mathrm{s}$；径向位移场最大RMSE为
-$6.543\,\upmu\mathrm{m}$，发生在
-$t=6.3656928\times10^{7}\,\mathrm{s}$。三个误差峰值均集中于寿期后段，
-且来源于同一独立盲测工况，表明该功率历史对应的后期热力响应对代理模型
-而言具有较高预测难度。与此同时，三个场的峰值时刻存在一定时间偏移，说明
-温度场与位移场误差并非简单同步变化，而可能受到热响应、燃料变形以及
-间隙/接触状态演化等不同时间尺度过程的共同影响。因此，图中局部误差峰值更适合视为复杂瞬态与累计状态共同作用下代理模型
-预测难度增加的表现，而不宜简单归因于网络随机误差。由于三个物理场的峰值
-时刻并不同步，现有结果也不足以支持单一热--力传递机制的定量因果归因。
-
 \xsubsection{完整二维场恢复}
-{Recovery of Complete Two-Dimensional Fields}
+{Full Two-Dimensional Field Reconstruction}
 
 为进一步评价POD--LSTM对完整空间场的恢复能力，选取独立盲测集中同时对三个
 物理场具有较高预测难度的代表性快照进行比较。为避免依据单一场变量选择时刻，
@@ -1204,7 +1273,7 @@ POD--LSTM仍能够较好保持温度场和位移场的主要空间分布特征�
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]
+	\includegraphics[width=15.5cm,height=11.00cm,keepaspectratio]
 	{pod_lstm/blind_full_field_comparison.png}
 	\caption{代表性困难盲测快照下MOOSE与POD--LSTM完整二维场对比。
 		第一列为MOOSE高保真结果，第二列为POD--LSTM预测结果，第三列为预测误差；
@@ -1235,7 +1304,7 @@ $608.30\,\mathrm{d}$。预测响应能够随多阶段功率变化连续演化，
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]
+	\includegraphics[width=15.5cm,height=13.00cm,keepaspectratio]
 	{pod_lstm/online_power_and_response_histories.png}
 	\caption{独立功率历史及POD--LSTM在线预测得到的全寿期热力响应}
 	\label{fig:online_power_response}
@@ -1292,18 +1361,18 @@ $0.06203\,\mathrm{s}$。该时间不包括结果文件写出，也不包含POD�
 
 POD--LSTM在线计算时间及与MOOSE高保真计算的效率对比见表\ref{tab:formal_timing_results}。
 
-{\zihao{5}
+{
 	\keepXColumns
 	\begin{xltabular}{\textwidth}{
-			>{\raggedright\arraybackslash}p{4.0cm}
-			>{\centering\arraybackslash}p{2.8cm}
-			X
+			>{\centering\arraybackslash}m{4.0cm}
+			>{\centering\arraybackslash}m{2.8cm}
+			>{\centering\arraybackslash}X
 		}
 		\caption{POD--LSTM在线计算时间}
 		\label{tab:formal_timing_results}\\
 		
 		\toprule
-		项目 & 时间 & 说明 \\
+		{\centering 项目\par} & 时间 & {\centering 说明\par} \\
 		\midrule
 		\endfirsthead
 		
@@ -1312,7 +1381,7 @@ POD--LSTM在线计算时间及与MOOSE高保真计算的效率对比见表\ref{t
 			POD--LSTM在线计算时间
 		}\\
 		\toprule
-		项目 & 时间 & 说明 \\
+		{\centering 项目\par} & 时间 & {\centering 说明\par} \\
 		\midrule
 		\endhead
 		

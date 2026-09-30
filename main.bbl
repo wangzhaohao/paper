@@ -68,12 +68,6 @@
       \field{year}{2026}
       \field{dateera}{ce}
       \keyw{worldnuclearassociationWorldNuclearEnergy2026}
-      \warn{\item Datamodel: report entry 'worldnuclearassociationWorldNuclearEnergy2026' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'worldnuclearassociationWorldNuclearEnergy2026' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'worldnuclearassociationWorldNuclearEnergy2026' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'worldnuclearassociationWorldNuclearEnergy2026' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'worldnuclearassociationWorldNuclearEnergy2026' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'worldnuclearassociationWorldNuclearEnergy2026' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{parrishReviewMicrostructuralFeatures2018}{article}{}{}
       \name{author}{2}{}{%
@@ -148,10 +142,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311518303866
       \endverb
       \keyw{parrishReviewMicrostructuralFeatures2018}
-      \warn{\item Datamodel: article entry 'parrishReviewMicrostructuralFeatures2018' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'parrishReviewMicrostructuralFeatures2018' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'parrishReviewMicrostructuralFeatures2018' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'parrishReviewMicrostructuralFeatures2018' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{boberPlutoniumRedistributionFast1973}{article}{}{}
       \name{author}{3}{}{%
@@ -238,10 +228,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311573901013
       \endverb
       \keyw{boberPlutoniumRedistributionFast1973}
-      \warn{\item Datamodel: article entry 'boberPlutoniumRedistributionFast1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'boberPlutoniumRedistributionFast1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'boberPlutoniumRedistributionFast1973' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'boberPlutoniumRedistributionFast1973' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{vanuffelenReviewFuelPerformance2019}{article}{}{}
       \name{author}{5}{}{%
@@ -346,10 +332,6 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0022311518310298
       \endverb
       \keyw{vanuffelenReviewFuelPerformance2019}
-      \warn{\item Datamodel: article entry 'vanuffelenReviewFuelPerformance2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'vanuffelenReviewFuelPerformance2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'vanuffelenReviewFuelPerformance2019' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'vanuffelenReviewFuelPerformance2019' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{porterFAST10Computer2020}{report}{}{}
       \name{author}{7}{}{%
@@ -464,12 +446,6 @@
       \field{year}{2020}
       \field{dateera}{ce}
       \keyw{porterFAST10Computer2020}
-      \warn{\item Datamodel: report entry 'porterFAST10Computer2020' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'porterFAST10Computer2020' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'porterFAST10Computer2020' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'porterFAST10Computer2020' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'porterFAST10Computer2020' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'porterFAST10Computer2020' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{lassmannTRANSURANUSFuelRod1992}{article}{}{}
       \name{author}{1}{}{%
@@ -525,10 +501,6 @@
       \verb 10.1016/0022-3115(92)90487-6
       \endverb
       \keyw{lassmannTRANSURANUSFuelRod1992}
-      \warn{\item Datamodel: article entry 'lassmannTRANSURANUSFuelRod1992' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lassmannTRANSURANUSFuelRod1992' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lassmannTRANSURANUSFuelRod1992' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lassmannTRANSURANUSFuelRod1992' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{udagawaModelUpdatesFEMAXI2019}{article}{}{}
       \name{author}{2}{}{%
@@ -604,10 +576,6 @@
       \verb https://doi.org/10.1080/00223131.2019.1595766
       \endverb
       \keyw{udagawaModelUpdatesFEMAXI2019}
-      \warn{\item Datamodel: article entry 'udagawaModelUpdatesFEMAXI2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'udagawaModelUpdatesFEMAXI2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'udagawaModelUpdatesFEMAXI2019' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'udagawaModelUpdatesFEMAXI2019' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{yuDevelopmentFuelROd2012}{article}{}{}
       \name{author}{5}{}{%
@@ -712,10 +680,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S030645491200223X
       \endverb
       \keyw{yuDevelopmentFuelROd2012}
-      \warn{\item Datamodel: article entry 'yuDevelopmentFuelROd2012' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'yuDevelopmentFuelROd2012' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'yuDevelopmentFuelROd2012' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'yuDevelopmentFuelROd2012' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{liaoModificationUpdateFROBA2019}{article}{}{}
       \name{author}{6}{}{%
@@ -820,10 +784,6 @@
       \verb 10.1016/j.anucene.2019.07.031
       \endverb
       \keyw{liaoModificationUpdateFROBA2019}
-      \warn{\item Datamodel: article entry 'liaoModificationUpdateFROBA2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'liaoModificationUpdateFROBA2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'liaoModificationUpdateFROBA2019' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'liaoModificationUpdateFROBA2019' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{xingFuelRodAnalysis2021}{article}{}{}
       \name{author}{10}{}{%
@@ -929,10 +889,6 @@
       \verb 10.7538/yzk.2020.youxian.0925
       \endverb
       \keyw{xingFuelRodAnalysis2021}
-      \warn{\item Datamodel: article entry 'xingFuelRodAnalysis2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'xingFuelRodAnalysis2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'xingFuelRodAnalysis2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'xingFuelRodAnalysis2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{moalSCANAIRTransientFuel2014}{article}{}{}
       \name{author}{3}{}{%
@@ -1017,10 +973,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S002954931400257X
       \endverb
       \keyw{moalSCANAIRTransientFuel2014}
-      \warn{\item Datamodel: article entry 'moalSCANAIRTransientFuel2014' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'moalSCANAIRTransientFuel2014' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'moalSCANAIRTransientFuel2014' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'moalSCANAIRTransientFuel2014' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{hanValidationApplicationFTPAC2014}{article}{}{}
       \name{author}{3}{}{%
@@ -1094,10 +1046,6 @@
       \verb https://yznkxjs.xml-journal.net/cn/article/doi/10.7538/yzk.2014.48.S0.0389
       \endverb
       \keyw{hanValidationApplicationFTPAC2014}
-      \warn{\item Datamodel: article entry 'hanValidationApplicationFTPAC2014' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hanValidationApplicationFTPAC2014' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hanValidationApplicationFTPAC2014' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hanValidationApplicationFTPAC2014' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{introiniALCYONEFuelPerformance2024}{article}{}{}
       \name{author}{6}{}{%
@@ -1212,10 +1160,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0306454924003748
       \endverb
       \keyw{introiniALCYONEFuelPerformance2024}
-      \warn{\item Datamodel: article entry 'introiniALCYONEFuelPerformance2024' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'introiniALCYONEFuelPerformance2024' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'introiniALCYONEFuelPerformance2024' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'introiniALCYONEFuelPerformance2024' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{williamsonBISONFlexibleCode2021}{article}{}{}
       \name{author}{16}{}{%
@@ -1421,10 +1365,6 @@
       \verb 10.1080/00295450.2020.1836940
       \endverb
       \keyw{williamsonBISONFlexibleCode2021}
-      \warn{\item Datamodel: article entry 'williamsonBISONFlexibleCode2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'williamsonBISONFlexibleCode2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'williamsonBISONFlexibleCode2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'williamsonBISONFlexibleCode2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{dimarcelloExtensionTRANSURANUSPlutonium2012}{article}{}{}
       \name{author}{4}{}{%
@@ -1520,10 +1460,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0029549312001719
       \endverb
       \keyw{dimarcelloExtensionTRANSURANUSPlutonium2012}
-      \warn{\item Datamodel: article entry 'dimarcelloExtensionTRANSURANUSPlutonium2012' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dimarcelloExtensionTRANSURANUSPlutonium2012' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dimarcelloExtensionTRANSURANUSPlutonium2012' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dimarcelloExtensionTRANSURANUSPlutonium2012' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{dimarcelloModellingActinideRedistribution2014}{article}{}{}
       \name{author}{5}{}{%
@@ -1629,10 +1565,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0149197013002011
       \endverb
       \keyw{dimarcelloModellingActinideRedistribution2014}
-      \warn{\item Datamodel: article entry 'dimarcelloModellingActinideRedistribution2014' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dimarcelloModellingActinideRedistribution2014' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dimarcelloModellingActinideRedistribution2014' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dimarcelloModellingActinideRedistribution2014' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{dengUpgradeFROBACode2026}{article}{}{}
       \name{author}{7}{}{%
@@ -1747,10 +1679,6 @@
       \verb 10.1016/j.pnucene.2026.106252
       \endverb
       \keyw{dengUpgradeFROBACode2026}
-      \warn{\item Datamodel: article entry 'dengUpgradeFROBACode2026' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dengUpgradeFROBACode2026' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dengUpgradeFROBACode2026' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dengUpgradeFROBACode2026' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{weiModelingFuelRodJASMINE2017}{inproceedings}{}{}
       \name{author}{5}{}{%
@@ -1861,11 +1789,6 @@
       \verb https://asmedigitalcollection.asme.org/ICONE/proceedings/ICONE25/57816/Shanghai,%20China/252024
       \endverb
       \keyw{weiModelingFuelRodJASMINE2017}
-      \warn{\item Datamodel: inproceedings entry 'weiModelingFuelRodJASMINE2017' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: inproceedings entry 'weiModelingFuelRodJASMINE2017' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'weiModelingFuelRodJASMINE2017' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'weiModelingFuelRodJASMINE2017' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'weiModelingFuelRodJASMINE2017' (References/reference.bib): Invalid field 'nameformat' for entrytype 'inproceedings'}
     \endentry
     \entry{wangAnalysisAssessmentBeO2024}{inproceedings}{}{}
       \name{author}{3}{}{%
@@ -1947,11 +1870,6 @@
       \verb 10.1007/978-981-99-7157-2_9
       \endverb
       \keyw{wangAnalysisAssessmentBeO2024}
-      \warn{\item Datamodel: inproceedings entry 'wangAnalysisAssessmentBeO2024' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: inproceedings entry 'wangAnalysisAssessmentBeO2024' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'wangAnalysisAssessmentBeO2024' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'wangAnalysisAssessmentBeO2024' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'wangAnalysisAssessmentBeO2024' (References/reference.bib): Invalid field 'nameformat' for entrytype 'inproceedings'}
     \endentry
     \entry{xuStudyAnalysisPlutonium2025}{article}{}{}
       \name{author}{7}{}{%
@@ -2039,10 +1957,6 @@
       \verb 10.7538/yzk.2024.youxian.0717
       \endverb
       \keyw{xuStudyAnalysisPlutonium2025}
-      \warn{\item Datamodel: article entry 'xuStudyAnalysisPlutonium2025' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'xuStudyAnalysisPlutonium2025' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'xuStudyAnalysisPlutonium2025' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'xuStudyAnalysisPlutonium2025' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{lassmannOxiredModelRedistribution1987}{article}{}{}
       \name{author}{1}{}{%
@@ -2109,10 +2023,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311587900882
       \endverb
       \keyw{lassmannOxiredModelRedistribution1987}
-      \warn{\item Datamodel: article entry 'lassmannOxiredModelRedistribution1987' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lassmannOxiredModelRedistribution1987' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lassmannOxiredModelRedistribution1987' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lassmannOxiredModelRedistribution1987' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{forsbergDiffusionTheoryFission1985}{article}{}{}
       \name{author}{2}{}{%
@@ -2188,10 +2098,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311585900716
       \endverb
       \keyw{forsbergDiffusionTheoryFission1985}
-      \warn{\item Datamodel: article entry 'forsbergDiffusionTheoryFission1985' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'forsbergDiffusionTheoryFission1985' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'forsbergDiffusionTheoryFission1985' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'forsbergDiffusionTheoryFission1985' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{pizzocriSCIANTIXNewOpen2020}{article}{}{}
       \name{author}{3}{}{%
@@ -2276,10 +2182,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311519313868
       \endverb
       \keyw{pizzocriSCIANTIXNewOpen2020}
-      \warn{\item Datamodel: article entry 'pizzocriSCIANTIXNewOpen2020' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'pizzocriSCIANTIXNewOpen2020' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'pizzocriSCIANTIXNewOpen2020' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'pizzocriSCIANTIXNewOpen2020' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{zulloSCIANTIXCodeFission2023}{article}{}{}
       \name{author}{3}{}{%
@@ -2365,10 +2267,6 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0022311523005111
       \endverb
       \keyw{zulloSCIANTIXCodeFission2023}
-      \warn{\item Datamodel: article entry 'zulloSCIANTIXCodeFission2023' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zulloSCIANTIXCodeFission2023' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zulloSCIANTIXCodeFission2023' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zulloSCIANTIXCodeFission2023' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{magniApplicationSCIANTIXFission2022}{article}{}{}
       \name{author}{5}{}{%
@@ -2464,10 +2362,6 @@
       \verb 10.1016/j.net.2022.02.003
       \endverb
       \keyw{magniApplicationSCIANTIXFission2022}
-      \warn{\item Datamodel: article entry 'magniApplicationSCIANTIXFission2022' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'magniApplicationSCIANTIXFission2022' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'magniApplicationSCIANTIXFission2022' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'magniApplicationSCIANTIXFission2022' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{kouDevelopmentApplicationMechanism2026}{article}{}{}
       \name{author}{10}{}{%
@@ -2612,10 +2506,6 @@
       \verb 10.1016/j.anucene.2025.112094
       \endverb
       \keyw{kouDevelopmentApplicationMechanism2026}
-      \warn{\item Datamodel: article entry 'kouDevelopmentApplicationMechanism2026' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'kouDevelopmentApplicationMechanism2026' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'kouDevelopmentApplicationMechanism2026' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'kouDevelopmentApplicationMechanism2026' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{cheMachineLearningAssistedSurrogate2022}{article}{}{}
       \name{author}{4}{}{%
@@ -2700,10 +2590,6 @@
       \verb 10.1016/j.anucene.2021.108905
       \endverb
       \keyw{cheMachineLearningAssistedSurrogate2022}
-      \warn{\item Datamodel: article entry 'cheMachineLearningAssistedSurrogate2022' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cheMachineLearningAssistedSurrogate2022' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cheMachineLearningAssistedSurrogate2022' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cheMachineLearningAssistedSurrogate2022' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{zhouDeepHeterogeneousJoint2025}{article}{}{}
       \name{author}{3}{}{%
@@ -2778,10 +2664,6 @@
       \verb 10.1016/j.anucene.2024.110893
       \endverb
       \keyw{zhouDeepHeterogeneousJoint2025}
-      \warn{\item Datamodel: article entry 'zhouDeepHeterogeneousJoint2025' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zhouDeepHeterogeneousJoint2025' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zhouDeepHeterogeneousJoint2025' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zhouDeepHeterogeneousJoint2025' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{zhangLearningSimulateQuasiSteady2025}{article}{}{}
       \name{author}{5}{}{%
@@ -2877,10 +2759,6 @@
       \verb 10.1016/j.pnucene.2025.105769
       \endverb
       \keyw{zhangLearningSimulateQuasiSteady2025}
-      \warn{\item Datamodel: article entry 'zhangLearningSimulateQuasiSteady2025' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zhangLearningSimulateQuasiSteady2025' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zhangLearningSimulateQuasiSteady2025' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zhangLearningSimulateQuasiSteady2025' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{hagrmanSCDAPRELAP5MOD1995}{online}{}{}
       \name{author}{3}{}{%
@@ -2961,12 +2839,6 @@
       \verb https://www.osti.gov/biblio/100327
       \endverb
       \keyw{hagrmanSCDAPRELAP5MOD1995,report}
-      \warn{\item Datamodel: online entry 'hagrmanSCDAPRELAP5MOD1995' (References/reference.bib): Invalid field 'institution' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'hagrmanSCDAPRELAP5MOD1995' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'hagrmanSCDAPRELAP5MOD1995' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'hagrmanSCDAPRELAP5MOD1995' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'hagrmanSCDAPRELAP5MOD1995' (References/reference.bib): Invalid field 'nameformat' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'hagrmanSCDAPRELAP5MOD1995' (References/reference.bib): Invalid field 'publisher' for entrytype 'online'}
     \endentry
     \entry{luscherMaterialPropertyCorrelations2010}{online}{}{}
       \name{author}{2}{}{%
@@ -3045,13 +2917,6 @@
       \verb http://www.osti.gov/servlets/purl/1030897
       \endverb
       \keyw{luscherMaterialPropertyCorrelations2010,report}
-      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'institution' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'nameformat' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'number' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'luscherMaterialPropertyCorrelations2010' (References/reference.bib): Invalid field 'publisher' for entrytype 'online'}
     \endentry
     \entry{halesBISONTheoryManual2016}{report}{}{}
       \name{author}{9}{}{%
@@ -3193,12 +3058,6 @@
       \verb 10.2172/1374503
       \endverb
       \keyw{halesBISONTheoryManual2016}
-      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'halesBISONTheoryManual2016' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{crawfordFuelsSodiumcooledFast2007}{article}{}{}
       \name{author}{3}{}{%
@@ -3284,10 +3143,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311507007532
       \endverb
       \keyw{crawfordFuelsSodiumcooledFast2007}
-      \warn{\item Datamodel: article entry 'crawfordFuelsSodiumcooledFast2007' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'crawfordFuelsSodiumcooledFast2007' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'crawfordFuelsSodiumcooledFast2007' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'crawfordFuelsSodiumcooledFast2007' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{inoueThermalConductivityUranium2000}{article}{}{}
       \name{author}{1}{}{%
@@ -3353,10 +3208,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311500004074
       \endverb
       \keyw{inoueThermalConductivityUranium2000}
-      \warn{\item Datamodel: article entry 'inoueThermalConductivityUranium2000' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'inoueThermalConductivityUranium2000' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'inoueThermalConductivityUranium2000' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'inoueThermalConductivityUranium2000' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{garnerComparisonSwellingIrradiation2000}{article}{}{}
       \name{author}{3}{}{%
@@ -3442,10 +3293,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311599002251
       \endverb
       \keyw{garnerComparisonSwellingIrradiation2000}
-      \warn{\item Datamodel: article entry 'garnerComparisonSwellingIrradiation2000' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'garnerComparisonSwellingIrradiation2000' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'garnerComparisonSwellingIrradiation2000' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'garnerComparisonSwellingIrradiation2000' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{lathaThermalCreepProperties2008}{article}{}{}
       \name{author}{5}{}{%
@@ -3545,10 +3392,6 @@
       \verb 10.1016/j.ijpvp.2008.07.002
       \endverb
       \keyw{lathaThermalCreepProperties2008}
-      \warn{\item Datamodel: article entry 'lathaThermalCreepProperties2008' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lathaThermalCreepProperties2008' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lathaThermalCreepProperties2008' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lathaThermalCreepProperties2008' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{leibowitzThermalConductivityThermal1988}{article}{}{}
       \name{author}{2}{}{%
@@ -3625,10 +3468,6 @@
       \verb https://doi.org/10.1007/BF00503252
       \endverb
       \keyw{leibowitzThermalConductivityThermal1988}
-      \warn{\item Datamodel: article entry 'leibowitzThermalConductivityThermal1988' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'leibowitzThermalConductivityThermal1988' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'leibowitzThermalConductivityThermal1988' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'leibowitzThermalConductivityThermal1988' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{chenIRRADIATIONEFFECTSHT92013}{article}{}{}
       \name{author}{1}{}{%
@@ -3694,10 +3533,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S1738573315300176
       \endverb
       \keyw{chenIRRADIATIONEFFECTSHT92013}
-      \warn{\item Datamodel: article entry 'chenIRRADIATIONEFFECTSHT92013' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'chenIRRADIATIONEFFECTSHT92013' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'chenIRRADIATIONEFFECTSHT92013' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'chenIRRADIATIONEFFECTSHT92013' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{MiletJNM1983}{article}{}{}
       \name{author}{2}{}{%
@@ -3759,10 +3594,6 @@
       \field{pages}{196\bibrangedash 199}
       \range{pages}{4}
       \keyw{MiletJNM1983}
-      \warn{\item Datamodel: article entry 'MiletJNM1983' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'MiletJNM1983' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'MiletJNM1983' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'MiletJNM1983' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{fancherESCOREEPRISteadystate1987}{online}{}{}
       \name{author}{8}{}{%
@@ -3898,13 +3729,6 @@
       \verb https://www.osti.gov/biblio/6470740
       \endverb
       \keyw{fancherESCOREEPRISteadystate1987,report}
-      \warn{\item Datamodel: online entry 'fancherESCOREEPRISteadystate1987' (References/reference.bib): Invalid field 'institution' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'fancherESCOREEPRISteadystate1987' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'fancherESCOREEPRISteadystate1987' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'fancherESCOREEPRISteadystate1987' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'fancherESCOREEPRISteadystate1987' (References/reference.bib): Invalid field 'nameformat' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'fancherESCOREEPRISteadystate1987' (References/reference.bib): Invalid field 'number' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'fancherESCOREEPRISteadystate1987' (References/reference.bib): Invalid field 'publisher' for entrytype 'online'}
     \endentry
     \entry{rossHEATTRANSFERCOEFFICIENT1962}{online}{}{}
       \name{author}{2}{}{%
@@ -3980,13 +3804,6 @@
       \verb https://www.osti.gov/biblio/4818485
       \endverb
       \keyw{rossHEATTRANSFERCOEFFICIENT1962,report}
-      \warn{\item Datamodel: online entry 'rossHEATTRANSFERCOEFFICIENT1962' (References/reference.bib): Invalid field 'institution' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'rossHEATTRANSFERCOEFFICIENT1962' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'rossHEATTRANSFERCOEFFICIENT1962' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'rossHEATTRANSFERCOEFFICIENT1962' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'rossHEATTRANSFERCOEFFICIENT1962' (References/reference.bib): Invalid field 'nameformat' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'rossHEATTRANSFERCOEFFICIENT1962' (References/reference.bib): Invalid field 'number' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'rossHEATTRANSFERCOEFFICIENT1962' (References/reference.bib): Invalid field 'publisher' for entrytype 'online'}
     \endentry
     \entry{brokawApproximateFormulasViscosity1958}{article}{}{}
       \name{author}{1}{}{%
@@ -4052,10 +3869,6 @@
       \verb https://pubs.aip.org/jcp/article/29/2/391/204596/Approximate-Formulas-for-the-Viscosity-and-Thermal
       \endverb
       \keyw{brokawApproximateFormulasViscosity1958}
-      \warn{\item Datamodel: article entry 'brokawApproximateFormulasViscosity1958' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brokawApproximateFormulasViscosity1958' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brokawApproximateFormulasViscosity1958' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brokawApproximateFormulasViscosity1958' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{lanningReviewMethodsApplicable1975}{online}{}{}
       \name{author}{3}{}{%
@@ -4141,13 +3954,6 @@
       \verb https://inis.iaea.org/records/5bvs0-gsa72
       \endverb
       \keyw{lanningReviewMethodsApplicable1975,report}
-      \warn{\item Datamodel: online entry 'lanningReviewMethodsApplicable1975' (References/reference.bib): Invalid field 'institution' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'lanningReviewMethodsApplicable1975' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'lanningReviewMethodsApplicable1975' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'lanningReviewMethodsApplicable1975' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'lanningReviewMethodsApplicable1975' (References/reference.bib): Invalid field 'nameformat' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'lanningReviewMethodsApplicable1975' (References/reference.bib): Invalid field 'number' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'lanningReviewMethodsApplicable1975' (References/reference.bib): Invalid field 'publisher' for entrytype 'online'}
     \endentry
     \entry{toptanGapConductanceModeling2019}{article}{}{}
       \name{author}{3}{}{%
@@ -4233,10 +4039,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0029549319303000
       \endverb
       \keyw{toptanGapConductanceModeling2019}
-      \warn{\item Datamodel: article entry 'toptanGapConductanceModeling2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'toptanGapConductanceModeling2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'toptanGapConductanceModeling2019' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'toptanGapConductanceModeling2019' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{toptanModelingGapConductance2020}{article}{}{}
       \name{author}{6}{}{%
@@ -4353,10 +4155,6 @@
       \verb https://www.tandfonline.com/doi/full/10.1080/00223131.2020.1740808
       \endverb
       \keyw{toptanModelingGapConductance2020}
-      \warn{\item Datamodel: article entry 'toptanModelingGapConductance2020' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'toptanModelingGapConductance2020' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'toptanModelingGapConductance2020' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'toptanModelingGapConductance2020' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{birdTransportPhenomena1976}{book}{}{}
       \name{author}{3}{}{%
@@ -4432,11 +4230,6 @@
       \field{year}{1976}
       \field{dateera}{ce}
       \keyw{birdTransportPhenomena1976}
-      \warn{\item Datamodel: book entry 'birdTransportPhenomena1976' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: book entry 'birdTransportPhenomena1976' (References/reference.bib): Invalid field 'languageid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'birdTransportPhenomena1976' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'birdTransportPhenomena1976' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'birdTransportPhenomena1976' (References/reference.bib): Invalid field 'nameformat' for entrytype 'book'}
     \endentry
     \entry{cazadoModelNuclearFuel2018}{article}{}{}
       \name{author}{2}{}{%
@@ -4511,10 +4304,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311518307700
       \endverb
       \keyw{cazadoModelNuclearFuel2018}
-      \warn{\item Datamodel: article entry 'cazadoModelNuclearFuel2018' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cazadoModelNuclearFuel2018' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cazadoModelNuclearFuel2018' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cazadoModelNuclearFuel2018' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{baraniAnalysisTransientFission2017}{article}{}{}
       \name{author}{7}{}{%
@@ -4639,10 +4428,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S002231151630544X
       \endverb
       \keyw{baraniAnalysisTransientFission2017}
-      \warn{\item Datamodel: article entry 'baraniAnalysisTransientFission2017' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'baraniAnalysisTransientFission2017' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'baraniAnalysisTransientFission2017' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'baraniAnalysisTransientFission2017' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{pastoreModellingTransientFission2014}{inproceedings}{}{}
       \name{author}{9}{}{%
@@ -4782,10 +4567,6 @@
       \verb https://www.researchgate.net/publication/266615909_Modelling_of_Transient_Fission_Gas_Behaviour_in_Oxide_Fuel_and_Application_to_the_BISON_Code
       \endverb
       \keyw{pastoreModellingTransientFission2014}
-      \warn{\item Datamodel: inproceedings entry 'pastoreModellingTransientFission2014' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'pastoreModellingTransientFission2014' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'pastoreModellingTransientFission2014' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'pastoreModellingTransientFission2014' (References/reference.bib): Invalid field 'nameformat' for entrytype 'inproceedings'}
     \endentry
     \entry{hofmanMetallicFuelsHandbook2019}{report}{}{}
       \name{author}{11}{}{%
@@ -4948,12 +4729,6 @@
       \verb 10.2172/1506477
       \endverb
       \keyw{hofmanMetallicFuelsHandbook2019}
-      \warn{\item Datamodel: report entry 'hofmanMetallicFuelsHandbook2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hofmanMetallicFuelsHandbook2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hofmanMetallicFuelsHandbook2019' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hofmanMetallicFuelsHandbook2019' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hofmanMetallicFuelsHandbook2019' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hofmanMetallicFuelsHandbook2019' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{mills2002}{book}{}{}
       \name{author}{1}{}{%
@@ -5010,10 +4785,6 @@
       \verb http://app.knovel.com/hotlink/toc/id:kpRVTPSCA1/recommended-values-thermophysical/recommended-values-thermophysical
       \endverb
       \keyw{mills2002}
-      \warn{\item Datamodel: book entry 'mills2002' (References/reference.bib): Invalid field 'languageid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'mills2002' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'mills2002' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'mills2002' (References/reference.bib): Invalid field 'nameformat' for entrytype 'book'}
     \endentry
     \entry{Leibowitz_1988}{article}{}{}
       \name{author}{2}{}{%
@@ -5080,10 +4851,6 @@
       \verb 10.1007/bf00503252
       \endverb
       \keyw{Leibowitz_1988}
-      \warn{\item Datamodel: article entry 'Leibowitz_1988' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'Leibowitz_1988' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'Leibowitz_1988' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'Leibowitz_1988' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{banerjee2007_d9cp}{article}{}{}
       \name{author}{4}{}{%
@@ -5175,10 +4942,6 @@
       \verb https://doi.org/10.1007/s10765-006-0136-0
       \endverb
       \keyw{banerjee2007_d9cp}
-      \warn{\item Datamodel: article entry 'banerjee2007_d9cp' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'banerjee2007_d9cp' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'banerjee2007_d9cp' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'banerjee2007_d9cp' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{Yamanouchi_1992}{article}{}{}
       \name{author}{4}{}{%
@@ -5262,10 +5025,6 @@
       \verb 10.1016/0022-3115(92)90587-B
       \endverb
       \keyw{Yamanouchi_1992}
-      \warn{\item Datamodel: article entry 'Yamanouchi_1992' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'Yamanouchi_1992' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'Yamanouchi_1992' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'Yamanouchi_1992' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{Hammond1979ornl5442}{online}{}{}
       \name{author}{5}{}{%
@@ -5374,13 +5133,6 @@
       \verb https://www.osti.gov/biblio/6216499
       \endverb
       \keyw{Hammond1979ornl5442,report}
-      \warn{\item Datamodel: online entry 'Hammond1979ornl5442' (References/reference.bib): Invalid field 'institution' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Hammond1979ornl5442' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Hammond1979ornl5442' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Hammond1979ornl5442' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Hammond1979ornl5442' (References/reference.bib): Invalid field 'nameformat' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Hammond1979ornl5442' (References/reference.bib): Invalid field 'number' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Hammond1979ornl5442' (References/reference.bib): Invalid field 'publisher' for entrytype 'online'}
     \endentry
     \entry{FanningSAS4ASASSYS1Safety2017}{report}{}{}
       \name{author}{3}{}{%
@@ -5458,12 +5210,6 @@
       \verb 10.2172/1352187
       \endverb
       \keyw{FanningSAS4ASASSYS1Safety2017}
-      \warn{\item Datamodel: report entry 'FanningSAS4ASASSYS1Safety2017' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'FanningSAS4ASASSYS1Safety2017' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'FanningSAS4ASASSYS1Safety2017' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'FanningSAS4ASASSYS1Safety2017' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'FanningSAS4ASASSYS1Safety2017' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'FanningSAS4ASASSYS1Safety2017' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{KARAHAN2010283}{article}{}{}
       \name{author}{2}{}{%
@@ -5529,10 +5275,6 @@
       \verb 10.1016/j.jnucmat.2009.11.022
       \endverb
       \keyw{KARAHAN2010283}
-      \warn{\item Datamodel: article entry 'KARAHAN2010283' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'KARAHAN2010283' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'KARAHAN2010283' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'KARAHAN2010283' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{kanekoCalculationProgramMIVOID1969}{article}{}{}
       \name{author}{4}{}{%
@@ -5628,10 +5370,6 @@
       \verb http://www.tandfonline.com/doi/abs/10.1080/18811248.1969.9732955
       \endverb
       \keyw{kanekoCalculationProgramMIVOID1969}
-      \warn{\item Datamodel: article entry 'kanekoCalculationProgramMIVOID1969' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'kanekoCalculationProgramMIVOID1969' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'kanekoCalculationProgramMIVOID1969' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'kanekoCalculationProgramMIVOID1969' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{vanceComputerSimulationPore2017}{thesis}{}{}
       \name{author}{1}{}{%
@@ -5689,10 +5427,6 @@
       \verb https://scholarworks.uark.edu/etd/1943
       \endverb
       \keyw{vanceComputerSimulationPore2017}
-      \warn{\item Datamodel: thesis entry 'vanceComputerSimulationPore2017' (References/reference.bib): Invalid field 'languageid' for entrytype 'thesis'}
-      \warn{\item Datamodel: thesis entry 'vanceComputerSimulationPore2017' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'thesis'}
-      \warn{\item Datamodel: thesis entry 'vanceComputerSimulationPore2017' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'thesis'}
-      \warn{\item Datamodel: thesis entry 'vanceComputerSimulationPore2017' (References/reference.bib): Invalid field 'nameformat' for entrytype 'thesis'}
     \endentry
     \entry{sensKineticsPoreMovement1972}{article}{}{}
       \name{author}{1}{}{%
@@ -5758,10 +5492,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/002231157290061X
       \endverb
       \keyw{sensKineticsPoreMovement1972}
-      \warn{\item Datamodel: article entry 'sensKineticsPoreMovement1972' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'sensKineticsPoreMovement1972' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'sensKineticsPoreMovement1972' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'sensKineticsPoreMovement1972' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{ronchiPropertiesLenticularPores1974}{article}{}{}
       \name{author}{2}{}{%
@@ -5837,10 +5567,6 @@
       \verb https://www.sciencedirect.com/science/article/pii/0022311574900646
       \endverb
       \keyw{ronchiPropertiesLenticularPores1974}
-      \warn{\item Datamodel: article entry 'ronchiPropertiesLenticularPores1974' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ronchiPropertiesLenticularPores1974' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ronchiPropertiesLenticularPores1974' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ronchiPropertiesLenticularPores1974' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{novasconeModelingPorosityMigration2018}{article}{}{}
       \name{author}{5}{}{%
@@ -5945,10 +5671,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311518302861
       \endverb
       \keyw{novasconeModelingPorosityMigration2018}
-      \warn{\item Datamodel: article entry 'novasconeModelingPorosityMigration2018' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'novasconeModelingPorosityMigration2018' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'novasconeModelingPorosityMigration2018' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'novasconeModelingPorosityMigration2018' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{wellandMatterTransportFast2020}{incollection}{}{}
       \name{author}{1}{}{%
@@ -6033,10 +5755,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/B9780128035818103042
       \endverb
       \keyw{wellandMatterTransportFast2020}
-      \warn{\item Datamodel: incollection entry 'wellandMatterTransportFast2020' (References/reference.bib): Invalid field 'languageid' for entrytype 'incollection'}
-      \warn{\item Datamodel: incollection entry 'wellandMatterTransportFast2020' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'incollection'}
-      \warn{\item Datamodel: incollection entry 'wellandMatterTransportFast2020' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'incollection'}
-      \warn{\item Datamodel: incollection entry 'wellandMatterTransportFast2020' (References/reference.bib): Invalid field 'nameformat' for entrytype 'incollection'}
     \endentry
     \entry{gallowayModelingConstituentRedistribution2015}{article}{}{}
       \name{author}{5}{}{%
@@ -6141,10 +5859,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0029549315000552
       \endverb
       \keyw{gallowayModelingConstituentRedistribution2015}
-      \warn{\item Datamodel: article entry 'gallowayModelingConstituentRedistribution2015' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'gallowayModelingConstituentRedistribution2015' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'gallowayModelingConstituentRedistribution2015' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'gallowayModelingConstituentRedistribution2015' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{nicholsTheoryColumnarGrain1967}{article}{}{}
       \name{author}{1}{}{%
@@ -6211,10 +5925,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311567900311
       \endverb
       \keyw{nicholsTheoryColumnarGrain1967}
-      \warn{\item Datamodel: article entry 'nicholsTheoryColumnarGrain1967' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'nicholsTheoryColumnarGrain1967' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'nicholsTheoryColumnarGrain1967' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'nicholsTheoryColumnarGrain1967' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{olanderFundamentalAspectsNuclear1976}{online}{}{}
       \name{author}{1}{}{%
@@ -6284,13 +5994,6 @@
       \verb https://www.osti.gov/biblio/7343826
       \endverb
       \keyw{olanderFundamentalAspectsNuclear1976,report}
-      \warn{\item Datamodel: online entry 'olanderFundamentalAspectsNuclear1976' (References/reference.bib): Invalid field 'institution' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'olanderFundamentalAspectsNuclear1976' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'olanderFundamentalAspectsNuclear1976' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'olanderFundamentalAspectsNuclear1976' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'olanderFundamentalAspectsNuclear1976' (References/reference.bib): Invalid field 'nameformat' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'olanderFundamentalAspectsNuclear1976' (References/reference.bib): Invalid field 'number' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'olanderFundamentalAspectsNuclear1976' (References/reference.bib): Invalid field 'publisher' for entrytype 'online'}
     \endentry
     \entry{ikusawaDevelopmentVerificationThermal2014}{inproceedings}{}{}
       \name{author}{6}{}{%
@@ -6405,11 +6108,6 @@
       \verb https://dx.doi.org/10.1115/ICONE22-30005
       \endverb
       \keyw{ikusawaDevelopmentVerificationThermal2014}
-      \warn{\item Datamodel: inproceedings entry 'ikusawaDevelopmentVerificationThermal2014' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: inproceedings entry 'ikusawaDevelopmentVerificationThermal2014' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'ikusawaDevelopmentVerificationThermal2014' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'ikusawaDevelopmentVerificationThermal2014' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'ikusawaDevelopmentVerificationThermal2014' (References/reference.bib): Invalid field 'nameformat' for entrytype 'inproceedings'}
     \endentry
     \entry{nicholsDiffusionalMobilitiesParticles1972}{article}{}{}
       \name{author}{1}{}{%
@@ -6476,10 +6174,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0001616072901824
       \endverb
       \keyw{nicholsDiffusionalMobilitiesParticles1972}
-      \warn{\item Datamodel: article entry 'nicholsDiffusionalMobilitiesParticles1972' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'nicholsDiffusionalMobilitiesParticles1972' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'nicholsDiffusionalMobilitiesParticles1972' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'nicholsDiffusionalMobilitiesParticles1972' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{lackeyPorosityActinideRedistribution1972}{article}{}{}
       \name{author}{3}{}{%
@@ -6565,10 +6259,6 @@
       \verb https://www.tandfonline.com/doi/full/10.13182/NT72-A31181
       \endverb
       \keyw{lackeyPorosityActinideRedistribution1972}
-      \warn{\item Datamodel: article entry 'lackeyPorosityActinideRedistribution1972' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lackeyPorosityActinideRedistribution1972' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lackeyPorosityActinideRedistribution1972' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'lackeyPorosityActinideRedistribution1972' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{ozawaDevelopmentFuelPerformance2021}{article}{}{}
       \name{author}{5}{}{%
@@ -6673,10 +6363,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311521002610
       \endverb
       \keyw{ozawaDevelopmentFuelPerformance2021}
-      \warn{\item Datamodel: article entry 'ozawaDevelopmentFuelPerformance2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ozawaDevelopmentFuelPerformance2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ozawaDevelopmentFuelPerformance2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ozawaDevelopmentFuelPerformance2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{katoOxygenPotentialsOxygen2017}{article}{}{}
       \name{author}{5}{}{%
@@ -6781,10 +6467,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311516312582
       \endverb
       \keyw{katoOxygenPotentialsOxygen2017}
-      \warn{\item Datamodel: article entry 'katoOxygenPotentialsOxygen2017' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'katoOxygenPotentialsOxygen2017' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'katoOxygenPotentialsOxygen2017' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'katoOxygenPotentialsOxygen2017' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{adhikaryAnalysisFiniteElement2011}{article}{}{}
       \name{author}{2}{}{%
@@ -6859,10 +6541,6 @@
       \verb https://www.scientific.net/DDF.318.33
       \endverb
       \keyw{adhikaryAnalysisFiniteElement2011}
-      \warn{\item Datamodel: article entry 'adhikaryAnalysisFiniteElement2011' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'adhikaryAnalysisFiniteElement2011' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'adhikaryAnalysisFiniteElement2011' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'adhikaryAnalysisFiniteElement2011' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{brooksStreamlineUpwindPetrovgalerkin1982}{article}{}{}
       \name{author}{2}{}{%
@@ -6938,10 +6616,6 @@
       \verb https://www.sciencedirect.com/science/article/pii/0045782582900718
       \endverb
       \keyw{brooksStreamlineUpwindPetrovgalerkin1982}
-      \warn{\item Datamodel: article entry 'brooksStreamlineUpwindPetrovgalerkin1982' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brooksStreamlineUpwindPetrovgalerkin1982' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brooksStreamlineUpwindPetrovgalerkin1982' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brooksStreamlineUpwindPetrovgalerkin1982' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{johnsonFiniteElementMethods1984}{article}{}{}
       \name{author}{3}{}{%
@@ -7027,10 +6701,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0045782584901580
       \endverb
       \keyw{johnsonFiniteElementMethods1984}
-      \warn{\item Datamodel: article entry 'johnsonFiniteElementMethods1984' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'johnsonFiniteElementMethods1984' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'johnsonFiniteElementMethods1984' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'johnsonFiniteElementMethods1984' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{shuonanStabilizedFiniteElement2024}{article}{}{}
       \name{author}{1}{}{%
@@ -7096,10 +6766,6 @@
       \verb https://engine.scichina.com/doi/10.1360/SSM-2023-0194
       \endverb
       \keyw{shuonanStabilizedFiniteElement2024}
-      \warn{\item Datamodel: article entry 'shuonanStabilizedFiniteElement2024' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'shuonanStabilizedFiniteElement2024' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'shuonanStabilizedFiniteElement2024' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'shuonanStabilizedFiniteElement2024' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{moukalledFiniteVolumeMethod2016}{book}{}{}
       \name{author}{3}{}{%
@@ -7188,11 +6854,6 @@
       \verb https://link.springer.com/10.1007/978-3-319-16874-6
       \endverb
       \keyw{moukalledFiniteVolumeMethod2016}
-      \warn{\item Datamodel: book entry 'moukalledFiniteVolumeMethod2016' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: book entry 'moukalledFiniteVolumeMethod2016' (References/reference.bib): Invalid field 'languageid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'moukalledFiniteVolumeMethod2016' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'moukalledFiniteVolumeMethod2016' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'moukalledFiniteVolumeMethod2016' (References/reference.bib): Invalid field 'nameformat' for entrytype 'book'}
     \endentry
     \entry{WangZhaoHaoYangHuaWuRanLiaoZhongQiKongQianYiDeDuoFangFaDuoWuLiChangMoNiYanJiu2025}{article}{}{}
       \name{author}{2}{}{%
@@ -7256,10 +6917,6 @@
       \verb https://yznkxjs.xml-journal.net/cn/article/doi/10.7538/yzk.2025.youxian.0266
       \endverb
       \keyw{WangZhaoHaoYangHuaWuRanLiaoZhongQiKongQianYiDeDuoFangFaDuoWuLiChangMoNiYanJiu2025}
-      \warn{\item Datamodel: article entry 'WangZhaoHaoYangHuaWuRanLiaoZhongQiKongQianYiDeDuoFangFaDuoWuLiChangMoNiYanJiu2025' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'WangZhaoHaoYangHuaWuRanLiaoZhongQiKongQianYiDeDuoFangFaDuoWuLiChangMoNiYanJiu2025' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'WangZhaoHaoYangHuaWuRanLiaoZhongQiKongQianYiDeDuoFangFaDuoWuLiChangMoNiYanJiu2025' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'WangZhaoHaoYangHuaWuRanLiaoZhongQiKongQianYiDeDuoFangFaDuoWuLiChangMoNiYanJiu2025' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{teagueMicrostructuralCharacterizationHigh2013}{article}{}{}
       \name{author}{5}{}{%
@@ -7366,8 +7023,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311513008131
       \endverb
       \keyw{teagueMicrostructuralCharacterizationHigh2013}
-      \warn{\item Datamodel: article entry 'teagueMicrostructuralCharacterizationHigh2013' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'teagueMicrostructuralCharacterizationHigh2013' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
     \endentry
     \entry{clementPlutoniumRedistributionMixed1978}{article}{}{}
       \name{author}{2}{}{%
@@ -7443,10 +7098,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311578900442
       \endverb
       \keyw{clementPlutoniumRedistributionMixed1978}
-      \warn{\item Datamodel: article entry 'clementPlutoniumRedistributionMixed1978' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'clementPlutoniumRedistributionMixed1978' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'clementPlutoniumRedistributionMixed1978' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'clementPlutoniumRedistributionMixed1978' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{meyerAnalysisPlutoniumSegregation1974}{article}{}{}
       \name{author}{1}{}{%
@@ -7512,10 +7163,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311574900555
       \endverb
       \keyw{meyerAnalysisPlutoniumSegregation1974}
-      \warn{\item Datamodel: article entry 'meyerAnalysisPlutoniumSegregation1974' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'meyerAnalysisPlutoniumSegregation1974' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'meyerAnalysisPlutoniumSegregation1974' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'meyerAnalysisPlutoniumSegregation1974' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{matzkeDiffusionProcessesSurface1983}{article}{}{}
       \name{author}{1}{}{%
@@ -7582,10 +7229,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311583902490
       \endverb
       \keyw{matzkeDiffusionProcessesSurface1983}
-      \warn{\item Datamodel: article entry 'matzkeDiffusionProcessesSurface1983' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'matzkeDiffusionProcessesSurface1983' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'matzkeDiffusionProcessesSurface1983' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'matzkeDiffusionProcessesSurface1983' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{boberMATERIALTRANSPORTTEMPERATURE1973}{incollection}{}{}
       \name{author}{2}{}{%
@@ -7680,10 +7323,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/B9780120293070500093
       \endverb
       \keyw{boberMATERIALTRANSPORTTEMPERATURE1973}
-      \warn{\item Datamodel: incollection entry 'boberMATERIALTRANSPORTTEMPERATURE1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'incollection'}
-      \warn{\item Datamodel: incollection entry 'boberMATERIALTRANSPORTTEMPERATURE1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'incollection'}
-      \warn{\item Datamodel: incollection entry 'boberMATERIALTRANSPORTTEMPERATURE1973' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'incollection'}
-      \warn{\item Datamodel: incollection entry 'boberMATERIALTRANSPORTTEMPERATURE1973' (References/reference.bib): Invalid field 'nameformat' for entrytype 'incollection'}
     \endentry
     \entry{hoffmannCrackFormationCrack1974}{article}{}{}
       \name{author}{1}{}{%
@@ -7749,10 +7388,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311574900725
       \endverb
       \keyw{hoffmannCrackFormationCrack1974}
-      \warn{\item Datamodel: article entry 'hoffmannCrackFormationCrack1974' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hoffmannCrackFormationCrack1974' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hoffmannCrackFormationCrack1974' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hoffmannCrackFormationCrack1974' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{olanderKineticsActinideRedistribution1973}{article}{}{}
       \name{author}{1}{}{%
@@ -7819,10 +7454,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311573900585
       \endverb
       \keyw{olanderKineticsActinideRedistribution1973}
-      \warn{\item Datamodel: article entry 'olanderKineticsActinideRedistribution1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'olanderKineticsActinideRedistribution1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'olanderKineticsActinideRedistribution1973' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'olanderKineticsActinideRedistribution1973' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{ishiiInvestigationPuMigration2001}{article}{}{}
       \name{author}{2}{}{%
@@ -7900,10 +7531,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311501004457
       \endverb
       \keyw{ishiiInvestigationPuMigration2001}
-      \warn{\item Datamodel: article entry 'ishiiInvestigationPuMigration2001' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ishiiInvestigationPuMigration2001' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ishiiInvestigationPuMigration2001' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ishiiInvestigationPuMigration2001' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{dimarcelloImprovementsTRANSURANUSCode30}{inproceedings}{}{}
       \name{author}{4}{}{%
@@ -7998,11 +7625,6 @@
       \verb https://www-pub.iaea.org/mtcd/publications/pdf/tecdoc-cd-1689/PDF/TECDOC_1689.pdf
       \endverb
       \keyw{dimarcelloImprovementsTRANSURANUSCode30}
-      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'dimarcelloImprovementsTRANSURANUSCode30' (References/reference.bib): Invalid field 'nameformat' for entrytype 'inproceedings'}
     \endentry
     \entry{c.f.AnalyticSolutionsMass1977}{article}{}{}
       \name{author}{1}{}{%
@@ -8068,10 +7690,6 @@
       \verb https://www.sciencedirect.com/science/article/abs/pii/0022311577902161
       \endverb
       \keyw{c.f.AnalyticSolutionsMass1977}
-      \warn{\item Datamodel: article entry 'c.f.AnalyticSolutionsMass1977' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'c.f.AnalyticSolutionsMass1977' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'c.f.AnalyticSolutionsMass1977' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'c.f.AnalyticSolutionsMass1977' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{zotero-item-2022}{report}{}{}
       \name{author}{3}{}{%
@@ -8156,13 +7774,6 @@
       \verb https://jopss.jaea.go.jp/search/servlet/search?5036569
       \endverb
       \keyw{zotero-item-2022}
-      \warn{\item Datamodel: report entry 'zotero-item-2022' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: report entry 'zotero-item-2022' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'zotero-item-2022' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'zotero-item-2022' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'zotero-item-2022' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'zotero-item-2022' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'zotero-item-2022' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{tanakaRestructuringRedistributionActinides2013}{article}{}{}
       \name{author}{6}{}{%
@@ -8278,10 +7889,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311513003954
       \endverb
       \keyw{tanakaRestructuringRedistributionActinides2013}
-      \warn{\item Datamodel: article entry 'tanakaRestructuringRedistributionActinides2013' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'tanakaRestructuringRedistributionActinides2013' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'tanakaRestructuringRedistributionActinides2013' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'tanakaRestructuringRedistributionActinides2013' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{maedaRadialRedistributionActinides2009}{article}{}{}
       \name{author}{4}{}{%
@@ -8377,10 +7984,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311509000154
       \endverb
       \keyw{maedaRadialRedistributionActinides2009}
-      \warn{\item Datamodel: article entry 'maedaRadialRedistributionActinides2009' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'maedaRadialRedistributionActinides2009' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'maedaRadialRedistributionActinides2009' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'maedaRadialRedistributionActinides2009' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{schmitzDiffusionHeavyElements1965}{article}{}{}
       \name{author}{2}{}{%
@@ -8456,10 +8059,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311565901698
       \endverb
       \keyw{schmitzDiffusionHeavyElements1965}
-      \warn{\item Datamodel: article entry 'schmitzDiffusionHeavyElements1965' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'schmitzDiffusionHeavyElements1965' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'schmitzDiffusionHeavyElements1965' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'schmitzDiffusionHeavyElements1965' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{ewartOxygenPotentialMeasurements1984}{article}{}{}
       \name{author}{5}{}{%
@@ -8564,10 +8163,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311584900084
       \endverb
       \keyw{ewartOxygenPotentialMeasurements1984}
-      \warn{\item Datamodel: article entry 'ewartOxygenPotentialMeasurements1984' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ewartOxygenPotentialMeasurements1984' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ewartOxygenPotentialMeasurements1984' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ewartOxygenPotentialMeasurements1984' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{newmanThreeDimensionalCoupled2009}{article}{}{}
       \name{author}{3}{}{%
@@ -8653,10 +8248,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311509004450
       \endverb
       \keyw{newmanThreeDimensionalCoupled2009}
-      \warn{\item Datamodel: article entry 'newmanThreeDimensionalCoupled2009' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'newmanThreeDimensionalCoupled2009' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'newmanThreeDimensionalCoupled2009' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'newmanThreeDimensionalCoupled2009' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{ramirezSimulationsHeatOxygen2006}{article}{}{}
       \name{author}{3}{}{%
@@ -8742,10 +8333,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311506004636
       \endverb
       \keyw{ramirezSimulationsHeatOxygen2006}
-      \warn{\item Datamodel: article entry 'ramirezSimulationsHeatOxygen2006' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ramirezSimulationsHeatOxygen2006' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ramirezSimulationsHeatOxygen2006' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ramirezSimulationsHeatOxygen2006' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{ruelloChemicalDiffusionUranium2004}{article}{}{}
       \name{author}{5}{}{%
@@ -8851,10 +8438,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311503005257
       \endverb
       \keyw{ruelloChemicalDiffusionUranium2004}
-      \warn{\item Datamodel: article entry 'ruelloChemicalDiffusionUranium2004' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ruelloChemicalDiffusionUranium2004' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ruelloChemicalDiffusionUranium2004' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ruelloChemicalDiffusionUranium2004' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{higgsConceptualModelFuel2007}{article}{}{}
       \name{author}{4}{}{%
@@ -8950,10 +8533,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311507000062
       \endverb
       \keyw{higgsConceptualModelFuel2007}
-      \warn{\item Datamodel: article entry 'higgsConceptualModelFuel2007' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'higgsConceptualModelFuel2007' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'higgsConceptualModelFuel2007' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'higgsConceptualModelFuel2007' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{dunneIntroductionComputationalPlasticity2005}{book}{}{}
       \name{author}{2}{}{%
@@ -9018,11 +8597,6 @@
       \field{year}{2005}
       \field{dateera}{ce}
       \keyw{dunneIntroductionComputationalPlasticity2005}
-      \warn{\item Datamodel: book entry 'dunneIntroductionComputationalPlasticity2005' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: book entry 'dunneIntroductionComputationalPlasticity2005' (References/reference.bib): Invalid field 'languageid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'dunneIntroductionComputationalPlasticity2005' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'dunneIntroductionComputationalPlasticity2005' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'dunneIntroductionComputationalPlasticity2005' (References/reference.bib): Invalid field 'nameformat' for entrytype 'book'}
     \endentry
     \entry{denisSimulationIsothermalFission1996}{article}{}{}
       \name{author}{2}{}{%
@@ -9097,10 +8671,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311595002030
       \endverb
       \keyw{denisSimulationIsothermalFission1996}
-      \warn{\item Datamodel: article entry 'denisSimulationIsothermalFission1996' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'denisSimulationIsothermalFission1996' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'denisSimulationIsothermalFission1996' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'denisSimulationIsothermalFission1996' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{ZhangXiaoDiHeRanLiaoXinKuaiLieBianQiTiShiFangXingWeiMoNiYanJiu2016}{article}{}{}
       \name{author}{6}{}{%
@@ -9192,10 +8762,6 @@
       \verb https://d.wanfangdata.com.cn/periodical/hdzxytcjs201612004
       \endverb
       \keyw{ZhangXiaoDiHeRanLiaoXinKuaiLieBianQiTiShiFangXingWeiMoNiYanJiu2016}
-      \warn{\item Datamodel: article entry 'ZhangXiaoDiHeRanLiaoXinKuaiLieBianQiTiShiFangXingWeiMoNiYanJiu2016' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ZhangXiaoDiHeRanLiaoXinKuaiLieBianQiTiShiFangXingWeiMoNiYanJiu2016' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ZhangXiaoDiHeRanLiaoXinKuaiLieBianQiTiShiFangXingWeiMoNiYanJiu2016' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ZhangXiaoDiHeRanLiaoXinKuaiLieBianQiTiShiFangXingWeiMoNiYanJiu2016' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{giozuSciantixSciantixofficialSCIANTIX2025}{online}{}{}
       \name{author}{4}{}{%
@@ -9281,11 +8847,6 @@
       \verb https://zenodo.org/doi/10.5281/zenodo.17748425
       \endverb
       \keyw{giozuSciantixSciantixofficialSCIANTIX2025}
-      \warn{\item Datamodel: online entry 'giozuSciantixSciantixofficialSCIANTIX2025' (References/reference.bib): Invalid field 'institution' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'giozuSciantixSciantixofficialSCIANTIX2025' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'giozuSciantixSciantixofficialSCIANTIX2025' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'giozuSciantixSciantixofficialSCIANTIX2025' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'giozuSciantixSciantixofficialSCIANTIX2025' (References/reference.bib): Invalid field 'nameformat' for entrytype 'online'}
     \endentry
     \entry{ML16118A434}{report}{}{}
       \name{author}{2}{}{%
@@ -9359,13 +8920,6 @@
       \verb https://www.nrc.gov/docs/ML1611/ML16118A434.pdf
       \endverb
       \keyw{ML16118A434}
-      \warn{\item Datamodel: report entry 'ML16118A434' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: report entry 'ML16118A434' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'ML16118A434' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'ML16118A434' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'ML16118A434' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'ML16118A434' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'ML16118A434' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{sachdeva_effect_2021}{article}{}{}
       \name{author}{4}{}{%
@@ -9452,10 +9006,6 @@
       \verb 10.1024/0300-9831/a000617
       \endverb
       \keyw{sachdeva_effect_2021}
-      \warn{\item Datamodel: article entry 'sachdeva_effect_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'sachdeva_effect_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'sachdeva_effect_2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'sachdeva_effect_2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{barella_situ_2021}{article}{}{}
       \name{author}{13}{}{%
@@ -9632,10 +9182,6 @@
       \verb 10.1021/acsnano.0c06185
       \endverb
       \keyw{barella_situ_2021}
-      \warn{\item Datamodel: article entry 'barella_situ_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'barella_situ_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'barella_situ_2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'barella_situ_2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{wu_doublely-doped_2021}{article}{}{}
       \name{author}{7}{}{%
@@ -9751,10 +9297,6 @@
       \verb 10.1016/j.jmst.2019.09.031
       \endverb
       \keyw{wu_doublely-doped_2021}
-      \warn{\item Datamodel: article entry 'wu_doublely-doped_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'wu_doublely-doped_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'wu_doublely-doped_2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'wu_doublely-doped_2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{luo_superhydrophobic_2021}{article}{}{}
       \name{author}{10}{}{%
@@ -9900,10 +9442,6 @@
       \verb 10.1016/j.cej.2020.126898
       \endverb
       \keyw{luo_superhydrophobic_2021}
-      \warn{\item Datamodel: article entry 'luo_superhydrophobic_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'luo_superhydrophobic_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'luo_superhydrophobic_2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'luo_superhydrophobic_2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{hu_encapsulation_2021}{article}{}{}
       \name{author}{5}{}{%
@@ -9999,10 +9537,6 @@
       \verb 10.1016/j.foodchem.2020.127839
       \endverb
       \keyw{hu_encapsulation_2021}
-      \warn{\item Datamodel: article entry 'hu_encapsulation_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hu_encapsulation_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hu_encapsulation_2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hu_encapsulation_2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{qian_facile_2021}{article}{}{}
       \name{author}{7}{}{%
@@ -10118,10 +9652,6 @@
       \verb 10.1016/j.colsurfa.2020.125752
       \endverb
       \keyw{qian_facile_2021}
-      \warn{\item Datamodel: article entry 'qian_facile_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'qian_facile_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'qian_facile_2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'qian_facile_2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{evans_cooperative_2021}{article}{}{}
       \name{author}{3}{}{%
@@ -10197,10 +9727,6 @@
       \verb 10.1039/d0fd00016g
       \endverb
       \keyw{evans_cooperative_2021}
-      \warn{\item Datamodel: article entry 'evans_cooperative_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'evans_cooperative_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'evans_cooperative_2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'evans_cooperative_2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{atta_enhanced_2021}{article}{}{}
       \name{author}{1}{}{%
@@ -10257,10 +9783,6 @@
       \verb 10.1680/jsuin.20.00020
       \endverb
       \keyw{atta_enhanced_2021}
-      \warn{\item Datamodel: article entry 'atta_enhanced_2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'atta_enhanced_2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'atta_enhanced_2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'atta_enhanced_2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{brucklacher_et_al_1973}{inproceedings}{}{}
       \name{author}{3}{}{%
@@ -10333,10 +9855,6 @@
       \field{pages}{413\bibrangedash 416}
       \range{pages}{4}
       \keyw{brucklacher_et_al_1973}
-      \warn{\item Datamodel: inproceedings entry 'brucklacher_et_al_1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'brucklacher_et_al_1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'brucklacher_et_al_1973' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'brucklacher_et_al_1973' (References/reference.bib): Invalid field 'nameformat' for entrytype 'inproceedings'}
     \endentry
     \entry{brucklacher_et_al_1972}{article}{}{}
       \name{author}{2}{}{%
@@ -10404,10 +9922,6 @@
       \verb 10.1016/0022-3115(72)90079-7
       \endverb
       \keyw{brucklacher_et_al_1972}
-      \warn{\item Datamodel: article entry 'brucklacher_et_al_1972' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brucklacher_et_al_1972' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brucklacher_et_al_1972' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brucklacher_et_al_1972' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{dienst_1977}{article}{}{}
       \name{author}{1}{}{%
@@ -10463,10 +9977,6 @@
       \verb 10.1016/0022-3115(77)90035-6
       \endverb
       \keyw{dienst_1977}
-      \warn{\item Datamodel: article entry 'dienst_1977' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dienst_1977' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dienst_1977' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'dienst_1977' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{mai2010}{article}{}{}
       \name{author}{4}{}{%
@@ -10549,10 +10059,6 @@
       \field{pages}{888\bibrangedash 889}
       \range{pages}{2}
       \keyw{mai2010}
-      \warn{\item Datamodel: article entry 'mai2010' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'mai2010' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'mai2010' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'mai2010' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{perrin_1972}{article}{}{}
       \name{author}{1}{}{%
@@ -10605,10 +10111,6 @@
       \field{pages}{101\bibrangedash 104}
       \range{pages}{4}
       \keyw{perrin_1972}
-      \warn{\item Datamodel: article entry 'perrin_1972' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'perrin_1972' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'perrin_1972' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'perrin_1972' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{hwr-1039}{report}{}{}
       \name{author}{1}{}{%
@@ -10663,12 +10165,6 @@
       \field{year}{2013}
       \field{dateera}{ce}
       \keyw{hwr-1039}
-      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1039' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{hwr-1006}{report}{}{}
       \name{author}{3}{}{%
@@ -10744,12 +10240,6 @@
       \field{dateera}{ce}
       \true{nocite}
       \keyw{hwr-1006}
-      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1006' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{solomon_1973}{article}{}{}
       \name{author}{1}{}{%
@@ -10806,10 +10296,6 @@
       \verb 10.1111/j.1151-2916.1973.tb15435.x
       \endverb
       \keyw{solomon_1973}
-      \warn{\item Datamodel: article entry 'solomon_1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'solomon_1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'solomon_1973' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'solomon_1973' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{hwr-1092}{report}{}{}
       \name{author}{2}{}{%
@@ -10875,12 +10361,6 @@
       \field{dateera}{ce}
       \true{nocite}
       \keyw{hwr-1092}
-      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'hwr-1092' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{inoue2004}{article}{}{}
       \name{author}{6}{}{%
@@ -10984,10 +10464,6 @@
       \field{pages}{59\bibrangedash 73}
       \range{pages}{15}
       \keyw{inoue2004}
-      \warn{\item Datamodel: article entry 'inoue2004' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'inoue2004' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'inoue2004' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'inoue2004' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{turnbullDiffusionCoefficientFission1989}{inproceedings}{}{}
       \name{author}{3}{}{%
@@ -11071,10 +10547,6 @@
       \verb https://inis.iaea.org/records/p0nd1-d5c88
       \endverb
       \keyw{turnbullDiffusionCoefficientFission1989}
-      \warn{\item Datamodel: inproceedings entry 'turnbullDiffusionCoefficientFission1989' (References/reference.bib): Invalid field 'languageid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'turnbullDiffusionCoefficientFission1989' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'turnbullDiffusionCoefficientFission1989' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'inproceedings'}
-      \warn{\item Datamodel: inproceedings entry 'turnbullDiffusionCoefficientFission1989' (References/reference.bib): Invalid field 'nameformat' for entrytype 'inproceedings'}
     \endentry
     \entry{matzkeGasReleaseMechanisms1980a}{article}{}{}
       \name{author}{1}{}{%
@@ -11142,10 +10614,6 @@
       \verb http://www.tandfonline.com/doi/abs/10.1080/00337578008207118
       \endverb
       \keyw{matzkeGasReleaseMechanisms1980a}
-      \warn{\item Datamodel: article entry 'matzkeGasReleaseMechanisms1980a' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'matzkeGasReleaseMechanisms1980a' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'matzkeGasReleaseMechanisms1980a' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'matzkeGasReleaseMechanisms1980a' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{hamTheoryDiffusionlimitedPrecipitation1958}{article}{}{}
       \name{author}{1}{}{%
@@ -11212,10 +10680,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022369758900532
       \endverb
       \keyw{hamTheoryDiffusionlimitedPrecipitation1958}
-      \warn{\item Datamodel: article entry 'hamTheoryDiffusionlimitedPrecipitation1958' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hamTheoryDiffusionlimitedPrecipitation1958' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hamTheoryDiffusionlimitedPrecipitation1958' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hamTheoryDiffusionlimitedPrecipitation1958' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{losonenModellingIntragranularFission2002}{article}{}{}
       \name{author}{1}{}{%
@@ -11282,10 +10746,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311502008565
       \endverb
       \keyw{losonenModellingIntragranularFission2002}
-      \warn{\item Datamodel: article entry 'losonenModellingIntragranularFission2002' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'losonenModellingIntragranularFission2002' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'losonenModellingIntragranularFission2002' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'losonenModellingIntragranularFission2002' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{vanbrutzelNewEquationState2019}{article}{}{}
       \name{author}{2}{}{%
@@ -11361,10 +10821,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311518315514
       \endverb
       \keyw{vanbrutzelNewEquationState2019}
-      \warn{\item Datamodel: article entry 'vanbrutzelNewEquationState2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'vanbrutzelNewEquationState2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'vanbrutzelNewEquationState2019' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'vanbrutzelNewEquationState2019' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{cogniniHeliumSolubilityOxide2018}{article}{}{}
       \name{author}{7}{}{%
@@ -11491,10 +10947,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0029549318304606
       \endverb
       \keyw{cogniniHeliumSolubilityOxide2018}
-      \warn{\item Datamodel: article entry 'cogniniHeliumSolubilityOxide2018' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cogniniHeliumSolubilityOxide2018' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cogniniHeliumSolubilityOxide2018' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cogniniHeliumSolubilityOxide2018' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{whiteNewFissiongasRelease1983}{article}{}{}
       \name{author}{2}{}{%
@@ -11571,10 +11023,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311583901769
       \endverb
       \keyw{whiteNewFissiongasRelease1983}
-      \warn{\item Datamodel: article entry 'whiteNewFissiongasRelease1983' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'whiteNewFissiongasRelease1983' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'whiteNewFissiongasRelease1983' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'whiteNewFissiongasRelease1983' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{whiteDevelopmentGrainfacePorosity2004}{article}{}{}
       \name{author}{1}{}{%
@@ -11641,10 +11089,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311503004616
       \endverb
       \keyw{whiteDevelopmentGrainfacePorosity2004}
-      \warn{\item Datamodel: article entry 'whiteDevelopmentGrainfacePorosity2004' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'whiteDevelopmentGrainfacePorosity2004' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'whiteDevelopmentGrainfacePorosity2004' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'whiteDevelopmentGrainfacePorosity2004' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{olanderResolutionFissionGas2006}{article}{}{}
       \name{author}{2}{}{%
@@ -11721,10 +11165,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S002231150600198X
       \endverb
       \keyw{olanderResolutionFissionGas2006}
-      \warn{\item Datamodel: article entry 'olanderResolutionFissionGas2006' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'olanderResolutionFissionGas2006' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'olanderResolutionFissionGas2006' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'olanderResolutionFissionGas2006' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{bakerFissionGasBubble1977}{article}{}{}
       \name{author}{1}{}{%
@@ -11791,10 +11231,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311577901179
       \endverb
       \keyw{bakerFissionGasBubble1977}
-      \warn{\item Datamodel: article entry 'bakerFissionGasBubble1977' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'bakerFissionGasBubble1977' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'bakerFissionGasBubble1977' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'bakerFissionGasBubble1977' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{speightVacancyPotentialVoid1975}{article}{}{}
       \name{author}{2}{}{%
@@ -11871,10 +11307,6 @@
       \verb https://www.tandfonline.com/doi/full/10.1179/030634575790445161
       \endverb
       \keyw{speightVacancyPotentialVoid1975}
-      \warn{\item Datamodel: article entry 'speightVacancyPotentialVoid1975' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'speightVacancyPotentialVoid1975' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'speightVacancyPotentialVoid1975' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'speightVacancyPotentialVoid1975' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{reynoldsGrainboundaryDiffusionUranium1979}{article}{}{}
       \name{author}{2}{}{%
@@ -11951,10 +11383,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311579900357
       \endverb
       \keyw{reynoldsGrainboundaryDiffusionUranium1979}
-      \warn{\item Datamodel: article entry 'reynoldsGrainboundaryDiffusionUranium1979' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'reynoldsGrainboundaryDiffusionUranium1979' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'reynoldsGrainboundaryDiffusionUranium1979' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'reynoldsGrainboundaryDiffusionUranium1979' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{pastoreUncertaintySensitivityAnalysis2015}{article}{}{}
       \name{author}{9}{}{%
@@ -12101,10 +11529,6 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0022311514006771
       \endverb
       \keyw{pastoreUncertaintySensitivityAnalysis2015}
-      \warn{\item Datamodel: article entry 'pastoreUncertaintySensitivityAnalysis2015' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'pastoreUncertaintySensitivityAnalysis2015' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'pastoreUncertaintySensitivityAnalysis2015' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'pastoreUncertaintySensitivityAnalysis2015' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{tonksUnitMechanismsFission2018}{article}{}{}
       \name{author}{11}{}{%
@@ -12270,10 +11694,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311517313405
       \endverb
       \keyw{tonksUnitMechanismsFission2018}
-      \warn{\item Datamodel: article entry 'tonksUnitMechanismsFission2018' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'tonksUnitMechanismsFission2018' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'tonksUnitMechanismsFission2018' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'tonksUnitMechanismsFission2018' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{notleyStepwiseReleaseFission1966}{article}{}{}
       \name{author}{2}{}{%
@@ -12351,10 +11771,6 @@
       \verb https://www.tandfonline.com/doi/full/10.13182/NT66-A27540
       \endverb
       \keyw{notleyStepwiseReleaseFission1966}
-      \warn{\item Datamodel: article entry 'notleyStepwiseReleaseFission1966' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'notleyStepwiseReleaseFission1966' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'notleyStepwiseReleaseFission1966' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'notleyStepwiseReleaseFission1966' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{carrollFissionDensityBurnup1969}{article}{}{}
       \name{author}{4}{}{%
@@ -12451,10 +11867,6 @@
       \verb https://www.tandfonline.com/doi/full/10.13182/NSE69-A19519
       \endverb
       \keyw{carrollFissionDensityBurnup1969}
-      \warn{\item Datamodel: article entry 'carrollFissionDensityBurnup1969' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'carrollFissionDensityBurnup1969' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'carrollFissionDensityBurnup1969' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'carrollFissionDensityBurnup1969' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{uneFissionGasRelease1990}{article}{}{}
       \name{author}{2}{}{%
@@ -12531,10 +11943,6 @@
       \verb http://www.tandfonline.com/doi/abs/10.1080/18811248.1990.9731285
       \endverb
       \keyw{uneFissionGasRelease1990}
-      \warn{\item Datamodel: article entry 'uneFissionGasRelease1990' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'uneFissionGasRelease1990' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'uneFissionGasRelease1990' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'uneFissionGasRelease1990' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{ducrosSynthesisVERCORSExperimental2013}{article}{}{}
       \name{author}{3}{}{%
@@ -12620,10 +12028,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0306454913001710
       \endverb
       \keyw{ducrosSynthesisVERCORSExperimental2013}
-      \warn{\item Datamodel: article entry 'ducrosSynthesisVERCORSExperimental2013' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ducrosSynthesisVERCORSExperimental2013' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ducrosSynthesisVERCORSExperimental2013' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ducrosSynthesisVERCORSExperimental2013' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{heringKwuFissionGas1983}{article}{}{}
       \name{author}{1}{}{%
@@ -12690,10 +12094,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311583900715
       \endverb
       \keyw{heringKwuFissionGas1983}
-      \warn{\item Datamodel: article entry 'heringKwuFissionGas1983' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'heringKwuFissionGas1983' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'heringKwuFissionGas1983' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'heringKwuFissionGas1983' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{motta2017light}{book}{}{}
       \name{author}{3}{}{%
@@ -12765,10 +12165,6 @@
       \field{dateera}{ce}
       \true{nocite}
       \keyw{motta2017light}
-      \warn{\item Datamodel: book entry 'motta2017light' (References/reference.bib): Invalid field 'languageid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'motta2017light' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'motta2017light' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'book'}
-      \warn{\item Datamodel: book entry 'motta2017light' (References/reference.bib): Invalid field 'nameformat' for entrytype 'book'}
     \endentry
     \entry{restFissionGasRelease2019}{article}{}{}
       \name{author}{6}{}{%
@@ -12884,10 +12280,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311518309449
       \endverb
       \keyw{restFissionGasRelease2019}
-      \warn{\item Datamodel: article entry 'restFissionGasRelease2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'restFissionGasRelease2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'restFissionGasRelease2019' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'restFissionGasRelease2019' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{hargreavesQuantitativeModelFission1976a}{article}{}{}
       \name{author}{2}{}{%
@@ -12961,10 +12353,6 @@
       \verb https://inis.iaea.org/records/g33yh-p2w86
       \endverb
       \keyw{hargreavesQuantitativeModelFission1976a}
-      \warn{\item Datamodel: article entry 'hargreavesQuantitativeModelFission1976a' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hargreavesQuantitativeModelFission1976a' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hargreavesQuantitativeModelFission1976a' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hargreavesQuantitativeModelFission1976a' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{notleyMicrostructuredependentModelFission1980}{article}{}{}
       \name{author}{2}{}{%
@@ -13042,10 +12430,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0029549380901806
       \endverb
       \keyw{notleyMicrostructuredependentModelFission1980}
-      \warn{\item Datamodel: article entry 'notleyMicrostructuredependentModelFission1980' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'notleyMicrostructuredependentModelFission1980' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'notleyMicrostructuredependentModelFission1980' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'notleyMicrostructuredependentModelFission1980' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{kogaiModellingFissionGas1997}{article}{}{}
       \name{author}{1}{}{%
@@ -13112,10 +12496,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311596007313
       \endverb
       \keyw{kogaiModellingFissionGas1997}
-      \warn{\item Datamodel: article entry 'kogaiModellingFissionGas1997' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'kogaiModellingFissionGas1997' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'kogaiModellingFissionGas1997' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'kogaiModellingFissionGas1997' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{hillertTheoryNormalAbnormal1965}{article}{}{}
       \name{author}{1}{}{%
@@ -13182,10 +12562,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0001616065902002
       \endverb
       \keyw{hillertTheoryNormalAbnormal1965}
-      \warn{\item Datamodel: article entry 'hillertTheoryNormalAbnormal1965' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hillertTheoryNormalAbnormal1965' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hillertTheoryNormalAbnormal1965' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'hillertTheoryNormalAbnormal1965' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{ainscoughIsothermalGrainGrowth1973}{article}{}{}
       \name{author}{3}{}{%
@@ -13272,10 +12648,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/0022311573900019
       \endverb
       \keyw{ainscoughIsothermalGrainGrowth1973}
-      \warn{\item Datamodel: article entry 'ainscoughIsothermalGrainGrowth1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ainscoughIsothermalGrainGrowth1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ainscoughIsothermalGrainGrowth1973' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'ainscoughIsothermalGrainGrowth1973' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{cogniniPhysicsbasedDescriptionIntragranular2021}{article}{}{}
       \name{author}{6}{}{%
@@ -13393,10 +12765,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S1738573320303557
       \endverb
       \keyw{cogniniPhysicsbasedDescriptionIntragranular2021}
-      \warn{\item Datamodel: article entry 'cogniniPhysicsbasedDescriptionIntragranular2021' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cogniniPhysicsbasedDescriptionIntragranular2021' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cogniniPhysicsbasedDescriptionIntragranular2021' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'cogniniPhysicsbasedDescriptionIntragranular2021' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{rufehSolubilityHeliumUranium1965}{article}{}{}
       \name{author}{3}{}{%
@@ -13483,10 +12851,6 @@
       \verb https://www.tandfonline.com/doi/full/10.13182/NSE65-A21069
       \endverb
       \keyw{rufehSolubilityHeliumUranium1965}
-      \warn{\item Datamodel: article entry 'rufehSolubilityHeliumUranium1965' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'rufehSolubilityHeliumUranium1965' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'rufehSolubilityHeliumUranium1965' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'rufehSolubilityHeliumUranium1965' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{nakajimaSolubilityDiffusionCoefficient2011}{article}{}{}
       \name{author}{5}{}{%
@@ -13593,10 +12957,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311511008257
       \endverb
       \keyw{nakajimaSolubilityDiffusionCoefficient2011}
-      \warn{\item Datamodel: article entry 'nakajimaSolubilityDiffusionCoefficient2011' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'nakajimaSolubilityDiffusionCoefficient2011' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'nakajimaSolubilityDiffusionCoefficient2011' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'nakajimaSolubilityDiffusionCoefficient2011' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{talipThermalDiffusionHelium2014}{article}{}{}
       \name{author}{8}{}{%
@@ -13733,10 +13093,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311513012336
       \endverb
       \keyw{talipThermalDiffusionHelium2014}
-      \warn{\item Datamodel: article entry 'talipThermalDiffusionHelium2014' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'talipThermalDiffusionHelium2014' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'talipThermalDiffusionHelium2014' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'talipThermalDiffusionHelium2014' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{speightCalculationMigrationFission1969}{article}{}{}
       \name{author}{1}{}{%
@@ -13803,10 +13159,6 @@
       \verb https://www.tandfonline.com/doi/full/10.13182/NSE69-A20676
       \endverb
       \keyw{speightCalculationMigrationFission1969}
-      \warn{\item Datamodel: article entry 'speightCalculationMigrationFission1969' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'speightCalculationMigrationFission1969' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'speightCalculationMigrationFission1969' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'speightCalculationMigrationFission1969' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{luzziHeliumDiffusivityOxide2018}{article}{}{}
       \name{author}{8}{}{%
@@ -13942,10 +13294,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0029549318300578
       \endverb
       \keyw{luzziHeliumDiffusivityOxide2018}
-      \warn{\item Datamodel: article entry 'luzziHeliumDiffusivityOxide2018' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'luzziHeliumDiffusivityOxide2018' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'luzziHeliumDiffusivityOxide2018' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'luzziHeliumDiffusivityOxide2018' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{zulloUseSpectralAlgorithms2022}{article}{}{}
       \name{author}{3}{}{%
@@ -14033,10 +13381,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S1738573321006148
       \endverb
       \keyw{zulloUseSpectralAlgorithms2022}
-      \warn{\item Datamodel: article entry 'zulloUseSpectralAlgorithms2022' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zulloUseSpectralAlgorithms2022' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zulloUseSpectralAlgorithms2022' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zulloUseSpectralAlgorithms2022' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{usdoeBackgroundDerivationANS542010}{report}{}{}
       \name{author}{2}{}{%
@@ -14119,13 +13463,6 @@
       \verb https://www.osti.gov/servlets/purl/1033086/
       \endverb
       \keyw{usdoeBackgroundDerivationANS542010}
-      \warn{\item Datamodel: report entry 'usdoeBackgroundDerivationANS542010' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: report entry 'usdoeBackgroundDerivationANS542010' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'usdoeBackgroundDerivationANS542010' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'usdoeBackgroundDerivationANS542010' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'usdoeBackgroundDerivationANS542010' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'usdoeBackgroundDerivationANS542010' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'usdoeBackgroundDerivationANS542010' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{zulloGrainscaleModellingRelease2022}{article}{}{}
       \name{author}{6}{}{%
@@ -14243,10 +13580,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S1738573322000833
       \endverb
       \keyw{zulloGrainscaleModellingRelease2022}
-      \warn{\item Datamodel: article entry 'zulloGrainscaleModellingRelease2022' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zulloGrainscaleModellingRelease2022' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zulloGrainscaleModellingRelease2022' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zulloGrainscaleModellingRelease2022' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{foster316StainlessSteel1995}{article}{}{}
       \name{author}{5}{}{%
@@ -14347,10 +13680,6 @@
       \verb 10.1016/0022-3115(95)00086-0
       \endverb
       \keyw{foster316StainlessSteel1995}
-      \warn{\item Datamodel: article entry 'foster316StainlessSteel1995' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'foster316StainlessSteel1995' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'foster316StainlessSteel1995' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'foster316StainlessSteel1995' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{mfh1988}{report}{}{}
       \name{author}{11}{}{%
@@ -14507,12 +13836,6 @@
       \field{dateera}{ce}
       \true{nocite}
       \keyw{mfh1988}
-      \warn{\item Datamodel: report entry 'mfh1988' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'mfh1988' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'mfh1988' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'mfh1988' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'mfh1988' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'mfh1988' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{fink1995}{article}{}{}
       \name{author}{2}{}{%
@@ -14579,10 +13902,6 @@
       \verb 10.1016/0022-3115(95)00110-7
       \endverb
       \keyw{fink1995}
-      \warn{\item Datamodel: article entry 'fink1995' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'fink1995' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'fink1995' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'fink1995' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{EXT-17-40975R4}{report}{}{}
       \name{author}{18}{}{%
@@ -14808,12 +14127,6 @@
       \field{dateera}{ce}
       \true{nocite}
       \keyw{EXT-17-40975R4}
-      \warn{\item Datamodel: report entry 'EXT-17-40975R4' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'EXT-17-40975R4' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'EXT-17-40975R4' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'EXT-17-40975R4' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'EXT-17-40975R4' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'EXT-17-40975R4' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{matolich1965thermal}{report}{}{}
       \name{author}{1}{}{%
@@ -14874,12 +14187,6 @@
       \field{year}{1965}
       \field{dateera}{ce}
       \keyw{matolich1965thermal}
-      \warn{\item Datamodel: report entry 'matolich1965thermal' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'matolich1965thermal' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'matolich1965thermal' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'matolich1965thermal' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'matolich1965thermal' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'matolich1965thermal' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{Watson1963ThermalCO}{online}{}{}
       \name{author}{2}{}{%
@@ -14955,13 +14262,6 @@
       \verb https://api.semanticscholar.org/CorpusID:139688757
       \endverb
       \keyw{Watson1963ThermalCO,report}
-      \warn{\item Datamodel: online entry 'Watson1963ThermalCO' (References/reference.bib): Invalid field 'institution' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Watson1963ThermalCO' (References/reference.bib): Invalid field 'languageid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Watson1963ThermalCO' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Watson1963ThermalCO' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Watson1963ThermalCO' (References/reference.bib): Invalid field 'nameformat' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Watson1963ThermalCO' (References/reference.bib): Invalid field 'number' for entrytype 'online'}
-      \warn{\item Datamodel: online entry 'Watson1963ThermalCO' (References/reference.bib): Invalid field 'publisher' for entrytype 'online'}
     \endentry
     \entry{batesDesignEquationsStressfree1979}{report}{}{}
       \name{author}{1}{}{%
@@ -15020,12 +14320,6 @@
       \verb 10.2172/5582686
       \endverb
       \keyw{batesDesignEquationsStressfree1979}
-      \warn{\item Datamodel: report entry 'batesDesignEquationsStressfree1979' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'batesDesignEquationsStressfree1979' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'batesDesignEquationsStressfree1979' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'batesDesignEquationsStressfree1979' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'batesDesignEquationsStressfree1979' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'batesDesignEquationsStressfree1979' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{karahanModelingThermoMechanicalIrradia2007}{thesis}{}{}
       \name{author}{1}{}{%
@@ -15081,11 +14375,6 @@
       \field{dateera}{ce}
       \true{nocite}
       \keyw{karahanModelingThermoMechanicalIrradia2007}
-      \warn{\item Datamodel: thesis entry 'karahanModelingThermoMechanicalIrradia2007' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: thesis entry 'karahanModelingThermoMechanicalIrradia2007' (References/reference.bib): Invalid field 'languageid' for entrytype 'thesis'}
-      \warn{\item Datamodel: thesis entry 'karahanModelingThermoMechanicalIrradia2007' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'thesis'}
-      \warn{\item Datamodel: thesis entry 'karahanModelingThermoMechanicalIrradia2007' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'thesis'}
-      \warn{\item Datamodel: thesis entry 'karahanModelingThermoMechanicalIrradia2007' (References/reference.bib): Invalid field 'nameformat' for entrytype 'thesis'}
     \endentry
     \entry{megahedExperimentalTheoreticalInvestigation1984}{article}{}{}
       \name{author}{3}{}{%
@@ -15166,10 +14455,6 @@
       \verb 10.1016/0020-7403(84)90050-X
       \endverb
       \keyw{megahedExperimentalTheoreticalInvestigation1984}
-      \warn{\item Datamodel: article entry 'megahedExperimentalTheoreticalInvestigation1984' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'megahedExperimentalTheoreticalInvestigation1984' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'megahedExperimentalTheoreticalInvestigation1984' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'megahedExperimentalTheoreticalInvestigation1984' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{schappelKeyMaterialProperties2019}{report}{}{}
       \name{author}{2}{}{%
@@ -15242,12 +14527,6 @@
       \verb 10.2172/1558508
       \endverb
       \keyw{schappelKeyMaterialProperties2019}
-      \warn{\item Datamodel: report entry 'schappelKeyMaterialProperties2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'schappelKeyMaterialProperties2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'schappelKeyMaterialProperties2019' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'schappelKeyMaterialProperties2019' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'schappelKeyMaterialProperties2019' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'schappelKeyMaterialProperties2019' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{miaoFY22ProgressReport2022}{report}{}{}
       \name{author}{5}{}{%
@@ -15350,12 +14629,6 @@
       \verb 10.2172/1907952
       \endverb
       \keyw{miaoFY22ProgressReport2022}
-      \warn{\item Datamodel: report entry 'miaoFY22ProgressReport2022' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'miaoFY22ProgressReport2022' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'miaoFY22ProgressReport2022' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'miaoFY22ProgressReport2022' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'miaoFY22ProgressReport2022' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'miaoFY22ProgressReport2022' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{yueImplementationABAQUSUser2023}{article}{}{}
       \name{author}{2}{}{%
@@ -15426,10 +14699,6 @@
       \verb 10.3390/met13091554
       \endverb
       \keyw{yueImplementationABAQUSUser2023}
-      \warn{\item Datamodel: article entry 'yueImplementationABAQUSUser2023' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'yueImplementationABAQUSUser2023' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'yueImplementationABAQUSUser2023' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'yueImplementationABAQUSUser2023' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{zhangHardeningBehaviorModel2023}{article}{}{}
       \name{author}{3}{}{%
@@ -15482,8 +14751,8 @@
       \strng{nameafullhash}{feb490f5026793d6cca325fc190ca8d0}
       \strng{nameafullhashraw}{feb490f5026793d6cca325fc190ca8d0}
       \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Metals}
@@ -15511,10 +14780,6 @@
       \verb 10.3390/met13121926
       \endverb
       \keyw{zhangHardeningBehaviorModel2023}
-      \warn{\item Datamodel: article entry 'zhangHardeningBehaviorModel2023' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zhangHardeningBehaviorModel2023' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zhangHardeningBehaviorModel2023' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'zhangHardeningBehaviorModel2023' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{satb1995}{report}{}{}
       \name{author}{3}{}{%
@@ -15572,8 +14837,8 @@
       \strng{nameanamehash}{0741b32d56cb538cc3d91b50935a92c6}
       \strng{nameafullhash}{369e37e6ec41d6955ffdc3c45e9c67e1}
       \strng{nameafullhashraw}{369e37e6ec41d6955ffdc3c45e9c67e1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -15590,12 +14855,6 @@
       \field{dateera}{ce}
       \true{nocite}
       \keyw{satb1995}
-      \warn{\item Datamodel: report entry 'satb1995' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'satb1995' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'satb1995' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'satb1995' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'satb1995' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'satb1995' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{Ryu:2011cy}{article}{}{}
       \name{author}{3}{}{%
@@ -15647,8 +14906,8 @@
       \strng{nameanamehash}{f280b4dec04eeb9f8b7eb6135b39c563}
       \strng{nameafullhash}{2a8d38cd0b1a6af154665e80eda95162}
       \strng{nameafullhashraw}{2a8d38cd0b1a6af154665e80eda95162}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Nuclear Materials}
@@ -15669,10 +14928,6 @@
       \field{pages}{207\bibrangedash 213}
       \range{pages}{7}
       \keyw{Ryu:2011cy}
-      \warn{\item Datamodel: article entry 'Ryu:2011cy' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'Ryu:2011cy' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'Ryu:2011cy' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'Ryu:2011cy' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{NAM19981441}{article}{}{}
       \name{author}{3}{}{%
@@ -15750,10 +15005,6 @@
       \verb 10.1016/S0306-4549(98)00043-7
       \endverb
       \keyw{NAM19981441}
-      \warn{\item Datamodel: article entry 'NAM19981441' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'NAM19981441' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'NAM19981441' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'NAM19981441' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{dimelfi1993_both_failure_ht9}{report}{}{}
       \name{author}{4}{}{%
@@ -15839,12 +15090,6 @@
       \field{dateera}{ce}
       \true{nocite}
       \keyw{dimelfi1993_both_failure_ht9}
-      \warn{\item Datamodel: report entry 'dimelfi1993_both_failure_ht9' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'dimelfi1993_both_failure_ht9' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'dimelfi1993_both_failure_ht9' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'dimelfi1993_both_failure_ht9' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'dimelfi1993_both_failure_ht9' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'dimelfi1993_both_failure_ht9' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{HuangTransientFailureBehavior1994}{report}{}{}
       \name{author}{1}{}{%
@@ -15905,13 +15150,6 @@
       \verb 10.2172/10173288
       \endverb
       \keyw{HuangTransientFailureBehavior1994}
-      \warn{\item Datamodel: report entry 'HuangTransientFailureBehavior1994' (References/reference.bib): Field 'address' invalid in data model - ignoring}
-      \warn{\item Datamodel: report entry 'HuangTransientFailureBehavior1994' (References/reference.bib): Invalid field 'languageid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'HuangTransientFailureBehavior1994' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'HuangTransientFailureBehavior1994' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'HuangTransientFailureBehavior1994' (References/reference.bib): Invalid field 'nameformat' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'HuangTransientFailureBehavior1994' (References/reference.bib): Invalid field 'publisher' for entrytype 'report'}
-      \warn{\item Datamodel: report entry 'HuangTransientFailureBehavior1994' (References/reference.bib): Missing mandatory field 'type'}
     \endentry
     \entry{NamStatisticalFailureAnalysis1998}{article}{}{}
       \name{author}{3}{}{%
@@ -15989,10 +15227,6 @@
       \verb 10.1016/S0306-4549(98)00043-7
       \endverb
       \keyw{NamStatisticalFailureAnalysis1998}
-      \warn{\item Datamodel: article entry 'NamStatisticalFailureAnalysis1998' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'NamStatisticalFailureAnalysis1998' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'NamStatisticalFailureAnalysis1998' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'NamStatisticalFailureAnalysis1998' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{TVERGAARD1985447}{article}{}{}
       \name{author}{1}{}{%
@@ -16048,10 +15282,6 @@
       \verb 10.1016/0022-5096(85)90009-2
       \endverb
       \keyw{TVERGAARD1985447}
-      \warn{\item Datamodel: article entry 'TVERGAARD1985447' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'TVERGAARD1985447' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'TVERGAARD1985447' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'TVERGAARD1985447' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{brinkmanElevatedTemperatureMechanicalProperties2001}{article}{}{}
       \name{author}{1}{}{%
@@ -16107,10 +15337,6 @@
       \verb 10.1115/1.1343911
       \endverb
       \keyw{brinkmanElevatedTemperatureMechanicalProperties2001}
-      \warn{\item Datamodel: article entry 'brinkmanElevatedTemperatureMechanicalProperties2001' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brinkmanElevatedTemperatureMechanicalProperties2001' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brinkmanElevatedTemperatureMechanicalProperties2001' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'brinkmanElevatedTemperatureMechanicalProperties2001' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{DimelfiModelingEffectsFastneutron1980}{article}{}{}
       \name{author}{2}{}{%
@@ -16177,10 +15403,6 @@
       \verb 10.1016/0022-3115(80)90065-3
       \endverb
       \keyw{DimelfiModelingEffectsFastneutron1980}
-      \warn{\item Datamodel: article entry 'DimelfiModelingEffectsFastneutron1980' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'DimelfiModelingEffectsFastneutron1980' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'DimelfiModelingEffectsFastneutron1980' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'DimelfiModelingEffectsFastneutron1980' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{KramerModelingDeformationFailure1981}{article}{}{}
       \name{author}{2}{}{%
@@ -16247,10 +15469,6 @@
       \verb 10.1016/0029-5493(81)90016-9
       \endverb
       \keyw{KramerModelingDeformationFailure1981}
-      \warn{\item Datamodel: article entry 'KramerModelingDeformationFailure1981' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'KramerModelingDeformationFailure1981' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'KramerModelingDeformationFailure1981' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'KramerModelingDeformationFailure1981' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{OnizawaDevelopmentCreepProperty2019}{article}{}{}
       \name{author}{2}{}{%
@@ -16316,10 +15534,6 @@
       \verb 10.1299/mej.18-00477
       \endverb
       \keyw{OnizawaDevelopmentCreepProperty2019}
-      \warn{\item Datamodel: article entry 'OnizawaDevelopmentCreepProperty2019' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'OnizawaDevelopmentCreepProperty2019' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'OnizawaDevelopmentCreepProperty2019' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'OnizawaDevelopmentCreepProperty2019' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{glesser1985interdiffusao}{thesis}{}{}
       \name{author}{1}{}{%
@@ -16372,10 +15586,6 @@
       \field{dateera}{ce}
       \true{nocite}
       \keyw{glesser1985interdiffusao}
-      \warn{\item Datamodel: thesis entry 'glesser1985interdiffusao' (References/reference.bib): Invalid field 'languageid' for entrytype 'thesis'}
-      \warn{\item Datamodel: thesis entry 'glesser1985interdiffusao' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'thesis'}
-      \warn{\item Datamodel: thesis entry 'glesser1985interdiffusao' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'thesis'}
-      \warn{\item Datamodel: thesis entry 'glesser1985interdiffusao' (References/reference.bib): Invalid field 'nameformat' for entrytype 'thesis'}
     \endentry
     \entry{congDevelopmentEvaluationFuel2022}{article}{}{}
       \name{author}{5}{}{%
@@ -16472,10 +15682,6 @@
       \verb 10.1016/j.jandt.2022.08.002
       \endverb
       \keyw{congDevelopmentEvaluationFuel2022}
-      \warn{\item Datamodel: article entry 'congDevelopmentEvaluationFuel2022' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'congDevelopmentEvaluationFuel2022' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'congDevelopmentEvaluationFuel2022' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'congDevelopmentEvaluationFuel2022' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{springerThermalConductivityNeon1973}{article}{}{}
       \name{author}{2}{}{%
@@ -16517,8 +15723,8 @@
       \strng{nameanamehash}{679c0274e0cd9f6c43fc5961cccadc25}
       \strng{nameafullhash}{5453bacfe81807b6a790df9318c8601e}
       \strng{nameafullhashraw}{5453bacfe81807b6a790df9318c8601e}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The Journal of Chemical Physics}
@@ -16551,10 +15757,6 @@
       \verb https://pubs.aip.org/jcp/article/59/5/2747/698928/Thermal-conductivity-of-neon-argon-and-xenon-at
       \endverb
       \keyw{springerThermalConductivityNeon1973}
-      \warn{\item Datamodel: article entry 'springerThermalConductivityNeon1973' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'springerThermalConductivityNeon1973' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'springerThermalConductivityNeon1973' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'springerThermalConductivityNeon1973' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
     \entry{tournierPropertiesNobleGases2008}{article}{}{}
       \name{author}{2}{}{%
@@ -16596,8 +15798,8 @@
       \strng{nameanamehash}{9a2508b2341d5fc35713034d9c339948}
       \strng{nameafullhash}{b1503467195cb7725abec66ddd55bb76}
       \strng{nameafullhashraw}{b1503467195cb7725abec66ddd55bb76}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Energy Conversion and Management}
@@ -16630,10 +15832,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0196890407002592
       \endverb
       \keyw{tournierPropertiesNobleGases2008}
-      \warn{\item Datamodel: article entry 'tournierPropertiesNobleGases2008' (References/reference.bib): Invalid field 'languageid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'tournierPropertiesNobleGases2008' (References/reference.bib): Invalid field 'lansortorder' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'tournierPropertiesNobleGases2008' (References/reference.bib): Invalid field 'namefmtid' for entrytype 'article'}
-      \warn{\item Datamodel: article entry 'tournierPropertiesNobleGases2008' (References/reference.bib): Invalid field 'nameformat' for entrytype 'article'}
     \endentry
   \enddatalist
 \endrefsection

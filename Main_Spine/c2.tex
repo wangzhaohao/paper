@@ -11,8 +11,8 @@
 \renewcommand{\textfraction}{0.08}
 \renewcommand{\floatpagefraction}{0.85}
 
-\xchapter{氧化物燃料元件材料基础物性模型}{MOX Fuel Model}
-\xsection{引言}{MOX Nuclear}
+\xchapter{氧化物燃料元件材料基础物性与堆内行为模型}{Fundamental Material Properties and In-Reactor Behavior Models for Oxide Fuel Elements}
+\xsection{引言}{Introduction}
 燃料元件在堆内长期承受裂变释热、中子辐照、温度梯度、内压和燃料--包壳机械相互作用等多种载荷，其温度、应力、形变、裂变气体释放及包壳失效并非由某一项材料参数独立决定，而是热学、力学、辐照效应和微观组织演化相互耦合的结果\cite{vanuffelenReviewFuelPerformance2019}。例如，燃料热导率的偏差会首先改变燃料中心温度，随后通过影响热膨胀、蠕变、裂变气体释放和间隙闭合演化进一步影响包壳温度、内压与应力。因此，构建具有高保真性的燃料性能分析程序不仅要求数值离散和求解方法是否先进，还取决于材料模型是否完整、状态变量是否选取合理，以及模型适用范围与实验依据是否明确。
 
 为建立可用于稳态运行和瞬态工况的材料模型体系，本章以MATPRO材料属性库、FRAPCON/FRAPTRAN材料模型手册和BISON理论手册为基础\cite{hagrmanSCDAPRELAP5MOD1995,luscherMaterialPropertyCorrelations2010,halesBISONTheoryManual2016}，并结合氧化物燃料辐照试验和其他文献对有关模型进行补充与核查。调研不仅关注经验关联式本身，还重点梳理各模型的物理含义、输入状态变量、单位、适用温度与燃耗范围、参数来源及不确定性。对于同一物性存在多种关联式的情况，保留具有代表性的备选模型并比较其差异，以避免将面向特定材料成分或试验条件建立的公式直接外推至超出适用范围的工况。
@@ -27,7 +27,6 @@
 
 \begin{table}[htbp]
 	\centering
-	\renewcommand{\arraystretch}{1.30}
 	\caption{本章研究对象及材料模型调研范围}
 	\label{tab:chapter2_model_scope}
 	\begin{tabularx}{\textwidth}{
@@ -35,7 +34,7 @@
 			>{\raggedright\arraybackslash}p{3.15cm}
 			>{\raggedright\arraybackslash}X}
 		\toprule
-		研究对象 & 代表性特征 & 重点调研内容 \\
+		{\centering 研究对象\par} & {\centering 代表性特征\par} & {\centering 重点调研内容\par} \\
 		\midrule
 		MOX燃料
 		& 含有钚的氧化物陶瓷；物性受温度、O/M、孔隙率和燃耗共同影响
@@ -67,7 +66,7 @@
 
 混合氧化物燃料通常表示为$(\mathrm{U},\mathrm{Pu})\mathrm{O}_{2\pm x}$。其热物性不仅随温度变化，还受到$\mathrm{PuO}_2$含量、氧金属比（O/M）、理论密度、孔隙率和燃耗等因素的共同影响。上述参数决定燃料内部的温度分布，并通过热膨胀、蠕变、裂变气体释放和燃料--包壳间隙演化进一步影响燃料元件的整体响应。本节展示相变温度、热导率、比热容、发射率、热膨胀和密度等用于燃料性能计算的核心关系式；其他备选关联式及其参数列于附录\ref{app:mox_thermal_conductivity_models}。
 
-\xsubsection{相变温度}{Phase-transition Temperatures of Fusion}
+\xsubsection{相变温度}{Phase Transition Temperatures}
 
 MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及燃耗有关。根据Brassfield等人的实验数据及相应的最小二乘拟合，二者可表示为
 \begin{subequations}\label{eq:mox_phase_transition_temperature}
@@ -131,7 +130,7 @@ MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及�
 
 比热容决定燃料在给定释热条件下的温升速率。MATPRO将$\mathrm{UO}_2$和$\mathrm{PuO}_2$的定压比热容表示为\cite{hagrmanSCDAPRELAP5MOD1995}
 
-	\begin{equation}
+\begin{equation}
 	\begin{aligned}
 		c_p(T)
 		&=
@@ -256,7 +255,7 @@ MOX燃料的固态热膨胀应变采用质量分数加权：
 \end{equation}
 以避免线性化近似在高温区引入附加误差。
 
-\xsection{MOX燃料的力学物性}{Mechanical Properties}
+\xsection{MOX燃料的力学物性}{Mechanical Properties of MOX Fuel}
 \label{sec:mox_mechanical_properties}
 
 MOX燃料属于多孔脆性陶瓷，其力学响应同时受温度、理论密度、O/M比、$\mathrm{PuO}_2$含量、晶粒尺寸、燃耗和裂变率控制。燃料性能分析中，弹性参数决定瞬时应力响应，蠕变控制高温应力松弛，密实化与裂变产物肿胀共同决定体积应变，而晶粒长大和重构又会反向影响热导率、裂变气体释放及蠕变。本节仅列出构成后续耦合计算所需的核心关系；模型的历史形式、参数表和分段表达式见附录\ref{app:mox_mechanical_correlations}。
@@ -547,7 +546,7 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	\label{tab:gap_heat_transfer_coupling}
 	\begin{tabularx}{\textwidth}{p{2.7cm}p{4cm}X}
 		\toprule
-		来源模块 & 传入变量 & 对间隙传热的作用 \\
+		{\centering 来源模块\par} & {\centering 传入变量\par} & {\centering 对间隙传热的作用\par} \\
 		\midrule
 		热学求解 & $T_f$、$T_c$、$k_f$、$k_c$、$\varepsilon_f$、$\varepsilon_c$
 		& 确定气体平均温度、接触等效热导率和辐射传热系数 \\
@@ -630,23 +629,25 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 式中：$C_{\mathrm{gb}}$为按单位燃料体积计的晶界气体原子数密度，单位为$\mathrm{m^{-3}}$；$a$为晶粒半径，单位为$\mathrm{m}$；$R_{\mathrm{rel}}$为晶界气体释放率，单位为$\mathrm{m^{-3}\,s^{-1}}$。第一项表示由晶内扩散进入晶界的气体通量，第二项表示晶界互连或微裂纹等机制引起的释放。
 
 晶界气泡的生长由气泡实际压力$p_{\mathrm{b}}$与平衡压力$p_{\mathrm{eq}}$之差驱动。气泡覆盖率达到饱和值后，模型认为晶界形成连续释放路径，其核心关系为
-\begin{equation}
-	\begin{aligned}
-		p_{\mathrm{eq}}
-		&=\frac{2\gamma}{R_{\mathrm{gb}}}-\sigma_{\mathrm{h}}\\
-		\frac{\mathrm{d}n_{\mathrm{v}}}{\mathrm{d}t}
-		&=\frac{2\pi D_{\mathrm{v}}\delta_{\mathrm{g}}}
-		{k_{\mathrm{B}}T\,S(F_{\mathrm{gb}})}
-		\left(p_{\mathrm{b}}-p_{\mathrm{eq}}\right)\\
-		F_{\mathrm{gb}}
-		&=N_{\mathrm{gb}}A_{\mathrm{gb}},
-		\qquad
-		F_{\mathrm{gb}}\geq F_{\mathrm{gb,sat}}
-		\;\Longrightarrow\;
-		R_{\mathrm{rel}}>0
-	\end{aligned}
+\begin{align}
+	p_{\mathrm{eq}}
+	=\frac{2\gamma}{R_{\mathrm{gb}}}-\sigma_{\mathrm{h}}
+	\notag
+	\\
+	\frac{\mathrm{d}n_{\mathrm{v}}}{\mathrm{d}t}
+	=\frac{2\pi D_{\mathrm{v}}\delta_{\mathrm{g}}}
+	{k_{\mathrm{B}}T\,S(F_{\mathrm{gb}})}
+	\left(p_{\mathrm{b}}-p_{\mathrm{eq}}\right)
+	\notag
+	\\
+	F_{\mathrm{gb}}
+	=N_{\mathrm{gb}}A_{\mathrm{gb}},
+	\qquad
+	F_{\mathrm{gb}}\geq F_{\mathrm{gb,sat}}
+	\;\Longrightarrow\;
+	R_{\mathrm{rel}}>0
 	\label{eq:sciantix_bubble_growth_interconnection}
-\end{equation}
+\end{align}
 式中：$\gamma$为燃料/气体比表面能，$R_{\mathrm{gb}}$为晶界气泡曲率半径，$\sigma_{\mathrm{h}}$为静水应力，$n_{\mathrm{v}}$为气泡所含空位数，$D_{\mathrm{v}}$为晶界空位扩散系数，$\delta_{\mathrm{g}}$为晶界扩散层厚度，$S$为几何因子，$N_{\mathrm{gb}}$和$A_{\mathrm{gb}}$分别为晶界气泡面密度和平均投影面积。
 
 SCIANTIX向燃料性能计算提供的两个主要工程量为气体肿胀和裂变气体释放率，可分别写为
@@ -679,7 +680,7 @@ SCIANTIX与燃料性能分析程序之间的主要变量交换关系见表\ref{t
 	\label{tab:sciantix_coupling_variables}
 	\begin{tabularx}{\textwidth}{p{2.6cm}X X}
 		\toprule
-		类别 & 主要变量 & 在耦合计算中的作用 \\
+		{\centering 类别\par} & {\centering 主要变量\par} & {\centering 在耦合计算中的作用\par} \\
 		\midrule
 		热学与功率输入
 		& 温度$T$、裂变率$F$、时间步长$\Delta t$
@@ -714,7 +715,7 @@ SCIANTIX与燃料性能分析程序之间的主要变量交换关系见表\ref{t
 	\label{tab:cladding_material_overview}
 	\begin{tabularx}{\textwidth}{p{2.1cm}p{3.0cm}X X}
 		\toprule
-		材料 & 材料类别或状态 & 主要堆内行为 & 本文重点模型 \\
+		{\centering 材料\par} & {\centering 材料类别或状态\par} & {\centering 主要堆内行为\par} & {\centering 本文重点模型\par} \\
 		\midrule
 		SS316 & 奥氏体不锈钢 & 温度相关热物性、辐照硬化或软化、辐照蠕变及空洞肿胀 & 热物性、弹性、热--辐照蠕变、肿胀和累积损伤 \\
 		D9 & 钛稳定化奥氏体不锈钢 & 相比316型钢具有更好的抗肿胀和高温蠕变性能，但仍存在显著的辐照蠕变和空洞肿胀 & 热物性、弹塑性、热--辐照蠕变、肿胀及稳态/瞬态失效 \\

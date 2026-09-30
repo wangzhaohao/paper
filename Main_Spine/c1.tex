@@ -1,6 +1,6 @@
 % !TeX root = ../main.tex
 
-\xchapter{绪论}{Introductions}
+\xchapter{绪论}{Introduction}
 
 \xsection{研究背景和意义}{Research Background and Significance}
 
@@ -83,9 +83,9 @@ Che等\cite{cheMachineLearningAssistedSurrogate2022}利用机器学习方法建�
 			>{\raggedright\arraybackslash}X
 		}
 		\toprule
-		研究方向 &
-		代表性研究或程序 &
-		主要研究进展 \\
+		{\centering 研究方向\par} &
+		{\centering 代表性研究或程序\par} &
+		{\centering 主要研究进展\par} \\
 		\midrule
 		
 		工程燃料性能分析 &
@@ -118,6 +118,13 @@ Che等\cite{cheMachineLearningAssistedSurrogate2022}利用机器学习方法建�
 
 本文以快堆MOX燃料元件为主要研究对象，围绕“基础物性与行为模型--微观重构及组分迁移--热/气/力强耦合数值实现--棒级验证与机理分析--完整场快速预测”的技术路线开展研究。整体工作基于统一多物理场有限元MOOSE框架，在调研成熟燃料性能模型的基础上，重点提高对快堆MOX燃料特有微观演化行为、强非线性耦合过程以及高保真计算效率的描述能力。全文共七章，各章主要内容如下。
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]{技术路线.png}
+	\caption{快堆MOX燃料性能分析与完整场快速预测的总体技术路线}
+	\label{fig:technical_route}
+\end{figure}
+
 第一章为绪论。首先从核能发展、氧化物燃料及燃料性能分析需求出发说明论文研究背景和意义；随后综述国内外燃料性能分析程序、快堆MOX燃料微观重构与组分迁移、裂变气体及热--力耦合、燃料性能代理模型等研究进展，并据此明确本文关注的关键问题和研究内容。
 
 第二章建立快堆燃料元件材料基础物性与行为模型。系统整理并实现MOX燃料的热导率、热容、热膨胀、密度、弹性、蠕变、密实化、肿胀、压力烧结和蒸气压等模型，同时建立燃料--包壳间隙气体传热、接触传热和辐射传热模型，并整理D9、HT9、SS316等典型快堆包壳材料的热物性与堆内行为模型。该章为后续微观演化和棒级多物理场计算提供材料模型基础。
@@ -133,10 +140,3 @@ Che等\cite{cheMachineLearningAssistedSurrogate2022}利用机器学习方法建�
 第七章总结全文主要研究工作和结论，归纳本文在快堆MOX燃料微观重构与组分迁移耦合、强非线性热--气--力数值求解以及高保真完整场快速预测方面取得的主要进展，并讨论当前模型的适用范围及后续可进一步开展的研究工作。
 
 上述章节构成了“问题--基础模型--验证评价--快速预测--总结”的总分总结构，整体技术路线如图\ref{fig:technical_route}所示。
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]{技术路线.png}
-	\caption{快堆MOX燃料性能分析与完整场快速预测的总体技术路线}
-	\label{fig:technical_route}
-\end{figure}

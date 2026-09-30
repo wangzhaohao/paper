@@ -771,6 +771,7 @@
   \def\@floatboxreset{\centering}
 }
 \AtBeginEnvironment{tabular}{\wuhao}
+\AtBeginEnvironment{tabular*}{\wuhao}
 \AtBeginEnvironment{tabularx}{\wuhao}
 \AtBeginEnvironment{xltabular}{\wuhao}
 

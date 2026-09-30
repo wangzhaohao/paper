@@ -1,6 +1,6 @@
 % !TeX root = ../main.tex
 
-\xchapter{燃料力学非线性、裂变气体与间隙导热模型的耦合实现及验证}{Development and Verification of Implicit Integration Algorithms for Fuel Mechanics and Fission Gas Behavior Models}
+\xchapter{燃料力学非线性、裂变气体与间隙导热模型的耦合实现及验证}{Coupled Implementation and Verification of Fuel Mechanical Nonlinearity, Fission Gas, and Gap Heat Transfer Models}
 
 \xsection{引言}{Introduction}
 在反应堆运行过程中，燃料芯块与包壳始终处于温度场、辐照损伤、裂变气体演化及接触载荷共同作用下的复杂服役环境中。温度升高会诱发热膨胀与热蠕变，辐照会引起肿胀、硬化与损伤累积，而裂变气体在晶内、晶界及孔隙中的迁移和释放又会改变燃料内部压力状态与几何间隙条件。这些因素共同决定燃料元件的位移分布和应力响应，并进一步反馈影响温度场以及裂变气体释放行为。因此，为建立稳定可靠的燃料性能分析程序，有必要对力学控制方程的离散形式、本构积分算法以及裂变气体模型的数值实现进行统一说明。
@@ -9,8 +9,8 @@
 
 裂变气体行为模型从建模层次上可进一步区分为两类：一类为适用于工程计算的简化机理模型，用于在较低计算代价下描述裂变气体释放的主要控制过程；另一类为对晶粒内扩散、晶界聚集、气泡演化及释放过程进行更细致刻画的高保真机理模型。前者具有实现简洁、工程适用范围广的优点，后者则能够提供更丰富的微观信息并具备更好的外推能力。基于第二章给出的材料模型与物性关系，本章重点讨论上述力学、裂变气体与间隙导热模型的数值实现方法及其验证过程：首先给出热弹塑性控制方程的离散形式及径向返回算法；随后介绍裂变气体行为模型、间隙导热模型及其耦合实现；最后通过典型算例对算法和模型进行验证与确认。
 
-\xsection{热弹塑性力学模型的离散与隐式积分}{Discretization of Thermo-Elasto-Plastic Behavior}
-\xsubsection{热弹塑性控制方程与弱形式}{Thermo-Elasto-plastic}
+\xsection{热弹塑性力学模型的离散与隐式积分}{Discretization and Implicit Integration of Thermo-Elasto-Plastic Mechanics}
+\xsubsection{热弹塑性控制方程与弱形式}{Governing Equations and Weak Form of Thermo-Elasto-Plasticity}
 本节首先从小变形条件下的线弹性平衡方程出发，建立统一的弱形式与离散残差表达。在线性力学框架明确之后，再将热应变与塑性应变引入本构关系，从而过渡到后续隐式返回映射算法的实现。
 
 对于弹性结构，本文采用 MOOSE 平台提供的小变形线弹性力学模块进行建模，其控制方程为：
@@ -391,7 +391,7 @@ von Mises 屈服面在该坐标下表现为椭圆。
 
 由此，材料积分点上的应力和塑性应变便可在局部层面完成更新，并进一步返回全局残差方程参与迭代求解。换言之，径向返回算法负责完成局部本构积分，而有限元平衡方程负责完成全局位移场更新，二者共同构成本文隐式力学求解框架的核心。
 
-\xsubsection{代码实现和程序框架}{Computational Algorithm}
+\xsubsection{代码实现和程序框架}{Code Implementation and Computational Framework}
 
 上一节介绍的径向返回算法，本文通过MOOSE框架实现，首先径向返回算法的父类是RadialReturnStressUpdate。应力更新材料并非由MOOSE中的残差直接调用，而是由其他材料使用computeProperties方法调用。比如，对于RadialReturnStressUpdate材料是被computeMultipleInelasticStress调用。此过程将应力更新过程从主求解流程中解耦，使得该类材料可以在同一时间步内被多次迭代调用，从而实现本构积分过程的收敛。
 
@@ -403,9 +403,13 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\centering
 	\caption{ComputeMultipleInelasticStressBase 类的主要函数及功能}
 	\label{tab:multi_inelastic_base}
-	\begin{tabularx}{\textwidth}{l l X}
+	\begin{tabularx}{\textwidth}{
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+		}
 		\toprule
-		函数名称 & 类型 & 功能说明 \\
+		\multicolumn{1}{c}{函数名称} & \multicolumn{1}{c}{类型} & {\centering 功能说明\par} \\
 		\midrule
 		computeQpStress() & 主流程 & 在积分点处计算当前应力，是整体应力更新入口 \\
 		computeQpStressIntermediateConfiguration() & 中间配置 & 在中间构型下执行应力计算（有限应变） \\
@@ -425,9 +429,13 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\centering
 	\caption{StressUpdateBase 类的主要接口及功能}
 	\label{tab:stress_update_base}
-	\begin{tabularx}{\textwidth}{l l X}
+	\begin{tabularx}{\textwidth}{
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+		}
 		\toprule
-		函数名称 & 类型 & 功能说明 \\
+		\multicolumn{1}{c}{函数名称} & \multicolumn{1}{c}{类型} & {\centering 功能说明\par} \\
 		\midrule
 		updateState() & 核心接口 & 根据应变增量计算容许应力、弹性应变增量及非弹性应变增量，是本构积分的主入口 \\
 		updateStateSubstep() & 核心接口 & 子步形式的状态更新，用于大变形或强非线性问题的分步积分 \\
@@ -443,9 +451,13 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\centering
 	\caption{RadialReturnStressUpdate 类的主要函数及功能}
 	\label{tab:radial_return}
-	\begin{tabularx}{\textwidth}{l l X}
+	\begin{tabularx}{\textwidth}{
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+		}
 		\toprule
-		函数名称 & 类型 & 功能说明 \\
+		\multicolumn{1}{c}{函数名称} & \multicolumn{1}{c}{类型} & {\centering 功能说明\par} \\
 		\midrule
 		updateState() & 核心算法 & 实现径向返回算法，包括弹性预测与塑性修正 \\
 		updateStateSubstep() & 子步控制 & 在子步框架下执行应力更新，提高收敛性 \\
@@ -472,12 +484,12 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\label{fig:type_relationship}
 \end{figure}
 
-\xsection{裂变气体模型与间隙热导率模型}{Fission Gas Behavior Model and Its Coupled Implementation}
+\xsection{裂变气体模型与间隙热导率模型}{Fission Gas and Gap Thermal Conductance Models}
 在辐照作用下，燃料芯块中发生裂变反应，产生固体裂变产物和气体裂变产物。在正常运行条件下，燃料内部通常存在气泡与气孔两类气体空腔结构。在微观尺度上，气泡经历重溶、聚合与长大等过程，并可能被气孔吞并；随着气孔向晶界迁移，其在晶界处不断长大、聚合及变形，并逐渐形成连通的气孔链结构。当气孔链与裂隙或自由表面连通时，即构成裂变气体释放通道。在宏观尺度上，该过程表现为气泡演化、重结晶、辐照致密化以及裂变气体释放等现象。
 
 本文考虑到裂变气体对燃料性能分析程序的重要性，同时燃料性能分析程序的复杂性。采用两种方法，第一种采用Forsberg--Massih模型；第二种耦合开源的裂变气体释放程序Sciantix。
 
-\xsubsection{Forsberg--Massih裂变气体模型}{Fission Gas Behavior Model}
+\xsubsection{Forsberg--Massih裂变气体模型}{Forsberg--Massih Fission Gas Model}
 
 裂变气体从燃料芯块释放至芯块--包壳间隙的主要机制包括反冲、击出与扩散。其中，反冲过程是指裂变发生位置距燃料表面小于裂变碎片在 $\mathrm{UO_2}$ 中平均自由程（约 $7\sim9~\upmu\mathrm{m}$）时，裂变产物直接逸出燃料表面的过程；击出过程则是裂变碎片穿过燃料表面时，将局部材料击出并伴随气体释放的现象；扩散过程则是裂变气体在浓度梯度驱动下，于晶粒内部迁移并向晶界输运的过程。
 
@@ -604,6 +616,14 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\KwResult{$G_i^n$, $G_B^n$, $\tau^n$, $F_R$}
 	
 	初始化 $G_i$, $G_B$ 和 $\tau$\;
+	\caption{Forsberg--Massih裂变气体模型数值实现流程}
+	\label{alg:forsberg_massih}
+\end{algorithm}
+
+\begin{algorithm}[H]
+	\SetAlgoLined
+	
+	\textbf{算法~\ref{alg:forsberg_massih}（续）}
 	
 	\For{每个时间步 $n$}{
 		
@@ -625,6 +645,9 @@ von Mises 屈服面在该坐标下表现为椭圆。
 		
 		根据上一时间步晶界气体状态计算历史项
 		$t_3$ 和 $t_4$\;
+	}
+	
+	\For{每个时间步 $n$（续）}{
 		
 		求解辅助变量 $a_{2q}$\;
 		
@@ -643,11 +666,9 @@ von Mises 屈服面在该坐标下表现为椭圆。
 		}
 	}
 	
-	\caption{Forsberg--Massih裂变气体模型数值实现流程}
-	\label{alg:forsberg_massih}
 \end{algorithm}
 
-\xsubsection{细观机理裂变气体模型 SCIANTIX 及其接口实现}{Sciantix}
+\xsubsection{细观机理裂变气体模型 SCIANTIX 及其接口实现}{Mechanistic Fission Gas Model SCIANTIX and Its Interface Implementation}
 第二章已对 Sciantix 所采用的主要物理模型进行了介绍，因此本节不再重复展开其机理推导，而重点说明其与 Miracle 程序的接口集成方式。由于两者均基于 C++ 开发，并采用 Make 进行编译管理，本文采用静态库链接的方式将 Sciantix 嵌入 Miracle 框架。考虑到 MOOSE 框架中已存在名为 \texttt{Material} 的核心类，为避免命名冲突，首先对 Sciantix 源码中相关类名进行重命名处理，将其统一修改为 \texttt{SciantixMaterial}。随后，利用 Make 将 Sciantix 编译生成静态库文件，并将其头文件及库文件集成至 Miracle 工程目录中，同时在 Makefile 中补充相应的头文件搜索路径与库链接选项。
 
 \begin{lstlisting}[style=sty_basic, language=make, caption={Sciantix库在Makefile中的集成配置}]
@@ -688,7 +709,7 @@ von Mises 屈服面在该坐标下表现为椭圆。
 \end{equation}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]{coupled_sciantix.pdf}
+	\includegraphics[width=15.5cm,height=11.00cm,keepaspectratio]{coupled_sciantix.pdf}
 	\caption{Miracle与SCIANTIX的耦合接口及数据传递关系}
 	\label{fig:coupled_sciantix}
 \end{figure}
@@ -733,12 +754,12 @@ von Mises 屈服面在该坐标下表现为椭圆。
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]{thermal_contact.pdf}
+	\includegraphics[width=15.5cm,height=11.00cm,keepaspectratio]{thermal_contact.pdf}
 	\caption{LWRThermalContact间隙导热模型的计算流程}
 	\label{fig:thermal_contact}
 \end{figure}
 
-\xsubsection{裂变气体释放与间隙导热的耦合关系}{coupled}
+\xsubsection{裂变气体释放与间隙导热的耦合关系}{Coupling between Fission Gas Release and Gap Heat Transfer}
 如前所述，本文的间隙模型显式考虑了不同气体组分的传热特性，其中包括裂变过程中产生的氙和氪。因此，在整个反应堆运行过程中，间隙内气体组成并非常量，而是随裂变气体释放行为持续演化。
 
 将前述裂变气体模型与间隙导热模型进行耦合后的整体流程如图\ref{fig:coupled_sciantix_with_gap}所示。在当前时间步内，首先由裂变气体释放模型（ForMas 或 Sciantix）计算时刻 $t^{n}$ 的裂变气体释放量及其组分；随后通过 VectorPostprocessor 类 \texttt{GasMixture} 更新间隙内各气体组分的物质的量与摩尔分数；在此基础上，\texttt{GasGapConductance} 根据用户选定的导热模型分别计算跳跃距离、各组分热导率以及混合气体热导率；之后，GapHeatTransfer 利用更新后的间隙导热系数求解下一时刻 $t^{n+1}$ 的温度分布；最终，新的温度场再反馈至裂变气体模块，用于计算时刻 $t^{n+1}$ 的裂变气体演化行为。通过上述迭代过程，可实现裂变气体释放与间隙导热之间的双向耦合。
@@ -765,9 +786,13 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\centering
 	\caption{与蠕变行为相关的主要类及其功能}
 	\label{tab:creep_classes}
-	\begin{tabularx}{\textwidth}{l l X}
+	\begin{tabularx}{\textwidth}{@{}
+			>{\centering\arraybackslash}m{2.2cm}
+			>{\centering\arraybackslash}m{3.4cm}
+			>{\centering\arraybackslash}X
+			@{}}
 		\toprule
-		材料类型 & 类名 & 功能描述 \\
+		\multicolumn{1}{c}{材料类型} & \multicolumn{1}{c}{类名} & {\centering 功能描述\par} \\
 		\midrule
 		
 		D9
@@ -818,7 +843,7 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{ht9_creep_MFH.png}
+		\includegraphics[width=\linewidth,height=6.7500cm,keepaspectratio]{ht9_creep_MFH.png}
 		\caption{MFH 蠕变模型验证}
 		\label{fig:ht9_creep_MFH}
 	\end{subfigure}
@@ -887,29 +912,55 @@ SS316辐照蠕变模型的数值结果与解析解对比如图\ref{fig:ss316_cre
 	\label{fig:hardening_case}
 \end{figure}
 
-\begin{table}[H]
-	\centering
+\begin{xltabular}{\textwidth}{@{}
+		>{\centering\arraybackslash}m{2.0cm}
+		>{\centering\arraybackslash}m{5.2cm}
+		>{\centering\arraybackslash}X
+		@{}}
+	
 	\caption{与各向同性硬化行为相关的主要类及其功能}
-	\label{tab:hardening_classes}
-	\begin{tabularx}{\textwidth}{l l X}
-		\toprule
-		材料类型 & 类名 & 功能描述 \\
-		\midrule
-		
-		D9
-		& IsotropicD9HardeningStressUpdate
-		& 实现 D9 合金的各向同性硬化模型，用于描述塑性变形过程中屈服面的均匀扩张行为，并考虑温度对硬化参数的影响 \\
-		
-		HT9
-		& IsotropicHT9HardeningStressUpdate
-		& 实现 HT9 铁素体/马氏体钢的各向同性硬化本构模型，用于描述塑性应变累积导致的材料强化效应 \\
-		
-		SS316
-		& IsotropicSS316HardeningStressUpdate
-		& 实现 SS316 不锈钢的各向同性硬化模型，支持 Ludwik、Chaboche 以及 Armstrong 等多种硬化规律，并可考虑温度、晶粒尺寸及厚度等因素对硬化行为的影响 \\		
-		\bottomrule
-	\end{tabularx}
-\end{table}
+	\label{tab:hardening_classes} \\
+	
+	% --- 第一页表头 ---
+	\toprule
+	材料类型 & 类名 & 功能描述 \\
+	\midrule
+	\endfirsthead
+	
+	% --- 续页标题 ---
+	\multicolumn{3}{c}{
+		表~\thetable（续）
+		\quad 与各向同性硬化行为相关的主要类及其功能
+	} \\
+	
+	% --- 续页表头 ---
+	\toprule
+	材料类型 & 类名 & 功能描述 \\
+	\midrule
+	\endhead
+	
+	% --- 页脚 ---
+	\midrule
+	\multicolumn{3}{r}{\textit{（接下页）}} \\
+	\endfoot
+	
+	% --- 最终表尾 ---
+	\bottomrule
+	\endlastfoot
+	
+	D9
+	& IsotropicD9HardeningStressUpdate
+	& 实现D9合金的各向同性硬化模型，用于描述塑性变形过程中屈服面的均匀扩张行为，并考虑温度对硬化参数的影响 \\
+	
+	HT9
+	& IsotropicHT9HardeningStressUpdate
+	& 实现HT9铁素体/马氏体钢的各向同性硬化本构模型，用于描述塑性应变累积导致的材料强化效应 \\
+	
+	SS316
+	& IsotropicSS316HardeningStressUpdate
+	& 实现SS316不锈钢的各向同性硬化模型，支持Ludwik、Chaboche以及Armstrong等多种硬化规律，并可考虑温度、晶粒尺寸及厚度等因素对硬化行为的影响 \\
+	
+\end{xltabular}
 
 \begin{figure}[!htb]
 	\centering
@@ -947,10 +998,10 @@ SS316辐照蠕变模型的数值结果与解析解对比如图\ref{fig:ss316_cre
 	\label{fig:hardening_verification}
 \end{figure}
 
-\xsubsection{裂变气体模型验证}{Validation of the Fission Gas Behavior Model}
-裂变气体行为会通过燃料棒内压、燃料肿胀以及燃料--包壳间隙传热条件影响燃料元件的整体性能。为验证本文实现的裂变气体模型在气体产生、晶界积累和释放判据等关键环节上的正确性，本节分别对简化机理模型 ForMas 和高保真机理模型 SCIANTIX 的耦合实现进行验证。其中，ForMas 验证主要关注工程尺度裂变气体释放行为及参数敏感性；SCIANTIX 验证则侧重于外部机理程序与本文程序之间的数据传递、状态变量更新和多物理过程响应是否一致。
+\xsubsection{裂变气体模型的数值测试与基准对比}{Numerical Testing and Benchmark Comparison of Fission Gas Models}
+裂变气体行为会通过燃料棒内压、燃料肿胀以及燃料--包壳间隙传热条件影响燃料元件的整体性能。为验证本文实现的裂变气体模型在气体产生、晶界积累和释放判据等关键环节上的正确性，本节不以实验数据对模型物理预测能力进行确认，而是针对ForMas模型的数值实现以及SCIANTIX外部程序耦合接口开展基准测试与一致性检查。ForMas部分主要考察气体产生、晶界积累、饱和释放及关键参数响应是否符合模型理论预期；SCIANTIX部分则通过其回归测试算例检查输入输出映射、状态变量更新、时间推进及结果回写过程是否与原程序保持一致。裂变气体模型面向辐照实验数据的定量评价将在第五章棒级验证中进一步开展。
 
-\subsubsection{ForMas模型验证}
+\subsubsection{ForMas模型基准测试}
 裂变气体简化机理模型 ForMas 的验证采用文献\cite{forsbergDiffusionTheoryFission1985}给出的基准算例。该算例通过给定温度历程和裂变气体产生率，考察晶内扩散、晶界气体累积以及饱和释放过程的时序演化。计算中所采用的温度历程如图\ref{fig:ForMas_temperature_history}所示，裂变气体产生率、线功率与温度之间的对应关系见表\ref{tab:ForMas_condition}。
 
 \begin{figure}[!htb]
@@ -1032,27 +1083,44 @@ SS316辐照蠕变模型的数值结果与解析解对比如图\ref{fig:ss316_cre
 	\label{fig:Gb_and_Gr_compare}
 \end{figure}
 
-\subsubsection{SCIANTIX耦合程序验证}
-SCIANTIX 是面向核燃料微观行为分析的机理程序，已针对裂变气体行为、气泡演化、高燃耗结构以及燃料化学状态等问题开展了系统验证\cite{giozuSciantixSciantixofficialSCIANTIX2025,zulloSCIANTIXCodeFission2023,pizzocriSCIANTIXNewOpen2020}。本文并不重新验证 SCIANTIX 原程序本身，而是重点验证其与本文燃料性能分析程序耦合后的调用流程、输入输出映射和状态变量更新是否正确。为此，本文从 SCIANTIX 回归测试体系中选取四类具有代表性的算例，分别覆盖晶内气泡演化、晶界气体释放、高燃耗结构演化以及燃料氧化状态变化等过程。各算例所对应的主要物理领域、验证变量和验证目的见表\ref{tab:verification}。
+\subsubsection{SCIANTIX耦合接口一致性测试}
+SCIANTIX是面向核燃料微观行为分析的机理程序，已针对裂变气体行为、气泡演化、高燃耗结构以及燃料化学状态等问题开展了系统验证\cite{giozuSciantixSciantixofficialSCIANTIX2025,zulloSCIANTIXCodeFission2023,pizzocriSCIANTIXNewOpen2020}。本文并不重新验证 SCIANTIX 原程序本身，而是重点验证其与本文燃料性能分析程序耦合后的调用流程、输入输出映射和状态变量更新是否正确。为此，本文从 SCIANTIX 回归测试体系中选取四类具有代表性的算例，分别覆盖晶内气泡演化、晶界气体释放、高燃耗结构演化以及燃料氧化状态变化等过程。各算例所对应的主要物理领域、验证变量和验证目的见表\ref{tab:verification}。
 
 \begin{table}[htbp]
 	\centering
-	\caption{SCIANTIX 耦合验证算例及核心验证变量}
+	\caption{SCIANTIX耦合验证算例及核心验证变量}
 	\label{tab:verification}
 	
-	\begin{tabularx}{\textwidth}{
-			p{2.2cm}
-			p{2.2cm}
-			p{3.2cm}
-			X
-		}
+	\begin{tabularx}{\textwidth}{@{}
+			>{\centering\arraybackslash}m{2.2cm}
+			>{\centering\arraybackslash}m{1.8cm}
+			>{\centering\arraybackslash}m{3.3cm}
+			>{\centering\arraybackslash}X
+			@{}}
 		\toprule
 		物理领域 & 测试模块 & 核心验证变量 & 验证目的 \\
 		\midrule
-		晶内物理 & Baker & 晶内气泡肿胀 & 验证气泡成核、生长及晶内气体肿胀行为 \\
-		晶界与释放 & White & 晶界气体肿胀、释放分数 & 验证晶界气泡演化、饱和释放及 burst 释放响应 \\
-		组织演化 & HBS & 高燃耗结构孔隙率 & 验证高燃耗条件下组织重构及孔隙形成过程 \\
-		热化学 & Oxidation & 化学计量偏差 & 验证燃料氧化状态及其对相关状态变量的影响 \\
+		
+		晶内物理
+		& Baker
+		& 晶内气泡肿胀
+		& 验证气泡成核、生长及晶内气体肿胀行为 \\
+		
+		晶界与释放
+		& White
+		& 晶界气体肿胀、释放分数
+		& 验证晶界气泡演化、饱和释放及burst释放响应 \\
+		
+		组织演化
+		& HBS
+		& 高燃耗结构孔隙率
+		& 验证高燃耗条件下组织重构及孔隙形成过程 \\
+		
+		热化学
+		& Oxidation
+		& 化学计量偏差
+		& 验证燃料氧化状态及其对相关状态变量的影响 \\
+		
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -1126,10 +1194,7 @@ SCIANTIX 是面向核燃料微观行为分析的机理程序，已针对裂变�
 	\label{fig:academic_deviation}
 \end{figure}
 
-
-
-\xsubsection{间隙导热模型验证}{Verification of Gap Heat Transfer Model}
-
+\xsubsection{间隙导热模型的数值测试与响应分析}{Numerical Testing and Response Analysis of the Gap Heat Transfer Model}
 燃料芯块与包壳之间的间隙导热是燃料棒热力耦合分析中的关键环节，其换热能力受间隙宽度、气体组成、气体温度和腔体压力等因素共同影响。为验证本文实现的间隙导热模型及其与气体压力计算模块之间的耦合关系，本节构建二维接触传热算例，对不同间隙导热处理方式下的换热系数演化规律进行对比分析。
 
 验证模型由两个尺寸均为 $1\times1$ 的矩形区域组成，两区域之间设置初始间隙距离为 $1$，用于表征燃料芯块与包壳之间的气体传热通道。计算中采用有限应变固体力学模型，并在接触界面施加基于 \texttt{GapHeatTransfer} 的间隙换热边界条件。间隙距离采用 \texttt{TOPTAN} 模型计算，气体热导率采用 \texttt{ADVANCED} 模型描述，以考虑气体状态变化对间隙传热能力的影响。
@@ -1142,7 +1207,7 @@ SCIANTIX 是面向核燃料微观行为分析的机理程序，已针对裂变�
 
 图 \ref{fig:gap_heat_transfer_verification} 给出了不同间隙导热模型下换热系数随温度变化的计算结果。随着边界温度升高，气体热导率逐渐增大，间隙换热系数整体呈上升趋势。当考虑腔体压力反馈时，气体温度升高引起压力和状态参数同步变化，使 \texttt{ADVANCED} 模型计算得到的气体导热能力进一步增强，因此对应的间隙换热系数高于默认模型结果。相比之下，默认模型未考虑压力和气体状态参数的动态反馈，其换热系数增长幅度相对较小。
 
-上述结果表明，本文实现的间隙导热模型能够正确反映气体温度和压力变化对界面换热能力的影响，并能够稳定耦合间隙宽度、气体状态和腔体压力等关键变量。两种模型的差异符合气体导热理论预期，说明所实现的间隙导热计算模块具有较好的物理合理性和数值稳定性，可用于后续燃料棒尺度热力耦合分析。
+上述结果表明，本文实现的间隙导热模型能够正确反映气体温度、压力及间隙状态变化对界面换热能力的预期影响。两种模型所得到的变化趋势与对应模型的理论关系一致，说明所程序中实现的间隙换热模块变量传递和耦合计算过程具有较好的物理合理性和数值稳定性，可为后续燃料棒尺度热--力--气体耦合计算提供数值基础。
 
 \begin{figure}[!htb]
 	\centering

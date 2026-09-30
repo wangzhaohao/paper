@@ -7,6 +7,9 @@
    id="svg73"
    sodipodi:docname="fission-gas-evolution-editable.svg"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   inkscape:export-filename="fission-gas-evolution-editable.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,8 +24,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.16875"
-     inkscape:cx="438.50267"
-     inkscape:cy="174.54545"
+     inkscape:cx="681.92513"
+     inkscape:cy="315.72193"
      inkscape:window-width="1920"
      inkscape:window-height="1002"
      inkscape:window-x="0"
@@ -100,13 +103,6 @@
          id="path3" />
     </marker>
   </defs>
-  <rect
-     id="background"
-     class="bg"
-     x="0"
-     y="0"
-     width="1600"
-     height="620" />
   <!-- Stage-to-stage arrows are independent editable shapes. -->
   <g
      id="stage-flow-arrows">
@@ -243,20 +239,22 @@
          class="label"
          x="223"
          y="222"
-         id="text17">Xe / Kr</text>
+         id="text17"
+         style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">Xe / Kr</text>
       <text
          class="sub-label"
          x="135"
          y="246"
-         id="text18">晶粒内部</text>
+         id="text18"
+         style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">晶粒内部</text>
     </g>
     <text
        class="note"
-       x="175"
-       y="389"
+       x="167"
+       y="357"
        id="text19"
-       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;text-anchor:middle;fill:#55636d"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';text-anchor:middle;fill:#55636d"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          id="tspan84">裂变源项 + 温度驱动的单原子扩散</tspan></text>
   </g>
   <g
@@ -269,16 +267,16 @@
          x="0"
          y="31"
          id="text20"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#6b7780"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22px;line-height:normal;font-family:'微软雅黑';fill:#6b7780;-inkscape-font-specification:'微软雅黑'"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
            id="tspan75">02</tspan></text>
       <text
          class="stage-title"
          x="42"
          y="31"
          id="text21"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:23px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#1f2933"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:29.3333px;font-family:Sans;-inkscape-font-specification:'Sans, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23px;line-height:normal;font-family:'微软雅黑';fill:#1f2933;-inkscape-font-specification:'微软雅黑'"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
            id="tspan76">捕获与再溶解</tspan></text>
       <line
          class="header-line"
@@ -373,30 +371,34 @@
          class="label"
          x="45"
          y="151"
-         id="text28">捕获</text>
+         id="text28"
+         style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">捕获</text>
       <text
          class="label"
          x="90"
          y="55"
-         id="text29">再溶解</text>
+         id="text29"
+         style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">再溶解</text>
       <text
          class="sub-label"
          x="230"
          y="68"
-         id="text30">缺陷</text>
+         id="text30"
+         style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">缺陷</text>
       <text
          class="sub-label"
          x="120"
          y="211"
-         id="text31">晶内纳米气泡</text>
+         id="text31"
+         style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">晶内纳米气泡</text>
     </g>
     <text
        class="note"
-       x="175"
-       y="389"
+       x="169"
+       y="355"
        id="text32"
-       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;text-anchor:middle;fill:#55636d"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';text-anchor:middle;fill:#55636d"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          id="tspan83">竞争平衡控制到达晶界的有效气体通量</tspan></text>
   </g>
   <g
@@ -409,16 +411,16 @@
          x="0"
          y="31"
          id="text33"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#6b7780"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22px;line-height:normal;font-family:'微软雅黑';fill:#6b7780;-inkscape-font-specification:'微软雅黑'"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
            id="tspan77">03</tspan></text>
       <text
          class="stage-title"
          x="42"
          y="31"
          id="text34"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:23px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#1f2933"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23px;line-height:normal;font-family:'微软雅黑';fill:#1f2933;-inkscape-font-specification:'微软雅黑'"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
            id="tspan78">晶界积聚与气泡生长</tspan></text>
       <line
          class="header-line"
@@ -535,31 +537,36 @@
          class="label"
          x="122"
          y="72"
-         id="text45">p<tspan
+         id="text45"
+         style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">p<tspan
    baseline-shift="sub"
    font-size="11"
-   id="tspan44">g</tspan> &gt; p<tspan
+   id="tspan44"
+   style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">g</tspan> &gt; p<tspan
    baseline-shift="sub"
    font-size="11"
-   id="tspan45">eq</tspan></text>
+   id="tspan45"
+   style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">eq</tspan></text>
       <text
          class="sub-label"
          x="189"
          y="42"
-         id="text46">晶界</text>
+         id="text46"
+         style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">晶界</text>
       <text
          class="sub-label"
          x="218"
          y="246"
-         id="text47">空位吸收</text>
+         id="text47"
+         style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">空位吸收</text>
     </g>
     <text
        class="note"
-       x="175"
-       y="389"
+       x="173"
+       y="355"
        id="text48"
-       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;text-anchor:middle;fill:#55636d"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';text-anchor:middle;fill:#55636d"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          id="tspan82">过压驱动空位吸收，晶界肿胀快速增加</tspan></text>
   </g>
   <g
@@ -572,16 +579,16 @@
          x="0"
          y="31"
          id="text49"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#6b7780"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22px;line-height:normal;font-family:'微软雅黑';fill:#6b7780;-inkscape-font-specification:'微软雅黑'"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
            id="tspan79">04</tspan></text>
       <text
          class="stage-title"
          x="42"
          y="31"
          id="text50"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:23px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;fill:#1f2933"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23px;line-height:normal;font-family:'微软雅黑';fill:#1f2933;-inkscape-font-specification:'微软雅黑'"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
            id="tspan80">连通与释放</tspan></text>
       <line
          class="header-line"
@@ -711,31 +718,33 @@
          class="label"
          x="203"
          y="187"
-         id="text65">隧道网络</text>
+         id="text65"
+         style="-inkscape-font-specification:'微软雅黑';font-family:'微软雅黑';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">隧道网络</text>
       <text
          class="sub-label"
-         x="247"
-         y="278"
-         id="text66">自由表面</text>
+         x="315"
+         y="256"
+         id="text66"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:14px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑'">自由表面</text>
       <text
          class="label"
          x="330"
          y="44"
          id="text67"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif">释放</text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑'">释放</text>
     </g>
     <text
        class="note"
-       x="175"
-       y="389"
+       x="161"
+       y="353"
        id="text68"
-       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Noto Sans SC Thin', 'Microsoft YaHei', sans-serif;text-anchor:middle;fill:#55636d"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';text-anchor:middle;fill:#55636d"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          id="tspan81">气泡合并并贯通表面，形成气体释放通道</tspan></text>
   </g>
   <g
      id="legend"
-     transform="translate(175,538)">
+     transform="translate(173,412)">
     <line
        class="header-line"
        x1="0"
@@ -753,7 +762,8 @@
        class="legend"
        x="17"
        y="24"
-       id="text69">气体原子</text>
+       id="text69"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑'">气体原子</text>
     <ellipse
        class="bubble"
        cx="169"
@@ -765,7 +775,8 @@
        class="legend"
        x="191"
        y="24"
-       id="text70">气泡 / 连通通道</text>
+       id="text70"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑'">气泡 / 连通通道</text>
     <line
        class="boundary"
        x1="375"
@@ -777,7 +788,8 @@
        class="legend"
        x="421"
        y="24"
-       id="text71">晶界</text>
+       id="text71"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑'">晶界</text>
     <line
        class="gas-arrow"
        x1="515"
@@ -790,7 +802,8 @@
        class="legend"
        x="570"
        y="24"
-       id="text72">实线：扩散或捕获</text>
+       id="text72"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑'">实线：扩散或捕获</text>
     <line
        class="return-arrow"
        x1="783"
@@ -803,6 +816,7 @@
        class="legend"
        x="838"
        y="24"
-       id="text73">虚线：再溶解或空位迁移</text>
+       id="text73"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16px;line-height:normal;font-family:'微软雅黑';-inkscape-font-specification:'微软雅黑'">虚线：再溶解或空位迁移</text>
   </g>
 </svg>

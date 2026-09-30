@@ -4,7 +4,7 @@
 \section{MOX燃料热导率备选模型}
 \label{app:mox_thermal_conductivity_models}
 
-不同热导率关联式所依据的燃料组成、温度和燃耗范围并不相同。模型选取时，应优先采用与目标MOX燃料的钚含量、O/M比和辐照状态相匹配的关系式，不宜仅根据曲线吻合程度进行跨范围外推。
+不同热导率关联式所依据的燃料组成、温度和燃耗范围并不相同。模型选取时，应优先采用与目标MOX燃料的钚含量、O/M比和辐照状态相匹配的关系式，同时注意热导率模型的使用范围。
 
 \subsection{MATPRO关系式}
 
@@ -45,18 +45,18 @@ MATPRO对固体热导率标准差的估计为
 \subsection{BISON中未辐照MOX热导率的一般构成}
 
 BISON中的多种氧化物燃料热导率模型均可概括为
-\begin{equation}
-	\begin{aligned}
-		k_{95}&=k_{\mathrm{ph}}+k_{\mathrm{el}}
-				\\
-				k_{\mathrm{ph}}
-				&=\frac{1}{A+BT+f(Bu)+g(Bu)h(T)}
-				\\
-				k_{\mathrm{el}}
-				&=i(T)\exp\!\left(-\frac{F}{T}\right)
-	\end{aligned}
+\begin{gather}
+	k_{95}=k_{\mathrm{ph}}+k_{\mathrm{el}}
+	\notag
+	\\
+	k_{\mathrm{ph}}
+	=\frac{1}{A+BT+f(Bu)+g(Bu)h(T)}
+	\notag
+	\\
+	k_{\mathrm{el}}
+	=i(T)\exp\!\left(-\frac{F}{T}\right)
 	\label{eq:appendix_bison_thermal_conductivity_general}
-\end{equation}
+\end{gather}
 \label{eq:appendix_bison_k95}
 \label{eq:appendix_bison_phonon}
 \label{eq:appendix_bison_electronic}
@@ -302,7 +302,7 @@ MATPRO以晶粒尺寸相关的转变应力区分低应力和高应力蠕变机�
 	\exp\!\left(-\frac{Q_3}{RT}\right)
 	\label{eq:appendix_uo2_matpro_creep}
 \end{align}
-在MATPRO的分段实现中，$\sigma_{\mathrm{eff}}<\sigma_t$时仅保留低应力项；$\sigma_{\mathrm{eff}}\geq\sigma_t$时，低应力项中的应力取$\sigma_t$，高应力项采用实际有效应力。若依据试验数据同时启用两项，则应在正文中明确说明未采用该转变规则。
+在MATPRO的分段实现中，$\sigma_{\mathrm{eff}}<\sigma_t$时仅保留低应力项；$\sigma_{\mathrm{eff}}\geq\sigma_t$时，低应力项中的应力取$\sigma_t$，高应力项采用实际有效应力。
 
 针对低温辐照蠕变，Halden模型将第三项简化为\cite{hwr-1039}
 \begin{equation}
@@ -348,26 +348,23 @@ MATPRO以晶粒尺寸相关的转变应力区分低应力和高应力蠕变机�
 \subsection{快堆MOX稳态蠕变模型参数}
 
 正文式\eqref{eq:fast_mox_creep}的原始参数为
-\begin{equation}
-	\begin{aligned}
-		A_R&=3.23\times10^{9}
-				\\
-				B_R&=3.24\times10^{6}
-				\\
-				C_R&=1.78\times10^{-26}
-				\\
-				Q_1&=92500\ \mathrm{cal/mol}
-				\\
-				Q_2&=136800\ \mathrm{cal/mol}
-	\end{aligned}
+\begin{gather}
+	A_R=3.23\times10^{9}
+	\notag
+	\\
+	B_R=3.24\times10^{6}
+	\notag
+	\\
+	C_R=1.78\times10^{-26}
+	\notag
+	\\
+	Q_1=92500\ \mathrm{cal/mol}
+	\notag
+	\\
+	Q_2=136800\ \mathrm{cal/mol}
 	\label{eq:appendix_fast_mox_creep_parameters}
-\end{equation}
-\label{eq:appendix_fast_mox_creep_A}
-\label{eq:appendix_fast_mox_creep_B}
-\label{eq:appendix_fast_mox_creep_C}
-\label{eq:appendix_fast_mox_creep_Q1}
-\label{eq:appendix_fast_mox_creep_Q2}
-上述系数与原始标定单位相互关联；采用该组数值时，$\sigma_{\mathrm{eff}}$以MPa表示，$G$以$\mu\mathrm{m}$表示。若程序内部统一使用SI单位，必须同步换算$A_R$、$B_R$和$C_R$，不得仅转换输入变量的单位。
+\end{gather}
+上述系数与原始标定单位相互关联；采用该组数值时，$\sigma_{\mathrm{eff}}$以MPa表示，$G$以$\mu\mathrm{m}$表示。
 
 \section{MATPRO密实化分段关系}
 \label{app:mox_densification_correlations}
@@ -415,4 +412,4 @@ MATPRO可根据再烧结试验所得的最大密度变化$R_{\mathrm{sint}}$估�
 	+2\exp\!\left[1-35(F_{\mathrm{Bu}}+B_0)\right]
 	\label{eq:appendix_matpro_densification_evolution}
 \end{equation}
-\noindent 式中：$F_{\mathrm{Bu}}$为以$\mathrm{MWd/kgU}$表示的燃耗；$B_0$用于保证零燃耗时的初始条件。若正文采用ESCORE模型，则不再叠加式\eqref{eq:appendix_matpro_densification_evolution}，以避免对同一辐照密实化过程重复计入。
+\noindent 式中：$F_{\mathrm{Bu}}$为以$\mathrm{MWd/kgU}$表示的燃耗；$B_0$用于保证零燃耗时的初始条件。

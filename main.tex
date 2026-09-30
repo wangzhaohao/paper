@@ -26,6 +26,12 @@
                 %            General Reviewers List(Content), CHANGE THE STYLE of Achievements BY YOURSELF
 ]{XJTU-thesis}
 
+% 使 \texttt{} 中的英文采用 Times New Roman
+\DeclareTextFontCommand{\texttt}{\rmfamily}
+
+% 部分人名没有合适的宋体时，使用替代的字体
+\newCJKfontfamily{\rarecharfont}{Noto Serif CJK SC}
+
 \usepackage{xltabular}  % 核心：用于跨页表格
 \usepackage{ragged2e}   % 核心：用于 \RaggedRight 左对齐
 \usepackage{booktabs}   % 用于三线表 (\toprule, \midrule)
@@ -59,7 +65,7 @@
 
 % 指导老师姓名（注意：同作者姓名）
 % Name of supervisor, It have the same requirments as the author
-\advisor{恽迪}{教授}{Di Yun}{(Associate)\ Prof.}
+\advisor{恽迪}{教授}{Di Yun}{Prof.}
 
 % 合作指导老师姓名 或 导师团队
 %（校方模板要求只能选择一个，都有则显示合作导师）
@@ -86,7 +92,7 @@
 \submitdateDefault
 % 论文提交日期，不输入参数则默认使用当前日期，如手动指明年月，请在第一个可选参数内填写年份，第二个可选参数填写月份（均为阿拉伯数字）
 % Submission date of this thesis, if you not put it manually, it will use the current time
-% \submitdate[2025][10]
+\submitdate[2026][12]
 % \submitdate
 
 % 答辩委员会委员 显示的顺序和这里的一样 第一个人是主席 格式：单位, 职称, 姓名

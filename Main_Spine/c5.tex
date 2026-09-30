@@ -21,91 +21,116 @@
 
 表~\ref{tab:frapcon_mox_steady_cases} 给出了 FRAPCON-4.0 综合评估数据库中与本文研究相关的稳态 MOX 燃料棒案例。表~\ref{tab:frapcon_mox_power_ramp_cases} 给出了 FRAPCON-4.0 综合评估数据库中 Beznau-1/Petten 短时间功率提升 MOX 燃料棒案例\cite{ML16118A434}。该类燃料棒经历了基准辐照后的功率提升试验，实验数据包括棒平均燃耗、最高线功率、高功率持续时间和裂变气体释放结果，可用于评价裂变气体释放模型对短时间功率提升和高功率保持工况的响应能力。表中 ``$\checkmark$'' 表示该燃料棒在 FRAPCON-4.0 综合评估报告中被用于相应物理量的验证。大部分燃料棒间隙内填充的是纯氦气也有少部分填充氦—氙混合气体，用于评估间隙导热模型。寿期初（BOL）的线功率最高约为$60\,\mathrm{kW\,m^{-1}}$，寿期末（EOL）功率在快速上升实验中最高可达$47\,\mathrm{kW\,m^{-1}}$。燃料棒平均燃耗最高可达$68\,\mathrm{GW\,d\,t^{-1}}$，对于功率快速提升的燃料棒，最高平均燃耗约为$47\,\mathrm{GW\,d\,t^{-1}}$。
 
-{\zihao{5}
-\begin{xltabular}{\textwidth}{lXccc}
-	\caption{FRAPCON-4.0综合评估数据库中稳态MOX燃料棒案例\cite{ML16118A434}}
-	\label{tab:frapcon_mox_steady_cases}\\
-	\toprule
-	反应堆/试验装置 & 燃料棒 &
-	棒平均燃耗/$\mathrm{GW\,d\,t^{-1}}$ &
-	温度-燃耗验证 & FGR 验证 \\
-	\midrule
-	\endfirsthead
-	
-	\multicolumn{5}{c}{\textbf{表~\thetable（续）}\quad FRAPCON-4.0 综合评估数据库中稳态MOX燃料棒案例}\\
-	\toprule
-	反应堆/试验装置 & 燃料棒 &
-	棒平均燃耗/$\mathrm{GW\,d\,t^{-1}}$ &
-	温度-燃耗验证 & FGR 验证 \\
-	\midrule
-	\endhead
-	
-	\midrule
-	\multicolumn{5}{r}{\textit{（接下页）}}\\
-	\endfoot
-	
-	\bottomrule
-	\endlastfoot
-	
-	Halden HBWR & IFA-629-1r1 & 33 & $\checkmark$ &  \\
-	Halden HBWR & IFA-629-1r2 & 29（FGR）/40（温度） & $\checkmark$ & $\checkmark$ \\
-	
-	Halden HBWR & IFA-610.2 & 56 & $\checkmark$ &  \\
-	Halden HBWR & IFA-610.4 & 57 & $\checkmark$ &  \\
-	
-	Halden HBWR & IFA-648.1r1 & 62 & $\checkmark$ &  \\
-	Halden HBWR & IFA-648.1r2 & 62 & $\checkmark$ &  \\
-	
-	Halden HBWR & IFA-629.3r5 & 72 & $\checkmark$ & $\checkmark$ \\
-	Halden HBWR & IFA-629.3r6 & 68 & $\checkmark$ & $\checkmark$ \\
-	
-	Halden HBWR & IFA-606 Phase 2 & 49 & $\checkmark$ & $\checkmark$ \\
-	
-	Halden HBWR & IFA-651.1r1 & 22.41 & $\checkmark$ & $\checkmark$ \\
-	Halden HBWR & IFA-651.1r3 & 21.73 & $\checkmark$ & $\checkmark$ \\
-	Halden HBWR & IFA-651.1r6 & 20.27 & $\checkmark$ & $\checkmark$ \\
-	
-	ATR & PII C2 P5 & 21 &  & $\checkmark$ \\
-	ATR & PIII C3 P6 & 30 &  & $\checkmark$ \\
-	ATR & PIII C10 P13 & 30 &  & $\checkmark$ \\
-	ATR & PIV C4 P7 & 40 &  & $\checkmark$ \\
-	ATR & PIV C5 P8 & 50 &  & $\checkmark$ \\
-	ATR & PIV C6 P9 & 50 &  & $\checkmark$ \\
-	ATR & PIV C12 P15 & 50 &  & $\checkmark$ \\
-	
-	Gravelines-4 PWR & N06 & 48 &  & $\checkmark$ \\
-	Gravelines-4 PWR & N12 & 57 &  & $\checkmark$ \\
-	Gravelines-4 PWR & P16 & 53 &  & $\checkmark$ \\
-	
-	Halden HBWR & IFA-633.1r6 & 32 & $\checkmark$ & $\checkmark$ \\
-	
-	Beznau-1 & M504 H8 & 37.5 &  & $\checkmark$ \\
-	Beznau-1 & M504 I2 & 43 &  & $\checkmark$ \\
-	Beznau-1 & M504 K9 & 42.5 &  & $\checkmark$ \\
-	Beznau-1 & M504 M9 & 44.2 &  & $\checkmark$ \\
-	
-	Beznau-1 & M308 Segment 2 & 57.5 &  & $\checkmark$ \\
-	
-	Halden HBWR & IFA-597.4/.5/.6/.7r10 & 35.7 & $\checkmark$ & $\checkmark$ \\
-	Halden HBWR & IFA-597.4/.5/.6/.7r11 & 36.8 & $\checkmark$ & $\checkmark$ \\
-	
-	Fugen HBWR & E09 Rods Inner & 29.6 &  & $\checkmark$ \\
-	Fugen HBWR & E09 Rods Intermediate & 39.3 &  & $\checkmark$ \\
-	Fugen HBWR & E09 Rods Outer & 42 &  & $\checkmark$ \\
-	
-\end{xltabular}
+{
+	\begin{xltabular}{\textwidth}{@{}
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}c
+			>{\centering\arraybackslash}c
+			>{\centering\arraybackslash}c
+			@{}}
+		
+		\caption{FRAPCON-4.0综合评估数据库中稳态MOX燃料棒案例\cite{ML16118A434}}
+		\label{tab:frapcon_mox_steady_cases}\\
+		
+		\toprule
+		反应堆/试验装置
+		& 燃料棒
+		& 棒平均燃耗/$\mathrm{GW\,d\,t^{-1}}$
+		& 温度-燃耗验证
+		& FGR验证
+		\\
+		\midrule
+		\endfirsthead
+		
+		\multicolumn{5}{c}{
+			{表~\thetable（续）}
+			\quad FRAPCON-4.0综合评估数据库中稳态MOX燃料棒案例
+		}\\
+		
+		\toprule
+		反应堆/试验装置
+		& 燃料棒
+		& 棒平均燃耗/$\mathrm{GW\,d\,t^{-1}}$
+		& 温度-燃耗验证
+		& FGR验证
+		\\
+		\midrule
+		\endhead
+		
+		\midrule
+		\multicolumn{5}{r}{\textit{（接下页）}}\\
+		\endfoot
+		
+		\bottomrule
+		\endlastfoot
+		
+		Halden HBWR & IFA-629-1r1 & 33 & $\checkmark$ &  \\
+		Halden HBWR & IFA-629-1r2 & 29（FGR）/40（温度） & $\checkmark$ & $\checkmark$ \\
+		
+		Halden HBWR & IFA-610.2 & 56 & $\checkmark$ &  \\
+		Halden HBWR & IFA-610.4 & 57 & $\checkmark$ &  \\
+		
+		Halden HBWR & IFA-648.1r1 & 62 & $\checkmark$ &  \\
+		Halden HBWR & IFA-648.1r2 & 62 & $\checkmark$ &  \\
+		
+		Halden HBWR & IFA-629.3r5 & 72 & $\checkmark$ & $\checkmark$ \\
+		Halden HBWR & IFA-629.3r6 & 68 & $\checkmark$ & $\checkmark$ \\
+		
+		Halden HBWR & IFA-606 Phase 2 & 49 & $\checkmark$ & $\checkmark$ \\
+		
+		Halden HBWR & IFA-651.1r1 & 22.41 & $\checkmark$ & $\checkmark$ \\
+		Halden HBWR & IFA-651.1r3 & 21.73 & $\checkmark$ & $\checkmark$ \\
+		Halden HBWR & IFA-651.1r6 & 20.27 & $\checkmark$ & $\checkmark$ \\
+		
+		ATR & PII C2 P5 & 21 &  & $\checkmark$ \\
+		ATR & PIII C3 P6 & 30 &  & $\checkmark$ \\
+		ATR & PIII C10 P13 & 30 &  & $\checkmark$ \\
+		ATR & PIV C4 P7 & 40 &  & $\checkmark$ \\
+		ATR & PIV C5 P8 & 50 &  & $\checkmark$ \\
+		ATR & PIV C6 P9 & 50 &  & $\checkmark$ \\
+		ATR & PIV C12 P15 & 50 &  & $\checkmark$ \\
+		
+		Gravelines-4 PWR & N06 & 48 &  & $\checkmark$ \\
+		Gravelines-4 PWR & N12 & 57 &  & $\checkmark$ \\
+		Gravelines-4 PWR & P16 & 53 &  & $\checkmark$ \\
+		
+		Halden HBWR & IFA-633.1r6 & 32 & $\checkmark$ & $\checkmark$ \\
+		
+		Beznau-1 & M504 H8 & 37.5 &  & $\checkmark$ \\
+		Beznau-1 & M504 I2 & 43 &  & $\checkmark$ \\
+		Beznau-1 & M504 K9 & 42.5 &  & $\checkmark$ \\
+		Beznau-1 & M504 M9 & 44.2 &  & $\checkmark$ \\
+		
+		Beznau-1 & M308 Segment 2 & 57.5 &  & $\checkmark$ \\
+		
+		Halden HBWR & IFA-597.4/.5/.6/.7r10 & 35.7 & $\checkmark$ & $\checkmark$ \\
+		Halden HBWR & IFA-597.4/.5/.6/.7r11 & 36.8 & $\checkmark$ & $\checkmark$ \\
+		
+		Fugen HBWR & E09 Rods Inner & 29.6 &  & $\checkmark$ \\
+		Fugen HBWR & E09 Rods Intermediate & 39.3 &  & $\checkmark$ \\
+		Fugen HBWR & E09 Rods Outer & 42 &  & $\checkmark$ \\
+		
+	\end{xltabular}
 }
-
 \begin{table}[H]
 	\centering
-	\caption{FRAPCON-4.0综合评估数据库中短时间功率提升MOX燃料棒案例（数据来源：FRAPCON-4.0综合评估报告）}
+	\caption{FRAPCON-4.0综合评估数据库中短时间功率提升MOX燃料棒案例\cite{ML16118A434}}
 	\label{tab:frapcon_mox_power_ramp_cases}
-	\begin{tabularx}{\textwidth}{X c c c c}
+	
+	\begin{tabularx}{\textwidth}{@{}
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}c
+			>{\centering\arraybackslash}c
+			>{\centering\arraybackslash}c
+			>{\centering\arraybackslash}c
+			@{}}
 		\toprule
 		燃料棒 &
 		棒平均燃耗/$\mathrm{GW\,d\,t^{-1}}$ &
 		最高线功率/$\mathrm{kW\,m^{-1}}$ &
-		高功率持续时间 & FGR 验证 \\
+		高功率持续时间 &
+		FGR验证 \\
 		\midrule
 		
 		\mbox{M501 HR-1} & 37 & 38.1 & $12\,\mathrm{h}$ & $\checkmark$ \\
@@ -186,7 +211,7 @@ SCIANTIX 模型是一种更高保真的细观机理裂变气体行为模型。�
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]{moose_fuel_rod_flowchart_editable.pdf}
+	\includegraphics[width=15.5cm,height=15.00cm,keepaspectratio]{moose_fuel_rod_flowchart_editable.pdf}
 	\caption{燃料棒级多物理耦合计算流程}
 	\label{fig:fuel_rod_multiphysics_flowchart}
 \end{figure}
@@ -394,7 +419,7 @@ IFA-648与IFA-629.3高燃耗燃料棒的中心温度验证结果如图\ref{fig:t
 	\centering
 	\caption{MOX燃料棒中心温度验证误差统计}
 	\label{tab:centerline_temperature_error}
-	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc@{}}
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}cccccc@{}}
 		\toprule
 		燃料棒 & 燃耗范围/$\mathrm{GW\,d\,t^{-1}}$ & 对比点数 & $\mathrm{MBE}/\mathrm{K}$ & $\overline{\delta T}$/\% & $\mathrm{RMSE}/\mathrm{K}$ \\
 		\midrule
@@ -421,7 +446,7 @@ IFA-648与IFA-629.3高燃耗燃料棒的中心温度验证结果如图\ref{fig:t
 从平均偏差 MBE 的符号来看，不同燃料棒存在一定的系统性偏差。IFA-629-1r1、IFA-629-1r2 和 IFA-648r2 的 MBE 为正，说明这些算例中程序整体倾向于高估中心温度；而 IFA-606、IFA-651-r1、IFA-651-r3 和 IFA-651-r6 的 MBE 为负，说明这些算例中程序整体偏低估中心温度。该差异表明中心温度偏差并非由单一因素控制，而是由燃料热导率演化、燃料-包壳间隙演化、接触传热、冷却剂温度边界以及功率历史共同决定。
 
 
-\xsubsection{中心温度预测偏差来源分析}{Analysis of Deviation Sources in Centerline Temperature Prediction}
+\xsubsection{中心温度预测偏差来源分析}{Analysis of Sources of Error in Centerline Temperature Prediction}
 \subsubsection{缩放因子敏感性分析方法}
 为进一步识别中心温度预测偏差的来源，本文选取具有较完整寿期温度数据的五根燃料棒（IFA-597-4/.5/.6/.7r10 IFA-597-4/.5/.6/.7r11 IFA-651-r1 IFA-651-r3 IFA-651-r6）开展敏感性分析。由于燃料中心温度由体积释热、燃料热导率、燃料-包壳间隙传热、冷却剂边界条件以及燃料-包壳接触状态共同决定，仅通过单一温度曲线难以直接判断误差来源。因此，本文引入缩放因子方法，对主要热工和力学控制参数进行扰动分析，并比较不同扰动条件下模拟曲线相对于实验曲线的变化方向和变化幅度。
 
@@ -515,20 +540,18 @@ IFA-597-4-5-6-7r11的缩放因子敏感性结果如图\ref{fig:ifa597r11_tempera
 	\label{tab:ifa597r11_temperature_alpha_sensitivity_error}
 	\begin{tabular*}{\textwidth}{
 			@{\extracolsep{\fill}}
-			llccccc
+			ccccccc
 			@{}
 		}
 		\toprule
-		扰动对象 & 缩放因子 & 燃耗范围/$\mathrm{GW\,d\,t^{-1}}$ & 对比点数 & $\mathrm{MBE}/\mathrm{K}$ & $\overline{\delta T}$/\% & $\mathrm{RMSE}/\mathrm{K}$ \\
+		\multicolumn{1}{c}{扰动对象} & \multicolumn{1}{c}{缩放因子} & 燃耗范围/$\mathrm{GW\,d\,t^{-1}}$ & 对比点数 & $\mathrm{MBE}/\mathrm{K}$ & $\overline{\delta T}$/\% & $\mathrm{RMSE}/\mathrm{K}$ \\
 		\midrule
 		力学 & $\alpha_{\varepsilon}=0.5$ & 0.41--34.73 & 1414 & 341.0 & 35.57 & 390.4 \\
 		力学 & $\alpha_{\varepsilon}=1.0$ & 0.41--34.86 & 1419 & 177.8 & 20.04 & 258.0 \\
 		力学 & $\alpha_{\varepsilon}=1.5$ & 0.41--35.07 & 1426 & 54.0 & 13.80 & 185.6 \\
-		\addlinespace
 		间隙传热 & $\alpha_h=0.5$ & 0.41--35.00 & 1424 & 190.6 & 21.11 & 271.7 \\
 		间隙传热 & $\alpha_h=1.0$ & 0.41--34.86 & 1419 & 177.8 & 20.04 & 258.0 \\
 		间隙传热 & $\alpha_h=2.0$ & 0.41--34.73 & 1414 & 101.9 & 15.35 & 211.6 \\
-		\addlinespace
 		燃料热导率 & $\alpha_k=0.9$ & 0.41--34.93 & 1422 & 189.8 & 20.88 & 270.1 \\
 		燃料热导率 & $\alpha_k=1.0$ & 0.41--34.86 & 1419 & 177.8 & 20.04 & 258.0 \\
 		燃料热导率 & $\alpha_k=1.1$ & 0.41--34.79 & 1417 & 136.8 & 17.08 & 225.7 \\
@@ -616,20 +639,18 @@ IFA-597-4-5-6-7r10的缩放因子敏感性结果如图\ref{fig:ifa597r10_tempera
 	\label{tab:ifa597r10_temperature_alpha_sensitivity_error}
 	\begin{tabular*}{\textwidth}{
 			@{\extracolsep{\fill}}
-			llccccc
+			ccccccc
 			@{}
 		}
 		\toprule
-		扰动对象 & 缩放因子 & 燃耗范围/$\mathrm{GW\,d\,t^{-1}}$ & 对比点数 & $\mathrm{MBE}/\mathrm{K}$ & $\overline{\delta T}$/\% & $\mathrm{RMSE}/\mathrm{K}$ \\
+		\multicolumn{1}{c}{扰动对象} & \multicolumn{1}{c}{缩放因子} & 燃耗范围/$\mathrm{GW\,d\,t^{-1}}$ & 对比点数 & $\mathrm{MBE}/\mathrm{K}$ & $\overline{\delta T}$/\% & $\mathrm{RMSE}/\mathrm{K}$ \\
 		\midrule
 		力学 & $\alpha_{\varepsilon}=0.5$ & 0.55--36.10 & 520 & 81.1 & 8.71 & 136.1 \\
 		力学 & $\alpha_{\varepsilon}=1.0$ & 0.55--36.10 & 520 & -71.8 & 8.71 & 131.7 \\
 		力学 & $\alpha_{\varepsilon}=1.5$ & 0.55--36.10 & 520 & -167.8 & 14.58 & 201.7 \\
-		\addlinespace
 		间隙传热 & $\alpha_h=0.5$ & 0.55--36.10 & 520 & -72.0 & 9.92 & 151.3 \\
 		间隙传热 & $\alpha_h=1.0$ & 0.55--36.10 & 520 & -71.8 & 8.71 & 131.7 \\
 		间隙传热 & $\alpha_h=2.0$ & 0.55--36.10 & 520 & -117.8 & 10.90 & 152.1 \\
-		\addlinespace
 		燃料热导率 & $\alpha_k=0.9$ & 0.55--36.10 & 520 & -60.9 & 9.38 & 140.2 \\
 		燃料热导率 & $\alpha_k=1.0$ & 0.55--36.10 & 520 & -71.8 & 8.71 & 131.7 \\
 		燃料热导率 & $\alpha_k=1.1$ & 0.55--36.10 & 520 & -100.5 & 9.90 & 143.7 \\
@@ -647,36 +668,44 @@ IFA-651-r1的缩放因子敏感性结果如图\ref{fig:ifa651r1_temperature_alph
 \begin{figure}[!htb]
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
-			\centering
-			\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]
-			{IFA-651-r1/IFA-651-r1_temperature_fuel_thermal_conductivity_alpha_comparison.pdf}
-			\caption{燃料热导率缩放因子}
-			\label{fig:ifa651r1_temp_alpha_fuel_thermal_conductivity}
-		\end{subfigure}
+		\centering
+		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]
+		{IFA-651-r1/IFA-651-r1_temperature_fuel_thermal_conductivity_alpha_comparison.pdf}
+		\caption{燃料热导率缩放因子}
+		\label{fig:ifa651r1_temp_alpha_fuel_thermal_conductivity}
+	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
-			\centering
-			\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]
-			{IFA-651-r1/IFA-651-r1_temperature_gap_conductivity_alpha_comparison.pdf}
-			\caption{间隙传热缩放因子}
-			\label{fig:ifa651r1_temp_alpha_gap_conductance}
-		\end{subfigure}
+		\centering
+		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]
+		{IFA-651-r1/IFA-651-r1_temperature_gap_conductivity_alpha_comparison.pdf}
+		\caption{间隙传热缩放因子}
+		\label{fig:ifa651r1_temp_alpha_gap_conductance}
+	\end{subfigure}
 	\vspace{0.5em}
 	\begin{subfigure}[t]{0.45\textwidth}
-			\centering
-			\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]
-			{IFA-651-r1/IFA-651-r1_temperature_geometricstructure_alpha_comparison.pdf}
-			\caption{燃料几何演化缩放因子}
-			\label{fig:ifa651r1_temp_alpha_geometric_evolution}
-		\end{subfigure}
+		\centering
+		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]
+		{IFA-651-r1/IFA-651-r1_temperature_geometricstructure_alpha_comparison.pdf}
+		\caption{燃料几何演化缩放因子}
+		\label{fig:ifa651r1_temp_alpha_geometric_evolution}
+	\end{subfigure}
 	\caption{IFA-651-r1燃料中心温度对不同物理模型缩放因子的响应}
 	\label{fig:ifa651r1_temperature_alpha_sensitivity}
 \end{figure}
 
 相应的中心温度预测误差统计见表\ref{tab:ifa651r1_temperature_alpha_sensitivity_error}。
 
-{\zihao{5}
-	\begin{xltabular}{\textwidth}{llXcccc}
+{
+	\begin{xltabular}{\textwidth}{
+			c
+			c
+			>{\centering\arraybackslash}X
+			c
+			c
+			c
+			c
+		}
 		\caption{IFA-651-r1不同缩放因子下中心温度预测误差统计}
 		\label{tab:ifa651r1_temperature_alpha_sensitivity_error}\\
 		
@@ -692,7 +721,7 @@ IFA-651-r1的缩放因子敏感性结果如图\ref{fig:ifa651r1_temperature_alph
 		\endfirsthead
 		
 		\multicolumn{7}{c}{
-			\textbf{表~\thetable（续）}\quad
+			表~\thetable（续）\quad
 			IFA-651-r1不同缩放因子下中心温度预测误差统计
 		}\\
 		\toprule
@@ -737,8 +766,6 @@ IFA-651-r1的缩放因子敏感性结果如图\ref{fig:ifa651r1_temperature_alph
 		& 17.46
 		& 256.5 \\
 		
-		\addlinespace
-		
 		间隙传热
 		& $\alpha_h=0.5$
 		& 0.40--24.65
@@ -762,8 +789,6 @@ IFA-651-r1的缩放因子敏感性结果如图\ref{fig:ifa651r1_temperature_alph
 		& -155.1
 		& 16.22
 		& 230.3 \\
-		
-		\addlinespace
 		
 		燃料热导率
 		& $\alpha_k=0.9$
@@ -828,8 +853,16 @@ IFA-651-r3的缩放因子敏感性结果如图\ref{fig:ifa651r3_temperature_alph
 
 相应的中心温度预测误差统计见表\ref{tab:ifa651r3_temperature_alpha_sensitivity_error}。
 
-{\zihao{5}
-	\begin{xltabular}{\textwidth}{llXcccc}
+{
+	\begin{xltabular}{\textwidth}{
+			c
+			c
+			>{\centering\arraybackslash}X
+			c
+			c
+			c
+			c
+		}
 		\caption{IFA-651-r3不同缩放因子下中心温度预测误差统计}
 		\label{tab:ifa651r3_temperature_alpha_sensitivity_error}\\
 		
@@ -845,13 +878,13 @@ IFA-651-r3的缩放因子敏感性结果如图\ref{fig:ifa651r3_temperature_alph
 		\endfirsthead
 		
 		\multicolumn{7}{c}{
-			\textbf{表~\thetable（续）}\quad
+			{表~\thetable（续）}\quad
 			IFA-651-r3不同缩放因子下中心温度预测误差统计
 		}\\
 		\toprule
-		扰动对象 &
-		缩放因子 &
-		燃耗范围/$\mathrm{GW\,d\,t^{-1}}$ &
+		\multicolumn{1}{c}{扰动对象} &
+		\multicolumn{1}{c}{缩放因子} &
+		{\centering 燃耗范围/$\mathrm{GW\,d\,t^{-1}}$\par} &
 		对比点数 &
 		$\mathrm{MBE}/\mathrm{K}$ &
 		$\overline{\delta T}$/\% &
@@ -890,7 +923,6 @@ IFA-651-r3的缩放因子敏感性结果如图\ref{fig:ifa651r3_temperature_alph
 		& 6.96
 		& 147.4 \\
 		
-		\addlinespace
 		
 		间隙传热
 		& $\alpha_h=0.5$
@@ -916,7 +948,6 @@ IFA-651-r3的缩放因子敏感性结果如图\ref{fig:ifa651r3_temperature_alph
 		& 14.52
 		& 210.5 \\
 		
-		\addlinespace
 		
 		燃料热导率
 		& $\alpha_k=0.9$
@@ -982,62 +1013,128 @@ IFA-651-r6的缩放因子敏感性结果如图\ref{fig:ifa651r6_temperature_alph
 相应的中心温度预测误差统计见表\ref{tab:ifa651-r6_temperature_alpha_sensitivity_error}。
 
 {
-	
 	\begin{xltabular}{\textwidth}{
-			@{\extracolsep{\fill}}
-			llccccc
-			@{}
+			c
+			c
+			>{\centering\arraybackslash}X
+			c
+			c
+			c
+			c
 		}
 		
-		\caption{IFA-651-r6 不同缩放因子下中心温度预测误差统计}
-		\label{tab:ifa651-r6_temperature_alpha_sensitivity_error}
-		\\
+		\caption{IFA-651-r6不同缩放因子下中心温度预测误差统计}
+		\label{tab:ifa651-r6_temperature_alpha_sensitivity_error}\\
 		
 		\toprule
-		扰动对象 & 缩放因子 & 燃耗范围 & 对比点数 & $\mathrm{MBE}/\mathrm{K}$ & $\overline{\delta T}$/\% & $\mathrm{RMSE}/\mathrm{K}$ \\
+		扰动对象 &
+		缩放因子 &
+		燃耗范围/$\mathrm{GW\,d\,t^{-1}}$ &
+		对比点数 &
+		$\mathrm{MBE}/\mathrm{K}$ &
+		$\overline{\delta T}$/\% &
+		$\mathrm{RMSE}/\mathrm{K}$ \\
 		\midrule
 		\endfirsthead
 		
 		\multicolumn{7}{c}{
 			\textbf{表~\thetable（续）}\quad
-			IFA-651-r6 不同缩放因子下中心温度预测误差统计
-		}
-		\\
-		
+			IFA-651-r1不同缩放因子下中心温度预测误差统计
+		}\\
 		\toprule
-		扰动对象 & 缩放因子 & 燃耗范围 & 对比点数 & $\mathrm{MBE}/\mathrm{K}$ & $\overline{\delta T}$/\% & $\mathrm{RMSE}/\mathrm{K}$ \\
+		扰动对象 &
+		缩放因子 &
+		燃耗范围/$\mathrm{GW\,d\,t^{-1}}$ &
+		对比点数 &
+		$\mathrm{MBE}/\mathrm{K}$ &
+		$\overline{\delta T}$/\% &
+		$\mathrm{RMSE}/\mathrm{K}$ \\
 		\midrule
 		\endhead
 		
 		\midrule
-		\multicolumn{7}{r}{\textit{（接下页）}}
-		\\
+		\multicolumn{7}{r}{\textit{（接下页）}}\\
 		\endfoot
 		
 		\bottomrule
 		\endlastfoot
 		
-		力学 & $\alpha_{\varepsilon}=0.5$ & 0.09--22.03 & 496 & -67.9 & 16.49 & 244.5 \\
-		力学 & $\alpha_{\varepsilon}=1.0$ & 0.09--21.99 & 495 & -249.9 & 21.98 & 299.6 \\
-		力学 & $\alpha_{\varepsilon}=1.5$ & 0.09--21.94 & 494 & -455.8 & 39.59 & 471.1 \\
+		力学
+		& $\alpha_{\varepsilon}=0.5$
+		& 0.40--24.45
+		& 799
+		& -18.3
+		& 12.20
+		& 192.3 \\
 		
-		\midrule
+		力学
+		& $\alpha_{\varepsilon}=1.0$
+		& 0.40--24.50
+		& 800
+		& -87.0
+		& 14.73
+		& 227.8 \\
 		
-		间隙传热 & $\alpha_h=0.5$ & 0.09--22.16 & 499 & -104.7 & 11.96 & 206.4 \\
-		间隙传热 & $\alpha_h=1.0$ & 0.09--21.99 & 495 & -249.9 & 21.98 & 299.6 \\
-		间隙传热 & $\alpha_h=2.0$ & 0.09--21.81 & 491 & -398.6 & 34.98 & 421.0 \\
+		力学
+		& $\alpha_{\varepsilon}=1.5$
+		& 0.40--17.10
+		& 665
+		& -138.2
+		& 17.46
+		& 256.5 \\
 		
-		\midrule
+		间隙传热
+		& $\alpha_h=0.5$
+		& 0.40--24.65
+		& 803
+		& -7.0
+		& 15.41
+		& 227.8 \\
 		
-		燃料热导率 & $\alpha_k=0.9$ & 0.09--22.03 & 496 & -200.3 & 18.01 & 265.5 \\
-		燃料热导率 & $\alpha_k=1.0$ & 0.09--21.99 & 495 & -249.9 & 21.98 & 299.6 \\
-		燃料热导率 & $\alpha_k=1.1$ & 0.09--21.94 & 494 & -296.6 & 25.99 & 335.4 \\
+		间隙传热
+		& $\alpha_h=1.0$
+		& 0.40--24.50
+		& 800
+		& -87.0
+		& 14.73
+		& 227.8 \\
+		
+		间隙传热
+		& $\alpha_h=2.0$
+		& 0.40--24.45
+		& 799
+		& -155.1
+		& 16.22
+		& 230.3 \\
+		
+		燃料热导率
+		& $\alpha_k=0.9$
+		& 0.40--24.55
+		& 801
+		& -26.6
+		& 13.27
+		& 215.4 \\
+		
+		燃料热导率
+		& $\alpha_k=1.0$
+		& 0.40--24.50
+		& 800
+		& -87.0
+		& 14.73
+		& 227.8 \\
+		
+		燃料热导率
+		& $\alpha_k=1.1$
+		& 0.40--24.50
+		& 800
+		& -134.9
+		& 16.03
+		& 232.5 \\
 		
 	\end{xltabular}
-	
 }
 
-图~\ref{fig:ifa651r6_temperature_alpha_sensitivity} 和表~\ref{tab:ifa651-r6_temperature_alpha_sensitivity_error} 给出了 IFA-651-r6 的敏感性分析结果。该燃料棒基准模型明显低估中心温度，MBE 为 \(-249.9\) K，平均相对误差为 21.98\%，RMSE 为 299.6 K。减小燃料几何演化、间隙传热和燃料热导率缩放因子均能够提高中心温度并改善误差，其中 \(\alpha_h=0.5\) 的改善最为明显，平均相对误差降低至 11.96\%，RMSE 降低至 206.4 K。相反，增大 \(\alpha_{\varepsilon}\)、\(\alpha_h\) 或 \(\alpha_k\) 会使中心温度进一步降低，导致负偏差显著扩大。该结果表明，IFA-651-r6 的偏差主要与间隙传热能力偏强、燃料几何演化导致的间隙闭合过强或燃料热导率偏高有关。
+图~\ref{fig:ifa651r6_temperature_alpha_sensitivity} 和表~\ref{tab:ifa651-r6_temperature_alpha_sensitivity_error} 给出了 IFA-651-r6 的敏感性分析结果。该燃料棒基准模型总体低估中心温度，MBE 为 \(-97.1\) K，平均相对误差为 9.73\%，RMSE 为 175.8 K。减小燃料几何演化、间隙传热和燃料热导率缩放因子均能够提高中心温度并改善预测误差。其中，减小燃料几何演化缩放因子的综合改善最为明显，当 \(\alpha_{\varepsilon}=0.5\) 时，MBE 减小至 \(-19.9\) K，平均相对误差降低至 8.22\%，RMSE 降低至 159.6 K；当 \(\alpha_h=0.5\) 时，MBE 进一步接近于零，为 \(-8.0\) K，但平均相对误差和 RMSE 分别为 9.63\% 和 165.1 K。相反，增大 \(\alpha_{\varepsilon}\)、\(\alpha_h\) 或 \(\alpha_k\) 均会使中心温度进一步降低，并导致负偏差和总体预测误差增大。该结果表明，IFA-651-r6 的中心温度预测对燃料几何演化、间隙传热和燃料热导率均具有明显敏感性，其中燃料几何演化和间隙传热的影响尤为显著。
 
 \subsubsection{中心温度偏差来源综合判断}
 
@@ -1067,10 +1164,16 @@ FRAPCON-4.0积分评估报告指出，全部稳态MOX案例的预测误差标准
 	\centering
 	\caption{稳态辐照MOX燃料棒FGR实验值与不同模型预测结果}
 	\label{tab:steady_state_mox_fgr_comparison}
-	\begin{tabularx}{\textwidth}{
-			>{\raggedright\arraybackslash}X c c c c c}
+	\begin{tabularx}{\linewidth}{@{}
+			>{\hsize=1.55\hsize\centering\arraybackslash}X
+			>{\hsize=1.05\hsize\centering\arraybackslash}X
+			>{\hsize=0.85\hsize\centering\arraybackslash}X
+			>{\hsize=1.00\hsize\centering\arraybackslash}X
+			>{\hsize=0.70\hsize\centering\arraybackslash}X
+			>{\hsize=0.85\hsize\centering\arraybackslash}X
+			@{}}
 		\toprule
-		Rod &
+		{\centering Rod\par} &
 		\begin{tabular}[c]{@{}c@{}}
 			平均燃耗\\
 			$\mathrm{GW\,d\,t^{-1}}$
@@ -1114,7 +1217,6 @@ FRAPCON-4.0积分评估报告指出，全部稳态MOX案例的预测误差标准
 		
 		\bottomrule
 		\multicolumn{6}{l}{
-			\zihao{6}
 			$^{*}$基于棒内压力数据推算的寿期末FGR，
 			其不确定性高于穿刺法直接测量结果。}
 	\end{tabularx}
@@ -1160,8 +1262,15 @@ FRAPCON-4.0积分评估报告指出，全部稳态MOX案例的预测误差标准
 	\centering
 	\caption{稳态辐照MOX燃料棒FGR预测误差统计}
 	\label{tab:steady_state_mox_fgr_statistics}
-	\begin{tabularx}{\textwidth}{
-			>{\raggedright\arraybackslash}Xccccc}
+	
+	\begin{tabularx}{\linewidth}{@{}
+			>{\centering\arraybackslash}m{2.4cm}
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			@{}}
 		\toprule
 		模型 &
 		$\mathrm{MBE}/\%$ &
@@ -1170,9 +1279,11 @@ FRAPCON-4.0积分评估报告指出，全部稳态MOX案例的预测误差标准
 		$|\Delta F|/\%\leq5$ &
 		$|\Delta F|/\%\leq10$ \\
 		\midrule
+		
 		FRAPCON-4.0 & 1.86  & 6.62 & 8.98 & 9/18  & 13/18 \\
 		ForMas      & -2.55 & 6.90 & 9.18 & 10/18 & 13/18 \\
 		SCIANTIX    & 1.39  & 4.76 & 6.16 & 13/18 & 15/18 \\
+		
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -1187,7 +1298,7 @@ FRAPCON-4.0积分评估报告指出，全部稳态MOX案例的预测误差标准
 
 
 \xsubsection{功率提升工况FGR终值验证与动态响应}
-{End-of-Life Validation and Dynamic FGR Response under Power-Ramp Conditions}
+{Validation of Final FGR Values and Dynamic Response under Power-Ramp Conditions}
 
 为进一步评价裂变气体模型对功率提升工况的响应能力，选取M501系列8根MOX燃料棒进行计算。与前述稳态案例不同，M501燃料棒在长期辐照后经历了寿期末短时间高功率运行。其中HR系列和MR-1至MR-3的高功率阶段持续约$12\,\mathrm{h}$，而MR-4的高功率阶段仅持续约$20\,\mathrm{min}$，因此该组案例能够同时反映功率提升幅度和高温持续时间对裂变气体释放的影响。
 
@@ -1199,8 +1310,6 @@ M501案例的实验测量值、FRAPCON-4.0结果以及ForMas和SCIANTIX计算结
 	\centering
 	\caption{M501功率提升MOX燃料棒FGR实验值与不同模型计算结果}
 	\label{tab:m501_fgr_comparison}
-	
-	\zihao{5}
 	
 	\begin{tabularx}{\linewidth}{
 			@{}
@@ -1268,8 +1377,15 @@ M501案例的实验测量值、FRAPCON-4.0结果以及ForMas和SCIANTIX计算结
 	\centering
 	\caption{M501功率提升MOX燃料棒FGR计算偏差统计}
 	\label{tab:m501_fgr_statistics}
-	\begin{tabularx}{\textwidth}{
-			>{\raggedright\arraybackslash}Xccccc}
+	
+	\begin{tabularx}{\linewidth}{@{}
+			>{\centering\arraybackslash}m{2.4cm}
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			>{\centering\arraybackslash}X
+			@{}}
 		\toprule
 		模型 &
 		$\mathrm{MBE}/\%$ &
@@ -1278,9 +1394,11 @@ M501案例的实验测量值、FRAPCON-4.0结果以及ForMas和SCIANTIX计算结
 		$|\Delta F|/\%\leq5$ &
 		$|\Delta F|/\%\leq10$ \\
 		\midrule
+		
 		FRAPCON-4.0 & 10.35 & 10.35 & 10.90 & 1/8 & 3/8 \\
 		ForMas      & -4.91 & 5.45  & 7.03  & 5/8 & 6/8 \\
 		SCIANTIX    & -4.19 & 4.81  & 6.32  & 5/8 & 7/8 \\
+		
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -1348,40 +1466,13 @@ M501 MR-4的高功率阶段仅持续$20\,\mathrm{min}$，而其余案例主要�
 	\dot{f}(t),\,
 	d_{\mathrm{g}},\,
 	t_{\mathrm{high}}
-	\right],
+	\right]
 	\label{eq:fgr_operating_dependence}
 \end{equation}
 \noindent 式中：$B(t)$为燃耗历史；$T(t)$为燃料温度历史；$\dot{f}(t)$为裂变率历史；$d_{\mathrm{g}}$为晶粒尺度；$t_{\mathrm{high}}$为高温持续时间。式~\eqref{eq:fgr_operating_dependence}并非新的经验关联式，而是用于归纳本节验证案例所反映的主要影响因素。其中，燃耗决定裂变气体的累积生成水平，而温度和时间历史进一步控制气体迁移、气泡演化和最终释放过程。
 
-% 建议加入实验值-预测值散点图
-%
-% \begin{figure}[htbp]
-	% 	\centering
-	% 	\includegraphics[width=0.72\textwidth]
-	% 	{Figures/fgr_prediction_vs_measurement.pdf}
-	% 	\caption{不同裂变气体模型预测FGR与实验结果对比}
-	% 	\label{fig:fgr_prediction_vs_measurement}
-	% \end{figure}
-%
-% 横坐标：实验FGR
-% 纵坐标：计算FGR
-% 同时绘制y=x参考线
-% 数据系列：FRAPCON-4.0、ForMas、SCIANTIX
-
-
-% 建议加入燃耗-偏差关系图
-%
-% \begin{figure}[htbp]
-	% 	\centering
-	% 	\includegraphics[width=0.72\textwidth]
-	% 	{Figures/fgr_error_vs_burnup.pdf}
-	% 	\caption{不同模型FGR预测偏差随燃耗的变化}
-	% 	\label{fig:fgr_error_vs_burnup}
-	% \end{figure}
-
-
 \xsubsection{模型差异与适用性分析}
-{Model Differences and Applicability}
+{Analysis of Model Differences and Applicability}
 
 综合稳态辐照和功率提升案例可以看出，ForMas与SCIANTIX计算结果的差异主要来源于两种模型对裂变气体迁移、气泡演化及晶界释放过程描述层次的不同。ForMas采用相对简化的扩散--晶界累积--饱和释放处理，通过较少的状态变量描述裂变气体由晶内向晶界迁移并最终释放至自由空间的过程，因而具有较低的计算成本和较好的数值稳定性。该模型能够描述多数中低释放工况下FGR的总体变化，但对于部分高释放稳态案例和高功率提升案例，计算结果表现出较明显的低估。
 
