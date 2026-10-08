@@ -1,6 +1,6 @@
 \contentsline {chapter}{ABSTRACT (Chinese)}{I}{section*.3}%
 \contentsline {chapter}{ABSTRACT (English)}{III}{section*.6}%
-\contentsline {chapter}{Glossary}{XV}{section*.10}%
+\contentsline {chapter}{Glossary}{XVII}{section*.10}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{section*.15}%
 \contentsline {section}{\numberline {1.1}Research Background and Significance}{1}{section*.18}%
 \contentsline {section}{\numberline {1.2}State of the Art at Home and Abroad}{2}{section*.21}%
@@ -10,135 +10,137 @@
 \contentsline {subsection}{\numberline {1.2.4}Rapid Prediction and Surrogate Modeling for Fuel Performance}{7}{section*.33}%
 \contentsline {subsection}{\numberline {1.2.5}Summary of Research Status and Scope of This Work}{8}{section*.36}%
 \contentsline {section}{\numberline {1.3}Research Contents of This Dissertation}{8}{section*.41}%
-\contentsline {chapter}{\numberline {2}Fundamental Material Properties and In-Reactor Behavior Models for Oxide Fuel Elements}{11}{section*.46}%
+\contentsline {chapter}{\numberline {2}Governing Equations and Overall Multiphysics Modeling Framework for Oxide Fuel Elements}{11}{section*.46}%
 \contentsline {section}{\numberline {2.1}Introduction}{11}{section*.49}%
-\contentsline {section}{\numberline {2.2}Fundamental Thermophysical Properties of MOX Fuel}{12}{section*.54}%
-\contentsline {subsection}{\numberline {2.2.1}Phase Transition Temperatures}{13}{section*.57}%
-\contentsline {subsection}{\numberline {2.2.2}Thermal Conductivity}{13}{section*.60}%
-\contentsline {subsection}{\numberline {2.2.3}Specific Heat Capacity}{14}{section*.65}%
-\contentsline {subsection}{\numberline {2.2.4}Emissivity}{15}{section*.70}%
-\contentsline {subsection}{\numberline {2.2.5}Thermal Expansion}{15}{section*.73}%
-\contentsline {subsection}{\numberline {2.2.6}Density}{16}{section*.78}%
-\contentsline {section}{\numberline {2.3}Mechanical Properties of MOX Fuel}{16}{section*.81}%
-\contentsline {subsection}{\numberline {2.3.1}Elastic Properties}{16}{section*.84}%
-\contentsline {subsection}{\numberline {2.3.2}Creep}{17}{section*.89}%
-\contentsline {subsection}{\numberline {2.3.3}Relocation}{18}{section*.94}%
-\contentsline {subsection}{\numberline {2.3.4}Irradiation-induced Densification}{19}{section*.97}%
-\contentsline {subsection}{\numberline {2.3.5}Fission-product Swelling}{20}{section*.100}%
-\contentsline {subsection}{\numberline {2.3.6}Fuel Restructuring}{20}{section*.103}%
-\contentsline {section}{\numberline {2.4}Fuel--Cladding Gap Heat Transfer Model}{20}{section*.106}%
-\contentsline {subsection}{\numberline {2.4.1}Total Gap Heat-transfer Coefficient}{21}{section*.109}%
-\contentsline {subsection}{\numberline {2.4.2}Fill-gas Conduction}{21}{section*.112}%
-\contentsline {subsection}{\numberline {2.4.3}Solid--solid Contact Conduction}{22}{section*.115}%
-\contentsline {subsection}{\numberline {2.4.4}Thermal Radiation}{23}{section*.118}%
-\contentsline {subsection}{\numberline {2.4.5}Coupling Variables and Applicability}{23}{section*.121}%
-\contentsline {section}{\numberline {2.5}SCIANTIX Fission Gas Behavior Model}{24}{section*.126}%
-\contentsline {subsection}{\numberline {2.5.1}Program Scope and Physical Framework}{24}{section*.129}%
-\contentsline {subsection}{\numberline {2.5.2}Key Governing Relations}{25}{section*.134}%
-\contentsline {subsection}{\numberline {2.5.3}Inputs, Outputs, and Coupling Method}{26}{section*.137}%
-\contentsline {section}{\numberline {2.6}In-reactor Behavior Models for Cladding Materials}{27}{section*.142}%
-\contentsline {subsection}{\numberline {2.6.1}Thermophysical Properties}{27}{section*.147}%
-\contentsline {subsection}{\numberline {2.6.2}Elastic--plastic Response}{29}{section*.152}%
-\contentsline {subsection}{\numberline {2.6.3}Irradiation-induced Swelling}{30}{section*.157}%
-\contentsline {subsection}{\numberline {2.6.4}Thermal and Irradiation Creep}{31}{section*.160}%
-\contentsline {subsection}{\numberline {2.6.5}Strength, Ductility, and Failure Criteria}{32}{section*.163}%
-\contentsline {chapter}{\numberline {3}A Unified Strongly Coupled Model for Microstructural Restructuring, Multicomponent Migration, and Oxygen Stoichiometry Evolution in Fast-Reactor MOX Fuel}{33}{section*.166}%
-\contentsline {section}{\numberline {3.1}Introduction}{33}{section*.169}%
-\contentsline {section}{\numberline {3.2}Pore Migration and Fuel Restructuring Kinetics Model}{34}{section*.172}%
-\contentsline {subsection}{\numberline {3.2.1}Governing Equation of Pore Transport}{34}{section*.175}%
-\contentsline {subsection}{\numberline {3.2.2}Pore Migration Velocity Models}{35}{section*.178}%
-\contentsline {subsection}{\numberline {3.2.3}Numerical Discretization and Stabilization}{38}{section*.188}%
-\contentsline {subsection}{\numberline {3.2.4}Computational Framework}{40}{section*.196}%
-\contentsline {subsection}{\numberline {3.2.5}Verification of Pore Migration Velocity Models}{43}{section*.205}%
-\contentsline {subsection}{\numberline {3.2.6}Sensitivity Analysis of Key Parameters}{51}{section*.233}%
-\contentsline {section}{\numberline {3.3}Thermal Diffusion and Redistribution Model for Plutonium}{54}{section*.252}%
-\contentsline {subsection}{\numberline {3.3.1}Migration Mechanism of Plutonium}{54}{section*.255}%
-\contentsline {subsection}{\numberline {3.3.2}Effective Diffusion Coefficient}{57}{section*.258}%
-\contentsline {subsection}{\numberline {3.3.3}Gas-phase Migration Mechanism and Parameter Settings}{61}{section*.265}%
-\contentsline {subsection}{\numberline {3.3.4}Analytical Solution under Temperature Gradient}{63}{section*.268}%
-\contentsline {subsection}{\numberline {3.3.5}Computational Framework}{64}{section*.271}%
-\contentsline {subsection}{\numberline {3.3.6}Verification of Plutonium Redistribution}{64}{section*.276}%
-\contentsline {subsection}{\numberline {3.3.7}Comparison and Assessment Against Literature Experiments}{66}{section*.283}%
-\contentsline {subsection}{\numberline {3.3.8}Sensitivity Analysis}{71}{section*.296}%
-\contentsline {subsection}{\numberline {3.3.9}Extended Discussion of Americium Redistribution}{76}{section*.321}%
-\contentsline {section}{\numberline {3.4}O/M Distribution and Its Coupling Effects}{78}{section*.332}%
-\contentsline {subsection}{\numberline {3.4.1}Migration Mechanism of the Oxygen-to-Metal Ratio}{80}{section*.335}%
-\contentsline {subsection}{\numberline {3.4.2}Key Parameters}{81}{section*.338}%
-\contentsline {subsection}{\numberline {3.4.3}Model Verification}{84}{section*.343}%
-\contentsline {section}{\numberline {3.5}Summary}{86}{section*.350}%
-\contentsline {chapter}{\numberline {4}Coupled Implementation and Verification of Fuel Mechanical Nonlinearity, Fission Gas, and Gap Heat Transfer Models}{87}{section*.353}%
-\contentsline {section}{\numberline {4.1}Introduction}{87}{section*.356}%
-\contentsline {section}{\numberline {4.2}Discretization and Implicit Integration of Thermo-Elasto-Plastic Mechanics}{87}{section*.359}%
-\contentsline {subsection}{\numberline {4.2.1}Governing Equations and Weak Form of Thermo-Elasto-Plasticity}{87}{section*.362}%
-\contentsline {subsection}{\numberline {4.2.2}Derivation of the Radial Return Algorithm}{90}{section*.365}%
-\contentsline {subsection}{\numberline {4.2.3}Code Implementation and Computational Framework}{95}{section*.372}%
-\contentsline {section}{\numberline {4.3}Fission Gas and Gap Thermal Conductance Models}{97}{section*.383}%
-\contentsline {subsection}{\numberline {4.3.1}Forsberg--Massih Fission Gas Model}{98}{section*.386}%
-\contentsline {subsection}{\numberline {4.3.2}Mechanistic Fission Gas Model SCIANTIX and Its Interface Implementation}{102}{section*.392}%
-\contentsline {subsection}{\numberline {4.3.3}Gap Heat Transfer Model Implementation}{104}{section*.398}%
-\contentsline {subsection}{\numberline {4.3.4}Coupling between Fission Gas Release and Gap Heat Transfer}{106}{section*.403}%
-\contentsline {section}{\numberline {4.4}Verification and Validation of the Implementation}{107}{section*.408}%
-\contentsline {subsection}{\numberline {4.4.1}Verification of the Radial Return Algorithm}{107}{section*.411}%
-\contentsline {subsection}{\numberline {4.4.2}Numerical Testing and Benchmark Comparison of Fission Gas Models}{112}{section*.435}%
-\contentsline {subsection}{\numberline {4.4.3}Numerical Testing and Response Analysis of the Gap Heat Transfer Model}{118}{section*.458}%
-\contentsline {section}{\numberline {4.5}Summary}{119}{section*.463}%
-\contentsline {chapter}{\numberline {5}Rod-Level Validation and Applicability Assessment of Fuel Centerline Temperature and Fission Gas Release Models}{121}{section*.466}%
-\contentsline {section}{\numberline {5.1}Introduction}{121}{section*.469}%
-\contentsline {section}{\numberline {5.2}Validation Data, Computational Models, and Evaluation Methodology}{121}{section*.472}%
-\contentsline {subsection}{\numberline {5.2.1}Sources of Public Benchmark Data and Supplementary Experimental Data}{121}{section*.475}%
-\contentsline {subsection}{\numberline {5.2.2}Settings of the ForMas and SCIANTIX Fission Gas Models}{125}{section*.481}%
-\contentsline {subsection}{\numberline {5.2.3}Computational Inputs, Boundary Conditions, and Result Extraction Methods}{126}{section*.484}%
-\contentsline {subsection}{\numberline {5.2.4}Error Evaluation Metrics}{128}{section*.489}%
-\contentsline {section}{\numberline {5.3}Validation of Fuel Centerline Temperature}{130}{section*.492}%
-\contentsline {subsection}{\numberline {5.3.1}Validation of Centerline Temperature Evolution with Burnup}{130}{section*.495}%
-\contentsline {subsection}{\numberline {5.3.2}Analysis of Sources of Error in Centerline Temperature Prediction}{135}{section*.508}%
-\contentsline {section}{\numberline {5.4}Validation and Comparison of Fission Gas Release Models}{143}{section*.533}%
-\contentsline {subsection}{\numberline {5.4.1}FGR Validation and Model Comparison under Steady-State Irradiation}{144}{section*.536}%
-\contentsline {subsection}{\numberline {5.4.2}Validation of Final FGR Values and Dynamic Response under Power-Ramp Conditions}{146}{section*.543}%
-\contentsline {subsection}{\numberline {5.4.3}FGR Characteristics under Different Operating Conditions}{150}{section*.554}%
-\contentsline {subsection}{\numberline {5.4.4}Analysis of Model Differences and Applicability}{152}{section*.557}%
-\contentsline {section}{\numberline {5.5}Summary}{152}{section*.560}%
-\contentsline {chapter}{\numberline {6}Fast Fuel Performance Prediction Using a POD--LSTM Surrogate Model}{154}{section*.563}%
-\contentsline {section}{\numberline {6.1}Fuel Performance Dataset Construction and Preprocessing}{154}{section*.566}%
-\contentsline {subsection}{\numberline {6.1.1}High-Fidelity Fuel Performance Model and Prediction Variables}{154}{section*.569}%
-\contentsline {subsection}{\numberline {6.1.2}Mesh Sensitivity Analysis and Selection of the Training Mesh}{155}{section*.574}%
-\contentsline {subsection}{\numberline {6.1.3}Parameter Space and Stage-Wise Design of Simulation Cases}{157}{section*.583}%
-\contentsline {subsection}{\numberline {6.1.4}Field Snapshot Collection, Temporal Synchronization, and Data Integrity}{159}{section*.594}%
-\contentsline {section}{\numberline {6.2}POD-Based Reduced-Order Representation of Fuel Performance Fields}{160}{section*.597}%
-\contentsline {subsection}{\numberline {6.2.1}Snapshot Matrix and Reference Field}{160}{section*.600}%
-\contentsline {subsection}{\numberline {6.2.2}POD Mode Extraction and Rank Selection}{160}{section*.603}%
-\contentsline {subsection}{\numberline {6.2.3}Projection of POD Coefficients and Full-Field Reconstruction}{161}{section*.608}%
-\contentsline {subsection}{\numberline {6.2.4}POD Representational Capability for Independent Blind-Test Cases}{162}{section*.611}%
-\contentsline {subsection}{\numberline {6.2.5}Re-selection of the POD Rank for the Variable-Power Dataset}{162}{section*.616}%
-\contentsline {section}{\numberline {6.3}Baseline Surrogate Models under Fixed-Shape Power Histories}{163}{section*.623}%
-\contentsline {subsection}{\numberline {6.3.1}Inputs and Outputs of the Baseline Models}{163}{section*.626}%
-\contentsline {subsection}{\numberline {6.3.2}Baseline Model Based on POD-Coefficient Interpolation}{164}{section*.629}%
-\contentsline {subsection}{\numberline {6.3.3}POD--GPR Surrogate Model for the Baseline Stage}{164}{section*.632}%
-\contentsline {subsection}{\numberline {6.3.4}Validation and Independent Blind-Test Results of the Single-Parameter Models}{164}{section*.635}%
-\contentsline {subsection}{\numberline {6.3.5}Two-Dimensional Full-Field Reconstruction Results of the Single-Parameter Surrogate Models}{165}{section*.640}%
-\contentsline {section}{\numberline {6.4}POD--LSTM Model for Variable Power Histories}{167}{section*.649}%
-\contentsline {subsection}{\numberline {6.4.1}Temporal Modeling Strategy and Input Features}{167}{section*.652}%
-\contentsline {subsection}{\numberline {6.4.2}POD-Coefficient Increments and Trainable Initial States}{168}{section*.655}%
-\contentsline {subsection}{\numberline {6.4.3}Shared Recurrent Trunk and Field-Specific Output Heads}{169}{section*.659}%
-\contentsline {subsection}{\numberline {6.4.4}Loss Function, Training, and Model Freezing}{169}{section*.664}%
-\contentsline {section}{\numberline {6.5}Prediction Results and Discussion of the POD--LSTM Model}{170}{section*.667}%
-\contentsline {subsection}{\numberline {6.5.1}Error Metrics}{170}{section*.670}%
-\contentsline {subsection}{\numberline {6.5.2}Dataset Coverage and POD Projection Accuracy}{171}{section*.673}%
-\contentsline {subsection}{\numberline {6.5.3}Training Convergence and Validation Performance}{171}{section*.678}%
-\contentsline {subsection}{\numberline {6.5.4}Overall Accuracy on the Independent Blind-Test Set}{172}{section*.685}%
-\contentsline {subsection}{\numberline {6.5.5}Error Histories and Critical Transients}{173}{section*.692}%
-\contentsline {subsection}{\numberline {6.5.6}Full Two-Dimensional Field Reconstruction}{174}{section*.697}%
-\contentsline {subsection}{\numberline {6.5.7}Online Prediction Example for an Independent Power History}{175}{section*.702}%
-\contentsline {subsection}{\numberline {6.5.8}Computational Efficiency and Speedup}{177}{section*.709}%
-\contentsline {section}{\numberline {6.6}Applicability and Model Limitations}{178}{section*.713}%
-\contentsline {section}{\numberline {6.7}Chapter Summary}{178}{section*.716}%
-\contentsline {chapter}{\numberline {7}Conclusions and Outlook}{180}{section*.719}%
-\contentsline {section}{\numberline {7.1}Main Research Work and Conclusions}{180}{section*.722}%
-\contentsline {section}{\numberline {7.2}Main Innovations}{181}{section*.725}%
-\contentsline {section}{\numberline {7.3}Research Outlook}{182}{section*.728}%
-\contentsline {chapter}{Acknowledgements}{184}{section*.730}%
-\contentsline {chapter}{References}{185}{section*.733}%
-\contentsline {chapter}{Appendices}{200}{section*.736}%
-\contentsline {chapter}{Achievements}{232}{section*.851}%
-\contentsline {chapter}{Decision of Defense Committee}{234}{section*.854}%
-\contentsline {chapter}{General Reviewers List}{235}{section*.858}%
+\contentsline {section}{\numberline {2.2}Fuel-rod Computational Domain and Multiphysics Coupling}{11}{section*.52}%
+\contentsline {subsection}{\numberline {2.2.1}Computational Regions and Model Hierarchy}{11}{section*.55}%
+\contentsline {subsection}{\numberline {2.2.2}Primary State Variables and Overall Coupling Relations}{13}{section*.61}%
+\contentsline {section}{\numberline {2.3}Heat Conduction and Coolant Thermal Boundary}{14}{section*.64}%
+\contentsline {subsection}{\numberline {2.3.1}Governing Equation of Heat Conduction in Fuel and Cladding}{14}{section*.67}%
+\contentsline {subsection}{\numberline {2.3.2}One-dimensional Coolant Enthalpy-rise Model}{15}{section*.70}%
+\contentsline {subsection}{\numberline {2.3.3}Cladding--Coolant Convective Heat-transfer Boundary}{16}{section*.73}%
+\contentsline {section}{\numberline {2.4}Governing Equations of Fuel and Cladding Mechanics}{17}{section*.76}%
+\contentsline {subsection}{\numberline {2.4.1}Quasi-static Equilibrium and Strain Relations}{17}{section*.79}%
+\contentsline {subsection}{\numberline {2.4.2}Pressure Loading and Fuel--Cladding Contact}{18}{section*.82}%
+\contentsline {section}{\numberline {2.5}Governing Equations of Microstructural and Constituent Transport}{19}{section*.85}%
+\contentsline {subsection}{\numberline {2.5.1}Pore Migration and Porosity Transport}{19}{section*.88}%
+\contentsline {subsection}{\numberline {2.5.2}Transport of Pu and Am}{20}{section*.91}%
+\contentsline {subsection}{\numberline {2.5.3}O/M Evolution and Oxygen-defect Transport}{21}{section*.94}%
+\contentsline {section}{\numberline {2.6}Fission Gas and Fuel-rod Free-volume State}{21}{section*.97}%
+\contentsline {subsection}{\numberline {2.6.1}Engineering Interface of Fission-gas Models}{22}{section*.100}%
+\contentsline {subsection}{\numberline {2.6.2}Gas Composition and Plenum Pressure}{22}{section*.103}%
+\contentsline {section}{\numberline {2.7}Fuel--Cladding Interfacial Heat-transfer Relations}{23}{section*.106}%
+\contentsline {subsection}{\numberline {2.7.1}Gap Heat-flux Boundary Condition}{23}{section*.109}%
+\contentsline {subsection}{\numberline {2.7.2}Closure Parameters and Feedback Paths of Gap Heat Transfer}{24}{section*.112}%
+\contentsline {section}{\numberline {2.8}Closure Requirements and Unified Solution Relations}{24}{section*.115}%
+\contentsline {section}{\numberline {2.9}Summary}{25}{section*.120}%
+\contentsline {chapter}{\numberline {3}Material Behavior and Microstructural Evolution Models for Fast-Reactor MOX Fuel Elements}{27}{section*.123}%
+\contentsline {section}{\numberline {3.1}Introduction}{27}{section*.126}%
+\contentsline {section}{\numberline {3.2}Selection of Material Property and In-reactor Behavior Models}{27}{section*.129}%
+\contentsline {subsection}{\numberline {3.2.1}Selection of Thermophysical Property Models for MOX Fuel}{27}{section*.132}%
+\contentsline {subsection}{\numberline {3.2.2}Selection of Mechanical and Irradiation Behavior Models for MOX Fuel}{28}{section*.137}%
+\contentsline {subsection}{\numberline {3.2.3}Selection of Fast-reactor Cladding Material Models}{29}{section*.142}%
+\contentsline {section}{\numberline {3.3}Pore Migration and Fuel Restructuring Kinetics Model}{29}{section*.147}%
+\contentsline {subsection}{\numberline {3.3.1}Pore Migration Mechanisms and Closure of the Transport Equation}{29}{section*.150}%
+\contentsline {subsection}{\numberline {3.3.2}Pore Migration Velocity Models}{30}{section*.153}%
+\contentsline {subsection}{\numberline {3.3.3}Numerical Discretization and Stabilization}{33}{section*.163}%
+\contentsline {subsection}{\numberline {3.3.4}Computational Framework}{35}{section*.171}%
+\contentsline {subsection}{\numberline {3.3.5}Verification of Pore Migration Velocity Models}{37}{section*.180}%
+\contentsline {subsection}{\numberline {3.3.6}Sensitivity Analysis of Key Parameters}{46}{section*.208}%
+\contentsline {section}{\numberline {3.4}Transport and Redistribution Models of Pu and Am}{49}{section*.227}%
+\contentsline {subsection}{\numberline {3.4.1}Migration Mechanism of Plutonium}{50}{section*.230}%
+\contentsline {subsection}{\numberline {3.4.2}Effective Diffusion Coefficient}{52}{section*.233}%
+\contentsline {subsection}{\numberline {3.4.3}Gas-phase Migration Mechanism and Parameter Settings}{56}{section*.240}%
+\contentsline {subsection}{\numberline {3.4.4}Analytical Solution under Temperature Gradient}{58}{section*.243}%
+\contentsline {subsection}{\numberline {3.4.5}Computational Framework}{59}{section*.246}%
+\contentsline {subsection}{\numberline {3.4.6}Verification of Plutonium Redistribution}{60}{section*.251}%
+\contentsline {subsection}{\numberline {3.4.7}Comparison and Assessment Against Literature Experiments}{62}{section*.258}%
+\contentsline {subsection}{\numberline {3.4.8}Sensitivity Analysis}{66}{section*.271}%
+\contentsline {subsection}{\numberline {3.4.9}Extended Discussion of Americium Redistribution}{71}{section*.296}%
+\contentsline {section}{\numberline {3.5}O/M Evolution and Oxygen-defect Transport Model}{74}{section*.307}%
+\contentsline {subsection}{\numberline {3.5.1}Migration Mechanism of the Oxygen-to-Metal Ratio}{75}{section*.310}%
+\contentsline {subsection}{\numberline {3.5.2}Key Parameters}{76}{section*.313}%
+\contentsline {subsection}{\numberline {3.5.3}Model Verification}{80}{section*.318}%
+\contentsline {section}{\numberline {3.6}Summary}{80}{section*.325}%
+\contentsline {chapter}{\numberline {4}Coupled Implementation and Verification of Fuel Mechanical Nonlinearity, Fission Gas, and Gap Heat Transfer Models}{82}{section*.328}%
+\contentsline {section}{\numberline {4.1}Introduction}{82}{section*.331}%
+\contentsline {section}{\numberline {4.2}Discretization and Implicit Integration of Thermo-Elasto-Plastic Mechanics}{82}{section*.334}%
+\contentsline {subsection}{\numberline {4.2.1}Numerical Discretization of the Nonlinear Mechanical Problem}{82}{section*.337}%
+\contentsline {subsection}{\numberline {4.2.2}Radial Return Algorithm}{83}{section*.340}%
+\contentsline {subsection}{\numberline {4.2.3}Code Implementation and Computational Framework}{85}{section*.345}%
+\contentsline {section}{\numberline {4.3}Fission Gas and Gap Heat Transfer Models}{87}{section*.355}%
+\contentsline {subsection}{\numberline {4.3.1}Forsberg--Massih Fission Gas Model}{87}{section*.358}%
+\contentsline {subsection}{\numberline {4.3.2}Mechanistic Fission Gas Model SCIANTIX and Its Interface Implementation}{91}{section*.364}%
+\contentsline {subsection}{\numberline {4.3.3}Gap Heat Transfer Model Implementation}{93}{section*.369}%
+\contentsline {subsection}{\numberline {4.3.4}Coupling between Fission Gas Release and Gap Heat Transfer}{95}{section*.374}%
+\contentsline {section}{\numberline {4.4}Verification and Validation of the Implementation}{96}{section*.379}%
+\contentsline {subsection}{\numberline {4.4.1}Verification of the Radial Return Algorithm}{97}{section*.382}%
+\contentsline {subsection}{\numberline {4.4.2}Numerical Testing and Benchmark Comparison of Fission Gas Models}{102}{section*.406}%
+\contentsline {subsection}{\numberline {4.4.3}Numerical Testing and Response Analysis of the Gap Heat Transfer Model}{108}{section*.429}%
+\contentsline {section}{\numberline {4.5}Summary}{109}{section*.434}%
+\contentsline {chapter}{\numberline {5}Rod-Level Validation and Applicability Assessment of Fuel Centerline Temperature and Fission Gas Release Models}{110}{section*.437}%
+\contentsline {section}{\numberline {5.1}Introduction}{110}{section*.440}%
+\contentsline {section}{\numberline {5.2}Validation Data, Computational Models, and Evaluation Methodology}{110}{section*.443}%
+\contentsline {subsection}{\numberline {5.2.1}Sources of Public Benchmark Data and Supplementary Experimental Data}{110}{section*.446}%
+\contentsline {subsection}{\numberline {5.2.2}Settings of the ForMas and SCIANTIX Fission Gas Models}{114}{section*.452}%
+\contentsline {subsection}{\numberline {5.2.3}Computational Inputs, Boundary Conditions, and Result Extraction Methods}{115}{section*.455}%
+\contentsline {subsection}{\numberline {5.2.4}Error Evaluation Metrics}{117}{section*.460}%
+\contentsline {section}{\numberline {5.3}Validation of Fuel Centerline Temperature}{119}{section*.463}%
+\contentsline {subsection}{\numberline {5.3.1}Validation of Centerline Temperature Evolution with Burnup}{119}{section*.466}%
+\contentsline {subsection}{\numberline {5.3.2}Analysis of Sources of Error in Centerline Temperature Prediction}{122}{section*.479}%
+\contentsline {section}{\numberline {5.4}Validation and Comparison of Fission Gas Release Models}{132}{section*.504}%
+\contentsline {subsection}{\numberline {5.4.1}FGR Validation and Model Comparison under Steady-State Irradiation}{132}{section*.507}%
+\contentsline {subsection}{\numberline {5.4.2}Validation of Final FGR Values and Dynamic Response under Power-Ramp Conditions}{135}{section*.514}%
+\contentsline {subsection}{\numberline {5.4.3}FGR Characteristics under Different Operating Conditions}{138}{section*.525}%
+\contentsline {subsection}{\numberline {5.4.4}Analysis of Model Differences and Applicability}{140}{section*.528}%
+\contentsline {section}{\numberline {5.5}Summary}{140}{section*.531}%
+\contentsline {chapter}{\numberline {6}Fast Fuel Performance Prediction Using a POD--LSTM Surrogate Model}{142}{section*.534}%
+\contentsline {section}{\numberline {6.1}Introduction}{142}{section*.537}%
+\contentsline {section}{\numberline {6.2}Theoretical Basis of POD--LSTM Reduced-Order Surrogate Modeling}{143}{section*.540}%
+\contentsline {subsection}{\numberline {6.2.1}Proper Orthogonal Decomposition and Optimal Low-Dimensional Representation}{143}{section*.543}%
+\contentsline {subsection}{\numberline {6.2.2}Snapshot Matrix, Singular Value Decomposition, and Field Reconstruction}{143}{section*.546}%
+\contentsline {subsection}{\numberline {6.2.3}Principle of LSTM-Based Temporal State Modeling}{145}{section*.549}%
+\contentsline {subsection}{\numberline {6.2.4}Non-Intrusive POD--LSTM Surrogate Framework}{145}{section*.552}%
+\contentsline {section}{\numberline {6.3}Fuel Performance Dataset Construction and Preprocessing}{146}{section*.555}%
+\contentsline {subsection}{\numberline {6.3.1}High-Fidelity Fuel Performance Model and Prediction Variables}{146}{section*.558}%
+\contentsline {subsection}{\numberline {6.3.2}Mesh Sensitivity Analysis and Selection of the Training Mesh}{147}{section*.563}%
+\contentsline {subsection}{\numberline {6.3.3}Parameter Space and Stage-Wise Design of Simulation Cases}{149}{section*.572}%
+\contentsline {subsection}{\numberline {6.3.4}Field Snapshot Collection, Temporal Synchronization, and Data Integrity}{150}{section*.583}%
+\contentsline {section}{\numberline {6.4}POD-Based Reduced-Order Representation of Fuel Performance Fields}{151}{section*.586}%
+\contentsline {subsection}{\numberline {6.4.1}Snapshot Construction and Reference Fields for Fuel Performance Fields}{151}{section*.589}%
+\contentsline {subsection}{\numberline {6.4.2}POD Rank Selection and Spatial Compression}{152}{section*.592}%
+\contentsline {subsection}{\numberline {6.4.3}Low-Dimensional Coefficients and Full-Field Reconstruction}{152}{section*.597}%
+\contentsline {subsection}{\numberline {6.4.4}POD Representational Capability for Independent Blind-Test Cases}{153}{section*.600}%
+\contentsline {subsection}{\numberline {6.4.5}Re-selection of the POD Rank for the Variable-Power Dataset}{153}{section*.605}%
+\contentsline {section}{\numberline {6.5}Baseline Surrogate Models under Fixed-Shape Power Histories}{154}{section*.612}%
+\contentsline {subsection}{\numberline {6.5.1}Inputs and Outputs of the Baseline Models}{154}{section*.615}%
+\contentsline {subsection}{\numberline {6.5.2}Baseline Model Based on POD-Coefficient Interpolation}{154}{section*.618}%
+\contentsline {subsection}{\numberline {6.5.3}POD--GPR Surrogate Model for the Baseline Stage}{155}{section*.621}%
+\contentsline {subsection}{\numberline {6.5.4}Validation and Independent Blind-Test Results of the Single-Parameter Models}{155}{section*.624}%
+\contentsline {subsection}{\numberline {6.5.5}Two-Dimensional Full-Field Reconstruction Results of the Single-Parameter Surrogate Models}{156}{section*.629}%
+\contentsline {section}{\numberline {6.6}POD--LSTM Model for Variable Power Histories}{158}{section*.638}%
+\contentsline {subsection}{\numberline {6.6.1}Temporal Modeling Strategy and Input Features}{158}{section*.641}%
+\contentsline {subsection}{\numberline {6.6.2}POD-Coefficient Increments and Trainable Initial States}{159}{section*.644}%
+\contentsline {subsection}{\numberline {6.6.3}Shared Recurrent Trunk and Field-Specific Output Heads}{159}{section*.648}%
+\contentsline {subsection}{\numberline {6.6.4}Loss Function, Training, and Model Freezing}{160}{section*.653}%
+\contentsline {section}{\numberline {6.7}Prediction Results and Discussion of the POD--LSTM Model}{161}{section*.656}%
+\contentsline {subsection}{\numberline {6.7.1}Error Metrics}{161}{section*.659}%
+\contentsline {subsection}{\numberline {6.7.2}Dataset Coverage and POD Projection Accuracy}{161}{section*.662}%
+\contentsline {subsection}{\numberline {6.7.3}Training Convergence and Validation Performance}{162}{section*.667}%
+\contentsline {subsection}{\numberline {6.7.4}Overall Accuracy on the Independent Blind-Test Set}{163}{section*.674}%
+\contentsline {subsection}{\numberline {6.7.5}Error Histories and Critical Transients}{164}{section*.681}%
+\contentsline {subsection}{\numberline {6.7.6}Full Two-Dimensional Field Reconstruction}{165}{section*.686}%
+\contentsline {subsection}{\numberline {6.7.7}Online Prediction Example for an Independent Power History}{165}{section*.691}%
+\contentsline {subsection}{\numberline {6.7.8}Computational Efficiency and Speedup}{167}{section*.698}%
+\contentsline {section}{\numberline {6.8}Applicability and Model Limitations}{168}{section*.702}%
+\contentsline {section}{\numberline {6.9}Chapter Summary}{169}{section*.705}%
+\contentsline {chapter}{\numberline {7}Conclusions and Outlook}{170}{section*.708}%
+\contentsline {section}{\numberline {7.1}Main Research Work and Conclusions}{170}{section*.711}%
+\contentsline {section}{\numberline {7.2}Main Innovations}{171}{section*.714}%
+\contentsline {section}{\numberline {7.3}Research Outlook}{172}{section*.717}%
+\contentsline {chapter}{Acknowledgements}{174}{section*.719}%
+\contentsline {chapter}{References}{175}{section*.722}%
+\contentsline {chapter}{Appendices}{191}{section*.725}%
+\contentsline {chapter}{Achievements}{238}{section*.875}%
+\contentsline {chapter}{Decision of Defense Committee}{240}{section*.878}%
+\contentsline {chapter}{General Reviewers List}{241}{section*.882}%

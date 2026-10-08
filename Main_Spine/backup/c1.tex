@@ -1,10 +1,10 @@
 % !TeX root = ../main.tex
 
-\xchapter{绪论}{Introductions}
+\xchapter{绪论}{Introduction}
 
 \xsection{研究背景和意义}{Research Background and Significance}
 
-在全球能源需求持续增长、能源系统低碳化转型以及能源安全问题日益受到重视的背景下，核能凭借高能量密度、低全生命周期碳排放和稳定供能等特点，仍是重要的低碳能源选择。全球核能协会发布的《世界核能展望报告》指出，2024年全球核电发电量已达到2667~TWh，创历史新高；截至2025年10月，全球共有438台可运行反应堆，总装机容量约397~GWe，其中压水堆数量占比超过70\%，另有约78~GWe核电容量处于建设阶段。综合现有机组延寿、在建和规划项目以及各国核能发展目标，2050年全球核电装机容量可能达到1446~GWe\cite{worldnuclearassociationWorldNuclearEnergy2026}。核能规模的持续扩大意味着核燃料需求同步增长，也对燃料利用效率、服役可靠性和安全裕度提出了更高要求。按照该报告给出预测性的估计，在反应堆技术构成基本不变的条件下，当全球核电规模接近1200~GWe时，年铀需求可能由目前约$7\times10^4$~tU增加至约$2.5\times10^5$~tU\cite{worldnuclearassociationWorldNuclearEnergy2026}。
+在全球能源需求持续增长、能源系统低碳化转型以及能源安全问题日益受到重视的背景下，核能凭借高能量密度、低全生命周期碳排放和稳定供能等特点，仍是重要的低碳能源选择。全球核能协会发布的《世界核能展望报告》指出，2024年全球核电发电量已达到$2667\,\mathrm{TWh}$，创历史新高；截至2025年10月，全球共有438台可运行反应堆，总装机容量约$397\,\mathrm{GW}$，其中压水堆数量占比超过70\%，另有约$78\,\mathrm{GW}$核电容量处于建设阶段。综合现有机组延寿、在建和规划项目以及各国核能发展目标，2050年全球核电装机容量可能达到$1446\,\mathrm{GW}$\cite{worldnuclearassociationWorldNuclearEnergy2026}。核能规模的持续扩大意味着核燃料需求同步增长，也对燃料利用效率、服役可靠性和安全裕度提出了更高要求。按照该报告给出预测性的估计，在反应堆技术构成基本不变的条件下，当全球核电规模接近$1200\,\mathrm{GW}$时，年铀需求可能由目前约$7\times10^4\,\mathrm{t}$增加至约$2.5\times10^5\,\mathrm{t}$\cite{worldnuclearassociationWorldNuclearEnergy2026}。
 
 氧化物燃料具有熔点高、化学稳定性和辐照稳定性较好、工程应用经验丰富等特点，是目前核动力反应堆最重要的燃料形式之一。UO$_2$长期作为轻水堆的主要燃料，而由UO$_2$和PuO$_2$组成的混合氧化物（mixed oxide，MOX）燃料能够实现钚资源回收利用，并与快中子反应堆和闭式燃料循环的发展需求相适应\cite{parrishReviewMicrostructuralFeatures2018}。与常规轻水堆UO$_2$燃料相比，快堆MOX燃料通常处于更高功率密度和更强径向温度梯度环境，燃料内部会发生气孔迁移和重构、中心孔形成、锕系元素再分布以及氧金属比（O/M）变化等现象。这些微观和组分演化会进一步改变热导率、熔点、裂变气体行为和燃料变形，使燃料性能呈现显著的多物理场耦合特征\cite{parrishReviewMicrostructuralFeatures2018,boberPlutoniumRedistributionFast1973}。
 
@@ -76,7 +76,6 @@ Che等\cite{cheMachineLearningAssistedSurrogate2022}利用机器学习方法建�
 	\centering
 	\caption{国内外相关研究进展概述}
 	\label{tab:research_status_summary}
-	\small
 	\renewcommand{\arraystretch}{1.25}
 	\begin{tabularx}{\textwidth}{
 			>{\raggedright\arraybackslash}p{2.4cm}
@@ -84,9 +83,9 @@ Che等\cite{cheMachineLearningAssistedSurrogate2022}利用机器学习方法建�
 			>{\raggedright\arraybackslash}X
 		}
 		\toprule
-		研究方向 &
-		代表性研究或程序 &
-		主要研究进展 \\
+		{\centering 研究方向\par} &
+		{\centering 代表性研究或程序\par} &
+		{\centering 主要研究进展\par} \\
 		\midrule
 		
 		工程燃料性能分析 &
@@ -119,6 +118,13 @@ Che等\cite{cheMachineLearningAssistedSurrogate2022}利用机器学习方法建�
 
 本文以快堆MOX燃料元件为主要研究对象，围绕“基础物性与行为模型--微观重构及组分迁移--热/气/力强耦合数值实现--棒级验证与机理分析--完整场快速预测”的技术路线开展研究。整体工作基于统一多物理场有限元MOOSE框架，在调研成熟燃料性能模型的基础上，重点提高对快堆MOX燃料特有微观演化行为、强非线性耦合过程以及高保真计算效率的描述能力。全文共七章，各章主要内容如下。
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]{技术路线.png}
+	\caption{快堆MOX燃料性能分析与完整场快速预测的总体技术路线}
+	\label{fig:technical_route}
+\end{figure}
+
 第一章为绪论。首先从核能发展、氧化物燃料及燃料性能分析需求出发说明论文研究背景和意义；随后综述国内外燃料性能分析程序、快堆MOX燃料微观重构与组分迁移、裂变气体及热--力耦合、燃料性能代理模型等研究进展，并据此明确本文关注的关键问题和研究内容。
 
 第二章建立快堆燃料元件材料基础物性与行为模型。系统整理并实现MOX燃料的热导率、热容、热膨胀、密度、弹性、蠕变、密实化、肿胀、压力烧结和蒸气压等模型，同时建立燃料--包壳间隙气体传热、接触传热和辐射传热模型，并整理D9、HT9、SS316等典型快堆包壳材料的热物性与堆内行为模型。该章为后续微观演化和棒级多物理场计算提供材料模型基础。
@@ -133,11 +139,4 @@ Che等\cite{cheMachineLearningAssistedSurrogate2022}利用机器学习方法建�
 
 第七章总结全文主要研究工作和结论，归纳本文在快堆MOX燃料微观重构与组分迁移耦合、强非线性热--气--力数值求解以及高保真完整场快速预测方面取得的主要进展，并讨论当前模型的适用范围及后续可进一步开展的研究工作。
 
-上述章节构成了“问题--基础模型--验证评价--快速预测--总结”的总分总的结构。整个论文的技术路线如下图所示：
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=\textwidth]{技术路线.png}
-	\caption{本文的技术路线}
-	\label{fig:technical_route}
-\end{figure}
+上述章节构成了“问题--基础模型--验证评价--快速预测--总结”的总分总结构，整体技术路线如图\ref{fig:technical_route}所示。

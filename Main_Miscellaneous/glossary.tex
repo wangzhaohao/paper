@@ -1,293 +1,739 @@
-% 如果论文中使用了大量的物理量符号、标志、缩略词、专门计量单位、自定义名词和术语等，
-% 应将全文中常用的这些符号及意义列出。本文主要符号按 GB 3100--3102 系列和 SI 书写规则整理：
-% 量符号原则上使用斜体，单位符号使用正体；数值与单位之间留空隙；复合单位采用负指数或乘积形式。
-% 缩略词列出英文全称，并在 description 中给出中文全称。
-% 注意：sort 字段用于控制希腊字母、上下标量的排序。
+% !TeX root = ./main.tex
+%
+% 主要符号与缩略词（根据当前第2--6章重构后的正文整理；适配XJTU-thesis的long-xjtu样式）
+% 原则：
+% 1. 仅列全文反复使用或对理解核心模型必要的主要符号；
+% 2. 附录中仅出现于个别经验关联式的 A_i、B_i、C_i 等模型常数不在此逐项列出；
+% 3. 量符号采用斜体，单位符号采用正体；
+% 4. sort 字段用于控制显示顺序。
+%
+% 符号统一说明：
+%   p：燃料孔隙率；
+%   \bar{\varepsilon}^{p}：累积等效塑性应变；
+%   \nu：泊松比；
+%   D_p：气孔输运方程中的有效孔隙扩散系数；
+%   G：剪切模量；
+%   G_m：冷却剂质量流速。
+% 正文中相应符号应与本表保持一致。
 
-% =========================
-% 主要物理量与数学符号
-% =========================
+% ============================================================
+% 一、热学、运行历史与基本场变量
+% ============================================================
 
 \newglossaryentry{temperature}{
-  name={\ensuremath{T}},
-  description={热力学温度/$\mathrm{K}$},
-  sort={T}
+	name={\ensuremath{T}},
+	description={热力学温度/$\mathrm{K}$},
+	sort={01T}
 }
 
 \newglossaryentry{time}{
-  name={\ensuremath{t}},
-  description={时间/$\mathrm{s}$},
-  sort={t}
+	name={\ensuremath{t}},
+	description={时间/$\mathrm{s}$},
+	sort={01t}
 }
 
 \newglossaryentry{burnup}{
-  name={\ensuremath{B}},
-  description={燃耗/$\mathrm{MW\,d\,t^{-1}}$（文中高燃耗结果常以$\mathrm{GW\,d\,t^{-1}}$表示）},
-  sort={B}
+	name={\ensuremath{B}},
+	description={燃耗；具体单位随模型或试验数据定义},
+	sort={01B}
 }
 
-\newglossaryentry{linear_power}{
-  name={\ensuremath{q_l}},
-  description={线功率/$\mathrm{W\,m^{-1}}$},
-  sort={ql}
+\newglossaryentry{volumetric_heat_source}{
+	name={\ensuremath{\dot q_v}},
+	description={单位体积热源/$\mathrm{W\,m^{-3}}$},
+	sort={01qdotv}
 }
 
-\newglossaryentry{thermal_conductivity}{
-  name={\ensuremath{k}},
-  description={热导率/$\mathrm{W\,m^{-1}\,K^{-1}}$},
-  sort={k}
-}
-
-\newglossaryentry{specific_heat}{
-  name={\ensuremath{c_p}},
-  description={定压比热容/$\mathrm{J\,kg^{-1}\,K^{-1}}$},
-  sort={cp}
-}
-
-\newglossaryentry{density}{
-  name={\ensuremath{\rho}},
-  description={密度/$\mathrm{kg\,m^{-3}}$},
-  sort={rho}
-}
-
-\newglossaryentry{young_modulus}{
-  name={\ensuremath{E}},
-  description={杨氏模量/$\mathrm{Pa}$},
-  sort={E}
-}
-
-\newglossaryentry{shear_modulus}{
-  name={\ensuremath{G}},
-  description={剪切模量/$\mathrm{Pa}$},
-  sort={G}
-}
-
-\newglossaryentry{poisson_ratio}{
-  name={\ensuremath{\nu}},
-  description={泊松比（无量纲）},
-  sort={nu}
-}
-
-\newglossaryentry{stress_tensor}{
-  name={\ensuremath{\boldsymbol{\sigma}}},
-  description={应力张量/$\mathrm{Pa}$},
-  sort={sigma}
-}
-
-\newglossaryentry{effective_stress}{
-  name={\ensuremath{\sigma_{\mathrm{eff}}}},
-  description={von Mises等效应力/$\mathrm{Pa}$},
-  sort={sigmaeff}
-}
-
-\newglossaryentry{strain_tensor}{
-  name={\ensuremath{\boldsymbol{\varepsilon}}},
-  description={应变张量（无量纲）},
-  sort={epsilon}
-}
-
-\newglossaryentry{thermal_strain}{
-  name={\ensuremath{\varepsilon_{\mathrm{th}}}},
-  description={热应变（无量纲）},
-  sort={epsilonth}
-}
-
-\newglossaryentry{creep_strain_rate}{
-  name={\ensuremath{\dot{\varepsilon}_{\mathrm{cr}}}},
-  description={蠕变应变率/$\mathrm{s^{-1}}$},
-  sort={epsiloncr}
-}
-
-
-\newglossaryentry{grain_size}{
-  name={\ensuremath{d_{\mathrm{gr}}}},
-  description={晶粒尺寸/$\mathrm{m}$},
-  sort={dgr}
-}
-
-\newglossaryentry{gap_heat_flux}{
-  name={\ensuremath{q_{\mathrm{gap}}}},
-  description={芯块--包壳间隙热流密度/$\mathrm{W\,m^{-2}}$},
-  sort={qgap}
-}
-
-\newglossaryentry{gap_total_htc}{
-  name={\ensuremath{h_{\mathrm{gap}}}},
-  description={芯块--包壳间隙总传热系数/$\mathrm{W\,m^{-2}\,K^{-1}}$},
-  sort={hgap}
-}
-
-\newglossaryentry{gas_htc}{
-  name={\ensuremath{h_g}},
-  description={间隙气体传热系数/$\mathrm{W\,m^{-2}\,K^{-1}}$},
-  sort={hg}
-}
-
-\newglossaryentry{contact_htc}{
-  name={\ensuremath{h_s}},
-  description={固体接触传热系数/$\mathrm{W\,m^{-2}\,K^{-1}}$},
-  sort={hs}
-}
-
-\newglossaryentry{radiation_htc}{
-  name={\ensuremath{h_r}},
-  description={辐射传热系数/$\mathrm{W\,m^{-2}\,K^{-1}}$},
-  sort={hr}
-}
-
-\newglossaryentry{gas_conductivity}{
-  name={\ensuremath{k_g}},
-  description={混合气体热导率/$\mathrm{W\,m^{-1}\,K^{-1}}$},
-  sort={kg}
-}
-
-\newglossaryentry{gap_width}{
-  name={\ensuremath{d_g}},
-  description={等效芯块--包壳间隙宽度/$\mathrm{m}$},
-  sort={dg}
-}
-
-\newglossaryentry{gap_pressure}{
-  name={\ensuremath{p_g}},
-  description={间隙及气腔气体压力/$\mathrm{Pa}$},
-  sort={pg}
+\newglossaryentry{fission_energy}{
+	name={\ensuremath{E_f}},
+	description={单次裂变沉积的有效能量/$\mathrm{J}$},
+	sort={01Ef}
 }
 
 \newglossaryentry{fission_rate}{
-  name={\ensuremath{F}},
-  description={体积裂变率/$\mathrm{m^{-3}\,s^{-1}}$},
-  sort={F}
+	name={\ensuremath{F}},
+	description={局部体积裂变率/$\mathrm{m^{-3}\,s^{-1}}$},
+	sort={01F}
 }
 
-\newglossaryentry{gas_diffusivity}{
-  name={\ensuremath{D_{\mathrm{eff}}}},
-  description={裂变气体有效扩散系数/$\mathrm{m^2\,s^{-1}}$},
-  sort={Deff}
+\newglossaryentry{thermal_conductivity}{
+	name={\ensuremath{k}},
+	description={热导率/$\mathrm{W\,m^{-1}\,K^{-1}}$},
+	sort={01k}
 }
 
-\newglossaryentry{intragranular_gas}{
-  name={\ensuremath{c_{\mathrm{ig}}}},
-  description={晶内气体原子数密度/$\mathrm{m^{-3}}$},
-  sort={cig}
+\newglossaryentry{specific_heat}{
+	name={\ensuremath{c_p}},
+	description={定压比热容/$\mathrm{J\,kg^{-1}\,K^{-1}}$},
+	sort={01cp}
 }
 
-\newglossaryentry{grain_boundary_gas}{
-  name={\ensuremath{C_{\mathrm{gb}}}},
-  description={晶界气体原子数密度/$\mathrm{m^{-3}}$},
-  sort={Cgb}
+\newglossaryentry{density}{
+	name={\ensuremath{\rho}},
+	description={密度/$\mathrm{kg\,m^{-3}}$},
+	sort={01rho}
 }
 
-\newglossaryentry{gas_release_rate}{
-  name={\ensuremath{R_{\mathrm{rel}}}},
-  description={晶界气体释放率/$\mathrm{m^{-3}\,s^{-1}}$},
-  sort={Rrel}
-}
-
-\newglossaryentry{pore_porosity}{
-  name={\ensuremath{p}},
-  description={燃料孔隙率（无量纲；用于气孔迁移控制方程）},
-  sort={p}
-}
-
-\newglossaryentry{pore_velocity}{
-  name={\ensuremath{\boldsymbol v}},
-  description={气孔迁移速度/$\mathrm{m\,s^{-1}}$},
-  sort={v}
-}
-
-\newglossaryentry{artificial_diffusivity}{
-  name={\ensuremath{\nu_{\mathrm{art}}}},
-  description={人工扩散系数/$\mathrm{m^2\,s^{-1}}$},
-  sort={nuart}
-}
-
-\newglossaryentry{pu_effective_diffusion}{
-  name={\ensuremath{D_{\mathrm{Diff}}}},
-  description={Pu有效互扩散系数/$\mathrm{m^2\,s^{-1}}$},
-  sort={DDiff}
-}
-
-\newglossaryentry{pore_diffusion}{
-  name={\ensuremath{D_{\mathrm{pore}}}},
-  description={孔隙气相迁移有效扩散系数/$\mathrm{m^2\,s^{-1}}$},
-  sort={Dpore}
-}
-
-\newglossaryentry{pu_fraction}{
-  name={\ensuremath{c_{\mathrm{Pu}}}},
-  description={Pu摩尔分数（无量纲）},
-  sort={cPu}
-}
-
-\newglossaryentry{transport_heat}{
-  name={\ensuremath{Q^{*}}},
-  description={有效摩尔输运热/$\mathrm{J\,mol^{-1}}$},
-  sort={Qstar}
+\newglossaryentry{conduction_heat_flux}{
+	name={\ensuremath{\boldsymbol q_c}},
+	description={导热热流密度/$\mathrm{W\,m^{-2}}$},
+	sort={01qc}
 }
 
 \newglossaryentry{neutron_fluence}{
-  name={\ensuremath{\Phi}},
-  description={中子注量/$\mathrm{m^{-2}}$；在包壳经验关联式中按给定基准归一化时为无量纲量},
-  sort={Phi}
+	name={\ensuremath{\Phi}},
+	description={中子注量/$\mathrm{m^{-2}}$；经验关联式中可按给定基准归一化},
+	sort={01Phi}
 }
 
 \newglossaryentry{neutron_flux}{
-  name={\ensuremath{\dot{\Phi}}},
-  description={中子注量率（中子通量）/$\mathrm{m^{-2}\,s^{-1}}$；归一化通量按相应基准定义},
-  sort={Phidot}
+	name={\ensuremath{\dot{\Phi}}},
+	description={中子注量率（中子通量）/$\mathrm{m^{-2}\,s^{-1}}$},
+	sort={01Phidot}
+}
+
+% ============================================================
+% 二、力学与材料状态
+% ============================================================
+
+\newglossaryentry{displacement_vector}{
+	name={\ensuremath{\boldsymbol u}},
+	description={位移向量/$\mathrm{m}$},
+	sort={02u}
 }
 
 \newglossaryentry{radial_displacement}{
-  name={\ensuremath{u_r}},
-  description={径向位移/$\mathrm{m}$},
-  sort={ur}
+	name={\ensuremath{u_r}},
+	description={径向位移/$\mathrm{m}$},
+	sort={02ur}
 }
 
 \newglossaryentry{axial_displacement}{
-  name={\ensuremath{u_z}},
-  description={轴向位移/$\mathrm{m}$},
-  sort={uz}
+	name={\ensuremath{u_z}},
+	description={轴向位移/$\mathrm{m}$},
+	sort={02uz}
 }
 
-\newglossaryentry{power_scale}{
-  name={\ensuremath{\alpha_P}},
-  description={功率缩放因子（无量纲）},
-  sort={alphaP}
+\newglossaryentry{stress_tensor}{
+	name={\ensuremath{\boldsymbol{\sigma}}},
+	description={Cauchy应力张量/$\mathrm{Pa}$},
+	sort={02sigma}
+}
+
+\newglossaryentry{equivalent_stress}{
+	name={\ensuremath{\sigma_{\mathrm{eq}}}},
+	description={von Mises等效应力/$\mathrm{Pa}$},
+	sort={02sigmaeq}
+}
+
+\newglossaryentry{hydrostatic_stress}{
+	name={\ensuremath{\sigma_h}},
+	description={静水应力/$\mathrm{Pa}$},
+	sort={02sigmah}
+}
+
+\newglossaryentry{strain_tensor}{
+	name={\ensuremath{\boldsymbol{\varepsilon}}},
+	description={总应变张量（无量纲）},
+	sort={02epsilon}
+}
+
+\newglossaryentry{elastic_strain}{
+	name={\ensuremath{\boldsymbol{\varepsilon}^{e}}},
+	description={弹性应变张量（无量纲）},
+	sort={02epsilone}
+}
+
+\newglossaryentry{plastic_strain}{
+	name={\ensuremath{\boldsymbol{\varepsilon}^{p}}},
+	description={塑性应变张量（无量纲）},
+	sort={02epsilonp}
+}
+
+\newglossaryentry{equivalent_plastic_strain}{
+	name={\ensuremath{\bar{\varepsilon}^{p}}},
+	description={累积等效塑性应变（无量纲）},
+	sort={02epsilonpbar}
+}
+
+\newglossaryentry{creep_strain}{
+	name={\ensuremath{\boldsymbol{\varepsilon}^{cr}}},
+	description={蠕变应变张量（无量纲）},
+	sort={02epsiloncr}
+}
+
+\newglossaryentry{thermal_strain}{
+	name={\ensuremath{\boldsymbol{\varepsilon}^{th}}},
+	description={热膨胀应变张量（无量纲）},
+	sort={02epsilonth}
+}
+
+\newglossaryentry{swelling_strain}{
+	name={\ensuremath{\boldsymbol{\varepsilon}^{sw}}},
+	description={肿胀应变张量（无量纲）},
+	sort={02epsilonsw}
+}
+
+\newglossaryentry{elasticity_tensor}{
+	name={\ensuremath{\mathbb C}},
+	description={四阶弹性刚度张量/$\mathrm{Pa}$},
+	sort={02C}
+}
+
+\newglossaryentry{young_modulus}{
+	name={\ensuremath{E}},
+	description={杨氏模量/$\mathrm{Pa}$},
+	sort={02E}
+}
+
+\newglossaryentry{shear_modulus}{
+	name={\ensuremath{G}},
+	description={剪切模量/$\mathrm{Pa}$},
+	sort={02G}
+}
+
+\newglossaryentry{poisson_ratio}{
+	name={\ensuremath{\nu}},
+	description={泊松比（无量纲）},
+	sort={02nu}
+}
+
+\newglossaryentry{contact_pressure}{
+	name={\ensuremath{P_c}},
+	description={燃料--包壳法向接触压力/$\mathrm{Pa}$},
+	sort={02Pc}
+}
+
+\newglossaryentry{normal_gap}{
+	name={\ensuremath{g_n}},
+	description={燃料--包壳法向几何间隙/$\mathrm{m}$},
+	sort={02gn}
+}
+
+% ============================================================
+% 三、微观结构、Pu/Am与O/M输运
+% ============================================================
+
+\newglossaryentry{porosity}{
+	name={\ensuremath{p}},
+	description={燃料孔隙率（无量纲）},
+	sort={03p}
+}
+
+\newglossaryentry{pore_velocity}{
+	name={\ensuremath{\boldsymbol v_p}},
+	description={气孔迁移速度/$\mathrm{m\,s^{-1}}$},
+	sort={03vp}
+}
+
+\newglossaryentry{pore_diffusivity_nu}{
+	name={\ensuremath{D_p}},
+	description={气孔输运方程中的有效孔隙扩散系数/$\mathrm{m^2\,s^{-1}}$},
+	sort={03Dp}
+}
+
+\newglossaryentry{pu_concentration}{
+	name={\ensuremath{c_{\mathrm{Pu}}}},
+	description={Pu局部浓度或摩尔分数（按相应模型定义）},
+	sort={03cPu}
+}
+
+\newglossaryentry{am_concentration}{
+	name={\ensuremath{c_{\mathrm{Am}}}},
+	description={Am局部浓度或摩尔分数（按相应模型定义）},
+	sort={03cAm}
+}
+
+\newglossaryentry{oxygen_metal_ratio}{
+	name={\ensuremath{\mathrm{O/M}}},
+	description={氧金属比（无量纲）},
+	sort={03OM}
+}
+
+\newglossaryentry{oxygen_defect}{
+	name={\ensuremath{c_{\mathrm O}}},
+	description={氧迁移的等效缺陷变量（无量纲或按具体模型定义）},
+	sort={03cO}
+}
+
+\newglossaryentry{oxygen_vacancy}{
+	name={\ensuremath{c_V}},
+	description={氧空位浓度（无量纲）},
+	sort={03cV}
+}
+
+\newglossaryentry{oxygen_interstitial}{
+	name={\ensuremath{c_I}},
+	description={氧间隙原子浓度（无量纲）},
+	sort={03cI}
+}
+
+\newglossaryentry{constituent_flux}{
+	name={\ensuremath{\boldsymbol J_i}},
+	description={组分$i$的总输运通量},
+	sort={03Ji}
+}
+
+\newglossaryentry{actinide_diffusion}{
+	name={\ensuremath{D_i}},
+	description={组分$i$（Pu或Am）的有效扩散系数/$\mathrm{m^2\,s^{-1}}$},
+	sort={03Di}
+}
+
+\newglossaryentry{actinide_transport_heat}{
+	name={\ensuremath{Q_i}},
+	description={组分$i$的有效摩尔输运热/$\mathrm{J\,mol^{-1}}$},
+	sort={03Qi}
+}
+
+\newglossaryentry{pore_phase_diffusion}{
+	name={\ensuremath{D_{\mathrm{pore}}}},
+	description={孔隙气相迁移相关的有效扩散参数/$\mathrm{m^2\,s^{-1}}$},
+	sort={03Dpore}
+}
+
+\newglossaryentry{oxygen_diffusion}{
+	name={\ensuremath{D_{\mathrm O}}},
+	description={氧缺陷扩散系数/$\mathrm{m^2\,s^{-1}}$},
+	sort={03DO}
+}
+
+\newglossaryentry{oxygen_transport_heat}{
+	name={\ensuremath{Q_{\mathrm O}^{*}}},
+	description={氧迁移有效输运热/$\mathrm{J\,mol^{-1}}$},
+	sort={03QO}
+}
+
+\newglossaryentry{oxygen_thermo_factor}{
+	name={\ensuremath{\Gamma_{\mathrm O}}},
+	description={氧迁移热力学修正因子（无量纲）},
+	sort={03GammaO}
+}
+
+\newglossaryentry{pore_pressure}{
+	name={\ensuremath{P_{\mathrm{pore}}}},
+	description={气孔内部压力/$\mathrm{Pa}$},
+	sort={03Ppore}
+}
+
+% ============================================================
+% 四、裂变气体、棒内气体与间隙传热
+% ============================================================
+
+\newglossaryentry{fgr_fraction}{
+	name={\ensuremath{f_{\mathrm{FGR}}}},
+	description={裂变气体释放份额（无量纲）},
+	sort={04fFGR}
+}
+
+\newglossaryentry{gas_swelling}{
+	name={\ensuremath{S_{\mathrm{gas}}}},
+	description={裂变气体肿胀量（按模型定义）},
+	sort={04Sgas}
+}
+
+\newglossaryentry{fgr_internal_state}{
+	name={\ensuremath{\boldsymbol z_{\mathrm{FG}}}},
+	description={裂变气体模型内部状态变量集合},
+	sort={04zFG}
+}
+
+\newglossaryentry{grain_size}{
+	name={\ensuremath{d_{\mathrm{gr}}}},
+	description={晶粒尺寸/$\mathrm{m}$},
+	sort={04dgr}
+}
+
+\newglossaryentry{gas_pressure}{
+	name={\ensuremath{p_g}},
+	description={燃料棒气隙/气腔气体压力/$\mathrm{Pa}$},
+	sort={04pg}
+}
+
+\newglossaryentry{free_volume}{
+	name={\ensuremath{V_g}},
+	description={燃料棒当前总自由体积/$\mathrm{m^3}$},
+	sort={04Vg}
+}
+
+\newglossaryentry{gas_temperature}{
+	name={\ensuremath{T_g}},
+	description={气隙/气腔等效平均气体温度/$\mathrm{K}$},
+	sort={04Tg}
+}
+
+\newglossaryentry{gas_amount}{
+	name={\ensuremath{n_i}},
+	description={气体组分$i$的物质的量/$\mathrm{mol}$},
+	sort={04ni}
+}
+
+\newglossaryentry{total_gas_amount}{
+	name={\ensuremath{n_g}},
+	description={燃料棒自由体积内总气体物质的量/$\mathrm{mol}$},
+	sort={04ng}
+}
+
+\newglossaryentry{gas_mole_fraction}{
+	name={\ensuremath{x_i}},
+	description={气体组分$i$的摩尔分数（无量纲）},
+	sort={04xi}
+}
+
+\newglossaryentry{gap_width}{
+	name={\ensuremath{d_g}},
+	description={燃料--包壳有效间隙宽度/$\mathrm{m}$},
+	sort={04dg}
+}
+
+\newglossaryentry{gap_heat_flux}{
+	name={\ensuremath{q_{\mathrm{gap}}}},
+	description={燃料--包壳间隙热流密度/$\mathrm{W\,m^{-2}}$},
+	sort={04qgap}
+}
+
+\newglossaryentry{gap_total_htc}{
+	name={\ensuremath{h_{\mathrm{gap}}}},
+	description={燃料--包壳总间隙传热系数/$\mathrm{W\,m^{-2}\,K^{-1}}$},
+	sort={04hgap}
+}
+
+\newglossaryentry{gap_gas_htc}{
+	name={\ensuremath{h_g}},
+	description={间隙气体传导传热系数/$\mathrm{W\,m^{-2}\,K^{-1}}$},
+	sort={04hg}
+}
+
+\newglossaryentry{gap_contact_htc}{
+	name={\ensuremath{h_s}},
+	description={燃料--包壳固--固接触传热系数/$\mathrm{W\,m^{-2}\,K^{-1}}$},
+	sort={04hs}
+}
+
+\newglossaryentry{gap_radiation_htc}{
+	name={\ensuremath{h_r}},
+	description={燃料--包壳辐射传热系数/$\mathrm{W\,m^{-2}\,K^{-1}}$},
+	sort={04hr}
+}
+
+\newglossaryentry{gas_conductivity}{
+	name={\ensuremath{k_g}},
+	description={间隙混合气体热导率/$\mathrm{W\,m^{-1}\,K^{-1}}$},
+	sort={04kg}
+}
+
+% ============================================================
+% 五、冷却剂与外表面对流边界
+% ============================================================
+
+\newglossaryentry{coolant_enthalpy}{
+	name={\ensuremath{h_{\mathrm{cool}}}},
+	description={冷却剂比{\rarecharfont 焓}/$\mathrm{J\,kg^{-1}}$},
+	sort={05hcool}
+}
+
+\newglossaryentry{coolant_temperature}{
+	name={\ensuremath{T_{\mathrm{cool}}}},
+	description={冷却剂体平均温度/$\mathrm{K}$},
+	sort={05Tcool}
+}
+
+\newglossaryentry{coolant_pressure}{
+	name={\ensuremath{p_{\mathrm{cool}}}},
+	description={冷却剂压力/$\mathrm{Pa}$},
+	sort={05pcool}
+}
+
+\newglossaryentry{coolant_mass_flow}{
+	name={\ensuremath{\dot m}},
+	description={冷却剂质量流量/$\mathrm{kg\,s^{-1}}$},
+	sort={05mdot}
+}
+
+\newglossaryentry{coolant_mass_flux}{
+	name={\ensuremath{G_m}},
+	description={冷却剂质量流速/$\mathrm{kg\,m^{-2}\,s^{-1}}$},
+	sort={05Gm}
+}
+
+\newglossaryentry{heated_perimeter}{
+	name={\ensuremath{P_h}},
+	description={冷却剂通道受热周长/$\mathrm{m}$},
+	sort={05Ph}
+}
+
+\newglossaryentry{hydraulic_diameter}{
+	name={\ensuremath{D_{\mathrm h}}},
+	description={冷却剂流道水力直径/$\mathrm{m}$},
+	sort={05Dh}
+}
+
+\newglossaryentry{wall_heat_flux}{
+	name={\ensuremath{q''_{\mathrm w}}},
+	description={包壳外表面向冷却剂传递的热流密度/$\mathrm{W\,m^{-2}}$},
+	sort={05qwall}
+}
+
+\newglossaryentry{coolant_htc}{
+	name={\ensuremath{H_w}},
+	description={包壳--冷却剂对流换热系数/$\mathrm{W\,m^{-2}\,K^{-1}}$},
+	sort={05Hw}
+}
+
+\newglossaryentry{reynolds_number}{
+	name={\ensuremath{\mathrm{Re}}},
+	description={Reynolds数（无量纲）},
+	sort={05Re}
+}
+
+\newglossaryentry{prandtl_number}{
+	name={\ensuremath{\mathrm{Pr}}},
+	description={Prandtl数（无量纲）},
+	sort={05Pr}
+}
+
+\newglossaryentry{nusselt_number}{
+	name={\ensuremath{\mathrm{Nu}}},
+	description={Nusselt数（无量纲）},
+	sort={05Nu}
+}
+
+% ============================================================
+% 六、POD--LSTM降阶代理模型
+% ============================================================
+
+\newglossaryentry{dof_number}{
+	name={\ensuremath{N}},
+	description={原始高维状态或统一训练网格的自由度/节点数},
+	sort={06N}
+}
+
+\newglossaryentry{snapshot_number}{
+	name={\ensuremath{N_s}},
+	description={POD快照数量},
+	sort={06Ns}
+}
+
+\newglossaryentry{pod_rank}{
+	name={\ensuremath{r}},
+	description={POD保留阶数},
+	sort={06r}
+}
+
+\newglossaryentry{snapshot_matrix}{
+	name={\ensuremath{\boldsymbol S}},
+	description={中心化高维状态组成的POD快照矩阵},
+	sort={06S}
+}
+
+\newglossaryentry{reference_state}{
+	name={\ensuremath{\boldsymbol y_{\mathrm{ref}}}},
+	description={POD中心化所采用的参考高维状态},
+	sort={06yref}
 }
 
 \newglossaryentry{pod_basis}{
-  name={\ensuremath{\boldsymbol{\Phi}_q}},
-  description={物理场$q$的POD基矩阵},
-  sort={PODPhi}
+	name={\ensuremath{\boldsymbol\Phi_r}},
+	description={$r$阶POD正交基矩阵},
+	sort={06Phi}
+}
+
+\newglossaryentry{pod_mode}{
+	name={\ensuremath{\boldsymbol\phi_i}},
+	description={第$i$阶POD空间模态},
+	sort={06phi}
+}
+
+\newglossaryentry{singular_value}{
+	name={\ensuremath{\sigma_i}},
+	description={POD快照矩阵的第$i$个奇异值},
+	sort={06sigmai}
+}
+
+\newglossaryentry{pod_eigenvalue}{
+	name={\ensuremath{\lambda_i}},
+	description={快照相关矩阵的第$i$个特征值},
+	sort={06lambdai}
+}
+
+\newglossaryentry{pod_energy_ratio}{
+	name={\ensuremath{\eta_r}},
+	description={前$r$阶POD模态累计能量占比（无量纲）},
+	sort={06etar}
 }
 
 \newglossaryentry{pod_coefficient}{
-  name={\ensuremath{\boldsymbol a_q}},
-  description={物理场$q$的POD系数向量},
-  sort={PODa}
+	name={\ensuremath{\boldsymbol a}},
+	description={高维状态在POD低维空间中的系数向量},
+	sort={06a}
 }
 
-% =========================
-% 缩略词
-% =========================
+\newglossaryentry{lstm_input}{
+	name={\ensuremath{\boldsymbol x_j}},
+	description={第$j$个时间步的LSTM输入特征向量},
+	sort={06xj}
+}
 
-\newacronym[description={混合氧化物燃料}]{mox}{MOX}{Mixed Oxide Fuel}
-\newacronym[description={裂变气体释放}]{fgr}{FGR}{Fission Gas Release}
-\newacronym[description={高燃耗结构}]{hbs}{HBS}{High Burnup Structure}
-\newacronym[description={寿期初}]{bol}{BOL}{Beginning of Life}
-\newacronym[description={寿期末}]{eol}{EOL}{End of Life}
-\newacronym[description={多物理场面向对象仿真环境}]{moose}{MOOSE}{Multiphysics Object-Oriented Simulation Environment}
-\newacronym[description={本征正交分解}]{pod}{POD}{Proper Orthogonal Decomposition}
-\newacronym[description={高斯过程回归}]{gpr}{GPR}{Gaussian Process Regression}
-\newacronym[description={长短期记忆网络}]{lstm}{LSTM}{Long Short-Term Memory}
-\newacronym[description={有限元方法}]{fem}{FEM}{Finite Element Method}
-\newacronym[description={全迎风对流守恒法}]{fuc}{FUC}{Full Upwind Convection Conservation}
-\newacronym[description={流线迎风Petrov--Galerkin法}]{supg}{SUPG}{Streamline Upwind Petrov--Galerkin}
-\newacronym[description={间断Galerkin方法}]{dg}{DG}{Discontinuous Galerkin}
-\newacronym[description={迎风有限体积法}]{fvm}{FVM}{Upwind Finite Volume Method}
-\newacronym[description={均方根误差}]{rmse}{RMSE}{Root Mean Square Error}
-\newacronym[description={平均绝对误差}]{mae}{MAE}{Mean Absolute Error}
-\newacronym[description={平均偏差}]{mbe}{MBE}{Mean Bias Error}
-\newacronym[description={累积损伤分数}]{cdf}{CDF}{Cumulative Damage Fraction}
-\newacronym[description={电子探针显微分析}]{epma}{EPMA}{Electron Probe Microanalysis}
-\newacronym[description={压水堆}]{pwr}{PWR}{Pressurized Water Reactor}
+\newglossaryentry{lstm_hidden_state}{
+	name={\ensuremath{\boldsymbol h_j}},
+	description={第$j$个时间步的LSTM隐藏状态},
+	sort={06hj}
+}
+
+\newglossaryentry{lstm_cell_state}{
+	name={\ensuremath{\boldsymbol c_j}},
+	description={第$j$个时间步的LSTM记忆状态},
+	sort={06cj}
+}
+
+\newglossaryentry{power_scale}{
+	name={\ensuremath{\alpha_P}},
+	description={固定功率历史形状下的整体功率缩放因子（无量纲）},
+	sort={06alphaP}
+}
+
+\newglossaryentry{power_derivative}{
+	name={\ensuremath{\dot P_j}},
+	description={第$j$个时间步的功率变化率},
+	sort={06Pdot}
+}
+
+\newglossaryentry{power_integral}{
+	name={\ensuremath{E_j}},
+	description={截至第$j$个时间步的累积功率积分特征},
+	sort={06Ej}
+}
+
+\newglossaryentry{relative_l2_error}{
+	name={\ensuremath{\varepsilon_{q,L_2}}},
+	description={物理场$q$的相对$L_2$误差（无量纲）},
+	sort={06epsL2}
+}
+
+% ============================================================
+% 七、主要缩略词
+% ============================================================
+% 注意：以下缩略词统一采用 \newglossaryentry，而不使用 \newacronym。
+% 原因是XJTU-thesis.cls的long-xjtu样式会对具有long字段的条目自动插入英文逗号，
+% 在部分条目中可能形成单独的“,”行。改为普通glossary条目后可避免该问题。
+
+\newglossaryentry{mox}{
+	name={MOX},
+	description={Mixed Oxide Fuel，混合氧化物燃料},
+	sort={MOX}
+}
+\newglossaryentry{fgr}{
+	name={FGR},
+	description={Fission Gas Release，裂变气体释放},
+	sort={FGR}
+}
+\newglossaryentry{hbs}{
+	name={HBS},
+	description={High Burnup Structure，高燃耗结构},
+	sort={HBS}
+}
+\newglossaryentry{bol}{
+	name={BOL},
+	description={Beginning of Life，寿期初},
+	sort={BOL}
+}
+\newglossaryentry{eol}{
+	name={EOL},
+	description={End of Life，寿期末},
+	sort={EOL}
+}
+
+\newglossaryentry{moose}{
+	name={MOOSE},
+	description={Multiphysics Object-Oriented Simulation Environment，多物理场面向对象仿真环境},
+	sort={MOOSE}
+}
+\newglossaryentry{fem}{
+	name={FEM},
+	description={Finite Element Method，有限元方法},
+	sort={FEM}
+}
+
+\newglossaryentry{fuc}{
+	name={FUC},
+	description={Full Upwind Convection Conservation，全迎风对流守恒法},
+	sort={FUC}
+}
+\newglossaryentry{supg}{
+	name={SUPG},
+	description={Streamline Upwind Petrov--Galerkin，流线迎风Petrov--Galerkin法},
+	sort={SUPG}
+}
+\newglossaryentry{dg}{
+	name={DG},
+	description={Discontinuous Galerkin，间断Galerkin方法},
+	sort={DG}
+}
+\newglossaryentry{fvm}{
+	name={FVM},
+	description={Upwind Finite Volume Method，迎风有限体积法},
+	sort={FVM}
+}
+
+\newglossaryentry{pod}{
+	name={POD},
+	description={Proper Orthogonal Decomposition，本征正交分解},
+	sort={POD}
+}
+\newglossaryentry{svd}{
+	name={SVD},
+	description={Singular Value Decomposition，奇异值分解},
+	sort={SVD}
+}
+\newglossaryentry{gpr}{
+	name={GPR},
+	description={Gaussian Process Regression，高斯过程回归},
+	sort={GPR}
+}
+\newglossaryentry{lstm}{
+	name={LSTM},
+	description={Long Short-Term Memory，长短期记忆网络},
+	sort={LSTM}
+}
+
+\newglossaryentry{rmse}{
+	name={RMSE},
+	description={Root Mean Square Error，均方根误差},
+	sort={RMSE}
+}
+\newglossaryentry{nrmse}{
+	name={NRMSE},
+	description={Normalized Root Mean Square Error，归一化均方根误差},
+	sort={NRMSE}
+}
+\newglossaryentry{mae}{
+	name={MAE},
+	description={Mean Absolute Error，平均绝对误差},
+	sort={MAE}
+}
+\newglossaryentry{mbe}{
+	name={MBE},
+	description={Mean Bias Error，平均偏差},
+	sort={MBE}
+}
+
+\newglossaryentry{cdf}{
+	name={CDF},
+	description={Cumulative Damage Fraction，累积损伤分数},
+	sort={CDF}
+}
+\newglossaryentry{epma}{
+	name={EPMA},
+	description={Electron Probe Microanalysis，电子探针显微分析},
+	sort={EPMA}
+}
+\newglossaryentry{pwr}{
+	name={PWR},
+	description={Pressurized Water Reactor，压水堆},
+	sort={PWR}
+}
+\newglossaryentry{iapws}{
+	name={IAPWS},
+	description={International Association for the Properties of Water and Steam，国际水和水蒸气性质协会},
+	sort={IAPWS}
+}

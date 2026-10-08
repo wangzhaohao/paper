@@ -2,24 +2,24 @@
 \label{app:gap_heat_transfer_supplementary_models}
 
 
-本附录汇总正文\ref{sec:gap_heat_transfer_model}中未展开的几何修正、温度跳跃、热适应系数、混合气体热导率、高压气体物性和接触传导关系。相关模型主要由轻水堆$\mathrm{UO}_2$/锆合金燃料棒试验与BISON、MATPRO实现发展而来；用于快堆MOX/不锈钢体系时，应分别核查几何、气体状态及界面材料参数，不应直接全部使用默认值。
+本附录汇总第~\ref{sec:ch2_gap_heat_transfer}节总体间隙传热关系中未展开的几何修正、温度跳跃、热适应系数、混合气体热导率、高压气体物性和接触传导关系。相关模型主要由轻水堆$\mathrm{UO}_2$/锆合金燃料棒试验与BISON、MATPRO实现发展而来；用于快堆MOX/不锈钢体系时，应分别核查几何、气体状态及界面材料参数，不应直接全部使用默认值。
 
 \section{等效间隙长度与几何修正}
 \label{app:gap_geometry_models}
 
 Ross--Stoute关系中的$d_g$为与传热面积定义一致的等效间隙长度。对于平板、圆柱和球形间隙，BISON采用\cite{halesBISONTheoryManual2016,toptanGapConductanceModeling2019}
 \begin{gather}
-	d_g=R_2-R_1,
+	d_g=R_2-R_1
 	\qquad \text{平板近似}
 	\notag
 	\\
 	d_g=R_{\mathrm{ref}}
-	\ln\!\left(\frac{R_2}{R_1}\right),
+	\ln\!\left(\frac{R_2}{R_1}\right)
 	\qquad \text{圆柱间隙}
 	\notag
 	\\
 	d_g=R_{\mathrm{ref}}^2
-	\left(\frac{1}{R_1}-\frac{1}{R_2}\right),
+	\left(\frac{1}{R_1}-\frac{1}{R_2}\right)
 	\qquad \text{球形间隙}
 	\label{eq:appendix_gap_effective_lengths}
 \end{gather}
@@ -75,9 +75,9 @@ Toptan等在曲线坐标下重新整理了Kennard温度跳跃关系，并显式�
 \begin{equation}
 	C_K=
 	\begin{cases}
-		0.2173,&\text{单原子气体}\\
-		0.1149,&\text{双原子气体}\\
-		0.1242,&\text{多原子气体}
+		0.2173&\text{单原子气体}\\
+		0.1149&\text{双原子气体}\\
+		0.1242&\text{多原子气体}
 	\end{cases}
 	\label{eq:appendix_gap_kennard_coefficients}
 \end{equation}
@@ -112,7 +112,7 @@ Toptan模型采用经实验数据标定的热适应系数关系
 	\notag
 	\\
 	\alpha_{\infty}
-	=\frac{2.4\mu}{(1+\mu)^2},
+	=\frac{2.4\mu}{(1+\mu)^2}
 	\qquad
 	\mu=\frac{M_g}{M_s}
 	\label{eq:appendix_gap_toptan_accommodation}
@@ -143,7 +143,16 @@ Toptan模型采用经实验数据标定的热适应系数关系
 \subsection{MATPRO温度相关模型}
 \label{app:gap_default_gas_conductivity}
 
-正文式\eqref{eq:gap_gas_mixture_conductivity}中的二元权重系数可写为\cite{brokawApproximateFormulasViscosity1958,hagrmanSCDAPRELAP5MOD1995}
+对于由多种气体组成的混合物，本文采用MATPRO/Brokaw型混合规则计算等效热导率：
+\begin{equation}
+	k_g
+	=\sum_{i=1}^{N_g}
+	\frac{x_i k_i}
+	{x_i+\displaystyle\sum_{\substack{j=1\\j\ne i}}^{N_g}
+		\Psi_{ij}x_j}
+	\label{eq:appendix_gap_gas_mixture_conductivity}
+\end{equation}
+式中：$x_i$和$k_i$分别为第$i$种气体的摩尔分数和纯组分热导率，$\Psi_{ij}$为二元权重系数。其具体形式为\cite{brokawApproximateFormulasViscosity1958,hagrmanSCDAPRELAP5MOD1995}
 \begin{gather}
 	\Psi_{ij}
 	=\phi_{ij}
@@ -231,7 +240,7 @@ MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，�
 	k_{i,c}^{*}
 	=\frac{0.201\times10^{-4}
 		T_{c,i}^{0.277}M_i^{-0.465}}
-	{\left(0.291V_i^{*}\right)^{0.415}},
+	{\left(0.291V_i^{*}\right)^{0.415}}
 	\qquad
 	V_i^{*}=\frac{R_gT_{c,i}}{p_{c,i}}
 	\notag
@@ -240,7 +249,7 @@ MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，�
 	=0.645\rho_{r,i}
 	+0.331\rho_{r,i}^2
 	+0.0368\rho_{r,i}^3
-	-0.0128\rho_{r,i}^4,
+	-0.0128\rho_{r,i}^4
 	\qquad
 	\rho_{r,i}=\frac{\rho_i}{\rho_{c,i}}
 	\label{eq:appendix_gap_advanced_conductivity_model}
@@ -294,7 +303,7 @@ MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，�
 \end{gather}
 对于半无限固体之间半径为$a$的单个圆形接触斑点，收缩热阻可近似写为
 \begin{equation}
-	R_{c,a}=\frac{1}{2ak_m},
+	R_{c,a}=\frac{1}{2ak_m}
 	\qquad
 	k_m=\frac{2k_fk_c}{k_f+k_c}
 	\label{eq:appendix_gap_single_spot_resistance}
@@ -305,7 +314,23 @@ MATPRO幂函数主要依据低压数据标定。在极低压力的Knudsen区，�
 	=C_A\left(\frac{P_c}{H}\right)^n
 	\label{eq:appendix_gap_real_contact_area}
 \end{equation}
-式中：$C_A$为表面形貌系数；$n$反映微凸体由弹性向塑性变形的偏离程度。Ross--Stoute模型以粗糙度和接触压力替代难以直接测量的接触斑点数量与尺度，得到正文式\eqref{eq:gap_solid_contact_model}所示公式关联。
+式中：$C_A$为表面形貌系数；$n$反映微凸体由弹性向塑性变形的偏离程度。本文采用的Ross--Stoute型接触传热关系写为
+\begin{subequations}\label{eq:appendix_gap_solid_contact_model}
+	\begin{align}
+		h_s
+		&=
+		\begin{cases}
+			C_s k_m\dfrac{P_c}{H\sqrt{\delta}} & P_c>0\\[1.0ex]
+			0 & P_c\leq0
+		\end{cases}
+		\label{eq:appendix_gap_solid_contact_conductance}\\
+		k_m&=\frac{2k_fk_c}{k_f+k_c}
+		\label{eq:appendix_gap_effective_solid_conductivity}\\
+		\delta&=0.8\left(r_f+r_c\right)
+		\label{eq:appendix_gap_average_film_thickness}
+	\end{align}
+\end{subequations}
+式中：$P_c$为取压缩为正的接触压力，$H$为较软一侧材料的迈耶硬度，$k_f$和$k_c$分别为燃料与包壳热导率，$\delta$为平均气膜厚度，$C_s$为经验系数。
 
 \subsection{迈耶硬度的历史关系}
 
