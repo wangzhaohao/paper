@@ -18,7 +18,7 @@
 
 考虑到本文第五章的研究重点为燃料中心温度和裂变气体释放行为，本章仅选取与上述两个评价量直接相关、且公开输入信息较完整的案例开展定量验证。对于报告附录中给出完整或基本完整 FRAPCON 输入卡的案例，本文将其中的燃料棒几何参数、轴向功率分布、功率历史、燃耗、初始充气条件和冷却剂边界条件整理并转换为本文程序所需的输入格式。对于报告正文中虽给出实验说明或对比图，但未提供完整输入卡的案例，本文不将其列入定量计算样本，仅作为文献背景或结果讨论时的参考。
 
-表~\ref{tab:frapcon_mox_steady_cases} 给出了 FRAPCON-4.0 综合评估数据库中与本文研究相关的稳态 MOX 燃料棒案例。表~\ref{tab:frapcon_mox_power_ramp_cases} 给出了 FRAPCON-4.0 综合评估数据库中 Beznau-1/Petten 短时间功率提升 MOX 燃料棒案例\cite{ML16118A434}。该类燃料棒经历了基准辐照后的功率提升试验，实验数据包括棒平均燃耗、最高线功率、高功率持续时间和裂变气体释放结果，可用于评价裂变气体释放模型对短时间功率提升和高功率保持工况的响应能力。表中 ``$\checkmark$'' 表示该燃料棒在 FRAPCON-4.0 综合评估报告中被用于相应物理量的验证。大部分燃料棒间隙内填充的是纯氦气也有少部分填充氦—氙混合气体，用于评估间隙传热模型。寿期初（BOL）的线功率最高约为$60\,\mathrm{kW\,m^{-1}}$，寿期末（EOL）功率在快速上升实验中最高可达$47\,\mathrm{kW\,m^{-1}}$。燃料棒平均燃耗最高可达$68\,\mathrm{GW\,d\,t^{-1}}$，对于功率快速提升的燃料棒，最高平均燃耗约为$47\,\mathrm{GW\,d\,t^{-1}}$。
+表~\ref{tab:frapcon_mox_steady_cases} 给出了 FRAPCON-4.0 综合评估数据库中与本文研究相关的稳态 MOX 燃料棒案例。表~\ref{tab:frapcon_mox_power_ramp_cases} 给出了 FRAPCON-4.0 综合评估数据库中 Beznau-1/Petten 短时间功率提升 MOX 燃料棒案例\cite{ML16118A434}。该类燃料棒经历了基准辐照后的功率提升试验，实验数据包括棒平均燃耗、最高线功率、高功率持续时间和裂变气体释放结果，可用于评价裂变气体释放模型对短时间功率提升和高功率保持工况的响应能力。表中 ``$\checkmark$'' 表示该燃料棒在 FRAPCON-4.0 综合评估报告中被用于相应物理量的验证。大部分燃料棒间隙内填充的是纯氦气，也有少部分填充氦—氙混合气体，用于评估间隙传热模型。寿期初（BOL）的线功率最高约为$60\,\mathrm{kW\,m^{-1}}$，寿期末（EOL）功率在快速上升实验中最高可达$47\,\mathrm{kW\,m^{-1}}$。燃料棒平均燃耗最高可达$68\,\mathrm{GW\,d\,t^{-1}}$，对于功率快速提升的燃料棒，最高平均燃耗约为$47\,\mathrm{GW\,d\,t^{-1}}$。
 
 {
 	\begin{xltabular}{\textwidth}{@{}
@@ -210,23 +210,23 @@ SCIANTIX 模型是一种更高保真的细观机理裂变气体行为模型。�
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=15.5cm,height=15.00cm,keepaspectratio]{moose_fuel_rod_flowchart_editable.pdf}
+	\input{Figures/moose_fuel_rod_flowchart_readable.tex}
 	\caption{燃料棒级多物理耦合计算流程}
 	\label{fig:fuel_rod_multiphysics_flowchart}
 \end{figure}
 
 \xsubsection{误差评价指标}{Error Evaluation Metrics}
 \label{section:error_evalution_metrics}
-本文主要针对燃料中心线温度和裂变气体释放率两个评价量进行误差分析。对于燃料中心线温度，实验数据通常随功率历史和燃耗变化而变化，因此本文在相同时间或相同燃耗位置提取程序计算得到的中心线平均温度，并与实验测得的中心线温度进行逐点对比。单个测点的温度绝对误差和相对误差分别定义为
+本文主要针对燃料中心线温度和裂变气体释放率两个评价量进行误差分析。对于燃料中心线温度，实验数据通常随功率历史和燃耗变化而变化，因此本文在相同时间或相同燃耗位置提取程序计算得到的中心线平均温度，并与实验测得的中心线温度进行逐点对比。单个测点的温度绝对误差和相对误差分别定义为：
 \begin{equation}
 	\Delta T_i = T_{\mathrm{cal},i}-T_{\mathrm{exp},i}
 \end{equation}
 \begin{equation}
 	\delta T_i = \frac{T_{\mathrm{cal},i}-T_{\mathrm{exp},i}}{T_{\mathrm{exp},i}}\times 100\%
 \end{equation}
-\noindent 式中：$T_{\mathrm{cal},i}$ 为第 $i$ 个测点对应的计算中心线平均温度，$T_{\mathrm{exp},i}$ 为实验测得的燃料中心线温度。
+\noindent 式中：$T_{\mathrm{cal},i}$ 为第 $i$ 个测点对应的计算中心线平均温度（$\mathrm{K}$），$T_{\mathrm{exp},i}$ 为实验测得的燃料中心线温度（$\mathrm{K}$）。
 
-为评价不同燃料棒整体温度预测精度，进一步采用平均相对误差和均方根误差进行统计，其表达式分别为
+为评价不同燃料棒整体温度预测精度，进一步采用平均相对误差和均方根误差进行统计，其表达式分别为：
 \begin{equation}
 	\overline{\delta T} =
 	\frac{1}{N}\sum_{i=1}^{N}
@@ -241,21 +241,21 @@ SCIANTIX 模型是一种更高保真的细观机理裂变气体行为模型。�
 		\left(T_{\mathrm{cal},i}-T_{\mathrm{exp},i}\right)^2
 	}
 \end{equation}
-\noindent 式中：$N$ 为该燃料棒可用于对比的中心温度测点数量。
+\noindent 式中：$N$ 为该燃料棒可用于对比的中心温度测点数量（无量纲计数）；$\overline{\delta T}$以百分数表示，$\mathrm{RMSE}_T$的单位为$\mathrm{K}$。
 
-对于裂变气体释放行为，公开实验数据通常给出寿期末裂变气体释放率，因此本文采用寿期末计算得到的总裂变气体释放率与实验测量值进行对比。FGR 绝对误差定义为
+对于裂变气体释放行为，公开实验数据通常给出寿期末裂变气体释放率，因此本文采用寿期末计算得到的总裂变气体释放率与实验测量值进行对比。FGR 绝对误差定义为：
 \begin{equation}
 	\Delta \mathrm{FGR} = \mathrm{FGR}_{\mathrm{cal}} - \mathrm{FGR}_{\mathrm{exp}}
 \end{equation}
-\noindent 式中：$FGR_{\mathrm{cal}}$ 为程序计算得到的寿期末裂变气体释放率，$FGR_{\mathrm{exp}}$ 为实验测得或由棒压反推得到的寿期末裂变气体释放率。
+\noindent 式中：$FGR_{\mathrm{cal}}$ 为程序计算得到的寿期末裂变气体释放率，$FGR_{\mathrm{exp}}$ 为实验测得或由棒压反推得到的寿期末裂变气体释放率，二者均以百分数表示，绝对误差以百分点报告。
 
-由于部分燃料棒的实验 FGR 数值较小，此时相对误差容易被放大，因此本文优先采用 FGR 绝对误差评价裂变气体释放模型的预测能力。在需要进行整体统计时，采用平均绝对误差表示为
+由于部分燃料棒的实验 FGR 数值较小，此时相对误差容易被放大，因此本文优先采用 FGR 绝对误差评价裂变气体释放模型的预测能力。在需要进行整体统计时，采用平均绝对误差表示为：
 \begin{equation}
 	\overline{\Delta \mathrm{FGR}} =
 	\frac{1}{M}\sum_{j=1}^{M}
 	\left|\mathrm{FGR}_{\mathrm{cal},j}-\mathrm{FGR}_{\mathrm{exp},j}\right|
 \end{equation}
-\noindent 式中：$M$ 为参与 FGR 验证的燃料棒数量。对于实验 FGR 较高的案例，可进一步给出相对误差作为辅助评价指标：
+\noindent 式中：$M$ 为参与 FGR 验证的燃料棒数量（无量纲计数）。对于实验 FGR 较高的案例，可进一步给出相对误差作为辅助评价指标：
 \begin{equation}
 	\delta \mathrm{FGR}_j =
 	\frac{\mathrm{FGR}_{\mathrm{cal},j}-\mathrm{FGR}_{\mathrm{exp},j}}
@@ -457,7 +457,7 @@ IFA-651 系列三根燃料棒的中心温度验证结果见图~\ref{fig:temp_val
 =
 T_\alpha(B)-T_\mathrm{base}(B)
 \]
-\noindent 式中： \(B\) 为燃耗。主要依据两个准则。第一，若某一参数扰动后计算曲线整体向实验曲线靠近，且 RMSE 或平均相对误差明显降低，则说明该参数相关模型可能是误差的重要来源。第二，若某一参数扰动引起的温度响应主要出现在特定燃耗阶段，则说明该误差来源具有阶段性。
+\noindent 式中： \(B\) 为燃耗（$\mathrm{MW\,d\,t^{-1}}$，以初始重金属质量计）。主要依据两个准则。第一，若某一参数扰动后计算曲线整体向实验曲线靠近，且 RMSE 或平均相对误差明显降低，则说明该参数相关模型可能是误差的重要来源。第二，若某一参数扰动引起的温度响应主要出现在特定燃耗阶段，则说明该误差来源具有阶段性。
 
 根据中心温度的主要控制机制，本文重点分析以下三类缩放因子的影响：
 
@@ -472,9 +472,9 @@ T_\alpha(B)-T_\mathrm{base}(B)
 	燃料重定位、密实化和辐照肿胀通过改变燃料几何尺寸和燃料--包壳间隙状态间接影响中心温度。重定位和肿胀通常促进间隙闭合，使间隙热阻降低，从而降低中心温度；密实化则可能增大燃料--包壳间隙，使间隙热阻增加并导致中心温度升高。因此，这类模型对中心温度的影响不一定表现为简单的单调变化，而是主要体现为间隙闭合时间、接触压力大小以及接触区域分布的改变。
 \end{itemize}
 
-为定量分析不同物理模型对中心温度的影响，本文分别引入燃料热导率缩放因子 \(\alpha_k\)、间隙传热缩放因子 \(\alpha_h\) 和燃料变形缩放因子 \(\alpha_\varepsilon\)，其作用形式可表示为
+为定量分析不同物理模型对中心温度的影响，本文分别引入燃料热导率缩放因子 \(\alpha_k\)、间隙传热缩放因子 \(\alpha_h\) 和燃料变形缩放因子 \(\alpha_\varepsilon\)，其作用形式可表示为：
 \begin{align}
-	k_f^\ast &= \alpha_k k_f \nonumber \\
+	k_{\mathrm f}^\ast &= \alpha_k k_{\mathrm f} \nonumber \\
 	h_\mathrm{gap}^\ast &= \alpha_h h_\mathrm{gap} \nonumber \\
 	\varepsilon^\ast_\mathrm{fuel}
 	&=
@@ -487,9 +487,9 @@ T_\alpha(B)-T_\mathrm{base}(B)
 	\varepsilon_\mathrm{swelling}
 	\right) \label{eq:fuel_params}
 \end{align}
-\noindent 式中：\(k_f\) 为燃料热导率，\(h_\mathrm{gap}\) 为燃料--包壳间隙等效传热系数，\(\varepsilon_\mathrm{fuel}\) 表示与燃料几何演化相关的等效本征应变。
+\noindent 式中：\(k_{\mathrm f}\) 为燃料热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$），\(h_\mathrm{gap}\) 为燃料--包壳间隙等效传热系数（$\mathrm{W\,m^{-2}\,K^{-1}}$），\(\varepsilon_\mathrm{fuel}\) 表示与燃料几何演化相关的等效本征应变（无量纲）。
 
-采用单因素扰动方法，在保持其他模型参数不变的条件下，缩放因子分别取
+采用单因素扰动方法，在保持其他模型参数不变的条件下，缩放因子分别取：
 \begin{align}
 	\alpha_k &= 0.9,\ 1.0,\ 1.1 \nonumber \\
 	\alpha_h &= 0.5,\ 1.0,\ 2.0 \nonumber \\
@@ -1215,14 +1215,14 @@ FRAPCON-4.0积分评估报告指出，全部稳态MOX案例的预测误差标准
 	\end{tabularx}
 \end{table}
 
-考虑到部分实验FGR低于1\%，采用传统相对误差会显著放大小释放率案例的误差权重，因此本文主要采用FGR绝对偏差及基于FGR百分数数值的统计指标评价模型预测性能；表中以\%表示相应差值的尺度，其数值等同于通常所称的“百分点差”。对于第$i$个燃料棒，定义预测偏差为
+考虑到部分实验FGR低于1\%，采用传统相对误差会显著放大小释放率案例的误差权重，因此本文主要采用FGR绝对偏差及基于FGR百分数数值的统计指标评价模型预测性能；表中以\%表示相应差值的尺度，其数值等同于通常所称的“百分点差”。对于第$i$个燃料棒，定义预测偏差为：
 \begin{equation}
 	\Delta F_i
 	=
 	F_{i,\mathrm{cal}}-F_{i,\mathrm{exp}}
 	\label{eq:fgr_deviation}
 \end{equation}
-\noindent 式中：$F_{i,\mathrm{cal}}$和$F_{i,\mathrm{exp}}$分别为计算和实验测得的FGR百分数数值，即相应裂变气体释放份额除以$\%$后的数值。进一步定义平均偏差（MBE）、平均绝对偏差（MAE）和均方根误差（RMSE）分别为
+\noindent 式中：$F_{i,\mathrm{cal}}$和$F_{i,\mathrm{exp}}$分别为计算和实验测得的FGR百分数数值，即相应裂变气体释放份额除以$\%$后的数值。进一步定义平均偏差（MBE）、平均绝对偏差（MAE）和均方根误差（RMSE）分别为：
 \begin{equation}
 	\mathrm{MBE}
 	=
@@ -1247,7 +1247,7 @@ FRAPCON-4.0积分评估报告指出，全部稳态MOX案例的预测误差标准
 		\Delta F_i^2}
 	\label{eq:fgr_rmse}
 \end{equation}
-\noindent 式中：$N$为参与统计的燃料棒数量。
+\noindent 式中：$N$为参与统计的燃料棒数量（无量纲计数）；以FGR百分数数值计算的MBE、MAE和RMSE均以百分点报告。
 
 根据表~\ref{tab:steady_state_mox_fgr_comparison}中的18组案例，三种模型的误差统计结果见表~\ref{tab:steady_state_mox_fgr_statistics}。
 
@@ -1448,7 +1448,7 @@ ForMas给出的4个案例FGR均随辐照时间逐渐累积，整体变化较为�
 
 M501 MR-4的高功率阶段仅持续$20\,\mathrm{min}$，而其余案例主要持续$12\,\mathrm{h}$。MR-4实验FGR为2.17\%，ForMas和SCIANTIX分别计算得到3.383\%和3.578\%，均未出现类似HR-3和HR-4的大幅释放。这一结果与扩散和气泡演化过程具有有限时间尺度的物理特征一致：即使短时间内达到较高功率，高温持续时间不足仍会限制裂变气体迁移和释放。最终FGR由峰值功率、燃料温度和高温持续时间共同决定，最高线功率不能单独表征其释放水平。
 
-综合上述计算结果，本文所涉及案例中的裂变气体释放行为可概括为
+综合上述计算结果，本文所涉及案例中的裂变气体释放行为可概括为：
 \begin{equation}
 	\mathrm{FGR}
 	=
@@ -1461,7 +1461,7 @@ M501 MR-4的高功率阶段仅持续$20\,\mathrm{min}$，而其余案例主要�
 	\right]
 	\label{eq:fgr_operating_dependence}
 \end{equation}
-\noindent 式中：$B(t)$为燃耗历史；$T(t)$为燃料温度历史；$\dot{f}(t)$为裂变率历史；$d_{\mathrm{g}}$为晶粒尺度；$t_{\mathrm{high}}$为高温持续时间。式~\eqref{eq:fgr_operating_dependence}并非新的经验关联式，而是用于归纳本节验证案例所反映的主要影响因素。其中，燃耗决定裂变气体的累积生成水平，而温度和时间历史进一步控制气体迁移、气泡演化和最终释放过程。
+\noindent 式中：$B(t)$为燃耗历史（$\mathrm{MW\,d\,t^{-1}}$，以初始重金属质量计）；$T(t)$为燃料温度历史（$\mathrm{K}$）；$\dot{f}(t)$为裂变率历史（$\mathrm{m^{-3}\,s^{-1}}$）；$d_{\mathrm{g}}$为晶粒尺度（$\mathrm{m}$）；$t_{\mathrm{high}}$为高温持续时间（$\mathrm{s}$）。式~\eqref{eq:fgr_operating_dependence}并非新的经验关联式，而是用于归纳本节验证案例所反映的主要影响因素。其中，燃耗决定裂变气体的累积生成水平，而温度和时间历史进一步控制气体迁移、气泡演化和最终释放过程。
 
 \xsubsection{模型差异与适用性分析}
 {Analysis of Model Differences and Applicability}

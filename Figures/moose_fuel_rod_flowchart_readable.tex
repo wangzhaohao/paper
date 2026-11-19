@@ -1,0 +1,68 @@
+% 图5-1：保留原图十个模块与主要数据流，按阅读顺序重排。
+\begin{tikzpicture}[
+ box/.style={draw=black!65,rounded corners=3pt,fill=white,text width=6.65cm,minimum height=2.85cm,inner sep=5pt,align=left,font=\fontsize{9}{11}\selectfont},
+ flow/.style={->,>=stealth,thick,draw=black!75},
+ feedback/.style={<->,>=stealth,dashed,draw=black!65},
+ lab/.style={font=\fontsize{8}{10}\selectfont,fill=white,inner sep=2pt}]
+\node[box] (input) at (0,0) {\textbf{1. 输入与几何网格}\\
+外部表格：轴向、径向及燃料棒功率，入口温度和冷却剂压力；\\
+Functions：PiecewiseMultiliner / Constant / Linear；\\
+Mesh：RZ网格及fuel / clad / gap / cavity边界。};
+\node[box] (time) at (7.9,0) {\textbf{2. 时间推进与非线性求解}\\
+IterationAdaptiveDT：时间步长、最大步长及功率历史同步；\\
+Transient--PJFNK：非线性瞬态求解；\\
+SMP / LU：预处理。};
+\node[box] (power) at (0,-3.65) {\textbf{3. 功率、裂变率与燃耗}\\
+PowerDensityMOX：局部功率；\\
+EngineeringBurnupAux / BurnupAux：燃耗；\\
+FissionRateAux：体积裂变率；\\
+FastNeutronFlux：快中子通量与注量。};
+\node[box] (micro) at (7.9,-3.65) {\textbf{4. 组分与微结构演化}\\
+MOXOxygenToMetalRatio：Oxygen与O/M转换；\\
+MOXOxygenDiffusion：氧输运；\\
+MOXPoreDiff：孔隙率演化；\\
+MOXActinideRedistribution：Pu/锕系元素输运。};
+\node[box] (thermal) at (0,-7.3) {\textbf{5. 热物性与温度场}\\
+MAMOXThermal / CladdingHeatConduction：热导率、比热容和密度；\\
+NeutronHeatSource：裂变体热源；\\
+HeatConduction + TimeDerivative：温度场；\\
+外表面温度或冷却剂换热边界。};
+\node[box] (gas) at (7.9,-7.3) {\textbf{6. 裂变气体、气腔压力与传热}\\
+ForMas：裂变气体生成与释放；\\
+released\_gas\_moles及气腔/间隙体积；\\
+CavityPressure：气腔压力与气体物质的量；\\
+GapHeatTransfer：间隙传热及混合气体反馈。};
+\node[box] (fuel) at (0,-10.95) {\textbf{7. 燃料力学材料}\\
+MOX弹性：杨氏模量、泊松比；\\
+热膨胀、重定位与密实化本征应变；\\
+固体/气体裂变产物肿胀；\\
+MOXStressCreep及多重非弹性应力更新。};
+\node[box] (clad) at (7.9,-10.95) {\textbf{8. 包壳力学材料}\\
+包壳弹性与屈服；\\
+Zr4 / HT9 / SS316 / D9热膨胀；\\
+辐照生长本征应变；\\
+蠕变及ComputeMultipleInelasticStress更新。};
+\node[box] (mech) at (0,-14.6) {\textbf{9. 热力耦合与接触求解}\\
+SolidMechanics / QuasiStatic：fuel和clad有限应变；\\
+Mechanical Contact：fuel\_outer与clad\_inside；\\
+底部轴向约束与冷却剂压力；\\
+输出位移、应力、应变和接触状态。};
+\node[box] (output) at (7.9,-14.6) {\textbf{10. 后处理与输出}\\
+AuxKernels：MaterialRealAux / RankTwoAux / FluxAux；\\
+Postprocessors：中心温度、平均燃耗、气体摩尔数、传热系数及功率比；\\
+Outputs：Exodus与CSV。};
+\draw[flow] (input)--(time);
+\draw[flow] (input)--node[lab]{功率与边界}(power);
+\draw[flow] (time)--node[lab]{时间步推进}(micro);
+\draw[flow] (power)--node[lab]{裂变热源}(thermal);
+\draw[flow] (power)--(micro);
+\draw[feedback] (thermal)--(gas);
+\draw[feedback] (micro)--node[lab]{温度/组分}(gas);
+\draw[flow] (thermal)--node[lab]{温度}(fuel);
+\draw[flow] (power.west) -- ++(-0.65,0) |- (fuel.west);
+\draw[flow] (thermal.south east) -- node[lab]{温度} (clad.north west);
+\draw[flow] (fuel)--node[lab]{材料响应}(mech);
+\draw[flow] (clad)--(output);
+\draw[flow] (mech)--(output);
+\draw[feedback] (mech.west) -- ++(-0.45,0) |- node[pos=0.7,lab,rotate=90]{几何与接触反馈}(thermal.west);
+\end{tikzpicture}

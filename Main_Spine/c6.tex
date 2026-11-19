@@ -11,7 +11,7 @@
 
 在具体应用中，本文采用经过前述章节验证的高保真燃料棒模型生成场快照，并采用分阶段研究策略。首先，在固定功率历史形状下改变整体功率倍率，构建POD系数插值和POD--GPR模型，用于验证网格统一、空间降阶、低维系数预测和二维场恢复流程，并形成规则一维参数空间下的基准结果。在此基础上，进一步生成具有不同整体幅值、局部幅值、瞬态时刻和持续时间的功率历史，构建POD--LSTM时序代理模型。该模型以时间、瞬时功率、功率变化率和累积功率积分特征为序列输入，预测温度、径向位移和轴向位移的POD系数增量，并采用可训练的循环初始状态减小固定初始条件下的序列冷启动误差。
 
-本章研究范围限定为固定燃料棒几何、固定材料模型、固定冷却剂边界和统一有限元网格下的运行历史快速预测。功率历史作为主要变化的运行输入，冷却剂温度、压力、填充气体压力及几何参数保持不变，从而在受控参数空间内评价时序代理模型对完整热--力场的预测能力。最终模型的预测关系表示为
+本章研究范围限定为固定燃料棒几何、固定材料模型、固定冷却剂边界和统一有限元网格下的运行历史快速预测。功率历史作为主要变化的运行输入，冷却剂温度、压力、填充气体压力及几何参数保持不变，从而在受控参数空间内评价时序代理模型对完整热--力场的预测能力。最终模型的预测关系表示为：
 \begin{equation}
 	\left\{P(\tau)\right\}_{0\leq\tau\leq t_j}
 	\xrightarrow{\mathrm{POD\text{--}LSTM}}
@@ -31,13 +31,13 @@
 {Proper Orthogonal Decomposition and Optimal Low-Dimensional Representation}
 \label{subsec:ch6_pod_theory}
 
-POD通过在给定维数下最大化所保留的数据能量或等价地最小化投影误差，构造能够表征高维状态主要变化特征的正交低维基\cite{berkoozProperOrthogonalDecomposition1993,holmesTurbulenceCoherentStructures1996}。设高维系统在不同时间、参数或运行条件下获得$N_s$个离散状态快照
+POD通过在给定维数下最大化所保留的数据能量或等价地最小化投影误差，构造能够表征高维状态主要变化特征的正交低维基\cite{berkoozProperOrthogonalDecomposition1993,holmesTurbulenceCoherentStructures1996}。设高维系统在不同时间、参数或运行条件下获得$N_s$个离散状态快照：
 \begin{equation}
 	\boldsymbol y^{(j)}\in\mathbb R^N
 	\qquad j=1,2,\ldots,N_s
 	\label{eq:ch6_general_snapshots}
 \end{equation}
-式中：$N$为原始高维状态的自由度。选取参考状态$\boldsymbol y_{\mathrm{ref}}$后，定义中心化快照
+\noindent 式中：$N$为原始高维状态的自由度（无量纲计数）；状态向量及其参考状态的各分量保留对应物理场的单位，温度场为$\mathrm{K}$，位移场为$\mathrm{m}$。选取参考状态$\boldsymbol y_{\mathrm{ref}}$后，定义中心化快照：
 \begin{equation}
 	\boldsymbol y_c^{(j)}
 	=
@@ -45,29 +45,29 @@ POD通过在给定维数下最大化所保留的数据能量或等价地最小�
 	\label{eq:ch6_centered_snapshot}
 \end{equation}
 POD的目标是在$r\ll N$的条件下寻找一组正交基
-$\{\boldsymbol\phi_1,\ldots,\boldsymbol\phi_r\}$，使全部快照投影至该$r$维子空间后的总体误差最小，即
+$\{\boldsymbol\phi_1,\ldots,\boldsymbol\phi_r\}$，使全部快照投影至该$r$维子空间后的总体误差最小，即：
 \begin{equation}
-	\min_{\boldsymbol\Phi_r^{\mathrm T}\boldsymbol\Phi_r=\boldsymbol I}
+	\min_{\boldsymbol\varPhi_r^{\mathrm T}\boldsymbol\varPhi_r=\boldsymbol I}
 	\sum_{j=1}^{N_s}
 	\left\|
 	\boldsymbol y_c^{(j)}
 	-
-	\boldsymbol\Phi_r\boldsymbol\Phi_r^{\mathrm T}
+	\boldsymbol\varPhi_r\boldsymbol\varPhi_r^{\mathrm T}
 	\boldsymbol y_c^{(j)}
 	\right\|_2^2
 	\qquad
-	\boldsymbol\Phi_r=
+	\boldsymbol\varPhi_r=
 	\begin{bmatrix}
 		\boldsymbol\phi_1&\cdots&\boldsymbol\phi_r
 	\end{bmatrix}
 	\label{eq:ch6_pod_optimal_problem}
 \end{equation}
-因此，POD并非简单的数据压缩，而是在给定维数$r$下寻找能够最优表征已有快照集合的线性低维子空间。对于离散欧氏内积，其正交条件写为
+因此，POD并非简单的数据压缩，而是在给定维数$r$下寻找能够最优表征已有快照集合的线性低维子空间。对于离散欧氏内积，其正交条件写为：
 \begin{equation}
 	\langle\boldsymbol x,\boldsymbol y\rangle
 	=\boldsymbol x^{\mathrm T}\boldsymbol y
 	\qquad
-	\boldsymbol\Phi_r^{\mathrm T}\boldsymbol\Phi_r=\boldsymbol I
+	\boldsymbol\varPhi_r^{\mathrm T}\boldsymbol\varPhi_r=\boldsymbol I
 	\label{eq:pod_inner_product_complete}
 \end{equation}
 对于非均匀离散或需要保留有限元积分权重的情形，也可采用质量矩阵构造加权内积；本文后续固定网格应用采用式~\eqref{eq:pod_inner_product_complete}所示的离散欧氏内积。
@@ -76,7 +76,7 @@ $\{\boldsymbol\phi_1,\ldots,\boldsymbol\phi_r\}$，使全部快照投影至该$r
 {Snapshot Matrix, Singular Value Decomposition, and Field Reconstruction}
 \label{subsec:ch6_pod_svd_theory}
 
-将中心化状态快照按列排列，可得到一般形式的快照矩阵
+将中心化状态快照按列排列，可得到一般形式的快照矩阵：
 \begin{equation}
 	\boldsymbol S
 	=
@@ -100,9 +100,9 @@ $\{\boldsymbol\phi_1,\ldots,\boldsymbol\phi_r\}$，使全部快照投影至该$r
 	\label{eq:pod_svd_complete}
 \end{equation}
 其中，$\boldsymbol U$的列向量为正交空间模态，$\boldsymbol\Sigma$的对角元素满足
-$\sigma_1\geq\sigma_2\geq\cdots\geq0$。截取前$r$个左奇异向量得到$r$维POD基
+$\sigma_1\geq\sigma_2\geq\cdots\geq0$。截取前$r$个左奇异向量得到$r$维POD基：
 \begin{equation}
-	\boldsymbol\Phi_r
+	\boldsymbol\varPhi_r
 	=
 	\begin{bmatrix}
 		\boldsymbol\phi_1&
@@ -114,12 +114,12 @@ $\sigma_1\geq\sigma_2\geq\cdots\geq0$。截取前$r$个左奇异向量得到$r$�
 	\label{eq:pod_basis_complete}
 \end{equation}
 
-截断后快照矩阵的最优低秩近似为
+截断后快照矩阵的最优低秩近似为：
 \begin{equation}
 	\boldsymbol S_r
 	=
-	\boldsymbol\Phi_r
-	\boldsymbol\Phi_r^{\mathrm T}\boldsymbol S
+	\boldsymbol\varPhi_r
+	\boldsymbol\varPhi_r^{\mathrm T}\boldsymbol S
 	\qquad
 	\left\|\boldsymbol S-\boldsymbol S_r\right\|_F^2
 	=
@@ -127,7 +127,7 @@ $\sigma_1\geq\sigma_2\geq\cdots\geq0$。截取前$r$个左奇异向量得到$r$�
 	\label{eq:ch6_pod_truncation_error}
 \end{equation}
 
-相应的累计能量占比定义为
+相应的累计能量占比定义为：
 \begin{equation}
 	\eta_r
 	=
@@ -144,7 +144,7 @@ $\sigma_1\geq\sigma_2\geq\cdots\geq0$。截取前$r$个左奇异向量得到$r$�
 	\boldsymbol S^{\mathrm T}\boldsymbol S
 	\label{eq:ch6_snapshot_correlation_matrix}
 \end{equation}
-并求解
+并求解：
 \begin{equation}
 	\boldsymbol C\boldsymbol v_i
 	=
@@ -162,11 +162,11 @@ $\sigma_1\geq\sigma_2\geq\cdots\geq0$。截取前$r$个左奇异向量得到$r$�
 \end{equation}
 获得。该构造与对快照矩阵直接进行奇异值分解在数学上等价，尤其适用于空间自由度远大于快照数量的高维离散系统\cite{quarteroniReducedBasisMethods2016}。
 
-对于任一新状态$\boldsymbol y$，其低维POD系数可由正交投影得到
+对于任一新状态$\boldsymbol y$，其低维POD系数可由正交投影得到：
 \begin{equation}
 	\boldsymbol a
 	=
-	\boldsymbol\Phi_r^{\mathrm T}
+	\boldsymbol\varPhi_r^{\mathrm T}
 	\left(
 	\boldsymbol y-\boldsymbol y_{\mathrm{ref}}
 	\right)
@@ -178,7 +178,7 @@ $\sigma_1\geq\sigma_2\geq\cdots\geq0$。截取前$r$个左奇异向量得到$r$�
 	=
 	\boldsymbol y_{\mathrm{ref}}
 	+
-	\boldsymbol\Phi_r\widehat{\boldsymbol a}
+	\boldsymbol\varPhi_r\widehat{\boldsymbol a}
 	\label{eq:pod_reconstruction_complete}
 \end{equation}
 恢复至原始高维空间。由此，高维场预测问题可转化为少量POD系数的预测问题。
@@ -187,7 +187,7 @@ $\sigma_1\geq\sigma_2\geq\cdots\geq0$。截取前$r$个左奇异向量得到$r$�
 {Principle of LSTM-Based Temporal State Modeling}
 \label{subsec:ch6_lstm_theory}
 
-对于具有历史依赖性的动态系统，当前状态不仅取决于当前输入，还可能受到此前输入路径和内部状态演化的影响。LSTM最初由Hochreiter和Schmidhuber提出，用于缓解传统循环神经网络在长时间依赖学习中的梯度衰减问题\cite{hochreiterLongShortTermMemory1997}；随后Gers等引入遗忘门，使内部记忆能够根据输入自适应衰减或重置\cite{gersLearningForgetContinual2000}。本文采用目前常用的包含遗忘门、输入门和输出门的LSTM形式，其基本结构可参见Greff等的系统比较\cite{greffLSTMSearchSpace2017}。设第$j$个时间步输入为$\boldsymbol x_j$，LSTM通过隐藏状态$\boldsymbol h_j$和记忆状态$\boldsymbol c_j$递推表征历史信息。其遗忘门、输入门、输出门和候选记忆状态分别写为
+对于具有历史依赖性的动态系统，当前状态不仅取决于当前输入，还可能受到此前输入路径和内部状态演化的影响。LSTM最初由Hochreiter和Schmidhuber提出，用于缓解传统循环神经网络在长时间依赖学习中的梯度衰减问题\cite{hochreiterLongShortTermMemory1997}；随后Gers等引入遗忘门，使内部记忆能够根据输入自适应衰减或重置\cite{gersLearningForgetContinual2000}。本文采用目前常用的包含遗忘门、输入门和输出门的LSTM形式，其基本结构可参见Greff等的系统比较\cite{greffLSTMSearchSpace2017}。设第$j$个时间步输入为$\boldsymbol x_j$，LSTM通过隐藏状态$\boldsymbol h_j$和记忆状态$\boldsymbol c_j$递推表征历史信息。其遗忘门、输入门、输出门和候选记忆状态分别写为：
 \begin{align}
 	\boldsymbol f_j
 	&=\sigma\left(
@@ -215,7 +215,7 @@ $\sigma_1\geq\sigma_2\geq\cdots\geq0$。截取前$r$个左奇异向量得到$r$�
 	\label{eq:lstm_candidate_state}
 \end{align}
 
-记忆状态和隐藏状态更新为
+记忆状态和隐藏状态更新为：
 \begin{align}
 	\boldsymbol c_j
 	&=
@@ -228,23 +228,23 @@ $\sigma_1\geq\sigma_2\geq\cdots\geq0$。截取前$r$个左奇异向量得到$r$�
 	\boldsymbol o_j\odot\tanh(\boldsymbol c_j)
 	\label{eq:lstm_hidden_update}
 \end{align}
-式中：$\sigma$为Sigmoid函数，$\odot$表示Hadamard乘积。门控结构使网络能够根据当前输入与历史隐藏状态选择性保留、更新和输出记忆信息，因此适合描述输入历史对当前低维状态具有显著影响的动态映射。
+\noindent 式中：$\sigma$为Sigmoid函数，$\odot$表示Hadamard乘积。门控结构使网络能够根据当前输入与历史隐藏状态选择性保留、更新和输出记忆信息，因此适合描述输入历史对当前低维状态具有显著影响的动态映射。
 
 \xsubsection{POD--LSTM非侵入式代理框架}
 {Non-Intrusive POD--LSTM Surrogate Framework}
 \label{subsec:ch6_pod_lstm_framework}
 
-POD与LSTM结合后，高维动态场可写为
+POD与LSTM结合后，高维动态场可写为：
 \begin{equation}
 	\boldsymbol y(t_j)
 	\approx
 	\boldsymbol y_{\mathrm{ref}}
 	+
-	\boldsymbol\Phi_r\boldsymbol a(t_j)
+	\boldsymbol\varPhi_r\boldsymbol a(t_j)
 	\label{eq:ch6_general_pod_expansion}
 \end{equation}
 
-其中，空间基$\boldsymbol\Phi_r$由高保真快照离线提取，而低维系数$\boldsymbol a(t_j)$由时序代理模型根据历史输入预测：
+其中，空间基$\boldsymbol\varPhi_r$由高保真快照离线提取，而低维系数$\boldsymbol a(t_j)$由时序代理模型根据历史输入预测：
 \begin{equation}
 	\widehat{\boldsymbol a}(t_j)
 	=
@@ -257,7 +257,7 @@ POD与LSTM结合后，高维动态场可写为
 	\right)
 	\label{eq:ch6_general_lstm_mapping}
 \end{equation}
-式中：$\mathcal F_{\boldsymbol\theta}$表示由参数$\boldsymbol\theta$确定的LSTM时序映射。将式~\eqref{eq:ch6_general_lstm_mapping}代入式~\eqref{eq:ch6_general_pod_expansion}，即可得到从历史输入到高维场的快速预测关系
+\noindent 式中：$\mathcal F_{\boldsymbol\theta}$表示由参数$\boldsymbol\theta$确定的LSTM时序映射。将式~\eqref{eq:ch6_general_lstm_mapping}代入式~\eqref{eq:ch6_general_pod_expansion}，即可得到从历史输入到高维场的快速预测关系：
 \begin{equation}
 	\left\{\boldsymbol x_k\right\}_{k=1}^{j}
 	\longrightarrow
@@ -300,7 +300,7 @@ POD与LSTM结合后，高维动态场可写为
 	\end{tabularx}
 \end{table}
 
-本章选取温度$T$、径向位移$u_r$和轴向位移$u_z$作为降阶与快速预测对象。选择这三个变量的原因在于：温度场直接控制燃料热物性、裂变气体释放和热应力水平；径向位移反映间隙闭合、燃料膨胀和包壳径向变形；轴向位移则用于描述燃料与包壳的轴向热膨胀和蠕变累积。对于统一网格上的任一场变量$q$，其离散形式表示为
+本章选取温度$T$、径向位移$u_r$和轴向位移$u_z$作为降阶与快速预测对象。选择这三个变量的原因在于：温度场直接控制燃料热物性、裂变气体释放和热应力水平；径向位移反映间隙闭合、燃料膨胀和包壳径向变形；轴向位移则用于描述燃料与包壳的轴向热膨胀和蠕变累积。对于统一网格上的任一场变量$q$，其离散形式表示为：
 \begin{equation}
 	\boldsymbol{q}(t,\boldsymbol{\mu})
 	=
@@ -314,7 +314,7 @@ POD与LSTM结合后，高维动态场可写为
 	\label{eq:pod_discrete_field_ch6}
 \end{equation}
 
-\noindent 式中：$N$为统一训练网格的节点总数。本章代理模型预测并重构的是式~\eqref{eq:pod_discrete_field_ch6}所表示的完整节点场，而不是仅预测最大温度或最大位移等标量响应。
+\noindent 式中：$N$为统一训练网格的节点总数（无量纲计数）；$\boldsymbol T$的单位为$\mathrm{K}$，$\boldsymbol u_r$和$\boldsymbol u_z$的单位为$\mathrm{m}$。本章代理模型预测并重构的是式~\eqref{eq:pod_discrete_field_ch6}所表示的完整节点场，而不是仅预测最大温度或最大位移等标量响应。
 
 \xsubsection{网格敏感性分析与训练网格选取}
 {Mesh Sensitivity Analysis and Selection of the Training Mesh}
@@ -355,7 +355,7 @@ POD与LSTM结合后，高维动态场可写为
 	\label{eq:mesh_uzmax}
 \end{align}
 
-在缺乏解析解的情况下，以当前最高分辨率细网格作为参考。峰值相对差异和全寿期时间历程RMSE分别定义为
+在缺乏解析解的情况下，以当前最高分辨率细网格作为参考。峰值相对差异和全寿期时间历程RMSE分别定义为：
 \begin{equation}
 	\varepsilon_{Q,h}
 	=
@@ -450,7 +450,7 @@ POD与LSTM结合后，高维动态场可写为
 	\label{eq:scaled_power_history_ch6}
 \end{equation}
 
-此时有限元模型的独立参数向量为
+此时有限元模型的独立参数向量为：
 \begin{equation}
 	\boldsymbol{\mu}=\begin{bmatrix}\alpha_P\end{bmatrix}
 	\label{eq:current_parameter_vector}
@@ -486,7 +486,7 @@ POD与LSTM结合后，高维动态场可写为
 
 \subsubsection{面向POD--LSTM的变功率历史数据集}
 
-固定功率倍率数据集只能描述相同功率史形状下的整体幅值变化，不能区分具有相同瞬时功率但不同先前运行路径的工况。为建立时序代理模型，本文在基准功率历史$P_0(t)$的基础上，引入全局倍率、分阶段局部倍率以及关键瞬态时间变换，生成不同形状的功率历史。第$m$个工况可概括表示为
+固定功率倍率数据集只能描述相同功率史形状下的整体幅值变化，不能区分具有相同瞬时功率但不同先前运行路径的工况。为建立时序代理模型，本文在基准功率历史$P_0(t)$的基础上，引入全局倍率、分阶段局部倍率以及关键瞬态时间变换，生成不同形状的功率历史。第$m$个工况可概括表示为：
 \begin{equation}
 	P^{(m)}(t)
 	=
@@ -503,7 +503,7 @@ POD与LSTM结合后，高维动态场可写为
 	\label{eq:formal_variable_power_history}
 \end{equation}
 
-\noindent 式中：$\alpha_g$为全寿期整体功率倍率，$\alpha_e$、$\alpha_m$和$\alpha_l$分别控制前期、中期和后期的局部功率水平，$\Delta t_{\mathrm{tr}}$表示关键瞬态发生时刻的平移量，$s_{\mathrm{tr}}$表示瞬态持续时间倍率，$\mathcal W$为分段幅值变换和时间变换算子。变功率历史生成程序采用的参数范围见表~\ref{tab:formal_power_parameter_ranges}。
+\noindent 式中：$\alpha_g$为全寿期整体功率倍率，$\alpha_e$、$\alpha_m$和$\alpha_l$分别控制前期、中期和后期的局部功率水平，$\Delta t_{\mathrm{tr}}$表示关键瞬态发生时刻的平移量（$\mathrm{s}$），$s_{\mathrm{tr}}$表示瞬态持续时间倍率（无量纲），$\mathcal W$为分段幅值变换和时间变换算子。变功率历史生成程序采用的参数范围见表~\ref{tab:formal_power_parameter_ranges}。
 
 \begin{table}[htbp]
 	\centering
@@ -556,7 +556,7 @@ POD--LSTM数据集的训练、验证与独立盲测划分见表\ref{tab:formal_l
 
 统一训练网格包含$N=5717$个节点和5000个单元。所有工况采用相同几何、网格拓扑、节点编号和$N_t=109$个统一输出时刻。Exodus文件中包含温度、径向位移和轴向位移三个节点变量，即\texttt{temperature(K)}、\texttt{disp\_r}和\texttt{disp\_z}。在构建POD数据集前，对每个工况检查终止时间、输出时刻、节点坐标、节点编号、变量名以及NaN和Inf。只有通过完整性检查的工况才能进入后续POD和LSTM流程。
 
-对于固定功率倍率基准数据集，5条训练历史对应的单场训练快照数为
+对于固定功率倍率基准数据集，5条训练历史对应的单场训练快照数为：
 \begin{equation}
 	N_{s,\mathrm{base}}^{\mathrm{tr}}
 	=5\times109
@@ -564,7 +564,7 @@ POD--LSTM数据集的训练、验证与独立盲测划分见表\ref{tab:formal_l
 	\label{eq:baseline_training_snapshot_count}
 \end{equation}
 
-变功率历史数据集包含40条通过完整性检查的训练历史，因此单场训练快照数为$40\times109=4360$，对应快照矩阵尺寸为
+变功率历史数据集包含40条通过完整性检查的训练历史，因此单场训练快照数为$40\times109=4360$，对应快照矩阵尺寸为：
 \begin{equation}
 	\boldsymbol S_q^{\mathrm{var}}
 	\in
@@ -572,7 +572,7 @@ POD--LSTM数据集的训练、验证与独立盲测划分见表\ref{tab:formal_l
 	\label{eq:formal_snapshot_matrix_size}
 \end{equation}
 
-LSTM训练时，每个有限元工况被组织为一条长度为109的完整序列，而不是109个彼此独立的样本。第$m$条历史的输入和输出分别表示为
+LSTM训练时，每个有限元工况被组织为一条长度为109的完整序列，而不是109个彼此独立的样本。第$m$条历史的输入和输出分别表示为：
 \begin{equation}
 	\boldsymbol X^{(m)}
 	=
@@ -622,7 +622,7 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 	\boldsymbol q(t_0,\boldsymbol\mu)
 	\label{eq:pod_reference_field_complete}
 \end{equation}
-将训练快照相对于参考场的变化量按列排列，得到
+将训练快照相对于参考场的变化量按列排列，得到：
 \begin{equation}
 	\boldsymbol S_q
 	=
@@ -645,7 +645,7 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 	r\in\{1,2,3,4,5,6,8,10,12,15,20\}
 	\label{eq:pod_rank_candidates}
 \end{equation}
-进行阶数扫描，并使用4个未参与POD基提取的验证工况评价平均相对$L_2$误差、快照RMSE和最大节点误差。综合能量保留率、误差下降趋势和模型维数，最终确定
+进行阶数扫描，并使用4个未参与POD基提取的验证工况评价平均相对$L_2$误差、快照RMSE和最大节点误差。综合能量保留率、误差下降趋势和模型维数，最终确定：
 \begin{equation}
 	r_T=10
 	\qquad
@@ -677,7 +677,7 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 	\end{tabularx}
 \end{table}
 
-三个场原始输出维数为$3\times5717=17151$，最终降阶系数总数为$10+10+8=28$，按输出维数计算的压缩比约为
+三个场原始输出维数为$3\times5717=17151$，最终降阶系数总数为$10+10+8=28$，按输出维数计算的压缩比约为：
 \begin{equation}
 	C_{\mathrm{POD}}
 	=
@@ -724,7 +724,7 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 
 前述$r_T=10$、$r_{u_r}=10$和$r_{u_z}=8$是固定功率倍率基准数据集的阶数，
 用于插值和GPR模型。对于变功率历史数据集，本文仅使用40条训练历史重新
-构造三个场的快照矩阵和POD基，并在10条验证历史上重新扫描阶数。POD--LSTM模型的总输出维数定义为
+构造三个场的快照矩阵和POD基，并在10条验证历史上重新扫描阶数。POD--LSTM模型的总输出维数定义为：
 \begin{equation}
 	r_{\mathrm{tot}}
 	=
@@ -781,7 +781,7 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 \xsubsection{基准模型的输入与输出}
 {Inputs and Outputs of the Baseline Models}
 
-固定功率倍率基准POD的输出向量为
+固定功率倍率基准POD的输出向量为：
 \begin{equation}
 	\boldsymbol y_j^{\mathrm{base}}
 	=
@@ -829,7 +829,7 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 \xsubsection{POD--GPR阶段性代理模型}
 {POD--GPR Surrogate Model for the Baseline Stage}
 
-高斯过程回归（Gaussian process regression，GPR）以随机过程先验和协方差核描述输入与输出之间的非线性映射，并可同时给出预测均值及不确定性估计\cite{rasmussenGaussianProcessesMachine2006}。本文利用GPR建立输入特征与各物理场POD系数之间的映射。对于$q\in\{T,u_r,u_z\}$，其映射关系写为
+高斯过程回归（Gaussian process regression，GPR）以随机过程先验和协方差核描述输入与输出之间的非线性映射，并可同时给出预测均值及不确定性估计\cite{rasmussenGaussianProcessesMachine2006}。本文利用GPR建立输入特征与各物理场POD系数之间的映射。对于$q\in\{T,u_r,u_z\}$，其映射关系写为：
 \begin{equation}
 	\mathcal{G}_{q}:
 	\boldsymbol{x}^{\mathrm{GPR}}
@@ -838,13 +838,13 @@ LSTM训练时，每个有限元工况被组织为一条长度为109的完整序�
 	\label{eq:gpr_coefficient_mapping}
 \end{equation}
 
-\noindent 式中：$\boldsymbol{a}_{q}$表示物理场$q$对应的保留POD系数向量。
+\noindent 式中：$\boldsymbol{a}_{q}$表示物理场$q$对应的保留POD系数向量。采用无量纲正交基时，系数与相应原始物理场同单位（温度为$\mathrm{K}$，位移为$\mathrm{m}$）；标准化后的输入与输出均为无量纲量。
 
 本文对每个保留POD系数分别建立独立的标量GPR模型，其中温度场10个、径向位移场10个、轴向位移场8个，共28个GPR模型。各阶POD系数在训练前分别进行标准化，并分别优化对应的协方差核超参数。每一阶系数均按照式~\eqref{eq:gpr_coefficient_mapping}建立输入到系数的映射，协方差核采用常数核、Mat\'{e}rn核和白噪声核的组合：
 \begin{equation}
 	k(\boldsymbol{x},\boldsymbol{x}')
 	=
-	C\,k_{\mathrm{Mat\acute{e}rn}}
+	C\,k_{\text{Matérn}}
 	(\boldsymbol{x},\boldsymbol{x}';\boldsymbol{\ell},\nu)
 	+
 	\sigma_n^2\delta_{\boldsymbol{x}\boldsymbol{x}'}
@@ -932,7 +932,7 @@ POD--GPR对温度和径向位移的平均预测误差低于插值模型，其中
 {Temporal Modeling Strategy and Input Features}
 
 燃料性能响应不仅取决于当前功率，还与此前功率历史、累计热输入、间隙演化
-和材料状态有关。对于第$j$个统一输出时刻，POD--LSTM模型的动态输入定义为
+和材料状态有关。对于第$j$个统一输出时刻，POD--LSTM模型的动态输入定义为：
 \begin{equation}
 	\boldsymbol x_j
 	=
@@ -945,7 +945,7 @@ POD--GPR对温度和径向位移的平均预测误差低于插值模型，其中
 	\label{eq:formal_lstm_features}
 \end{equation}
 
-\noindent 式中：$\dot P_j$和$E_j$分别为功率变化率和累积功率积分，定义为
+\noindent 式中：$\dot P_j$和$E_j$分别为线功率变化率（$\mathrm{W\,m^{-1}\,s^{-1}}$）和累积线功率积分（$\mathrm{J\,m^{-1}}$），线功率$P$以$\mathrm{W\,m^{-1}}$计，时间以$\mathrm{s}$计，定义为：
 \begin{equation}
 	\dot P_j
 	=
@@ -975,7 +975,7 @@ POD--GPR对温度和径向位移的平均预测误差低于插值模型，其中
 	\label{eq:formal_coefficient_increment}
 \end{equation}
 
-网络预测$\Delta\widehat{\boldsymbol a}_q(t_j)$，绝对系数和完整场分别恢复为
+网络预测$\Delta\widehat{\boldsymbol a}_q(t_j)$，绝对系数和完整场分别恢复为：
 \begin{align}
 	\widehat{\boldsymbol a}_q(t_j)
 	&=
@@ -987,7 +987,7 @@ POD--GPR对温度和径向位移的平均预测误差低于插值模型，其中
 	&=
 	\boldsymbol q_0
 	+
-	\boldsymbol\Phi_q
+	\boldsymbol\varPhi_q
 	\widehat{\boldsymbol a}_q(t_j)
 	\label{eq:formal_restore_field}
 \end{align}
@@ -1093,7 +1093,7 @@ POD--LSTM模型的最终冻结配置见表\ref{tab:formal_lstm_configuration}。
 \xsubsection{损失函数、训练与模型冻结}
 {Loss Function, Training, and Model Freezing}
 
-各阶POD系数按照训练集统计量独立标准化。带时间权重的分场系数损失为
+各阶POD系数按照训练集统计量独立标准化。带时间权重的分场系数损失为：
 \begin{equation}
 	\mathcal L_a
 	=
@@ -1112,7 +1112,7 @@ POD--LSTM模型的最终冻结配置见表\ref{tab:formal_lstm_configuration}。
 	\label{eq:formal_lstm_coefficient_loss}
 \end{equation}
 
-为直接约束完整场，引入POD重构损失
+为直接约束完整场，引入POD重构损失：
 \begin{equation}
 	\mathcal L_q
 	=
@@ -1122,7 +1122,7 @@ POD--LSTM模型的最终冻结配置见表\ref{tab:formal_lstm_configuration}。
 	\sum_{q\in\{T,u_r,u_z\}}
 	\frac{
 		\left\|
-		\boldsymbol\Phi_q
+		\boldsymbol\varPhi_q
 		\left(
 		\Delta\widehat{\boldsymbol a}_{q,j}
 		-
@@ -1133,7 +1133,7 @@ POD--LSTM模型的最终冻结配置见表\ref{tab:formal_lstm_configuration}。
 	\label{eq:formal_lstm_field_loss}
 \end{equation}
 
-总损失写为
+总损失写为：
 \begin{equation}
 	\mathcal L
 	=
@@ -1159,7 +1159,7 @@ $\mathcal L_0$约束初始增量状态，$\boldsymbol\theta$为全部网络参�
 \xsubsection{误差评价指标}
 {Error Metrics}
 
-代理模型误差分为POD截断误差、POD系数预测误差和端到端场误差三部分。对于第$j$个快照，场相对$L_2$误差定义为
+代理模型误差分为POD截断误差、POD系数预测误差和端到端场误差三部分。对于第$j$个快照，场相对$L_2$误差定义为：
 \begin{equation}
 	\varepsilon_{q,L_2}^{(j)}
 	=
@@ -1174,7 +1174,7 @@ $\mathcal L_0$约束初始增量状态，$\boldsymbol\theta$为全部网络参�
 	\label{eq:surrogate_relative_l2_complete}
 \end{equation}
 
-节点均方根误差和最大绝对误差分别为
+节点均方根误差和最大绝对误差分别为：
 \begin{equation}
 	\mathrm{RMSE}_{q}^{(j)}
 	=
@@ -1336,20 +1336,6 @@ POD--LSTM模型在验证集上的完整场误差见表\ref{tab:formal_lstm_valid
 的平均误差均保持在较低水平，而较大的瞬时误差主要集中于若干功率变化较为
 显著的时间区间，表现为局部峰值而非全寿期范围内的持续偏离。
 
-三个物理场的全局最大瞬时RMSE均来自
-\texttt{case\_lstm\_bl\_0006}，但对应时刻并不完全一致。温度场最大RMSE为
-$98.835\,\mathrm{K}$，发生在
-$t=5.5373472\times10^{7}\,\mathrm{s}$；轴向位移场最大RMSE为
-$141.135\,\upmu\mathrm{m}$，发生在
-$t=5.7374784\times10^{7}\,\mathrm{s}$；径向位移场最大RMSE为
-$6.543\,\upmu\mathrm{m}$，发生在
-$t=6.3656928\times10^{7}\,\mathrm{s}$。三个误差峰值均集中于寿期后段，
-且来源于同一独立盲测工况，表明该功率历史对应的后期热力响应对代理模型
-而言具有较高预测难度。与此同时，三个场的峰值时刻存在一定时间偏移，说明
-温度场与位移场误差并非简单同步变化，而可能受到热响应、燃料变形以及
-间隙/接触状态演化等不同时间尺度过程的共同影响。因此，图中局部误差峰值更适合视为复杂瞬态与累计状态共同作用下代理模型
-预测难度增加的表现，而不宜简单归因于网络随机误差。由于三个物理场的峰值
-时刻并不同步，现有结果也不足以支持单一热--力传递机制的定量因果归因。
 \begin{figure}[!htbp]
 	\centering
 	
@@ -1382,6 +1368,22 @@ $t=6.3656928\times10^{7}\,\mathrm{s}$。三个误差峰值均集中于寿期后�
 	\caption{独立盲测工况下不同物理场的RMSE时间历程}
 	\label{fig:formal_blind_error_history}
 \end{figure}
+
+三个物理场的全局最大瞬时RMSE均来自
+\texttt{case\_lstm\_bl\_0006}，但对应时刻并不完全一致。温度场最大RMSE为
+$98.835\,\mathrm{K}$，发生在
+$t=5.5373472\times10^{7}\,\mathrm{s}$；轴向位移场最大RMSE为
+$141.135\,\upmu\mathrm{m}$，发生在
+$t=5.7374784\times10^{7}\,\mathrm{s}$；径向位移场最大RMSE为
+$6.543\,\upmu\mathrm{m}$，发生在
+$t=6.3656928\times10^{7}\,\mathrm{s}$。三个误差峰值均集中于寿期后段，
+且来源于同一独立盲测工况，表明该功率历史对应的后期热力响应对代理模型
+而言具有较高预测难度。与此同时，三个场的峰值时刻存在一定时间偏移，说明
+温度场与位移场误差并非简单同步变化，而可能受到热响应、燃料变形以及
+间隙/接触状态演化等不同时间尺度过程的共同影响。因此，图中局部误差峰值更适合视为复杂瞬态与累计状态共同作用下代理模型
+预测难度增加的表现，而不宜简单归因于网络随机误差。由于三个物理场的峰值
+时刻并不同步，现有结果也不足以支持单一热--力传递机制的定量因果归因。
+
 
 \xsubsection{完整二维场恢复}
 {Full Two-Dimensional Field Reconstruction}
@@ -1477,7 +1479,7 @@ $0.06203\,\mathrm{s}$。该时间不包括结果文件写出，也不包含POD�
 \xsubsection{计算效率与加速比}
 {Computational Efficiency and Speedup}
 
-端到端在线时间定义为
+端到端在线时间定义为：
 \begin{equation}
 	t_{\mathrm{online}}
 	=
@@ -1491,7 +1493,7 @@ $0.06203\,\mathrm{s}$。该时间不包括结果文件写出，也不包含POD�
 	\label{eq:formal_online_time}
 \end{equation}
 
-相对于20个MPI进程下单个高保真全寿期计算的加速比为
+相对于20个MPI进程下单个高保真全寿期计算的加速比为：
 \begin{equation}
 	S
 	=

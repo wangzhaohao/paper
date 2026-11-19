@@ -101,7 +101,7 @@ MOOSE传递给SCIANTIX的驱动变量存储在 \texttt{Sciantix\_history} 数组
 	\texttt{sciantix\_iTrapping} & 晶内气泡捕获模型 & 5 \\
 	\texttt{sciantix\_iNucleation} & 气泡成核模型 & 6 \\
 	\texttt{sciantix\_iOutput} & 输出信息详细程度 & 7 \\
-	\texttt{sciantix\_iGrainBoundaryVacancyDiffusivity} & 晶界空位扩散模型 & 8 \\
+	\texttt{sciantix\_iGrainBoundary\allowbreak VacancyDiffusivity} & 晶界空位扩散模型 & 8 \\
 	\texttt{sciantix\_iGrainBoundaryBehaviour} & 晶界气泡行为模型 & 9 \\
 	\texttt{sciantix\_iMicroCracking} & 晶界微裂纹模型 & 10 \\
 	\texttt{sciantix\_iFuelThermochemistry} & 燃料基体/热化学模型 & 11 \\
@@ -122,6 +122,8 @@ MOOSE传递给SCIANTIX的驱动变量存储在 \texttt{Sciantix\_history} 数组
 计算完成后，Wrapper从 \texttt{Sciantix\_variables} 数组中提取宏观感兴趣的量。裂变气体释放份额（FGR）和气态肿胀（Swelling）的计算逻辑如代码清单\ref{lst:sciantix_swelling}所示。
 
 \begin{lstlisting}[language=C++,
+	columns=fullflexible,
+	keepspaces=true,
 	literate={-}{-}1, 
 	basicstyle=\small\ttfamily,      % 设置字体大小和等宽字体
 	keywordstyle=\color{blue}\bfseries, % 关键字高亮

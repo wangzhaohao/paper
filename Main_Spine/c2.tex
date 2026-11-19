@@ -37,196 +37,196 @@
 \end{figure}
 表~\ref{tab:ch2_domain_variables}进一步汇总不同计算区域的主要状态变量和模型层级。
 {
-	\renewcommand{\tabularxcolumn}[1]{m{#1}}
-	\begin{xltabular}{\textwidth}{@{}
-			>{\hsize=0.65\hsize\linewidth=\hsize
+\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\begin{xltabular}{\textwidth}{@{}
+		>{\hsize=0.65\hsize\linewidth=\hsize
 				\centering\arraybackslash}X
-			>{\hsize=0.95\hsize\linewidth=\hsize
+		>{\hsize=0.95\hsize\linewidth=\hsize
 				\centering\arraybackslash}X
-			>{\hsize=1.55\hsize\linewidth=\hsize
+		>{\hsize=1.55\hsize\linewidth=\hsize
 				\RaggedRight\arraybackslash}X
-			>{\hsize=0.85\hsize\linewidth=\hsize
+		>{\hsize=0.85\hsize\linewidth=\hsize
 				\centering\arraybackslash}X
-			@{}}
-		
-		% --- 标题定义 ---
-		\caption{燃料棒不同计算区域的主要状态变量与物理过程}
-		\label{tab:ch2_domain_variables} \\
-		
-		% --- 第一页表头 ---
-		\toprule
-		计算区域
-		&
-		主要状态变量
-		&
-		\multicolumn{1}{c}{主要物理过程}
-		&
-		模型层级
-		\\
-		\midrule
-		\endfirsthead
-		
-		% --- 续页标题 ---
-		\multicolumn{4}{c}{
-			{表~\thetable（续）\quad
+		@{}}
+
+	% --- 标题定义 ---
+	\caption{燃料棒不同计算区域的主要状态变量与物理过程}
+	\label{tab:ch2_domain_variables} \\
+
+	% --- 第一页表头 ---
+	\toprule
+	计算区域
+	&
+	主要状态变量
+	&
+	\multicolumn{1}{c}{主要物理过程}
+	&
+	模型层级
+	\\
+	\midrule
+	\endfirsthead
+
+	% --- 续页标题 ---
+	\multicolumn{4}{c}{
+		{表~\thetable（续）\quad
 				燃料棒不同计算区域的主要状态变量与物理过程}
-		}
-		\\
-		
-		% --- 续页表头 ---
-		\toprule
-		计算区域
-		&
-		主要状态变量
-		&
-		\multicolumn{1}{c}{主要物理过程}
-		&
-		模型层级
-		\\
-		\midrule
-		\endhead
-		
-		% --- 非最后一页页尾 ---
-		\midrule
-		\multicolumn{4}{r}{续下页}
-		\\
-		\endfoot
-		
-		% --- 最后一页页尾 ---
-		\bottomrule
-		\endlastfoot
-		
-		燃料
-		&
-		\shortstack{
-			$T,\mathbf u,p,$\\
-			$c_{\mathrm{Pu}},c_{\mathrm{Am}},\mathrm{O/M},$\\
-			$f_{\mathrm{FGR}},S_{\mathrm{gas}}$
-		}
-		&
-		裂变释热、热传导、热膨胀、蠕变、重定位、密实化、肿胀、气孔迁移与重构、组分迁移及裂变气体行为
-		&
-		多维有限元场/局部状态模型
-		\\
-		
-		燃料--包壳间隙
-		&
-		$d_g,P_c,h_{\mathrm{gap}},\boldsymbol{x}_g$
-		&
-		气体传热、固--固接触传热、热辐射及机械接触
-		&
-		界面模型
-		\\
-		
-		包壳
-		&
-		$T,\mathbf u,\boldsymbol{\sigma},\boldsymbol{\varepsilon}$
-		&
-		热传导、热膨胀、塑性、蠕变、累计损伤及辐照肿胀
-		&
-		多维有限元场
-		\\
-		
-		气隙/气腔
-		&
-		$p_g,V_g,T_g,n_i$
-		&
-		气体组成演化、自由体积更新及棒内压力
-		&
-		集总状态模型
-		\\
-		
-		冷却剂通道
-		&
-		$h_{\mathrm{cool}}(z),T_{\mathrm{cool}}(z),H_w$
-		&
-		轴向{\rarecharfont 焓}升、水物性更新及包壳外表面对流换热
-		&
-		一维轴向模型
-		\\
-		
-	\end{xltabular}
+	}
+	\\
+
+	% --- 续页表头 ---
+	\toprule
+	计算区域
+	&
+	主要状态变量
+	&
+	\multicolumn{1}{c}{主要物理过程}
+	&
+	模型层级
+	\\
+	\midrule
+	\endhead
+
+	% --- 非最后一页页尾 ---
+	\midrule
+	\multicolumn{4}{r}{续下页}
+	\\
+	\endfoot
+
+	% --- 最后一页页尾 ---
+	\bottomrule
+	\endlastfoot
+
+	燃料
+	&
+	\shortstack{
+	$T,\mathbf u,p,$\\
+	$c_{\mathrm{Pu}},c_{\mathrm{Am}},\mathrm{O/M},$\\
+	$f_{\mathrm{FGR}},S_{\mathrm{gas}}$
+	}
+	&
+	裂变释热、热传导、热膨胀、蠕变、重定位、密实化、肿胀、气孔迁移与重构、组分迁移及裂变气体行为
+	&
+	多维有限元场/局部状态模型
+	\\
+
+	燃料--包壳间隙
+	&
+	$d_g,P_c,h_{\mathrm{gap}},\boldsymbol{x}_g$
+	&
+	气体传热、固--固接触传热、热辐射及机械接触
+	&
+	界面模型
+	\\
+
+	包壳
+	&
+	$T,\mathbf u,\boldsymbol{\sigma},\boldsymbol{\varepsilon}$
+	&
+	热传导、热膨胀、塑性、蠕变、累计损伤及辐照肿胀
+	&
+	多维有限元场
+	\\
+
+	气隙/气腔
+	&
+	$p_{\mathrm g},V_{\mathrm g},T_{\mathrm g},n_i$
+	&
+	气体组成演化、自由体积更新及棒内压力
+	&
+	集总状态模型
+	\\
+
+	冷却剂通道
+	&
+	$h_{\mathrm{cool}}(z),T_{\mathrm{cool}}(z),H_w$
+	&
+	轴向{\rarecharfont 焓}升、水物性更新及包壳外表面对流换热
+	&
+	一维轴向模型
+	\\
+
+\end{xltabular}
 }
 \xsubsection{主要状态变量与总体耦合关系}{Primary State Variables and Overall Coupling Relations}
 \label{subsec:ch2_variables_coupling}
 
-燃料棒多物理场计算中的主要变量可分为有限元场变量、局部材料状态变量、界面状态变量、燃料棒级集总状态量和轴向冷却剂状态量。有限元场变量主要包括燃料和包壳温度$T$及位移$\mathbf{u}$，以及燃料区域内的孔隙率$p$、Pu和Am浓度$c_{\mathrm{Pu}}$和$c_{\mathrm{Am}}$以及氧金属比（O/M）等输运变量。局部材料状态变量主要包括应力$\boldsymbol{\sigma}$、应变$\boldsymbol{\varepsilon}$、裂变气体释放份额$f_{\mathrm{FGR}}$和气体肿胀$S_{\mathrm{gas}}$等，用于表征材料力学响应及裂变气体行为。燃料--包壳界面的状态由当前间隙宽度$d_g$、接触压力$P_c$、间隙传热系数$h_{\mathrm{gap}}$以及间隙气体组分$\boldsymbol{x}_g$描述，并作为燃料与包壳之间热学和力学耦合的关键变量。燃料棒级集总状态量包括自由体积$V_g$、气体平均温度$T_g$、气腔压力$p_g$以及He、Xe和Kr等气体组分的物质的量$n_i$。外部冷却剂状态则通过沿轴向分布的比{\rarecharfont 焓}$h_{\mathrm{cool}}(z)$、温度$T_{\mathrm{cool}}(z)$和包壳--冷却剂换热系数$H_w$进行描述。上述变量通过控制方程、材料本构关系、界面模型和集总状态模型相互传递，共同构成燃料棒多物理场耦合求解的状态变量体系。
+燃料棒多物理场计算中的主要变量可分为有限元场变量、局部材料状态变量、界面状态变量、燃料棒级集总状态量和轴向冷却剂状态量。有限元场变量主要包括燃料和包壳温度$T$及位移$\mathbf{u}$，以及燃料区域内的孔隙率$p$、Pu和Am浓度$c_{\mathrm{Pu}}$和$c_{\mathrm{Am}}$以及氧金属比（O/M）等输运变量。局部材料状态变量主要包括应力$\boldsymbol{\sigma}$、应变$\boldsymbol{\varepsilon}$、裂变气体释放份额$f_{\mathrm{FGR}}$和气体肿胀$S_{\mathrm{gas}}$等，用于表征材料力学响应及裂变气体行为。燃料--包壳界面的状态由当前间隙宽度$d_g$、接触压力$P_c$、间隙传热系数$h_{\mathrm{gap}}$以及间隙气体组分$\boldsymbol{x}_g$描述，并作为燃料与包壳之间热学和力学耦合的关键变量。燃料棒级集总状态量包括自由体积$V_{\mathrm g}$、气体平均温度$T_{\mathrm g}$、气腔压力$p_{\mathrm g}$以及He、Xe和Kr等气体组分的物质的量$n_i$。外部冷却剂状态则通过沿轴向分布的比{\rarecharfont 焓}$h_{\mathrm{cool}}(z)$、温度$T_{\mathrm{cool}}(z)$和包壳--冷却剂换热系数$H_w$进行描述。上述变量通过控制方程、材料本构关系、界面模型和集总状态模型相互传递，共同构成燃料棒多物理场耦合求解的状态变量体系。
 
-为统一描述不同物理过程中的未知量与状态量，本文按照有限元场变量、局部材料状态变量、界面状态变量、燃料棒级集总状态量和轴向冷却剂状态量进行分组，并将燃料棒多物理场计算的总体状态向量表示为
+为统一描述不同物理过程中的未知量与状态量，本文按照有限元场变量、局部材料状态变量、界面状态变量、燃料棒级集总状态量和轴向冷却剂状态量进行分组，并将燃料棒多物理场计算的总体状态向量表示为：
 \begin{equation}
 	\mathbf y=
 	\left[
-	\mathbf y_{\mathrm{FE}}
-	\mathbf y_{\mathrm{mat}}
-	\mathbf y_{\mathrm{int}}
-	\mathbf y_{\mathrm{gas}}
-	\mathbf y_{\mathrm{cool}}
-	\right]^{\mathrm T}
+		\mathbf y_{\mathrm{FE}}
+		\mathbf y_{\mathrm{mat}}
+		\mathbf y_{\mathrm{int}}
+		\mathbf y_{\mathrm{gas}}
+		\mathbf y_{\mathrm{cool}}
+		\right]^{\mathrm T}
 	\label{eq:ch2_state_vector}
 \end{equation}
-其中，各类状态变量分别定义为
+其中，各类状态变量分别定义为：
 \begin{align}
 	\mathbf y_{\mathrm{FE}}
-	&=
+	 & =
 	\left[
-	T\,
-	\mathbf u\,
-	p\,
-	c_{\mathrm{Pu}}\,
-	c_{\mathrm{Am}}\,
-	\mathrm{O/M}
-	\right]^{\mathrm T}
+		T\,
+		\mathbf u\,
+		p\,
+		c_{\mathrm{Pu}}\,
+		c_{\mathrm{Am}}\,
+		\mathrm{O/M}
+		\right]^{\mathrm T}
 	\notag
 	\\[0.5ex]
 	\mathbf y_{\mathrm{mat}}
-	&=
+	 & =
 	\left[
-	\boldsymbol{\sigma}\,
-	\boldsymbol{\varepsilon}\,
-	f_{\mathrm{FGR}}\,
-	S_{\mathrm{gas}}
-	\right]^{\mathrm T}
+		\boldsymbol{\sigma}\,
+		\boldsymbol{\varepsilon}\,
+		f_{\mathrm{FGR}}\,
+		S_{\mathrm{gas}}
+		\right]^{\mathrm T}
 	\notag
 	\\[0.5ex]
 	\mathbf y_{\mathrm{int}}
-	&=
+	 & =
 	\left[
-	d_g\,
-	P_c\,
-	h_{\mathrm{gap}}\,
-	\boldsymbol{x}_g
-	\right]^{\mathrm T}
+		d_g\,
+		P_c\,
+		h_{\mathrm{gap}}\,
+		\boldsymbol{x}_g
+		\right]^{\mathrm T}
 	\notag
 	\\[0.5ex]
 	\mathbf y_{\mathrm{gas}}
-	&=
+	 & =
 	\left[
-	V_g\,
-	T_g\,
-	p_g\,
-	n_i
-	\right]^{\mathrm T}
+		V_{\mathrm g}\,
+		T_{\mathrm g}\,
+		p_{\mathrm g}\,
+		n_i
+		\right]^{\mathrm T}
 	\notag
 	\\[0.5ex]
 	\mathbf y_{\mathrm{cool}}
-	&=
+	 & =
 	\left[
-	h_{\mathrm{cool}}(z)\,
-	T_{\mathrm{cool}}(z)\,
-	H_w
-	\right]^{\mathrm T}
+		h_{\mathrm{cool}}(z)\,
+		T_{\mathrm{cool}}(z)\,
+		H_w
+		\right]^{\mathrm T}
 	\label{eq:ch2_state_subvectors}
 \end{align}
-式中：$\mathbf y_{\mathrm{FE}}$表示燃料和包壳有限元场及燃料内部输运变量；$\mathbf y_{\mathrm{mat}}$表示材料力学响应和裂变气体行为相关的局部状态量；$\mathbf y_{\mathrm{int}}$表示燃料--包壳界面的几何、接触及传热状态；$\mathbf y_{\mathrm{gas}}$表示气隙与气腔中的棒级集总气体状态；$\mathbf y_{\mathrm{cool}}$表示沿轴向变化的冷却剂热工状态及包壳--冷却剂换热参数
+\noindent 式中：$\mathbf y_{\mathrm{FE}}$表示燃料和包壳有限元场及燃料内部输运变量；$\mathbf y_{\mathrm{mat}}$表示材料力学响应和裂变气体行为相关的局部状态量；$\mathbf y_{\mathrm{int}}$表示燃料--包壳界面的几何、接触及传热状态；$\mathbf y_{\mathrm{gas}}$表示气隙与气腔中的棒级集总气体状态；$\mathbf y_{\mathrm{cool}}$表示沿轴向变化的冷却剂热工状态及包壳--冷却剂换热参数。
 
-功率历史、中子通量、冷却剂入口温度、冷却剂压力和质量流量等运行条件分别通过裂变率、燃耗、体积热源、冷却剂入口{\rarecharfont 焓}及热力边界条件进入上述多物理场模型，并驱动各状态变量随时间和空间演化
+功率历史、中子通量、冷却剂入口温度、冷却剂压力和质量流量等运行条件分别通过裂变率、燃耗、体积热源、冷却剂入口{\rarecharfont 焓}及热力边界条件进入上述多物理场模型，并驱动各状态变量随时间和空间演化。
 
-温度是各物理过程之间最主要的公共变量。裂变功率驱动燃料温度场，温度进一步影响燃料热膨胀、蠕变、气孔迁移、锕系元素迁移、O/M演化以及裂变气体行为；孔隙率、Pu含量、O/M比和燃耗又通过材料热物性与局部功率反馈温度。力学位移改变燃料--包壳间隙宽度、接触压力和棒内自由体积；裂变气体释放改变气腔压力和混合气体组成，并进一步改变间隙气体传热能力；包壳外表面热流沿轴向累积形成冷却剂{\rarecharfont 焓}升，冷却剂温度又作为包壳外表面对流换热的环境温度进入固体热传导边界
+温度是各物理过程之间最主要的公共变量。裂变功率驱动燃料温度场，温度进一步影响燃料热膨胀、蠕变、气孔迁移、锕系元素迁移、O/M演化以及裂变气体行为；孔隙率、Pu含量、O/M比和燃耗又通过材料热物性与局部功率反馈温度。力学位移改变燃料--包壳间隙宽度、接触压力和棒内自由体积；裂变气体释放改变气腔压力和混合气体组成，并进一步改变间隙气体传热能力；包壳外表面热流沿轴向累积形成冷却剂{\rarecharfont 焓}升，冷却剂温度又作为包壳外表面对流换热的环境温度进入固体热传导边界。
 
-从能量传递路径看，可概括为
+从能量传递路径看，可概括为：
 \begin{equation}
 	\dot q_v
-	\rightarrow T_f
+	\rightarrow T_{\mathrm f}
 	\rightarrow q_{\mathrm{gap}}
 	\rightarrow T_{\mathrm{clad}}
 	\rightarrow q''_{\mathrm w}
@@ -239,7 +239,7 @@
 \begin{equation}
 	T
 	\rightarrow \mathrm{FGR}
-	\rightarrow \{n_{\mathrm{Xe}},n_{\mathrm{Kr}},p_g\}
+	\rightarrow \{n_{\mathrm{Xe}},n_{\mathrm{Kr}},p_{\mathrm g}\}
 	\rightarrow h_{\mathrm{gap}}
 	\rightarrow T
 	\label{eq:ch2_fgr_feedback_overall}
@@ -247,13 +247,13 @@
 \begin{equation}
 	T
 	\rightarrow \boldsymbol{\varepsilon}
-	\rightarrow \{d_g,P_c,V_g\}
-	\rightarrow \{h_{\mathrm{gap}},p_g\}
+	\rightarrow \{d_g,P_c,V_{\mathrm g}\}
+	\rightarrow \{h_{\mathrm{gap}},p_{\mathrm g}\}
 	\rightarrow T
 	\label{eq:ch2_mechanics_feedback_overall}
 \end{equation}
 
-与此同时，气孔率、Pu/Am浓度和O/M的变化通过材料热物性、蒸气压和迁移驱动力与温度场相互耦合，由此形成本文燃料棒多物理场计算的总体变量传递网络
+与此同时，气孔率、Pu/Am浓度和O/M的变化通过材料热物性、蒸气压和迁移驱动力与温度场相互耦合，由此形成本文燃料棒多物理场计算的总体变量传递网络。
 
 \xsection{热传导与冷却剂热工边界}{Heat Conduction and Coolant Thermal Boundary}
 \label{sec:ch2_heat_coolant}
@@ -261,61 +261,61 @@
 \xsubsection{燃料与包壳热传导控制方程}{Governing Equation of Heat Conduction in Fuel and Cladding}
 \label{subsec:ch2_solid_heat}
 
-燃料和包壳内部采用瞬态固体热传导方程描述能量传递。能量守恒方程写为\cite{halesBISONTheoryManual2016,newmanThreeDimensionalCoupled2009}
+燃料和包壳内部采用瞬态固体热传导方程描述能量传递。能量守恒方程写为\cite{halesBISONTheoryManual2016,newmanThreeDimensionalCoupled2009}：
 \begin{equation}
-	\rho c_p\frac{\partial T}{\partial t}
+	\rho c_{\mathrm p}\frac{\partial T}{\partial t}
 	-\nabla\cdot\left(k\nabla T\right)
 	=\dot q_v
 	\label{eq:ch2_heat_equation}
 \end{equation}
-式中：$\rho$为材料密度，$c_p$为定压比热容，$k$为热导率，$T$为热力学温度，$\dot q_v$为单位体积热源。导热热流密度满足Fourier定律
+\noindent 式中：$\rho$为材料密度（$\mathrm{kg\,m^{-3}}$），$c_{\mathrm p}$为定压比热容（$\mathrm{J\,kg^{-1}\,K^{-1}}$），$k$为热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$），$T$为热力学温度（$\mathrm{K}$），$\dot q_v$为单位体积热源（$\mathrm{W\,m^{-3}}$）。时间$t$的单位为$\mathrm{s}$，空间坐标的单位为$\mathrm{m}$；导热热流密度$\boldsymbol q_{\mathrm c}$的单位为$\mathrm{W\,m^{-2}}$，满足Fourier定律：
 \begin{equation}
-	\mathbf q_c=-k\nabla T
+	\mathbf q_{\mathrm c}=-k\nabla T
 	\label{eq:ch2_fourier_law}
 \end{equation}
 
-燃料区域的体热源由局部裂变率和单次裂变沉积能量确定，可概括表示为
+燃料区域的体热源由局部裂变率和单次裂变沉积能量确定，可概括表示为：
 \begin{equation}
-	\dot q_v=E_fF
+	\dot q_v=E_{\mathrm f}F
 	\label{eq:ch2_fission_heat_source}
 \end{equation}
-式中：$E_f$为单次裂变沉积的有效能量，$F$为局部体积裂变率。燃料棒计算中，局部裂变率由线功率历史、轴向功率分布、径向功率分布及燃耗状态共同确定
+\noindent 式中：$E_{\mathrm f}$为单次裂变沉积的有效能量（$\mathrm{J}$），$F$为局部体积裂变率（$\mathrm{m^{-3}\,s^{-1}}$）。燃料棒计算中，局部裂变率由线功率历史、轴向功率分布、径向功率分布及燃耗状态共同确定。
 
-对于MOX燃料，热导率、比热容和密度均由局部材料状态确定，统一表示为
+对于MOX燃料，热导率、比热容和密度均由局部材料状态确定，统一表示为：
 \begin{equation}
-	k_f=\mathcal K_f
+	k_{\mathrm f}=\mathcal K_{\mathrm f}
 	\left(T,B,p,\mathrm{O/M},c_{\mathrm{Pu}},c_{\mathrm{Am}},\ldots\right)
 	\label{eq:ch2_fuel_k_closure}
 \end{equation}
 \begin{equation}
-	c_{p,f}=\mathcal C_f
+	c_{\mathrm p,f}=\mathcal C_{\mathrm f}
 	\left(T,c_{\mathrm{Pu}},c_{\mathrm{Am}},\ldots\right)
 	\qquad
-	\rho_f=\mathcal R_f\left(T,p,B,\ldots\right)
+	\rho_{\mathrm f}=\mathcal R_{\mathrm f}\left(T,p,B,\ldots\right)
 	\label{eq:ch2_fuel_cp_rho_closure}
 \end{equation}
-包壳材料相应写为
+包壳材料相应写为：
 \begin{equation}
-	k_c=\mathcal K_c(T,\Phi,\ldots),\qquad
-	c_{p,c}=\mathcal C_c(T,\ldots),\qquad
-	\rho_c=\mathcal R_c(T,\ldots)
+	k_{\mathrm c}=\mathcal K_{\mathrm c}(T,\varPhi,\ldots),\qquad
+	c_{\mathrm p,c}=\mathcal C_{\mathrm c}(T,\ldots),\qquad
+	\rho_{\mathrm c}=\mathcal R_{\mathrm c}(T,\ldots)
 	\label{eq:ch2_clad_thermal_closure}
 \end{equation}
-式中：$\Phi$为中子注量。上述材料闭合关系在第3章中进一步给出
+\noindent 式中：$\varPhi$为中子注量（$\mathrm{m^{-2}}$）。上述材料闭合关系在第3章中进一步给出。
 
-燃料和包壳通过间隙热流实现界面耦合。设燃料外表面和包壳内表面的法向分别为$\mathbf n_f$和$\mathbf n_c$，则有
+燃料和包壳通过间隙热流实现界面耦合。设燃料外表面和包壳内表面的法向分别为$\mathbf n_f$和$\mathbf n_c$，则有：
 \begin{equation}
-	-k_f\nabla T_f\cdot\mathbf n_f=q_{\mathrm{gap}}
+	-k_{\mathrm f}\nabla T_{\mathrm f}\cdot\mathbf n_f=q_{\mathrm{gap}}
 	\qquad
-	-k_c\nabla T_c\cdot\mathbf n_c=-q_{\mathrm{gap}}
+	-k_{\mathrm c}\nabla T_{\mathrm c}\cdot\mathbf n_c=-q_{\mathrm{gap}}
 	\label{eq:ch2_gap_flux_continuity}
 \end{equation}
-其中$q_{\mathrm{gap}}$由第\ref{sec:ch2_gap_heat_transfer}节的燃料--包壳界面传热关系确定
+其中$q_{\mathrm{gap}}$由第\ref{sec:ch2_gap_heat_transfer}节的燃料--包壳界面传热关系确定。
 
 \xsubsection{一维冷却剂{\rarecharfont 焓}升模型}{One-dimensional Coolant Enthalpy-rise Model}
 \label{subsec:ch2_coolant_enthalpy}
 
-包壳外部冷却剂沿燃料棒轴向流动，并通过包壳外表面对流换热带走燃料产生的热量。本文将燃料棒热传导计算与沿轴向的一维冷却剂{\rarecharfont 焓}升模型相耦合，以描述冷却剂热力状态沿燃料棒轴向的演化。BISON中的单通道冷却剂模型同样以入口温度、压力和质量流动条件作为热工输入，根据轴向能量守恒关系计算冷却剂比{\rarecharfont 焓}增量，并结合流体物性关系获得局部冷却剂温度\cite{halesBISONTheoryManual2016}
+包壳外部冷却剂沿燃料棒轴向流动，并通过包壳外表面对流换热带走燃料产生的热量。本文将燃料棒热传导计算与沿轴向的一维冷却剂{\rarecharfont 焓}升模型相耦合，以描述冷却剂热力状态沿燃料棒轴向的演化。BISON中的单通道冷却剂模型同样以入口温度、压力和质量流动条件作为热工输入，根据轴向能量守恒关系计算冷却剂比{\rarecharfont 焓}增量，并结合流体物性关系获得局部冷却剂温度\cite{halesBISONTheoryManual2016}。
 
 设冷却剂入口温度为$T_{\mathrm{in}}$，冷却剂压力为$p_{\mathrm{cool}}$，则入口比{\rarecharfont 焓}由水物性关系确定：
 \begin{equation}
@@ -323,16 +323,16 @@
 	=h\!\left(p_{\mathrm{cool}},T_{\mathrm{in}}\right)
 	\label{eq:ch2_coolant_inlet_enthalpy}
 \end{equation}
-本文采用MOOSE中的\texttt{Water97FluidProperties}计算水和水蒸气的热力学物性。该模型基于IAPWS-IF97工业水和水蒸气性质公式\cite{wagnerPropertiesWaterSteam1998}，可根据压力和温度计算比{\rarecharfont 焓}，并可由压力和比{\rarecharfont 焓}反求温度
+本文采用MOOSE中的\texttt{Water97FluidProperties}计算水和水蒸气的热力学物性。该模型基于IAPWS-IF97工业水和水蒸气性质公式\cite{wagnerPropertiesWaterSteam1998}，可根据压力和温度计算比{\rarecharfont 焓}，并可由压力和比{\rarecharfont 焓}反求温度。
 
-对于轴向微元$\mathrm dz$，包壳外表面向冷却剂传递的热量使冷却剂比{\rarecharfont 焓}沿流动方向逐渐增加。设$P_h$为受热周长，$q''_{\mathrm w}$为包壳外表面向冷却剂传递的热流密度，$\dot m$为冷却剂质量流量，则一维轴向能量守恒关系可表示为
+对于轴向微元$\mathrm dz$，包壳外表面向冷却剂传递的热量使冷却剂比{\rarecharfont 焓}沿流动方向逐渐增加。设$P_h$为受热周长，$q''_{\mathrm w}$为包壳外表面向冷却剂传递的热流密度，$\dot m$为冷却剂质量流量，则一维轴向能量守恒关系可表示为：
 \begin{equation}
 	\dot m\frac{\mathrm dh_{\mathrm{cool}}}{\mathrm dz}
 	=P_hq''_{\mathrm w}
 	\label{eq:ch2_coolant_enthalpy_governing}
 \end{equation}
 
-若热工输入采用质量流速$G_m$和流道截面积$A_c$，则冷却剂质量流量为
+若热工输入采用质量流速$G_m$和流道截面积$A_c$，则冷却剂质量流量为：
 \begin{equation}
 	\dot m=G_mA_c
 	\label{eq:ch2_coolant_mass_flow}
@@ -353,12 +353,12 @@
 	=T\!\left[p_{\mathrm{cool}}(z,t),h_{\mathrm{cool}}(z)\right]
 	\label{eq:ch2_coolant_temperature_ph}
 \end{equation}
-本文程序中，\texttt{InletEnthalpyAux}用于确定冷却剂入口热力学状态，\texttt{CoolantPerAux}与\texttt{LayeredSideIntegral}用于沿轴向累计包壳外表面向冷却剂传递的热量，并据此获得局部比{\rarecharfont 焓}增量；随后，\texttt{FluidPropertiesMaterialPHNEW}结合水物性关系，根据局部压力和比{\rarecharfont 焓}计算冷却剂温度。由此，冷却剂入口温度、压力和质量流动条件被转换为沿轴向分布的冷却剂热力状态，并与包壳热传导计算相耦合
+本文程序中，\texttt{InletEnthalpyAux}用于确定冷却剂入口热力学状态，\texttt{CoolantPerAux}与\texttt{LayeredSideIntegral}用于沿轴向累计包壳外表面向冷却剂传递的热量，并据此获得局部比{\rarecharfont 焓}增量；随后，\texttt{FluidPropertiesMaterialPHNEW}结合水物性关系，根据局部压力和比{\rarecharfont 焓}计算冷却剂温度。由此，冷却剂入口温度、压力和质量流动条件被转换为沿轴向分布的冷却剂热力状态，并与包壳热传导计算相耦合。
 
 \xsubsection{包壳--冷却剂对流换热边界}{Cladding--Coolant Convective Heat-transfer Boundary}
 \label{subsec:ch2_clad_coolant_bc}
 
-由一维冷却剂{\rarecharfont 焓}升模型获得的$T_{\mathrm{cool}}(z)$作为对应轴向位置的冷却剂体平均温度，并用于确定包壳外表面对流换热边界。包壳外表面向冷却剂传递的热流密度可表示为
+由一维冷却剂{\rarecharfont 焓}升模型获得的$T_{\mathrm{cool}}(z)$作为对应轴向位置的冷却剂体平均温度，并用于确定包壳外表面对流换热边界。包壳外表面向冷却剂传递的热流密度可表示为：
 \begin{equation}
 	q''_{\mathrm w}
 	=H_w
@@ -367,34 +367,34 @@
 	\right]
 	\label{eq:ch2_clad_coolant_flux}
 \end{equation}
-式中：$T_{\mathrm{clad,out}}$为包壳外表面温度，$H_w$为包壳--冷却剂对流换热系数。本文程序通过\texttt{ComputeHw}计算包壳--冷却剂对流换热系数$H_w$。该模型采用基于Reynolds数和Prandtl数的强迫对流换热关联式。冷却剂Reynolds数定义为
+\noindent 式中：$T_{\mathrm{clad,out}}$为包壳外表面温度（$\mathrm{K}$），$H_w$为包壳--冷却剂对流换热系数（$\mathrm{W\,m^{-2}\,K^{-1}}$）。本文程序通过\texttt{ComputeHw}计算包壳--冷却剂对流换热系数$H_w$。该模型采用基于Reynolds数和Prandtl数的强迫对流换热关联式。冷却剂Reynolds数定义为：
 \begin{equation}
 	\mathrm{Re}
 	=
 	\frac{G_m D_{\mathrm h}}{\mu_{\mathrm{cool}}}
 	\label{eq:ch2_coolant_reynolds}
 \end{equation}
-式中：$G_m$为冷却剂质量流速，单位为$\mathrm{kg\,m^{-2}\,s^{-1}}$；
+\noindent 式中：$G_m$为冷却剂质量流速，单位为$\mathrm{kg\,m^{-2}\,s^{-1}}$；
 $D_{\mathrm h}$为冷却剂流道水力直径，单位为$\mathrm{m}$；
-$\mu_{\mathrm{cool}}$为冷却剂动力黏度，单位为$\mathrm{Pa\,s}$
+$\mu_{\mathrm{cool}}$为冷却剂动力黏度，单位为$\mathrm{Pa\,s}$。
 
-冷却剂Prandtl数表示为
+冷却剂Prandtl数表示为：
 \begin{equation}
 	\mathrm{Pr}
 	=
 	\frac{
-		c_{p,\mathrm{cool}}\mu_{\mathrm{cool}}
+		c_{\mathrm p,\mathrm{cool}}\mu_{\mathrm{cool}}
 	}{
 		k_{\mathrm{cool}}
 	}
 	\label{eq:ch2_coolant_prandtl}
 \end{equation}
-式中：$c_{p,\mathrm{cool}}$为冷却剂定压比热容，单位为
+\noindent 式中：$c_{\mathrm p,\mathrm{cool}}$为冷却剂定压比热容（$\mathrm{J\,kg^{-1}\,K^{-1}}$），单位为
 $\mathrm{J\,kg^{-1}\,K^{-1}}$；
-$k_{\mathrm{cool}}$为冷却剂热导率，单位为
+$k_{\mathrm{cool}}$为冷却剂热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$），单位为
 $\mathrm{W\,m^{-1}\,K^{-1}}$
 
-在此基础上，Nusselt数采用Dittus--Boelter形式表示为
+在此基础上，Nusselt数采用Dittus--Boelter形式表示为：
 \begin{equation}
 	\mathrm{Nu}
 	=
@@ -404,7 +404,7 @@ $\mathrm{W\,m^{-1}\,K^{-1}}$
 	\label{eq:ch2_coolant_nusselt}
 \end{equation}
 
-相应的包壳--冷却剂对流换热系数为
+相应的包壳--冷却剂对流换热系数为：
 \begin{equation}
 	H_w
 	=
@@ -416,91 +416,91 @@ $\mathrm{W\,m^{-1}\,K^{-1}}$
 	\frac{k_{\mathrm{cool}}}{D_{\mathrm h}}
 	\label{eq:ch2_coolant_hw}
 \end{equation}
-式中：$H_w$为包壳--冷却剂对流换热系数，单位为
+\noindent 式中：$H_w$为包壳--冷却剂对流换热系数（$\mathrm{W\,m^{-2}\,K^{-1}}$），单位为
 $\mathrm{W\,m^{-2}\,K^{-1}}$
 
 冷却剂的动力黏度$\mu_{\mathrm{cool}}$、定压比热容
-$c_{p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
-均根据局部冷却剂热力状态由水物性模型实时更新。计算得到的$H_w$进一步通过\texttt{ConvectiveHeatFluxBC}用于施加包壳外表面的对流换热边界条件
+$c_{\mathrm p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
+均根据局部冷却剂热力状态由水物性模型实时更新。计算得到的$H_w$进一步通过\texttt{ConvectiveHeatFluxBC}用于施加包壳外表面的对流换热边界条件。
 
-从整体能量传递过程来看，包壳外表面温度决定壁面向冷却剂传递的热流$q''_{\mathrm w}$；该热流经式\eqref{eq:ch2_coolant_enthalpy_integral}累积形成冷却剂轴向比{\rarecharfont 焓}升，并通过式\eqref{eq:ch2_coolant_temperature_ph}转换为局部冷却剂温度；更新后的冷却剂温度与对流换热系数进一步共同确定包壳外表面的热边界条件。因此，包壳热传导与冷却剂轴向能量输运通过壁面热流实现耦合，形成从燃料内部释热、经包壳传导至冷却剂带出的连续能量传递路径
+从整体能量传递过程来看，包壳外表面温度决定壁面向冷却剂传递的热流$q''_{\mathrm w}$；该热流经式\eqref{eq:ch2_coolant_enthalpy_integral}累积形成冷却剂轴向比{\rarecharfont 焓}升，并通过式\eqref{eq:ch2_coolant_temperature_ph}转换为局部冷却剂温度；更新后的冷却剂温度与对流换热系数进一步共同确定包壳外表面的热边界条件。因此，包壳热传导与冷却剂轴向能量输运通过壁面热流实现耦合，形成从燃料内部释热、经包壳传导至冷却剂带出的连续能量传递路径。
 
 \xsection{燃料与包壳力学控制方程}{Governing Equations of Fuel and Cladding Mechanics}
 \label{sec:ch2_mechanics_governing}
 
 \xsubsection{准静态平衡与应变关系}{Quasi-static Equilibrium and Strain Relations}
 
-本文燃料棒力学响应采用准静态固体力学框架。燃料与包壳在任一时刻满足线动量平衡方程
+本文燃料棒力学响应采用准静态固体力学框架。燃料与包壳在任一时刻满足线动量平衡方程：
 \begin{equation}
 	\nabla\cdot\boldsymbol{\sigma}+\mathbf b=\mathbf 0
 	\label{eq:ch2_quasistatic_equilibrium}
 \end{equation}
-式中：$\boldsymbol{\sigma}$为Cauchy应力张量，$\mathbf b$为单位体积体力。MOOSE固体力学模块通过应力散度算子建立各位移分量的平衡关系，并由材料本构模型在积分点更新应力状态\cite{halesBISONTheoryManual2016}
+\noindent 式中：$\boldsymbol{\sigma}$为Cauchy应力张量（$\mathrm{Pa}$），$\mathbf b$为单位体积体力（$\mathrm{N\,m^{-3}}$）。MOOSE固体力学模块通过应力散度算子建立各位移分量的平衡关系，并由材料本构模型在积分点更新应力状态\cite{halesBISONTheoryManual2016}。
 
-在小变形条件下，总应变由位移梯度的对称部分给出
+在小变形条件下，总应变由位移梯度的对称部分给出：
 \begin{equation}
 	\boldsymbol{\varepsilon}
 	=\frac{1}{2}
 	\left[
-	\nabla\mathbf u+\left(\nabla\mathbf u\right)^{\mathrm T}
-	\right]
+		\nabla\mathbf u+\left(\nabla\mathbf u\right)^{\mathrm T}
+		\right]
 	\label{eq:ch2_small_strain}
 \end{equation}
-燃料和包壳在堆内服役时同时存在弹性、塑性、蠕变以及多种无应力本征应变，因此可将总应变概括分解为
+燃料和包壳在堆内服役时同时存在弹性、塑性、蠕变以及多种无应力本征应变，因此可将总应变概括分解为：
 \begin{equation}
 	\boldsymbol{\varepsilon}
-	=\boldsymbol{\varepsilon}^{e}
-	+\boldsymbol{\varepsilon}^{p}
-	+\boldsymbol{\varepsilon}^{cr}
-	+\boldsymbol{\varepsilon}^{th}
-	+\boldsymbol{\varepsilon}^{sw}
-	+\boldsymbol{\varepsilon}^{den}
-	+\boldsymbol{\varepsilon}^{rel}
-	+\boldsymbol{\varepsilon}^{gr}
+	=\boldsymbol{\varepsilon}^{\mathrm{e}}
+	+\boldsymbol{\varepsilon}^{\mathrm{p}}
+	+\boldsymbol{\varepsilon}^{\mathrm{cr}}
+	+\boldsymbol{\varepsilon}^{\mathrm{th}}
+	+\boldsymbol{\varepsilon}^{\mathrm{sw}}
+	+\boldsymbol{\varepsilon}^{\mathrm{den}}
+	+\boldsymbol{\varepsilon}^{\mathrm{rel}}
+	+\boldsymbol{\varepsilon}^{\mathrm{gr}}
 	\label{eq:ch2_strain_decomposition}
 \end{equation}
-式中：$\boldsymbol{\varepsilon}^{e}$、$\boldsymbol{\varepsilon}^{p}$和$\boldsymbol{\varepsilon}^{cr}$分别为弹性、塑性和蠕变应变；$\boldsymbol{\varepsilon}^{th}$为热膨胀应变；$\boldsymbol{\varepsilon}^{sw}$为固体或气体裂变产物及辐照引起的肿胀应变；$\boldsymbol{\varepsilon}^{den}$为燃料密实化应变；$\boldsymbol{\varepsilon}^{rel}$为燃料重定位等效应变；$\boldsymbol{\varepsilon}^{gr}$用于表示包壳辐照生长等方向性本征应变。在具体计算中，燃料侧由热膨胀、蠕变、密实化、重定位及裂变产物肿胀等分量构成相应应变更新；包壳侧由热膨胀、塑性、蠕变、辐照肿胀及辐照生长等分量构成相应应变更新
+\noindent 式中：$\boldsymbol{\varepsilon}^{\mathrm{e}}$、$\boldsymbol{\varepsilon}^{\mathrm{p}}$和$\boldsymbol{\varepsilon}^{\mathrm{cr}}$分别为弹性、塑性和蠕变应变，所有应变分量均为无量纲量；$\boldsymbol{\varepsilon}^{\mathrm{th}}$为热膨胀应变；$\boldsymbol{\varepsilon}^{\mathrm{sw}}$为固体或气体裂变产物及辐照引起的肿胀应变；$\boldsymbol{\varepsilon}^{\mathrm{den}}$为燃料密实化应变；$\boldsymbol{\varepsilon}^{\mathrm{rel}}$为燃料重定位等效应变；$\boldsymbol{\varepsilon}^{\mathrm{gr}}$用于表示包壳辐照生长等方向性本征应变。在具体计算中，燃料侧由热膨胀、蠕变、密实化、重定位及裂变产物肿胀等分量构成相应应变更新；包壳侧由热膨胀、塑性、蠕变、辐照肿胀及辐照生长等分量构成相应应变更新。
 
-将塑性和蠕变等归入非弹性应变$\boldsymbol{\varepsilon}^{in}$，将热膨胀、密实化、肿胀、重定位和辐照生长等归入本征应变$\boldsymbol{\varepsilon}^{*}$，则机械弹性应变可统一写为
+将塑性和蠕变等归入非弹性应变$\boldsymbol{\varepsilon}^{\mathrm{in}}$，将热膨胀、密实化、肿胀、重定位和辐照生长等归入本征应变$\boldsymbol{\varepsilon}^{*}$，则机械弹性应变可统一写为：
 \begin{equation}
-	\boldsymbol{\varepsilon}^{e}
+	\boldsymbol{\varepsilon}^{\mathrm{e}}
 	=\boldsymbol{\varepsilon}
-	-\boldsymbol{\varepsilon}^{in}
+	-\boldsymbol{\varepsilon}^{\mathrm{in}}
 	-\boldsymbol{\varepsilon}^{*}
 	\label{eq:ch2_elastic_strain}
 \end{equation}
-相应本构关系可表示为
+相应本构关系可表示为：
 \begin{equation}
 	\boldsymbol{\sigma}
 	=\mathbb C:
 	\left(
 	\boldsymbol{\varepsilon}
-	-\boldsymbol{\varepsilon}^{in}
+	-\boldsymbol{\varepsilon}^{\mathrm{in}}
 	-\boldsymbol{\varepsilon}^{*}
 	\right)
 	\label{eq:ch2_constitutive_general}
 \end{equation}
-式中：$\mathbb C$为四阶弹性刚度张量。对于各向同性材料，其主要由杨氏模量$E$和泊松比$\nu$确定。MOOSE中热膨胀、肿胀等不直接由外力产生的应变通常可按eigenstrain处理，并从总应变中扣除后形成用于应力更新的机械应变
+\noindent 式中：$\mathbb C$为四阶弹性刚度张量（$\mathrm{Pa}$）。对于各向同性材料，其主要由杨氏模量$E$（$\mathrm{Pa}$）和泊松比$\nu$（无量纲）确定。MOOSE中热膨胀、肿胀等不直接由外力产生的应变通常可按eigenstrain处理，并从总应变中扣除后形成用于应力更新的机械应变。
 
-由式\eqref{eq:ch2_constitutive_general}可见，准静态力学方程的闭合需要$E$、$\nu$、热膨胀系数、屈服和硬化关系、蠕变速率、肿胀、密实化、重定位及辐照生长等材料模型。上述燃料和包壳行为模型将在第3章给出，而塑性本构的隐式积分和径向返回算法在第4章中详细推导
+由式\eqref{eq:ch2_constitutive_general}可见，准静态力学方程的闭合需要$E$、$\nu$、热膨胀系数、屈服和硬化关系、蠕变速率、肿胀、密实化、重定位及辐照生长等材料模型。上述燃料和包壳行为模型将在第3章给出，而塑性本构的隐式积分和径向返回算法在第4章中详细推导。
 
 \xsubsection{压力载荷与燃料--包壳接触}{Pressure Loading and Fuel--Cladding Contact}
 
-燃料棒内外压力通过表面牵引边界条件施加于包壳内、外表面，并与体内应力场共同满足准静态力学平衡关系。对于包壳内表面，气腔压力$p_g$形成法向压力载荷
+燃料棒内外压力通过表面牵引边界条件施加于包壳内、外表面，并与体内应力场共同满足准静态力学平衡关系。对于包壳内表面，气腔压力$p_{\mathrm g}$形成法向压力载荷：
 \begin{equation}
 	\boldsymbol{\sigma}\mathbf n
-	=-p_g\mathbf n
+	=-p_{\mathrm g}\mathbf n
 	\label{eq:ch2_internal_pressure_bc}
 \end{equation}
 
-而包壳外表面受冷却剂压力$p_{\mathrm{cool}}$作用的外部压力载荷
+而包壳外表面受冷却剂压力$p_{\mathrm{cool}}$作用的外部压力载荷：
 \begin{equation}
 	\boldsymbol{\sigma}\mathbf n
 	=-p_{\mathrm{cool}}\mathbf n
 	\label{eq:ch2_external_pressure_bc}
 \end{equation}
 
-当燃料热膨胀、肿胀和重定位等力学行为使芯块--包壳间隙逐渐闭合后，需要满足不可穿透接触条件。以法向几何间隙$g_n$和接触压力$P_c$表示，其理想互补条件为
+当燃料热膨胀、肿胀和重定位等力学行为使芯块--包壳间隙逐渐闭合后，需要满足不可穿透接触条件。以法向几何间隙$g_n$和接触压力$P_c$表示，其理想互补条件为：
 \begin{equation}
 	g_n\ge 0,\qquad
 	P_c\ge 0,\qquad
@@ -508,50 +508,50 @@ $c_{p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	\label{eq:ch2_contact_complementarity}
 \end{equation}
 
-式\eqref{eq:ch2_contact_complementarity}表明：间隙开放时$P_c=0$，发生接触后$g_n=0$且接触压力可以大于零。本文棒级计算采用无摩擦法向接触形式，力学求解得到的$g_n$和$P_c$进一步传递给间隙传热模型，同时位移场还用于更新燃料棒自由体积$V_g$，由此构成力学与气腔压力、间隙传热之间的耦合
+式\eqref{eq:ch2_contact_complementarity}表明：间隙开放时$P_c=0$，发生接触后$g_n=0$且接触压力可以大于零。本文棒级计算采用无摩擦法向接触形式，力学求解得到的$g_n$和$P_c$进一步传递给间隙传热模型，同时位移场还用于更新燃料棒自由体积$V_{\mathrm g}$，由此构成力学与气腔压力、间隙传热之间的耦合。
 
 \xsection{微观结构与组分输运控制方程}{Governing Equations of Microstructural and Constituent Transport}
 \label{sec:ch2_transport_governing}
 
-燃料内部的气孔、锕系元素和氧并非独立变化。它们均可从局部守恒关系出发写成统一输运形式
+燃料内部的气孔、锕系元素和氧并非独立变化。它们均可从局部守恒关系出发写成统一输运形式：
 \begin{equation}
 	\frac{\partial c_i}{\partial t}
 	+\nabla\cdot\mathbf J_i
 	=S_i
 	\label{eq:ch2_generic_transport}
 \end{equation}
-式中：$c_i$为相应守恒量或等效浓度，$\mathbf J_i$为总通量，$S_i$为局部源项。对于本文第3章研究的孔隙率、Pu/Am和氧迁移问题，宏观输运通常主要由浓度梯度、温度梯度以及气孔迁移相关通量控制，在不考虑裂变产额的条件下令$S_i=0$。不同输运问题的差别主要体现在$\mathbf J_i$的具体表达式和相关参数上
+\noindent 式中：$c_i$为相应守恒量或等效浓度（本文取无量纲孔隙率或摩尔分数），$\mathbf J_i$为总通量（$\mathrm{m\,s^{-1}}$），$S_i$为局部源项（$\mathrm{s^{-1}}$）。对于本文第3章研究的孔隙率、Pu/Am和氧迁移问题，宏观输运通常主要由浓度梯度、温度梯度以及气孔迁移相关通量控制，在不考虑裂变产额的条件下令$S_i=0$。不同输运问题的差别主要体现在$\mathbf J_i$的具体表达式和相关参数上。
 
 \xsubsection{气孔迁移与孔隙率输运}{Pore Migration and Porosity Transport}
 \label{subsec:ch2_pore_transport}
 
-氧化物燃料中的气孔在温度梯度作用下可通过固态扩散或孔内蒸发--冷凝输运发生定向迁移。Sens等早期研究指出，大尺寸气孔的迁移可由孔内蒸气分子的扩散控制，其驱动力与温度梯度及蒸气压梯度有关\cite{sensKineticsPoreMovement1972}；研究人员在基于有限元方法的研究中则将工程尺度孔隙率场写成与温度场耦合的对流--扩散方程，并用于模拟快堆MOX燃料中的中心孔形成\cite{novasconeModelingPorosityMigration2018}
+氧化物燃料中的气孔在温度梯度作用下可通过固态扩散或孔内蒸发--冷凝输运发生定向迁移。Sens等早期研究指出，大尺寸气孔的迁移可由孔内蒸气分子的扩散控制，其驱动力与温度梯度及蒸气压梯度有关\cite{sensKineticsPoreMovement1972}；研究人员在基于有限元方法的研究中则将工程尺度孔隙率场写成与温度场耦合的对流--扩散方程，并用于模拟快堆MOX燃料中的中心孔形成\cite{novasconeModelingPorosityMigration2018}。
 
-在燃料微观结构演化过程中，孔隙率可作为连续场变量描述气孔迁移及燃料重构过程。其守恒形式可表示为
+在燃料微观结构演化过程中，孔隙率可作为连续场变量描述气孔迁移及燃料重构过程。其守恒形式可表示为：
 \begin{equation}
 	\frac{\partial p}{\partial t}
 	+\nabla\cdot
 	\left[
-	\mathbf v_p(1-p)p
-	-\nu\nabla p
-	\right]
+		\mathbf v_{\mathrm p}(1-p)p
+		-\nu\nabla p
+		\right]
 	=0
 	\label{eq:ch2_pore_transport}
 \end{equation}
-式中：$p$为孔隙率，$\mathbf v_p$为气孔迁移速度，$D_p$为有效孔隙扩散系数。因子$p(1-p)$是本文在工程尺度输运方程中采用的有界化处理，使对流通量在$p\rightarrow0$和$p\rightarrow1$时自然趋近于零，从而避免数值计算中产生明显超出物理范围的孔隙率
+\noindent 式中：$p$为孔隙率（无量纲），$\mathbf v_{\mathrm p}$为气孔迁移速度（$\mathrm{m\,s^{-1}}$），$D_{\mathrm p}$为有效孔隙扩散系数（$\mathrm{m^2\,s^{-1}}$）。因子$p(1-p)$是本文在工程尺度输运方程中采用的有界化处理，使对流通量在$p\rightarrow0$和$p\rightarrow1$时自然趋近于零，从而避免数值计算中产生明显超出物理范围的孔隙率。
 
-气孔迁移速度是式\eqref{eq:ch2_pore_transport}的核心闭合量，可概括写为
+气孔迁移速度是式\eqref{eq:ch2_pore_transport}的核心闭合量，可概括写为：
 \begin{equation}
-	\mathbf v_p
-	=\mathcal V_p
+	\mathbf v_{\mathrm p}
+	=\mathcal V_{\mathrm p}
 	\left(
 	T,\nabla T,\mathrm{O/M},c_{\mathrm{Pu}},c_{\mathrm{Am}},P_{\mathrm{pore}},\ldots
 	\right)
 	\label{eq:ch2_pore_velocity_closure}
 \end{equation}
-式中：$\mathcal V_p$表示气孔迁移速率模型。经验模型通常直接以温度、温度梯度和蒸气压建立关系，而Rand--Markin类多组分热力学模型还需要局部O/M比、Pu/Am含量、氧分压及多种气相组分蒸气压。第3章将进一步给出不同气孔迁移速率模型、Rand--Markin热力学关系以及对流占优条件下的稳定化离散方法
+\noindent 式中：$\mathcal V_{\mathrm p}$表示气孔迁移速率模型。经验模型通常直接以温度、温度梯度和蒸气压建立关系，而Rand--Markin类多组分热力学模型还需要局部O/M比、Pu/Am含量、氧分压及多种气相组分蒸气压。第3章将进一步给出不同气孔迁移速率模型、Rand--Markin热力学关系以及对流占优条件下的稳定化离散方法。
 
-式\eqref{eq:ch2_pore_transport}与热传导方程之间存在双向反馈：$T$和$\nabla T$决定$\mathbf v_p$，而孔隙率$p$又通过式\eqref{eq:ch2_fuel_k_closure}改变燃料热导率；同时，孔隙迁移还会改变局部组分输运通道，因此$p$ $\mathbf v_p$也是Pu/Am气相迁移模型的重要输入量
+式\eqref{eq:ch2_pore_transport}与热传导方程之间存在双向反馈：$T$和$\nabla T$决定$\mathbf v_{\mathrm p}$，而孔隙率$p$又通过式\eqref{eq:ch2_fuel_k_closure}改变燃料热导率；同时，孔隙迁移还会改变局部组分输运通道，因此$p$、$\mathbf v_{\mathrm p}$也是Pu/Am气相迁移模型的重要输入量。
 
 \xsubsection{Pu和Am组分输运}{Transport of Pu and Am}
 \label{subsec:ch2_actinide_transport}
@@ -571,52 +571,52 @@ $c_{p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	+\mathbf J_i^{\mathrm{pore}}
 	\label{eq:ch2_actinide_flux_decomposition}
 \end{equation}
-固相化学扩散和热扩散可统一表示为
+固相化学扩散和热扩散可统一表示为：
 \begin{equation}
 	\mathbf J_i^{\mathrm{solid}}
 	=-D_i
 	\left[
-	\nabla c_i
-	+c_i(1-c_i)
-	\frac{Q_i}{RT^2}\nabla T
-	\right]
+		\nabla c_i
+		+c_i(1-c_i)
+		\frac{Q_i}{RT^2}\nabla T
+		\right]
 	\label{eq:ch2_actinide_solid_flux}
 \end{equation}
-式中：$D_i$为有效扩散系数，$Q_i$为有效摩尔输运热，$R$为气体常数。第一项表示由浓度梯度驱动的Fick扩散，第二项表示由温度梯度驱动的热扩散（Soret效应）
+\noindent 式中：$D_i$为有效扩散系数（$\mathrm{m^2\,s^{-1}}$），$Q_i$为有效摩尔输运热（$\mathrm{J\,mol^{-1}}$），$R$为气体常数（$\mathrm{J\,mol^{-1}\,K^{-1}}$）。第一项表示由浓度梯度驱动的Fick扩散，第二项表示由温度梯度驱动的热扩散（Soret效应）。
 
-气孔相关迁移用于描述高温条件下挥发性锕系组分通过孔隙气相输运对组分再分布的增强作用，可概括写为
+气孔相关迁移用于描述高温条件下挥发性锕系组分通过孔隙气相输运对组分再分布的增强作用，可概括写为：
 \begin{equation}
 	\mathbf J_i^{\mathrm{pore}}
 	=\mathcal J_i^{\mathrm{pore}}
 	\left(
-	p,\mathbf v_p,D_{\mathrm{pore}},T,\nabla T,\mathrm{O/M},\ell,d,\ldots
+	p,\mathbf v_{\mathrm p},D_{\mathrm{pore}},T,\nabla T,\mathrm{O/M},\ell,d,\ldots
 	\right)
 	\label{eq:ch2_actinide_pore_flux}
 \end{equation}
-式中：$D_{\mathrm{pore}}$为孔隙气相迁移相关有效扩散参数，$\ell$和$d$分别表示孔隙特征长度和等效直径。本文第3章将在上述守恒框架下给出Pu模型的具体形式，并通过调整扩散参数将其扩展至Am迁移
+\noindent 式中：$D_{\mathrm{pore}}$为孔隙气相迁移相关有效扩散参数（$\mathrm{m^2\,s^{-1}}$），$\ell$和$d$分别表示孔隙特征长度和等效直径（$\mathrm{m}$）。本文第3章将在上述守恒框架下给出Pu模型的具体形式，并通过调整扩散参数将其扩展至Am迁移。
 
-由式\eqref{eq:ch2_actinide_solid_flux}和式\eqref{eq:ch2_actinide_pore_flux}可知，Pu/Am迁移至少需要温度、温度梯度、局部浓度、有效扩散系数、输运热、孔隙率、气孔迁移速度和O/M比等参数。因此，锕系元素再分布并不是独立后处理过程，而是与热传导、孔隙迁移和氧化学状态直接耦合的场方程
+由式\eqref{eq:ch2_actinide_solid_flux}和式\eqref{eq:ch2_actinide_pore_flux}可知，Pu/Am迁移至少需要温度、温度梯度、局部浓度、有效扩散系数、输运热、孔隙率、气孔迁移速度和O/M比等参数。因此，锕系元素再分布并不是独立后处理过程，而是与热传导、孔隙迁移和氧化学状态直接耦合的场方程。
 
 \xsubsection{O/M演化与氧缺陷输运}{O/M Evolution and Oxygen-defect Transport}
 \label{subsec:ch2_om_transport}
 
-氧化物燃料中的O/M比可通过氧空位或氧间隙原子的迁移发生径向再分布。Lassmann提出的OXIRED模型能够根据燃耗、径向温度分布和时间预测非化学计量U--Pu氧化物中的O/M演化\cite{lassmannOxiredModelRedistribution1987}；Ramirez及Newman等人的研究进一步将氧扩散与热传导、热力学和力学过程进行耦合求解\cite{ramirezSimulationsHeatOxygen2006,newmanThreeDimensionalCoupled2009}
+氧化物燃料中的O/M比可通过氧空位或氧间隙原子的迁移发生径向再分布。Lassmann提出的OXIRED模型能够根据燃耗、径向温度分布和时间预测非化学计量U--Pu氧化物中的O/M演化\cite{lassmannOxiredModelRedistribution1987}；Ramirez及Newman等人的研究进一步将氧扩散与热传导、热力学和力学过程进行耦合求解\cite{ramirezSimulationsHeatOxygen2006,newmanThreeDimensionalCoupled2009}。
 
-对于过化学计量状态，以氧间隙原子浓度$c_I$表征偏离量，可写为
+对于过化学计量状态，以氧间隙原子浓度$c_I$表征偏离量，可写为：
 \begin{equation}
 	\mathrm{O/M}=2+c_I
 	\qquad \mathrm{O/M}>2
 	\label{eq:ch2_om_interstitial}
 \end{equation}
 
-对于欠化学计量状态，以氧空位浓度$c_V$表示，则有
+对于欠化学计量状态，以氧空位浓度$c_V$表示，则有：
 \begin{equation}
 	\mathrm{O/M}=2-2c_V
 	\qquad \mathrm{O/M}<2
 	\label{eq:ch2_om_vacancy}
 \end{equation}
 
-为便于数值求解，本文统一采用等效缺陷变量$c_{\mathrm O}$描述氧迁移，其基本控制方程写为
+为便于数值求解，本文统一采用等效缺陷变量$c_{\mathrm O}$描述氧迁移，其基本控制方程写为：
 \begin{equation}
 	\frac{\partial c_{\mathrm O}}{\partial t}
 	+\nabla\cdot
@@ -633,18 +633,18 @@ $c_{p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	=0
 	\label{eq:ch2_oxygen_transport}
 \end{equation}
-式中：$D_{\mathrm O}$为氧扩散系数，$Q_{\mathrm O}^{*}$为有效输运热，$\Gamma_{\mathrm O}$为描述非理想化学势--浓度关系的热力学修正因子
+\noindent 式中：$D_{\mathrm O}$为氧扩散系数（$\mathrm{m^2\,s^{-1}}$），$Q_{\mathrm O}^{*}$为有效输运热（$\mathrm{J\,mol^{-1}}$），$\Gamma_{\mathrm O}$为描述非理想化学势--浓度关系的热力学修正因子。
 
-式\eqref{eq:ch2_oxygen_transport}中浓度梯度项控制氧的化学扩散，温度梯度项控制热扩散。$D_{\mathrm O}$、$Q_{\mathrm O}^{*}$和$\Gamma_{\mathrm O}$均与燃料的非化学计量状态、温度及局部价态平衡有关，其具体参数化关系将在第3章中给出。求得的O/M比又通过燃料热导率、熔点、氧分压、蒸气压以及气孔迁移和锕系元素迁移模型反馈其他物理场，从而构成“温度--氧化学状态--微观结构--组分”的闭环耦合
+式\eqref{eq:ch2_oxygen_transport}中浓度梯度项控制氧的化学扩散，温度梯度项控制热扩散。$D_{\mathrm O}$、$Q_{\mathrm O}^{*}$和$\Gamma_{\mathrm O}$均与燃料的非化学计量状态、温度及局部价态平衡有关，其具体参数化关系将在第3章中给出。求得的O/M比又通过燃料热导率、熔点、氧分压、蒸气压以及气孔迁移和锕系元素迁移模型反馈其他物理场，从而构成“温度--氧化学状态--微观结构--组分”的闭环耦合。
 
 \xsection{裂变气体与燃料棒自由体积状态}{Fission Gas and Fuel-rod Free-volume State}
 \label{sec:ch2_fission_gas_plenum}
 
-裂变气体行为跨越晶粒内扩散、晶界聚集、气泡演化和燃料棒自由体积等多个尺度。SCIANTIX被设计为可与宏观燃料性能程序耦合的0D细观程序，用于描述晶内和晶界惰性裂变气体行为以及高燃耗结构等过程\cite{pizzocriSCIANTIXNewOpen2020}。本文同时考虑工程化ForMas模型和细观SCIANTIX模型，两者在内部机理和状态变量数量上不同，但对燃料棒尺度计算可以统一为“局部输入--气体状态更新--释放量输出”的闭合接口
+裂变气体行为跨越晶粒内扩散、晶界聚集、气泡演化和燃料棒自由体积等多个尺度。SCIANTIX被设计为可与宏观燃料性能程序耦合的0D细观程序，用于描述晶内和晶界惰性裂变气体行为以及高燃耗结构等过程\cite{pizzocriSCIANTIXNewOpen2020}。本文同时考虑工程化ForMas模型和细观SCIANTIX模型，两者在内部机理和状态变量数量上不同，但对燃料棒尺度计算可以统一为“局部输入--气体状态更新--释放量输出”的闭合接口。
 
 \xsubsection{裂变气体模型的工程接口}{Engineering Interface of Fission-gas Models}
 
-设$\mathbf z_{\mathrm{FG}}^n$为时间步$n$结束时裂变气体内部状态，则一次局部状态更新可概括表示为
+设$\mathbf z_{\mathrm{FG}}^n$为时间步$n$结束时裂变气体内部状态，则一次局部状态更新可概括表示为：
 \begin{equation}
 	\left\{
 	f_{\mathrm{FGR}}^{n+1}
@@ -654,31 +654,31 @@ $c_{p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	=
 	\mathcal F_{\mathrm{FG}}
 	\left(
-	T,F,B,\sigma_h,d_{\mathrm{gr}},\Delta t
+	T,F,B,\sigma_{\mathrm h},d_{\mathrm{gr}},\Delta t
 	\mathbf z_{\mathrm{FG}}^n,\ldots
 	\right)
 	\label{eq:ch2_fgr_closure}
 \end{equation}
-式中：$f_{\mathrm{FGR}}$为裂变气体释放份额，$S_{\mathrm{gas}}$为气体肿胀，$\sigma_h$为静水应力，$d_{\mathrm{gr}}$为晶粒尺寸，$\Delta t$为时间步长。$\mathcal F_{\mathrm{FG}}$代表具体裂变气体模型，其详细形式在第4章中给出
+\noindent 式中：$f_{\mathrm{FGR}}$为裂变气体释放份额（无量纲），$S_{\mathrm{gas}}$为气体肿胀（无量纲），$\sigma_{\mathrm h}$为静水应力（$\mathrm{Pa}$），$d_{\mathrm{gr}}$为晶粒尺寸（$\mathrm{m}$），$\Delta t$为时间步长（$\mathrm{s}$）。$\mathcal F_{\mathrm{FG}}$代表具体裂变气体模型，其详细形式在第4章中给出。
 
-对于Xe和Kr两种主要裂变气体，本文采用累计产生量和累计释放量定义总释放份额
+对于Xe和Kr两种主要裂变气体，本文采用累计产生量和累计释放量定义总释放份额：
 \begin{equation}
 	f_{\mathrm{FGR}}
 	=
 	\frac{
-		N_{\mathrm{Xe}}^{\mathrm{rel}}
-		+N_{\mathrm{Kr}}^{\mathrm{rel}}
+	N_{\mathrm{Xe}}^{\mathrm{rel}}
+	+N_{\mathrm{Kr}}^{\mathrm{rel}}
 	}{
-		N_{\mathrm{Xe}}^{\mathrm{prod}}
-		+N_{\mathrm{Kr}}^{\mathrm{prod}}
+	N_{\mathrm{Xe}}^{\mathrm{prod}}
+	+N_{\mathrm{Kr}}^{\mathrm{prod}}
 	}
 	\label{eq:ch2_fgr_definition}
 \end{equation}
-式中：$N_i^{\mathrm{rel}}$和$N_i^{\mathrm{prod}}$分别为组分$i$的累计释放原子数和累计产生原子数。局部释放量经燃料体积积分后转换为进入燃料棒间隙和气腔的Xe/Kr物质的量，作为气体状态方程的输入
+\noindent 式中：$N_i^{\mathrm{rel}}$和$N_i^{\mathrm{prod}}$分别为组分$i$的累计释放原子数和累计产生原子数，均为无量纲计数。局部释放量经燃料体积积分后转换为进入燃料棒间隙和气腔的Xe/Kr物质的量，作为气体状态方程的输入。
 
 \xsubsection{气体组成与气腔压力}{Gas Composition and Plenum Pressure}
 
-设初始填充气体为He，则任一时刻燃料棒自由体积内的总气体物质的量可写为
+设初始填充气体为He，则任一时刻燃料棒自由体积内的总气体物质的量可写为：
 \begin{equation}
 	n_g
 	=n_{\mathrm{He},0}
@@ -687,7 +687,7 @@ $c_{p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	\label{eq:ch2_total_gas_moles}
 \end{equation}
 
-各组分摩尔分数为
+各组分摩尔分数为：
 \begin{equation}
 	x_i=\frac{n_i}{n_g}
 	\qquad
@@ -697,77 +697,77 @@ $c_{p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 
 在本文燃料棒级模型采用的是等效自由体积和平均气体温度条件下的根据理想气体状态方程计算气腔压力：
 \begin{equation}
-	p_g
-	=\frac{n_gRT_g}{V_g}
+	p_{\mathrm g}
+	=\frac{n_gRT_{\mathrm g}}{V_{\mathrm g}}
 	\label{eq:ch2_plenum_pressure}
 \end{equation}
-式中：$T_g$为气隙/气腔等效平均温度，$V_g$为当前总自由体积。BISON的间隙/气腔模型同样以理想气体关系计算压力，并允许气体摩尔数、温度和自由体积随时间演化\cite{halesBISONTheoryManual2016}。当燃料棒内部包含多个具有不同平均温度但相互连通的自由体积$V_j$时，可采用更一般的形式
+\noindent 式中：$T_{\mathrm g}$为气隙/气腔等效平均温度（$\mathrm{K}$），$V_{\mathrm g}$为当前总自由体积（$\mathrm{m^3}$）。BISON的间隙/气腔模型同样以理想气体关系计算压力，并允许气体摩尔数、温度和自由体积随时间演化\cite{halesBISONTheoryManual2016}。压力$p_{\mathrm g}$的单位为$\mathrm{Pa}$，物质的量$n_i$的单位为$\mathrm{mol}$，气体常数$R$的单位为$\mathrm{J\,mol^{-1}\,K^{-1}}$。当燃料棒内部包含多个具有不同平均温度但相互连通的自由体积$V_j$时，可采用更一般的形式：
 \begin{equation}
-	p_g
+	p_{\mathrm g}
 	=\frac{n_gR}
 	{\displaystyle\sum_j\frac{V_j}{T_j}}
 	\label{eq:ch2_plenum_pressure_multivolume}
 \end{equation}
-本文燃料棒级计算通过\texttt{InternalVolume}等模块获得演化自由体积，并结合气腔平均温度和释放气体摩尔数计算$p_g$
+本文燃料棒级计算通过\texttt{InternalVolume}等模块获得演化自由体积，并结合气腔平均温度和释放气体摩尔数计算$p_{\mathrm g}$。
 
-由式\eqref{eq:ch2_plenum_pressure}可见，气腔压力同时受到裂变气体释放、温度和力学变形影响：FGR增加会提高$n_g$，温度升高会直接提高$p_g$，而燃料和包壳变形则通过改变$V_g$影响压力。得到的$p_g$一方面作为包壳内表面的力学载荷进入式\eqref{eq:ch2_internal_pressure_bc}，另一方面与气体组成$\{x_i\}$共同进入间隙气体传热模型，因此构成裂变气体、力学和热学之间的关键桥梁
+由式\eqref{eq:ch2_plenum_pressure}可见，气腔压力同时受到裂变气体释放、温度和力学变形影响：FGR增加会提高$n_g$，温度升高会直接提高$p_{\mathrm g}$，而燃料和包壳变形则通过改变$V_{\mathrm g}$影响压力。得到的$p_{\mathrm g}$一方面作为包壳内表面的力学载荷进入式\eqref{eq:ch2_internal_pressure_bc}，另一方面与气体组成$\{x_i\}$共同进入间隙气体传热模型，因此构成裂变气体、力学和热学之间的关键桥梁。
 
 \xsection{燃料--包壳界面传热关系}{Fuel--Cladding Interfacial Heat-transfer Relations}
 \label{sec:ch2_gap_heat_transfer}
 
-燃料内部产生的裂变热经燃料基体传导至芯块外表面后，需要进一步通过燃料--包壳间隙传递至包壳。间隙区域的传热状态随燃料和包壳热膨胀、燃料重定位与肿胀、裂变气体释放、气腔压力以及机械接触状态持续变化，因此是连接热学、力学和裂变气体模型的重要耦合界面\cite{hagrmanSCDAPRELAP5MOD1995,luscherMaterialPropertyCorrelations2010,halesBISONTheoryManual2016}
+燃料内部产生的裂变热经燃料基体传导至芯块外表面后，需要进一步通过燃料--包壳间隙传递至包壳。间隙区域的传热状态随燃料和包壳热膨胀、燃料重定位与肿胀、裂变气体释放、气腔压力以及机械接触状态持续变化，因此是连接热学、力学和裂变气体模型的重要耦合界面\cite{hagrmanSCDAPRELAP5MOD1995,luscherMaterialPropertyCorrelations2010,halesBISONTheoryManual2016}。
 
 \xsubsection{间隙热流边界条件}{Gap Heat-flux Boundary Condition}
 
-设燃料外表面温度为$T_f$，包壳内表面温度为$T_c$，则界面热流密度写为
+设燃料外表面温度为$T_{\mathrm f}$，包壳内表面温度为$T_{\mathrm c}$，则界面热流密度写为：
 \begin{equation}
 	q_{\mathrm{gap}}
 	=h_{\mathrm{gap}}
-	\left(T_f-T_c\right)
+	\left(T_{\mathrm f}-T_{\mathrm c}\right)
 	\label{eq:ch2_gap_heat_flux}
 \end{equation}
 总间隙传热系数由气体传导、固--固接触传导和表面热辐射共同组成：
 \begin{equation}
 	h_{\mathrm{gap}}
-	=h_g+h_s+h_r
+	=h_{\mathrm g}+h_{\mathrm s}+h_r
 	\label{eq:ch2_total_gap_conductance}
 \end{equation}
-式中：$h_g$、$h_s$和$h_r$分别为气体传热系数、固--固接触传热系数和辐射传热系数。间隙传热随几何间隙和接触状态动态变化：开放间隙阶段主要由气体传导和热辐射传递热量，接触建立后固--固接触传导随接触压力增加而增强
+\noindent 式中：$h_{\mathrm g}$、$h_{\mathrm s}$和$h_r$分别为气体传热系数、固--固接触传热系数和辐射传热系数（$\mathrm{W\,m^{-2}\,K^{-1}}$）。间隙传热随几何间隙和接触状态动态变化：开放间隙阶段主要由气体传导和热辐射传递热量，接触建立后固--固接触传导随接触压力增加而增强。
 
-气体传导项可从闭合关系角度概括为
+气体传导项可从闭合关系角度概括为：
 \begin{equation}
-	h_g
+	h_{\mathrm g}
 	=\mathcal H_g
 	\left(
-	T_f,T_c,p_g,\mathbf x,d_g,r_f,r_c,\ldots
+	T_{\mathrm f},T_{\mathrm c},p_{\mathrm g},\mathbf x,d_g,r_{\mathrm f},r_{\mathrm c},\ldots
 	\right)
 	\label{eq:ch2_hg_closure}
 \end{equation}
-式中：$\mathbf x=\{x_i\}$为He、Xe、Kr等气体组分摩尔分数，$d_g$为有效几何间隙，$r_f$和$r_c$为燃料与包壳表面粗糙度。$p_g$和$\mathbf x$来自第\ref{sec:ch2_fission_gas_plenum}节的气体状态计算，$d_g$来自力学接触计算
+\noindent 式中：$\mathbf x=\{x_i\}$为He、Xe、Kr等气体组分摩尔分数（无量纲），$d_g$为有效几何间隙（$\mathrm{m}$），$r_{\mathrm f}$和$r_{\mathrm c}$为燃料与包壳表面粗糙度（$\mathrm{m}$）。$p_{\mathrm g}$和$\mathbf x$来自第\ref{sec:ch2_fission_gas_plenum}节的气体状态计算，$d_g$来自力学接触计算。
 
-燃料与包壳发生接触后，固--固接触传导主要取决于接触压力、两侧材料热导率和表面状态，可表示为
+燃料与包壳发生接触后，固--固接触传导主要取决于接触压力、两侧材料热导率和表面状态，可表示为：
 \begin{equation}
-	h_s
+	h_{\mathrm s}
 	=\mathcal H_s
 	\left(
-	P_c,k_f,k_c,H,r_f,r_c,\ldots
+	P_c,k_{\mathrm f},k_{\mathrm c},H,r_{\mathrm f},r_{\mathrm c},\ldots
 	\right)
 	\label{eq:ch2_hs_closure}
 \end{equation}
-式中：$H$为界面较软材料的硬度参数。辐射传热可依据Stefan--Boltzmann定律写成等效传热系数形式
+\noindent 式中：$H$为界面较软材料的硬度参数（$\mathrm{Pa}$）。辐射传热可依据Stefan--Boltzmann定律写成等效传热系数形式：
 \begin{equation}
 	h_r
 	=\sigma_{\mathrm{SB}}F_{\varepsilon}
-	\left(T_f^2+T_c^2\right)
-	\left(T_f+T_c\right)
+	\left(T_{\mathrm f}^2+T_{\mathrm c}^2\right)
+	\left(T_{\mathrm f}+T_{\mathrm c}\right)
 	\label{eq:ch2_hr}
 \end{equation}
-式中：$\sigma_{\mathrm{SB}}$为Stefan--Boltzmann常数，$F_{\varepsilon}$为由两表面发射率及几何关系决定的有效发射率因子。对于理想平行灰体表面
+\noindent 式中：$\sigma_{\mathrm{SB}}$为Stefan--Boltzmann常数（$\mathrm{W\,m^{-2}\,K^{-4}}$），$F_{\varepsilon}$为由两表面发射率及几何关系决定的有效发射率因子（无量纲）。对于理想平行灰体表面：
 \begin{equation}
 	F_{\varepsilon}
 	=\left(
-	\frac{1}{\varepsilon_f}
-	+\frac{1}{\varepsilon_c}
+	\frac{1}{\varepsilon_{\mathrm f}}
+	+\frac{1}{\varepsilon_{\mathrm c}}
 	-1
 	\right)^{-1}
 	\label{eq:ch2_effective_emissivity}
@@ -775,15 +775,15 @@ $c_{p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 
 \xsubsection{间隙传热的闭合参数与反馈路径}{Closure Parameters and Feedback Paths of Gap Heat Transfer}
 
-由式\eqref{eq:ch2_hg_closure}--式\eqref{eq:ch2_hr}可知，间隙传热不是独立边界参数，而是热学、力学和裂变气体状态共同决定的动态闭合关系。其主要数据传递关系可归纳为
+由式\eqref{eq:ch2_hg_closure}--式\eqref{eq:ch2_hr}可知，间隙传热不是独立边界参数，而是热学、力学和裂变气体状态共同决定的动态闭合关系。其主要数据传递关系可归纳为：
 \begin{equation}
 	\mathrm{FGR}
 	\rightarrow
 	\{n_{\mathrm{Xe}},n_{\mathrm{Kr}}\}
 	\rightarrow
-	\{p_g,\mathbf x\}
+	\{p_{\mathrm g},\mathbf x\}
 	\rightarrow
-	h_g
+	h_{\mathrm g}
 	\rightarrow
 	h_{\mathrm{gap}}
 	\rightarrow
@@ -794,24 +794,24 @@ $c_{p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 \begin{equation}
 	T
 	\rightarrow
-	\{\boldsymbol{\varepsilon}^{th},\boldsymbol{\varepsilon}^{cr}
-	\boldsymbol{\varepsilon}^{sw}\}
+	\{\boldsymbol{\varepsilon}^{\mathrm{th}},\boldsymbol{\varepsilon}^{\mathrm{cr}}
+	\boldsymbol{\varepsilon}^{\mathrm{sw}}\}
 	\rightarrow
-	\{d_g,P_c,V_g\}
+	\{d_g,P_c,V_{\mathrm g}\}
 	\rightarrow
-	\{h_g,h_s,p_g\}
+	\{h_{\mathrm g},h_{\mathrm s},p_{\mathrm g}\}
 	\rightarrow
 	h_{\mathrm{gap}}
 	\rightarrow
 	T
 	\label{eq:ch2_mech_gap_temperature_chain}
 \end{equation}
-因此，温度、FGR、气腔压力、间隙宽度和接触压力必须在统一时间推进过程中保持状态一致。第4章将在本节总体关系基础上进一步给出Ross--Stoute型气体传导、混合气体热导率、接触导热、辐射以及MOOSE程序对象之间的具体实现和数据交换方式
+因此，温度、FGR、气腔压力、间隙宽度和接触压力必须在统一时间推进过程中保持状态一致。第4章将在本节总体关系基础上进一步给出Ross--Stoute型气体传导、混合气体热导率、接触导热、辐射以及MOOSE程序对象之间的具体实现和数据交换方式。
 
 \xsection{控制方程的闭合需求与统一求解关系}{Closure Requirements and Unified Solution Relations}
 \label{sec:ch2_closure_summary}
 
-前述各节给出了燃料元件主要控制方程。若将热学、力学、微观结构、组分和裂变气体问题统一表示，可将整个燃料性能问题抽象为
+前述各节给出了燃料元件主要控制方程。若将热学、力学、微观结构、组分和裂变气体问题统一表示，可将整个燃料性能问题抽象为：
 \begin{equation}
 	\mathcal R
 	\left(
@@ -820,63 +820,63 @@ $c_{p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	=\mathbf 0
 	\label{eq:ch2_global_residual}
 \end{equation}
-式中：$\mathbf y$为式\eqref{eq:ch2_state_vector}所定义的场变量与状态量；$\mathbf m$表示材料闭合参数和内部状态，包括热物性、弹塑性、蠕变、肿胀、扩散系数、输运热和裂变气体参数等；$\mathbf h$表示外部运行历史，包括功率、冷却剂条件、中子通量及边界载荷等
+\noindent 式中：$\mathbf y$为式\eqref{eq:ch2_state_vector}所定义的场变量与状态量；$\mathbf m$表示材料闭合参数和内部状态，包括热物性、弹塑性、蠕变、肿胀、扩散系数、输运热和裂变气体参数等；$\mathbf h$表示外部运行历史，包括功率、冷却剂条件、中子通量及边界载荷等。
 
-从方程闭合角度看，控制方程本身只规定能量、动量和质量守恒关系，而具体预测能力主要取决于$\mathbf m$中各类材料和行为模型。表\ref{tab:ch2_closure_map}汇总了本文主要控制方程、所需闭合量及其后续详细模型位置
+从方程闭合角度看，控制方程本身只规定能量、动量和质量守恒关系，而具体预测能力主要取决于$\mathbf m$中各类材料和行为模型。表\ref{tab:ch2_closure_map}汇总了本文主要控制方程、所需闭合量及其后续详细模型位置。
 
 \begin{table}[htbp]
 	\centering
 	\caption{多物理场控制方程及主要模型闭合关系}
 	\label{tab:ch2_closure_map}
 	\begin{tabularx}{\textwidth}{
-			>{\centering\arraybackslash}p{2.1cm}
-			>{\centering\arraybackslash}p{2.0cm}
-			>{\raggedright\arraybackslash}p{5.0cm}
-			>{\raggedright\arraybackslash}X}
+		>{\centering\arraybackslash}p{2.1cm}
+		>{\centering\arraybackslash}p{2.0cm}
+		>{\raggedright\arraybackslash}p{5.0cm}
+		>{\raggedright\arraybackslash}X}
 		\toprule
-		物理过程 & 主变量 & 主要闭合量/输入 & 详细模型位置 \\
+		物理过程 & 主变量                                                                                                             & 主要闭合量/输入 & 详细模型位置 \\
 		\midrule
 		燃料/包壳热传导
-		& $T$
-		& $k,\rho,c_p,\dot q_v$，间隙热流和包壳外表面热边界
-		& 第3章材料热物性；第4章间隙传热实现 \\
+		     & $T$
+		     & $k,\rho,c_{\mathrm p},\dot q_v$，间隙热流和包壳外表面热边界
+		     & 第3章材料热物性；第4章间隙传热实现                                                                                                                  \\
 		冷却剂轴向{\rarecharfont 焓}升
-		& $h_{\mathrm{cool}}$
-		& $T_{\mathrm{in}},p_{\mathrm{cool}},\dot m,P_h,q''_{\mathrm w}$及水物性
-		& 本章第\ref{subsec:ch2_coolant_enthalpy}节 \\
+		     & $h_{\mathrm{cool}}$
+		     & $T_{\mathrm{in}},p_{\mathrm{cool}},\dot m,P_h,q''_{\mathrm w}$及水物性
+		     & 本章第\ref{subsec:ch2_coolant_enthalpy}节                                                                                               \\
 		准静态力学
-		& $\mathbf u$
-		& $E,\nu$，热膨胀、塑性、蠕变、肿胀、密实化、重定位、辐照生长，压力与接触
-		& 第3章材料行为；第4章本构积分与径向返回 \\
+		     & $\mathbf u$
+		     & $E,\nu$，热膨胀、塑性、蠕变、肿胀、密实化、重定位、辐照生长，压力与接触
+		     & 第3章材料行为；第4章本构积分与径向返回                                                                                                                \\
 		气孔迁移
-		& $p$
-		& $\mathbf v_p,\nu,T,\nabla T,\mathrm{O/M},c_{\mathrm{Pu}},c_{\mathrm{Am}}$
-		& 第3章气孔迁移、Rand--Markin及稳定化离散 \\
+		     & $p$
+		     & $\mathbf v_{\mathrm p},\nu,T,\nabla T,\mathrm{O/M},c_{\mathrm{Pu}},c_{\mathrm{Am}}$
+		     & 第3章气孔迁移、Rand--Markin及稳定化离散                                                                                                          \\
 		Pu/Am迁移
-		& $c_i$
-		& $D_i,Q_i,\mathbf J_i^{\mathrm{pore}},p,\mathbf v_p,T,\mathrm{O/M}$
-		& 第3章锕系元素重分布模型 \\
+		     & $c_i$
+		     & $D_i,Q_i,\mathbf J_i^{\mathrm{pore}},p,\mathbf v_{\mathrm p},T,\mathrm{O/M}$
+		     & 第3章锕系元素重分布模型                                                                                                                        \\
 		O/M演化
-		& $c_{\mathrm O}$
-		& $D_{\mathrm O},Q_{\mathrm O}^{*},\Gamma_{\mathrm O},T$及缺陷化学关系
-		& 第3章氧迁移与O/M模型 \\
+		     & $c_{\mathrm O}$
+		     & $D_{\mathrm O},Q_{\mathrm O}^{*},\Gamma_{\mathrm O},T$及缺陷化学关系
+		     & 第3章氧迁移与O/M模型                                                                                                                        \\
 		裂变气体行为
-		& $\mathbf z_{\mathrm{FG}}$
-		& $T,F,B,\sigma_h,d_{\mathrm{gr}},\Delta t$及模型内部参数
-		& 第4章ForMas与SCIANTIX \\
+		     & $\mathbf z_{\mathrm{FG}}$
+		     & $T,F,B,\sigma_{\mathrm h},d_{\mathrm{gr}},\Delta t$及模型内部参数
+		     & 第4章ForMas与SCIANTIX                                                                                                                  \\
 		气腔压力
-		& $p_g$
-		& $n_i,T_g,V_g$及FGR输出
-		& 第4章耦合实现；第5章棒级计算 \\
+		     & $p_{\mathrm g}$
+		     & $n_i,T_{\mathrm g},V_{\mathrm g}$及FGR输出
+		     & 第4章耦合实现；第5章棒级计算                                                                                                                     \\
 		间隙传热
-		& $q_{\mathrm{gap}}$
-		& $p_g,\mathbf x,d_g,P_c,k_f,k_c,H,\varepsilon_f,\varepsilon_c$
-		& 第4章具体传热模型与程序实现 \\
+		     & $q_{\mathrm{gap}}$
+		     & $p_{\mathrm g},\mathbf x,d_g,P_c,k_{\mathrm f},k_{\mathrm c},H,\varepsilon_{\mathrm f},\varepsilon_{\mathrm c}$
+		     & 第4章具体传热模型与程序实现                                                                                                                      \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
 
-从时间推进角度，本文多物理场计算可概括为以下闭环：在给定时间步内，首先根据功率历史更新裂变率、燃耗及中子辐照状态；冷却剂模块根据入口热工条件、质量流量及包壳壁面热流更新轴向{\rarecharfont 焓}和温度分布，并向包壳外表面提供对流热边界。热传导求解得到燃料与包壳温度场后，利用当前温度和温度梯度更新孔隙率、Pu/Am及O/M等微观状态，同时由裂变气体模型更新释放量与气体肿胀；气体释放量与当前自由体积、平均温度共同更新气腔压力和气体组成；力学模块依据温度、压力以及各类本征/非弹性应变求解位移、应力、间隙宽度和接触压力；更新后的几何和气体状态进一步用于计算间隙换热系数，并与冷却剂边界共同进入热学更新。通过该闭环实现温度、冷却剂状态、微观结构、组分、裂变气体、气腔压力和力学变形之间的状态一致性
+从时间推进角度，本文多物理场计算可概括为以下闭环：在给定时间步内，首先根据功率历史更新裂变率、燃耗及中子辐照状态；冷却剂模块根据入口热工条件、质量流量及包壳壁面热流更新轴向{\rarecharfont 焓}和温度分布，并向包壳外表面提供对流热边界。热传导求解得到燃料与包壳温度场后，利用当前温度和温度梯度更新孔隙率、Pu/Am及O/M等微观状态，同时由裂变气体模型更新释放量与气体肿胀；气体释放量与当前自由体积、平均温度共同更新气腔压力和气体组成；力学模块依据温度、压力以及各类本征/非弹性应变求解位移、应力、间隙宽度和接触压力；更新后的几何和气体状态进一步用于计算间隙换热系数，并与冷却剂边界共同进入热学更新。通过该闭环实现温度、冷却剂状态、微观结构、组分、裂变气体、气腔压力和力学变形之间的状态一致性。
 
 \xsection{本章小结}{Summary}
 \label{sec:ch2_summary}

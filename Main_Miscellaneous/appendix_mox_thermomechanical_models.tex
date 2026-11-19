@@ -10,7 +10,7 @@
 
 \subsection{相变温度}
 
-MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及燃耗有关。根据Brassfield等人的实验数据及相应的最小二乘拟合，二者可表示为
+MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及燃耗有关。根据Brassfield等人的实验数据及相应的最小二乘拟合，二者可表示为：
 \begin{subequations}\label{eq:mox_phase_transition_temperature}
 	\begin{align}
 		T_{\mathrm{sol}}
@@ -30,18 +30,18 @@ MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及�
 		&& C_{\mathrm{Pu}}=0\label{eq:uo2_liquidus}
 	\end{align}
 \end{subequations}
-式中：$T_{\mathrm{sol}}$和$T_{\mathrm{liq}}$分别为固相线温度和液相线温度，单位为$\mathrm{K}$；$C_{\mathrm{Pu}}$为$\mathrm{PuO}_2$质量分数的百分数数值（即$w_{\mathrm{PuO}_2}/\%$）；$F_{\mathrm{Bu}}$为按模型定义、以初始铀质量计的燃耗数值，基准单位为$\mathrm{MW\,d\,t^{-1}}$。对于MOX燃料，$T_{\mathrm{sol}}<T<T_{\mathrm{liq}}$对应固液共存区间。
+\noindent 式中：$T_{\mathrm{sol}}$和$T_{\mathrm{liq}}$分别为固相线温度和液相线温度，单位为$\mathrm{K}$；$C_{\mathrm{Pu}}$为$\mathrm{PuO}_2$质量分数的百分数数值（即$w_{\mathrm{PuO}_2}/\%$）；$F_{\mathrm{Bu}}$为按模型定义、以初始铀质量计的燃耗数值，基准单位为$\mathrm{MW\,d\,t^{-1}}$。对于MOX燃料，$T_{\mathrm{sol}}<T<T_{\mathrm{liq}}$对应固液共存区间。
 
 \subsection{热导率}
 
-热导率直接影响燃料内部的径向温度梯度，是燃料温度、O/M比、燃耗和孔隙率耦合影响最显著的物性之一。对于高钚含量MOX燃料，可采用Inoue等人建立并在BISON中实现的关联式\cite{inoueThermalConductivityUranium2000,halesBISONTheoryManual2016}。有效热导率写为
+热导率直接影响燃料内部的径向温度梯度（$\mathrm{K\,m^{-1}}$），是燃料温度、O/M比、燃耗和孔隙率耦合影响最显著的物性之一。对于高钚含量MOX燃料，可采用Inoue等人建立并在BISON中实现的关联式\cite{inoueThermalConductivityUranium2000,halesBISONTheoryManual2016}。有效热导率写为：
 \begin{equation}
 	k=F_1F_2F_3F_4k_0
 	\label{eq:fast_mox_thermal_conductivity}
 \end{equation}
-式中：$k$为有效热导率，单位为$\mathrm{W\,m^{-1}\,K^{-1}}$；$k_0$为全致密、未辐照燃料的热导率；$F_1$、$F_2$、$F_3$和$F_4$分别表示溶解态固体裂变产物、析出态固体裂变产物、辐照损伤和孔隙率的修正作用。
+\noindent 式中：$k$为有效热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$），单位为$\mathrm{W\,m^{-1}\,K^{-1}}$；$k_0$为全致密、未辐照燃料的热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$）；$F_1$、$F_2$、$F_3$和$F_4$分别表示溶解态固体裂变产物、析出态固体裂变产物、辐照损伤和孔隙率的修正作用。
 
-本文提供多种全致密、未辐照MOX燃料的热导率，其中Inoue模型\cite{inoueThermalConductivityUranium2000}为
+本文提供多种全致密、未辐照MOX燃料的热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$），其中Inoue模型\cite{inoueThermalConductivityUranium2000}为：
 \begin{equation}
 	k_0=
 	\left[
@@ -52,14 +52,14 @@ MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及�
 	\exp\!\left(-\frac{16361}{T}\right)
 	\label{eq:fast_mox_unirradiated_thermal_conductivity}
 \end{equation}
-式中：$T$为燃料温度，单位为$\mathrm{K}$。式\eqref{eq:fast_mox_unirradiated_thermal_conductivity}的第一项表示晶格振动所贡献的热传导，第二项表示高温电子传导。该关联式的原始数据库主要覆盖$20$--$30\%$的钚重金属原子分数、$1.98$--$2.00$的O/M比以及约$94.3\%$--$96.4\%$的理论密度，超出该范围时不宜直接外推。另外Duriez--Ronchi、Amaya、Fink和Halden等其他未辐照燃料热导率模型见本附录第\ref{app:mox_thermal_conductivity_models}节。
+\noindent 式中：$T$为燃料温度，单位为$\mathrm{K}$。式\eqref{eq:fast_mox_unirradiated_thermal_conductivity}的第一项表示晶格振动所贡献的热传导，第二项表示高温电子传导。该关联式的原始数据库主要覆盖$20$--$30\%$的钚重金属原子分数、$1.98$--$2.00$的O/M比以及约$94.3\%$--$96.4\%$的理论密度，超出该范围时不宜直接外推。另外Duriez--Ronchi、Amaya、Fink和Halden等其他未辐照燃料热导率模型见本附录第\ref{app:mox_thermal_conductivity_models}节。
 
 孔隙率修正采用修正的Loeb关系：
 \begin{equation}
 	F_4=1-\alpha p
 	\label{eq:fast_mox_porosity_correction}
 \end{equation}
-式中：$p$为孔隙体积分数，$\alpha$为孔隙修正系数。保守计算可取$\alpha=2.5$。$F_1$--$F_3$的具体表达式见本附录第\ref{app:mox_thermal_conductivity_models}节。不同MOX燃料热导率模型的计算结果对比如图\ref{fig:mox_thermal_conductivity_models}所示。
+\noindent 式中：$p$为孔隙体积分数，$\alpha$为孔隙修正系数。保守计算可取$\alpha=2.5$。$F_1$--$F_3$的具体表达式见本附录第\ref{app:mox_thermal_conductivity_models}节。不同MOX燃料热导率模型的计算结果对比如图\ref{fig:mox_thermal_conductivity_models}所示。
 
 \begin{figure}[!htb]
 	\centering
@@ -70,11 +70,11 @@ MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及�
 
 \subsection{比热容}
 
-比热容决定燃料在给定释热条件下的温升速率。MATPRO将$\mathrm{UO}_2$和$\mathrm{PuO}_2$的定压比热容表示为\cite{hagrmanSCDAPRELAP5MOD1995}
+比热容决定燃料在给定释热条件下的温升速率。MATPRO将$\mathrm{UO}_2$和$\mathrm{PuO}_2$的定压比热容表示为\cite{hagrmanSCDAPRELAP5MOD1995}：
 
 \begin{equation}
 	\begin{aligned}
-		c_p(T)
+		c_{\mathrm p}(T)
 		&=
 		\frac{K_1\theta^2\exp(\theta/T)}
 		{T^2\left[\exp(\theta/T)-1\right]^2}
@@ -84,7 +84,7 @@ MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及�
 	\end{aligned}
 	\label{eq:oxide_specific_heat}
 \end{equation}
-式中：$c_p$为比热容，单位为$\mathrm{J\,kg^{-1}\,K^{-1}}$；$T$为温度；$Y$为O/M比；$R=8.3143\,\mathrm{J\,mol^{-1}\,K^{-1}}$；$\theta$为特征温度；$E_D$为缺陷形成活化能。相应参数列于表\ref{tab:mox_specific_heat_parameters}。
+\noindent 式中：$c_{\mathrm p}$为比热容，单位为$\mathrm{J\,kg^{-1}\,K^{-1}}$；$T$为温度；$Y$为O/M比；$R=8.3143\,\mathrm{J\,mol^{-1}\,K^{-1}}$；$\theta$为特征温度；$E_D$为缺陷形成活化能。相应参数列于表\ref{tab:mox_specific_heat_parameters}。
 
 \begin{table}[htbp]
 	\centering
@@ -110,25 +110,25 @@ MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及�
 
 MOX燃料的比热容可按各氧化物的质量分数进行线性混合：
 \begin{equation}
-	c_{p,\mathrm{MOX}}
-	=(1-w_{\mathrm{PuO}_2})c_{p,\mathrm{UO}_2}
-	+w_{\mathrm{PuO}_2}c_{p,\mathrm{PuO}_2}
+	c_{\mathrm p,\mathrm{MOX}}
+	=(1-w_{\mathrm{PuO}_2})c_{\mathrm p,\mathrm{UO}_2}
+	+w_{\mathrm{PuO}_2}c_{\mathrm p,\mathrm{PuO}_2}
 	\label{eq:mox_specific_heat_mixture}
 \end{equation}
-式中：$w_{\mathrm{PuO}_2}$为$\mathrm{PuO}_2$质量分数。液态$\mathrm{UO}_2$和$\mathrm{PuO}_2$的比热容均可近似取$503\ \mathrm{J\,kg^{-1}\,K^{-1}}$。在固相线附近，可在固态值与液态值之间进行连续插值，以避免相变区间内物性突变。
+\noindent 式中：$w_{\mathrm{PuO}_2}$为$\mathrm{PuO}_2$质量分数。液态$\mathrm{UO}_2$和$\mathrm{PuO}_2$的比热容均可近似取$503\ \mathrm{J\,kg^{-1}\,K^{-1}}$。在固相线附近，可在固态值与液态值之间进行连续插值，以避免相变区间内物性突变。
 
 \subsection{发射率}
 
-燃料表面发射率影响燃料与包壳之间的辐射换热。MATPRO采用的经验关系为
+燃料表面发射率影响燃料与包壳之间的辐射换热。MATPRO采用的经验关系为：
 \begin{equation}
-	\varepsilon_f=0.7856+1.5263\times10^{-5}T
+	\varepsilon_{\mathrm f}=0.7856+1.5263\times10^{-5}T
 	\label{eq:mox_emissivity}
 \end{equation}
-式中：$\varepsilon_f$为燃料表面发射率，$T$为温度，单位为$\mathrm{K}$。该关系的实验标准误差约为$\pm6.8\%$，数据主要覆盖$T<2400\ \mathrm{K}$的范围。由于$\mathrm{PuO}_2$的独立数据有限，该关系通常也用于MOX燃料；高于实验范围的计算结果应视为外推值。
+\noindent 式中：$\varepsilon_{\mathrm f}$为燃料表面发射率，$T$为温度，单位为$\mathrm{K}$。该关系的实验标准误差约为$\pm6.8\%$，数据主要覆盖$T<2400\ \mathrm{K}$的范围。由于$\mathrm{PuO}_2$的独立数据有限，该关系通常也用于MOX燃料；高于实验范围的计算结果应视为外推值。
 
 \subsection{热膨胀}
 
-在MATPRO中，氧化物燃料的热膨胀应变由温度、$\mathrm{PuO}_2$含量和熔化分数确定。对于常规燃料组成，O/M偏离对热膨胀的影响通常小于温度和相变的影响。固态$\mathrm{UO}_2$或$\mathrm{PuO}_2$相对于$300\ \mathrm{K}$的线膨胀应变为
+在MATPRO中，氧化物燃料的热膨胀应变由温度、$\mathrm{PuO}_2$含量和熔化分数确定。对于常规燃料组成，O/M偏离对热膨胀的影响通常小于温度和相变的影响。固态$\mathrm{UO}_2$或$\mathrm{PuO}_2$相对于$300\ \mathrm{K}$的线膨胀应变为：
 \begin{equation}
 	\varepsilon_{\mathrm{th},i}(T)
 	=K_{1,i}T-K_{2,i}
@@ -136,7 +136,7 @@ MOX燃料的比热容可按各氧化物的质量分数进行线性混合：
 	\qquad i\in\{\mathrm{UO}_2,\mathrm{PuO}_2\}
 	\label{eq:oxide_solid_thermal_expansion}
 \end{equation}
-式中：$k_{\mathrm{B}}=1.38\times10^{-23}\ \mathrm{J\,K^{-1}}$为玻尔兹曼常数，其他参数列于表\ref{tab:mox_thermal_expansion_parameters}。
+\noindent 式中：$k_{\mathrm{B}}=1.38\times10^{-23}\ \mathrm{J\,K^{-1}}$为玻尔兹曼常数，其他参数列于表\ref{tab:mox_thermal_expansion_parameters}。
 
 \begin{table}[htbp]
 	\centering
@@ -167,30 +167,30 @@ MOX燃料的固态热膨胀应变采用质量分数加权：
 	\label{eq:mox_solid_thermal_expansion}
 \end{equation}
 
-在固液共存区内，热膨胀应变按熔化分数$f_m$修正为
+在固液共存区内，热膨胀应变按熔化分数$f_m$修正为：
 \begin{equation}
 	\varepsilon_{\mathrm{th}}
 	=\varepsilon_{\mathrm{th}}(T_{\mathrm{sol}})+0.043f_m
 	\qquad 0\leq f_m\leq1
 	\label{eq:mox_partial_melting_expansion}
 \end{equation}
-完全熔化后，可进一步写为
+完全熔化后，可进一步写为：
 \begin{equation}
 	\varepsilon_{\mathrm{th}}
 	=\varepsilon_{\mathrm{th}}(T_{\mathrm{sol}})+0.043
 	+3.6\times10^{-5}\left[T-T_{\mathrm{liq}}\right]
 	\label{eq:mox_liquid_expansion}
 \end{equation}
-式中：$T_{\mathrm{liq}}=T_{\mathrm{sol}}+\Delta T_m$。该模型的不确定性随温度升高而增大，高温区的相对应变误差约为$\pm10\%$。
+\noindent 式中：$T_{\mathrm{liq}}=T_{\mathrm{sol}}+\Delta T_m$。该模型的不确定性随温度升高而增大，高温区的相对应变误差约为$\pm10\%$。
 
 \subsection{密度}
 
-忽略质量损失时，密度变化可由各向同性热膨胀近似得到。在线性应变较小时，有
+忽略质量损失时，密度变化可由各向同性热膨胀近似得到。在线性应变较小时，有：
 \begin{equation}
 	\rho(T)=\rho_0\left[1-3\varepsilon_{\mathrm{th}}(T)\right]
 	\label{eq:mox_density_linearized}
 \end{equation}
-式中：$\rho_0$为参考温度下的燃料密度，$\varepsilon_{\mathrm{th}}$为相对于该参考温度的线膨胀应变。对于全致密$\mathrm{UO}_2$，可取$\rho_0=10980\ \mathrm{kg\,m^{-3}}$；对于MOX燃料，$\rho_0$应根据组成和初始理论密度确定。若热膨胀较大，则宜采用质量守恒形式
+\noindent 式中：$\rho_0$为参考温度下的燃料密度，$\varepsilon_{\mathrm{th}}$为相对于该参考温度的线膨胀应变。对于全致密$\mathrm{UO}_2$，可取$\rho_0=10980\ \mathrm{kg\,m^{-3}}$；对于MOX燃料，$\rho_0$应根据组成和初始理论密度确定。若热膨胀较大，则宜采用质量守恒形式：
 \begin{equation}
 	\rho(T)=\frac{\rho_0}{\left[1+\varepsilon_{\mathrm{th}}(T)\right]^3}
 	\label{eq:mox_density_exact}
@@ -214,16 +214,16 @@ MATPRO以温度和理论密度分数描述$\mathrm{UO}_2$的杨氏模量：
 	\left(1-1.0915\times10^{-4}T\right)
 	\label{eq:uo2_youngs_modulus}
 \end{equation}
-式中：$E_{\mathrm{UO}_2}$的单位为$\mathrm{Pa}$，$D$为理论密度分数，$T$为温度，单位为$\mathrm{K}$。
+\noindent 式中：$E_{\mathrm{UO}_2}$的单位为$\mathrm{Pa}$，$D$为理论密度分数，$T$为温度，单位为$\mathrm{K}$。
 
-考虑非化学计量偏离和$\mathrm{PuO}_2$含量后，MOX燃料的杨氏模量可写为
+考虑非化学计量偏离和$\mathrm{PuO}_2$含量后，MOX燃料的杨氏模量可写为：
 \begin{equation}
 	E_{\mathrm{MOX}}
 	=E_{\mathrm{UO}_2}\exp(-B_x|x|)
 	\left(1+0.15w_{\mathrm{PuO}_2}\right)
 	\label{eq:mox_youngs_modulus}
 \end{equation}
-式中：$x$为$(\mathrm{U},\mathrm{Pu})\mathrm{O}_{2\pm x}$中的化学计量偏离量，$w_{\mathrm{PuO}_2}$为$\mathrm{PuO}_2$质量分数；对于超化学计量和欠化学计量燃料，$B_x$可分别取1.34和1.75。该关系适用于固态燃料，接近熔点时应避免继续外推。
+\noindent 式中：$x$为$(\mathrm{U},\mathrm{Pu})\mathrm{O}_{2\pm x}$中的化学计量偏离量，$w_{\mathrm{PuO}_2}$为$\mathrm{PuO}_2$质量分数；对于超化学计量和欠化学计量燃料，$B_x$可分别取1.34和1.75。该关系适用于固态燃料，接近熔点时应避免继续外推。
 
 \subsubsection{泊松比}
 
@@ -232,19 +232,19 @@ MATPRO以温度和理论密度分数描述$\mathrm{UO}_2$的杨氏模量：
 	\nu=\frac{E}{2G}-1
 	\label{eq:mox_poisson_ratio}
 \end{equation}
-式中：$E$和$G$分别为杨氏模量和剪切模量。室温多晶$\mathrm{UO}_2$的泊松比约为0.306--0.314；MOX燃料的测量值为$0.276\pm0.094$。在缺少随温度和燃耗变化的可靠数据时，本文认为MOX燃料的泊松比$\nu=0.276$。
+\noindent 式中：$E$和$G$分别为杨氏模量和剪切模量（$\mathrm{Pa}$）。室温多晶$\mathrm{UO}_2$的泊松比约为0.306--0.314；MOX燃料的测量值为$0.276\pm0.094$。在缺少随温度和燃耗变化的可靠数据时，本文认为MOX燃料的泊松比$\nu=0.276$。
 
 \subsection{蠕变}
 
 蠕变是氧化物燃料在高温和辐照条件下释放应力的主要机制。在本文采用的BISON MOX蠕变模型中，稳态蠕变速率由扩散控制的热蠕变项、位错控制的幂律热蠕变项和显式辐照蠕变项叠加得到，并通过时间相关修正因子计及初生蠕变。该模型主要考虑有效应力、温度、晶粒尺寸、相对理论密度、裂变率及$\mathrm{PuO}_2$质量分数的影响。
 
-BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTheoryManual2016,MiletJNM1983}
+BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTheoryManual2016,MiletJNM1983}：
 \begin{equation}
 	\dot{\varepsilon}_{\mathrm{cr}}
 	=\left[1+a\exp(-bt)\right]\dot{\varepsilon}_{s}
 	\label{eq:mox_transient_creep}
 \end{equation}
-式中：$t$为自当前最大应力施加以来的时间，$a$和$b$控制初始瞬态蠕变的幅值及衰减速率。稳态蠕变率为
+\noindent 式中：$t$为自当前最大应力施加以来的时间（$\mathrm{s}$），$a$和$b$控制初始瞬态蠕变的幅值及衰减速率。稳态蠕变率为：
 \begin{align}
 	\dot{\varepsilon}_{s}
 	={}&\frac{B_1+B_2\dot{F}}{d_{\mathrm{gr}}^2}\,
@@ -256,7 +256,7 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	+A\sigma_{\mathrm{eff}}\dot{F}
 	\label{eq:mox_steady_creep}
 \end{align}
-式中：$\dot{\varepsilon}_{s}$为稳态等效蠕变率；$\sigma_{\mathrm{eff}}$为von Mises等效应力；$\dot{F}$为体积裂变率；$d_{\mathrm{gr}}$为晶粒尺寸，单位为$\mathrm{m}$；$D$为理论密度分数；$C_{\mathrm{Pu}}$为$\mathrm{PuO}_2$质量分数的百分数数值（即$w_{\mathrm{PuO}_2}/\%$）。式\eqref{eq:mox_steady_creep}的三项依次表示低应力扩散蠕变、高应力位错蠕变和辐照蠕变。系数及其标定单位见本附录第\ref{app:mox_mechanical_correlations}节；使用时必须保持应力、晶粒尺寸和裂变率单位与系数标定体系一致。
+\noindent 式中：$\dot{\varepsilon}_{s}$为稳态等效蠕变率；$\sigma_{\mathrm{eff}}$为von Mises等效应力；$\dot{F}$为体积裂变率；$d_{\mathrm{gr}}$为晶粒尺寸（$\mathrm{m}$），单位为$\mathrm{m}$；$D$为理论密度分数；$C_{\mathrm{Pu}}$为$\mathrm{PuO}_2$质量分数的百分数数值（即$w_{\mathrm{PuO}_2}/\%$）。式\eqref{eq:mox_steady_creep}的三项依次表示低应力扩散蠕变、高应力位错蠕变和辐照蠕变。系数及其标定单位见本附录第\ref{app:mox_mechanical_correlations}节；使用时必须保持应力、晶粒尺寸和裂变率单位与系数标定体系一致。
 
 对于高钚含量快堆MOX燃料，还可采用Routbort稳态热蠕变--辐照蠕变模型：
 \begin{equation}
@@ -268,7 +268,7 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	+C_R\sigma_{\mathrm{eff}}\dot{F}
 	\label{eq:fast_mox_creep}
 \end{equation}
-式中：$d_{\mathrm{gr}}$为晶粒尺寸，单位为$\mathrm{m}$；$\sigma_{\mathrm{eff}}$为von Mises等效应力；$T$为热力学温度，单位为$\mathrm{K}$；$R$为摩尔气体常数，单位为$\mathrm{J\,mol^{-1}\,K^{-1}}$；$\dot F$为体积裂变率，单位为$\mathrm{m^{-3}\,s^{-1}}$。
+\noindent 式中：$d_{\mathrm{gr}}$为晶粒尺寸（$\mathrm{m}$），单位为$\mathrm{m}$；$\sigma_{\mathrm{eff}}$为von Mises等效应力；$T$为热力学温度（$\mathrm{K}$），单位为$\mathrm{K}$；$R$为摩尔气体常数（$\mathrm{J\,mol^{-1}\,K^{-1}}$），单位为$\mathrm{J\,mol^{-1}\,K^{-1}}$；$\dot F$为体积裂变率，单位为$\mathrm{m^{-3}\,s^{-1}}$。
 该模型不含显式的初生蠕变项，适用于以稳态热蠕变和辐照蠕变为主的快堆工况。两类模型的选取应与燃料成分、温度范围、载荷历史及后续验证数据保持一致。两类蠕变模型的计算结果对比如图\ref{fig:uo2_mox_creep_comparison}所示。
 
 \begin{figure}[!htb]
@@ -282,7 +282,7 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 
 燃料重定位是指氧化物燃料芯块在功率上升过程中发生开裂后，裂纹自由表面的形成以及碎块间的相对运动使芯块表观直径增大，并导致燃料--包壳间隙减小的现象。该过程主要由燃料内部显著的径向温度梯度及其产生的热应力驱动，并不表示燃料基体发生真实的体积膨胀。本文将燃料重定位等效为仅作用于径向的本征应变，并采用BISON中实现的修正ESCORE模型进行描述\cite{fancherESCOREEPRISteadystate1987,halesBISONTheoryManual2016}。
 
-修正ESCORE模型给出的有效径向重定位应变为
+修正ESCORE模型给出的有效径向重定位应变为：
 \begin{equation}
 	\varepsilon_{\mathrm{rel}}
 	=
@@ -295,7 +295,7 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	\right]f(q)
 	\label{eq:escore_relocation_strain}
 \end{equation}
-式中：线功率修正函数$f(q)$表示为
+\noindent 式中：线功率修正函数$f(q)$表示为：
 \begin{equation}
 	f(q)=
 	\begin{cases}
@@ -309,13 +309,13 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	\end{cases}
 	\label{eq:escore_relocation_power_function}
 \end{equation}
-式中：$\varepsilon_{\mathrm{rel}}$为有效径向重定位应变；$\Delta D$为重定位引起的芯块直径增量，单位为$\mathrm{m}$；$D_0$为制造态冷态芯块直径，单位为$\mathrm{m}$；$G_0$为制造态冷态燃料--包壳直径间隙，单位为$\mathrm{m}$；$B$为按初始铀质量计的芯块平均燃耗，单位为$\mathrm{MW\,d\,t^{-1}}$；$q$为芯块平均线功率，单位为$\mathrm{kW\,m^{-1}}$。式\eqref{eq:escore_relocation_strain}已将原ESCORE关联式中以英寸和$\mathrm{kW\,ft^{-1}}$标定的长度、线功率系数等效换算为SI单位形式。线功率参数分别取
+\noindent 式中：$\varepsilon_{\mathrm{rel}}$为有效径向重定位应变；$\Delta D$为重定位引起的芯块直径增量，单位为$\mathrm{m}$；$D_0$为制造态冷态芯块直径，单位为$\mathrm{m}$；$G_0$为制造态冷态燃料--包壳直径间隙，单位为$\mathrm{m}$；$B$为按初始铀质量计的芯块平均燃耗，单位为$\mathrm{MW\,d\,t^{-1}}$；$q$为芯块平均线功率，单位为$\mathrm{kW\,m^{-1}}$。式\eqref{eq:escore_relocation_strain}已将原ESCORE关联式中以英寸和$\mathrm{kW\,ft^{-1}}$标定的长度、线功率系数等效换算为SI单位形式。线功率参数分别取：
 \begin{equation}
 	q_1=4.9869\,\mathrm{kW\,m^{-1}},\qquad
 	q_2=45.9318\,\mathrm{kW\,m^{-1}},\qquad
 	q_3=32.8084\,\mathrm{kW\,m^{-1}}
 \end{equation}
-式中：$q_1$为重定位启动阈值，$q_2$为两个线功率区间的转换值，$q_3$为高线功率区间的偏移量。在BISON中，线功率以$\mathrm{W\,m^{-1}}$输入，并在模型内部转换为经验关联式所需的单位。
+\noindent 式中：$q_1$为重定位启动阈值，$q_2$为两个线功率区间的转换值，$q_3$为高线功率区间的偏移量。在BISON中，线功率以$\mathrm{W\,m^{-1}}$输入，并在模型内部转换为经验关联式所需的单位。
 
 模型的标定范围等效换算为芯块平均线功率$4.99$--$72.18\,\mathrm{kW\,m^{-1}}$和按初始铀质量计的平均燃耗$0$--$11500\,\mathrm{MW\,d\,t^{-1}}$，超出该范围时应谨慎外推。数值计算中，重定位应变以增量形式施加，即根据相邻时间步的累计重定位应变之差更新径向本征应变，并可在达到指定燃耗或指定辐照时间后停止增长。
 
@@ -332,7 +332,7 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	\right]
 	\label{eq:mox_escore_densification}
 \end{equation}
-式中：$\varepsilon_D$为密实化应变，$\Delta\rho_0$为可发生的总密实化量，$Bu$为当前燃耗，$Bu_D$为密实化基本完成时的燃耗。温度修正系数$C_D$为
+\noindent 式中：$\varepsilon_D$为密实化应变，$\Delta\rho_0$为可发生的总密实化量，$Bu$为当前燃耗，$Bu_D$为密实化基本完成时的燃耗。温度修正系数$C_D$为：
 \begin{equation}
 	C_D=
 	\begin{cases}
@@ -341,17 +341,17 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	\end{cases}
 	\label{eq:mox_densification_temperature_factor}
 \end{equation}
-式中：$T_C$为以摄氏度表示的燃料温度。式\eqref{eq:mox_densification_temperature_factor}在$750\,{}^\circ\mathrm{C}$处连续。本文的另一个模型是基于再烧结密度变化和制造烧结温度的MATPRO分段模型，模型描述见本附录第\ref{app:mox_densification_correlations}节。
+\noindent 式中：$T_C$为以摄氏度表示的燃料温度。式\eqref{eq:mox_densification_temperature_factor}在$750\,{}^\circ\mathrm{C}$处连续。本文的另一个模型是基于再烧结密度变化和制造烧结温度的MATPRO分段模型，模型描述见本附录第\ref{app:mox_densification_correlations}节。
 
 \subsection{裂变产物肿胀}
 
-裂变产物肿胀由固体裂变产物和气体裂变产物共同引起。MATPRO/BISON模型将一个时间增量内的固体裂变产物体积肿胀写为
+裂变产物肿胀由固体裂变产物和气体裂变产物共同引起。MATPRO/BISON模型将一个时间增量内的固体裂变产物体积肿胀写为：
 \begin{equation}
 	\Delta\varepsilon_{\mathrm{sw,s}}
 	=5.577\times10^{-5}\rho\,\Delta Bu
 	\label{eq:mox_solid_fission_product_swelling}
 \end{equation}
-气体裂变产物体积肿胀写为
+气体裂变产物体积肿胀写为：
 \begin{equation}
 	\begin{aligned}
 		\Delta\varepsilon_{\mathrm{sw,g}}
@@ -363,9 +363,9 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	\end{aligned}
 	\label{eq:mox_gaseous_fission_product_swelling}
 \end{equation}
-式中：$\rho$为燃料密度，单位为$\mathrm{kg\,m^{-3}}$；$Bu$和$\Delta Bu$分别为燃耗及其增量，均以每个铀原子的裂变数表示。模型假定$T\geq2800\ \mathrm{K}$时气体裂变产物肿胀为零，此时裂变气体被视为完全释放。若计算中已采用显式裂变气体气泡演化模型，则裂变气体肿胀应由该机理模型统一表征，避免与经验气体肿胀关系同时使用而造成重复计入。
+\noindent 式中：$\rho$为燃料密度，单位为$\mathrm{kg\,m^{-3}}$；$Bu$和$\Delta Bu$分别为燃耗及其增量，均以每个铀原子的裂变数表示。模型假定$T\geq2800\ \mathrm{K}$时气体裂变产物肿胀为零，此时裂变气体被视为完全释放。若计算中已采用显式裂变气体气泡演化模型，则裂变气体肿胀应由该机理模型统一表征，避免与经验气体肿胀关系同时使用而造成重复计入。
 
-总的辐照体积应变增量为
+总的辐照体积应变增量为：
 \begin{equation}
 	\Delta\varepsilon_{\mathrm{irr}}
 	=\Delta\varepsilon_D
@@ -374,7 +374,7 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	+\Delta\varepsilon_{\mathrm{sw,g}}
 	\label{eq:mox_total_irradiation_volumetric_strain}
 \end{equation}
-式中：密实化项为负，重定位、固体和气体裂变产物肿胀项为正。
+\noindent 式中：密实化项为负，重定位、固体和气体裂变产物肿胀项为正。
 
 \section{MOX燃料热导率备选模型}
 \label{app:mox_thermal_conductivity_models}
@@ -383,11 +383,11 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 
 \subsection{MATPRO关系式}
 
-MATPRO将固态氧化物燃料热导率分解为晶格传导和电子传导两部分，并采用理论密度、热膨胀及非化学计量修正。其一般形式为
+MATPRO将固态氧化物燃料热导率分解为晶格传导和电子传导两部分，并采用理论密度、热膨胀及非化学计量修正。其一般形式为：
 \begin{align}
 	k={}&
 	\frac{D}{1+\left(6.5-0.004697T\right)(1-D)}
-	\frac{C_v}{\left(A+BT_p\right)^3\left(1+3\varepsilon_h\right)}
+	\frac{C_v}{\left(A+BT_p\right)^3\left(1+3\varepsilon_{\mathrm h}\right)}
 	\notag\\
 	&+5.2997\times10^{-3}T_e
 	\exp\!\left(-\frac{13358}{T_e}\right)
@@ -396,7 +396,7 @@ MATPRO将固态氧化物燃料热导率分解为晶格传导和电子传导两�
 	\right]
 	\label{eq:appendix_matpro_thermal_conductivity}
 \end{align}
-\noindent 式中：$D$为理论密度分数；$C_v$为晶格振动对比热容的贡献；$\varepsilon_h$为热膨胀线应变；$T_p$和$T_e$分别为孔隙修正项和电子传导项所采用的有效温度；$A$和$B$为声子散射参数。按照原模型，
+\noindent 式中：$D$为理论密度分数；$C_v$为晶格振动对比热容的贡献；$\varepsilon_{\mathrm h}$为热膨胀线应变；$T_p$和$T_e$分别为孔隙修正项和电子传导项所采用的有效温度；$A$和$B$为声子散射参数。按照原模型，
 \begin{equation}
 	\begin{aligned}
 		A&=0.339+12.6x\\
@@ -408,7 +408,7 @@ MATPRO将固态氧化物燃料热导率分解为晶格传导和电子传导两�
 \label{eq:appendix_matpro_B}
 \noindent 式中：$x=2-\mathrm{O/M}$；$C_{\mathrm{Pu}}$为模型所规定的钚含量变量。该关系主要适用于$90\%$--$100\%$理论密度的固态燃料；燃料熔化后不再计入晶格传导项。
 
-MATPRO对固体热导率标准差的估计为
+MATPRO对固体热导率标准差的估计为：
 \begin{equation}
 	U_k=
 	\left[0.2(1-C_{\mathrm{Pu}})+0.7C_{\mathrm{Pu}}\right]
@@ -419,7 +419,7 @@ MATPRO对固体热导率标准差的估计为
 
 \subsection{BISON中未辐照MOX热导率的一般构成}
 
-BISON中的多种氧化物燃料热导率模型均可概括为
+BISON中的多种氧化物燃料热导率模型均可概括为：
 \begin{gather}
 	k_{95}=k_{\mathrm{ph}}+k_{\mathrm{el}}
 	\notag
@@ -435,7 +435,7 @@ BISON中的多种氧化物燃料热导率模型均可概括为
 \label{eq:appendix_bison_k95}
 \label{eq:appendix_bison_phonon}
 \label{eq:appendix_bison_electronic}
-\noindent 式中：$k_{95}$表示$95\%$理论密度下的热导率；$k_{\mathrm{ph}}$和$k_{\mathrm{el}}$分别为声子传导与电子传导贡献。不同模型的主要差异在于未辐照基准关系以及燃耗、孔隙率、组成和辐照损伤修正项。
+\noindent 式中：$k_{95}$表示$95\%$理论密度下的热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$）；$k_{\mathrm{ph}}$和$k_{\mathrm{el}}$分别为声子传导与电子传导贡献。不同模型的主要差异在于未辐照基准关系以及燃耗、孔隙率、组成和辐照损伤修正项。
 
 \subsection{Duriez--Ronchi模型}
 
@@ -476,11 +476,11 @@ Amaya模型以未辐照$\mathrm{UO}_2$热导率为基础，引入钚含量修正
 	\right]
 	\label{eq:appendix_amaya_thermal_conductivity}
 \end{equation}
-\noindent 式中：$\lambda_0$为未辐照$\mathrm{UO}_2$热导率；$y$为钚含量；$D_{0,\mathrm{Pu}}=0.209\ \mathrm{m\,K\,W^{-1}}$；$D_{1,\mathrm{Pu}}=1.09\times10^{-3}\ \mathrm{K^{-1}}$。该模型的参数主要依据$400$--$1500\ \mathrm{K}$及钚含量不高于$30\ \mathrm{wt.\%}$的数据拟合。
+\noindent 式中：$\lambda_0$为未辐照$\mathrm{UO}_2$热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$）；$y$为钚含量；$D_{0,\mathrm{Pu}}=0.209\ \mathrm{m\,K\,W^{-1}}$；$D_{1,\mathrm{Pu}}=1.09\times10^{-3}\ \mathrm{K^{-1}}$。该模型的参数主要依据$400$--$1500\ \mathrm{K}$及钚含量不高于$30\ \mathrm{wt.\%}$的数据拟合。
 
 \subsection{Fink模型}
 
-Fink模型给出的$95\%$理论密度未辐照$\mathrm{UO}_2$热导率及其全致密换算关系为
+Fink模型给出的$95\%$理论密度未辐照$\mathrm{UO}_2$热导率及其全致密换算关系为：
 \begin{equation}
 	\begin{aligned}
 		k_{95}
@@ -500,7 +500,7 @@ Fink模型给出的$95\%$理论密度未辐照$\mathrm{UO}_2$热导率及其全�
 
 \subsection{Halden模型}
 
-Halden模型将$95\%$理论密度下的热导率写为
+Halden模型将$95\%$理论密度下的热导率写为：
 \begin{equation}
 	k_{95}=
 	\frac{1}{q_0+q_1+q_2+q_3+q_4q_5}+q_6
@@ -537,7 +537,7 @@ Halden模型将$95\%$理论密度下的热导率写为
 
 \subsection{快堆MOX燃耗与辐照修正}
 
-正文式\eqref{eq:fast_mox_thermal_conductivity}中的修正因子为
+正文式\eqref{eq:fast_mox_thermal_conductivity}中的修正因子为：
 \begin{equation}
 	\begin{aligned}
 		F_1&=
@@ -571,7 +571,7 @@ Halden模型将$95\%$理论密度下的热导率写为
 
 \subsection{含次锕系元素的快堆MOX模型}
 
-基于JOYO辐照试验建立的含次锕系元素MOX热导率关系为
+基于JOYO辐照试验建立的含次锕系元素MOX热导率关系为：
 \begin{align}
 	k={}&\frac{1-p}{1+0.5p}
 	\Bigl[
@@ -587,7 +587,7 @@ Halden模型将$95\%$理论密度下的热导率写为
 	\label{eq:appendix_minor_actinide_mox_thermal_conductivity}
 \end{align}
 \noindent
- 式中：$p$为孔隙率；$x$为化学计量偏离量；$C_{\mathrm{Am}}$和$C_{\mathrm{Np}}$分别为镅和镎含量。该模型的数据主要对应O/M比为1.96和1.98、镅含量不高于$3\%$及镎含量不高于$12\%$的燃料。
+ 式中：$p$为孔隙率（无量纲）；$x$为化学计量偏离量；$C_{\mathrm{Am}}$和$C_{\mathrm{Np}}$分别为镅和镎含量。该模型的数据主要对应O/M比为1.96和1.98、镅含量不高于$3\%$及镎含量不高于$12\%$的燃料。
 
 上述热导率备选模型的主要适用范围汇总见\tablename\ref{tab:appendix_mox_thermal_conductivity_scope}。
 
@@ -614,7 +614,7 @@ Halden模型将$95\%$理论密度下的热导率写为
 
 \subsection{杨氏模量不确定性}
 
-$\mathrm{UO}_2$及MOX燃料杨氏模量标准差可写为
+$\mathrm{UO}_2$及MOX燃料杨氏模量标准差可写为：
 \begin{equation}
 	\begin{aligned}
 		S_{E,\mathrm{UO}_2}
@@ -645,7 +645,7 @@ MATPRO以晶粒尺寸相关的转变应力区分低应力和高应力蠕变机�
 	\sigma_t=\frac{1.6547\times10^7}{d_{\mathrm{gr}}^{0.5714}}
 	\label{eq:appendix_uo2_transition_stress}
 \end{equation}
-\noindent 式中：$\sigma_t$的单位为Pa；$d_{\mathrm{gr}}$以$\mu\mathrm{m}$表示。低应力区和高应力区的活化能分别为
+\noindent 式中：$\sigma_t$的单位为Pa；$d_{\mathrm{gr}}$以$\mu\mathrm{m}$表示。低应力区和高应力区的活化能分别为：
 \begin{equation}
 	\begin{aligned}
 		Q_1&=17884.8
@@ -664,7 +664,7 @@ MATPRO以晶粒尺寸相关的转变应力区分低应力和高应力蠕变机�
 \end{equation}
 \label{eq:appendix_uo2_Q1}
 \label{eq:appendix_uo2_Q2}
-\noindent 式中：$x$为O/M比；$Q_1$和$Q_2$以$\mathrm{cal/mol}$表示。稳态蠕变率为
+\noindent 式中：$x$为O/M比；$Q_1$和$Q_2$以$\mathrm{cal/mol}$表示。稳态蠕变率为：
 \begin{align}
 	\dot{\varepsilon}={}&
 	\frac{(A_1+A_2\dot{F})\sigma_{\mathrm{eff}}}
@@ -680,7 +680,7 @@ MATPRO以晶粒尺寸相关的转变应力区分低应力和高应力蠕变机�
 \end{align}
 在MATPRO的分段实现中，$\sigma_{\mathrm{eff}}<\sigma_t$时仅保留低应力项；$\sigma_{\mathrm{eff}}\geq\sigma_t$时，低应力项中的应力取$\sigma_t$，高应力项采用实际有效应力。
 
-针对低温辐照蠕变，Halden模型将第三项简化为\cite{hwr-1039}
+针对低温辐照蠕变，Halden模型将第三项简化为\cite{hwr-1039}：
 \begin{equation}
 	\dot{\varepsilon}_{\mathrm{irr}}
 	=A_7\dot{F}\sigma_{\mathrm{eff}}
@@ -723,7 +723,7 @@ MATPRO以晶粒尺寸相关的转变应力区分低应力和高应力蠕变机�
 
 \subsection{快堆MOX稳态蠕变模型参数}
 
-正文式\eqref{eq:fast_mox_creep}的原始参数为
+正文式\eqref{eq:fast_mox_creep}的原始参数为：
 \begin{gather}
 	A_R=3.23\times10^{9}
 	\notag
@@ -745,16 +745,16 @@ MATPRO以晶粒尺寸相关的转变应力区分低应力和高应力蠕变机�
 \section{MATPRO密实化分段关系}
 \label{app:mox_densification_correlations}
 
-MATPRO可根据再烧结试验所得的最大密度变化$R_{\mathrm{sint}}$估计最大线性密实化应变。相应分段关系为
+MATPRO可根据再烧结试验所得的最大密度变化$R_{\mathrm{sint}}$估计最大线性密实化应变。相应分段关系为：
 \begin{equation}
 	\begin{aligned}
 		\left(\frac{\Delta L}{L}\right)_m
 		&=-0.0015R_{\mathrm{sint}}
-		&&T_f<1000\ \mathrm{K}
+		&&T_{\mathrm f}<1000\ \mathrm{K}
 		\\
 		\left(\frac{\Delta L}{L}\right)_m
 		&=-0.00285R_{\mathrm{sint}}
-		&&T_f\geq1000\ \mathrm{K}
+		&&T_{\mathrm f}\geq1000\ \mathrm{K}
 	\end{aligned}
 	\label{eq:appendix_densification_resintering}
 \end{equation}
@@ -767,20 +767,20 @@ MATPRO可根据再烧结试验所得的最大密度变化$R_{\mathrm{sint}}$估�
 		\left(\frac{\Delta L}{L}\right)_m
 		&=-\frac{22.2(100-D_{\mathrm{ens}})}
 		{T_{\mathrm{sint}}-1453}
-		&&T_f<1000\ \mathrm{K}
+		&&T_{\mathrm f}<1000\ \mathrm{K}
 		\\
 		\left(\frac{\Delta L}{L}\right)_m
 		&=-\frac{66.6(100-D_{\mathrm{ens}})}
 		{T_{\mathrm{sint}}-1453}
-		&&T_f\geq1000\ \mathrm{K}
+		&&T_{\mathrm f}\geq1000\ \mathrm{K}
 	\end{aligned}
 	\label{eq:appendix_densification_sintering_temperature}
 \end{equation}
 \label{eq:appendix_densification_sintering_lowT}
 \label{eq:appendix_densification_sintering_highT}
-\noindent 式中：$D_{\mathrm{ens}}$以理论密度百分数表示；$T_f$和$T_{\mathrm{sint}}$以K表示。
+\noindent 式中：$D_{\mathrm{ens}}$以理论密度百分数表示；$T_{\mathrm f}$和$T_{\mathrm{sint}}$以K表示。
 
-密实化随燃耗的演化可写为
+密实化随燃耗的演化可写为：
 \begin{equation}
 	\frac{\Delta L}{L}
 	=\left(\frac{\Delta L}{L}\right)_m

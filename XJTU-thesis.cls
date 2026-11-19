@@ -171,7 +171,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 \RequirePackage{thmtools}
-\RequirePackage[xindy,symbols,order=letter,nogroupskip]{glossaries}
+\RequirePackage[symbols,order=letter,nogroupskip]{glossaries}
 
 
 %%% Symbols %%%
@@ -219,7 +219,18 @@
 
 \predisplaypenalty=0
 \allowdisplaybreaks[4]
+\RequirePackage{needspace}
 \raggedbottom
+
+% 图表尽量与正文混排；不足四分之三版心的单个浮动体不单独居中成页。
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.75}
+\renewcommand{\textfraction}{0.10}
+\renewcommand{\floatpagefraction}{0.75}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+
 
 
 %%% PAGE %%%
@@ -253,55 +264,39 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{mathrsfs}
 \RequirePackage{amsfonts}
-\RequirePackage[12pt]{ctex}
+\DeclareMathSymbol{\varPhi}{\mathalpha}{letters}{8}
+\RequirePackage[12pt,fontset=none]{ctex}
 
-\renewcommand{\baselinestretch}{1.4}
+\renewcommand{\baselinestretch}{1.2}
 \renewcommand{\CJKglue}{\hskip 0.56pt plus 0.08\baselineskip}
 
-\setlength{\parindent}{2.1em}
-\setlength{\parskip}{3pt plus1pt minus1pt}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
 \setlength{\intextsep}{9pt}
+\setlength{\emergencystretch}{2em}
 \setlength{\extrarowheight}{2pt}
 
-\linespread{1.33}
+\linespread{1.2}
 
 %%% Default fonts for different fonts %%%
 %%% 为不同平台设置默认字体 %%%
-\RequirePackage{ifplatform}
-\ifwindows
-  \setCJKmainfont[AutoFakeBold=true]{SimSun}
-  \newfontfamily{\heiti@letter}{SimHei}
-  \newfontfamily{\kaiti@letter}{KaiTi}
-  \newfontfamily{\songti@letter}{SimSun}
-  \setallmainfonts{Times New Roman}
-\else
-  \ifmacosx
-    \setCJKmainfont[AutoFakeBold=true]{Songti SC}
-    \newCJKfontfamily{\heiti}{STHeiti}
-    \newfontfamily{\heiti@letter}{STHeiti}
-    \newCJKfontfamily{\songti}{Songti SC}
-    \newfontfamily{\songti@letter}{Songti SC}
-    \setallmainfonts{Times New Roman}
-  \else
-    \setCJKmainfont[AutoFakeBold=true,Path=Materials/Fonts/]{fzsong.ttf}
-    \newfontfamily{\heiti@letter}[Path=Materials/Fonts/]{fzhei.ttf}
-    \newfontfamily{\songti@letter}[Path=Materials/Fonts/]{fzsong.ttf}
-    \setallmainfonts[
-      BoldFont=timesbd.ttf,
-      ItalicFont=timesi.ttf,
-      BoldItalicFont=timesbi.ttf,
-      Path=Materials/Fonts/,
-    ]{times.ttf}
-  \fi
-\fi
-
+% 固定使用 Word 模板宋体，避免按平台替换字形。
+\setCJKmainfont[Path=Materials/Fonts/,FontIndex=0,AutoFakeBold=true,ItalicFont=simsun.ttc,ItalicFeatures={FontIndex=0}]{simsun.ttc}
+\setCJKfamilyfont{zhsong}[Path=Materials/Fonts/,FontIndex=0,AutoFakeBold=true,ItalicFont=simsun.ttc,ItalicFeatures={FontIndex=0}]{simsun.ttc}
+\setCJKmonofont[Path=Materials/Fonts/,FontIndex=0]{simsun.ttc}
+\setCJKfamilyfont{zhhei}[Path=Materials/Fonts/,AutoFakeBold=true]{simhei.ttf}
+\providecommand{\songti}{\CJKfamily{zhsong}}
+\providecommand{\heiti}{\CJKfamily{zhhei}}
+\newfontfamily{\heiti@letter}[Path=Materials/Fonts/]{simhei.ttf}
+\newfontfamily{\songti@letter}[Path=Materials/Fonts/,FontIndex=0]{simsun.ttc}
+\setallmainfonts[Path=Materials/Fonts/,BoldFont=timesbd.ttf,ItalicFont=timesi.ttf,BoldItalicFont=timesbi.ttf]{times.ttf}
 
 %%% Rename Chineses Font size %%%
 %%% 定义中文字号 %%%
 \newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 1.0倍行距
 \newcommand{\xiaosan}{\fontsize{15pt}{15pt}\selectfont}     % 小三, 1.0倍行距
 \newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 1.0倍行距
-\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}      % 小四, 1.0倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{14.5pt}\selectfont}      % 小四, 1.0倍行距
 \newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}   % 五号, 1.0倍行距
 \newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}        % 小五, 1.0倍行距
 
@@ -1145,10 +1140,11 @@
 \setlength{\cftbeforesecskip}{0pt}
 \setlength{\cftbeforesubsecskip}{0pt}
 \setlength{\cftbeforechapskip}{0pt}
+\cftsetpnumwidth{2.2em}\cftsetrmarg{3.2em}
 
-\cftsetindents{chap}{0em}{0.9em}
-\cftsetindents{sec}{0.7em}{1.5em}
-\cftsetindents{subsec}{1.4em}{2.8em}
+\cftsetindents{chap}{0em}{1em}
+\cftsetindents{sec}{1em}{2em}
+\cftsetindents{subsec}{2em}{3em}
 \cftsetindents{subsubsec}{2.1em}{3.2em}
 
 % 实在不想这样 但是没办法 手动添加 `声明'
@@ -1201,7 +1197,9 @@
 
 \renewcommand{\thesistableofcontens}{
   \fancyfoot[LE,RO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
-  \begin{spacing}{1}
+  \begin{spacing}{1.2}
+  \xiaosi\songti\rmfamily
+  \setlength{\parskip}{0pt}
   \tableofchinesecontents
   \clearpage
   \tableofengcontents
@@ -1260,12 +1258,12 @@
   \addcontentsline{toc}{chapter}{主要符号表}
   \addcontentsline{toe}{chapter}{Glossary}
   \hypersetup{bookmarksdepth=2}
-  \printglossary[style=long-xjtu, title={\protect\centering\glsmark}, nonumberlist, nogroupskip]
+  \printnoidxglossary[style=long-xjtu, title={\protect\centering\glsmark}, nonumberlist, nogroupskip]
   \cleardoublepage
 }\renewcommand{\glsclearpage}{\clearpage}
 
 \input{Main_Miscellaneous/glossary.tex}
-\makeglossaries
+\makenoidxglossaries
 \glsaddall
 
 % TODO use latex3 compress these command into on type
@@ -1335,6 +1333,7 @@
   % split arguments into sequence
   \seq_set_split:Nnn \l_tmpa_seq { , } { #1 }
   \use:n {
+    \normalfont\xiaosi\songti\setlength{\parskip}{0pt}
     \setcounter{page}{1}
     \pagenumbering{arabic}
     \fancyfoot[LE,RO]{\fontsize{9pt}{10.8pt}\selectfont\arabic{page}}
@@ -1360,7 +1359,9 @@
 %%% 致谢 %%%
 \renewcommand{\thesisacknowledegment}{
   \renewcommand{\thechapter}{}
-  \begin{spacing}{1.5}
+  \begin{spacing}{1.2}
+  \xiaosi\songti\rmfamily
+  \setlength{\parskip}{0pt}
   \begin{acknowledgement}
   \ifthesis@blind\else
     \input{Main_Miscellaneous/acknowledegment}
@@ -1418,7 +1419,7 @@
 %   \end{spacing}
 % }{}{}
 
-\RequirePackage[hyperref=true,backend=biber,style=gb7714-2015,gbalign=left]{biblatex}
+\RequirePackage[hyperref=true,backend=biber,style=gb7714-2015,gbalign=left,gbnamefmt=lowercase]{biblatex}
 \renewcommand{\bibfont}{\zihao{5}}
 \setlength{\bibitemsep}{0ex}
 \setlength{\bibnamesep}{0ex}
@@ -1434,7 +1435,7 @@
   \addcontentsline{toc}{chapter}{参考文献}
   \addcontentsline{toe}{chapter}{References}
   \hypersetup{bookmarksdepth=2}
-  \nocite{*}
+  % Word模板要求仅列出正文实际引用的文献，数据库原记录全部保留。
   \printbibliography[heading=bibliography,title=\thesisbibname]
   \pagecheck
 }
@@ -1469,6 +1470,7 @@
 
   % add toc item and reformat captions
   \use:n {
+    \normalfont\xiaosi\songti\setlength{\parskip}{0pt}
     \newcommand{\appdname}{附录}
     \ifthesis@english
       \renewcommand{\appdname}{Appendix~}
@@ -1526,7 +1528,7 @@
 %%% Achievement %%%
 %%% 完成成果 %%%
 \newenvironment{achievelist}{
-  \wuhao\selectfont
+  \normalfont\songti\wuhao\selectfont
   \begin{enumerate}[label={[\arabic*]},itemsep=1ex,align=left]
 }{\end{enumerate}}
 

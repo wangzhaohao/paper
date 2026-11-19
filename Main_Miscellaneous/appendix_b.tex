@@ -9,7 +9,7 @@
 气孔迁移速率由以下方程描述：
 \begin{equation}
 	\begin{gathered}
-		v_p = \Omega D_{12} \frac{dn}{dT} \frac{dT}{dr} \\
+		v_{\mathrm p} = \Omega D_{12} \frac{dn}{dT} \frac{dT}{dr} \\
 		\Omega = \frac{1}{4} (X_{\text{PuO}_2} C_{\text{PuO}_2} + X_{\text{UO}_2} C_{\text{UO}_2})^3 \\
 		D_{12} = \frac{3}{8} \frac{1}{\pi nd^2} \sqrt{\frac{\pi kT}{2m^*}} \\
 		\frac{1}{m^*} = \left( \frac{1}{18} + \frac{1}{270} \right) \times 6.023 \times 10^{23} \\
@@ -18,7 +18,7 @@
 	\end{gathered}
 	\label{eq:app_b_rand_markin_migration_control}
 \end{equation}
-\noindent 式中：$\Omega$为燃料分子体积（cm$^3$）；$X_{\text{PuO}_2}$和$X_{\text{UO}_2}$分别为PuO$_2$和UO$_2$的摩尔分数；$C_{\text{PuO}_2}$和$C_{\text{UO}_2}$分别为PuO$_2$和UO$_2$的晶格参数（取值分别为$5.396 \times 10^{-8}$ cm和$5.4704 \times 10^{-8}$ cm）；$D_{12}$为孔隙气相中相关组分的二元扩散系数；$k$为玻尔兹曼常数（$1.3708 \times 10^{-16}$ cm$^2$/(s$\cdot$K)）；$m^*$为质量转换因子；$n$为孔隙内气体分子数密度；$d$为气体分子直径（$4.33 \times 10^{-8}$ cm）；$\frac{dn}{dT}$为孔隙内气体分子浓度随温度的变化率；$T$为温度（K）；$\alpha$为气孔迁移速度的修正因子，用于关联孔隙内温度梯度与燃料基体内温度梯度的比值；$P$为由相关自由能计算得到的蒸气压之和，具体包括以下燃料组分的蒸气压：UO$_2$、PuO$_2$、UO、U、UO$_3$、PuO、Pu、AmO$_2$、Am、AmO 和 O$_2$。
+\noindent 式中：$\Omega$为燃料分子体积（cm$^3$）；$X_{\text{PuO}_2}$和$X_{\text{UO}_2}$分别为PuO$_2$和UO$_2$的摩尔分数；$C_{\text{PuO}_2}$和$C_{\text{UO}_2}$分别为PuO$_2$和UO$_2$的晶格参数（取值分别为$5.396 \times 10^{-8}$ cm和$5.4704 \times 10^{-8}$ cm）；$D_{12}$为孔隙气相中相关组分的二元扩散系数（$\mathrm{cm^2\,s^{-1}}$）；$k$为玻尔兹曼常数（$1.3708 \times 10^{-16}$ $\mathrm{erg\,K^{-1}}$）；$m^*$为约化分子质量（$\mathrm{g}$）；$n$为孔隙内气体分子数密度（$\mathrm{cm^{-3}}$）；$d$为气体分子直径（$4.33 \times 10^{-8}$ cm）；$\frac{dn}{dT}$为孔隙内气体分子浓度随温度的变化率（$\mathrm{cm^{-3}\,K^{-1}}$）；$T$为温度（K）；$\alpha$为气孔迁移速度的修正因子，用于关联孔隙内温度梯度与燃料基体内温度梯度的比值；$P$为由相关自由能计算得到的蒸气压之和，其单位为$\mathrm{dyn\,cm^{-2}}$，由标准大气压归一化分压恢复后使用。该组关联式沿用原文的厘米--克--秒单位制，所得$v_{\mathrm p}$的单位为$\mathrm{cm\,s^{-1}}$，与SI制交换数据时进行相应换算。具体包括以下燃料组分的蒸气压：UO$_2$、PuO$_2$、UO、U、UO$_3$、PuO、Pu、AmO$_2$、Am、AmO 和 O$_2$。
 
 \subsection{各气相组分蒸气压表达式}
 
@@ -38,7 +38,7 @@
 	\label{eq:app_b_rand_markin_vapor_pressures}
 \end{gather}
 \footnotetext{根据文章图片确定。}
-\noindent 式中：$p(i)$为各组分蒸气压（以标准大气压1atm归一化）；$x$为$\text{MO}_{2.00-x}$中的化学计量偏离；$q$为Pu的摩尔分数；$r$为Am的摩尔分数；$\Delta G_i$为吉布斯自由能；$R$为气体常数；$T$为开尔文温度（$K$）。
+\noindent 式中：$p(i)$为各组分蒸气压（以标准大气压1atm归一化）；$x$为$\text{MO}_{2.00-x}$中的化学计量偏离；$q$为Pu的摩尔分数（无量纲）；$r$为Am的摩尔分数；$\Delta G_i$为吉布斯自由能（$\mathrm{J\,mol^{-1}}$）；$R$为气体常数（$\mathrm{J\,mol^{-1}\,K^{-1}}$）；$T$为开尔文温度（$K$）。
 
 \subsection{Gibbs自由能表达式}
 \begin{gather}
@@ -165,7 +165,7 @@ Rand--Markin模型所用的变量及参数见\tablename\ref{tab:app_b_rand_marki
 	\endfoot
 	\bottomrule
 	\endlastfoot
-	$v_p$ & 气孔迁移速度 & 变量，单位 cm/s \\
+	$v_{\mathrm p}$ & 气孔迁移速度 & 变量，单位 cm/s \\
 	$\Omega$ & 燃料分子体积 & 由公式计算，单位 cm$^3$ \\
 	$X_{\text{PuO}_2}$ & PuO$_2$的摩尔分数 & 变量 \\
 	$X_{\text{UO}_2}$ & UO$_2$的摩尔分数 & 变量 \\
@@ -319,7 +319,7 @@ Nichols从第一性原理出发建立了蒸气输运控制的气孔迁移理论�
 
 该模型引入形状因子$\xi=2.0$表征透镜状气孔对热流的聚焦效应：
 \begin{equation}
-	V_g = \frac{D_g \Delta H_{vap} \alpha \exp(-\Delta H_{vap}/kT)}{k T^2} \nabla T
+	V_{\mathrm g} = \frac{D_g \Delta H_{\mathrm{vap}} \alpha \exp(-\Delta H_{\mathrm{vap}}/kT)}{k T^2} \nabla T
 	\label{eq:app_b_nichols1972_migration_velocity}
 \end{equation}
 
@@ -367,7 +367,7 @@ Nichols从第一性原理出发建立了蒸气输运控制的气孔迁移理论�
 	\endlastfoot
 	
 	% 表格内容
-	$V_g$ & 气孔迁移速度 & 变量，单位 cm/s \\
+	$V_{\mathrm g}$ & 气孔迁移速度 & 变量，单位 cm/s \\
 	$D_g$ & 孔隙内气相中基体材料的扩散系数 & 变量，单位 cm$^2$/s \\
 	$\Delta H_{\text{vap}}$ & 基体材料的汽化热 & $142,600$ cal/mole \\
 	$\alpha$ & 蒸发系数 & 通常接近 1 \\
@@ -387,6 +387,7 @@ Nichols从第一性原理出发建立了蒸气输运控制的气孔迁移理论�
 	$\xi$ & 形状因子 & 2.0 \\
 \end{xltabular}
 
+% 将模型标题、公式和短参数表保留在同一页。
 \subsection{Clement \& Finnis (1978) 模型}
 
 该模型为经验关系式，显式包含气孔长度参数：
@@ -396,7 +397,7 @@ Nichols从第一性原理出发建立了蒸气输运控制的气孔迁移理论�
 \end{equation}
 
 \noindent 式中：各参数取值及其单位见\tablename\ref{tab:app_b_clement_parameters}。
-\begin{table}[htbp]
+\begin{table}[H]
 	\centering
 	\caption{Clement--Finnis模型变量及参数说明}
 	\label{tab:app_b_clement_parameters}

@@ -30,8 +30,9 @@
 \DeclareTextFontCommand{\texttt}{\rmfamily}
 
 % 部分人名没有合适的宋体时，使用替代的字体
-\newCJKfontfamily{\rarecharfont}{Noto Serif CJK SC}
+\newCJKfontfamily{\rarecharfont}[Path=Materials/Fonts/,FontIndex=0]{simsun.ttc}
 
+\usepackage{tikz}
 \usepackage{xltabular}  % 核心：用于跨页表格
 \usepackage{ragged2e}   % 核心：用于 \RaggedRight 左对齐
 \usepackage{booktabs}   % 用于三线表 (\toprule, \midrule)
@@ -87,7 +88,7 @@
 % Name of the subject, also get it from that file
 % Please fill in according to Attachment 1 or Attachment 2 under "\Materials\Requirements\2025\01 Sample of Chinese and English Title Pages"
 % 
-\subject{核科学与核技术}{Nuclear Science and Nuclear Technology}
+\subject{核科学与技术}{Nuclear Science and Technology}
 
 \submitdateDefault
 % 论文提交日期，不输入参数则默认使用当前日期，如手动指明年月，请在第一个可选参数内填写年份，第二个可选参数填写月份（均为阿拉伯数字）
@@ -148,6 +149,7 @@
 %% 注意：根据校方要求，以下所有页面顺序不可调整
 %% Notice: The order of these pages are defined in the requirements of the University.
 
+\hypersetup{hypertexnames=false}
 \begin{document}
 % [自动生成] 中英题名页
 % [Auto Generate] Chinese English Title Page
