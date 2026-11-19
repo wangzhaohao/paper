@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.21)  15 OCT 2026 17:30
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.21)  19 NOV 2026 21:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2250,13 +2250,15 @@ File: ./Figures/技术路线.png Graphic file (type bmp)
 <./Figures/技术路线.png>
 
 
-[8]) (./Main_Spine/c2.tex
+[8]
 
-[9]
+[9]) (./Main_Spine/c2.tex
+
+[10]
 Chapter 2.
 
 
-[10
+[11
 
 ]
 File: ./Figures/fuel_rod_multiphysics_overview.png Graphic file (type bmp)
@@ -2269,18 +2271,16 @@ LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <6> not available
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 153.
 
 
-[11]
-
 [12]
 
 [13]
+
+[14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\rarecharfont' on input line 315.
 
 
-
-[14]
 
 [15]
 
@@ -2293,60 +2293,64 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [19]
 
 [20]
+
+[21]
 Underfull \hbox (badness 2181) in paragraph at lines 734--736
 \TU/simsun.ttc(2)/m/n/12 式 中：| $[][]$、| $[][]$ 和 $[][]$ 分 别 为 气 体 传 热 系 数、|  固\TU/times.ttf(0)/m/n/12 –\TU/simsun.ttc(2)/m/n/12 固 接 触 传 热 系 数 和 辐 射 传 热 系 数
  []
 
 
 
-[21]
+[22]
 
-[22]) (./Main_Spine/c3.tex
+[23]) (./Main_Spine/c3.tex
 
-[23]
+[24]
 Chapter 3.
 
 
-[24
+[25
 
 ]
 
-[25]
+[26]
 
-[26] [27]
+[27]
+
+[28]
 File: ./Figures/Pore_Velocity_Comparison_All_Five.png Graphic file (type bmp)
 <./Figures/Pore_Velocity_Comparison_All_Five.png>
 
 
-[28]
+[29]
 File: ./Figures/mox_species_vapor_pressure.png Graphic file (type bmp)
 <./Figures/mox_species_vapor_pressure.png>
 File: ./Figures/mox_total_vapor_pressure.png Graphic file (type bmp)
 <./Figures/mox_total_vapor_pressure.png>
 
 
-[29]
-
 [30]
 
 [31]
+
+[32]
 File: ./Figures/pore_migration_emprical_flow_chart.pdf Graphic file (type pdf)
 <./Figures/pore_migration_emprical_flow_chart.pdf>
 
 
-[32]
+[33]
 File: ./Figures/pore_migration_rand_markin_flow_chart.pdf Graphic file (type pdf)
 <./Figures/pore_migration_rand_markin_flow_chart.pdf>
-
-
-[33]
-File: ./Figures/pore_compare_with_bison.png Graphic file (type bmp)
-<./Figures/pore_compare_with_bison.png>
 
 
 [34]
 
 [35]
+File: ./Figures/pore_compare_with_bison.png Graphic file (type bmp)
+<./Figures/pore_compare_with_bison.png>
+
+
+[36]
 File: ./Figures/FUC_9.00x6.75cm_600dpi.png Graphic file (type bmp)
 <./Figures/FUC_9.00x6.75cm_600dpi.png>
 File: ./Figures/SUPG_9.00x6.75cm_600dpi.png Graphic file (type bmp)
@@ -2357,33 +2361,33 @@ File: ./Figures/DG_9.00x6.75cm_600dpi.png Graphic file (type bmp)
 <./Figures/DG_9.00x6.75cm_600dpi.png>
 
 
-[36]
+[37]
 File: ./Figures/comparison_plot_case1.png Graphic file (type bmp)
 <./Figures/comparison_plot_case1.png>
 
 
-[37]
+[38]
 File: ./Figures/comparison_plot_case2.png Graphic file (type bmp)
 <./Figures/comparison_plot_case2.png>
 
 
-[38]
+[39]
 File: ./Figures/ACO3_150074A_power_history_600dpi.png Graphic file (type bmp)
 <./Figures/ACO3_150074A_power_history_600dpi.png>
 
 
-[39]
-
 [40]
+
+[41]
 File: ./Figures/porosity_distribution_ABC_with_exp_Table4.png Graphic file (type bmp)
 <./Figures/porosity_distribution_ABC_with_exp_Table4.png>
 
 
-[41]
-
 [42]
 
 [43]
+
+[44]
 File: ./Figures/case2_sensitivity_10000_alpha_pore.png Graphic file (type bmp)
 <./Figures/case2_sensitivity_10000_alpha_pore.png>
 File: ./Figures/case2_sensitivity_10000_alpha_v.png Graphic file (type bmp)
@@ -2442,72 +2446,69 @@ File: ./Figures/case2_sensitivity_15000_P0_v.png Graphic file (type bmp)
 <./Figures/case2_sensitivity_15000_P0_v.png>
 
 
-[44]
-
 [45]
 
 [46]
 
 [47]
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 1140.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14> on input line 1140.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9.79996> on input line 1140.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1140.
-LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <14> not available
-(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 1140.
-LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <9.79996> not available
-(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 1140.
-LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <7> not available
-(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 1140.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1140.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1140.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1140.
-
-
 
 [48]
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 1142.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14> on input line 1142.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.79996> on input line 1142.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 1142.
+LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <14> not available
+(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 1142.
+LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <9.79996> not available
+(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 1142.
+LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <7> not available
+(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 1142.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1142.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1142.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1142.
+
+
+
+[49]
 File: ./Figures/Pu_diffusion_Arrhenius.pdf Graphic file (type pdf)
 <./Figures/Pu_diffusion_Arrhenius.pdf>
 File: ./Figures/Pu_diffusion.pdf Graphic file (type pdf)
 <./Figures/Pu_diffusion.pdf>
 
 
-[49]
-
 [50]
 
 [51]
+
+[52]
 File: ./Figures/F_OM_Curve.png Graphic file (type bmp)
 <./Figures/F_OM_Curve.png>
 
 
-[52]
-
 [53]
-Overfull \hbox (0.8263pt too wide) detected at line 1309
+
+[54]
+Overfull \hbox (0.8263pt too wide) detected at line 1311
 [][][][][] \OT1/lmr/m/n/12 = [][] []
  []
 
 
 
-[54]
+[55]
 File: ./Figures/plutonium_migration_flow_chart.pdf Graphic file (type pdf)
 <./Figures/plutonium_migration_flow_chart.pdf>
-
-
-[55]
 File: ./Figures/plutonium_redistribution.png Graphic file (type bmp)
 <./Figures/plutonium_redistribution.png>
 File: ./Figures/plutonium_redistribution_correction.png Graphic file (type bmp)
@@ -2515,28 +2516,30 @@ File: ./Figures/plutonium_redistribution_correction.png Graphic file (type bmp)
 
 
 [56]
-Underfull \hbox (badness 10000) in paragraph at lines 1421--1421
+
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 1423--1423
 []|\TU/simsun.ttc(0)/m/it/10.5 芯 块 直
  []
 
 
-Underfull \hbox (badness 4859) in paragraph at lines 1421--1421
+Underfull \hbox (badness 4859) in paragraph at lines 1423--1423
 []|\TU/times.ttf(0)/m/n/10.5 Pu \TU/simsun.ttc(0)/m/it/10.5 质 量 分
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1421--1421
+Underfull \hbox (badness 10000) in paragraph at lines 1423--1423
 []|\TU/times.ttf(0)/m/n/10.5 BOL \TU/simsun.ttc(0)/m/it/10.5 线 功
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1421--1421
+Underfull \hbox (badness 10000) in paragraph at lines 1423--1423
 []|\TU/times.ttf(0)/m/n/10.5 EOL \TU/simsun.ttc(0)/m/it/10.5 线 功
  []
 
 
 
-[57]
+[58]
 File: ./Figures/plutonium_redistribution_xd0992.pdf Graphic file (type pdf)
 <./Figures/plutonium_redistribution_xd0992.pdf>
 File: ./Figures/plutonium_redistribution_xd1071.pdf Graphic file (type pdf)
@@ -2547,19 +2550,20 @@ File: ./Figures/experiment_temperature_compare.pdf Graphic file (type pdf)
 <./Figures/experiment_temperature_compare.pdf>
 
 
-[58]
+[59]
+
+[60]
 File: ./Figures/plutonium_redistribution_xd1071_normalized.png Graphic file (type bmp)
 <./Figures/plutonium_redistribution_xd1071_normalized.png>
-
-
-[59]
 File: ./Figures/xd1071_pore_transport_variables.pdf Graphic file (type pdf)
 <./Figures/xd1071_pore_transport_variables.pdf>
 File: ./Figures/xd1071_pore_driving_force_vs_pu.pdf Graphic file (type pdf)
 <./Figures/xd1071_pore_driving_force_vs_pu.pdf>
 
 
-[60]
+[61]
+
+[62]
 File: ./Figures/plutonium_enhance_vs_normal.pdf Graphic file (type pdf)
 <./Figures/plutonium_enhance_vs_normal.pdf>
 File: ./Figures/temperature_grad_350d.png Graphic file (type bmp)
@@ -2572,9 +2576,7 @@ File: ./Figures/D_over_lv_350d.png Graphic file (type bmp)
 <./Figures/D_over_lv_350d.png>
 
 
-[61]
-
-[62]
+[63]
 File: ./Figures/plutonium_sensitivity_D.pdf Graphic file (type pdf)
 <./Figures/plutonium_sensitivity_D.pdf>
 File: ./Figures/plutonium_sensitivity_definitation_D.pdf Graphic file (type pdf)
@@ -2609,25 +2611,21 @@ File: ./Figures/plutonium_sensitivity_definitation_constant_A.pdf Graphic file (
 <./Figures/plutonium_sensitivity_definitation_constant_A.pdf>
 
 
-[63]
-
 [64]
 
-LaTeX Warning: Text page 65 contains only floats.
-
-
-
 [65]
+
+[66]
 File: ./Figures/americium_diffusion_coeff.pdf Graphic file (type pdf)
 <./Figures/americium_diffusion_coeff.pdf>
 
 
-[66]
+[67]
 File: ./Figures/americium_1-2_power.pdf Graphic file (type pdf)
 <./Figures/americium_1-2_power.pdf>
 
 
-[67]
+[68]
 File: ./Figures/americium/pu_porosity_1-2-1.pdf Graphic file (type pdf)
 <./Figures/americium/pu_porosity_1-2-1.pdf>
 File: ./Figures/americium/am_porosity_1-2-1.pdf Graphic file (type pdf)
@@ -2638,8 +2636,6 @@ File: ./Figures/americium/am_porosity_1-2-2.pdf Graphic file (type pdf)
 <./Figures/americium/am_porosity_1-2-2.pdf>
 
 
-[68]
-
 [69]
 
 [70]
@@ -2647,15 +2643,20 @@ File: ./Figures/americium/am_porosity_1-2-2.pdf Graphic file (type pdf)
 [71]
 
 [72]
+
+[73]
 File: ./Figures/oxygen_diffusion_vs_T.pdf Graphic file (type pdf)
 <./Figures/oxygen_diffusion_vs_T.pdf>
 File: ./Figures/oxygen_diffusion_vs_x.pdf Graphic file (type pdf)
 <./Figures/oxygen_diffusion_vs_x.pdf>
 
 
-[73]
+[74]
 File: ./Figures/oxygen_boundary_condition_formulation.pdf Graphic file (type pdf)
 <./Figures/oxygen_boundary_condition_formulation.pdf>
+
+
+[75]
 File: ./Figures/oxygen_hypre_redistribution.pdf Graphic file (type pdf)
 <./Figures/oxygen_hypre_redistribution.pdf>
 File: ./Figures/oxygen_hypro_up_redistribution.pdf Graphic file (type pdf)
@@ -2666,76 +2667,76 @@ File: ./Figures/oxygen_uo2_redistribution.pdf Graphic file (type pdf)
 <./Figures/oxygen_uo2_redistribution.pdf>
 
 
-[74]) (./Main_Spine/c4.tex
+[76]) (./Main_Spine/c4.tex
 
-[75]
+[77]
 Chapter 4.
 
 
-[76
+[78
 
 ]
 
-[77]
+[79]
 File: ./Figures/stress_strain_update.pdf Graphic file (type pdf)
 <./Figures/stress_strain_update.pdf>
-
-
-[78]
-
-[79]
-File: ./Figures/radial_return_moose.pdf Graphic file (type pdf)
-<./Figures/radial_return_moose.pdf>
 
 
 [80]
 
 [81]
+File: ./Figures/radial_return_moose.pdf Graphic file (type pdf)
+<./Figures/radial_return_moose.pdf>
+
 
 [82]
 
 [83]
+
+[84]
+
+[85]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 476.
+(Font)              <9> on input line 478.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 476.
+(Font)              <5> on input line 478.
 LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <9> not available
-(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 476.
+(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 478.
 LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <5> not available
-(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 476.
+(Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 478.
 File: ./Figures/gas_diffusion_forsberg.png Graphic file (type bmp)
 <./Figures/gas_diffusion_forsberg.png>
 File: ./Figures/gas_diffusion_turnbull.png Graphic file (type bmp)
 <./Figures/gas_diffusion_turnbull.png>
 
 
-[84]
+[86]
 
-[85]
+[87]
 File: ./Figures/coupled_sciantix.pdf Graphic file (type pdf)
 <./Figures/coupled_sciantix.pdf>
 
 
-[86]
+[88]
 
-[87]
+[89]
 File: ./Figures/thermal_contact.pdf Graphic file (type pdf)
 <./Figures/thermal_contact.pdf>
 
 
-[88]
+[90]
 File: ./Figures/coupled_sciantix_with_gap.pdf Graphic file (type pdf)
 <./Figures/coupled_sciantix_with_gap.pdf>
 
 
-[89]
+[91]
 File: ./Figures/creep_flow_chat.pdf Graphic file (type pdf)
 <./Figures/creep_flow_chat.pdf>
 File: ./Figures/creep_case.pdf Graphic file (type pdf)
 <./Figures/creep_case.pdf>
 
 
-[90]
+[92]
 File: ./Figures/ht9_creep_MFH.png Graphic file (type bmp)
 <./Figures/ht9_creep_MFH.png>
 File: ./Figures/ht9_creep_RKY.png Graphic file (type bmp)
@@ -2748,22 +2749,22 @@ File: ./Figures/d9_creep.png Graphic file (type bmp)
 <./Figures/d9_creep.png>
 
 
-[91]
+[93]
 
-[92]
+[94]
 File: ./Figures/hardening_case.pdf Graphic file (type pdf)
 <./Figures/hardening_case.pdf>
 File: ./Figures/hardening_flow_chat.pdf Graphic file (type pdf)
 <./Figures/hardening_flow_chat.pdf>
 
 
-[93]
+[95]
 
-LaTeX Warning: Text page 94 contains only floats.
+LaTeX Warning: Text page 96 contains only floats.
 
 
 
-[94]
+[96]
 File: ./Figures/D9_hardening_verify.png Graphic file (type bmp)
 <./Figures/D9_hardening_verify.png>
 File: ./Figures/HT9_hardening_verify.png Graphic file (type bmp)
@@ -2772,7 +2773,7 @@ File: ./Figures/SS316_hardening_verify.png Graphic file (type bmp)
 <./Figures/SS316_hardening_verify.png>
 
 
-[95]
+[97]
 File: ./Figures/ForMas_temperature_history.pdf Graphic file (type pdf)
 <./Figures/ForMas_temperature_history.pdf>
 File: ./Figures/Gb_Gs.pdf Graphic file (type pdf)
@@ -2781,14 +2782,14 @@ File: ./Figures/gas_released_density.pdf Graphic file (type pdf)
 <./Figures/gas_released_density.pdf>
 
 
-[96]
+[98]
 File: ./Figures/Gb_Gs_compare.pdf Graphic file (type pdf)
 <./Figures/Gb_Gs_compare.pdf>
 File: ./Figures/gas_released_density_compare.pdf Graphic file (type pdf)
 <./Figures/gas_released_density_compare.pdf>
 
 
-[97]
+[99]
 File: ./Figures/academic_fgr_bark.png Graphic file (type bmp)
 <./Figures/academic_fgr_bark.png>
 File: ./Figures/academic_swelling_bark.png Graphic file (type bmp)
@@ -2805,36 +2806,36 @@ File: ./Figures/academic_deviation.png Graphic file (type bmp)
 <./Figures/academic_deviation.png>
 
 
-[98]
+[100]
 
-[99]
+[101]
 File: ./Figures/academic_verification_plot.png Graphic file (type bmp)
 <./Figures/academic_verification_plot.png>
 
 
-[100]) (./Main_Spine/c5.tex
+[102]) (./Main_Spine/c5.tex
 
-[101]
+[103]
 Chapter 5.
 
 
-[102
+[104
 
-] [103]
-
-[104]
-
-[105]
+] [105]
 
 [106]
 
-[107] (./Figures/moose_fuel_rod_flowchart_readable.tex)
+[107]
 
 [108]
 
 [109]
 
-[110]
+[110] (./Figures/moose_fuel_rod_flowchart_readable.tex)
+
+[111]
+
+[112]
 File: ./Figures/IFA-597-4-5-6-7r10.pdf Graphic file (type pdf)
 <./Figures/IFA-597-4-5-6-7r10.pdf>
 File: ./Figures/IFA-597-4-5-6-7r11.pdf Graphic file (type pdf)
@@ -2857,9 +2858,6 @@ File: ./Figures/IFA-629.3r5.pdf Graphic file (type pdf)
 <./Figures/IFA-629.3r5.pdf>
 File: ./Figures/IFA-629.3r6.pdf Graphic file (type pdf)
 <./Figures/IFA-629.3r6.pdf>
-
-
-[111]
 File: ./Figures/IFA-651-r1.pdf Graphic file (type pdf)
 <./Figures/IFA-651-r1.pdf>
 File: ./Figures/IFA-651-r3.pdf Graphic file (type pdf)
@@ -2868,13 +2866,15 @@ File: ./Figures/IFA-651-r6.pdf Graphic file (type pdf)
 <./Figures/IFA-651-r6.pdf>
 
 
-[112]
-
 [113]
 
 [114]
 
 [115]
+
+[116]
+
+[117]
 File: ./Figures/IFA-597-4-5-6-7r11/IFA-597-4-5-6-7r11_temperature_fuel_thermal_conductivity_alpha_comparison.pdf Graphic file (type pdf)
 <./Figures/IFA-597-4-5-6-7r11/IFA-597-4-5-6-7r11_temperature_fuel_thermal_conductivity_alpha_comparison.pdf>
 File: ./Figures/IFA-597-4-5-6-7r11/IFA-597-4-5-6-7r11_temperature_gap_conductivity_alpha_comparison.pdf Graphic file (type pdf)
@@ -2883,24 +2883,25 @@ File: ./Figures/IFA-597-4-5-6-7r11/IFA-597-4-5-6-7r11_temperature_geometricstruc
 <./Figures/IFA-597-4-5-6-7r11/IFA-597-4-5-6-7r11_temperature_geometricstructure_alpha_comparison.pdf>
 
 
-[116]
+[118]
 
-[117]
+[119]
 File: ./Figures/IFA-597-4-5-6-7r10/IFA-597-4-5-6-7r10_temperature_fuel_thermal_conductivity_alpha_comparison.pdf Graphic file (type pdf)
 <./Figures/IFA-597-4-5-6-7r10/IFA-597-4-5-6-7r10_temperature_fuel_thermal_conductivity_alpha_comparison.pdf>
 File: ./Figures/IFA-597-4-5-6-7r10/IFA-597-4-5-6-7r10_temperature_gap_conductivity_alpha_comparison.pdf Graphic file (type pdf)
 <./Figures/IFA-597-4-5-6-7r10/IFA-597-4-5-6-7r10_temperature_gap_conductivity_alpha_comparison.pdf>
 File: ./Figures/IFA-597-4-5-6-7r10/IFA-597-4-5-6-7r10_temperature_geometricstructure_alpha_comparison.pdf Graphic file (type pdf)
 <./Figures/IFA-597-4-5-6-7r10/IFA-597-4-5-6-7r10_temperature_geometricstructure_alpha_comparison.pdf>
+
+
+[120]
 File: ./Figures/IFA-651-r1/IFA-651-r1_temperature_fuel_thermal_conductivity_alpha_comparison.pdf Graphic file (type pdf)
 <./Figures/IFA-651-r1/IFA-651-r1_temperature_fuel_thermal_conductivity_alpha_comparison.pdf>
 File: ./Figures/IFA-651-r1/IFA-651-r1_temperature_gap_conductivity_alpha_comparison.pdf Graphic file (type pdf)
 <./Figures/IFA-651-r1/IFA-651-r1_temperature_gap_conductivity_alpha_comparison.pdf>
 File: ./Figures/IFA-651-r1/IFA-651-r1_temperature_geometricstructure_alpha_comparison.pdf Graphic file (type pdf)
 <./Figures/IFA-651-r1/IFA-651-r1_temperature_geometricstructure_alpha_comparison.pdf>
-
-
-[118] [119]
+ [121]
 File: ./Figures/IFA-651-r3/IFA-651-r3_temperature_fuel_thermal_conductivity_alpha_comparison.pdf Graphic file (type pdf)
 <./Figures/IFA-651-r3/IFA-651-r3_temperature_fuel_thermal_conductivity_alpha_comparison.pdf>
 File: ./Figures/IFA-651-r3/IFA-651-r3_temperature_gap_conductivity_alpha_comparison.pdf Graphic file (type pdf)
@@ -2913,34 +2914,13 @@ File: ./Figures/IFA-651-r6/IFA-651-r6_temperature_gap_conductivity_alpha_compari
 <./Figures/IFA-651-r6/IFA-651-r6_temperature_gap_conductivity_alpha_comparison.pdf>
 File: ./Figures/IFA-651-r6/IFA-651-r6_temperature_geometristructure_alpha_comparison.pdf Graphic file (type pdf)
 <./Figures/IFA-651-r6/IFA-651-r6_temperature_geometristructure_alpha_comparison.pdf>
-
-
-[120]
-
-[121]
-
-[122]
-Underfull \hbox (badness 10000) in alignment at lines 1215--1215
-[][][][][][] 
- []
-
-
+ [122]
 
 [123]
 
 [124]
-Overfull \hbox (1.01793pt too wide) in paragraph at lines 1363--1363
- []|[]| 
- []
-
-
-Overfull \hbox (6.55386pt too wide) in paragraph at lines 1363--1363
- []|[]| 
- []
-
-
-Overfull \hbox (4.53688pt too wide) in paragraph at lines 1363--1363
- []|[]| 
+Underfull \hbox (badness 10000) in alignment at lines 1217--1217
+[][][][][][] 
  []
 
 
@@ -2948,35 +2928,56 @@ Overfull \hbox (4.53688pt too wide) in paragraph at lines 1363--1363
 [125]
 
 [126]
+
+[127]
+Overfull \hbox (1.01793pt too wide) in paragraph at lines 1365--1365
+ []|[]| 
+ []
+
+
+Overfull \hbox (6.55386pt too wide) in paragraph at lines 1365--1365
+ []|[]| 
+ []
+
+
+Overfull \hbox (4.53688pt too wide) in paragraph at lines 1365--1365
+ []|[]| 
+ []
+
+
+
+[128]
 File: ./Figures/M501_formas_power_FGR_comparison.png Graphic file (type bmp)
 <./Figures/M501_formas_power_FGR_comparison.png>
 File: ./Figures/M501_sciantix_power_FGR_comparison.png Graphic file (type bmp)
 <./Figures/M501_sciantix_power_FGR_comparison.png>
 
 
-[127]
-
-[128]
-
 [129]
 
-[130]) (./Main_Spine/c6.tex
+[130]
 
 [131]
+
+[132]
+
+[133]) (./Main_Spine/c6.tex
+
+[134]
 Chapter 6.
 
 
-[132
+[135
 
 ]
 
-[133]
-
-[134]
-
-[135]
-
 [136]
+
+[137]
+
+[138]
+
+[139]
 File: ./Figures/mesh_sensitivity/max_temperature_history.png Graphic file (type bmp)
 <./Figures/mesh_sensitivity/max_temperature_history.png>
 File: ./Figures/mesh_sensitivity/max_abs_disp_r_history.png Graphic file (type bmp)
@@ -2985,54 +2986,54 @@ File: ./Figures/mesh_sensitivity/max_abs_disp_z_history.png Graphic file (type b
 <./Figures/mesh_sensitivity/max_abs_disp_z_history.png>
 
 
-[137]
-
-[138]
-
-[139]
-
 [140]
 
 [141]
 
 [142]
-File: ./Figures/pod_lstm/formal_pod_rank_scan.png Graphic file (type bmp)
-<./Figures/pod_lstm/formal_pod_rank_scan.png>
-
 
 [143]
 
 [144]
+
+[145]
+File: ./Figures/pod_lstm/formal_pod_rank_scan.png Graphic file (type bmp)
+<./Figures/pod_lstm/formal_pod_rank_scan.png>
+
+
+[146]
+
+[147]
 File: ./Figures/pod_gpr/case_pf10375_temperature_K_gpr_2d_comparison.png Graphic file (type bmp)
 <./Figures/pod_gpr/case_pf10375_temperature_K_gpr_2d_comparison.png>
 File: ./Figures/pod_gpr/case_pf10375_disp_r_gpr_maximum_error_2d.png Graphic file (type bmp)
 <./Figures/pod_gpr/case_pf10375_disp_r_gpr_maximum_error_2d.png>
 
 
-[145]
+[148]
 File: ./Figures/pod_gpr/case_pf10375_disp_z_baseline_maximum_error_2d.png Graphic file (type bmp)
 <./Figures/pod_gpr/case_pf10375_disp_z_baseline_maximum_error_2d.png>
 
 
-[146]
-
-[147]
-
-[148]
-
 [149]
+
+[150]
+
+[151]
+
+[152]
 File: ./Figures/pod_lstm/power_history_overview.png Graphic file (type bmp)
 <./Figures/pod_lstm/power_history_overview.png>
 File: ./Figures/pod_lstm/training_validation_loss.png Graphic file (type bmp)
 <./Figures/pod_lstm/training_validation_loss.png>
 
 
-[150]
+[153]
 File: ./Figures/pod_lstm/blind_case_mean_relative_l2.png Graphic file (type bmp)
 <./Figures/pod_lstm/blind_case_mean_relative_l2.png>
 
 
-[151]
+[154]
 File: ./Figures/pod_lstm/blind_error_history_temperature.png Graphic file (type bmp)
 <./Figures/pod_lstm/blind_error_history_temperature.png>
 File: ./Figures/pod_lstm/blind_error_history_disp_r.png Graphic file (type bmp)
@@ -3041,37 +3042,39 @@ File: ./Figures/pod_lstm/blind_error_history_disp_z.png Graphic file (type bmp)
 <./Figures/pod_lstm/blind_error_history_disp_z.png>
 
 
-[152]
+[155]
 File: ./Figures/pod_lstm/blind_full_field_comparison.png Graphic file (type bmp)
 <./Figures/pod_lstm/blind_full_field_comparison.png>
 
 
-[153]
+[156]
 File: ./Figures/pod_lstm/online_power_and_response_histories.png Graphic file (type bmp)
 <./Figures/pod_lstm/online_power_and_response_histories.png>
 File: ./Figures/pod_lstm/online_representative_2d_fields.png Graphic file (type bmp)
 <./Figures/pod_lstm/online_representative_2d_fields.png>
 
 
-[154]
-
-[155]
-
-[156]) (./Main_Spine/c7.tex
-
 [157]
+
+[158]
+
+[159]) (./Main_Spine/c7.tex
+
+[160]
 Chapter 7.
 
 
-[158
+[161
 
 ]
 
-[159])
+[162]
 
-[160] (./Main_Miscellaneous/acknowledegment.tex)
+[163])
 
-[161
+[164] (./Main_Miscellaneous/acknowledegment.tex)
+
+[165
 
 
 ]
@@ -3081,18 +3084,10 @@ LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <10.53937> not ava
 (Font)              Font shape `TU/times.ttf(0)/b/n' tried instead on input line 196.
 
 
-[162
+[166
 
 
 ]
-
-[163]
-
-[164]
-
-[165]
-
-[166]
 
 [167]
 
@@ -3101,6 +3096,14 @@ LaTeX Font Info:    Font shape `TU/times.ttf(0)/bx/n' in size <10.53937> not ava
 [169]
 
 [170]
+
+[171]
+
+[172]
+
+[173]
+
+[174]
 \l_tmpa_count=\count644
  (./Main_Miscellaneous/appendix_mox_thermomechanical_models.tex
 附录 附录A.
@@ -3120,23 +3123,12 @@ Package fontspec Info:
 
 
 
-[171
+[175
 
 
 ]
 File: ./Figures/mox_thermal_conductivity_all_models.png Graphic file (type bmp)
 <./Figures/mox_thermal_conductivity_all_models.png>
-
-
-[172]
-
-[173]
-
-[174]
-
-[175]
-File: ./Figures/UO2_MOX_creep.png Graphic file (type bmp)
-<./Figures/UO2_MOX_creep.png>
 
 
 [176]
@@ -3146,6 +3138,9 @@ File: ./Figures/UO2_MOX_creep.png Graphic file (type bmp)
 [178]
 
 [179]
+File: ./Figures/UO2_MOX_creep.png Graphic file (type bmp)
+<./Figures/UO2_MOX_creep.png>
+
 
 [180]
 
@@ -3153,29 +3148,37 @@ File: ./Figures/UO2_MOX_creep.png Graphic file (type bmp)
 
 [182]
 
-[183]) (./Main_Miscellaneous/appendix_b.tex
+[183]
 
 [184]
-附录 附录B.
 
-
-[185
-
-]
+[185]
 
 [186]
 
-[187]
+[187]) (./Main_Miscellaneous/appendix_b.tex
 
 [188]
+附录 附录B.
 
-[189]
+
+[189
+
+]
 
 [190]
 
-[191]) (./Main_Miscellaneous/appendix_cladding_incore_models.tex
+[191]
 
 [192]
+
+[193]
+
+[194]
+
+[195]) (./Main_Miscellaneous/appendix_cladding_incore_models.tex
+
+[196]
 附录 附录C.
 
 Underfull \hbox (badness 5274) in paragraph at lines 26--26
@@ -3184,17 +3187,9 @@ Underfull \hbox (badness 5274) in paragraph at lines 26--26
 
 
 
-[193
+[197
 
 ]
-
-[194]
-
-[195]
-
-[196]
-
-[197]
 
 [198]
 
@@ -3210,15 +3205,23 @@ Underfull \hbox (badness 5274) in paragraph at lines 26--26
 
 [204]
 
-[205]) (./Main_Miscellaneous/appendix_a.tex
+[205]
 
 [206]
+
+[207]
+
+[208]
+
+[209]) (./Main_Miscellaneous/appendix_a.tex
+
+[210]
 附录 附录D.
 
 
-[207
+[211
 
-] [208] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+] [212] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
@@ -3230,42 +3233,42 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.5> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 139.
 ) (./Main_Miscellaneous/appendix_gap_heat_transfer_models.tex
 
-[209]
+[213]
 附录 附录E.
 
 
-[210
+[214
 
 ]
 
-[211]
+[215]
 
-[212]
+[216]
 
-[213])
+[217])
 
-[214] (./Main_Miscellaneous/achievement.tex
+[218] (./Main_Miscellaneous/achievement.tex
 Overfull \hbox (11.18825pt too wide) in paragraph at lines 6--7
 []\TU/simsun.ttc(0)/m/it/10.5 恽 迪\TU/times.ttf(0)/m/n/10.5 , \TU/simsun.ttc(0)/m/it/10.5 王 召 浩\TU/times.ttf(0)/m/n/10.5 , \TU/simsun.ttc(0)/m/it/10.5 等．|  一 种 提 高 包 壳 材 料 在 快 中 子 辐 照 环 境 中 耐 受 能 力 的 方 法\TU/times.ttf(0)/m/n/10.5 : \TU/simsun.ttc(0)/m/it/10.5 中 国\TU/times.ttf(0)/m/n/10.5 ,202210404070.8
  []
 
 )
 
-[215
+[219
 
 ] (./Main_Miscellaneous/decision.tex)
 
-[216
+[220
 
 
 ]
 
-[217
+[221
 
 
 ]
 
-[218
+[222
 
 ] (./main.aux)
  ***********
@@ -3277,12 +3280,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 72718 strings out of 468389
- 1700238 string characters out of 5440619
- 2855963 words of memory out of 5000000
- 99896 multiletter control sequences out of 15000+600000
+ 72730 strings out of 468389
+ 1701014 string characters out of 5440619
+ 2856227 words of memory out of 5000000
+ 99908 multiletter control sequences out of 15000+600000
  737277 words of font info for 285 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  117i,21n,131p,2469b,7400s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (244 pages).
+Output written on main.pdf (248 pages).

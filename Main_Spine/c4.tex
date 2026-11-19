@@ -9,6 +9,8 @@
 
 本章重点研究上述模型的数值实现与程序耦合方法。首先，基于经典$J_2$塑性理论和隐式径向返回映射方法，实现燃料与包壳非线性力学本构的积分更新，并介绍其在MOOSE材料计算框架中的组织方式；随后，分别实现Forsberg--Massih裂变气体模型和SCIANTIX细观机理模型，建立裂变气体释放、棒内气体状态与间隙传热之间的数据传递关系；最后，通过单元级、子模型级及耦合算例对相关算法和程序实现进行验证，为后续燃料棒尺度多物理场分析提供数值基础。
 
+本章所采用的J2塑性理论、径向返回算法及Forsberg–Massih裂变气体模型均具有已有理论基础，SCIANTIX则为公开的晶粒尺度机理程序。本文的工作重点并非重新提出上述基础模型，而是在MOOSE框架内实现非线性本构的隐式积分、裂变气体机理程序的状态变量传递及间隙传热的耦合更新，并通过分层数值测试评价相关实现的正确性与适用性。
+
 \xsection{热弹塑性力学模型的离散与隐式积分}{Discretization and Implicit Integration of Thermo-Elasto-Plastic Mechanics}
 \xsubsection{非线性力学问题的数值离散}{Numerical Discretization of the Nonlinear Mechanical Problem}
 第二章已给出燃料与包壳的准静态力学平衡方程、应变分解关系及压力边界条件，第三章进一步给出了相应材料行为闭合模型。有限元弱形式、空间离散以及Newton迭代等属于非线性有限元与计算塑性的通用理论，其系统推导可参见经典计算塑性专著\cite{dunneIntroductionComputationalPlasticity2005}。因此，本节不再重复一般有限元理论，而重点给出与后续本构积分和程序实现直接相关的离散关系。
