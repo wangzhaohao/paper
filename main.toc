@@ -90,9 +90,9 @@
 \setcounter {tocdepth}{2}
 \contentsline {section}{\numberline {2.5}微观结构与组分输运控制方程}{18}{section*.136}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {2.5.1}气孔迁移与孔隙率输运}{19}{section*.140}%
+\contentsline {subsection}{\numberline {2.5.1}气孔迁移与孔隙率输运}{18}{section*.140}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {2.5.1}气孔迁移与孔隙率输运}{19}{section*.141}%
+\contentsline {subsection}{\numberline {2.5.1}气孔迁移与孔隙率输运}{18}{section*.141}%
 \setcounter {tocdepth}{-5}
 \contentsline {subsection}{\numberline {2.5.2}Pu和Am组分输运}{19}{section*.146}%
 \setcounter {tocdepth}{2}

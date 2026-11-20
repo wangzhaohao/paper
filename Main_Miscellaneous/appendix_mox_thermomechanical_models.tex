@@ -6,7 +6,7 @@
 \section{MOX燃料热物性核心模型}
 \label{app:mox_core_thermophysical_models}
 
-混合氧化物燃料通常表示为$(\mathrm{U},\mathrm{Pu})\mathrm{O}_{2\pm x}$。其热物性不仅随温度变化，还受到$\mathrm{PuO}_2$含量、氧金属比（O/M）、理论密度、孔隙率和燃耗等因素的共同影响。上述参数决定燃料内部的温度分布，并通过热膨胀、蠕变、裂变气体释放和燃料--包壳间隙演化进一步影响燃料元件的整体响应。本节汇总正文所采用的相变温度、热导率、比热容、发射率、热膨胀和密度等核心关系式；不同热导率备选模型及相关参数见本附录第\ref{app:mox_thermal_conductivity_models}节。
+混合氧化物燃料通常表示为$(\mathrm{U},\mathrm{Pu})\mathrm{O}_{2\pm x}$。其热物性不仅随温度变化，还受到$\mathrm{PuO}_2$含量、氧金属比（O/M）、理论密度、孔隙率和燃耗等因素的共同影响。上述参数决定燃料内部的温度分布，并通过热膨胀、蠕变、裂变气体释放和燃料--包壳间隙演化进一步影响燃料元件的整体响应。本节汇总正文所采用的相变温度、热导率、比热容、发射率、热膨胀和密度等核心关系式；不同热导率备选模型及相关参数见\ref{app:mox_thermal_conductivity_models}节。
 
 \subsection{相变温度}
 
@@ -39,7 +39,7 @@ MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及�
 	k=F_1F_2F_3F_4k_0
 	\label{eq:fast_mox_thermal_conductivity}
 \end{equation}
-\noindent 式中：$k$为有效热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$），单位为$\mathrm{W\,m^{-1}\,K^{-1}}$；$k_0$为全致密、未辐照燃料的热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$）；$F_1$、$F_2$、$F_3$和$F_4$分别表示溶解态固体裂变产物、析出态固体裂变产物、辐照损伤和孔隙率的修正作用。
+\noindent 式中：$k$为有效热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$）；$k_0$为全致密、未辐照燃料的热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$）；$F_1$、$F_2$、$F_3$和$F_4$分别表示溶解态固体裂变产物、析出态固体裂变产物、辐照损伤和孔隙率的修正作用。
 
 本文提供多种全致密、未辐照MOX燃料的热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$），其中Inoue模型\cite{inoueThermalConductivityUranium2000}为：
 \begin{equation}
@@ -52,14 +52,14 @@ MOX燃料的固相线温度和液相线温度与$\mathrm{PuO}_2$质量分数及�
 	\exp\!\left(-\frac{16361}{T}\right)
 	\label{eq:fast_mox_unirradiated_thermal_conductivity}
 \end{equation}
-\noindent 式中：$T$为燃料温度，单位为$\mathrm{K}$。式\eqref{eq:fast_mox_unirradiated_thermal_conductivity}的第一项表示晶格振动所贡献的热传导，第二项表示高温电子传导。该关联式的原始数据库主要覆盖$20$--$30\%$的钚重金属原子分数、$1.98$--$2.00$的O/M比以及约$94.3\%$--$96.4\%$的理论密度，超出该范围时不宜直接外推。另外Duriez--Ronchi、Amaya、Fink和Halden等其他未辐照燃料热导率模型见本附录第\ref{app:mox_thermal_conductivity_models}节。
+\noindent 式中：$T$为燃料温度，单位为$\mathrm{K}$。式\eqref{eq:fast_mox_unirradiated_thermal_conductivity}的第一项表示晶格振动所贡献的热传导，第二项表示高温电子传导。该关联式的原始数据库主要覆盖$20$--$30\%$的钚重金属原子分数、$1.98$--$2.00$的O/M比以及约$94.3\%$--$96.4\%$的理论密度，超出该范围时不宜直接外推。另外Duriez--Ronchi、Amaya、Fink和Halden等其他未辐照燃料热导率模型见\ref{app:mox_thermal_conductivity_models}节。
 
 孔隙率修正采用修正的Loeb关系：
 \begin{equation}
 	F_4=1-\alpha p
 	\label{eq:fast_mox_porosity_correction}
 \end{equation}
-\noindent 式中：$p$为孔隙体积分数，$\alpha$为孔隙修正系数。保守计算可取$\alpha=2.5$。$F_1$--$F_3$的具体表达式见本附录第\ref{app:mox_thermal_conductivity_models}节。不同MOX燃料热导率模型的计算结果对比如图\ref{fig:mox_thermal_conductivity_models}所示。
+\noindent 式中：$p$为孔隙体积分数，$\alpha$为孔隙修正系数。保守计算可取$\alpha=2.5$。$F_1$--$F_3$的具体表达式见\ref{app:mox_thermal_conductivity_models}节。不同MOX燃料热导率模型的计算结果对比如图\ref{fig:mox_thermal_conductivity_models}所示。
 
 \begin{figure}[!htb]
 	\centering
@@ -200,7 +200,7 @@ MOX燃料的固态热膨胀应变采用质量分数加权：
 \section{MOX燃料力学与辐照行为核心模型}
 \label{app:mox_core_mechanical_models}
 
-MOX燃料属于多孔脆性陶瓷，其力学响应同时受温度、理论密度、O/M比、$\mathrm{PuO}_2$含量、晶粒尺寸、燃耗和裂变率控制。燃料性能分析中，弹性参数决定瞬时应力响应，蠕变控制高温应力松弛，密实化与裂变产物肿胀共同决定体积应变，而晶粒长大和重构又会反向影响热导率、裂变气体释放及蠕变。本节汇总正文计算所采用的弹性、蠕变、重定位、辐照密实化和裂变产物肿胀等核心关系；补充参数、历史形式及备选关系见本附录第\ref{app:mox_mechanical_correlations}节。
+MOX燃料属于多孔脆性陶瓷，其力学响应同时受温度、理论密度、O/M比、$\mathrm{PuO}_2$含量、晶粒尺寸、燃耗和裂变率控制。燃料性能分析中，弹性参数决定瞬时应力响应，蠕变控制高温应力松弛，密实化与裂变产物肿胀共同决定体积应变，而晶粒长大和重构又会反向影响热导率、裂变气体释放及蠕变。本节汇总正文计算所采用的弹性、蠕变、重定位、辐照密实化和裂变产物肿胀等核心关系；补充参数、历史形式及备选关系见\ref{app:mox_mechanical_correlations}节。
 
 \subsection{弹性参数}
 
@@ -256,7 +256,7 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	+A\sigma_{\mathrm{eff}}\dot{F}
 	\label{eq:mox_steady_creep}
 \end{align}
-\noindent 式中：$\dot{\varepsilon}_{s}$为稳态等效蠕变率；$\sigma_{\mathrm{eff}}$为von Mises等效应力；$\dot{F}$为体积裂变率；$d_{\mathrm{gr}}$为晶粒尺寸（$\mathrm{m}$），单位为$\mathrm{m}$；$D$为理论密度分数；$C_{\mathrm{Pu}}$为$\mathrm{PuO}_2$质量分数的百分数数值（即$w_{\mathrm{PuO}_2}/\%$）。式\eqref{eq:mox_steady_creep}的三项依次表示低应力扩散蠕变、高应力位错蠕变和辐照蠕变。系数及其标定单位见本附录第\ref{app:mox_mechanical_correlations}节；使用时必须保持应力、晶粒尺寸和裂变率单位与系数标定体系一致。
+\noindent 式中：$\dot{\varepsilon}_{s}$为稳态等效蠕变率；$\sigma_{\mathrm{eff}}$为von Mises等效应力；$\dot{F}$为体积裂变率；$d_{\mathrm{gr}}$为晶粒尺寸（$\mathrm{m}$）；$D$为理论密度分数；$C_{\mathrm{Pu}}$为$\mathrm{PuO}_2$质量分数的百分数数值（即$w_{\mathrm{PuO}_2}/\%$）。式\eqref{eq:mox_steady_creep}的三项依次表示低应力扩散蠕变、高应力位错蠕变和辐照蠕变。系数及其标定单位见\ref{app:mox_mechanical_correlations}节；使用时必须保持应力、晶粒尺寸和裂变率单位与系数标定体系一致。
 
 对于高钚含量快堆MOX燃料，还可采用Routbort稳态热蠕变--辐照蠕变模型：
 \begin{equation}
@@ -268,7 +268,8 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	+C_R\sigma_{\mathrm{eff}}\dot{F}
 	\label{eq:fast_mox_creep}
 \end{equation}
-\noindent 式中：$d_{\mathrm{gr}}$为晶粒尺寸（$\mathrm{m}$），单位为$\mathrm{m}$；$\sigma_{\mathrm{eff}}$为von Mises等效应力；$T$为热力学温度（$\mathrm{K}$），单位为$\mathrm{K}$；$R$为摩尔气体常数（$\mathrm{J\,mol^{-1}\,K^{-1}}$），单位为$\mathrm{J\,mol^{-1}\,K^{-1}}$；$\dot F$为体积裂变率，单位为$\mathrm{m^{-3}\,s^{-1}}$。
+\noindent 式中：$d_{\mathrm{gr}}$为晶粒尺寸（$\mathrm{m}$）；$\sigma_{\mathrm{eff}}$为von Mises等效应力；$T$为热力学温度（$\mathrm{K}$）；$R$为摩尔气体常数（$\mathrm{J\,mol^{-1}\,K^{-1}}$）；$\dot F$为体积裂变率（$\mathrm{m^{-3}\,s^{-1}}$）。
+
 该模型不含显式的初生蠕变项，适用于以稳态热蠕变和辐照蠕变为主的快堆工况。两类模型的选取应与燃料成分、温度范围、载荷历史及后续验证数据保持一致。两类蠕变模型的计算结果对比如图\ref{fig:uo2_mox_creep_comparison}所示。
 
 \begin{figure}[!htb]
@@ -341,7 +342,7 @@ BISON中的通用MOX模型将瞬态蠕变与稳态蠕变写为\cite{halesBISONTh
 	\end{cases}
 	\label{eq:mox_densification_temperature_factor}
 \end{equation}
-\noindent 式中：$T_C$为以摄氏度表示的燃料温度。式\eqref{eq:mox_densification_temperature_factor}在$750\,{}^\circ\mathrm{C}$处连续。本文的另一个模型是基于再烧结密度变化和制造烧结温度的MATPRO分段模型，模型描述见本附录第\ref{app:mox_densification_correlations}节。
+\noindent 式中：$T_C$为以摄氏度表示的燃料温度。式\eqref{eq:mox_densification_temperature_factor}在$750\,{}^\circ\mathrm{C}$处连续。本文的另一个模型是基于再烧结密度变化和制造烧结温度的MATPRO分段模型，模型描述见\ref{app:mox_densification_correlations}节。
 
 \subsection{裂变产物肿胀}
 

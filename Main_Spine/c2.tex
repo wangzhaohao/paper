@@ -374,9 +374,9 @@
 	\frac{G_m D_{\mathrm h}}{\mu_{\mathrm{cool}}}
 	\label{eq:ch2_coolant_reynolds}
 \end{equation}
-\noindent 式中：$G_m$为冷却剂质量流速，单位为$\mathrm{kg\,m^{-2}\,s^{-1}}$；
-$D_{\mathrm h}$为冷却剂流道水力直径，单位为$\mathrm{m}$；
-$\mu_{\mathrm{cool}}$为冷却剂动力黏度，单位为$\mathrm{Pa\,s}$。
+\noindent 式中：$G_m$为冷却剂质量流速（$\mathrm{kg\,m^{-2}\,s^{-1}}$）；
+$D_{\mathrm h}$为冷却剂流道水力直径（$\mathrm{m}$）；
+$\mu_{\mathrm{cool}}$为冷却剂动力黏度（$\mathrm{Pa\,s}$）。
 
 冷却剂Prandtl数表示为：
 \begin{equation}
@@ -389,10 +389,8 @@ $\mu_{\mathrm{cool}}$为冷却剂动力黏度，单位为$\mathrm{Pa\,s}$。
 	}
 	\label{eq:ch2_coolant_prandtl}
 \end{equation}
-\noindent 式中：$c_{\mathrm p,\mathrm{cool}}$为冷却剂定压比热容（$\mathrm{J\,kg^{-1}\,K^{-1}}$），单位为
-$\mathrm{J\,kg^{-1}\,K^{-1}}$；
-$k_{\mathrm{cool}}$为冷却剂热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$），单位为
-$\mathrm{W\,m^{-1}\,K^{-1}}$
+\noindent 式中：$c_{\mathrm p,\mathrm{cool}}$为冷却剂定压比热容（$\mathrm{J\,kg^{-1}\,K^{-1}}$）；
+$k_{\mathrm{cool}}$为冷却剂热导率（$\mathrm{W\,m^{-1}\,K^{-1}}$）
 
 在此基础上，Nusselt数采用Dittus--Boelter形式表示为：
 \begin{equation}
@@ -416,8 +414,7 @@ $\mathrm{W\,m^{-1}\,K^{-1}}$
 	\frac{k_{\mathrm{cool}}}{D_{\mathrm h}}
 	\label{eq:ch2_coolant_hw}
 \end{equation}
-\noindent 式中：$H_w$为包壳--冷却剂对流换热系数（$\mathrm{W\,m^{-2}\,K^{-1}}$），单位为
-$\mathrm{W\,m^{-2}\,K^{-1}}$
+\noindent 式中：$H_w$为包壳--冷却剂对流换热系数（$\mathrm{W\,m^{-2}\,K^{-1}}$）
 
 冷却剂的动力黏度$\mu_{\mathrm{cool}}$、定压比热容
 $c_{\mathrm p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
@@ -695,7 +692,7 @@ $c_{\mathrm p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	\label{eq:ch2_gas_fraction}
 \end{equation}
 
-在本文燃料棒级模型采用的是等效自由体积和平均气体温度条件下的根据理想气体状态方程计算气腔压力：
+本文燃料棒级模型采用等效自由体积和平均气体温度，并根据理想气体状态方程计算气腔压力：
 \begin{equation}
 	p_{\mathrm g}
 	=\frac{n_gRT_{\mathrm g}}{V_{\mathrm g}}

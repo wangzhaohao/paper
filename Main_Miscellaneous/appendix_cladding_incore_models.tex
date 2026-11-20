@@ -47,7 +47,7 @@
 		\label{eq:ss316_specific_heat}
 	\end{align}
 \end{subequations}
-NASA分段关系及其他SS316热导率备选模型列于本附录第\ref{app:cladding_alternative_thermal_models}节，不在正文中重复展开。
+NASA分段关系及其他SS316热导率备选模型列于本\ref{app:cladding_alternative_thermal_models}节，不在正文中重复展开。
 
 D9的热导率采用Leibowitz和Blomquist的分段关联式，比热容采用Banerjee等人的实验拟合\cite{Leibowitz_1988,banerjee2007_d9cp}：
 \begin{subequations}\label{eq:d9_thermal_properties}
@@ -185,7 +185,7 @@ SS316采用ORNL基于动态测量拟合的弹性关系\cite{Hammond1979ornl5442}
 
 \subsubsection{屈服与硬化}
 
-包壳塑性采用$J_2$流动理论。对于D9和HT9，初始屈服应力由测试温度、辐照温度、快中子注量和应变率共同确定；其完整经验关系及适用范围见本附录第\ref{app:cladding_strength_models}节。在缺少完整应力--应变曲线时，可利用屈服强度$\sigma_y$、极限拉伸强度$\sigma_u$和总伸长率$\varepsilon_t$构造等效线性硬化模型：
+包壳塑性采用$J_2$流动理论。对于D9和HT9，初始屈服应力由测试温度、辐照温度、快中子注量和应变率共同确定；其完整经验关系及适用范围见\ref{app:cladding_strength_models}节。在缺少完整应力--应变曲线时，可利用屈服强度$\sigma_y$、极限拉伸强度$\sigma_u$和总伸长率$\varepsilon_t$构造等效线性硬化模型：
 \begin{subequations}\label{eq:clad_linear_hardening}
 	\begin{align}
 		\sigma_{\mathrm f}(p)&=\sigma_y+H\bar{\varepsilon}^{\mathrm{p}}
@@ -194,7 +194,7 @@ SS316采用ORNL基于动态测量拟合的弹性关系\cite{Hammond1979ornl5442}
 		\label{eq:clad_hardening_modulus}
 	\end{align}
 \end{subequations}
-\noindent 式中：$\bar{\varepsilon}^{\mathrm{p}}$为等效塑性应变。该简化只保证屈服点与名义极限状态之间的平均斜率，不能描述屈服平台、循环硬化/软化或显著的动态回复。对于SS316，可采用温度相关幂律硬化或Chaboche饱和硬化；相应关系式和参数列于本附录第\ref{app:cladding_strength_models}节。
+\noindent 式中：$\bar{\varepsilon}^{\mathrm{p}}$为等效塑性应变。该简化只保证屈服点与名义极限状态之间的平均斜率，不能描述屈服平台、循环硬化/软化或显著的动态回复。对于SS316，可采用温度相关幂律硬化或Chaboche饱和硬化；相应关系式和参数列于本\ref{app:cladding_strength_models}节。
 
 \subsection{辐照肿胀}
 \label{sec:cladding_irradiation_swelling}
@@ -226,7 +226,7 @@ SS316采用ORNL基于动态测量拟合的弹性关系\cite{Hammond1979ornl5442}
 	\right]
 	\label{eq:clad_void_swelling_inventory}
 \end{equation}
-\noindent 式中：$R(T)$为稳态肿胀率参数，$\tau(T)$为孕育期参数，$\alpha$控制由孕育期向稳态肿胀阶段过渡的曲率。各材料的$R$、$\tau$、$D$及增量实现形式列于本附录第\ref{app:cladding_swelling_parameters}节。
+\noindent 式中：$R(T)$为稳态肿胀率参数，$\tau(T)$为孕育期参数，$\alpha$控制由孕育期向稳态肿胀阶段过渡的曲率。各材料的$R$、$\tau$、$D$及增量实现形式列于本\ref{app:cladding_swelling_parameters}节。
 
 对于各向同性肿胀，输入力学求解器的本征应变为：
 \begin{equation}
@@ -269,7 +269,7 @@ D9模型将热蠕变和辐照蠕变分别写为\cite{hofmanMetallicFuelsHandbook
 		\label{eq:d9_irradiation_creep_rate}
 	\end{align}
 \end{subequations}
-\noindent 式中：$\bar\sigma$为等效应力，单位为$\mathrm{MPa}$；$Y$为杨氏模量（$\mathrm{Pa}$），单位为$\mathrm{MPa}$。$\phi_{15}$表示快中子注量率按$10^{19}\,\mathrm{m^{-2}\,s^{-1}}$归一化后的无量纲数值（与原关联式的$10^{15}\,\mathrm{cm^{-2}\,s^{-1}}$严格等价）。参数取值及模型范围见本附录第\ref{app:cladding_creep_parameters}节。
+\noindent 式中：$\bar\sigma$为等效应力，单位为$\mathrm{MPa}$；$Y$为杨氏模量（$\mathrm{MPa}$）。$\phi_{15}$表示快中子注量率按$10^{19}\,\mathrm{m^{-2}\,s^{-1}}$归一化后的无量纲数值（与原关联式的$10^{15}\,\mathrm{cm^{-2}\,s^{-1}}$严格等价）。参数取值及模型范围见\ref{app:cladding_creep_parameters}节。
 
 HT9的稳态热蠕变与辐照蠕变可合并表示为\cite{hofmanMetallicFuelsHandbook2019,halesBISONTheoryManual2016}：
 \begin{align}
@@ -282,9 +282,9 @@ HT9的稳态热蠕变与辐照蠕变可合并表示为\cite{hofmanMetallicFuelsH
 	\right]\phi_{22}\bar\sigma^{1.3}
 	\label{eq:ht9_steady_creep_rate}
 \end{align}
-\noindent 式中：$\phi_{22}$为按模型要求归一化的快中子通量。HT9初生、二次和三级热蠕变的完整关系以及参数见本附录第\ref{app:cladding_creep_parameters}节。
+\noindent 式中：$\phi_{22}$为按模型要求归一化的快中子通量。HT9初生、二次和三级热蠕变的完整关系以及参数见\ref{app:cladding_creep_parameters}节。
 
-对于20\%冷加工SS316，热蠕变、瞬态辐照蠕变和稳态辐照蠕变由多项贡献叠加。由于不同来源对状态变量、归一化单位和瞬态项的处理并不一致，正文不再逐项展开；本附录第\ref{app:cladding_creep_parameters}节提供了具有明确试验条件的简化关系和寿命关联。模型选取时必须与冷加工量、温度、应力和快中子能谱相匹配，不能将CW316参数直接用于退火态SS316。
+对于20\%冷加工SS316，热蠕变、瞬态辐照蠕变和稳态辐照蠕变由多项贡献叠加。由于不同来源对状态变量、归一化单位和瞬态项的处理并不一致，正文不再逐项展开；本\ref{app:cladding_creep_parameters}节提供了具有明确试验条件的简化关系和寿命关联。模型选取时必须与冷加工量、温度、应力和快中子能谱相匹配，不能将CW316参数直接用于退火态SS316。
 
 \subsection{强度、延性与失效判据}
 \label{sec:cladding_failure_models}
@@ -309,7 +309,7 @@ CDF定义为：
 	+D\log_{10}\sigma_\theta
 	\label{eq:clad_generic_rupture_time}
 \end{equation}
-\noindent 式中：系数随材料及应力区间变化。计算时应严格按照标定温度和应力范围选择参数，而不能在不同分区间平滑外推。D9稳态/瞬态关系、HT9长短时间尺度模型、MFH和WHC关系以及受约束空洞长大模型均列于本附录第\ref{app:cladding_rupture_models}节。
+\noindent 式中：系数随材料及应力区间变化。计算时应严格按照标定温度和应力范围选择参数，而不能在不同分区间平滑外推。D9稳态/瞬态关系、HT9长短时间尺度模型、MFH和WHC关系以及受约束空洞长大模型均列于本\ref{app:cladding_rupture_models}节。
 
 综上，包壳模型的选取应同时满足材料牌号、冷加工或热处理状态、温度、应力、应变率、快中子注量及瞬态时间尺度的一致性。后续计算以经过验证的热物性、弹塑性、肿胀和稳态蠕变模型为基础；失效模型则根据正常运行或事故瞬态分别启用，并通过独立试验数据进行校核。
 

@@ -399,7 +399,7 @@
 \end{equation}
 \noindent 式中：$N(t)$ 表示单位晶界面积上的气体原子数密度（$\mathrm{m^{-2}}$），$b(t)$ 为再溶解速率常数（$\mathrm{s^{-1}}$），$\delta$ 为再溶解作用的特征深度（$\mathrm{m}$）。
 
-为了耦合裂变气体模型和燃料性能分析程序，通常不是采用直接求解裂变气体扩散方程，而是采用解析解或者谱方法等数学变换，获得正交节点处的裂变气体行为。因此接下来对裂变气体扩散方程进行基于核函数展开的降阶和卷积方程的状态变量化。
+为了耦合裂变气体模型和燃料性能分析程序，通常不是采用直接求解裂变气体扩散方程，而是采用解析解或者谱方法等数学变换，获得正交节点处的裂变气体行为。因此，接下来对裂变气体扩散方程进行基于核函数展开的降阶和卷积方程的状态变量化。
 
 考虑扩散系数随温度变化的影响，引入时间变换变量：
 \begin{equation}
@@ -465,7 +465,7 @@
 		1.09\times10^{-17}\exp\left(-\dfrac{6614}{T}\right)                      & T \ge 1650~\mathrm{K}
 	\end{cases}
 \end{equation}
-\noindent 式中：$D$为裂变气体扩散系数（$\mathrm{m^2\,s^{-1}}$），单位为$\mathrm{m^2\,s^{-1}}$；$T$为温度，单位为$\mathrm{K}$；$f(\mathrm{Bu})$为无量纲燃耗修正项，用于描述高燃耗条件下扩散行为的增强效应。
+\noindent 式中：$D$为裂变气体扩散系数（$\mathrm{m^2\,s^{-1}}$）；$T$为温度（$\mathrm{K}$）；$f(\mathrm{Bu})$为无量纲燃耗修正项，用于描述高燃耗条件下扩散行为的增强效应。
 
 此外，在Trunbull等人\cite{denisSimulationIsothermalFission1996}的报告提出了经典的三项模型，包括高温热激活扩散、辐照增强扩散、裂变碎片直接导致的扩散。形式如下：
 \begin{align}
@@ -474,7 +474,7 @@
 	D_2                   & = 1.41 \times 10^{-25} \sqrt{\dot{F}} \exp\left(-\frac{13800}{T}\right) \cdot 4.0 \\
 	D_3                   & = 2.0 \times 10^{-40} \dot{F}
 \end{align}
-\noindent 式中：$D_{\mathrm{Turnbull}}$、$D_1$、$D_2$和$D_3$均为扩散系数（$\mathrm{m^2\,s^{-1}}$），单位为$\mathrm{m^2\,s^{-1}}$；$T$为温度，单位为$\mathrm{K}$；$\dot{F}$为体积裂变率，单位为$\mathrm{m^{-3}\,s^{-1}}$。
+\noindent 式中：$D_{\mathrm{Turnbull}}$、$D_1$、$D_2$和$D_3$均为扩散系数（$\mathrm{m^2\,s^{-1}}$）；$T$为温度，单位为$\mathrm{K}$；$\dot{F}$为体积裂变率（$\mathrm{m^{-3}\,s^{-1}}$）。
 \footnotetext{在Bison报告中是直接线性相加，即1：1：1。但在原始的文献中采用的是1：4：4，即$D_{\mathrm{Turnbull}} = D_1 + 4D_2 + 4D_3$}
 
 两个模型的扩散系数随温度变化的曲线如图\ref{fig:gas_diffusion}所示，两者都表现出扩散系数随温度上升而增加，但是Turnbull的模型还包含裂变碎片导致的扩散系数的增加。
