@@ -5102,6 +5102,7 @@
       \field{lansortorder}{1}
       \field{namefmtid}{1}
       \field{nameformat}{lowercase}
+      \field{number}{3}
       \field{title}{氧化物燃料中气孔迁移的多方法多物理场模拟研究}
       \field{urlday}{9}
       \field{urlmonth}{3}
@@ -5109,9 +5110,12 @@
       \field{usera}{J}
       \field{userd}{chinese}
       \field{userf}{chinese}
-      \field{year}{2025}
+      \field{volume}{60}
+      \field{year}{2026}
       \field{dateera}{ce}
       \field{urldateera}{ce}
+      \field{pages}{653\bibrangedash 664}
+      \range{pages}{12}
       \verb{doi}
       \verb 10.7538/yzk.2025.youxian.0266
       \endverb
@@ -5202,7 +5206,6 @@
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{month}{10}
       \field{namefmtid}{1}
       \field{nameformat}{lowercase}
       \field{number}{1--3}

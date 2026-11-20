@@ -26,9 +26,9 @@
 \setcounter {tocdepth}{2}
 \contentsline {subsection}{\numberline {1.2.3}裂变气体、间隙传热与非线性力学耦合研究}{6}{section*.35}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {1.2.4}燃料性能快速预测与代理模型研究}{6}{section*.38}%
+\contentsline {subsection}{\numberline {1.2.4}燃料性能快速预测与代理模型研究}{7}{section*.38}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {1.2.4}燃料性能快速预测与代理模型研究}{6}{section*.39}%
+\contentsline {subsection}{\numberline {1.2.4}燃料性能快速预测与代理模型研究}{7}{section*.39}%
 \setcounter {tocdepth}{-5}
 \contentsline {subsection}{\numberline {1.2.5}研究现状总结与本文切入点}{7}{section*.42}%
 \setcounter {tocdepth}{2}
