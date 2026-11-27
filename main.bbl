@@ -1891,6 +1891,621 @@
       \endverb
       \keyw{wangAnalysisAssessmentBeO2024}
     \endentry
+    \entry{unalApplicationAdvancedValidation2013}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=86e7953623eb025054df8849e05d063c}{%
+           family={Unal},
+           familyi={U\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=708fc9850981f12ab62403336ee70e7c}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={B.J.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5d68e1732e930e6c20216f532b950220}{%
+           family={Yacout},
+           familyi={Y\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9fa4375ed0c26eb44c2083f36ce837c5}{%
+           family={Higdon},
+           familyi={H\bibinitperiod},
+           given={D.M.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \name{namea}{4}{}{%
+        {{hash=86e7953623eb025054df8849e05d063c}{%
+           family={Unal},
+           familyi={U\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=708fc9850981f12ab62403336ee70e7c}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={B.J.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5d68e1732e930e6c20216f532b950220}{%
+           family={Yacout},
+           familyi={Y\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9fa4375ed0c26eb44c2083f36ce837c5}{%
+           family={Higdon},
+           familyi={H\bibinitperiod},
+           given={D.M.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{5b7b43b8da81e2c675b5cb7d59243fad}
+      \strng{fullhash}{d2ca1eba08d76e14bd81cded5123f226}
+      \strng{fullhashraw}{d2ca1eba08d76e14bd81cded5123f226}
+      \strng{bibnamehash}{dfca0bcc534af285441e2b1046fdf970}
+      \strng{authorbibnamehash}{dfca0bcc534af285441e2b1046fdf970}
+      \strng{authornamehash}{5b7b43b8da81e2c675b5cb7d59243fad}
+      \strng{authorfullhash}{d2ca1eba08d76e14bd81cded5123f226}
+      \strng{authorfullhashraw}{d2ca1eba08d76e14bd81cded5123f226}
+      \strng{nameabibnamehash}{dfca0bcc534af285441e2b1046fdf970}
+      \strng{nameanamehash}{5b7b43b8da81e2c675b5cb7d59243fad}
+      \strng{nameafullhash}{d2ca1eba08d76e14bd81cded5123f226}
+      \strng{nameafullhashraw}{d2ca1eba08d76e14bd81cded5123f226}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{00295493}
+      \field{journaltitle}{Nuclear Engineering and Design}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{10}
+      \field{shortjournal}{Nuclear Engineering and Design}
+      \field{shorttitle}{Application of Advanced Validation Concepts to Oxide Fuel Performance Codes}
+      \field{title}{Application of Advanced Validation Concepts to Oxide Fuel Performance Codes: {{LIFE-4}} Fast-Reactor and {{FRAPCON}} Thermal-Reactor Fuel Performance Codes}
+      \field{urlday}{27}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{263}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{102\bibrangedash 128}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1016/j.nucengdes.2013.02.013
+      \endverb
+      \verb{file}
+      \verb /Users/wangzhaohao/Zotero/storage/ZE2SMD2E/2013 - Application of advanced validation concepts to oxide fuel performance codes LIFE-4 fast-reactor and.pdf;/Users/wangzhaohao/Zotero/storage/FF94Z9RX/S0029549313000721.html
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0029549313000721
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0029549313000721
+      \endverb
+      \keyw{unalApplicationAdvancedValidation2013}
+    \endentry
+    \entry{luzziAssessmentThreeEuropean2021}{article}{}{}
+      \name{author}{14}{}{%
+        {{hash=2a61915dcdd1d58bd1c10d2574ecbc8d}{%
+           family={Luzzi},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=40583ca23b167466dbad9d8fbcfa1949}{%
+           family={Barani},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7f7175c30a01310c212a81227ea0ac29}{%
+           family={Boer},
+           familyi={B\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=60f2be5c07eb5e0c41146a0034e0a85e}{%
+           family={Cognini},
+           familyi={C\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=3cc7d1c0f00290c9501cf59290d7fc77}{%
+           family={Del\bibnamedelima Nevo},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=56707dce2fdfa9558078457e55420000}{%
+           family={Lainet},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c43d92e1f489ef9bbddb8e76c274411b}{%
+           family={Lemehov},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a1534022d0fdd94f2ad2c80871fde54a}{%
+           family={Magni},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=694603b34aa0dc723a35f37ff00a5134}{%
+           family={Marelle},
+           familyi={M\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=f119a1bd8d09f0a9ee194a6c86ee9e3c}{%
+           family={Michel},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=bf121afc41309e364d7a6ef985aea3e9}{%
+           family={Pizzocri},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4b7c7bad4be7c35e4fa4899708e37ad3}{%
+           family={Schubert},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=026a046d8f967073d5bd9f53b13c5789}{%
+           family={Van\bibnamedelima Uffelen},
+           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e6759725a26dad7c7ec174f2dccd6a86}{%
+           family={Bertolus},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{namea}{14}{}{%
+        {{hash=2a61915dcdd1d58bd1c10d2574ecbc8d}{%
+           family={Luzzi},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=40583ca23b167466dbad9d8fbcfa1949}{%
+           family={Barani},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7f7175c30a01310c212a81227ea0ac29}{%
+           family={Boer},
+           familyi={B\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=60f2be5c07eb5e0c41146a0034e0a85e}{%
+           family={Cognini},
+           familyi={C\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=3cc7d1c0f00290c9501cf59290d7fc77}{%
+           family={Del\bibnamedelima Nevo},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=56707dce2fdfa9558078457e55420000}{%
+           family={Lainet},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c43d92e1f489ef9bbddb8e76c274411b}{%
+           family={Lemehov},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a1534022d0fdd94f2ad2c80871fde54a}{%
+           family={Magni},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=694603b34aa0dc723a35f37ff00a5134}{%
+           family={Marelle},
+           familyi={M\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=f119a1bd8d09f0a9ee194a6c86ee9e3c}{%
+           family={Michel},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=bf121afc41309e364d7a6ef985aea3e9}{%
+           family={Pizzocri},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4b7c7bad4be7c35e4fa4899708e37ad3}{%
+           family={Schubert},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=026a046d8f967073d5bd9f53b13c5789}{%
+           family={Van\bibnamedelima Uffelen},
+           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e6759725a26dad7c7ec174f2dccd6a86}{%
+           family={Bertolus},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{ad1604c3123e89a9c50d403438c9815a}
+      \strng{fullhash}{cf3ae7587915ab841b4ba08d321f8e84}
+      \strng{fullhashraw}{cf3ae7587915ab841b4ba08d321f8e84}
+      \strng{bibnamehash}{f929386bb653cfc19528f47927456180}
+      \strng{authorbibnamehash}{f929386bb653cfc19528f47927456180}
+      \strng{authornamehash}{ad1604c3123e89a9c50d403438c9815a}
+      \strng{authorfullhash}{cf3ae7587915ab841b4ba08d321f8e84}
+      \strng{authorfullhashraw}{cf3ae7587915ab841b4ba08d321f8e84}
+      \strng{nameabibnamehash}{f929386bb653cfc19528f47927456180}
+      \strng{nameanamehash}{ad1604c3123e89a9c50d403438c9815a}
+      \strng{nameafullhash}{cf3ae7587915ab841b4ba08d321f8e84}
+      \strng{nameafullhashraw}{cf3ae7587915ab841b4ba08d321f8e84}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{17385733}
+      \field{journaltitle}{Nuclear Engineering and Technology}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{10}
+      \field{number}{10}
+      \field{shortjournal}{Nuclear Engineering and Technology}
+      \field{title}{Assessment of Three {{European}} Fuel Performance Codes against the {{SUPERFACT-1}} Fast Reactor Irradiation Experiment}
+      \field{urlday}{27}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{53}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{3367\bibrangedash 3378}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.net.2021.04.010
+      \endverb
+      \verb{file}
+      \verb /Users/wangzhaohao/Zotero/storage/EJGAURN8/Luzzi et al. - 2021 - Assessment of three European fuel performance codes against the SUPERFACT-1 fast reactor irradiation.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1738573321002084
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1738573321002084
+      \endverb
+      \keyw{luzziAssessmentThreeEuropean2021}
+    \endentry
+    \entry{luzziAssessmentINSPYREextendedFuel2023}{article}{}{}
+      \name{author}{13}{}{%
+        {{hash=2a61915dcdd1d58bd1c10d2574ecbc8d}{%
+           family={Luzzi},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=40583ca23b167466dbad9d8fbcfa1949}{%
+           family={Barani},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7f7175c30a01310c212a81227ea0ac29}{%
+           family={Boer},
+           familyi={B\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=3cc7d1c0f00290c9501cf59290d7fc77}{%
+           family={Del\bibnamedelima Nevo},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=56707dce2fdfa9558078457e55420000}{%
+           family={Lainet},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c43d92e1f489ef9bbddb8e76c274411b}{%
+           family={Lemehov},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a1534022d0fdd94f2ad2c80871fde54a}{%
+           family={Magni},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=694603b34aa0dc723a35f37ff00a5134}{%
+           family={Marelle},
+           familyi={M\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=f119a1bd8d09f0a9ee194a6c86ee9e3c}{%
+           family={Michel},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=bf121afc41309e364d7a6ef985aea3e9}{%
+           family={Pizzocri},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4b7c7bad4be7c35e4fa4899708e37ad3}{%
+           family={Schubert},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=026a046d8f967073d5bd9f53b13c5789}{%
+           family={Van\bibnamedelima Uffelen},
+           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e6759725a26dad7c7ec174f2dccd6a86}{%
+           family={Bertolus},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{namea}{13}{}{%
+        {{hash=2a61915dcdd1d58bd1c10d2574ecbc8d}{%
+           family={Luzzi},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=40583ca23b167466dbad9d8fbcfa1949}{%
+           family={Barani},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7f7175c30a01310c212a81227ea0ac29}{%
+           family={Boer},
+           familyi={B\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=3cc7d1c0f00290c9501cf59290d7fc77}{%
+           family={Del\bibnamedelima Nevo},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=56707dce2fdfa9558078457e55420000}{%
+           family={Lainet},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c43d92e1f489ef9bbddb8e76c274411b}{%
+           family={Lemehov},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a1534022d0fdd94f2ad2c80871fde54a}{%
+           family={Magni},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=694603b34aa0dc723a35f37ff00a5134}{%
+           family={Marelle},
+           familyi={M\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=f119a1bd8d09f0a9ee194a6c86ee9e3c}{%
+           family={Michel},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=bf121afc41309e364d7a6ef985aea3e9}{%
+           family={Pizzocri},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4b7c7bad4be7c35e4fa4899708e37ad3}{%
+           family={Schubert},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=026a046d8f967073d5bd9f53b13c5789}{%
+           family={Van\bibnamedelima Uffelen},
+           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e6759725a26dad7c7ec174f2dccd6a86}{%
+           family={Bertolus},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{ad1604c3123e89a9c50d403438c9815a}
+      \strng{fullhash}{88645012c41fe516ca3350b6df560fc8}
+      \strng{fullhashraw}{88645012c41fe516ca3350b6df560fc8}
+      \strng{bibnamehash}{f929386bb653cfc19528f47927456180}
+      \strng{authorbibnamehash}{f929386bb653cfc19528f47927456180}
+      \strng{authornamehash}{ad1604c3123e89a9c50d403438c9815a}
+      \strng{authorfullhash}{88645012c41fe516ca3350b6df560fc8}
+      \strng{authorfullhashraw}{88645012c41fe516ca3350b6df560fc8}
+      \strng{nameabibnamehash}{f929386bb653cfc19528f47927456180}
+      \strng{nameanamehash}{ad1604c3123e89a9c50d403438c9815a}
+      \strng{nameafullhash}{88645012c41fe516ca3350b6df560fc8}
+      \strng{nameafullhashraw}{88645012c41fe516ca3350b6df560fc8}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{17385733}
+      \field{journaltitle}{Nuclear Engineering and Technology}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shortjournal}{Nuclear Engineering and Technology}
+      \field{title}{Assessment of {{INSPYRE}}-Extended Fuel Performance Codes against the {{SUPERFACT-1}} Fast Reactor Irradiation Experiment}
+      \field{urlday}{27}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{55}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{884\bibrangedash 894}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/j.net.2022.10.038
+      \endverb
+      \verb{file}
+      \verb /Users/wangzhaohao/Zotero/storage/TR6A3JRI/Luzzi et al. - 2023 - Assessment of INSPYRE-extended fuel performance codes against the SUPERFACT-1 fast reactor irradiati.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1738573322005198
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1738573322005198
+      \endverb
+      \keyw{luzziAssessmentINSPYREextendedFuel2023}
+    \endentry
+    \entry{magniModellingAssessmentThermal2020}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=a1534022d0fdd94f2ad2c80871fde54a}{%
+           family={Magni},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=40583ca23b167466dbad9d8fbcfa1949}{%
+           family={Barani},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3cc7d1c0f00290c9501cf59290d7fc77}{%
+           family={Del\bibnamedelima Nevo},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bf121afc41309e364d7a6ef985aea3e9}{%
+           family={Pizzocri},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f174e124edad7114ec36a754e8b2e649}{%
+           family={Staicu},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=026a046d8f967073d5bd9f53b13c5789}{%
+           family={Van\bibnamedelima Uffelen},
+           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2a61915dcdd1d58bd1c10d2574ecbc8d}{%
+           family={Luzzi},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \name{namea}{7}{}{%
+        {{hash=a1534022d0fdd94f2ad2c80871fde54a}{%
+           family={Magni},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=40583ca23b167466dbad9d8fbcfa1949}{%
+           family={Barani},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3cc7d1c0f00290c9501cf59290d7fc77}{%
+           family={Del\bibnamedelima Nevo},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bf121afc41309e364d7a6ef985aea3e9}{%
+           family={Pizzocri},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f174e124edad7114ec36a754e8b2e649}{%
+           family={Staicu},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=026a046d8f967073d5bd9f53b13c5789}{%
+           family={Van\bibnamedelima Uffelen},
+           familyi={V\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2a61915dcdd1d58bd1c10d2574ecbc8d}{%
+           family={Luzzi},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{e43dd8cb835bddf88ada9ca130cf75aa}
+      \strng{fullhash}{67a73a151aa528192d436df5dafbb1ca}
+      \strng{fullhashraw}{67a73a151aa528192d436df5dafbb1ca}
+      \strng{bibnamehash}{d9ae9dea1689e23e2c4cf98be636599b}
+      \strng{authorbibnamehash}{d9ae9dea1689e23e2c4cf98be636599b}
+      \strng{authornamehash}{e43dd8cb835bddf88ada9ca130cf75aa}
+      \strng{authorfullhash}{67a73a151aa528192d436df5dafbb1ca}
+      \strng{authorfullhashraw}{67a73a151aa528192d436df5dafbb1ca}
+      \strng{nameabibnamehash}{d9ae9dea1689e23e2c4cf98be636599b}
+      \strng{nameanamehash}{e43dd8cb835bddf88ada9ca130cf75aa}
+      \strng{nameafullhash}{67a73a151aa528192d436df5dafbb1ca}
+      \strng{nameafullhashraw}{67a73a151aa528192d436df5dafbb1ca}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223115}
+      \field{journaltitle}{Journal of Nuclear Materials}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{12}
+      \field{shortjournal}{Journal of Nuclear Materials}
+      \field{title}{Modelling and Assessment of Thermal Conductivity and Melting Behaviour of {{MOX}} Fuel for Fast Reactor Applications}
+      \field{urlday}{27}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{541}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{152410}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.jnucmat.2020.152410
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311520310187
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0022311520310187
+      \endverb
+      \keyw{magniModellingAssessmentThermal2020}
+    \endentry
     \entry{xuStudyAnalysisPlutonium2025}{article}{}{}
       \name{author}{7}{}{%
         {{hash=f0ee0f4c0f714fd2c2049ac8e7783512}{%
@@ -2253,8 +2868,8 @@
       \strng{nameanamehash}{84a941f692152fe7588a6fb664331e54}
       \strng{nameafullhash}{ec0d3f16622a31699c8026adcfbb94ae}
       \strng{nameafullhashraw}{ec0d3f16622a31699c8026adcfbb94ae}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Nuclear Materials}
@@ -2357,8 +2972,9 @@
       \strng{nameanamehash}{e43dd8cb835bddf88ada9ca130cf75aa}
       \strng{nameafullhash}{55600ba3734a5ec34c45ed08af7bc568}
       \strng{nameafullhashraw}{55600ba3734a5ec34c45ed08af7bc568}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nuclear Engineering and Technology}
@@ -2502,8 +3118,8 @@
       \strng{nameanamehash}{c105d366cc1d9bc4e87afa0ea1061501}
       \strng{nameafullhash}{71e9dc8c89bce6a162823154f444d50a}
       \strng{nameafullhashraw}{71e9dc8c89bce6a162823154f444d50a}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Annals of Nuclear Energy}
@@ -3050,8 +3666,8 @@
       \strng{nameanamehash}{3c036c964e38995a35b5b76e22045082}
       \strng{nameafullhash}{05f9236d175b0631f30906c205699c44}
       \strng{nameafullhashraw}{05f9236d175b0631f30906c205699c44}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-3-662-03530-6}
@@ -3101,8 +3717,8 @@
       \strng{nameanamehash}{89adf71981d93d80dbe0f6d8e7a75949}
       \strng{nameafullhash}{89adf71981d93d80dbe0f6d8e7a75949}
       \strng{nameafullhashraw}{89adf71981d93d80dbe0f6d8e7a75949}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Nuclear Materials}
@@ -3588,8 +4204,8 @@
       \strng{nameanamehash}{10eaf3b87897499637c40af244611c4f}
       \strng{nameafullhash}{fae210ace7b0d54caa2999f1146643cf}
       \strng{nameafullhashraw}{fae210ace7b0d54caa2999f1146643cf}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Nuclear Materials}
@@ -3715,8 +4331,8 @@
       \strng{nameanamehash}{a2285c09337400d200edde2bc0f8dd6f}
       \strng{nameafullhash}{b32d66f4866b3bf77eea6b624197fbfe}
       \strng{nameafullhashraw}{b32d66f4866b3bf77eea6b624197fbfe}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{entrysubtype}{report}
@@ -3804,8 +4420,8 @@
       \strng{nameanamehash}{e38ec62712ed80be2a0b7cafba3f04c2}
       \strng{nameafullhash}{7cb358ee1157f95f697422bd42b4d4a3}
       \strng{nameafullhashraw}{7cb358ee1157f95f697422bd42b4d4a3}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Nuclear Science and Technology}
@@ -3872,8 +4488,8 @@
       \strng{nameanamehash}{878960eb24c6a5c45a83c7ce85ab1814}
       \strng{nameafullhash}{878960eb24c6a5c45a83c7ce85ab1814}
       \strng{nameafullhashraw}{878960eb24c6a5c45a83c7ce85ab1814}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -3936,8 +4552,8 @@
       \strng{nameanamehash}{29bc866e25026d10a88262149d31681a}
       \strng{nameafullhash}{c176855e33194bc60c9b9f9d2ce65f26}
       \strng{nameafullhashraw}{c176855e33194bc60c9b9f9d2ce65f26}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Nuclear Materials}
@@ -4020,8 +4636,8 @@
       \strng{nameanamehash}{779279a4f91bc3c0abc96c7865310c96}
       \strng{nameafullhash}{779279a4f91bc3c0abc96c7865310c96}
       \strng{nameafullhashraw}{779279a4f91bc3c0abc96c7865310c96}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Comprehensive Nuclear Materials}
@@ -4937,8 +5553,8 @@
       \strng{nameanamehash}{0fb85dfd2aa2faa3115b5aa711edcbfc}
       \strng{nameafullhash}{0fb85dfd2aa2faa3115b5aa711edcbfc}
       \strng{nameafullhashraw}{0fb85dfd2aa2faa3115b5aa711edcbfc}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{SCIENTIA SINICA Mathematica}
@@ -5028,8 +5644,8 @@
       \strng{nameanamehash}{48bf63293706494dbb84537c59f8f1c7}
       \strng{nameafullhash}{a55b728b1f06319cbdf04eae13177c42}
       \strng{nameafullhashraw}{a55b728b1f06319cbdf04eae13177c42}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}

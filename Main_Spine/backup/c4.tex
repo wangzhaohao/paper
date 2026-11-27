@@ -1,357 +1,203 @@
 % !TeX root = ../main.tex
 
-\xchapter{燃料力学非线性、裂变气体与间隙导热模型的耦合实现及验证}{Coupled Implementation and Verification of Fuel Mechanical Nonlinearity, Fission Gas, and Gap Heat Transfer Models}
+\xchapter{燃料力学非线性、裂变气体与间隙传热模型的耦合实现及验证}{Coupled Implementation and Verification of Fuel Mechanical Nonlinearity, Fission Gas, and Gap Heat Transfer Models}
 
 \xsection{引言}{Introduction}
-在反应堆运行过程中，燃料芯块与包壳始终处于温度场、辐照损伤、裂变气体演化及接触载荷共同作用下的复杂服役环境中。温度升高会诱发热膨胀与热蠕变，辐照会引起肿胀、硬化与损伤累积，而裂变气体在晶内、晶界及孔隙中的迁移和释放又会改变燃料内部压力状态与几何间隙条件。这些因素共同决定燃料元件的位移分布和应力响应，并进一步反馈影响温度场以及裂变气体释放行为。因此，为建立稳定可靠的燃料性能分析程序，有必要对力学控制方程的离散形式、本构积分算法以及裂变气体模型的数值实现进行统一说明。
+第二章建立了氧化物燃料元件热学、力学、微观结构与组分演化的多物理场控制方程及总体耦合框架，第三章进一步给出了MOX燃料与包壳材料行为、气孔迁移、Pu/Am再分布及O/M演化等闭合模型。在此基础上，还需要将不同物理模型转化为适用于燃料性能分析程序的数值算法，并解决非线性本构积分、裂变气体状态演化以及燃料--包壳间隙传热之间的数据传递与耦合问题。
 
-对于燃料芯块，本文主要考虑热膨胀、辐照肿胀、热蠕变、辐照蠕变、裂变气体行为及密实化等效应；对于包壳，则主要考虑热膨胀、辐照肿胀、硬化、屈服以及辐照损伤等机制。从数值实现角度看，上述行为可以归结为两类核心问题：一类是以热弹塑性响应为代表的非线性力学本构积分问题，另一类是以裂变气体产生、扩散、聚集与释放为主线的多阶段物质迁移问题。前者决定了应力应变更新与全局平衡求解的稳定性，后者则直接影响燃料内压、间隙传热及高燃耗阶段的服役行为预测精度。
+燃料元件热--力耦合计算中，塑性、蠕变及辐照变形等非线性材料行为需要在材料积分点完成应力与内部状态变量更新，并与全局准静态力学平衡方程迭代求解。裂变气体行为则涉及晶内扩散、晶界聚集、气泡演化及释放等过程，其计算结果进一步影响棒内气体组成、气腔压力及燃料--包壳间隙传热状态。因此，局部本构积分、裂变气体演化与间隙传热模型之间的稳定耦合，是实现燃料元件多物理场数值分析的关键环节。
 
-裂变气体行为模型从建模层次上可进一步区分为两类：一类为适用于工程计算的简化机理模型，用于在较低计算代价下描述裂变气体释放的主要控制过程；另一类为对晶粒内扩散、晶界聚集、气泡演化及释放过程进行更细致刻画的高保真机理模型。前者具有实现简洁、工程适用范围广的优点，后者则能够提供更丰富的微观信息并具备更好的外推能力。基于第二章给出的材料模型与物性关系，本章重点讨论上述力学、裂变气体与间隙导热模型的数值实现方法及其验证过程：首先给出热弹塑性控制方程的离散形式及径向返回算法；随后介绍裂变气体行为模型、间隙导热模型及其耦合实现；最后通过典型算例对算法和模型进行验证与确认。
+本章重点研究上述模型的数值实现与程序耦合方法。首先，基于经典$J_2$塑性理论和隐式径向返回映射方法，实现燃料与包壳非线性力学本构的积分更新，并介绍其在MOOSE材料计算框架中的组织方式；随后，分别实现Forsberg--Massih裂变气体模型和SCIANTIX细观机理模型，建立裂变气体释放、棒内气体状态与间隙传热之间的数据传递关系；最后，通过单元级、子模型级及耦合算例对相关算法和程序实现进行验证，为后续燃料棒尺度多物理场分析提供数值基础。
+
+本章所采用的J2塑性理论、径向返回算法及Forsberg–Massih裂变气体模型均具有已有理论基础，SCIANTIX则为公开的晶粒尺度机理程序。本文的工作重点并非重新提出上述基础模型，而是在MOOSE框架内实现非线性本构的隐式积分、裂变气体机理程序的状态变量传递及间隙传热的耦合更新，并通过分层数值测试评价相关实现的正确性与适用性。
 
 \xsection{热弹塑性力学模型的离散与隐式积分}{Discretization and Implicit Integration of Thermo-Elasto-Plastic Mechanics}
-\xsubsection{热弹塑性控制方程与弱形式}{Governing Equations and Weak Form of Thermo-Elasto-Plasticity}
-本节首先从小变形条件下的线弹性平衡方程出发，建立统一的弱形式与离散残差表达。在线性力学框架明确之后，再将热应变与塑性应变引入本构关系，从而过渡到后续隐式返回映射算法的实现。
+\xsubsection{非线性力学问题的数值离散}{Numerical Discretization of the Nonlinear Mechanical Problem}
+第二章已给出燃料与包壳的准静态力学平衡方程、应变分解关系及压力边界条件，第三章进一步给出了相应材料行为闭合模型。有限元弱形式、空间离散以及Newton迭代等属于非线性有限元与计算塑性的通用理论，其系统推导可参见经典计算塑性专著\cite{dunneIntroductionComputationalPlasticity2005}。因此，本节不再重复一般有限元理论，而重点给出与后续本构积分和程序实现直接相关的离散关系。
 
-对于弹性结构，本文采用 MOOSE 平台提供的小变形线弹性力学模块进行建模，其控制方程为：
+在小变形条件下，总应变可统一分解为：
 \begin{equation}
-	\frac{\partial^2 \mathbf{u}}{\partial t^2} - A^T D A \mathbf{u} + \mathbf{f} = 0
-	\label{eq:elastic}
-\end{equation}
-\noindent 式中：$\mathbf{u} = (u_x, u_y, u_z)$ 表示位移矢量，$\mathbf{f}=(f_x, f_y, f_z)$表示体力，$A_{6\times 3}$ 为应变-位移关系算子，$D_{6\times 6}$ 为材料刚度矩阵，算子 $A$ 将位移$\mathbf{u}$映射为采用Voigt表示的$6\times 1$向量应变$\boldsymbol{\varepsilon}$，即
-\begin{equation}
-	\boldsymbol{\varepsilon} = A \mathbf{u}
-\end{equation}
-从而 $A^T D A \mathbf{u}$ 对应于应力散度项在离散形式下的表达，即等价于连续形式中的 $(\nabla \cdot \boldsymbol{\sigma})_i = \sum_{j=1}^3 \frac{\partial \sigma_{ij}}{\partial x_j}$。$A\, D$具体形式如下：
-\begin{equation}
-	A =
-	\begin{bmatrix}
-		\partial_x & 0          & 0          \\
-		0          & \partial_y & 0          \\
-		0          & 0          & \partial_z \\
-		\partial_y & \partial_x & 0          \\
-		0          & \partial_z & \partial_y \\
-		\partial_z & 0          & \partial_x
-	\end{bmatrix}
-	\quad
-	D =
-	\begin{bmatrix}
-		\lambda + 2G & \lambda      & \lambda      & 0 & 0 & 0 \\
-		\lambda      & \lambda + 2G & \lambda      & 0 & 0 & 0 \\
-		\lambda      & \lambda      & \lambda + 2G & 0 & 0 & 0 \\
-		0            & 0            & 0            & G & 0 & 0 \\
-		0            & 0            & 0            & 0 & G & 0 \\
-		0            & 0            & 0            & 0 & 0 & G
-	\end{bmatrix}
-\end{equation}
-
-\noindent 式中：$\lambda$ 和 $G$ 为拉梅常数，定义为：
-\begin{equation}
-	\lambda = \frac{E \nu}{(1+\nu)(1-2\nu)}, \quad
-	G = \frac{E}{2(1+\nu)}
-\end{equation}
-\noindent 式中：$E$为杨氏模量；$\nu$为泊松比。燃料芯块和包壳材料的具体关系式已在第二章给出。
-
-然而，为了便于扩展至包含塑性与蠕变的非线性本构模型，后续将统一采用应力形式描述内力项，即通过 $(\boldsymbol{\sigma}, \nabla \mathbf{w})$ 表示。
-
-对给定计算区域 $\Omega \subset \mathbb{R}^3$，空间坐标为 $\mathbf{x} = (x_1, x_2, x_3)$。采用空间有限元离散与时间有限差分相结合的半离散方法对控制方程 \eqref{eq:elastic} 进行近似。
-
-为构造其弱形式，引入函数空间 $\mathbf{V} = [H^1(\Omega)]^3$，并取测试函数 $\mathbf{w} \in \mathbf{V}$。则问题可表述为：求 $\mathbf{u}(t) \in \mathbf{V}$，使得对任意 $\mathbf{w} \in \mathbf{V}$，满足
-\begin{equation}
-	(\mathbf{u}_{tt}, \mathbf{w}) + (\boldsymbol{\sigma}, \nabla \mathbf{w}) - (\mathbf{f}, \mathbf{w}) = 0
-\end{equation}
-\noindent 式中： $(\cdot,\cdot)$ 表示 $L^2(\Omega)$ 内积。
-
-在小变形假设下，总应变可分解为弹性应变、塑性应变和热应变。该分解形式的理论基础可参见文献\cite{dunneIntroductionComputationalPlasticity2005}，因此有：
-\begin{equation}
-	\boldsymbol{\varepsilon} = \boldsymbol{\varepsilon}^e + \boldsymbol{\varepsilon}^p + \boldsymbol{\varepsilon}^{th}
-\end{equation}
-
-若假设热膨胀系数为$\alpha$，则热应变可表示为：
-\begin{equation}
-	\boldsymbol{\varepsilon}^{\mathrm{th}} = \alpha (T - T_{\mathrm{ref}})\mathbf{I}
-\end{equation}
-
-材料本构关系写为
-\begin{equation}
-	\boldsymbol{\sigma}
-	= \mathbf{D} : \left(
 	\boldsymbol{\varepsilon}
-	- \boldsymbol{\varepsilon}^p
-	- \boldsymbol{\varepsilon}^{\mathrm{th}}
-	\right)
-\end{equation}
-
-热应变项可等效为附加内力项，其弱形式表示为
-\begin{equation}
-	(\mathbf{D}:\boldsymbol{\varepsilon}^{\mathrm{th}}, \nabla \mathbf{w})
-	= ((T - T_{\mathrm{ref}})\mathbf{a}, \nabla \mathbf{w})
-\end{equation}
-\noindent 式中： $\mathbf{a} = \alpha [1,1,1]^T$。
-
-因此，考虑热膨胀后的弱形式可写为
-\begin{equation}
-	(\mathbf{u}_{tt}, \mathbf{w}) + (\boldsymbol{\sigma}, \nabla \mathbf{w}) - ((T - T_{\mathrm{ref}})\mathbf{a}, \nabla \mathbf{w}) = 0
-\end{equation}
-
-进一步地，取有限维子空间 $\mathbf{V}^h \subset \mathbf{V}$，采用线性 Lagrange 有限元进行空间离散，使得
-\begin{equation}
-	\mathbf{V}^h = \text{span} \{ \boldsymbol{\Phi}_i \}_{i=1}^n
-\end{equation}
-\noindent 式中： $\boldsymbol{\Phi}_i = \phi_i [1,1,1]^T$，$\phi_i$ 为标量基函数。
-
-则弱形式可写为：对所有基函数 $\boldsymbol{\Phi}_i \in \mathbf{V}^h$，满足
-\begin{equation}
-	(\mathbf{u}_{tt}, \boldsymbol{\Phi}_i)
-	+ (\boldsymbol{\sigma}, \nabla \boldsymbol{\Phi}_i)
-	- ((T - T_{\mathrm{ref}})\mathbf{a}, \nabla \boldsymbol{\Phi}_i)
-	= 0
-\end{equation}
-
-同时，将位移场 $\mathbf{u}$ 在有限元空间中展开为
-\begin{equation}
-	\mathbf{u}^h(\mathbf{x},t) = \sum_{j=1}^{n} \mathbf{u}_j(t)\boldsymbol{\Phi}_j(\mathbf{x})
-\end{equation}
-\noindent 式中： $\mathbf{u}_j(t)$ 为待求的节点位移系数。
-
-将上述展开代入弱形式，可得到半离散的代数方程组：
-\begin{equation}
-	\sum_{j=1}^{n}
-	(\boldsymbol{\Phi}_j, \boldsymbol{\Phi}_i)\ddot{\mathbf{u}}_j
-	+
-	\int_\Omega
-	\boldsymbol{\sigma}(\mathbf{u}) : \nabla \boldsymbol{\Phi}_i \, d\Omega
 	=
-	((T - T_{\mathrm{ref}})\mathbf{a}, \nabla \boldsymbol{\Phi}_i)
-\end{equation}
-
-进一步地，将离散方程写为非线性代数方程组的残差形式：
-\begin{equation}
-	\mathbf{F}(\mathbf{u}) = 0
-\end{equation}
-\noindent 式中： $\mathbf{F}$ 的第 $i$ 个分量定义为
-\begin{equation}
-	F_i(\mathbf{u}) =
-	\sum_{j=1}^{n}
-	(\boldsymbol{\Phi}_j, \boldsymbol{\Phi}_i)\ddot{\mathbf{u}}_j
+	\boldsymbol{\varepsilon}^{\mathrm{e}}
 	+
-	\int_\Omega
-	\boldsymbol{\sigma}(\mathbf{u}) : \nabla \boldsymbol{\Phi}_i \, d\Omega
-	-
-	((T - T_{\mathrm{ref}})\mathbf{a}, \nabla \boldsymbol{\Phi}_i)
+	\boldsymbol{\varepsilon}^{\mathrm{th}}
+	+
+	\boldsymbol{\varepsilon}^{\mathrm{in}}
+	\label{eq:ch4_strain_decomposition}
 \end{equation}
-
-此外，对时间项采用二阶隐式差分格式进行离散。设时间步长为 $\Delta t$，第 $k$ 个时间步的位移记为 $\mathbf{u}^k$，则加速度项可近似为
-\begin{equation}
-	\ddot{\mathbf{u}}^{k+1} \approx
-	\frac{\mathbf{u}^{k+1} - 2\mathbf{u}^k + \mathbf{u}^{k-1}}{\Delta t^2}
-\end{equation}
-
-将时间离散代入残差表达式，可得在时间步 $k+1$ 的非线性残差为：
-\begin{equation}
-	\begin{split}
-		F_i(\mathbf{u}^{k+1}) =
-		\sum_{j=1}^{n}
-		\left(
-		\frac{\mathbf{u}_j^{k+1} - 2\mathbf{u}_j^k + \mathbf{u}_j^{k-1}}{\Delta t^2},
-		\boldsymbol{\Phi}_i
-		\right) \\
-		+ \int_\Omega
-		\boldsymbol{\sigma}(\mathbf{u}^{k+1}) : \nabla \boldsymbol{\Phi}_i \, d\Omega
-		- \bigl((T^{k+1} - T_{\mathrm{ref}})\mathbf{a}, \nabla \boldsymbol{\Phi}_i\bigr)
-	\end{split}
-\end{equation}
-\noindent 式中：应力 $\boldsymbol{\sigma}$ 由本构关系确定，并依赖于当前时刻的应变及塑性应变，即
+\noindent 式中：$\boldsymbol{\varepsilon}^{\mathrm{e}}$和$\boldsymbol{\varepsilon}^{\mathrm{th}}$分别为弹性应变和热应变，$\boldsymbol{\varepsilon}^{\mathrm{in}}$用于统一表示蠕变、塑形应变、辐照肿胀等其他非弹性应变分量，各应变分量均为无量纲量。应力由材料本构关系确定：
 \begin{equation}
 	\boldsymbol{\sigma}
-	= \mathbf{D} : \left(
-	\boldsymbol{\varepsilon}^{k+1}
-	- \boldsymbol{\varepsilon}^{p,k+1}
-	- \boldsymbol{\varepsilon}^{\mathrm{th},k+1}
+	=
+	\mathbf{D}:
+	\left(
+	\boldsymbol{\varepsilon}
+	-\boldsymbol{\varepsilon}^{\mathrm{th}}
+	-\boldsymbol{\varepsilon}^{\mathrm{in}}
 	\right)
+	\label{eq:ch4_constitutive_relation}
+\end{equation}
+\noindent 式中：$\mathbf{D}$为弹性刚度张量（$\mathrm{Pa}$），其具体材料参数由第三章给出的材料模型确定。
+
+对第二章中的准静态力学平衡方程进行有限元离散后，第$i$个自由度对应的残差可写为：
+\begin{equation}
+	R_i(\mathbf{u})
+	=
+	\int_{\Omega}
+	\boldsymbol{\sigma}:\nabla^{s}\boldsymbol{\varPhi}_i
+	\,\mathrm{d}\Omega
+	-
+	\int_{\Omega}
+	\mathbf{f}\cdot\boldsymbol{\varPhi}_i
+	\,\mathrm{d}\Omega
+	-
+	\int_{\Gamma_t}
+	\bar{\mathbf{t}}\cdot\boldsymbol{\varPhi}_i
+	\,\mathrm{d}\Gamma
+	=0
+	\label{eq:ch4_mechanical_residual}
+\end{equation}
+\noindent 式中：$\boldsymbol{\varPhi}_i$为位移试函数（无量纲），$\nabla^{s}$表示对称梯度算子，$\mathbf{f}$为单位体积体力（$\mathrm{N\,m^{-3}}$），$\bar{\mathbf{t}}$为给定表面力（$\mathrm{N\,m^{-2}}$）。燃料棒内、外压力以及接触载荷均通过相应边界条件参与全局力学平衡求解。
+
+全局非线性方程采用Newton迭代求解。在每次全局迭代中，由当前位移增量获得材料积分点处的应变增量，并调用相应本构积分算法更新应力及内部状态变量；更新后的应力进一步组装形成全局残差和切线矩阵。由此，燃料元件非线性力学求解可分为全局平衡迭代与局部本构积分两个层次。对于本文涉及的弹塑性及黏塑性材料，局部状态更新采用基于$J_2$理论的隐式径向返回算法。
+
+\xsubsection{径向返回算法}{Radial Return Algorithm}
+
+径向返回映射是$J_2$塑性和黏塑性本构积分中常用的隐式更新方法，其完整理论推导、关联流动法则及一致切线构造可参见计算塑性专著\cite{dunneIntroductionComputationalPlasticity2005}。本文不再展开von Mises屈服面的几何性质及一般Newton方法推导，仅给出与程序实现直接相关的状态更新关系。
+
+对于各向同性$J_2$塑性模型，屈服函数写为：
+\begin{equation}
+	f
+	=
+	\sigma_{\mathrm{eq}}
+	-
+	\sigma_y\left(\bar{\varepsilon}^{\mathrm{p}}\right)
+	\label{eq:ch4_j2_yield}
 \end{equation}
 
-至此，热弹塑性问题已经被写成以应力为核心未知中间量的非线性残差形式。对于给定的总应变增量，仍需在材料积分点处进一步完成应力与塑性内变量的局部更新。为此，下面引入基于 $J_2$ 塑性的隐式径向返回算法。
-
-\xsubsection{径向返回算法}{Derivation of the Radial Return Algorithm}
-在上一节中，控制方程已转化为基于应力的非线性残差形式，其中应力 $\boldsymbol{\sigma}$ 依赖于塑性应变 $\boldsymbol{\varepsilon}^p$。因此，在每一时间步和每个材料积分点处，都需要通过本构积分算法由应变增量求得更新后的 $\boldsymbol{\sigma}^{k+1}$ 与 $\boldsymbol{\varepsilon}^{p,k+1}$。对于本文采用的各向同性硬化 $J_2$ 塑性模型，这一步可通过经典径向返回映射算法完成。
-
-本文采用基于 von Mises 屈服准则的 $J_2$ 塑性模型，其屈服函数定义为
+其中，等效应力为：
 \begin{equation}
-	f(\boldsymbol{\sigma}, \kappa)
-	= \sigma_{\mathrm{eq}} - \sigma_y(p)
+	\sigma_{\mathrm{eq}}
+	=
+	\sqrt{\frac{3}{2}
+		\boldsymbol{s}:\boldsymbol{s}}
+	\qquad
+	\boldsymbol{s}
+	=
+	\boldsymbol{\sigma}
+	-\frac{1}{3}\operatorname{tr}
+	(\boldsymbol{\sigma})\mathbf{I}
+	\label{eq:ch4_equivalent_stress}
 \end{equation}
-\noindent 式中：等效应力为
-\begin{equation}
-	\sigma_{\mathrm{eq}} = \sqrt{\frac{3}{2} \boldsymbol{\sigma}' : \boldsymbol{\sigma}'},
-	\quad
-	\boldsymbol{\sigma}' = \boldsymbol{\sigma} - \frac{1}{3}\mathrm{trial}(\boldsymbol{\sigma})\mathbf{I}
-\end{equation}
-\noindent 式中：$\boldsymbol{\sigma}'$是偏应力张量。${trial}({\boldsymbol{\sigma}})$是应力张量的迹，也就是${trial}(\boldsymbol{\sigma})= \sigma_{11} + \sigma_{22} + \sigma_{33}$；$\mathbf{I}$是二阶单位张量，$\mathbf{I} = \delta_{ij} \vec{e}_i \vec{e}_j$。$\sigma_y(p)$ 是屈服强度，$\kappa$ 是内部变量，通常与等效塑性应变相关。$\sigma_y(\kappa)$是屈服函数，本文采用各向同性硬化模型，屈服应力 $\sigma_y$ 为等效塑性应变 $\kappa$ 的函数，即
-\begin{equation}
-	\sigma_y = \sigma_y(\kappa) + \sigma_{y0}
-\end{equation}
-\noindent 式中： $p$ 为累积等效塑性应变。
+\noindent 式中：$\boldsymbol{s}$为偏应力张量（$\mathrm{Pa}$），$\bar{\varepsilon}^{\mathrm{p}}$为累积等效塑性应变（无量纲），$\sigma_y\left(\bar{\varepsilon}^{\mathrm{p}}\right)$为当前屈服强度（$\mathrm{Pa}$）。
 
-在主应力空间中，von Mises 屈服面为绕静水压轴的圆柱面。当取 $\sigma_3=0$ 的平面应力截面时，其在 $\sigma_1$--$\sigma_2$ 平面上的投影为椭圆（如图\ref{fig:principal_stress_space}所示），其表达式为
+在时间步$k\rightarrow k+1$内，首先假定应变增量全部为弹性增量，并根据当前材料状态构造试应力$\boldsymbol{\sigma}^{\mathrm{trial}}$及试等效应力$\sigma_{\mathrm{eq}}^{\mathrm{trial}}$。相应的试屈服函数为：
 \begin{equation}
-	\sigma_1^2 - \sigma_1\sigma_2 + \sigma_2^2 = \sigma_y^2
-\end{equation}
-
-在偏应力主值空间中，满足 $\mathrm{trial}(\boldsymbol{\sigma}')=0$，
-因此该空间本质上为二维。然而，若直接采用
-$(\sigma_1',\sigma_2')$ 作为坐标，由于其并非正交基，
-von Mises 屈服面在该坐标下表现为椭圆。
-
-通过引入正交基 $(\xi,\eta)$，可将等效应力表示为
-\[
-\sigma_{\mathrm{eq}}^2 = \frac{3}{2}(\xi^2 + \eta^2),
-\]
-从而屈服面对应于半径为 $\sqrt{2/3}\sigma_y$ 的圆。
-
-上述两种坐标表示下的von Mises屈服面如图\ref{fig:von_mises_yield_surface}所示。
-
-\begin{figure}[!htb]
-	\centering
-	\begin{subfigure}{0.45\textwidth}
-		\centering
-		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{J2_yield_surface_principal_stress_space.pdf}
-		\caption{主应力空间中的 von Mises 屈服面}
-		\label{fig:principal_stress_space}
-		
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.45\textwidth}
-		\centering
-		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{J2_yield_surface_deviatoric_plane.pdf}
-		\caption{偏应力空间中的 von Mises 屈服面}
-		\label{fig:deviatoric_stress_space}
-	\end{subfigure}
-	\caption{von Mises 屈服面在不同坐标系下的表现}
-	\label{fig:von_mises_yield_surface}
-\end{figure}
-
-无论采用何种应力表示形式，当应力状态达到屈服面时，
-根据关联流动法则，塑性应变增量方向与屈服函数梯度一致，
-即垂直于屈服面切线方向。对于 $J_2$ 塑性模型，塑性应变增量可写为
-\begin{equation}
-	\Delta \boldsymbol{\varepsilon}^p
-	= \Delta \lambda \frac{3}{2} \frac{\boldsymbol{\sigma}'}{\sigma_{\mathrm{eq}}}
-\end{equation}
-并引入等效塑性应变增量
-\begin{equation}
-	\Delta p = \Delta \lambda
-\end{equation}
-
-同时满足 Kuhn-Tucker 条件：
-\begin{equation}
-	f \le 0, \quad \Delta \lambda \ge 0, \quad \Delta \lambda f = 0
-\end{equation}
-
-径向返回算法的几何意义如图\ref{fig:stress_strain_update}所示。设时间步 $k$ 时材料状态位于屈服面内，即图中的状态 $\boxed{1}$。在时间步 $k \to k+1$ 内，$k+1$ 时刻的弹性应变可写为
-\begin{equation}
-	\boldsymbol{\varepsilon}^{e, k+1} = \boldsymbol{\varepsilon}^{e, k} + \Delta\boldsymbol{\varepsilon} - \Delta\boldsymbol{\varepsilon}^{p}
-\end{equation}
-相应的应力表达式为：
-\begin{equation}
-	\begin{aligned}
-		\sigma
-		={}&\underbrace{2G(\boldsymbol{\varepsilon}^{e,k}+\Delta\boldsymbol{\varepsilon})
-			+\lambda\,\operatorname{tr}(\boldsymbol{\varepsilon}^{e,k}
-			+\Delta\boldsymbol{\varepsilon})\,\mathbf{I}}_{\text{弹性预测}}\\
-		&-\underbrace{2G\Delta\boldsymbol{\varepsilon}^{p}}_{\text{塑性修正}}
-	\end{aligned}
-	\label{eq:hook_stress}
-\end{equation}
-若首先假设该步应变增量完全为弹性应变，即取 $\Delta\boldsymbol{\varepsilon}^{p}=0$，则可得到试应力，对应图中的试算状态 $\boxed{3}$：
-\begin{equation}
-	\begin{aligned}
-		\boldsymbol{\sigma}^{\mathrm{trial}}
-		={}&2G(\boldsymbol{\varepsilon}^{e,k}+\Delta\boldsymbol{\varepsilon})\\
-		&+\lambda\,\operatorname{tr}(\boldsymbol{\varepsilon}^{e,k}
-		+\Delta\boldsymbol{\varepsilon})\,\mathbf{I}
-	\end{aligned}
-\end{equation}
-
-并计算对应的偏应力与等效应力：
-\begin{equation}
-	\boldsymbol{\sigma}'^{\mathrm{trial}}
-	= \boldsymbol{\sigma}^{\mathrm{trial}} - \frac{1}{3}\mathrm{tr}(\boldsymbol{\sigma}^{\mathrm{trial}})\mathbf{I}
-\end{equation}
-\begin{equation}
+	f^{\mathrm{trial}}
+	=
 	\sigma_{\mathrm{eq}}^{\mathrm{trial}}
-	= \sqrt{\frac{3}{2} \boldsymbol{\sigma}'^{\mathrm{trial}} : \boldsymbol{\sigma}'^{\mathrm{trial}}}
+	-
+	\sigma_y\left(\bar{\varepsilon}^{\mathrm p,k}\right)
+	\label{eq:ch4_trial_yield}
 \end{equation}
 
-若满足
+当$f^{\mathrm{trial}}\leq 0$时，试应力位于屈服面内，当前时间步采用弹性更新：
 \begin{equation}
-	f^{\mathrm{trial}} = \sigma_{\mathrm{eq}}^{\mathrm{trial}} - \sigma_y(\kappa^k) \le 0
-\end{equation}
-则材料保持弹性响应，即该时间步内未发生塑性流动，对应图中的弹性更新状态：
-\begin{equation}
-	\boldsymbol{\sigma}^{k+1} = \boldsymbol{\sigma}^{\mathrm{trial}},
-	\quad
-	\boldsymbol{\varepsilon}^{p,k+1} = \boldsymbol{\varepsilon}^{p,k}
-\end{equation}
-
-否则材料进入塑性修正阶段，对应图中的返回状态。此时需要从总应变增量中扣除塑性部分，使更新后的应力状态重新回到屈服面上，并满足 Kuhn--Tucker 条件。采用径向返回思想时，塑性修正方向与试偏应力方向一致，因此有
-\begin{equation}
-	\Delta \boldsymbol{\varepsilon}^p
-	= \Delta p \frac{3}{2} \frac{\boldsymbol{\sigma}'}{\sigma_{\mathrm{eq}}}
-\end{equation}
-由式\ref{eq:hook_stress}可得到修正后的应力表达式：
-\begin{equation}
-	\boldsymbol{\sigma}= \boldsymbol{\sigma}^{tr} - 2G\Delta p \frac{3}{2}\frac{\boldsymbol{\sigma}'}{\sigma_{\mathrm{eq}}}
-\end{equation}
-整理后可得等效应力满足 $\sigma_{\mathrm{eq}} + 3G\Delta p = \sigma_{\mathrm{eq}}^{\mathrm{trial}}$。因此，求解的核心问题转化为确定塑性乘子增量 $\Delta p$，使更新后的应力状态重新满足屈服条件，即满足 $f=0$。
-\begin{equation}
-	f=\sigma_e - r - \sigma_y = \sigma_e^{\mathrm{trial}} - 3G\Delta p  - r - \sigma_{y0} = 0
-\end{equation}
-此非线性方程需要求解$\Delta p$，本文采用Newton迭代进行更新。
-\begin{equation}
-	f+\frac{\partial f}{\partial \Delta p}d\Delta p + \dots = 0
+	\boldsymbol{\sigma}^{k+1}
+	=
+	\boldsymbol{\sigma}^{\mathrm{trial}}
+	\qquad
+	\bar{\varepsilon}^{\mathrm p,k+1}
+	=
+	\bar{\varepsilon}^{\mathrm p,k}
+	\label{eq:ch4_elastic_update}
 \end{equation}
 
-对上述非线性方程采用牛顿迭代法求解塑性乘子增量 $\Delta p$。将屈服函数在当前迭代点 $\Delta p^{(k)}$ 处线性化，有
+当$f^{\mathrm{trial}}>0$时，需要进行塑性修正。对于关联流动的$J_2$模型，塑性修正方向与试偏应力方向一致，塑性应变增量可写为：
 \begin{equation}
-	f(\Delta p^{(k)}) + \frac{\partial f}{\partial \Delta p}\Big|_{\Delta p^{(k)}}
-	\, d\Delta p = 0
-\end{equation}
-从而得到增量形式
-\begin{equation}
-	d\Delta p = - \frac{f(\Delta p^{(k)})}{\frac{\partial f}{\partial \Delta p}\big|_{\Delta p^{(k)}}}
-\end{equation}
-
-对于各向同性线性硬化模型，定义硬化变量
-\begin{equation}
-	r = h p
-\end{equation}
-\noindent 式中： $h$ 为硬化模量，$p$ 为累积等效塑性应变。
-因此有
-\begin{equation}
-	r^{(k)} = r^k + h \Delta p^{(k)}, \quad
-	\frac{\partial r}{\partial \Delta p} = h
+	\Delta\boldsymbol{\varepsilon}^{\mathrm{p}}
+	=
+	\frac{3}{2}
+	\Delta\bar{\varepsilon}^{\mathrm{p}}
+	\frac{\boldsymbol{s}^{\mathrm{trial}}}
+	{\sigma_{\mathrm{eq}}^{\mathrm{trial}}}
+	\label{eq:ch4_plastic_strain_increment}
 \end{equation}
 
-由屈服函数
+其中，$\Delta\bar{\varepsilon}^{\mathrm{p}}$为累积等效塑性应变增量。采用径向返回关系后，局部本构积分可归结为关于$\Delta\bar{\varepsilon}^{\mathrm{p}}$的标量非线性方程：
 \begin{equation}
-	f = \sigma_e^{\mathrm{trial}} - 3G \Delta p - r - \sigma_y = 0
+	g\left(\Delta\bar{\varepsilon}^{\mathrm{p}}\right)
+	=
+	\sigma_{\mathrm{eq}}^{\mathrm{trial}}
+	-
+	3G\Delta\bar{\varepsilon}^{\mathrm{p}}
+	-
+	\sigma_y
+	\left(
+	\bar{\varepsilon}^{\mathrm p,k}
+	+\Delta\bar{\varepsilon}^{\mathrm{p}}
+	\right)
+	=0
+	\label{eq:ch4_return_mapping_residual}
 \end{equation}
-可得其导数为
+\noindent 式中：$G$为剪切模量（$\mathrm{Pa}$）。本文采用Newton迭代求解式\eqref{eq:ch4_return_mapping_residual}：
 \begin{equation}
-	\frac{\partial f}{\partial \Delta p} = -3G - h
+	\Delta\bar{\varepsilon}^{\mathrm p,(j+1)}
+	=
+	\Delta\bar{\varepsilon}^{\mathrm p,(j)}
+	-
+	\frac{
+		g\!\left(
+		\Delta\bar{\varepsilon}^{\mathrm p,(j)}
+		\right)
+	}{
+		g'\!\left(
+		\Delta\bar{\varepsilon}^{\mathrm p,(j)}
+		\right)
+	}
+	\label{eq:ch4_return_newton}
 \end{equation}
 
-从而牛顿迭代格式为
+对于等效硬化模型，若硬化模量为$h$，则：
 \begin{equation}
-	d\Delta p = \frac{\sigma_e^{\mathrm{trial}} - 3G \Delta p^{(k)} - r^{(k)} - \sigma_{y0}}{3G + h}
-\end{equation}
-并更新塑性乘子
-\begin{equation}
-	\Delta p^{(k+1)} = \Delta p^{(k)} + d\Delta p
+	g'\left(\Delta\bar{\varepsilon}^{\mathrm{p}}\right)
+	=
+	-3G-h
+	\label{eq:ch4_return_derivative}
 \end{equation}
 
-当满足收敛条件 $|f| < \varepsilon$ 时，停止迭代。
+当局部残差满足给定收敛准则后，采用收敛的$\Delta\bar{\varepsilon}^{\mathrm{p}}$更新累积等效塑性应变：
+\begin{equation}
+	\bar{\varepsilon}^{\mathrm p,k+1}
+	=
+	\bar{\varepsilon}^{\mathrm p,k}
+	+
+	\Delta\bar{\varepsilon}^{\mathrm{p}}
+	\label{eq:ch4_equivalent_plastic_strain_update}
+\end{equation}
+
+同时更新塑性应变张量：
+\begin{equation}
+	\boldsymbol{\varepsilon}^{\mathrm p,k+1}
+	=
+	\boldsymbol{\varepsilon}^{\mathrm p,k}
+	+
+	\Delta\boldsymbol{\varepsilon}^{\mathrm{p}}
+	\label{eq:ch4_plastic_strain_update}
+\end{equation}
+
+以及应力状态：
+\begin{equation}
+	\boldsymbol{\sigma}^{k+1}
+	=
+	\boldsymbol{\sigma}^{\mathrm{trial}}
+	-
+	2G\Delta\boldsymbol{\varepsilon}^{\mathrm{p}}
+	\label{eq:ch4_stress_update}
+\end{equation}
+
+径向返回算法的计算流程如图\ref{fig:stress_strain_update}所示。该算法在材料积分点完成试应力构造、屈服判断、局部非线性迭代和状态变量更新，并将收敛后的应力及一致切线返回全局力学求解器，从而形成“全局平衡迭代--局部本构积分”的嵌套求解过程。
 
 \begin{figure}[!htb]
 	\centering
@@ -360,122 +206,170 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\label{fig:stress_strain_update}
 \end{figure}
 
-在得到收敛的 $\Delta p$ 后，可计算塑性应变增量为
-\begin{equation}
-	\Delta \boldsymbol{\varepsilon}^p
-	= \frac{3}{2} \Delta p \frac{\boldsymbol{\sigma}'^{\mathrm{trial}}}{\sigma_e^{\mathrm{trial}}}
-\end{equation}
-从而更新塑性应变
-\begin{equation}
-	\boldsymbol{\varepsilon}^{p,k+1}
-	= \boldsymbol{\varepsilon}^{p,k} + \Delta \boldsymbol{\varepsilon}^p
-\end{equation}
-
-弹性应变增量由总应变扣除塑性部分得到
-\begin{equation}
-	\Delta \boldsymbol{\varepsilon}^e
-	= \Delta \boldsymbol{\varepsilon} - \Delta \boldsymbol{\varepsilon}^p
-\end{equation}
-
-最终，应力更新为
-\begin{equation}
-	\boldsymbol{\sigma}^{k+1}
-	= \boldsymbol{\sigma}^{\mathrm{trial}} - 2G \Delta \boldsymbol{\varepsilon}^p
-\end{equation}
-
-弹性应变增量由总应变扣除塑性部分得到
-\begin{equation}
-	\Delta \boldsymbol{\varepsilon}^e
-	= \Delta \boldsymbol{\varepsilon} - \Delta \boldsymbol{\varepsilon}^p
-\end{equation}
-
-由此，材料积分点上的应力和塑性应变便可在局部层面完成更新，并进一步返回全局残差方程参与迭代求解。换言之，径向返回算法负责完成局部本构积分，而有限元平衡方程负责完成全局位移场更新，二者共同构成本文隐式力学求解框架的核心。
-
 \xsubsection{代码实现和程序框架}{Code Implementation and Computational Framework}
 
-上一节介绍的径向返回算法，本文通过MOOSE框架实现，首先径向返回算法的父类是RadialReturnStressUpdate。应力更新材料并非由MOOSE中的残差直接调用，而是由其他材料使用computeProperties方法调用。比如，对于RadialReturnStressUpdate材料是被computeMultipleInelasticStress调用。此过程将应力更新过程从主求解流程中解耦，使得该类材料可以在同一时间步内被多次迭代调用，从而实现本构积分过程的收敛。
+基于上述本构积分方法，本文依托MOOSE材料计算框架实现非线性应力更新。MOOSE将全局平衡方程求解与材料积分点处的局部本构更新相分离：具体的非弹性应力更新模型继承自\texttt{StressUpdateBase}，不直接参与全局残差计算，而由上层材料\texttt{Compute\allowbreak Multiple\allowbreak Inelastic\allowbreak Stress}统一调用。该组织方式使同一时间步内的局部本构模型能够根据收敛需要被重复迭代，从而实现应力与内部状态变量的稳定更新。
 
-整个计算径向返回算法的类，如图\ref{fig:type_relationship}所示，所有的计算都是在材料Material下进行的，但是在StressUpdateBase中明确指明以StressUpdateBase为父类的子类函数都不直接被Material中的残差计算函数直接调用（compute=false），而是被上层材料ComputeMultipleInelasticStress调用，而以StressUpdateBase为父类的各类仅负责积分点的应力更新与状态演化。主要的函数如表\ref{tab:stress_update_base}所示。
+在每一时间步和积分点上，\texttt{Compute\allowbreak Multiple\allowbreak Inelastic\allowbreak Stress}通过\texttt{computeQpStress()}启动应力更新流程，其父类\texttt{Compute\allowbreak Multiple\allowbreak Inelastic\allowbreak StressBase}负责组织一个或多个非弹性模型的迭代调用。计算首先根据当前总应变增量构造试应力，随后由\texttt{computeAdmissibleState()}调用具体的应力更新模型完成局部本构积分。对于径向返回算法，其核心实现位于\texttt{RadialReturnStressUpdate}类中；该类继承自\texttt{StressUpdateBase}，通过单变量返回映射求解有效非弹性应变增量，并据此更新容许应力、应变分量及内部状态变量。
 
-在具体的计算过程中，ComputeMultipleInelasticStress在每一时间步及每一个积分点上调用函数computeQpStress()启动应力更新流程。ComputeMultipleInelasticStress的父类是ComputeMultipleInelasticStressBase,在子类ComputeMultipleInelasticStress主要实现重载函数updateQpState()。ComputeMultipleInelasticStressBase主要的函数列在表\ref{tab:multi_inelastic_base}中。整个流程可以概括为：首先根据当前步的总应变增量构造试应力，并将总应变分别为弹性应变与非弹性应变之和。在此基础上，通过computeAdmissibleState()调用具体的应力更新模型，执行本构积分运算。对于径向返回算法，其核心实现位于RadialReturnStressUpdate类中，该类继承自StressUpdateBase,并结合单变量返回映射框架，对各同性弹塑性或者粘塑性问题进行求解。其基本思想是：在试应力超出屈服面的情况下，通过引入有效非弹性应变增量，沿偏应力方向对试应力进行径向修正，使其重新回到屈服面上，从而满足材料的屈服条件与本构约束。
+上述类之间形成由“全局材料驱动--局部状态更新--一致切线返回”构成的层次化计算结构。主要接口及其功能分别列于表\ref{tab:multi_inelastic_base}、表\ref{tab:stress_update_base}和表\ref{tab:radial_return}中，整体类关系如图\ref{fig:type_relationship}所示。
 
-\begin{table}[H]
-	\centering
-	\caption{ComputeMultipleInelasticStressBase 类的主要函数及功能}
+{
+
+\begin{xltabular}{\textwidth}{@{}
+	>{\centering\arraybackslash}m{4.0cm}
+	>{\centering\arraybackslash}m{2.6cm}
+	>{\centering\arraybackslash}X
+	@{}}
+
+	\caption{\texttt{Compute\allowbreak Multiple\allowbreak Inelastic\allowbreak Stress}的关键函数及功能}
 	\label{tab:multi_inelastic_base}
-	\begin{tabularx}{\textwidth}{
-			>{\centering\arraybackslash}X
-			>{\centering\arraybackslash}X
-			>{\centering\arraybackslash}X
-		}
-		\toprule
-		\multicolumn{1}{c}{函数名称} & \multicolumn{1}{c}{类型} & {\centering 功能说明\par} \\
-		\midrule
-		computeQpStress() & 主流程 & 在积分点处计算当前应力，是整体应力更新入口 \\
-		computeQpStressIntermediateConfiguration() & 中间配置 & 在中间构型下执行应力计算（有限应变） \\
-		updateQpState() & 多模型迭代 & 对多个非弹性模型进行迭代耦合更新 \\
-		updateQpStateSingleModel() & 单模型优化 & 针对单一模型的简化更新路径 \\
-		computeAdmissibleState() & 状态求解 & 调用具体本构模型（如径向返回）计算容许应力 \\
-		computeQpJacobianMult() & 切线合成 & 组合多个模型的一致切线算子 \\
-		finiteStrainRotation() & 张量处理 & 执行有限应变下的应力与应变旋转 \\
-		initQpStatefulProperties() & 初始化 & 初始化历史变量及状态量 \\
-		propagateQpStatefulProperties() & 状态传递 & 在时间步之间更新历史变量 \\
-		initialSetup() & 初始化 & 检查模型一致性并加载各非弹性模型 \\
-		\bottomrule
-	\end{tabularx}
-\end{table}
+	\\
 
-\begin{table}[H]
-	\centering
-	\caption{StressUpdateBase 类的主要接口及功能}
+	\toprule
+	函数名称 & 类型 & 功能说明 \\
+	\midrule
+	\endfirsthead
+
+	\multicolumn{3}{c}{
+		{表~\thetable（续）\quad
+				\texttt{Compute\allowbreak Multiple\allowbreak Inelastic\allowbreak Stress}的关键函数及功能}
+	}
+	\\
+	\toprule
+	函数名称 & 类型 & 功能说明 \\
+	\midrule
+	\endhead
+
+	\midrule
+	\multicolumn{3}{r}{续下页}
+	\\
+	\endfoot
+
+	\bottomrule
+	\endlastfoot
+
+	\texttt{computeQpStress()}
+	& 主流程
+	& 在当前积分点组织应力计算，是整体应力更新的入口
+	\\
+	\addlinespace
+
+	\texttt{updateQpState()}
+	& 多模型迭代
+	& 依次调用用户指定的非弹性模型，并迭代获得容许应力、非弹性应变及切线算子
+	\\
+	\addlinespace
+
+	\texttt{computeAdmissibleState()}
+	& 本构调用
+	& 将试应力和应变增量传递给具体\texttt{StressUpdateBase}模型，完成局部状态更新
+	\\
+	\addlinespace
+
+	\texttt{computeQpJacobianMult()}
+	& 切线组装
+	& 根据弹性张量及各非弹性模型返回的一致切线构造全局Jacobian所需切线算子
+	\\
+
+\end{xltabular}
+}
+
+{
+\begin{xltabular}{\textwidth}{@{}
+	>{\centering\arraybackslash}m{4.0cm}
+	>{\centering\arraybackslash}m{2.6cm}
+	>{\centering\arraybackslash}X
+	@{}}
+
+	\caption{\texttt{StressUpdateBase}的关键接口及功能}
 	\label{tab:stress_update_base}
-	\begin{tabularx}{\textwidth}{
-			>{\centering\arraybackslash}X
-			>{\centering\arraybackslash}X
-			>{\centering\arraybackslash}X
-		}
-		\toprule
-		\multicolumn{1}{c}{函数名称} & \multicolumn{1}{c}{类型} & {\centering 功能说明\par} \\
-		\midrule
-		updateState() & 核心接口 & 根据应变增量计算容许应力、弹性应变增量及非弹性应变增量，是本构积分的主入口 \\
-		updateStateSubstep() & 核心接口 & 子步形式的状态更新，用于大变形或强非线性问题的分步积分 \\
-		propagateQpStatefulProperties() & 状态管理 & 在时间步之间传递历史变量（Old $\rightarrow$ Current） \\
-		setQp() & 工具函数 & 设置当前积分点索引（quadrature point） \\
-		\bottomrule
-	\end{tabularx}
-\end{table}
+	\\
 
-从算法流程上看，RadialReturnStressUpdate 的应力更新主要包括三个阶段。首先为弹性预测阶段，即在假设材料响应完全弹性的前提下计算试应力；其次为塑性修正阶段，当试应力违反屈服条件时，通过 returnMappingSolve() 对有效非弹性应变增量进行迭代求解，实现应力状态向屈服面的径向返回；最后为状态更新阶段，在 computeStressFinalize() 中完成容许应力、弹性与非弹性应变增量及内部变量的更新，并计算一致切线算子，以保证非线性求解过程中 Newton 迭代的收敛性。表\ref{tab:radial_return}给出RadialReturnStressUpdate类中的主要函数和功能说明。
+	\toprule
+	函数名称 & 类型 & 功能说明 \\
+	\midrule
+	\endfirsthead
+
+	\multicolumn{3}{c}{
+		表~\thetable（续）\quad
+		\texttt{StressUpdateBase}的关键接口及功能
+	}
+	\\
+	\toprule
+	函数名称 & 类型 & 功能说明 \\
+	\midrule
+	\endhead
+
+	\midrule
+	\multicolumn{3}{r}{续下页}
+	\\
+	\endfoot
+
+	\bottomrule
+	\endlastfoot
+
+	\texttt{updateState()}
+	& 核心接口
+	& 根据应变增量和试应力调用具体本构模型，返回容许应力、弹性应变增量和非弹性应变增量
+	\\
+	\addlinespace
+
+	\texttt{updateStateSubstep()}
+	& 子步积分
+	& 在单个子步内执行状态更新，用于提高大应变增量或强非线性条件下的积分稳定性
+	\\
+	\addlinespace
+
+	\texttt{propagate\allowbreak Qp\allowbreak Stateful\allowbreak Properties()}
+	& 状态管理
+	& 在未执行本构更新或时间推进过程中传递积分点历史状态变量
+	\\
+
+\end{xltabular}
+}
+从算法流程上看，MOOSE框架下的径向返回算法的应力更新主要包括三个阶段。首先为弹性预测阶段，即在假设材料响应完全弹性的前提下计算试应力；其次为塑性修正阶段，当试应力违反屈服条件时，通过 returnMappingSolve() 对有效非弹性应变增量进行迭代求解，实现应力状态向屈服面的径向返回；最后为状态更新阶段，在 compute\allowbreak Stress\allowbreak Finalize() 中完成容许应力、弹性与非弹性应变增量及内部变量的更新，并计算一致切线算子，以保证非线性求解过程中 Newton 迭代的收敛性。表\ref{tab:radial_return}给出RadialReturnStressUpdate类中的主要函数和功能说明。
 
 \begin{table}[H]
 	\centering
-	\caption{RadialReturnStressUpdate 类的主要函数及功能}
+	\caption{\texttt{RadialReturnStressUpdate}的关键函数及功能}
 	\label{tab:radial_return}
 	\begin{tabularx}{\textwidth}{
-			>{\centering\arraybackslash}X
-			>{\centering\arraybackslash}X
-			>{\centering\arraybackslash}X
+		>{\centering\arraybackslash}m{3.5cm}
+		>{\centering\arraybackslash}m{2.0cm}
+		>{\centering\arraybackslash}X
 		}
 		\toprule
-		\multicolumn{1}{c}{函数名称} & \multicolumn{1}{c}{类型} & {\centering 功能说明\par} \\
+		函数名称 & 类型                              & 功能说明 \\
 		\midrule
-		updateState() & 核心算法 & 实现径向返回算法，包括弹性预测与塑性修正 \\
-		updateStateSubstep() & 子步控制 & 在子步框架下执行应力更新，提高收敛性 \\
-		updateStateSubstepInternal() & 核心算法 & 调用updateState()执行具体子部计算 \\
-		computeStressInitialize() & 初始化 & 初始化试应力及内部变量状态 \\
-		returnMappingSolve() & 核心求解 & 迭代求解有效非弹性应变增量$\Delta p$ \\
-		computeStressFinalize() & 状态更新 & 更新容许应力、应变分量及内部变量 \\
-		computeTangentOperator() & 切线计算 & 构造一致切线算子（Jacobian） \\
-		computeReferenceResidual() & 收敛控制 & 计算参考残差用于判断返回映射收敛性 \\
-		calculateNumberSubsteps() & 子步策略 & 根据应变增量自适应确定子步数量 \\
-		effectiveInelasticStrainIncrement() & 内部变量 & 返回有效非弹性应变增量 $\Delta p$ \\
-		updateEffectiveInelasticStrainIncrement() & 内部变量 & 更新非弹性应变增量 \\
-		updateEffectiveInelasticStrain() & 内部变量 & 更新累计非弹性应变 \\
+		\texttt{updateState()}
+		     & 核心算法
+		     & 组织试应力计算、屈服判断、返回映射及非弹性状态更新              \\
+
+		\texttt{compute\allowbreak Stress\allowbreak Initialize()}
+		     & 初始化
+		     & 在返回映射迭代开始前建立试应力、有效试应力及相关内部状态           \\
+
+		\texttt{returnMappingSolve()}
+		     & 局部求解
+		     & 通过单变量非线性迭代求解有效非弹性应变增量                  \\
+
+		\texttt{compute\allowbreak Stress\allowbreak Finalize()}
+		     & 状态更新
+		     & 在局部迭代收敛后完成应力及内部状态变量的最终更新               \\
+
+		\texttt{compute\allowbreak Tangent\allowbreak Operator()}
+		     & 切线计算
+		     & 根据收敛后的材料状态构造一致切线算子，用于全局Newton迭代        \\
+
+		\texttt{calculate\allowbreak Number\allowbreak Substeps()}
+		     & 子步控制
+		     & 根据应变增量和给定准则确定局部积分所需的子步数量               \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
 
-此外，为提高算法在强非线性条件下的稳定性，RadialReturnStressUpdate 还引入了子步分解（substepping）策略。当单步应变增量过大时，可将其划分为若干子步，并在每个子步内重复执行应力更新过程，从而有效控制积分误差并增强收敛性能。与此同时，ComputeMultipleInelasticStress 支持多个非弹性模型的耦合计算，通过 Picard 迭代在不同本构模型之间循环更新应力与应变分量，直至满足收敛判据。这种模块化与层次化的设计，使得不同类型的非弹性行为（如塑性、蠕变及其耦合）能够在统一框架下灵活组合，并显著提升了复杂材料本构模拟的扩展性与鲁棒性。
+此外，为提高算法在强非线性条件下的稳定性，RadialReturnStressUpdate 还引入了子步分解（substepping）策略。当单步应变增量过大时，可将其划分为若干子步，并在每个子步内重复执行应力更新过程，从而有效控制积分误差并增强收敛性能。与此同时，Compute\allowbreak Multiple\allowbreak Inelastic\allowbreak Stress 支持多个非弹性模型的耦合计算，通过 Picard 迭代在不同本构模型之间循环更新应力与应变分量，直至满足收敛判据。这种模块化与层次化的设计，使得不同类型的非弹性行为（如塑性、蠕变及其耦合）能够在统一框架下灵活组合，并显著提升了复杂材料本构模拟的扩展性与鲁棒性。
 
 \begin{figure}[!htb]
 	\centering
@@ -484,10 +378,10 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\label{fig:type_relationship}
 \end{figure}
 
-\xsection{裂变气体模型与间隙热导率模型}{Fission Gas and Gap Thermal Conductance Models}
-在辐照作用下，燃料芯块中发生裂变反应，产生固体裂变产物和气体裂变产物。在正常运行条件下，燃料内部通常存在气泡与气孔两类气体空腔结构。在微观尺度上，气泡经历重溶、聚合与长大等过程，并可能被气孔吞并；随着气孔向晶界迁移，其在晶界处不断长大、聚合及变形，并逐渐形成连通的气孔链结构。当气孔链与裂隙或自由表面连通时，即构成裂变气体释放通道。在宏观尺度上，该过程表现为气泡演化、重结晶、辐照致密化以及裂变气体释放等现象。
+\xsection{裂变气体模型与间隙传热模型}{Fission Gas and Gap Heat Transfer Models}
+第二章已给出裂变气体、棒内气体状态与燃料--包壳间隙传热之间的总体耦合关系。本节在此基础上重点说明裂变气体模型及间隙传热模型的数值实现与程序接口，不再重复一般性的物理过程描述。
 
-本文考虑到裂变气体对燃料性能分析程序的重要性，同时燃料性能分析程序的复杂性。采用两种方法，第一种采用Forsberg--Massih模型；第二种耦合开源的裂变气体释放程序Sciantix。
+针对裂变气体行为，本文采用两种不同建模层次的方法：一是Forsberg--Massih简化机理模型，用于描述晶内扩散、晶界累积及释放等主要过程；二是耦合开源裂变气体行为程序SCIANTIX，以获得晶内气泡、晶界气体及高燃耗结构等更细致的状态信息。两类模型均通过统一接口向棒内气体组成、气腔压力及间隙传热模块传递裂变气体释放信息，从而实现裂变气体行为与燃料棒热--力响应的耦合。
 
 \xsubsection{Forsberg--Massih裂变气体模型}{Forsberg--Massih Fission Gas Model}
 
@@ -501,19 +395,20 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	= D(t)\left(\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2 \frac{\partial C(r,t)}{\partial r}\right)\right)
 	+ P(t)
 \end{equation}
-\noindent 式中：$C(r,t)$ 为半径位置 $r$ 处的裂变气体原子浓度，$D(t)$ 为温度相关的扩散系数，$P(t)$ 为单位体积内气体的生成速率。
+\noindent 式中：$C(r,t)$ 为半径位置 $r$ 处的裂变气体原子浓度（$\mathrm{m^{-3}}$），$D(t)$ 为温度相关的扩散系数（$\mathrm{m^2\,s^{-1}}$），$P(t)$ 为单位体积内气体的生成速率（$\mathrm{m^{-3}\,s^{-1}}$）。
 与传统 Booth 模型中晶界被视为“完美吸收边界”的假设不同，Forsberg--Massih 模型考虑了晶界气体的有限吸收能力及再溶解效应。基于 Turnbull 提出的理论，其边界条件可表示为：
 \begin{equation}
 	C(a,t) = \frac{b(t)\,\delta\,N(t)}{2D(t)}
 \end{equation}
-\noindent 式中：$N(t)$ 表示单位晶界面积上的气体原子数密度，$b(t)$ 为再溶解概率，$\delta$ 为再溶解作用的特征深度。
+\noindent 式中：$N(t)$ 表示单位晶界面积上的气体原子数密度（$\mathrm{m^{-2}}$），$b(t)$ 为再溶解速率常数（$\mathrm{s^{-1}}$），$\delta$ 为再溶解作用的特征深度（$\mathrm{m}$）。
 
-为了耦合裂变气体模型和燃料性能分析程序，通常不是采用直接求解裂变气体扩散方程，而是采用解析解或者谱方法等数学变换，获得正交节点处的裂变气体行为。因此接下来对裂变气体扩散方程进行基于核函数展开的降阶和卷积方程的状态变量化。
+为了耦合裂变气体模型和燃料性能分析程序，通常不是采用直接求解裂变气体扩散方程，而是采用解析解或者谱方法等数学变换，获得正交节点处的裂变气体行为。因此，接下来对裂变气体扩散方程进行基于核函数展开的降阶和卷积方程的状态变量化。
 
 考虑扩散系数随温度变化的影响，引入时间变换变量：
 \begin{equation}
 	\tau = \int_0^t D(t') \, \mathrm{d}t'
 \end{equation}
+
 通过该变换，可将原扩散问题转化为等效常系数形式，从而获得解析表达。进一步推导可得晶界气体积累满足如下卷积形式：
 \begin{equation}
 	G_B(\tau) = \int_0^\tau K_2(\tau - \tau')\, q(\tau')\, \mathrm{d}\tau'
@@ -529,6 +424,7 @@ von Mises 屈服面在该坐标下表现为椭圆。
 \begin{equation}
 	f_n = \exp\left(-B_n \frac{\Delta\tau}{a^2}\right) - 1
 \end{equation}
+
 由此可建立晶粒内气体与晶界气体的递推更新关系，实现裂变气体扩散与积累过程的耦合求解。
 
 在上述离散形式基础上，可进一步得到晶界气体累积过程的代数表达。根据 Forsberg--Massih 模型的解析解形式，对卷积积分进行离散化处理，可以得到解析解，其表达式为：
@@ -544,11 +440,11 @@ von Mises 屈服面在该坐标下表现为椭圆。
 \end{equation}
 \noindent 式中：各中间变量定义为：
 \begin{align}
-	t_1 &= \sum_{n=1}^{3} \frac{A_n}{B_n} f_n \\
-	t_2 &= \frac{4}{\sqrt{\pi}}\left(\frac{\Delta\tau}{a^2}\right)^{3/2}
-	- \frac{3}{2}\left(\frac{\Delta\tau}{a^2}\right)^2 \\
-	t_3 &= h_4 G_B(\tau_1)\left(\frac{\beta(\tau_2)}{D(\tau_2)} - \frac{\beta(\tau_1)}{D(\tau_1)}\right) \\
-	t_4 &= \sum_{n=1}^{3} f_n G_n(\tau_1)
+	t_1 & = \sum_{n=1}^{3} \frac{A_n}{B_n} f_n                                                            \\
+	t_2 & = \frac{4}{\sqrt{\pi}}\left(\frac{\Delta\tau}{a^2}\right)^{3/2}
+	- \frac{3}{2}\left(\frac{\Delta\tau}{a^2}\right)^2                                                    \\
+	t_3 & = h_4 G_B(\tau_1)\left(\frac{\beta(\tau_2)}{D(\tau_2)} - \frac{\beta(\tau_1)}{D(\tau_1)}\right) \\
+	t_4 & = \sum_{n=1}^{3} f_n G_n(\tau_1)
 \end{align}
 
 由上述离散表达式求得变量 $q$ 后，可进一步得到晶粒内部气体浓度$G_0$和晶界上的气体浓度$G_B$。更新形式为：
@@ -560,6 +456,7 @@ von Mises 屈服面在该坐标下表现为椭圆。
 \begin{equation}
 	G_s = \frac{3}{2a} N_s
 \end{equation}
+
 当 $G_B > G_s$ 时，多余气体按一定比例释放，其释放量表示为：
 \begin{equation}
 	F_R = f \left(G_B - G_s\right)
@@ -569,61 +466,39 @@ von Mises 屈服面在该坐标下表现为椭圆。
 \begin{equation}
 	D =
 	\begin{cases}
-		1.51\times10^{-17}\exp\left(-\dfrac{9508}{T}\right), & T < 1381~\mathrm{K} \\
-		2.14\times10^{-13}\exp\left(-\dfrac{22884}{T}\right)\cdot f(\mathrm{Bu}), & 1381~\mathrm{K} \le T < 1650~\mathrm{K} \\
-		1.09\times10^{-17}\exp\left(-\dfrac{6614}{T}\right), & T \ge 1650~\mathrm{K}
+		1.51\times10^{-17}\exp\left(-\dfrac{9508}{T}\right)                      & T < 1381~\mathrm{K}                     \\
+		2.14\times10^{-13}\exp\left(-\dfrac{22884}{T}\right)\cdot f(\mathrm{Bu}) & 1381~\mathrm{K} \le T < 1650~\mathrm{K} \\
+		1.09\times10^{-17}\exp\left(-\dfrac{6614}{T}\right)                      & T \ge 1650~\mathrm{K}
 	\end{cases}
 \end{equation}
-\noindent 式中：$D$为裂变气体扩散系数，单位为$\mathrm{m^2\,s^{-1}}$；$T$为温度，单位为$\mathrm{K}$；$f(\mathrm{Bu})$为无量纲燃耗修正项，用于描述高燃耗条件下扩散行为的增强效应。
+\noindent 式中：$D$为裂变气体扩散系数（$\mathrm{m^2\,s^{-1}}$）；$T$为温度（$\mathrm{K}$）；$f(\mathrm{Bu})$为无量纲燃耗修正项，用于描述高燃耗条件下扩散行为的增强效应。
 
 此外，在Trunbull等人\cite{denisSimulationIsothermalFission1996}的报告提出了经典的三项模型，包括高温热激活扩散、辐照增强扩散、裂变碎片直接导致的扩散。形式如下：
 \begin{align}
-	D_{\mathrm{Turnbull}} &= D_1 + D_2 + D_3\footnotemark \\
-	D_1 &= 7.6 \times 10^{-10} \exp\left(-\frac{35250}{T}\right) \\
-	D_2 &= 1.41 \times 10^{-25} \sqrt{\dot{F}} \exp\left(-\frac{13800}{T}\right) \cdot 4.0 \\
-	D_3 &= 2.0 \times 10^{-40} \dot{F}
+	D_{\mathrm{Turnbull}} & = D_1 + D_2 + D_3\footnotemark                                                    \\
+	D_1                   & = 7.6 \times 10^{-10} \exp\left(-\frac{35250}{T}\right)                           \\
+	D_2                   & = 1.41 \times 10^{-25} \sqrt{\dot{F}} \exp\left(-\frac{13800}{T}\right) \cdot 4.0 \\
+	D_3                   & = 2.0 \times 10^{-40} \dot{F}
 \end{align}
-\noindent 式中：$D_{\mathrm{Turnbull}}$、$D_1$、$D_2$和$D_3$均为扩散系数，单位为$\mathrm{m^2\,s^{-1}}$；$T$为温度，单位为$\mathrm{K}$；$\dot{F}$为体积裂变率，单位为$\mathrm{m^{-3}\,s^{-1}}$。
+\noindent 式中：$D_{\mathrm{Turnbull}}$、$D_1$、$D_2$和$D_3$均为扩散系数（$\mathrm{m^2\,s^{-1}}$）；$T$为温度，单位为$\mathrm{K}$；$\dot{F}$为体积裂变率（$\mathrm{m^{-3}\,s^{-1}}$）。
 \footnotetext{在Bison报告中是直接线性相加，即1：1：1。但在原始的文献中采用的是1：4：4，即$D_{\mathrm{Turnbull}} = D_1 + 4D_2 + 4D_3$}
 
 两个模型的扩散系数随温度变化的曲线如图\ref{fig:gas_diffusion}所示，两者都表现出扩散系数随温度上升而增加，但是Turnbull的模型还包含裂变碎片导致的扩散系数的增加。
-\begin{figure}[!htb]
-	\centering
-	\begin{subfigure}[t]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{gas_diffusion_forsberg.png}
-		\caption{ForMas模型提供的扩散系数随温度变化曲线}
-		\label{fig:gas_diffusion_forsberg}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{gas_diffusion_turnbull.png}
-		\caption{Turnbull修正之后的扩散系数曲线}
-		\label{fig:gas_diffusion_turnbull}
-	\end{subfigure}
-	\caption{ForMas原始模型与Turnbull修正模型的裂变气体扩散系数对比}
-	\label{fig:gas_diffusion}
-\end{figure}
 
 为了实现上述的计算过程，本文基于时间步进策略构建如下的计算流程，通过MOOSE框架中的Material对象创建一个ForMas的材料类型，计算当前时刻晶界的裂变气体密度和释放量，各个状态变量采用时间步递推方式进行更新。
 
-\begin{algorithm}[H]
+\begin{algorithm}[!htbp]
+	\small
 	\SetAlgoLined
+	
+	\caption{Forsberg--Massih裂变气体模型数值实现流程}
+	\label{alg:forsberg_massih}
 	
 	\KwData{$\Delta t$, $T^n$, $P^n$,
 		$G_i^{n-1}$, $G_B^{n-1}$, $\tau^{n-1}$}
 	\KwResult{$G_i^n$, $G_B^n$, $\tau^n$, $F_R$}
 	
-	初始化 $G_i$, $G_B$ 和 $\tau$\;
-	\caption{Forsberg--Massih裂变气体模型数值实现流程}
-	\label{alg:forsberg_massih}
-\end{algorithm}
-
-\begin{algorithm}[H]
-	\SetAlgoLined
-	
-	\textbf{算法~\ref{alg:forsberg_massih}（续）}
+	初始化 $G_i$、$G_B$ 和 $\tau$\;
 	
 	\For{每个时间步 $n$}{
 		
@@ -645,9 +520,6 @@ von Mises 屈服面在该坐标下表现为椭圆。
 		
 		根据上一时间步晶界气体状态计算历史项
 		$t_3$ 和 $t_4$\;
-	}
-	
-	\For{每个时间步 $n$（续）}{
 		
 		求解辅助变量 $a_{2q}$\;
 		
@@ -668,32 +540,33 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	
 \end{algorithm}
 
+\begin{figure}[!htb]
+	\centering
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{gas_diffusion_forsberg.png}
+		\caption{ForMas模型提供的扩散系数随温度变化曲线}
+		\label{fig:gas_diffusion_forsberg}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{gas_diffusion_turnbull.png}
+		\caption{Turnbull修正之后的扩散系数曲线}
+		\label{fig:gas_diffusion_turnbull}
+	\end{subfigure}
+	\caption{ForMas原始模型与Turnbull修正模型的裂变气体扩散系数对比}
+	\label{fig:gas_diffusion}
+\end{figure}
+
 \xsubsection{细观机理裂变气体模型 SCIANTIX 及其接口实现}{Mechanistic Fission Gas Model SCIANTIX and Its Interface Implementation}
-第二章已对 Sciantix 所采用的主要物理模型进行了介绍，因此本节不再重复展开其机理推导，而重点说明其与 Miracle 程序的接口集成方式。由于两者均基于 C++ 开发，并采用 Make 进行编译管理，本文采用静态库链接的方式将 Sciantix 嵌入 Miracle 框架。考虑到 MOOSE 框架中已存在名为 \texttt{Material} 的核心类，为避免命名冲突，首先对 Sciantix 源码中相关类名进行重命名处理，将其统一修改为 \texttt{SciantixMaterial}。随后，利用 Make 将 Sciantix 编译生成静态库文件，并将其头文件及库文件集成至 Miracle 工程目录中，同时在 Makefile 中补充相应的头文件搜索路径与库链接选项。
+第二章已从燃料棒多物理场总体框架的角度，将SCIANTIX作为裂变气体行为的细观闭合模型，并给出了其与棒内气体状态及间隙传热之间的主要变量传递关系。本节在此基础上重点介绍SCIANTIX与Miracle程序的接口集成及状态变量映射方法，其内部裂变气体行为模型及理论基础可参见相关文献\cite{pizzocriSCIANTIXNewOpen2020}。
 
-\begin{lstlisting}[style=sty_basic, language=make, caption={Sciantix库在Makefile中的集成配置}]
-	# 1. 定义 Sciantix 头文件的根目录变量，方便复用
-	SCIANTIX_INC_DIR := $(CURDIR)/contrib/sciantix/include
-	
-	# 2. 将根目录以及所有含有 .h 的子目录全部加入搜索路径
-	# 注意：行尾的反斜杠 \ 表示换行续写
-	ADDITIONAL_INCLUDES += -I$(SCIANTIX_INC_DIR) \
-	-I$(SCIANTIX_INC_DIR)/classes \
-	-I$(SCIANTIX_INC_DIR)/coupling \
-	-I$(SCIANTIX_INC_DIR)/file_manager \
-	-I$(SCIANTIX_INC_DIR)/models \
-	-I$(SCIANTIX_INC_DIR)/namespaces \
-	-I$(SCIANTIX_INC_DIR)/operations
-	
-	# 3. 库文件链接设置
-	SCIANTIX_LIB := $(CURDIR)/contrib/sciantix/lib/libsciantix.a
-	ADDITIONAL_LIBS += $(SCIANTIX_LIB)
-	LIBS            += $(SCIANTIX_LIB)
-	DEPEND_LIBS     += $(SCIANTIX_LIB)
-\end{lstlisting}
-完成库链接后，程序即可调用 Sciantix 提供的相关物理模型。为实现与 MOOSE 框架的稳定耦合，本文基于 Material 基类开发了封装类 \texttt{SciantixWrapper}，用于在积分点尺度上调用 Sciantix 求解器，并完成状态变量的输入输出映射。
+SCIANTIX采用C++开发，并具备作为独立程序运行或以模块形式与燃料性能程序耦合的能力。本文将SCIANTIX编译为静态库，并在Miracle的Make构建系统中配置相应的头文件搜索路径与库链接关系，从而实现SCIANTIX计算模块与Miracle主程序的静态链接。考虑到MOOSE框架中已定义核心基类\texttt{Material}，为避免与SCIANTIX源码中的同名类型发生命名冲突，本文将SCIANTIX中对应类重命名为\texttt{SciantixMaterial}，并对相关引用同步调整。
 
-该封装类的核心功能如图\ref{fig:coupled_sciantix}所示，主要包括：首先，从 MOOSE 框架中读取温度、裂变率及应力等场变量，并完成单位转换；其次，将这些驱动变量按照 Sciantix 接口要求填充至历史变量数组中，同时设置模型选项及缩放参数；随后，在每个时间步内调用 Sciantix 求解器完成裂变气体行为的演化计算；最后，将计算得到的状态变量重新映射为 MOOSE 中的材料属性，如裂变气体释放率和气体肿胀等。详细的函数和输入参数见附录A。
+完成静态库集成后，本文基于MOOSE的\texttt{Material}基类开发封装类\texttt{SciantixWrapper}，作为Miracle与SCIANTIX之间的数据交换接口。该封装类在材料积分点尺度上读取温度、裂变率、应力等局部场变量，并将其转换为SCIANTIX所需的历史变量和模型输入；完成当前时间步的SCIANTIX计算后，再将裂变气体释放率、气体肿胀及其他内部状态量映射为MOOSE材料属性，实现裂变气体细观模型与燃料棒宏观多物理场计算之间的双向数据传递。
+
+该封装类的核心功能如图\ref{fig:coupled_sciantix}所示，主要包括：首先，从 MOOSE 框架中读取温度、裂变率及应力等场变量，并完成单位转换；其次，将这些驱动变量按照SCIANTIX接口要求填充至历史变量数组中，同时设置模型选项及缩放参数；随后，在每个时间步内调用SCIANTIX求解器完成裂变气体行为的演化计算；最后，将计算得到的状态变量重新映射为 MOOSE 中的材料属性，如裂变气体释放率和气体肿胀等。详细的接口函数、状态变量及输入参数见~\ref{app:sciantix_interface}。
 
 本文定义总的肿胀包含以下四部分，分别是晶内气泡肿胀、晶界气泡肿胀、晶内气体固溶肿胀和高燃耗肿胀。
 \begin{equation}
@@ -714,13 +587,13 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\label{fig:coupled_sciantix}
 \end{figure}
 
-通过上述方式，实现了 Sciantix 与 MOOSE 框架之间的数据双向传递与状态变量的持续演化，从而保证了裂变气体行为模型在多物理场耦合计算中的一致性与稳定性。
+通过上述方式，实现了SCIANTIX与MOOSE 框架之间的数据双向传递与状态变量的持续演化，从而保证了裂变气体行为模型在多物理场耦合计算中的一致性与稳定性。
 
-\xsubsection{间隙导热模型实现}{Gap Heat Transfer Model Implementation}
+\xsubsection{间隙传热模型实现}{Gap Heat Transfer Model Implementation}
 
-第二章已经给出了间隙导热模型的物理基础与主要关联式，因此本节重点说明其在程序中的实现方式及与裂变气体释放行为的耦合关系。由于间隙导热直接影响燃料棒温度分布，并通过热膨胀与接触状态变化进一步反馈力学响应；同时，裂变气体在反应堆运行过程中持续释放进入气隙，导致间隙气体组分和热导率动态变化，因此在数值实现中需要同时考虑几何接触关系、气体导热、裂变气体释放以及辐射换热等多种耦合机制。
+第二章已给出燃料--包壳间隙传热的总体关系及其与燃料棒热--力--气体行为之间的耦合框架，因此本节不再重复相关基本关系，而重点介绍间隙传热模型的具体实现及其与裂变气体释放行为的数据耦合方式。间隙传热状态直接影响燃料与包壳之间的热量传递，并通过温度变化进一步影响热膨胀、间隙宽度及接触状态；与此同时，燃料中释放的Xe和Kr进入棒内自由体积后，会改变间隙气体组成、气腔压力及混合气体热物性，从而反馈影响气体传导传热。因此，在程序实现中需要统一处理几何间隙与接触状态、混合气体传导、固--固接触传导、热辐射以及裂变气体释放引起的气体状态变化。
 
-基于MOOSE框架的模块化特性，本文采用Action-Object分离的设计思想，如图\ref{fig:thermal_contact}所示，实现了间隙导热模型的自动构建与物理过程解耦。其中，整体实现由三个核心组件构成：\texttt{LWRThermalContactAction}、\texttt{GasGapConductance}以及\texttt{GasMixture}。
+基于MOOSE框架的模块化特性，本文采用Action-Object分离的设计思想，如图\ref{fig:thermal_contact}所示，实现了间隙传热模型的自动构建与物理过程解耦。其中，整体实现由三个核心组件构成：\texttt{LWRThermalContactAction}、\texttt{GasGapConductance}以及\texttt{GasMixture}。
 
 首先，\texttt{LWRThermalContactAction}作为入口模块，负责统一创建与间隙传热相关的所有对象。该Action在不同的执行阶段（如\texttt{add\_aux\_variable}、\texttt{add\_aux\_kernel}、\texttt{add\_material}和\texttt{add\_bc}）动态构建计算所需的变量与算子。具体而言，其核心功能包括：
 
@@ -730,13 +603,19 @@ von Mises 屈服面在该坐标下表现为椭圆。
 
 （3）自动生成边界条件。根据用户指定的导热模型类型（如默认\texttt{GapPerfectConductance}或者其他已知的气体导热模型），在接触边界上构建相应的热通量边界条件，实现温度场的耦合求解。
 
-在此基础上，\texttt{GasGapConductance}作为Material对象，负责计算间隙有效导热系数。该模型在每个积分点上调用\texttt{computeQpConductance()}，将间隙传热分解为三部分：
+在此基础上，\texttt{GasGapConductance}作为Material对象，负责在各积分点计算总间隙传热系数。该模型通过\texttt{computeQpConductance()}将间隙传热分解为气体传导、热辐射和固--固接触传导三部分：
 \begin{equation}
-	h_{\text{gap}} = h_{\text{cond}} + h_{\text{rad}} + h_{\text{contact}}
+	h_{\text{gap}}
+	=
+	h_{\text{cond}}
+	+
+	h_{\text{rad}}
+	+
+	h_{\text{contact}}
 \end{equation}
-\noindent 式中：气体导热项$h_{\text{cond}}$考虑了气体热导率、间隙尺寸、气隙压力以及温度跳跃距离；辐射换热项$h_{\text{rad}}$基于扩散近似形式计算；接触导热项$h_{\text{contact}}$则与接触压力和表面粗糙度相关。
+\noindent 式中：$h_{\text{cond}}$为气体传导传热系数（$\mathrm{W\,m^{-2}\,K^{-1}}$），主要受混合气体热导率、间隙尺寸、气体压力及温度跳跃距离影响；$h_{\text{rad}}$为辐射传热系数（$\mathrm{W\,m^{-2}\,K^{-1}}$）；$h_{\text{contact}}$为固--固接触传导传热系数（$\mathrm{W\,m^{-2}\,K^{-1}}$），与接触压力、表面粗糙度及两侧材料热物性有关。上述物理关系及参数模型已在第2章给出总体形式，其中等效间隙长度与几何修正见\ref{app:gap_geometry_models}，Lanning--Hann和Toptan温度跳跃模型见\ref{app:gap_temperature_jump_models}，混合气体热导率模型见\ref{app:gap_default_gas_conductivity}，固--固接触传导补充关系见\ref{app:gap_contact_supplementary_models}。
 
-在气体导热建模中，引入了多种可选模型，包括基于Lanning模型和Toptan模型的温度跳跃距离计算方法。特别地，在高温低压条件下，气体分子自由程效应通过跳跃距离显式体现，从而修正传统连续介质假设下的导热行为。此外，该Material通过耦合变量\texttt{neighbor\_conductivity}与\texttt{secondary\_conductivity}，实现两侧固体导热性能对间隙传热的共同影响。
+在气体传导建模中，程序提供多种温度跳跃模型，用于考虑稀薄气体条件下分子自由程对界面传热的影响。对于高温或较宽压力范围内的气体热导率计算，还可采用\ref{app:gap_advanced_gas_conductivity}所述温度--压力相关模型。此外，该Material通过耦合变量\texttt{neighbor\_conductivity}与\texttt{secondary\_conductivity}获取间隙两侧固体材料的热导率，从而将燃料与包壳热物性共同引入间隙传热计算。
 
 为了描述气体成分随时间的演化过程，引入了\texttt{GasMixture}向量后处理器。该模块以后处理器形式运行，不参与残差计算，而是用于提供时间依赖的气体组成信息。其主要功能包括：
 
@@ -750,71 +629,71 @@ von Mises 屈服面在该坐标下表现为椭圆。
 
 在\texttt{GasGapConductance}中，通过读取\texttt{GasMixture}提供的气体摩尔数向量，计算各组分摩尔分数，并进一步用于混合气体热导率、热适应系数以及跳跃距离的计算。这种“后处理器 + 材料模型”的耦合方式避免了在主方程中显式引入额外自由度，从而提高了计算效率。
 
-整体而言，该实现通过Action自动构建计算结构，Material负责物理模型计算，VectorPostprocessor提供间隙内气体成分信息，实现了间隙导热、气体行为与接触几何之间的紧密耦合。
+整体而言，该实现通过Action自动构建计算结构，Material负责物理模型计算，VectorPostprocessor提供间隙内气体成分信息，实现了间隙传热、气体行为与接触几何之间的紧密耦合。
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=15.5cm,height=11.00cm,keepaspectratio]{thermal_contact.pdf}
-	\caption{LWRThermalContact间隙导热模型的计算流程}
+	\caption{LWRThermalContact间隙传热模型的计算流程}
 	\label{fig:thermal_contact}
 \end{figure}
 
-\xsubsection{裂变气体释放与间隙导热的耦合关系}{Coupling between Fission Gas Release and Gap Heat Transfer}
-如前所述，本文的间隙模型显式考虑了不同气体组分的传热特性，其中包括裂变过程中产生的氙和氪。因此，在整个反应堆运行过程中，间隙内气体组成并非常量，而是随裂变气体释放行为持续演化。
+\xsubsection{裂变气体释放与间隙传热的耦合关系}{Coupling between Fission Gas Release and Gap Heat Transfer}
+如前所述，本文间隙传热模型显式考虑不同气体组分对混合气体热物性的影响，其中包括初始填充气体以及由燃料释放的Xe和Kr等裂变气体。随着燃耗和燃料温度的演化，裂变气体持续由燃料内部释放至棒内自由体积，使气体组分随辐照历史动态变化。由于不同气体组分具有不同的热导率，Xe和Kr含量的变化将进一步改变混合气体的等效热导率，并由此影响燃料--包壳间隙的气体传导能力。因此，在整个燃料棒服役过程中，间隙气体热物性并非固定参数，而是与裂变气体释放行为和棒内气体状态动态耦合。
 
-将前述裂变气体模型与间隙导热模型进行耦合后的整体流程如图\ref{fig:coupled_sciantix_with_gap}所示。在当前时间步内，首先由裂变气体释放模型（ForMas 或 Sciantix）计算时刻 $t^{n}$ 的裂变气体释放量及其组分；随后通过 VectorPostprocessor 类 \texttt{GasMixture} 更新间隙内各气体组分的物质的量与摩尔分数；在此基础上，\texttt{GasGapConductance} 根据用户选定的导热模型分别计算跳跃距离、各组分热导率以及混合气体热导率；之后，GapHeatTransfer 利用更新后的间隙导热系数求解下一时刻 $t^{n+1}$ 的温度分布；最终，新的温度场再反馈至裂变气体模块，用于计算时刻 $t^{n+1}$ 的裂变气体演化行为。通过上述迭代过程，可实现裂变气体释放与间隙导热之间的双向耦合。
+将前述裂变气体模型与间隙传热模型进行耦合后的整体流程如图\ref{fig:coupled_sciantix_with_gap}所示。在当前时间步内，首先由裂变气体释放模型（ForMas或SCIANTIX）计算时刻 $t^{n}$ 的裂变气体释放量及其组分；随后通过 VectorPostprocessor 类 \texttt{GasMixture} 更新间隙内各气体组分的物质的量与摩尔分数；在此基础上，\texttt{GasGapConductance} 根据用户选定的导热模型分别计算跳跃距离、各组分热导率以及混合气体热导率；之后，GapHeatTransfer 利用更新后的间隙传热系数求解下一时刻 $t^{n+1}$ 的温度分布；最终，新的温度场再反馈至裂变气体模块，用于计算时刻 $t^{n+1}$ 的裂变气体演化行为。通过上述迭代过程，可实现裂变气体释放与间隙传热之间的双向耦合。
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]{coupled_sciantix_with_gap.pdf}
-	\caption{裂变气体释放、气体组分与间隙热导率的耦合关系}
+	\caption{裂变气体释放、气体组分与间隙传热系数的耦合关系}
 	\label{fig:coupled_sciantix_with_gap}
 \end{figure}
 
 \xsection{程序验证与确认}{Verification and Validation of the Implementation}
-为验证本章所实现的非线性力学本构积分、裂变气体行为模型以及间隙导热耦合模块的正确性，本文按照“局部本构验证—子模型验证—耦合接口验证”的思路设计了一系列算例。对于力学非线性问题，首先采用单元级算例考察径向返回算法在蠕变和硬化模型中的应力更新能力，并将 UO$_2$、MOX 及典型包壳材料的数值结果与理论解或解析关系进行对比。对于裂变气体行为，分别对简化机理模型 ForMas 和 SCIANTIX 耦合接口进行验证：前者通过晶界气体累积与释放算例检验模型对释放阈值、扩散系数和释放比例的响应，后者采用 SCIANTIX 回归测试中的代表性算例，比较 Miracle 耦合计算与基准结果在晶内气泡、晶界释放、高燃耗结构和化学计量偏差等变量上的一致性。对于间隙导热模型，则构建二维接触传热算例，比较不同气体热导率模型和压力反馈条件下间隙换热系数的变化规律，以验证气体温度、压力和间隙宽度等变量的耦合传递是否合理。
+为验证本章所实现的非线性力学本构积分、裂变气体行为模型以及间隙传热耦合模块的正确性，本文按照“局部本构验证—子模型验证—耦合接口验证”的思路设计了一系列算例。对于力学非线性问题，首先采用单元级算例考察径向返回算法在蠕变和硬化模型中的应力更新能力，并将 UO$_2$、MOX 及典型包壳材料的数值结果与理论参考解或相应基准关系进行对比。对于裂变气体行为，分别对简化机理模型 ForMas 和 SCIANTIX 耦合接口进行验证：前者通过晶界气体累积与释放算例检验模型对释放阈值、扩散系数和释放比例的响应，后者采用 SCIANTIX 回归测试中的代表性算例，比较 Miracle 耦合计算与基准结果在晶内气泡、晶界释放、高燃耗结构和化学计量偏差等变量上的一致性。对于间隙传热模型，则构建二维接触传热算例，比较不同气体热导率模型和压力反馈条件下间隙换热系数的变化规律，以验证气体温度、压力和间隙宽度等变量的耦合传递是否合理。
 
 \xsubsection{径向返回验证}{Verification of the Radial Return Algorithm}
 \subsubsection{蠕变}
-根据总蠕变$\epsilon_{creep}$由各种蠕变组成：
+根据总蠕变$\epsilon_{\mathrm{creep}}$由各种蠕变组成：
 \begin{equation}
-	\epsilon_{creep} = \epsilon_{thermal\, creep} + \epsilon_{irradiation\, creep}
+	\epsilon_{\mathrm{creep}} = \epsilon_{thermal\, creep} + \epsilon_{irradiation\, creep}
 \end{equation}
 
-依据节介绍的径向返回算法，本文构建了不同的蠕变模型，包括热蠕变和辐照蠕变。具体的模型见表\ref{tab:creep_classes}，不同材料采用独立的蠕变应力更新类进行描述，各类均继承自 MOOSE 的应力更新框架，并在径向返回算法中实现蠕变应变的演化计算。相关关系如图\ref{fig:creep_flow_chat}所示。
+依据第4.2.2节介绍的径向返回算法，本文构建了不同的蠕变模型，包括热蠕变和辐照蠕变。具体的模型见表\ref{tab:creep_classes}，不同材料采用独立的蠕变应力更新类进行描述，各类均继承自 MOOSE 的应力更新框架，并在径向返回算法中实现蠕变应变的演化计算。相关关系如图\ref{fig:creep_flow_chat}所示。
 \begin{table}[H]
 	\centering
 	\caption{与蠕变行为相关的主要类及其功能}
 	\label{tab:creep_classes}
 	\begin{tabularx}{\textwidth}{@{}
-			>{\centering\arraybackslash}m{2.2cm}
-			>{\centering\arraybackslash}m{3.4cm}
-			>{\centering\arraybackslash}X
-			@{}}
+		>{\centering\arraybackslash}m{2.2cm}
+		>{\centering\arraybackslash}m{3.4cm}
+		>{\centering\arraybackslash}X
+		@{}}
 		\toprule
-		\multicolumn{1}{c}{材料类型} & \multicolumn{1}{c}{类名} & {\centering 功能描述\par} \\
+		\multicolumn{1}{c}{材料类型} & \multicolumn{1}{c}{类名}                                     & {\centering 功能描述\par} \\
 		\midrule
-		
+
 		D9
-		& D9CreepStressUpdate
-		& 实现 D9 合金的蠕变应力更新算法，用于描述高温条件下材料的时间依赖塑性变形行为 \\
-		
+		                         & D9CreepStressUpdate
+		                         & 实现 D9 合金的蠕变应力更新算法，用于描述高温条件下材料的时间依赖塑性变形行为                                           \\
+
 		HT9
-		& HT9CreepStressUpdate
-		& 实现 HT9 钢的蠕变本构模型，考虑温度和应力对蠕变速率的影响 \\
-		
+		                         & HT9\allowbreak Creep\allowbreak Stress\allowbreak Update
+		                         & 实现 HT9 钢的蠕变本构模型，考虑温度和应力对蠕变速率的影响                                                    \\
+
 		SS316
-		& SS316CreepStressUpdate
-		& 实现 SS316 不锈钢的蠕变演化模型，用于模拟长期服役过程中的应变积累 \\
-		
+		                         & SS316\allowbreak Creep\allowbreak Stress\allowbreak Update
+		                         & 实现 SS316 不锈钢的蠕变演化模型，用于模拟长期服役过程中的应变积累                                               \\
+
 		MOX
-		& MOXCreepStress
-		& 实现MOX的蠕变演化模型，考虑温度、应力和裂变率对蠕变速率的影响 \\
-		
+		                         & MOXCreepStress
+		                         & 实现MOX的蠕变演化模型，考虑温度、应力和裂变率对蠕变速率的影响                                                   \\
+
 		$UO_2$
-		& UO2CreepStress
-		& 实现$UO_2$的蠕变演化模型，考虑温度、应力和裂变率对蠕变速率的影响 \\
-		
+		                         & UO2CreepStress
+		                         & 实现$UO_2$的蠕变演化模型，考虑温度、应力和裂变率对蠕变速率的影响                                                \\
+
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -826,7 +705,7 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\label{fig:creep_flow_chat}
 \end{figure}
 
-针对蠕变模型验证，如图\ref{fig:case} $10\,\mathrm{MPa}$ 的恒定压力载荷，并在三个坐标方向施加对称边界条件，以构建单轴应力状态。计算过程中温度保持恒定，为 $1000\,\mathrm{K}$。整个计算共划分为 10 个时间步，每个时间步长为 $1\times10^4\,\mathrm{s}$，总模拟时间为 $1\times10^5\,\mathrm{s}$。
+针对蠕变模型验证，采用图\ref{fig:case} 所示的$1\times1\times1$立方体单元，在表面加载$10\,\mathrm{MPa}$ 的恒定压力载荷，并在三个坐标方向施加对称边界条件，以构建单轴应力状态。计算过程中温度保持恒定，为 $1000\,\mathrm{K}$。整个计算共划分为 10 个时间步，每个时间步长为 $1\times10^4\,\mathrm{s}$，总模拟时间为 $1\times10^5\,\mathrm{s}$。
 
 \begin{figure}[!htb]
 	\centering
@@ -835,9 +714,33 @@ von Mises 屈服面在该坐标下表现为椭圆。
 	\label{fig:case}
 \end{figure}
 
-图 \ref{fig:ht9_creep_verification}--图 \ref{fig:d9_creep} 给出了不同包壳材料蠕变模型的数值结果与理论解析解之间的对比验证结果。对于 HT9 材料，分别测试了是否考虑一阶蠕变、采用 MFH 默认二阶蠕变模型或 RKY 二阶蠕变模型、是否引入三阶蠕变项以及是否考虑辐照蠕变等不同组合条件下的模型响应。对于 SS316 和 D9 材料，则重点验证了热蠕变与辐照蠕变模型在长期加载条件下的应变演化行为。
+为构造独立于程序数值积分过程的理论参考解，本算例采用恒定温度和恒定单轴载荷条件。对于给定的材料蠕变本构关系：
+\begin{equation}
+	\dot{\bar{\varepsilon}}_{\mathrm{cr}}
+	=
+	f\left(
+	T,\bar{\sigma},\varPhi,\dot{\varPhi},t
+	\right)
+\end{equation}
 
-从结果可以看出，各材料蠕变模型的数值结果与理论解析解具有良好一致性，表明所实现的蠕变应力更新算法及对应本构模型能够正确描述高温及辐照环境下材料的时间相关变形行为。
+在$T=T_0$、$\bar{\sigma}=\bar{\sigma}_0$以及给定中子通量条件下，理论蠕变应变可由本构关系直接积分得到：
+\begin{equation}
+	\bar{\varepsilon}_{\mathrm{cr}}^{\mathrm{ref}}(t)
+	=
+	\int_0^t
+	f\left(
+	T_0,\bar{\sigma}_0,
+	\varPhi(\tau),\dot{\varPhi},\tau
+	\right)
+	\,\mathrm{d}\tau
+	\label{eq:creep_reference_solution}
+\end{equation}
+
+对于本构关系已经以应变--时间显式形式给出的模型，则直接代入相应温度、应力和时间即可获得理论参考值；对于以蠕变率形式给出的模型，则按照式~\eqref{eq:creep_reference_solution}进行时间积分。该理论参考解不经过有限元本构积分过程，因此可用于独立检验程序中径向返回算法及材料状态更新的实现正确性。
+
+图~\ref{fig:ht9_creep_verification}--图~\ref{fig:d9_creep}给出了不同包壳材料蠕变模型的程序数值结果与由相应本构关系直接积分得到的理论参考解之间的对比。对于HT9材料，分别测试了是否考虑一阶蠕变、采用MFH默认二阶蠕变模型或RKY二阶蠕变模型、是否引入三阶蠕变项以及是否考虑辐照蠕变等不同组合条件下的模型响应。对于SS316和D9材料，则重点验证热蠕变与辐照蠕变模型在长期加载条件下的应变演化行为。
+
+结果表明，各材料蠕变模型的程序数值结果与理论参考解保持良好一致，说明本文所实现的蠕变本构积分及状态更新过程能够正确再现相应本构关系所规定的时间相关变形行为。
 
 \begin{figure}[!htb]
 	\centering
@@ -854,12 +757,9 @@ von Mises 屈服面在该坐标下表现为椭圆。
 		\caption{RKY 蠕变模型验证}
 		\label{fig:ht9_creep_RKY}
 	\end{subfigure}
-	\caption{HT9 蠕变模型数值结果与解析解对比验证}
+	\caption{HT9蠕变模型数值结果与理论参考解对比验证}
 	\label{fig:ht9_creep_verification}
 \end{figure}
-
-SS316辐照蠕变模型的数值结果与解析解对比如图\ref{fig:ss316_creep_verification}所示。
-
 \begin{figure}[!htb]
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
@@ -875,30 +775,30 @@ SS316辐照蠕变模型的数值结果与解析解对比如图\ref{fig:ss316_cre
 		\caption{BISON辐照蠕变和热蠕变模型验证}
 		\label{fig:ss316_creep_bison}
 	\end{subfigure}
-	\caption{SS316 辐照蠕变模型数值结果与解析解对比验证}
+	\caption{SS316辐照蠕变模型数值结果与理论参考解对比验证}
 	\label{fig:ss316_creep_verification}
 \end{figure}
-
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=9.00cm,height=6.75cm,keepaspectratio]{d9_creep.png}
-	\caption{D9辐照蠕变与热蠕变模型数值结果和解析解对比}
+	\caption{D9辐照蠕变与热蠕变模型数值结果和理论参考解对比}
 	\label{fig:d9_creep}
 \end{figure}
+在燃料蠕变模型验证中，本文分别选取UO$_2$和MOX燃料开展单元立方体算例。相关蠕变本构关系已在前文给出，其中MOX燃料的瞬态蠕变和稳态蠕变关系分别见式\eqref{eq:mox_transient_creep}和式\eqref{eq:mox_steady_creep}，UO$_2$燃料的MATPRO蠕变模型及MOX蠕变模型的补充参数见\ref{app:mox_mechanical_correlations}。因此，本节不再重复列出模型公式，而重点验证上述本构关系在材料积分及全局力学求解过程中的数值实现正确性。
 
-在燃料蠕变模型验证中，本文分别选取 UO$_2$ 和 MOX 燃料材料开展单立方体单元算例。由于相应热蠕变与辐照蠕变本构关系已在第二章中给出，本节不再重复列出模型公式，而是重点考察其在材料积分与全局力学求解中的数值实现正确性。验证算例采用 $1\times1\times1$ 立方体模型，在 $y$ 方向施加单轴载荷或位移边界条件，并给定恒定温度、裂变率及时间步长。理论解根据弹性应变、热蠕变应变和辐照蠕变应变的叠加关系计算，数值结果则由程序直接输出轴向位移或等效蠕变应变。
+验证算例采用$1\times1\times1$单元立方体模型，在$y$方向施加单轴载荷或位移边界条件，并给定相应的恒定温度、裂变率及时间步长。对于给定载荷历史，理论参考结果由相应蠕变本构关系直接积分获得；程序计算结果则由有限元求解得到的轴向位移或等效蠕变应变提取。通过二者对比，可检验蠕变应变更新、材料状态变量演化以及局部本构积分与全局力学求解之间的数据传递是否正确。
 
-对于 UO$_2$ 燃料，计算结果表明，轴向总位移的数值解$8.9598\times10^{-4}$m与由解析关系得到的理论解$9.07136\times10^{-4}$m保持一致，二者差异主要来源于时间步长和空间离散误差。对于 MOX 燃料，本文采用包含加载、应力松弛和二次加载阶段的单元算例，以检验稳态蠕变和瞬态蠕变项的共同作用。第一阶段理论蠕变应变为 $9.343657\times10^{-3}$，数值结果为 $9.4418\times10^{-3}$，二者吻合良好。上述结果说明，UO$_2$ 和 MOX 燃料蠕变模型均能够在当前程序框架下正确实现，并且其计算结果能够与理论解相互对应。
+对于UO$_2$燃料，轴向总位移的程序计算结果为$8.9598\times10^{-4}\,\mathrm{m}$，理论参考结果为$9.07136\times10^{-4}\,\mathrm{m}$，相对差异约为$1.23\%$。对于MOX燃料，本文采用包含加载、应力松弛和二次加载阶段的单元算例，以同时检验瞬态蠕变和稳态蠕变项的数值实现。第一阶段理论参考蠕变应变为$9.343657\times10^{-3}$，程序计算结果为$9.4418\times10^{-3}$，相对差异约为$1.05\%$。上述结果表明，UO$_2$和MOX燃料蠕变模型在当前程序框架下均能够得到与相应理论参考结果一致的数值响应，说明相关蠕变本构积分及其与全局力学求解的耦合实现正确。
 
 \subsubsection{硬化}
 包壳材料在堆内服役过程中会受到温度、快中子辐照以及机械载荷的共同作用，其屈服强度和塑性变形能力均会随服役状态发生变化。对于燃料性能分析程序而言，硬化模型的作用在于描述塑性应变累积后屈服面的扩张规律，并为径向返回算法提供屈服应力及其对内变量的导数。因此，硬化模型不仅影响局部应力更新的准确性，也会影响全局非线性迭代的收敛稳定性。
 
-第二章中已经给出了不同包壳材料的极限拉伸强度 $\sigma_{\mathrm{uts}}$ 和最小延伸率 $\epsilon_t$ 的物性关系。参考燃料性能分析程序中常用的工程化处理方式，本文首先采用各向同性线性硬化模型对包壳材料塑性强化过程进行描述。在线性硬化假设下，硬化模量定义为
+不同包壳材料的极限拉伸强度$\sigma_{\mathrm{uts}}$和最小延伸率$\epsilon_t$关系及相关参数见~\ref{app:cladding_supplementary_models}。参考燃料性能分析程序中常用的工程化处理方式，本文首先采用各向同性线性硬化模型对包壳材料塑性强化过程进行描述。在线性硬化假设下，硬化模量定义为：
 \begin{equation}
 	H = \frac{\sigma_{\mathrm{uts}}-\sigma_y}{\epsilon_t}
 	\label{eq:linear_hardening_modulus}
 \end{equation}
-\noindent 式中： $\sigma_y$ 为初始屈服强度。该模型将屈服强度从 $\sigma_y$ 增加至 $\sigma_{\mathrm{uts}}$ 的过程近似为随等效塑性应变线性增长。虽然该处理未显式描述复杂的位错演化和辐照缺陷积累过程，但由于 $\sigma_{\mathrm{uts}}$ 和 $\epsilon_t$ 已包含温度、辐照剂量等服役因素的影响，因此能够在工程尺度上反映包壳材料随服役状态变化的强化特征。
+\noindent 式中： $\sigma_y$ 为初始屈服强度（$\mathrm{Pa}$）。该模型将屈服强度从 $\sigma_y$ 增加至 $\sigma_{\mathrm{uts}}$ 的过程近似为随等效塑性应变线性增长。虽然该处理未显式描述复杂的位错演化和辐照缺陷积累过程，但由于 $\sigma_{\mathrm{uts}}$ 和 $\epsilon_t$ 已包含温度、辐照剂量等服役因素的影响，因此能够在工程尺度上反映包壳材料随服役状态变化的强化特征。
 
 在程序实现方面，本文针对 D9、HT9 和 SS316 等包壳材料分别实现了各向同性硬化应力更新模型。各模型均嵌入 MOOSE 框架的径向返回积分流程中，并通过统一的塑性应力更新接口与弹塑性本构积分算法耦合。对于给定的总应变增量，程序首先进行弹性预测并判断试应力状态是否超过屈服面；若发生屈服，则根据硬化模型返回当前屈服应力、硬化变量及其导数，并通过局部牛顿迭代求解塑性乘子增量。由此，硬化模型可作为材料相关模块独立提供屈服面演化规律，而不改变径向返回算法的总体结构。
 
@@ -912,59 +812,38 @@ SS316辐照蠕变模型的数值结果与解析解对比如图\ref{fig:ss316_cre
 	\label{fig:hardening_case}
 \end{figure}
 
-\begin{xltabular}{\textwidth}{@{}
-		>{\centering\arraybackslash}m{2.0cm}
-		>{\centering\arraybackslash}m{5.2cm}
-		>{\centering\arraybackslash}X
-		@{}}
-	
-	\caption{与各向同性硬化行为相关的主要类及其功能}
-	\label{tab:hardening_classes} \\
-	
-	% --- 第一页表头 ---
-	\toprule
-	材料类型 & 类名 & 功能描述 \\
-	\midrule
-	\endfirsthead
-	
-	% --- 续页标题 ---
-	\multicolumn{3}{c}{
-		表~\thetable（续）
-		\quad 与各向同性硬化行为相关的主要类及其功能
-	} \\
-	
-	% --- 续页表头 ---
-	\toprule
-	材料类型 & 类名 & 功能描述 \\
-	\midrule
-	\endhead
-	
-	% --- 页脚 ---
-	\midrule
-	\multicolumn{3}{r}{\textit{（接下页）}} \\
-	\endfoot
-	
-	% --- 最终表尾 ---
-	\bottomrule
-	\endlastfoot
-	
+\begin{table}[!htbp]
+\centering
+\caption{与各向同性硬化行为相关的主要类及其功能}
+\label{tab:hardening_classes}
+\begin{tabularx}{\textwidth}{@{}
+  >{\centering\arraybackslash}m{2.0cm}
+  >{\centering\arraybackslash}m{5.2cm}
+  >{\centering\arraybackslash}X
+  @{}}
+\toprule
+材料类型 & 类名 & 功能描述 \\
+\midrule
+
 	D9
-	& IsotropicD9HardeningStressUpdate
+	& Isotropic\allowbreak D9\allowbreak Hardening\allowbreak Stress\allowbreak Update
 	& 实现D9合金的各向同性硬化模型，用于描述塑性变形过程中屈服面的均匀扩张行为，并考虑温度对硬化参数的影响 \\
-	
+
 	HT9
-	& IsotropicHT9HardeningStressUpdate
+	& Isotropic\allowbreak HT9\allowbreak Hardening\allowbreak Stress\allowbreak Update
 	& 实现HT9铁素体/马氏体钢的各向同性硬化本构模型，用于描述塑性应变累积导致的材料强化效应 \\
-	
+
 	SS316
-	& IsotropicSS316HardeningStressUpdate
+	& Isotropic\allowbreak SS316\allowbreak Hardening\allowbreak Stress\allowbreak Update
 	& 实现SS316不锈钢的各向同性硬化模型，支持Ludwik、Chaboche以及Armstrong等多种硬化规律，并可考虑温度、晶粒尺寸及厚度等因素对硬化行为的影响 \\
-	
-\end{xltabular}
+
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=13.5cm,height=9.00cm,keepaspectratio]{hardening_flow_chat.pdf}
+	\includegraphics[width=11.5cm,height=7.00cm,keepaspectratio]{hardening_flow_chat.pdf}
 	\caption{基于径向返回算法的硬化模型类继承关系图}
 	\label{fig:hardening_flow_chat}
 \end{figure}
@@ -993,7 +872,7 @@ SS316辐照蠕变模型的数值结果与解析解对比如图\ref{fig:ss316_cre
 		\caption{SS316 硬化模型验证}
 		\label{fig:SS316_hardening_verify}
 	\end{subfigure}
-	
+
 	\caption{不同包壳材料硬化本构模型的验证结果}
 	\label{fig:hardening_verification}
 \end{figure}
@@ -1015,17 +894,17 @@ SS316辐照蠕变模型的数值结果与解析解对比如图\ref{fig:ss316_cre
 	\centering
 	\caption{温度、线功率和裂变气体产生率的对应关系（数据来源：文献\cite{forsbergDiffusionTheoryFission1985}）}
 	\label{tab:ForMas_condition}
-	
+
 	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}cccc@{}}
 		\toprule
-		
+
 		温度/${}^\circ\mathrm{C}$ &
 		线功率/$\mathrm{kW\,m^{-1}}$ &
 		比功率/$\mathrm{kW\,kg^{-1}}$ &
 		气体生成率/$\mathrm{mol\,m^{-3}\,s^{-1}}$ \\
-		
+
 		\midrule
-		
+
 		1000 & 26.8 & 29.8 & \(4.4 \times 10^{-6}\) \\
 		1100 & 30.6 & 34.1 & \(5.1 \times 10^{-6}\) \\
 		1200 & 34.4 & 38.3 & \(5.7 \times 10^{-6}\) \\
@@ -1037,7 +916,7 @@ SS316辐照蠕变模型的数值结果与解析解对比如图\ref{fig:ss316_cre
 		1800 & 57.0 & 63.4 & \(9.6 \times 10^{-6}\) \\
 		1900 & 61.0 & 67.6 & \(1.0 \times 10^{-5}\) \\
 		2000 & 64.6 & 71.8 & \(1.1 \times 10^{-5}\) \\
-		
+
 		\bottomrule
 	\end{tabular*}
 \end{table}
@@ -1090,37 +969,37 @@ SCIANTIX是面向核燃料微观行为分析的机理程序，已针对裂变气
 	\centering
 	\caption{SCIANTIX耦合验证算例及核心验证变量}
 	\label{tab:verification}
-	
+
 	\begin{tabularx}{\textwidth}{@{}
-			>{\centering\arraybackslash}m{2.2cm}
-			>{\centering\arraybackslash}m{1.8cm}
-			>{\centering\arraybackslash}m{3.3cm}
-			>{\centering\arraybackslash}X
-			@{}}
+		>{\centering\arraybackslash}m{2.2cm}
+		>{\centering\arraybackslash}m{1.6cm}
+		>{\centering\arraybackslash}m{3.3cm}
+		>{\centering\arraybackslash}X
+		@{}}
 		\toprule
-		物理领域 & 测试模块 & 核心验证变量 & 验证目的 \\
+		物理领域 & 测试模块                    & 核心验证变量 & 验证目的 \\
 		\midrule
-		
+
 		晶内物理
-		& Baker
-		& 晶内气泡肿胀
-		& 验证气泡成核、生长及晶内气体肿胀行为 \\
-		
+		     & Baker
+		     & 晶内气泡肿胀
+		     & 验证气泡成核、生长及晶内气体肿胀行为                      \\
+
 		晶界与释放
-		& White
-		& 晶界气体肿胀、释放分数
-		& 验证晶界气泡演化、饱和释放及burst释放响应 \\
-		
+		     & White
+		     & 晶界气体肿胀、释放分数
+		     & 验证晶界气泡演化、饱和释放及burst释放响应                 \\
+
 		组织演化
-		& HBS
-		& 高燃耗结构孔隙率
-		& 验证高燃耗条件下组织重构及孔隙形成过程 \\
-		
+		     & HBS
+		     & 高燃耗结构孔隙率
+		     & 验证高燃耗条件下组织重构及孔隙形成过程                     \\
+
 		热化学
-		& Oxidation
-		& 化学计量偏差
-		& 验证燃料氧化状态及其对相关状态变量的影响 \\
-		
+		     & Oxidation
+		     & 化学计量偏差
+		     & 验证燃料氧化状态及其对相关状态变量的影响                    \\
+
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -1153,14 +1032,14 @@ SCIANTIX是面向核燃料微观行为分析的机理程序，已针对裂变气
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{academic_fgr_white.png}
+		\includegraphics[width=\linewidth,height=6.75cm,keepaspectratio]{academic_fgr_white.png}
 		\caption{SCIANTIX 与 Miracle 裂变气体释放分数对比}
 		\label{fig:academic_fgr_white}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{academic_swelling_white.png}
+		\includegraphics[width=\linewidth,height=6.75cm,keepaspectratio]{academic_swelling_white.png}
 		\caption{SCIANTIX 与 Miracle 晶界气体肿胀对比}
 		\label{fig:academic_swelling_white}
 	\end{subfigure}
@@ -1172,14 +1051,14 @@ SCIANTIX是面向核燃料微观行为分析的机理程序，已针对裂变气
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{academic_fgr_hbs.png}
+		\includegraphics[width=\linewidth,height=6.75cm,keepaspectratio]{academic_fgr_hbs.png}
 		\caption{高燃耗下 SCIANTIX 与 Miracle 裂变气体释放分数对比}
 		\label{fig:academic_fgr_hbs}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\linewidth,height=5.00cm,keepaspectratio]{academic_swelling_hbs.png}
+		\includegraphics[width=\linewidth,height=6.75cm,keepaspectratio]{academic_swelling_hbs.png}
 		\caption{高燃耗下 SCIANTIX 与 Miracle 气体肿胀对比}
 		\label{fig:academic_swelling_hbs}
 	\end{subfigure}
@@ -1189,40 +1068,40 @@ SCIANTIX是面向核燃料微观行为分析的机理程序，已针对裂变气
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=9.00cm,height=6.75cm,keepaspectratio]{academic_deviation.png}
+	\includegraphics[width=9.00cm,height=5.75cm,keepaspectratio]{academic_deviation.png}
 	\caption{燃料化学计量偏差演化验证}
 	\label{fig:academic_deviation}
 \end{figure}
 
-\xsubsection{间隙导热模型的数值测试与响应分析}{Numerical Testing and Response Analysis of the Gap Heat Transfer Model}
-燃料芯块与包壳之间的间隙导热是燃料棒热力耦合分析中的关键环节，其换热能力受间隙宽度、气体组成、气体温度和腔体压力等因素共同影响。为验证本文实现的间隙导热模型及其与气体压力计算模块之间的耦合关系，本节构建二维接触传热算例，对不同间隙导热处理方式下的换热系数演化规律进行对比分析。
+\xsubsection{间隙传热模型的数值测试与响应分析}{Numerical Testing and Response Analysis of the Gap Heat Transfer Model}
+燃料芯块与包壳之间的间隙传热是燃料棒热力耦合分析中的关键环节，其换热能力受间隙宽度、气体组成、气体温度和腔体压力等因素共同影响。为验证本文实现的间隙传热模型及其与气体压力计算模块之间的耦合关系，本节构建二维接触传热算例，对不同间隙传热处理方式下的换热系数演化规律进行对比分析。
 
 验证模型由两个尺寸均为 $1\times1$ 的矩形区域组成，两区域之间设置初始间隙距离为 $1$，用于表征燃料芯块与包壳之间的气体传热通道。计算中采用有限应变固体力学模型，并在接触界面施加基于 \texttt{GapHeatTransfer} 的间隙换热边界条件。间隙距离采用 \texttt{TOPTAN} 模型计算，气体热导率采用 \texttt{ADVANCED} 模型描述，以考虑气体状态变化对间隙传热能力的影响。
 
 热边界条件设置如下：左侧边界施加随时间升高的温度载荷，温度由 $500~\mathrm{K}$ 逐渐升高至 $3000~\mathrm{K}$；右侧边界温度保持为 $400\,\mathrm{K}$，从而在接触界面两侧形成稳定的温度梯度。为突出气体间隙热阻对整体传热过程的控制作用，固体材料热导率设置为 $1.0\times10^8\,\mathrm{W\,m^{-1}\,K^{-1}}$，以尽量减小固体区域内部温降。力学边界条件中，对模型边界施加位移约束，以避免刚体位移对接触间隙计算产生干扰。
 
-气体间隙初始充入 He，并通过 \texttt{CavityPressure} 模块计算腔体压力随温度变化的响应。计算过程中，间隙宽度、气体温度和间隙换热系数分别由辅助变量和后处理器提取，用于评价间隙导热模型对气体状态变化的响应能力。瞬态计算时间步长取 $0.1\,\mathrm{s}$，总计算时间为 $2\,\mathrm{s}$。
+气体间隙初始充入 He，并通过 \texttt{CavityPressure} 模块计算腔体压力随温度变化的响应。计算过程中，间隙宽度、气体温度和间隙换热系数分别由辅助变量和后处理器提取，用于评价间隙传热模型对气体状态变化的响应能力。瞬态计算时间步长取 $0.1\,\mathrm{s}$，总计算时间为 $2\,\mathrm{s}$。
 
-为分析压力反馈对间隙导热结果的影响，本文设置两组对比计算。第一组采用 \texttt{ADVANCED} 气体热导率模型，并耦合 \texttt{CavityPressure} 模块以考虑腔体压力随温度变化的反馈作用；第二组采用默认气隙导热处理方式，不显式考虑压力反馈对气体导热能力的影响。通过比较两组模型中间隙换热系数随温度升高的变化趋势，可以检验压力--温度--气体热导率耦合关系的实现正确性。
+为分析压力反馈对间隙传热结果的影响，本文设置两组对比计算。第一组采用 \texttt{ADVANCED} 气体热导率模型，并耦合 \texttt{CavityPressure} 模块以考虑腔体压力随温度变化的反馈作用；第二组采用默认气隙导热处理方式，不显式考虑压力反馈对气体导热能力的影响。通过比较两组模型中间隙换热系数随温度升高的变化趋势，可以检验压力--温度--气体热导率耦合关系的实现正确性。
 
-图 \ref{fig:gap_heat_transfer_verification} 给出了不同间隙导热模型下换热系数随温度变化的计算结果。随着边界温度升高，气体热导率逐渐增大，间隙换热系数整体呈上升趋势。当考虑腔体压力反馈时，气体温度升高引起压力和状态参数同步变化，使 \texttt{ADVANCED} 模型计算得到的气体导热能力进一步增强，因此对应的间隙换热系数高于默认模型结果。相比之下，默认模型未考虑压力和气体状态参数的动态反馈，其换热系数增长幅度相对较小。
+图 \ref{fig:gap_heat_transfer_verification} 给出了不同间隙传热模型下换热系数随温度变化的计算结果。随着边界温度升高，气体热导率逐渐增大，间隙换热系数整体呈上升趋势。当考虑腔体压力反馈时，气体温度升高引起压力和状态参数同步变化，使 \texttt{ADVANCED} 模型计算得到的气体导热能力进一步增强，因此对应的间隙换热系数高于默认模型结果。相比之下，默认模型未考虑压力和气体状态参数的动态反馈，其换热系数增长幅度相对较小。
 
-上述结果表明，本文实现的间隙导热模型能够正确反映气体温度、压力及间隙状态变化对界面换热能力的预期影响。两种模型所得到的变化趋势与对应模型的理论关系一致，说明所程序中实现的间隙换热模块变量传递和耦合计算过程具有较好的物理合理性和数值稳定性，可为后续燃料棒尺度热--力--气体耦合计算提供数值基础。
-
-\begin{figure}[!htb]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=9.00cm,height=6.75cm,keepaspectratio]{academic_verification_plot.png}
-	\caption{不同间隙导热模型下换热系数随温度变化规律}
+	\includegraphics[width=9.00cm,height=5.0cm,keepaspectratio]{academic_verification_plot.png}
+	\caption{不同间隙传热模型下换热系数随温度变化规律}
 	\label{fig:gap_heat_transfer_verification}
 \end{figure}
 
+上述结果表明，本文实现的间隙传热模型能够正确反映气体温度、压力及间隙状态变化对界面换热能力的预期影响。两种模型所得到的变化趋势与对应模型的理论关系一致，说明程序中实现的间隙换热模块变量传递和耦合计算过程具有较好的物理合理性和数值稳定性，可为后续燃料棒尺度热--力--气体耦合计算提供数值基础。
+
 \xsection{本章小结}{Summary}
-本章围绕燃料力学非线性、裂变气体行为和间隙导热模型的耦合实现与验证展开研究，重点说明了相关模型在程序中的数值离散、局部积分、外部程序耦合和算例验证方法。
 
-首先，针对燃料元件热力耦合分析中的非线性力学问题，建立了小变形热弹塑性控制方程的弱形式和有限元离散表达，并将热应变、塑性应变和应力更新过程统一纳入残差求解框架。在此基础上，推导并说明了基于 $J_2$ 塑性和各向同性硬化假设的径向返回算法，实现了材料积分点处应力、塑性应变和硬化变量的隐式更新。通过蠕变、硬化等单元算例验证，表明 UO$_2$、MOX 以及典型包壳材料相关本构模型的数值结果能够与理论解或基准结果保持一致，说明力学本构模块具备正确的局部积分能力和稳定的全局耦合特性。
+本章针对燃料元件非线性力学、裂变气体行为与燃料–包壳间隙传热的数值耦合问题，通过材料单元测试、裂变气体基准算例及界面传热响应分析，评价了相关模型的数值实现及其物理响应特征。主要结论如下。
 
-其次，针对裂变气体行为模型，分别验证了简化机理模型 ForMas 和高保真机理程序 SCIANTIX 的耦合实现。ForMas 验证结果表明，所实现模型能够正确描述晶界气体累积、饱和释放以及释放后重新积累等过程，并能够合理反映扩散系数和单次释放比例对累计释放行为的影响。SCIANTIX 耦合验证进一步表明，本文程序能够正确完成外部机理程序的输入构造、状态变量传递、结果回写和时间推进，并在晶内气泡演化、晶界释放、高燃耗结构和燃料化学计量偏差等代表性问题上保持与基准结果一致的主要物理趋势。
+隐式本构积分能够较准确地再现燃料与包壳材料的时间相关非弹性变形行为。在恒温、恒载荷条件下，HT9、SS316和D9包壳蠕变模型的计算结果与相应理论参考解保持良好一致。UO₂燃料蠕变单元测试中，计算轴向位移与理论参考值的相对差异约为1.23\%；MOX燃料包含加载、应力松弛及二次加载阶段的算例中，第一阶段蠕变应变的相对差异约为1.05\%。上述结果表明，基于径向返回算法的局部本构积分能够再现相应材料模型规定的非弹性响应，并与全局力学平衡求解保持一致，为燃料与包壳蠕变、塑性及相关应力演化计算提供了数值验证依据。
 
-最后，对间隙导热模型及其与腔体压力计算模块的耦合关系进行了验证。二维接触传热算例表明，间隙换热系数能够随气体温度和压力状态变化呈现合理响应；采用高级气体热导率模型并考虑压力反馈时，换热系数高于默认模型结果，符合气体导热增强的物理预期。该结果说明所实现的间隙导热模块能够稳定耦合间隙宽度、气体温度和腔体压力等关键变量。
+裂变气体释放对扩散动力学及晶界饱和条件具有显著依赖，不同机理的时间响应需要相应的数值处理。ForMas模型的基准计算再现了晶界气体逐步积累、达到饱和阈值后释放及再次积累的周期性行为，累计释放量呈阶跃式增长。在相同热工况下，采用较大扩散系数的Turnbull模型会使晶界更早达到饱和条件，增加释放事件次数及累计释放量；相比之下，单次释放比例主要影响释放幅度和频率，对最终累计释放量的影响相对较弱。SCIANTIX耦合算例进一步表明，晶内气泡演化、晶界释放、高燃耗结构及热化学状态等主要响应能够与独立基准结果保持一致，但化学计量偏差的快速演化对时间步长较为敏感，适当减小时间步长能够改善数值结果。上述结果说明，裂变气体模型的计算表现不仅取决于扩散和释放机制，还受到内部状态变量更新及时间离散精度的影响。
 
-综上，本章完成了热弹塑性力学、裂变气体行为和间隙导热模型在统一燃料性能分析框架中的实现与验证。相关算例结果表明，所开发的模型接口和数值算法具有良好的稳定性与物理一致性，可为后续燃料棒多物理场耦合计算和燃料性能预测提供基础。
+间隙传热能力随气体温度和压力状态变化而改变，固定或简化气体状态处理可能低估相应工况下的换热增强。间隙传热算例表明，随着气体温度升高，气体热导率及间隙换热系数总体呈上升趋势。当考虑腔体压力反馈及气体状态动态更新时，ADVANCED模型预测的间隙换热系数高于未显式考虑相关反馈的默认模型，表明压力及气体状态变化会对界面换热产生可辨识的影响。结合裂变气体释放对气体组成和棒内压力的作用，可以看出，间隙传热不宜作为与运行历史无关的固定边界条件，而应随气体状态和燃料–包壳间隙状态动态更新。相关算例验证了所实现模型的预期响应规律，但其对整棒温度预测的综合影响仍需通过后续燃料棒级实验验证加以评价。
+

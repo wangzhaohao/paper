@@ -164,6 +164,7 @@
 		\right]^{\mathrm T}
 	\label{eq:ch2_state_vector}
 \end{equation}
+
 其中，各类状态变量分别定义为：
 \begin{align}
 	\mathbf y_{\mathrm{FE}}
@@ -294,6 +295,7 @@
 	\rho_{\mathrm f}=\mathcal R_{\mathrm f}\left(T,p,B,\ldots\right)
 	\label{eq:ch2_fuel_cp_rho_closure}
 \end{equation}
+
 包壳材料相应写为：
 \begin{equation}
 	k_{\mathrm c}=\mathcal K_{\mathrm c}(T,\varPhi,\ldots),\qquad
@@ -310,6 +312,7 @@
 	-k_{\mathrm c}\nabla T_{\mathrm c}\cdot\mathbf n_c=-q_{\mathrm{gap}}
 	\label{eq:ch2_gap_flux_continuity}
 \end{equation}
+
 其中$q_{\mathrm{gap}}$由第\ref{sec:ch2_gap_heat_transfer}节的燃料--包壳界面传热关系确定。
 
 \xsubsection{一维冷却剂{\rarecharfont 焓}升模型}{One-dimensional Coolant Enthalpy-rise Model}
@@ -323,6 +326,7 @@
 	=h\!\left(p_{\mathrm{cool}},T_{\mathrm{in}}\right)
 	\label{eq:ch2_coolant_inlet_enthalpy}
 \end{equation}
+
 本文采用MOOSE中的\texttt{Water97FluidProperties}计算水和水蒸气的热力学物性。该模型基于IAPWS-IF97工业水和水蒸气性质公式\cite{wagnerPropertiesWaterSteam1998}，可根据压力和温度计算比{\rarecharfont 焓}，并可由压力和比{\rarecharfont 焓}反求温度。
 
 对于轴向微元$\mathrm dz$，包壳外表面向冷却剂传递的热量使冷却剂比{\rarecharfont 焓}沿流动方向逐渐增加。设$P_h$为受热周长，$q''_{\mathrm w}$为包壳外表面向冷却剂传递的热流密度，$\dot m$为冷却剂质量流量，则一维轴向能量守恒关系可表示为：
@@ -353,6 +357,7 @@
 	=T\!\left[p_{\mathrm{cool}}(z,t),h_{\mathrm{cool}}(z)\right]
 	\label{eq:ch2_coolant_temperature_ph}
 \end{equation}
+
 本文程序中，\texttt{InletEnthalpyAux}用于确定冷却剂入口热力学状态，\texttt{CoolantPerAux}与\texttt{LayeredSideIntegral}用于沿轴向累计包壳外表面向冷却剂传递的热量，并据此获得局部比{\rarecharfont 焓}增量；随后，\texttt{FluidPropertiesMaterialPHNEW}结合水物性关系，根据局部压力和比{\rarecharfont 焓}计算冷却剂温度。由此，冷却剂入口温度、压力和质量流动条件被转换为沿轴向分布的冷却剂热力状态，并与包壳热传导计算相耦合。
 
 \xsubsection{包壳--冷却剂对流换热边界}{Cladding--Coolant Convective Heat-transfer Boundary}
@@ -443,6 +448,7 @@ $c_{\mathrm p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 		\right]
 	\label{eq:ch2_small_strain}
 \end{equation}
+
 燃料和包壳在堆内服役时同时存在弹性、塑性、蠕变以及多种无应力本征应变，因此可将总应变概括分解为：
 \begin{equation}
 	\boldsymbol{\varepsilon}
@@ -466,6 +472,7 @@ $c_{\mathrm p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	-\boldsymbol{\varepsilon}^{*}
 	\label{eq:ch2_elastic_strain}
 \end{equation}
+
 相应本构关系可表示为：
 \begin{equation}
 	\boldsymbol{\sigma}
@@ -568,6 +575,7 @@ $c_{\mathrm p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	+\mathbf J_i^{\mathrm{pore}}
 	\label{eq:ch2_actinide_flux_decomposition}
 \end{equation}
+
 固相化学扩散和热扩散可统一表示为：
 \begin{equation}
 	\mathbf J_i^{\mathrm{solid}}
@@ -723,6 +731,7 @@ $c_{\mathrm p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	\left(T_{\mathrm f}-T_{\mathrm c}\right)
 	\label{eq:ch2_gap_heat_flux}
 \end{equation}
+
 总间隙传热系数由气体传导、固--固接触传导和表面热辐射共同组成：
 \begin{equation}
 	h_{\mathrm{gap}}
@@ -787,6 +796,7 @@ $c_{\mathrm p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	T
 	\label{eq:ch2_fgr_gap_temperature_chain}
 \end{equation}
+
 以及
 \begin{equation}
 	T
@@ -803,6 +813,7 @@ $c_{\mathrm p,\mathrm{cool}}$和热导率$k_{\mathrm{cool}}$
 	T
 	\label{eq:ch2_mech_gap_temperature_chain}
 \end{equation}
+
 因此，温度、FGR、气腔压力、间隙宽度和接触压力必须在统一时间推进过程中保持状态一致。第4章将在本节总体关系基础上进一步给出Ross--Stoute型气体传导、混合气体热导率、接触导热、辐射以及MOOSE程序对象之间的具体实现和数据交换方式。
 
 \xsection{控制方程的闭合需求与统一求解关系}{Closure Requirements and Unified Solution Relations}
