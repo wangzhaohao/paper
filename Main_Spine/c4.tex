@@ -3,7 +3,7 @@
 \xchapter{燃料力学非线性、裂变气体与间隙传热模型的耦合实现及验证}{Coupled Implementation and Verification of Fuel Mechanical Nonlinearity, Fission Gas, and Gap Heat Transfer Models}
 
 \xsection{引言}{Introduction}
-第二章建立了氧化物燃料元件热学、力学、微观结构与组分演化的多物理场控制方程及总体耦合框架，第三章进一步给出了MOX燃料与包壳材料行为、气孔迁移、Pu/Am再分布及O/M演化等闭合模型。在此基础上，还需要将不同物理模型转化为适用于燃料性能分析程序的数值算法，并解决非线性本构积分、裂变气体状态演化以及燃料--包壳间隙传热之间的数据传递与耦合问题。
+第2章建立了氧化物燃料元件热学、力学、微观结构与组分演化的多物理场控制方程及总体耦合框架，第3章进一步给出了MOX燃料与包壳材料行为、气孔迁移、Pu/Am再分布及O/M演化等闭合模型。在此基础上，还需要将不同物理模型转化为适用于燃料性能分析程序的数值算法，并解决非线性本构积分、裂变气体状态演化以及燃料--包壳间隙传热之间的数据传递与耦合问题。
 
 燃料元件热--力耦合计算中，塑性、蠕变等非弹性材料行为需要在材料积分点进行本构积分，更新应力及内部变量，并与整体准静态平衡方程耦合求解；热膨胀和辐照肿胀等则按相应本征应变模型处理。裂变气体行为则涉及晶内扩散、晶界聚集、气泡演化及释放等过程，其计算结果进一步影响棒内气体组成、气腔压力及燃料--包壳间隙传热状态。因此，局部本构积分、裂变气体演化与间隙传热模型之间的稳定耦合，是实现燃料元件多物理场数值分析的关键环节。
 
@@ -13,7 +13,7 @@
 
 \xsection{热弹塑性力学模型的离散与隐式积分}{Discretization and Implicit Integration of Thermo-Elasto-Plastic Mechanics}
 \xsubsection{非线性力学问题的数值离散}{Numerical Discretization of the Nonlinear Mechanical Problem}
-第二章已给出燃料与包壳的准静态力学平衡方程、应变分解关系及压力边界条件，第三章进一步给出了相应材料行为闭合模型。有限元弱形式、空间离散以及Newton迭代等属于非线性有限元与计算塑性的通用理论，其系统推导可参见经典计算塑性专著\cite{dunneIntroductionComputationalPlasticity2005}。因此，本节不再重复一般有限元理论，而重点给出与后续本构积分和程序实现直接相关的离散关系。
+第2章已给出燃料与包壳的准静态力学平衡方程、应变分解关系及压力边界条件，第3章进一步给出了相应材料行为闭合模型。有限元弱形式、空间离散以及Newton迭代等属于非线性有限元与计算塑性的通用理论，其系统推导可参见经典计算塑性专著\cite{dunneIntroductionComputationalPlasticity2005}。因此，本节不再重复一般有限元理论，而重点给出与后续本构积分和程序实现直接相关的离散关系。
 
 在小变形条件下，总应变可统一分解为：
 \begin{equation}
@@ -40,7 +40,7 @@
 \end{equation}
 \noindent 式中：$\mathbf{D}$为弹性刚度张量（$\mathrm{Pa}$），其具体材料参数由第三章给出的材料模型确定。
 
-对第二章中的准静态力学平衡方程进行有限元离散后，第$i$个自由度对应的残差可写为：
+对第2章中的准静态力学平衡方程进行有限元离散后，第$i$个自由度对应的残差可写为：
 \begin{equation}
 	R_i(\mathbf{u})
 	=
@@ -379,7 +379,7 @@
 \end{figure}
 
 \xsection{裂变气体模型与间隙传热模型}{Fission Gas and Gap Heat Transfer Models}
-第二章已给出裂变气体、棒内气体状态与燃料--包壳间隙传热之间的总体耦合关系。本节在此基础上重点说明裂变气体模型及间隙传热模型的数值实现与程序接口，不再重复一般性的物理过程描述。
+第2章已给出裂变气体、棒内气体状态与燃料--包壳间隙传热之间的总体耦合关系。本节在此基础上重点说明裂变气体模型及间隙传热模型的数值实现与程序接口，不再重复一般性的物理过程描述。
 
 针对裂变气体行为，本文采用两种不同建模层次的方法：一是Forsberg--Massih简化机理模型，用于描述晶内扩散、晶界累积及释放等主要过程；二是耦合开源裂变气体行为程序SCIANTIX，以获得晶内气泡、晶界气体及高燃耗结构等更细致的状态信息。两类模型均通过统一接口向棒内气体组成、气腔压力及间隙传热模块传递裂变气体释放信息，从而实现裂变气体行为与燃料棒热--力响应的耦合。
 
@@ -560,7 +560,7 @@
 \end{figure}
 
 \xsubsection{细观机理裂变气体模型 SCIANTIX 及其接口实现}{Mechanistic Fission Gas Model SCIANTIX and Its Interface Implementation}
-第二章已从燃料棒多物理场总体框架的角度，将SCIANTIX作为裂变气体行为的细观闭合模型，并给出了其与棒内气体状态及间隙传热之间的主要变量传递关系。本节在此基础上重点介绍SCIANTIX与Miracle程序的接口集成及状态变量映射方法，其内部裂变气体行为模型及理论基础可参见相关文献\cite{pizzocriSCIANTIXNewOpen2020}。
+第2章已从燃料棒多物理场总体框架的角度，将SCIANTIX作为裂变气体行为的细观闭合模型，并给出了其与棒内气体状态及间隙传热之间的主要变量传递关系。本节在此基础上重点介绍SCIANTIX与Miracle程序的接口集成及状态变量映射方法，其内部裂变气体行为模型及理论基础可参见相关文献\cite{pizzocriSCIANTIXNewOpen2020}。
 
 SCIANTIX采用C++开发，并具备作为独立程序运行或以模块形式与燃料性能程序耦合的能力。本文将SCIANTIX编译为静态库，并在Miracle的Make构建系统中配置相应的头文件搜索路径与库链接关系，从而实现SCIANTIX计算模块与Miracle主程序的静态链接。考虑到MOOSE框架中已定义核心基类\texttt{Material}，为避免与SCIANTIX源码中的同名类型发生命名冲突，本文将SCIANTIX中对应类重命名为\texttt{SciantixMaterial}，并对相关引用同步调整。
 
@@ -591,7 +591,7 @@ SCIANTIX采用C++开发，并具备作为独立程序运行或以模块形式与
 
 \xsubsection{间隙传热模型实现}{Gap Heat Transfer Model Implementation}
 
-第二章已给出燃料--包壳间隙传热的总体关系及其与燃料棒热--力--气体行为之间的耦合框架，因此本节不再重复相关基本关系，而重点介绍间隙传热模型的具体实现及其与裂变气体释放行为的数据耦合方式。间隙传热状态直接影响燃料与包壳之间的热量传递，并通过温度变化进一步影响热膨胀、间隙宽度及接触状态；与此同时，燃料中释放的Xe和Kr进入棒内自由体积后，会改变间隙气体组成、气腔压力及混合气体热物性，从而反馈影响气体传导传热。因此，在程序实现中需要统一处理几何间隙与接触状态、混合气体传导、固--固接触传导、热辐射以及裂变气体释放引起的气体状态变化。
+第2章已给出燃料--包壳间隙传热的总体关系及其与燃料棒热--力--气体行为之间的耦合框架，因此本节不再重复相关基本关系，而重点介绍间隙传热模型的具体实现及其与裂变气体释放行为的数据耦合方式。间隙传热状态直接影响燃料与包壳之间的热量传递，并通过温度变化进一步影响热膨胀、间隙宽度及接触状态；与此同时，燃料中释放的Xe和Kr进入棒内自由体积后，会改变间隙气体组成、气腔压力及混合气体热物性，从而反馈影响气体传导传热。因此，在程序实现中需要统一处理几何间隙与接触状态、混合气体传导、固--固接触传导、热辐射以及裂变气体释放引起的气体状态变化。
 
 基于MOOSE框架的模块化特性，本文采用Action-Object分离的设计思想，如图\ref{fig:thermal_contact}所示，实现了间隙传热模型的自动构建与物理过程解耦。其中，整体实现由三个核心组件构成：\texttt{LWRThermalContactAction}、\texttt{GasGapConductance}以及\texttt{GasMixture}。
 
@@ -1068,7 +1068,7 @@ SCIANTIX是面向核燃料微观行为分析的机理程序，已针对裂变气
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=9.00cm,height=5.75cm,keepaspectratio]{academic_deviation.png}
+	\includegraphics[width=0.45\textwidth,height=5.75cm,keepaspectratio]{academic_deviation.png}
 	\caption{燃料化学计量偏差演化验证}
 	\label{fig:academic_deviation}
 \end{figure}

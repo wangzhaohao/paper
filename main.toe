@@ -8,7 +8,7 @@
 \contentsline {subsection}{\numberline {1.2.2}Microstructural Restructuring and Constituent Redistribution in Fast-Reactor MOX Fuel}{6}{section*.32}%
 \contentsline {subsection}{\numberline {1.2.3}Coupled Fission Gas, Gap Heat Transfer and Nonlinear Mechanics}{7}{section*.36}%
 \contentsline {subsection}{\numberline {1.2.4}Rapid Prediction and Surrogate Modeling for Fuel Performance}{7}{section*.40}%
-\contentsline {subsection}{\numberline {1.2.5}Summary of Research Status and Scope of This Work}{8}{section*.44}%
+\contentsline {subsection}{\numberline {1.2.5}Summary of Research Status and Scope of This Dissertation}{8}{section*.44}%
 \contentsline {section}{\numberline {1.3}Research Contents of This Dissertation}{9}{section*.50}%
 \contentsline {chapter}{\numberline {2}Governing Equations and Overall Multiphysics Modeling Framework for Oxide Fuel Elements}{12}{section*.56}%
 \contentsline {section}{\numberline {2.1}Introduction}{12}{section*.60}%
@@ -128,14 +128,14 @@
 \contentsline {subsection}{\numberline {6.7.2}Dataset Coverage and POD Projection Accuracy}{154}{section*.1064}%
 \contentsline {subsection}{\numberline {6.7.3}Training Convergence and Validation Performance}{154}{section*.1070}%
 \contentsline {subsection}{\numberline {6.7.4}Overall Accuracy on the Independent Blind-Test Set}{155}{section*.1078}%
-\contentsline {subsection}{\numberline {6.7.5}Error Histories and Critical Transients}{156}{section*.1086}%
+\contentsline {subsection}{\numberline {6.7.5}Error Histories and Critical Transients}{155}{section*.1086}%
 \contentsline {subsection}{\numberline {6.7.6}Full Two-Dimensional Field Reconstruction}{157}{section*.1092}%
 \contentsline {subsection}{\numberline {6.7.7}Online Prediction Example for an Independent Power History}{157}{section*.1098}%
-\contentsline {subsection}{\numberline {6.7.8}Computational Efficiency and Speedup}{160}{section*.1106}%
+\contentsline {subsection}{\numberline {6.7.8}Computational Efficiency and Speedup}{159}{section*.1106}%
 \contentsline {section}{\numberline {6.8}Applicability and Model Limitations}{160}{section*.1113}%
 \contentsline {section}{\numberline {6.9}Chapter Summary}{161}{section*.1117}%
 \contentsline {chapter}{\numberline {7}Conclusions and Outlook}{162}{section*.1121}%
-\contentsline {section}{\numberline {7.1}Main Research Work and Conclusions}{162}{section*.1125}%
+\contentsline {section}{\numberline {7.1}Conclusions}{162}{section*.1125}%
 \contentsline {section}{\numberline {7.2}Main Innovations}{163}{section*.1134}%
 \contentsline {section}{\numberline {7.3}Research Outlook}{164}{section*.1141}%
 \contentsline {chapter}{Acknowledgements}{166}{section*.1146}%

@@ -533,9 +533,9 @@
 \setcounter {tocdepth}{2}
 \contentsline {subsection}{\numberline {6.7.4}独立盲测总体精度}{155}{section*.1077}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.7.5}误差时间历程与关键瞬态}{156}{section*.1084}%
+\contentsline {subsection}{\numberline {6.7.5}误差时间历程与关键瞬态}{155}{section*.1084}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.7.5}误差时间历程与关键瞬态}{156}{section*.1085}%
+\contentsline {subsection}{\numberline {6.7.5}误差时间历程与关键瞬态}{155}{section*.1085}%
 \setcounter {tocdepth}{-5}
 \contentsline {subsection}{\numberline {6.7.6}完整二维场恢复}{157}{section*.1090}%
 \setcounter {tocdepth}{2}
@@ -545,9 +545,9 @@
 \setcounter {tocdepth}{2}
 \contentsline {subsection}{\numberline {6.7.7}独立功率历史的在线预测示例}{157}{section*.1097}%
 \setcounter {tocdepth}{-5}
-\contentsline {subsection}{\numberline {6.7.8}计算效率与加速比}{160}{section*.1104}%
+\contentsline {subsection}{\numberline {6.7.8}计算效率与加速比}{159}{section*.1104}%
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {6.7.8}计算效率与加速比}{160}{section*.1105}%
+\contentsline {subsection}{\numberline {6.7.8}计算效率与加速比}{159}{section*.1105}%
 \setcounter {tocdepth}{-5}
 \contentsline {section}{\numberline {6.8}适用范围与模型局限性}{160}{section*.1111}%
 \setcounter {tocdepth}{2}
@@ -561,9 +561,9 @@
 \setcounter {tocdepth}{2}
 \contentsline {chapter}{\numberline {7}总结与展望}{162}{section*.1120}%
 \setcounter {tocdepth}{-5}
-\contentsline {section}{\numberline {7.1}主要研究工作与结论}{162}{section*.1123}%
+\contentsline {section}{\numberline {7.1}主要结论}{162}{section*.1123}%
 \setcounter {tocdepth}{2}
-\contentsline {section}{\numberline {7.1}主要研究工作与结论}{162}{section*.1124}%
+\contentsline {section}{\numberline {7.1}主要结论}{162}{section*.1124}%
 \setcounter {tocdepth}{-5}
 \contentsline {section}{\numberline {7.2}主要创新点}{163}{section*.1132}%
 \setcounter {tocdepth}{2}

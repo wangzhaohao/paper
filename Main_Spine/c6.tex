@@ -1217,7 +1217,7 @@ POD--LSTM数据集采用的变功率历史如图\ref{fig:power_history_overview}
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=9.cm,height=6.75cm,keepaspectratio]{pod_lstm/power_history_overview.png}
+	\includegraphics[width=9.cm,height=4.75cm,keepaspectratio]{pod_lstm/power_history_overview.png}
 	\caption{POD--LSTM数据集的变功率历史}
 	\label{fig:power_history_overview}
 \end{figure}
@@ -1232,9 +1232,9 @@ POD--LSTM数据集采用的变功率历史如图\ref{fig:power_history_overview}
 
 POD--LSTM模型的训练与验证损失变化如图\ref{fig:formal_lstm_training}所示。
 
-\begin{figure}[!htb]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=9.00cm,height=6.75cm,keepaspectratio]
+	\includegraphics[width=9.00cm,height=4.750cm,keepaspectratio]
 	{pod_lstm/training_validation_loss.png}
 	\caption{POD--LSTM模型的训练与验证损失}
 	\label{fig:formal_lstm_training}
@@ -1391,9 +1391,9 @@ $t=6.3656928\times10^{7}\,\mathrm{s}$。三个误差峰值均集中于寿期后�
 为进一步评价POD--LSTM对完整空间场的恢复能力，选取独立盲测集中同时对三个
 物理场具有较高预测难度的代表性快照进行比较。为避免依据单一场变量选择时刻，
 本文分别采用各物理场参考峰值对RMSE进行归一化，并对同一工况、同一时刻下
-温度、径向位移和轴向位移的归一化误差取平均。按照该准则，选取
+温度、径向位移和轴向位移的归一化误差取平均。按照该准则，
 \texttt{case\_lstm\_bl\_0006}在
-$t=4.4817696\times10^7\,\mathrm{s}$（$518.72\,\mathrm{d}$）时的状态作为代表性困难快照。
+$t=4.4817696\times10^7\,\mathrm{s}$（$518.72\,\mathrm{d}$）时的状态作为误差最大的快照。
 
 图~\ref{fig:formal_lstm_2d_fields}给出了该时刻MOOSE高保真结果、
 POD--LSTM预测结果及两者之间的误差场。对于温度场，POD--LSTM能够保持
@@ -1419,7 +1419,7 @@ POD--LSTM仍能够较好保持温度场和位移场的主要空间分布特征�
 	\centering
 	\includegraphics[width=15.5cm,height=11.00cm,keepaspectratio]
 	{pod_lstm/blind_full_field_comparison.png}
-	\caption{代表性困难盲测快照下MOOSE与POD--LSTM完整二维场对比。
+	\caption{误差最大的盲测快照下MOOSE与POD--LSTM完整二维场对比。
 		第一列为MOOSE高保真结果，第二列为POD--LSTM预测结果，第三列为预测误差；
 		三行依次为温度、径向位移和轴向位移}
 	\label{fig:formal_lstm_2d_fields}
@@ -1501,7 +1501,7 @@ $0.06203\,\mathrm{s}$。该时间不包括结果文件写出，也不包含POD�
 	\label{eq:formal_speedup}
 \end{equation}
 
-10条验证历史的系数预测平均耗时为$0.000940\,\mathrm{s}$，三场完整场重构平均耗时为$0.073380\,\mathrm{s}$，二者合计为$0.074320\,\mathrm{s}$。盲测程序还执行逐节点误差评价，其平均全过程耗时为$1.114833\,\mathrm{s}$。因此，网络前向推理本身并非主要在线开销，主要时间用于三个物理场的完整节点场重构及误差计算。增强型中等网格在20个MPI进程下完成单个全寿期MOOSE工况的代表性壁钟时间为$1346.20\,\mathrm{s}$。以预测与完整场重构平均时间$0.074320\,\mathrm{s}$计，按照式~\eqref{eq:formal_speedup}得到加速比约为$1.81\times10^4$。该比较不包含POD基构建和LSTM训练等一次性离线成本，也不包含代理模型结果写盘和误差评价。
+10条验证历史的系数预测平均耗时为$0.000940\,\mathrm{s}$，三场完整场重构平均耗时为$0.073380\,\mathrm{s}$，二者合计为$0.074320\,\mathrm{s}$。盲测程序还执行逐节点误差评价，其平均全过程耗时为$1.114833\,\mathrm{s}$。因此，网络前向推理本身并非主要在线开销，主要时间用于三个物理场的完整节点场重构及误差计算。增强型中等网格在20个MPI进程下完成单个全寿期MOOSE工况的计算时间为$1346.20\,\mathrm{s}$。以预测与完整场重构平均时间$0.074320\,\mathrm{s}$计，按照式~\eqref{eq:formal_speedup}得到加速比约为$1.81\times10^4$。该比较不包含POD基构建和LSTM训练等一次性离线成本，也不包含代理模型结果写盘和误差评价。
 
 POD--LSTM在线计算时间及与MOOSE高保真计算的效率对比见表\ref{tab:formal_timing_results}。
 
